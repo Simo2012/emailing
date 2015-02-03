@@ -18,3 +18,9 @@ parameters:
 
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt
+
+# ==== Natexo Tool ====
+natexo_tool:
+    error_manager:
+        email:         scicluna@natexo.com
+        handle_errors: false

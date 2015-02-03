@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "44526f16f4abfd18c8a026236c003aa8",
+    "hash": "5ff5c69af3ae994be09685d630d68c6e",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -957,6 +957,47 @@
                 "psr-3"
             ],
             "time": "2014-12-29 21:29:35"
+        },
+        {
+            "name": "natexo/natexo",
+            "version": "1.6.6",
+            "source": {
+                "type": "git",
+                "url": "/space/GIT/repositories/natexo.git",
+                "reference": "1.6.6"
+            },
+            "dist": {
+                "type": "tar",
+                "url": "http://satis.natexo.com//dist/natexo-natexo-1.6.6-27642b.tar",
+                "reference": "1.6.6",
+                "shasum": "956547e59ade4c28d6a9d06d691334d2757b60cb"
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.0"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Natexo\\": "src/Natexo"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Natexo",
+                    "email": "rnd@natexo.com"
+                }
+            ],
+            "description": "Natexo library",
+            "homepage": "http://www.natexo.com",
+            "keywords": [
+                "natexo"
+            ],
+            "time": "2015-02-03 10:27:05"
         },
         {
             "name": "psr/log",

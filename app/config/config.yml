@@ -71,3 +71,8 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+    
+# ==== Natexo Tool ====
+natexo_tool:
+    error_manager:
+        service: RUBIZZ
