@@ -1,3 +1,7 @@
-web_web_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: WebWebBundle:Default:index }
+#==================================================
+# Default controller : page d'accueil, inscription
+#==================================================
+# ---- Page d'accueil ----
+WebWebBundle_defaultIndex:
+    path:     /
+    defaults: { _controller: "WebWebBundle:Default:index" }

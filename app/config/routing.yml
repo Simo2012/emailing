@@ -1,3 +1,12 @@
-web_web:
+# ====================
+# ==== Bundle web ====
+# ====================
+WebWebBundle:
     resource: "@WebWebBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /{_locale}
+    defaults: { _locale: en_US }
+
+# ==== Route to / ====
+WebWebBundle_index:
+    pattern: /
+    defaults: { _controller: "WebWebBundle:Default:index", _locale: en_US }
