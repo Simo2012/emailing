@@ -28,11 +28,42 @@ framework:
 # ==== Parameters ====
 parameters:
     sessionPdo.db_options:
+<<<<<<< HEAD
         db_table:        session
         db_id_col:       id
         db_data_col:     data
         db_time_col:     updated
         db_lifetime_col: lifetime
+=======
+        db_table:    session
+        db_id_col:   id
+        db_data_col: data
+        db_time_col: updated
+
+# ==== Services ====
+services:
+    sessionPdo:
+        class: PDO
+        arguments:
+            dsn:      "mysql:host=%database_host%;port=%database_port%;dbname=SESSION"
+            user:     "%database_user%"
+            password: "%database_password%"
+        calls:
+            - [setAttribute, [3, 2]] # \PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION
+
+    session.handler.pdo:
+        class: Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler
+        arguments: ["@sessionPdo", "%sessionPdo.db_options%"]
+
+    twig.extension.intl:
+        class: Twig_Extensions_Extension_Intl
+        tags:
+           - { name: twig.extension }
+    twig.extension.text:
+       class: Twig_Extensions_Extension_Text
+       tags:
+           - { name: twig.extension }
+>>>>>>> branch 'master' of git@95.131.143.161:rubizz.git
 
 # ==== Twig Configuration ====
 twig:
