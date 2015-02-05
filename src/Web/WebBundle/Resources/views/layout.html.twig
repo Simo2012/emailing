@@ -1,0 +1,40 @@
+<!doctype html>
+<!--[if lte IE 7]> <html class="KNS_no-js KNS_ie67 KNS_ie678" lang="{{ app.request.locale }}"> <![endif]-->
+<!--[if IE 8]> <html class="KNS_no-js KNS_ie8 KNS_ie678" lang="{{ app.request.locale }}"> <![endif]-->
+<!--[if IE 9]> <html class="KNS_no-js KNS_ie9" lang="{{ app.request.locale }}"> <![endif]-->
+<!--[if gt IE 9]> <!--><html class="KNS_no-js" lang="{{ app.request.locale }}"> <!--<![endif]-->
+<head>
+    <meta charset="UTF-8" />
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+    <title>{% block TITLE %}{{ "web.web.layout.headerTitle" | trans }}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+{% block CSS %}
+{%     if app.session.get('debugMode') %}
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
+{%     endif %}
+{% endblock %}
+</head>
+<body class="RBZ_{{ app.request.locale }} RBZ_{{ app.request.locale | slice(0, 2) }}">
+    <header id="header_RBZ_header" role="banner" class="">
+{% block HEADER %}{% endblock %}
+    </header>
+
+    <section id="section_RBZ_main" role="main" class="">
+{% block CONTENT %}{% endblock %}
+    </section> <!-- section_RBZ_main -->
+
+    <footer id="footer_RBZ_footer" role="contentinfo" class="">
+{% block FOOTER %}{% endblock %}
+    </footer>
+
+{% block JAVASCRIPT %}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+{%     if app.session.get('debugMode') %}
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+{%     endif %}
+{% endblock %}
+</body>
+</html>
