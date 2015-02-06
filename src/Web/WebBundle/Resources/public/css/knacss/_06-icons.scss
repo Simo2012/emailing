@@ -1,0 +1,159 @@
+/* ----------------------------- */
+/* ==icons and bullets	         */
+/* ----------------------------- */
+
+.KNS_icon {display: inline-block;}
+
+.KNS_icon:before,
+.KNS_icon.KNS_after:after {
+	content: "";
+	display: inline-block;
+	vertical-align: middle;
+	position: relative; top: -0.1em;
+	margin: 0 0.3em 0 0;
+	font: 1.4em/1 sans-serif;
+	color: #000;
+	text-shadow: 1px 1px 0 rgba(0,0,0,.1);
+	speak: none;
+}
+
+@media (min-device-width: $small-screen) {
+	.KNS_icon:before,
+	.KNS_icon.KNS_after:after {
+	font: 1em/0.6 sans-serif;
+	-webkit-transform: rotateZ(0.05deg);
+	}
+}
+
+.KNS_icon.KNS_after:after {
+	margin: 0 0 0 8px;
+}
+
+.KNS_icon.KNS_after:before {
+	content: "" !important
+}
+
+.KNS_icon-rate:before,
+.KNS_icon-rate.KNS_after:after {
+	content: "\2605";
+}
+.KNS_icon-unrate:before,
+.KNS_icon-unrate.KNS_after:after{
+	content: "\2606";
+}
+
+.KNS_icon-check:before,
+.KNS_icon-check.KNS_after:after{
+	content: "\2713";
+}
+
+.KNS_icon-uncheck:before,
+.KNS_icon-uncheck.KNS_after:after{
+	content: "\2717";
+}
+
+.KNS_icon-cloud:before,
+.KNS_icon-cloud.KNS_after:after {
+	content: "\2601";
+}
+
+.KNS_icon-dl:before,
+.KNS_icon-dl.KNS_after:after {
+	content: "\21E3";
+	font-weight: bold;
+}
+
+.KNS_icon-cross:before,
+.KNS_icon-cross.KNS_after:after {
+	content: "\2716";
+	font-weight: bold;
+}
+
+.KNS_icon-arrow1:before,
+.KNS_icon-arrow1.KNS_after:after {
+	content: "\2192";
+	position: relative; 
+		top: -0.15em;
+}
+
+.KNS_icon-arrow2:before,
+.KNS_icon-arrow2.KNS_after:after {
+	content: "\279E";
+}
+
+.KNS_icon-arrow3:before,
+.KNS_icon-arrow3.KNS_after:after {
+	content: "\279A";
+}
+
+.KNS_icon-bracket1:before,
+.KNS_icon-bracket1.KNS_after:after {
+	content: "\2039";
+	font-weight: bold;
+	font-size: 1.6em;
+	position: relative; 
+		top: -0.15em;
+}
+
+.KNS_icon-bracket2:before,
+.KNS_icon-bracket2.KNS_after:after {
+	content: "\203A";
+	font-weight: bold;
+	font-size: 1.6em;
+	position: relative; 
+		top: -0.15em;
+}
+
+.KNS_icon-up:before,
+.KNS_icon-up.KNS_after:after {
+	content: "\25B2";
+}
+
+.KNS_icon-down:before,
+.KNS_icon-down.KNS_after:after {
+	content: "\25BC";
+}
+
+.KNS_icon-bull:before,
+.KNS_icon-bull.KNS_after:after {
+	content: "\2022";
+	font-size: 1.2em;
+	top: -0.05em;
+}
+
+.KNS_icon-bull2:before,
+.KNS_icon-bull2.KNS_after:after {
+	content: "\25E6";
+	top: -0.05em;
+}
+
+.KNS_icon-bull3:before,
+.KNS_icon-bull3.KNS_after:after{
+	content: "\2023";
+	font-size: 1.6em;
+	top: -0.05em;
+}
+
+.KNS_icon-nav:before,
+.KNS_icon-nav.KNS_after:after {
+	content: "\2261";
+	font-weight: bold;
+}
+
+.KNS_icon-losange:before,
+.KNS_icon-losange.KNS_after:after {
+	content: "\25C6";
+}
+
+.KNS_icon-asteri:before,
+.KNS_icon-asteri.KNS_after:after {
+	content: "\2731";
+	font-weight: bold;
+}
+
+.KNS_icon-mail:before,
+.KNS_icon-mail.KNS_after:after {
+	content: "\2709";
+	font-size: 1.6em;
+	top: -.05em;
+}

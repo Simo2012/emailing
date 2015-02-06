@@ -1,0 +1,401 @@
+/* ----------------------------- */
+/* ==desktop and HD devices      */
+/* ----------------------------- */
+
+@media (min-width: ($medium-screen + 1)) {
+/* rules for big resources and big screens like: background-images, font-faces, etc. */
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+/* style adjustments for high density devices */
+}
+
+/* ---------------------------------- */
+/* ==Responsive large                 */
+/* ---------------------------------- */
+
+@media (min-width: ($medium-screen + 1)) {
+
+	/* layouts for large screens */
+	.KNS_large-hidden {
+		display: none !important; 
+	}
+	
+	.KNS_large-visible {
+		display: block !important; 
+	}
+	
+	.KNS_large-no-float {
+		float: none; 
+	}
+	
+	.KNS_large-inbl {
+		display: inline-block;
+		float: none;
+		vertical-align: top;
+	}
+	.KNS_large-row {
+		display: table;
+		table-layout: fixed;
+		width: 100% !important;
+	}
+	.KNS_large-col {
+		display: table-cell;
+		vertical-align: top;
+	}
+
+	/* widths for large screens */
+	.KNS_large-w25 {
+		width: 25% !important; 
+	}
+	
+	.KNS_large-w33 {
+		width: 33.3333% !important; 
+	}
+	
+	.KNS_large-w50 {
+		width: 50% !important; 
+	}
+	
+	.KNS_large-w66 {
+		width: 66.6666% !important; 
+	}
+	
+	.KNS_large-w75 {
+		width: 75% !important; 
+	}
+	
+	.KNS_large-w100,
+	.KNS_large-wauto {
+		display: block !important;
+		float: none !important;
+		clear: none !important;
+		width: auto !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+		border: 0;		
+	}
+
+	/* margins for large screens */
+	.KNS_large-man {
+		margin: 0 !important; 
+	}
+	
+	/* grid rwd for large screens */
+	.KNS_grid5 > *,
+	.KNS_grid6 > *,
+	.KNS_grid8 > *,
+	.KNS_grid10 > *,
+	.KNS_grid12 > * {
+		width: 33.333%;
+	}
+	
+	/* autogrid rwd for large screens */
+	.KNS_autogrid5 > *,
+	.KNS_autogrid6 > *,
+	.KNS_autogrid8 > *,
+	.KNS_autogrid10 > *,
+	.KNS_autogrid12 > * {
+		width: 32%;
+	}
+}
+
+/* ---------------------------------- */
+/* ==Responsive medium                */
+/* ---------------------------------- */
+
+@media (min-width: ($small-screen + 1)) and (max-width: $medium-screen)  {
+
+	/* layouts for medium screens */
+	.KNS_medium-hidden {
+		display: none !important; 
+	}
+	
+	.KNS_medium-visible {
+		display: block !important; 
+	}
+	
+	.KNS_medium-no-float {
+		float: none; 
+	}
+	
+	.KNS_medium-inbl {
+		display: inline-block;
+		float: none;
+		vertical-align: top;
+	}
+	.KNS_medium-row {
+		display: table;
+		table-layout: fixed;
+		width: 100% !important;
+	}
+	.KNS_medium-col {
+		display: table-cell;
+		vertical-align: top;
+	}
+
+	/* widths for medium screens */
+	.KNS_medium-w25 {
+		width: 25% !important; 
+	}
+	
+	.KNS_medium-w33 {
+		width: 33.3333% !important; 
+	}
+	
+	.KNS_medium-w50 {
+		width: 50% !important; 
+	}
+	
+	.KNS_medium-w66 {
+		width: 66.6666% !important; 
+	}
+	
+	.KNS_medium-w75 {
+		width: 75% !important; 
+	}
+	
+	.KNS_medium-w100,
+	.KNS_medium-wauto {
+		display: block !important;
+		float: none !important;
+		clear: none !important;
+		width: auto !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+		border: 0;		
+	}
+
+	/* margins for medium screens */
+	.KNS_medium-man {
+		margin: 0 !important; 
+	}
+}
+
+/* ---------------------------------- */
+/* ==Responsive small                 */
+/* ---------------------------------- */
+
+@media (min-width: ($tiny-screen + 1)) and (max-width: $small-screen) {
+	
+	/* quick small resolution reset */
+	.KNS_mod,
+	.KNS_col,
+	fieldset {
+		display: block !important;
+		float: none !important;
+		clear: none !important;
+		width: auto !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+		border: 0;
+	}
+
+	/* quick reset in small resolution and less */
+	.KNS_w600p,
+	.KNS_w700p,
+	.KNS_w800p,
+	.KNS_w960p,
+	.KNS_mw960p {
+		width: auto;
+		float: none;
+	} 
+
+	/* layouts for small screens */
+	.KNS_small-hidden {
+		display: none !important; 
+	}
+	
+	.KNS_small-visible {
+		display: block !important; 
+	}
+	
+	.KNS_small-no-float {
+		float: none; 
+	}
+	
+	.KNS_small-inbl {
+		display: inline-block;
+		float: none;
+		vertical-align: top;
+	}
+	.KNS_small-row {
+		display: table !important;
+		table-layout: fixed !important;
+		width: 100% !important;
+	}
+	.KNS_small-col {
+		display: table-cell !important;
+		vertical-align: top !important;
+	}
+
+	/* widths for small screens */
+	.KNS_small-w25 {
+		width: 25% !important; 
+	}
+	
+	.KNS_small-w33 {
+		width: 33.3333% !important; 
+	}
+	
+	.KNS_small-w50 {
+		width: 50% !important; 
+	}
+	
+	.KNS_small-w66 {
+		width: 66.6666% !important; 
+	}
+	
+	.KNS_small-w75 {
+		width: 75% !important; 
+	}
+	
+	.KNS_small-w100,
+	.KNS_small-wauto  {
+		display: block !important;
+		float: none !important;
+		clear: none !important;
+		width: auto !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+		border: 0;		
+	}
+	
+	/* margins for small screens */
+	.KNS_small-man {
+		margin: 0 !important; 
+	}
+	
+	.KNS_small-pan {
+		padding: 0 !important; 
+	}
+	
+	/* grid rwd for small screens */
+	.KNS_grid3 > *,
+	.KNS_grid4 > *,
+	.KNS_grid5 > *,
+	.KNS_grid6 > *,
+	.KNS_grid8 > *,
+	.KNS_grid10 > *,
+	.KNS_grid12 > * {
+		width: 50%;
+	}
+	
+	/* autogrid rwd for small screens */
+	.KNS_autogrid5 > *,
+	.KNS_autogrid6 > *,
+	.KNS_autogrid8 > *,
+	.KNS_autogrid10 > *,
+	.KNS_autogrid12 > * {
+		width: 49% !important;
+	}
+}
+
+/* ---------------------------------- */
+/* ==Responsive tiny                  */
+/* ---------------------------------- */
+
+@media (max-width: $tiny-screen) {
+	
+	.KNS_w300p,
+	.KNS_w400p,
+	.KNS_w500p {
+		width: auto;
+		float: none;
+	}
+	
+	.KNS_row {
+		display: block !important;
+		width: 100% !important;
+	}
+
+	/* layouts for tiny screens */
+	.KNS_tiny-hidden {
+		display: none !important; 
+	}
+	
+	.KNS_tiny-visible {
+		display: block !important; 
+	}
+	
+	.KNS_tiny-no-float {
+		float: none;
+	}
+	
+	.KNS_tiny-inbl {
+		display: inline-block;
+		float: none;
+		vertical-align: top;
+	}
+	
+	.KNS_tiny-row {
+		display: table !important;
+		table-layout: fixed !important;
+		width: 100% !important;
+	}
+	
+	.KNS_tiny-col {
+		display: table-cell !important;
+		vertical-align: top !important;
+	}
+	
+	th,
+	td {
+		display: block !important;
+		width: auto !important;
+		text-align: left !important;
+	}
+	
+	thead { display: none; }
+
+	/* widths for tiny screens */
+	.KNS_tiny-w25 {
+		width: 25% !important; 
+	}
+	
+	.KNS_tiny-w33 {
+		width: 33.3333% !important; 
+	}
+	
+	.KNS_tiny-w50 {
+		width: 50% !important; 
+	}
+	
+	.KNS_tiny-w66 {
+		width: 66.6666% !important; 
+	}
+	
+	.KNS_tiny-w75 {
+		width: 75% !important; 
+	}
+	
+	.KNS_tiny-w100,
+	.KNS_tiny-wauto {
+		display: block !important;
+		float: none !important;
+		clear: none !important;
+		width: auto !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+		border: 0;
+	}
+	
+	/* margins for tiny screens */
+	.KNS_tiny-man {
+		margin: 0 !important; 
+	}
+	
+	.KNS_tiny-pan {
+		padding: 0 !important; 
+	}
+	
+	/* grid rwd for tiny screens */
+	.KNS_grid > * > * {
+		width: 100% !important;
+	}
+	
+	/* autogrid rwd for tiny screens */
+	[class*="autogrid"] > * {
+		width: 100% !important;
+	}
+}

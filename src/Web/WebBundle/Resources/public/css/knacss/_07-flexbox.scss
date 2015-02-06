@@ -1,0 +1,29 @@
+/* flexbox layout 
+Tutorial: http://knacss.com/demos/tutoriel.html#flex */
+.KNS_flex {
+	display : flex;
+}
+
+.KNS_flex-h {
+	flex-direction: row;
+}
+
+.KNS_flex-v {
+	flex-direction: column;
+}
+
+.KNS_flex-fluid {
+	flex: 1;
+}
+
+.KNS_flex-start {
+	order : -1;
+}
+
+.KNS_flex-mid {
+	order : 1;
+}
+
+.KNS_flex-end {
+	order : 42;
+}

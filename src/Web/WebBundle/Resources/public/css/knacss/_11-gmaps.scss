@@ -1,0 +1,18 @@
+/* ----------------------------- */
+/* ==gmaps support               */
+/* ----------------------------- */
+
+/* Google Gmap3 bug fix on images */
+.KNS_gm-style img {
+	height: 100%;
+}
+
+:not(.KNS_gm-style) img {
+	height: auto;
+}
+
+.KNS_gm-style img,
+.KNS_gmnoscreen img,
+.KNS_gmnoprint img {
+	max-width: none !important;
+}

@@ -1,0 +1,286 @@
+/* ---------------------------------- */
+/* ==visual helpers                   */
+/* .. use them with parcimony !       */
+/* ---------------------------------- */
+
+/* blocks widths (percentage and pixels) */
+.KNS_w10    {
+	width: 10%; 
+}
+
+.KNS_w20    {
+	width: 20%; 
+}
+
+.KNS_w25    {
+	width: 25%; 
+}
+
+.KNS_w30    {
+	width: 30%; 
+}
+
+.KNS_w33    {
+	width: 33.3333%; 
+}
+
+.KNS_w40    {
+	width: 40%; 
+}
+
+.KNS_w50    {
+	width: 50%; 
+}
+
+.KNS_w60    {
+	width: 60%; 
+}
+
+.KNS_w66    {
+	width: 66.6666%; 
+}
+
+.KNS_w70    {
+	width: 70%; 
+}
+
+.KNS_w75    {
+	width: 75%; 
+}
+
+.KNS_w80    {
+	width: 80%; 
+}
+
+.KNS_w90    {
+	width: 90%; 
+}
+
+.KNS_w100   {
+	width: 100%; 
+}
+
+.KNS_w50p   {
+	width: 50px; 
+}
+
+.KNS_w100p  {
+	width: 100px; 
+}
+
+.KNS_w150p  {
+	width: 150px; 
+}
+
+.KNS_w200p  {
+	width: 200px; 
+}
+
+.KNS_w300p  {
+	width: 300px; 
+}
+
+.KNS_w400p  {
+	width: 400px; 
+}
+
+.KNS_w500p  {
+	width: 500px; 
+}
+
+.KNS_w600p  {
+	width: 600px; 
+}
+
+.KNS_w700p  {
+	width: 700px; 
+}
+
+.KNS_w800p  {
+	width: 800px; 
+}
+
+.KNS_w960p  {
+	width: 960px; 
+}
+
+.KNS_mw960p {
+	max-width: 960px; 
+}
+
+.KNS_w1140p  {
+	width: 1140px; 
+}
+
+.KNS_mw1140p {
+	max-width: 1140px; 
+}
+
+.KNS_wauto  {
+	width: auto; 
+}
+
+/* spacing helpers
+p,m = padding,margin
+a,t,r,b,l = all,top,right,bottom,left
+s,m,l,n = small, medium, large, none
+*/
+.KNS_man {
+	margin: 0; 
+}
+
+.KNS_pan {
+	padding: 0; 
+}
+
+.KNS_mas {
+	margin: $small-value; 
+}
+
+.KNS_mam {
+	margin: $medium-value; 
+}
+
+.KNS_mal {
+	margin: $large-value; 
+}
+
+.KNS_pas {
+	padding: $small-value; 
+}
+
+.KNS_pam {
+	padding: $medium-value; 
+}
+
+.KNS_pal {
+	padding: $large-value; 
+}
+
+.KNS_mtn {
+	margin-top: 0; 
+}
+
+.KNS_mts {
+	margin-top: $small-value; 
+}
+
+.KNS_mtm {
+	margin-top: $medium-value; 
+}
+
+.KNS_mtl {
+	margin-top: $large-value; 
+}
+
+.KNS_mrn {
+	margin-right: 0; 
+}
+
+.KNS_mrs {
+	margin-right: $small-value; 
+}
+
+.KNS_mrm {
+	margin-right: $medium-value; 
+}
+
+.KNS_mrl {
+	margin-right: $large-value; 
+}
+
+.KNS_mbn {
+	margin-bottom: 0; 
+}
+
+.KNS_mbs {
+	margin-bottom: $small-value; 
+}
+
+.KNS_mbm {
+	margin-bottom: $medium-value; 
+}
+
+.KNS_mbl {
+	margin-bottom: $large-value; 
+}
+
+.KNS_mln {
+	margin-left: 0; 
+}
+
+.KNS_mls {
+	margin-left: $small-value; 
+}
+
+.KNS_mlm {
+	margin-left: $medium-value; 
+}
+
+.KNS_mll {
+	margin-left: $large-value; 
+}
+
+.KNS_ptn {
+	padding-top: 0; 
+}
+
+.KNS_pts {
+	padding-top: $small-value; 
+}
+
+.KNS_ptm {
+	padding-top: $medium-value; 
+}
+
+.KNS_ptl {
+	padding-top: $large-value; 
+}
+
+.KNS_prn {
+	padding-right: 0; 
+}
+
+.KNS_prs {
+	padding-right: $small-value; 
+}
+
+.KNS_prm {
+	padding-right: $medium-value; 
+}
+
+.KNS_prl {
+	padding-right: $large-value; 
+}
+
+.KNS_pbn {
+	padding-bottom: 0; 
+}
+
+.KNS_pbs {
+	padding-bottom: $small-value; 
+}
+
+.KNS_pbm {
+	padding-bottom: $medium-value; 
+}
+
+.KNS_pbl {
+	padding-bottom: $large-value; 
+}
+
+.KNS_pln {
+	padding-left: 0; 
+}
+
+.KNS_pls {
+	padding-left: $small-value; 
+}
+
+.KNS_plm {
+	padding-left: $medium-value; 
+}
+
+.KNS_pll {
+	padding-left: $large-value; 
+}

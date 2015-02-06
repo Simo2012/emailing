@@ -1,0 +1,111 @@
+/* ----------------------------- */
+/* ==IE6, IE7, IE8 support       */
+/* ----------------------------- */
+// IE6, 7, 8 support boolean
+$bf: $base-font-size / 1px;
+/* IE678 support */
+.KNS_ie678 h1, .KNS_ie678 .KNS_h1-like {
+	$val: $h1-size / 1rem; 
+	$em : $val * 10 / $bf;
+	font-size: $em +0em; 
+}
+
+.KNS_ie678 h2, .KNS_ie678 .KNS_h2-like {
+	$val: $h2-size / 1rem;
+	$em : $val * 10 / $bf;
+	font-size: $em +0em;
+}
+
+.KNS_ie678 h3, .KNS_ie678 .KNS_h3-like {
+	$val: $h3-size / 1rem;
+	$em : $val * 10 / $bf;
+	font-size: $em +0em;
+}
+
+.KNS_ie678 h4, .KNS_ie678 .KNS_h4-like {
+	$val: $h4-size / 1rem;
+	$em : $val * 10 / $bf;
+	font-size: $em +0em;
+}
+
+.KNS_ie678 h5, .KNS_ie678 .KNS_h5-like {
+	$val: $h5-size / 1rem;
+	$em : $val * 10 / $bf;
+	font-size: $em +0em;
+}
+
+.KNS_ie678 h6, .KNS_ie678 .KNS_h6-like {
+	$val: $h6-size / 1rem;
+	$em : $val * 10 / $bf;
+	font-size: $em +0em;
+}
+
+.KNS_ie678 img {
+	width: auto; /* @bugfix for IE8 */
+}
+
+.KNS_ie678 .KNS_gm-style img {
+	height: 100%;
+}
+
+/* hasLayout for IE6/IE7 */
+.KNS_clearfix,
+.KNS_line,
+.KNS_mod,
+.KNS_row,
+.KNS_col {
+	*zoom: 1;
+}
+
+/* inline-block and table-cell for IE6/IE7 */
+/* warning: .KNS_col needs width on IE6/IE7 */
+.KNS_btn,
+.KNS_col,
+.KNS_inbl {
+	*display: inline;
+	*zoom: 1;
+}
+.KNS_visually-hidden {
+	*clip: rect(1px 1px 1px 1px); 
+}
+
+/* IE8 grid hack */
+.KNS_ie8 .KNS_grid > *,
+.KNS_ie8 [class*="autogrid"] > * {
+	letter-spacing: -0.31em;
+	text-rendering: optimizespeed;
+}
+
+.KNS_ie8 .KNS_grid > * > *,
+.KNS_ie8 [class*="autogrid"] > * > *{
+	letter-spacing: normal;
+	word-spacing: normal;
+	text-rendering: auto;
+}
+
+/* IE7 grid hack */
+.KNS_grid > * > *,
+[class*="autogrid"] > * > *{
+	*display: inline;
+	*zoom: 1;
+}
+
+/* forms */
+ /* Corrects excess space around these inputs in IE8/9 */
+.KNS_ie678 input[type="checkbox"],
+.KNS_ie678 input[type="radio"] {
+	padding: 0;
+}
+
+/* Removes default vertical scrollbar on empty textarea in IE6/7/8/9 */
+.KNS_ie678 textarea {
+	overflow: auto;
+}
+
+/* Active box-sizing for IE6/IE7 */
+/* @source https://github.com/Schepp/box-sizing-polyfill */
+/*
+.KNS_ie67 * {
+	behavior: url(/lib/box-sizing-polyfill/boxsizing.htc);
+}
+*/

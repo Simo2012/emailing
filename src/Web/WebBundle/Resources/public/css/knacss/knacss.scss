@@ -1,0 +1,22 @@
+@charset "UTF-8";
+// Sass config file
+// (you should comment this line and move config file from vendor/knacss folder to your own folder)
+@import "00-config";
+
+// Sass base styles
+@import "01-base";
+
+// Sass files : chose the ones you need
+@import "02-helpers"; // width and spacers visually classes
+@import "03-grids"; // grids and autogrids
+@import "04-tables";
+@import "05-forms";
+@import "06-icons"; // UTF-8 icons
+@import "07-flexbox";
+@import "08-rwd"; // Responsive Web Design helpers
+@import "09-print";
+@import "10-booleans"; // skip links and hyphens
+@import "11-gmaps"; // Google maps bugs fix
+@import "12-ie"; // IE6, IE7, IE8 support
+@import "13-styling"; // minor stylings
+

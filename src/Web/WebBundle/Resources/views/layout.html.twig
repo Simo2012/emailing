@@ -11,11 +11,18 @@
     <!--[if lt IE 9]>
     <script type="text/javascript" src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-{% block CSS %}
-{%     if app.session.get('debugMode') %}
-    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
-{%     endif %}
-{% endblock %}
+    {% block CSS %}
+        {%     stylesheets
+        '@WebWebBundle/Resources/public/css/knacss/knacss.scss'
+        '@WebWebBundle/Resources/public/css/global/global.scss'
+        %}
+        <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+        {%     endstylesheets %}
+    {% endblock %}
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700,600,400' rel='stylesheet' type='text/css'>
+    {%     if app.session.get('debugMode') %}
+        <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
+    {%     endif %}
 </head>
 <body class="RBZ_{{ app.request.locale }} RBZ_{{ app.request.locale | slice(0, 2) }}">
     <header id="header_RBZ_header" role="banner" class="">
