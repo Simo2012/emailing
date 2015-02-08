@@ -3,7 +3,7 @@
 {% block HEADER %}
 
     <div id="div_RBZ_banner" class="RBZ_wrapper">
-        {% if app.request.user is defined %}
+        {% if is_granted('ROLE_USER') %}
             <div id="div_RBZ_counterMailingList" class="RBZ_icons_mailinglist">
 
                     <span class="KNS_tiny-hidden">Mailing list</span><br>
@@ -36,7 +36,7 @@
                 </div>
             {% endif %}
 
-            {% if app.request.user is defined %}
+            {% if is_granted('ROLE_USER') %}
                 {% if is_mobile() %}
                 <div id="div_RBZ_menuProfile" class="RBZ_icons_profile">
                     <ul id="ul_RBZ_menuProfile">
@@ -45,7 +45,6 @@
                             {{ menu('publisherProfile') }}
                         </li>
                     </ul>
-
                 </div>
                 {% endif %}
             {% endif %}

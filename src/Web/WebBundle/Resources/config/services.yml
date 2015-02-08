@@ -57,7 +57,7 @@ parameters:
             route: ""
             pages:
                 Particular:
-                    label: publisherMenu_particular
+                    label: publisherMenu_particulars
                     route: WebWebBundle_userParticular
                 Rib:
                     label: publisherMenu_rib

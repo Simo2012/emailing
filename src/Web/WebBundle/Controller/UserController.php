@@ -33,7 +33,7 @@ class UserController extends Controller
      *
      * @Template()
      */
-    public function particularAction()
+    public function particularsAction()
     {
         return array();
     } // particularAction

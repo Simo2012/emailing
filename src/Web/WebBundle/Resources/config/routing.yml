@@ -45,7 +45,7 @@ WebWebBundle_userProfile:
 # ---- Page des coordonnées ----
 WebWebBundle_userParticular:
     path:     /user/particular
-    defaults: { _controller: "WebWebBundle:User:particular" }
+    defaults: { _controller: "WebWebBundle:User:particulars" }
 # ---- Page de saisie du rib ----
 WebWebBundle_userRib:
     path:     /user/rib
