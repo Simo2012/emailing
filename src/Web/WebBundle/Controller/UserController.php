@@ -7,74 +7,64 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
- * Contrôleur default : page d'accueil, inscription
+ * Contrôleur home : page d'accueil derrière le firewall
  *
  * <pre>
- * Philippe 05/02/2015 Création
+ * Victor 07/02/2015 Création
  * </pre>
- * @author Philippe
+ * @author Victor
  * @version 1.0
  * @package Rubizz
  */
-class DefaultController extends Controller
+class UserController extends Controller
 {
     /**
      * Page d'accueil
      *
      * @Template()
      */
-    public function indexAction()
+    public function profileAction()
     {
         return array();
-    } // indexAction
+    } // profileAction
 
     /**
-     * Page comment ça marche
+     * Page particular
      *
      * @Template()
      */
-    public function howItWorksAction()
+    public function particularAction()
     {
         return array();
-    } // howItWorksAction
+    } // particularAction
 
     /**
-     * Page A porpos
+     * Page rib
      *
      * @Template()
      */
-    public function aboutAction()
+    public function ribAction()
     {
         return array();
-    } // aboutAction
+    } // ribAction
 
     /**
-     * Page FAQ
+     * Page cagnotte
      *
      * @Template()
      */
-    public function faqAction()
+    public function potAction()
     {
         return array();
-    } // faqAction
+    } // potAction
 
     /**
-     * Page contact
+     * Page encaisser la cagnotte
      *
      * @Template()
      */
-    public function contactAction()
+    public function cashInAction()
     {
         return array();
-    } // contactAction
-
-    /**
-     * Page jobs
-     *
-     * @Template()
-     */
-    public function jobsAction()
-    {
-        return array();
-    } // jobsAction
+    } // cashInAction
 }

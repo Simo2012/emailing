@@ -1,7 +1,60 @@
 #==================================================
 # Default controller : page d'accueil, inscription
 #==================================================
-# ---- Page d'accueil ----
+# ---- Page d'accueil externe  ----
 WebWebBundle_defaultIndex:
     path:     /
     defaults: { _controller: "WebWebBundle:Default:index" }
+# ---- Page comment ça marche  ----
+WebWebBundle_defaultHowItWorks:
+    path:     /hiw
+    defaults: { _controller: "WebWebBundle:Default:howItWorks" }
+# ---- Page A propos  ----
+WebWebBundle_defaultAbout:
+    path:     /about
+    defaults: { _controller: "WebWebBundle:Default:about" }
+# ---- Page FAQ  ----
+WebWebBundle_defaultFaq:
+    path:     /faq
+    defaults: { _controller: "WebWebBundle:Default:faq" }
+# ---- Page Contact  ----
+WebWebBundle_defaultContact:
+    path:     /contact
+    defaults: { _controller: "WebWebBundle:Default:contact" }
+# ---- Page Jobs  ----
+WebWebBundle_defaultJobs:
+    path:     /jobs
+    defaults: { _controller: "WebWebBundle:Default:jobs" }
+
+#==================================================
+# Home controller : page d'accueil interne
+#==================================================
+# ---- Page d'accueil interne ----
+WebWebBundle_homeIndex:
+    path:     /home
+    defaults: { _controller: "WebWebBundle:Home:index" }
+
+
+#==================================================
+# User controller : page profile, etc
+#==================================================
+# ---- Page profile ----
+WebWebBundle_userProfile:
+    path:     /user/profile
+    defaults: { _controller: "WebWebBundle:User:profile" }
+# ---- Page des coordonnées ----
+WebWebBundle_userParticular:
+    path:     /user/particular
+    defaults: { _controller: "WebWebBundle:User:particular" }
+# ---- Page de saisie du rib ----
+WebWebBundle_userRib:
+    path:     /user/rib
+    defaults: { _controller: "WebWebBundle:User:rib" }
+# ---- Page detail cagnotte ----
+WebWebBundle_userPot:
+    path:     /user/pot
+    defaults: { _controller: "WebWebBundle:User:pot" }
+# ---- Page encaissement ----
+WebWebBundle_userCashIn:
+    path:     /user/cash-in
+    defaults: { _controller: "WebWebBundle:User:cashIn" }

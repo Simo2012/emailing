@@ -1,4 +1,22 @@
 # ==== Layout global ====
+
+# ==== Menu principal ====
+publisherMenu_home:               accueil
+publisherMenu_offers:             toutes les offres
+publisherMenu_mailingList:        mailing list
+publisherMenu_howItWorks:         comment ça marche ?
+publisherMenu_recommendations:    vos recommendations
+# ==== Menu Utilisateur ====
+publisherMenu_profile:            Mon profil
+# ==== Menu Footer ====
+publisherMenu_about:              A propos
+publisherMenu_faq:                FAQ
+publisherMenu_contact:            Contact
+publisherMenu_jobs:               Jobs
+
+
+# ==== Layout Global ====
+footer.credits:   © <span>Rubizz</span> by Natexo.
 web.web.layout.headerTitle: Rubizz
 
 # ==== Home Page ====

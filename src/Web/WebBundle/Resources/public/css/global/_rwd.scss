@@ -1,0 +1,106 @@
+
+@media (min-width: ($tiny-screen + 1)) and (max-width: $small-screen) {
+  .RBZ_wrapper {
+    width: 100%;
+  }
+  #div_RBZ_banner {
+    height: 90px;
+    background: url(/bundles/webweb/images/global/logo-tablet.png) 0 10px no-repeat;
+  }
+  div#div_RBZ_userMenu ul li.active:after {
+    height: 40px;
+    width: 10px;
+    background: url(/bundles/webweb/images/global/menu_user_tablet.png) 0 0 no-repeat
+  }
+}
+
+@media (max-width: $tiny-screen) {
+  .RBZ_wrapper {
+    width: 100%;
+  }
+  .RBZ_icons_profile {
+    background: sprite($icons, profile_smartphone);
+    background-repeat: no-repeat;
+    background-position: sprite-position($icons, profile_smartphone, 0, 6)
+  }
+  .RBZ_icons_mailinglist {
+    background: sprite($icons, mailinglist_smartphone);
+    background-repeat: no-repeat;
+  }
+  .RBZ_icons_cagnotte {
+    background: sprite($icons, cagnotte_smartphone);
+    background-repeat: no-repeat;
+  }
+  #div_RBZ_banner {
+    height: 55px;
+    background: url(/bundles/webweb/images/global/logo-smartphone.png) 10px 10px no-repeat;
+    #div_RBZ_counterMailingList,
+    #div_RBZ_counterGain {
+      margin-top: 10px;
+      span:last-child {
+        height: 34px;
+        line-height: 35px;
+      }
+    }
+
+  }
+  div#div_RBZ_menuProfile {
+    margin: 0 !important;
+    ul li {
+      padding-left: 35px;
+    }
+  }
+  #div_RBZ_menuMobile {
+    position: relative;
+    width: 100%;
+    ul {
+      position: absolute;
+      top: 40px;
+      left: 0;
+      width: 100%;
+      li {
+        z-index: 10;
+        display: block;
+        line-height: 40px;
+        background-color: $black-nav;
+        width: 100%;
+        a:hover, a.active {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  ul#ul_RBZ_menuMobile {
+    & > li {
+      background: sprite($icons, menu);
+      @include sprite-dimensions($icons, menu);
+      background-repeat: no-repeat;
+      line-height: 40px;
+      margin-left: 10px;
+      position: relative;
+      ul {
+        position: absolute;
+        width: 100%;
+        left: -10px;
+        top: 30px;
+        background-color: $black-nav;
+        li {
+          background-color: $black-nav;
+          width: 100%;
+          margin: 0;
+
+        }
+      }
+    }
+  }
+
+  div#div_RBZ_userMenu ul li {
+    height: 40px;
+    line-height: 40px;
+    &.active:after {
+      height: 32px;
+      width: 9px;
+      background: url(/bundles/webweb/images/global/menu_user_smartphone.png) 0 0 no-repeat
+    }
+  }
+}

@@ -1,5 +1,105 @@
+parameters:
+    menus:
+        publisherMenu:
+            label: ""
+            route: ""
+            pages:
+                Home:
+                    label: ""
+                    route: WebWebBundle_homeIndex
+                    class: RBZ_icons_home
+                Offers:
+                    label: publisherMenu_offers
+                    route: WebWebBundle_defaultIndex
+                MailingList:
+                    label: publisherMenu_mailingList
+                    route: WebWebBundle_defaultIndex
+                # ==== Exploitation ====
+                HowItWorks:
+                    label: publisherMenu_howItWorks
+                    route: WebWebBundle_defaultHowItWorks
+                Recommendations:
+                    label: publisherMenu_recommendations
+                    route: WebWebBundle_defaultIndex
+
+        publisherMenuMobile:
+            label: ""
+            route: ""
+            pages:
+                Home:
+                    label: publisherMenu_home
+                    route: WebWebBundle_homeIndex
+                Offers:
+                    label: publisherMenu_offers
+                    route: WebWebBundle_defaultIndex
+                MailingList:
+                    label: publisherMenu_mailingList
+                    route: WebWebBundle_defaultIndex
+                # ==== Exploitation ====
+                HowItWorks:
+                    label: publisherMenu_howItWorks
+                    route: WebWebBundle_defaultHowItWorks
+                Recommendations:
+                    label: publisherMenu_recommendations
+                    route: WebWebBundle_defaultIndex
+
+        publisherProfile:
+            label: ""
+            route: ""
+            pages:
+                # ===== Développement ====
+                Profile:
+                    label: publisherMenu_profile
+                    route: WebWebBundle_userProfile
+
+        publisherUser:
+            label: ""
+            route: ""
+            pages:
+                Particular:
+                    label: publisherMenu_particular
+                    route: WebWebBundle_userParticular
+                Rib:
+                    label: publisherMenu_rib
+                    route: WebWebBundle_userRib
+                Pot:
+                    label: publisherMenu_pot
+                    route: WebWebBundle_userPot
+                Cashin:
+                    label: publisherMenu_cashin
+                    route: WebWebBundle_userCashIn
+
+        publisherFooter:
+            label: ""
+            route: ""
+            pages:
+                Offers:
+                    label: publisherMenu_about
+                    route: WebWebBundle_defaultAbout
+                MailingList:
+                    label: publisherMenu_faq
+                    route: WebWebBundle_defaultFaq
+                HowItWorks:
+                    label: publisherMenu_contact
+                    route: WebWebBundle_defaultContact
+                Recommendations:
+                    label: publisherMenu_jobs
+                    route: WebWebBundle_defaultJobs
+
 services:
     # ==== Auto Post sur Facebook ====
     web.web.contactFacebook:
         class: Web\WebBundle\Model\Contact\Facebook
         arguments: []
+    # ==== Menu en twig ====
+    web.web.twig.extension.menu:
+        class: Web\WebBundle\Twig\Extension\MenuExtension
+        tags:
+            - { name: twig.extension }
+        arguments: ["@twig.loader", "@translator", "@security.context", "%kernel.environment%", "@router", "%menus%"]
+    # ---- menu listener ----
+    web.web.menu.listener:
+        class: Web\WebBundle\EventListener\ControllerListener
+        tags:
+            - { name: kernel.event_listener, event: kernel.controller, method: onKernelController }
+        arguments: ["@web.web.twig.extension.menu"]
