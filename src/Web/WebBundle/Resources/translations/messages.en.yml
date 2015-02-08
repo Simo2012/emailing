@@ -1,2 +1,31 @@
 # ==== Layout global ====
 web.web.layout.headerTitle: Rubizz
+
+# ==== Home Page ====
+web.web.home.connection: CONNECTION
+web.web.home.register: REGISTER
+web.web.home.community.title: Community 3.0
+web.web.home.community.content: You're a blogger, trendsetter, twittos or just good company, you can monetize your reputation easily and for free
+web.web.home.community.manage: Manage your community
+web.web.home.mailinglist.title: Mailing List
+web.web.home.mailinglist.content: Add friends from your email account, Facebook, Twitter or Google+ and create your own Mailing List
+web.web.home.mailinglist.add: Add contacts
+web.web.home.cagnotte.title: Accept your kitty
+web.web.home.cagnotte.content: In recommending deals to your contacts, you earn money for each of their contribution.
+web.web.home.cagnotte.begin: Get Started
+web.web.home.christbale.detail: Avec plus de 3 000 followers, j'ai pu leur faire bénéficier d'offres vraiment interessantes et orientées sur mon secteur.
+web.web.home.christbale.sign: Christian Bale - @c-bale
+web.web.home.emmawats.detail: Avec plus de 3 000 followers, j'ai pu leur faire bénéficier d'offres vraiment interessantes et orientées sur mon secteur.
+web.web.home.emmawats.sign: Eùùa Watsp - @Emma-ww
+web.web.home.footer.about: A propos
+web.web.home.footer.faq: FAQ
+web.web.home.footer.contact: Contact
+web.web.home.footer.jobs: Jobs
+web.web.home.footer.advertisers: Annonceurs
+web.web.home.footer.alloffers: Toutes les offres
+web.web.home.footer.maillist: Mailing list
+web.web.home.footer.howwork: Comment ça marche ?
+web.web.home.footer.bynatexo: 2014 %b%Rubizz%eb% by Natexo.
+web.web.home.footer.allrights: Tous droits réservés
+web.web.home.footer.mentions: Mentions légales
+web.web.home.footer.condition: Conditions générales d'utilisation
