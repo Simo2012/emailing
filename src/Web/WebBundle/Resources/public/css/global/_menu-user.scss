@@ -1,0 +1,52 @@
+div#div_RBZ_userMenu {
+  background-color: $white;
+  padding-top: 20px;
+  box-shadow : 1px 1px 2px #e0e0e0;
+  ul {
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+    li {
+      display: inline-block;
+      margin: 0 10px;
+      height: 40px;
+      line-height: 40px;
+      padding: 0 20px;
+      font-size: 1.4rem;
+      &.active {
+        box-shadow: inset 1px 1px 2px #e0e0e0;
+        background-color: $body;
+        position: relative;
+        font-weight: bold;
+        &:before {
+          content: '';
+          position: absolute;
+          height: 3px;
+          background-color: $body;
+          bottom: -3px;
+          left: 0;
+          width: 100%;
+        }
+        &:after {
+          content: '';
+          position: absolute;
+          right: 0;
+          height: 40px;
+          width: 17px;
+          background: url(/bundles/webweb/images/global/menu_user.png) 0 0 no-repeat
+        }
+        a {
+          color: #f04f61;
+        }
+      }
+      a {
+        text-decoration: none;
+        color: #6d6d6d;
+        &:hover {
+          color: #f04f61;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

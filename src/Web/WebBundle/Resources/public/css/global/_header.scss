@@ -1,0 +1,150 @@
+#a_RBZ_linkMenuMobile {
+  background: sprite($icons, menu);
+  @include sprite-dimensions($icons, menu);
+  display: block;
+  margin: 10px 0 0 10px;
+  float: left;
+}
+.RBZ_icons_home {
+  background: sprite($icons, home);
+  background-repeat: no-repeat;
+  background-position: sprite-position($icons, home, 0, -2);
+  @include sprite-dimensions($icons, home);
+}
+.RBZ_icons_profile {
+  background: sprite($icons, profile);
+  background-repeat: no-repeat;
+}
+.RBZ_icons_selector {
+  background: sprite($icons, selector);
+  background-repeat: no-repeat;
+}
+.RBZ_icons_cagnotte {
+  background: sprite($icons, cagnotte);
+  background-repeat: no-repeat;
+}
+.RBZ_icons_mailinglist {
+  background: sprite($icons, mailinglist);
+  background-repeat: no-repeat;
+}
+
+#header_RBZ_header {
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      list-style: none;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+div#div_RBZ_menuProfile {
+  float: right;
+  font-size: 1.2rem;
+  margin: 30px 25px 0 0;
+  display: block;
+  height: 40px;
+  ul {
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    & > li {
+      cursor: pointer;
+      padding-left: 45px;
+      position: relative;
+      span {
+        width: 12px;
+        height: 6px;
+        display: inline-block;
+        margin-left: 5px;
+      }
+    }
+  }
+  li ul {
+    cursor: default;
+    position: absolute;
+    display: none;
+    left: 0;
+    width: 100%;
+    li {
+      padding-left: 10px;
+      display: block;
+    }
+  }
+}
+#div_RBZ_banner div#div_RBZ_menuProfile,
+#div_RBZ_banner ul#ul_RBZ_menuProfile li ul {
+  background-color: $red-banner;
+}
+#div_RBZ_navWrapper div#div_RBZ_menuProfile,
+#div_RBZ_navWrapper ul#ul_RBZ_menuProfile li ul {
+  background-color: $black-nav;
+}
+#header_RBZ_header {
+  background-color: $red-banner;
+  color: $white;
+  a {
+    color: $white;
+  }
+}
+#div_RBZ_banner {
+  height: 100px;
+  background: url(/bundles/webweb/images/global/logo.png) 0 20px no-repeat;
+  #div_RBZ_counterMailingList,
+  #div_RBZ_counterGain {;
+      height: 40px;
+      display: block;
+      padding-left: 45px;
+      float: right;
+      font-size: 1.2rem;
+      color: #fab2ba;
+      margin: 30px 12px 0 0;
+      span:last-child {
+        font-size: 18px;
+        font-weight: bold;
+        color: #ffffff;
+      }
+  }
+}
+#div_RBZ_navWrapper {
+  background-color: $black-nav;
+  height: 40px;
+  line-height: 40px;
+  @include box-shadow(0 -2px 4px rgba(0,0,0,.36));
+  ul {
+    list-style: none;
+    padding:0;
+    display: inline-block;
+    li {
+      list-style: none;
+      display: inline-block;
+      font-size: 12px;
+      margin-right: 20px;
+      text-align: center;
+      vertical-align: middle;
+      &.icons-home {
+        width: 24px;
+        height: 24px;
+        line-height: 40px;
+        a {
+          width: 20px;
+          height: 24px;
+          display: block;
+        }
+      }
+      a {
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+      &.RBZ_linkHome {
+
+      }
+      &.active a, a:hover {
+        font-weight: 600;
+      }
+    }
+  }
+}

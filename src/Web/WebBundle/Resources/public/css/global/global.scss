@@ -1,7 +1,31 @@
 @charset "UTF-8";
 
+@import "compass/css3";
+@import "compass/utilities/sprites";
+$icons-layout: vertical;
+$icons-spacing: 10px;
+@import "global/icons/*.png";
+//@include all-icons-sprites;
+$icons: sprite-map("global/icons/*.png", $layout: vertical, $spacing: 10px);
+
 @import "config";
 
 body {
+  background-color: $body;
   font-family: 'Open Sans', sans-serif;
 }
+
+.RBZ_hide {
+  display: none;
+}
+
+.RBZ_wrapper {
+  width: 960px;
+  margin: 0 auto;
+}
+
+@import "header";
+@import "menu-user";
+@import "footer";
+@import "rwd";
+

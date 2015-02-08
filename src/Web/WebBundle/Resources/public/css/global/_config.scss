@@ -1,6 +1,20 @@
 @charset "UTF-8";
 
+// breakpoints (choose unit you prefer)
+$tiny-screen			: 480px; // tiny screens media query (less than 480px)
+$small-screen			: 768px; // screens between 481px and 768px
+$medium-screen			: 1024px; // screens between 769px and 1024px
+$large-screen			: 1280px; // screens between 1025px and 1280px
+$extra-large-screen		: 1600px; // screens between 1281px and 1600px
+$ultra-large-screen		: 1920px; // ultra large screens
+
+// colors
+$body: #f1f1f1;
 $white: #ffffff;
 $red-banner: #ef4f61;
 $black-nav: #3f3f3f;
-
+$black: #000000;
+$light-grey: #f1f1f1;
+$border-grey: #e1e1e1;
+$footer-grey: #353536;
+$footer-border: #404040;$light-grey: #f1f1f1;

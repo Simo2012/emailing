@@ -1,0 +1,61 @@
+{% extends "@WebWeb/layout.html.twig" %}
+
+{% block HEADER %}
+
+    <div id="div_RBZ_banner" class="RBZ_wrapper">
+        {% if is_granted('ROLE_USER') %}
+            <div id="div_RBZ_counterMailingList" class="RBZ_icons_mailinglist">
+
+                    <span class="KNS_tiny-hidden">Mailing list</span><br>
+                    <span>100</span>
+            </div>
+            <div id="div_RBZ_counterGain" class="RBZ_icons_cagnotte">
+                <span class="KNS_tiny-hidden">Ma cagnotte</span><br>
+                <span>100&euro;</span>
+            </div>
+            {% if is_mobile() == false and is_tablet() == false %}
+            <div id="div_RBZ_menuProfile" class="RBZ_icons_profile">
+                <ul id="ul_RBZ_menuProfile">
+                    <li>
+                        Romain Piraux<span class="RBZ_icons_selector"></span>
+                        {{ menu('publisherProfile') }}
+                    </li>
+                </ul>
+            </div>
+            {% endif %}
+        {% endif %}
+    </div>
+    <div id="div_RBZ_navWrapper">
+        <div class="RBZ_wrapper">
+            {% if is_mobile() == false and is_tablet() == false %}
+                {{ menu('publisherMenu') }}
+            {% else %}
+                <a href="#" id="a_RBZ_linkMenuMobile"></a>
+                <div id="div_RBZ_menuMobile" class="RBZ_hide">
+                    {{ menu('publisherMenuMobile') }}
+                </div>
+            {% endif %}
+
+            {% if is_granted('ROLE_USER') %}
+                {% if is_mobile() %}
+                <div id="div_RBZ_menuProfile" class="RBZ_icons_profile">
+                    <ul id="ul_RBZ_menuProfile">
+                        <li>
+                            Romain Piraux<span class="RBZ_icons_selector"></span>
+                            {{ menu('publisherProfile') }}
+                        </li>
+                    </ul>
+                </div>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block FOOTER %}
+    <div class="RBZ_wrapper">
+        {{ "footer.credits" | trans | raw }}
+        {{ menu('publisherFooter') }}
+    </div>
+{% endblock %}
