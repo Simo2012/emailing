@@ -18,21 +18,21 @@ class Gmail extends ArrayIterator {
 
     /**
      * Permet de recuperer les codes api
-     * array paramsFacebook
+     * array GMAIL
      * @var bundle
      */
-    private $clientId = '1086839973461-3khcu8rfsbn9ailo003qc270osd2rjqf.apps.googleusercontent.com';
-    private $clientSecret = '6dgNwrD2yDCE_n0b_BIavjnu';
-    private $redirectUri = 'http://rubizz.mohammed.natexo.com';
+    private $clientId;
+    private $clientSecret;
+    private $redirectUri;
 
     /**
      * Constructeur, injection des dépendances
      */
     public function __construct() {
-        
-    }
-
-// __constructeur
+        $this->clientId = '1086839973461-3khcu8rfsbn9ailo003qc270osd2rjqf.apps.googleusercontent.com';
+        $this->clientSecret = '6dgNwrD2yDCE_n0b_BIavjnu';
+        $this->redirectUri = 'http://rubizz.mohammed.natexo.com';
+    }// __constructeur
 
     /**
      * Return un lien permettant l'autorisation du membre
@@ -43,111 +43,124 @@ class Gmail extends ArrayIterator {
                 $this->clientId . '&redirect_uri=' . $this->redirectUri .
                 '&scope=https://www.google.com/m8/feeds/&response_type=code';
         return $lsUrl;
-    }
+    }//generateUrl
+    
+    /**
+     * 
+     * @param type $locode
+     * @return type
+     */
+    public function getToken($locode) {
+        $laFields = array(
+            'code' => urlencode($locode),
+            'client_id' => $this->clientId,
+            'client_secret' => $this->clientSecret,
+            'redirect_uri' => $this->redirectUri,
+            'grant_type' => urlencode('authorization_code')
+        );
+        $lsFields = '';
+        foreach ($laFields as $key => $value) {
+            $lsFields .= $key . '=' . $value . '&';
+        }
+        $lsFields = rtrim($lsFields, '&');
 
-//generateUrl
+        $locurl = curl_init();
+        curl_setopt($locurl, CURLOPT_URL, 'https://accounts.google.com/o/oauth2/token');
+        curl_setopt($locurl, CURLOPT_POST, 5);
+        curl_setopt($locurl, CURLOPT_POSTFIELDS, $lsFields);
+        curl_setopt($locurl, CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($locurl, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($locurl, CURLOPT_SSL_VERIFYHOST, 0);
+        $laresult = curl_exec($locurl);
+        curl_close($locurl);
+
+        return json_decode($laresult);
+    }//getToken
 
     /**
-     * Sauvegarde
+     * function pour retourner less contacts 
      * 
      */
     public function getContacts() {
+
         if (isset($_GET["code"])) {
-            $auth_code = $_GET["code"];
-            $fields = array(
-                'code' => urlencode($auth_code),
-                'client_id' => $this->clientId,
-                'client_secret' => $this->clientSecret,
-                'redirect_uri' => $this->redirectUri,
-                'grant_type' => urlencode('authorization_code')
-            );
-            $post = '';
-            foreach ($fields as $key => $value) {
-                $post .= $key . '=' . $value . '&';
-            }
-            $post = rtrim($post, '&');
 
-            $curl = curl_init();
-            curl_setopt($curl, CURLOPT_URL, 'https://accounts.google.com/o/oauth2/token');
-            curl_setopt($curl, CURLOPT_POST, 5);
-            curl_setopt($curl, CURLOPT_POSTFIELDS, $post);
-            curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
-            curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
-            curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
-            $result = curl_exec($curl);
-            curl_close($curl);
 
-            $response = json_decode($result);
-            $accesstoken = $response->access_token;
-            $url = 'https://www.google.com/m8/feeds/contacts/default/full?max-results=120&oauth_token=' . $accesstoken;
-            $xmlresponse = $this->curl_file_get_contents($url);
-            if ((strlen(stristr($xmlresponse, 'Authorization required')) > 0) && (strlen(stristr($xmlresponse, 'Error ')) > 0)) {
-                echo "<h2>OOPS !! Something went wrong. Please try reloading the page.</h2>";
-                exit();
+            $lsaccesstoken = $this->getToken($_GET["code"])->access_token;
+            $lsurl = 'https://www.google.com/m8/feeds/contacts/default/full?max-results=120&oauth_token=' . $lsaccesstoken;
+            $lsxmlresponse = $this->getContents($lsurl);
+            if ((strlen(stristr($lsxmlresponse, 'Authorization required')) > 0) && (strlen(stristr($lsxmlresponse, 'Error ')) > 0)) {
+                return null;
             }
-            echo "<h3>Email Addresses:</h3>";
-            //echo $xmlresponse;
-            $xml = new \SimpleXMLElement($xmlresponse);
-            $xml->registerXPathNamespace('gd', 'http://schemas.google.com/g/2005');
-            $result = $xml->xpath('//gd:email');
-            $i = 0;
-            foreach ($result as $title) {
-                //echo $title->attributes()->address . "<br>";
-                $this[$i]['email'] = $title->attributes()->address;
-                //$this->append('email'$title->attributes()->address);
-                // $this->next();
-                $i++;
-            }
+            $loxml = new \SimpleXMLElement($lsxmlresponse);
+            $loxml->registerXPathNamespace('gd', 'http://schemas.google.com/g/2005');
+            $this->putContact($loxml);
         }
-    }
-    //getContacts
+    }//getContacts
+    
+    /**
+     * 
+     * @param type $loxml
+     */
+    public function putContact($loxml) {
+        $cp = 0;
+        foreach ($loxml->entry as $key) {
+            foreach ($key->xpath('gd:email') as $email) {
 
-    public function curl_file_get_contents($url) {
-        $curl = curl_init();
-        $userAgent = 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)';
-
-        curl_setopt($curl, CURLOPT_URL, $url); //The URL to fetch. This can also be set when initializing a session with curl_init().
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE); //TRUE to return the transfer as a string of the return value of curl_exec() instead of outputting it out directly.
-        curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 5); //The number of seconds to wait while trying to connect.	
-
-        curl_setopt($curl, CURLOPT_USERAGENT, $userAgent); //The contents of the "User-Agent: " header to be used in a HTTP request.
-        curl_setopt($curl, CURLOPT_FOLLOWLOCATION, TRUE); //To follow any "Location: " header that the server sends as part of the HTTP header.
-        curl_setopt($curl, CURLOPT_AUTOREFERER, TRUE); //To automatically set the Referer: field in requests where it follows a Location: redirect.
-        curl_setopt($curl, CURLOPT_TIMEOUT, 10); //The maximum number of seconds to allow cURL functions to execute.
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0); //To stop cURL from verifying the peer's certificate.
-        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
-
-        $contents = curl_exec($curl);
-        curl_close($curl);
-        return $contents;
-    }
-
-    public function readContacts() {
-        $laContacts = $this->getContacts();
-
-        if ($this != null) {
-            var_dump($laContacts);
-            for ($i = 0; $i < $this->count(); $i++)
-                echo 'email contact : ' . $this[$i]['email'] . '<br>';
+                if ((string) $key->title == "") {
+                    $this[$cp]['name'] = "No Name";
+                    
+                } else {
+                    $this[$cp]['name'] = (string) $key->title;
+                }
+                $this[$cp]['email'] = $email->attributes()->address;
+                $cp++;
+            }
+            
+       
         }
+    }//putContact
+    
+    /**
+     * 
+     * @param type $lsurl
+     * @return type
+     */
+    public function getContents($lsurl) {
+        $locurl = curl_init();
+        $louserAgent = 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)';
 
-        exit;
-    }
+        curl_setopt($locurl, CURLOPT_URL, $lsurl); //The URL to fetch. This can also be set when initializing a session with curl_init().
+        curl_setopt($locurl, CURLOPT_RETURNTRANSFER, TRUE); //TRUE to return the transfer as a string of the return value of curl_exec() instead of outputting it out directly.
+        curl_setopt($locurl, CURLOPT_CONNECTTIMEOUT, 5); //The number of seconds to wait while trying to connect.	
+
+        curl_setopt($locurl, CURLOPT_USERAGENT, $louserAgent); //The contents of the "User-Agent: " header to be used in a HTTP request.
+        curl_setopt($locurl, CURLOPT_FOLLOWLOCATION, TRUE); //To follow any "Location: " header that the server sends as part of the HTTP header.
+        curl_setopt($locurl, CURLOPT_AUTOREFERER, TRUE); //To automatically set the Referer: field in requests where it follows a Location: redirect.
+        curl_setopt($locurl, CURLOPT_TIMEOUT, 10); //The maximum number of seconds to allow cURL functions to execute.
+        curl_setopt($locurl, CURLOPT_SSL_VERIFYPEER, 0); //To stop cURL from verifying the peer's certificate.
+        curl_setopt($locurl, CURLOPT_SSL_VERIFYHOST, 0);
+
+        $locontents = curl_exec($locurl);
+        curl_close($locurl);
+        return $locontents;
+    }//getContent
 
     /**
-     * Sauvegarde
      * 
      */
-    public function saveContact($paInfoContact) {
-        $loContact = new \Web\WebBundle\Entity\Contact;
-        $loContact->setFirstname('');
-        $loContact->setLastname();
-        $loContact->setEmail();
+    public function readContacts() {
+        $this->getContacts();
 
-        //array_unique($laContact['emails']);
-        //var_dump($laContact);
+        if ($this != null) {
+            for ($i = 0; $i < $this->count(); $i++)
+                echo 'email contact : ' . $this[$i]['email'] .
+                ' =====> nom contact ' . $this[$i]['name'] . ' <br>';
+        }
+
+
         exit;
-    }
+    }//readContacts
 
 // test
 }
