@@ -13,8 +13,11 @@
     <![endif]-->
     {% block CSS %}
         {%     stylesheets
+        '@WebWebBundle/Resources/public/css/owl-carousel/owl.carousel.css'
+        '@WebWebBundle/Resources/public/css/owl-carousel/owl.theme.css'
         '@WebWebBundle/Resources/public/css/knacss/knacss.scss'
         '@WebWebBundle/Resources/public/css/default/home/header.scss'
+        '@WebWebBundle/Resources/public/css/default/home/rbzslider.scss'
         '@WebWebBundle/Resources/public/css/default/home/content.scss'
         '@WebWebBundle/Resources/public/css/default/home/footer.scss'
         %}
@@ -42,6 +45,9 @@
 
     <section id="section_RBZ_home_main" role="main" class="">
 {% block CONTENT %}
+    <div class="RBZ_home_slider">
+        
+    </div>
     <div class="RBZ_home_content">
         <div class="RBZ_home_community">
             <div class="RBZ_home_community_detail">
@@ -116,6 +122,12 @@
 {%     if app.session.get('debugMode') %}
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
 {%     endif %}
+    {%     javascripts
+    '@WebWebBundle/Resources/public/js/owl-carousel/owl.carousel.min.js'
+    '@WebWebBundle/Resources/public/js/global/Global.js'
+    %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {%     endjavascripts %}
 {% endblock %}
 </body>
 </html>
