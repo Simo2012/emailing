@@ -45,9 +45,10 @@
 
     <section id="section_RBZ_home_main" role="main" class="">
 {% block CONTENT %}
-    <div class="RBZ_home_slider">
-        
-    </div>
+    {##########}
+    {# SLIDER #}
+    {##########}
+    {% include "@WebWeb/Default/Index/rubslider.html.twig" %}
     <div class="RBZ_home_content">
         <div class="RBZ_home_community">
             <div class="RBZ_home_community_detail">
@@ -128,6 +129,11 @@
     %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
     {%     endjavascripts %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            goGlobal.ready();
+        });
+    </script>
 {% endblock %}
 </body>
 </html>
