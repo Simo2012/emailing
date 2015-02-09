@@ -85,12 +85,24 @@ parameters:
                 Recommendations:
                     label: publisherMenu_jobs
                     route: WebWebBundle_defaultJobs
+    # ---- Liste des identifiants api externes ----
+    web.api:
+        outlook:
+            client_id: 000000004C139749
+            client_secret: lhdePv718CLann8t1w6iyUMeKf-M-0Cm
+            redirect_uri: http://rubizz.anis.natexo.com/app_dev.php/
 
 services:
-    # ==== Auto Post sur Facebook ====
-    web.web.contactFacebook:
+    # ============= CONTACT VIA API ===================
+    # ==== Auto Post sur Facebook ==== 
+    web.web.contact.facebook:
         class: Web\WebBundle\Model\Contact\Facebook
         arguments: []
+    # ==== Recuperation liste de contact Outlook/hotmail ====
+    web.web.contact.outlook:
+        class: Web\WebBundle\Model\Contact\Outlook
+        arguments: ["%web.api%"]
+        
     # ==== Menu en twig ====
     web.web.twig.extension.menu:
         class: Web\WebBundle\Twig\Extension\MenuExtension
