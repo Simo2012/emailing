@@ -34,19 +34,24 @@ class Gmail extends ArrayIterator {
         $this->redirectUri = 'http://rubizz.mohammed.natexo.com';
     }// __constructeur
 
+
     /**
      * Return un lien permettant l'autorisation du membre
-     *
+     * 
+     * generateUrl 
+     * @return string
      */
     public function generateUrl() {
-        $lsUrl = 'https://accounts.google.com/o/oauth2/auth?client_id=' .
-                $this->clientId . '&redirect_uri=' . $this->redirectUri .
-                '&scope=https://www.google.com/m8/feeds/&response_type=code';
+        $lsUrl  =  'https://accounts.google.com/o/oauth2/auth?client_id=';
+        $lsUrl .=  $this->clientId . '&redirect_uri=' . $this->redirectUri;
+        $lsUrl .=  '&scope=https://www.google.com/m8/feeds/&response_type=code';
         return $lsUrl;
     }//generateUrl
     
     /**
+     * Permet d'avoir le token pour accéder a list des contacts
      * 
+     * getToken
      * @param type $locode
      * @return type
      */
@@ -78,14 +83,13 @@ class Gmail extends ArrayIterator {
     }//getToken
 
     /**
-     * function pour retourner less contacts 
+     * Accés a liste des contacts 
      * 
+     * GetContacts
      */
     public function getContacts() {
 
         if (isset($_GET["code"])) {
-
-
             $lsaccesstoken = $this->getToken($_GET["code"])->access_token;
             $lsurl = 'https://www.google.com/m8/feeds/contacts/default/full?max-results=120&oauth_token=' . $lsaccesstoken;
             $lsxmlresponse = $this->getContents($lsurl);
@@ -99,7 +103,9 @@ class Gmail extends ArrayIterator {
     }//getContacts
     
     /**
+     * Ajouter les contacts dans le tableau ArrayIterator
      * 
+     * putContact
      * @param type $loxml
      */
     public function putContact($loxml) {
@@ -122,7 +128,9 @@ class Gmail extends ArrayIterator {
     }//putContact
     
     /**
+     * Retourn le contenu des list des contact 
      * 
+     * getContents
      * @param type $lsurl
      * @return type
      */
@@ -147,7 +155,9 @@ class Gmail extends ArrayIterator {
     }//getContent
 
     /**
+     * lire les contacts dans le tableau array
      * 
+     * readContacts
      */
     public function readContacts() {
         $this->getContacts();
