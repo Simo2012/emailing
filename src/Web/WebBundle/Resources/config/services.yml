@@ -95,7 +95,15 @@ parameters:
             client_id: 1544677199143364
             client_secret: c66332c201f416b8423e3a457aa92e01
             redirect_uri: http://rubizz.anis.natexo.com/app_dev.php/
-
+    # ---- Liste des tags ( offer) ----
+    web.offerCategory:
+            quiz: web.web.offer.index.categories.quiz
+            quotation: web.web.offer.index.categories.quotation
+            travel: web.web.offer.index.categories.travel
+            ecommerce: web.web.offer.index.categories.ecommerce
+            finances: web.web.offer.index.categories.finances
+            divertissement: web.web.offer.index.categories.divertissement
+            special: web.web.offer.index.categories.special
 services:
     # ============= CONTACT VIA API ===================
     # ==== Auto Post sur Facebook ==== 

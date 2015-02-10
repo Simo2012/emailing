@@ -1,0 +1,35 @@
+{% extends "@WebWeb/layoutPage.html.twig" %}
+
+
+{% block CSS %}
+    {{ parent() }}
+    {% stylesheets
+    '@WebWebBundle/Resources/public/css/offer/index.scss'
+    %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block CONTENT %}
+
+        <h1>{{ "web.web.offer.index.title" | trans }}</h1>
+        {# Menu des categories (tag) #}
+        <div id="div_RBZ_offerCategory">
+            <ul>
+                <li><a href="">TAG</a></li>
+                {% for category in categories %}
+                    <li><a href="">{{ category | trans }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        {# liste des offres  #}
+        <div id="div_RBZ_offers">
+            {# inclusion de la macro des offres  #}
+            {% for offer in offers %}
+                <div>{{ offer.title }}</div>
+            {% endfor %}
+        </div>
+
+{% endblock %}
+
+

@@ -58,3 +58,11 @@ WebWebBundle_userPot:
 WebWebBundle_userCashIn:
     path:     /user/cash-in
     defaults: { _controller: "WebWebBundle:User:cashIn" }
+
+#==================================================
+# Offer controller : page offer, etc
+#==================================================
+# ---- Page index ----
+WebWebBundle_offerIndex:
+    path:     /offer/index
+    defaults: { _controller: "WebWebBundle:Offer:index" }

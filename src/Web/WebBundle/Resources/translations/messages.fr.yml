@@ -54,3 +54,13 @@ web.web.home.footer.condition: Conditions générales d'utilisation
 web.web.home.slide1.text1: Gagne de l'argent en partageant des offres avec tes amis
 web.web.home.slide1.text2: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis arcu a nisi ultrices consequat. Etiam in mollis ex.
 web.web.home.slide1.button: Commencer gratuitement
+
+# ==== Offer Page ====
+web.web.offer.index.title: Toutes les offres
+web.web.offer.index.categories.quiz : Jeux concours
+web.web.offer.index.categories.quotation : Devis en ligne
+web.web.offer.index.categories.travel: Voyages
+web.web.offer.index.categories.ecommerce: e-commerce
+web.web.offer.index.categories.finances : Finances
+web.web.offer.index.categories.divertissement: Divertissement
+web.web.offer.index.categories.special: Offres spéciales
