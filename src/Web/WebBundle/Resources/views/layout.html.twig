@@ -33,6 +33,8 @@
     <section id="section_RBZ_main" role="main" class="">
 {% block CONTENT %}{% endblock %}
     </section> <!-- section_RBZ_main -->
+<!-- popup -->
+<div id="div_RBZ_commonShadow"></div>
 
     <footer id="footer_RBZ_footer" role="contentinfo" class="">
 {% block FOOTER %}{% endblock %}
@@ -45,12 +47,14 @@
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
 {%     endif %}
     {%     javascripts '@WebWebBundle/Resources/public/js/Global/global.js'
+                       '@WebWebBundle/Resources/public/js/Global/popup.js'
     filter='?yui_js' %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
     {%     endjavascripts %}
     <script type="text/javascript">
         $(document).ready(function() {
             goGlobal.ready();
+            goPopup.ready();
         });
     </script>
     {% endspaceless %}
