@@ -1,0 +1,19 @@
+{% macro offer(offer) %}
+    <div class="RBZ_offer_content">
+        <img class="RBZ_offer_img" src="http://placehold.it/470x250">
+        <div class="RBZ_offer_body" id="RBZ_offer_body">
+            <p class="RBZ_offer_title">{{ offer.title }}</p>
+            <p class="RBZ_offer_description">{{ offer.subtitle }}<br> 
+                <a class="RBZ_offer_description_hide RBZ_hide">{{ offer.text }}</a>
+            </p>
+            <div class="RBZ_offer_border"></div>
+            <span class="RBZ_offer_price"> {{ offer.compensation }} </span><span class="RBZ_offer_pricedescription">{{ "offer.prixdescription" | trans }}</span>       
+            <div class="RBZ_offer_input">
+                <a href="#" class="RBZ_offer_link RBZ_hide">{{ "offer.mailling" | trans }}</a>
+                <a href="#" class="RBZ_offer_link RBZ_hide">{{ "offer.facebook" | trans }}</a>
+                <a href="#" class="RBZ_offer_link RBZ_hide">{{ "offer.twiter" | trans }} </a>
+                <a href="#" class="RBZ_actions">{{ "offer.recommander" | trans }}</a>
+            </div>
+        </div>         
+    </div>
+{% endmacro %}

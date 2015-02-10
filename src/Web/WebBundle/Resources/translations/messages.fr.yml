@@ -64,3 +64,11 @@ web.web.offer.index.categories.ecommerce: e-commerce
 web.web.offer.index.categories.finances : Finances
 web.web.offer.index.categories.divertissement: Divertissement
 web.web.offer.index.categories.special: Offres spéciales
+
+
+#========= Block Offre =============#
+offer.prixdescription: à chaque participation
+offer.recommander: RECOMMANDER
+offer.facebook: Publier sur Facebook
+offer.twiter: Publier sur Twitter
+offer.mailling: Envoyer à ma mailling List
