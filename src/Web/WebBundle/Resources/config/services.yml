@@ -91,13 +91,17 @@ parameters:
             client_id: 000000004C139749
             client_secret: lhdePv718CLann8t1w6iyUMeKf-M-0Cm
             redirect_uri: http://rubizz.anis.natexo.com/app_dev.php/
+        facebook:
+            client_id: 1544677199143364
+            client_secret: c66332c201f416b8423e3a457aa92e01
+            redirect_uri: http://rubizz.anis.natexo.com/app_dev.php/
 
 services:
     # ============= CONTACT VIA API ===================
     # ==== Auto Post sur Facebook ==== 
     web.web.contact.facebook:
         class: Web\WebBundle\Model\Contact\Facebook
-        arguments: []
+        arguments: ["%web.api%"]
     # ==== Recuperation liste de contact Outlook/hotmail ====
     web.web.contact.outlook:
         class: Web\WebBundle\Model\Contact\Outlook
