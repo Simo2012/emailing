@@ -110,6 +110,10 @@ services:
     web.web.contact.facebook:
         class: Web\WebBundle\Model\Contact\Facebook
         arguments: ["%web.api%"]
+    # ==== Auto Post sur Twitter ==== 
+    web.web.contact.twitter:
+        class: Web\WebBundle\Model\Contact\Twitter
+        arguments: []
     # ==== Recuperation liste de contact Outlook/hotmail ====
     web.web.contact.outlook:
         class: Web\WebBundle\Model\Contact\Outlook
