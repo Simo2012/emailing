@@ -101,7 +101,7 @@ class Offer
     /**
      * @var simplearray
      *
-     * @ORM\Column(name="category", type="simplearray", nullable=false)
+     * @ORM\Column(name="category", type="simple_array", nullable=false)
      */
     private $category;
 
@@ -373,10 +373,10 @@ class Offer
     /**
      * Set category
      *
-     * @param \simplearray $category
+     * @param array $category
      * @return Offer
      */
-    public function setCategory(\simplearray $category)
+    public function setCategory(array $category)
     {
         $this->category = $category;
 
