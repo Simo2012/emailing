@@ -123,3 +123,127 @@
     }
 
 }
+/* ==== Smartphone ==== */
+@media (max-width: 480px) {
+    .RBZ_offer_content {
+        width: 288px;
+        height: 278px;
+        margin: 0px auto;
+        position: relative;
+        &.RBZ_expanded .RBZ_offer_body {
+            height: 210px;
+            position: absolute;
+            top: 70px;
+
+        }
+        .RBZ_offer_img {
+            width: 288px;
+            height: 133px;
+        }
+
+        .RBZ_offer_body{
+            width: 288px;
+            height: 145px;
+            background: $white;
+            position: relative;
+            border-top: 1px solid $border-grey;
+            .RBZ_offer_title {
+                color: #817c77;
+                font: bold 16px 'Open Sans';
+                left: 20px;
+                margin: 0 10px 0 10px;
+            }
+            .RBZ_offer_description {
+                color: #817c77;
+                font: normal 12px 'Open Sans';
+                margin: 0 10px 0 10px;
+                .RBZ_offer_description_hide{
+                    color: #817c77;
+                    font: normal 10px 'Open Sans';
+                    margin: 0 10px 0 10px;
+                }                
+            }
+
+            .RBZ_offer_border {
+                border-top: 3px solid $border-grey;
+                margin-top: 30px;
+                margin-left: 15px;
+                width: 45px;
+                position: absolute; 
+                bottom: 89px;
+            }
+            .RBZ_offer_price {
+                position: relative;
+                margin-top: -15px;
+                color: #f04f61;
+                font: bold 20px 'Open Sans';
+                margin-left: 10px;
+                position: absolute; 
+                bottom: 65px;
+            }
+            .RBZ_offer_pricedescription {
+                float: bottom;
+                color: #676059;
+                font: italic 10px 'Open Sans';
+                margin-left: 10px;
+                margin: 20 20px 20px 20px;
+                position: absolute; 
+                bottom: 65px;
+                left: 60px;
+            }
+            .RBZ_offer_input{
+                width: 150px;
+                height: 32px;
+                border-radius:2px;
+                display:block;
+                cursor:pointer;
+                color:#ffffff;
+                font: bold 13px 'Open Sans';
+                text-align: center;
+                position: absolute; 
+                right:  72px;
+                bottom: 15px;
+                border: 1px solid $border-grey;
+                &.RBZ_expanded {
+                    height: 120px;
+                }
+                .RBZ_offer_link{
+                    width: 100%;
+                    height: 30px;
+                    background-color: $white;
+                    border-radius:2px;
+                    cursor:pointer;
+                    color:#cbcbcb;
+                    font: bold 11px 'Open Sans';          
+                    text-decoration:none;
+                    text-align: center;
+                    display: block;
+                }
+                .RBZ_actions{
+                    width: 100%;
+                    height: 30px;
+                    background-color: $red-banner;
+                    border-radius:2px;
+                    cursor:pointer;
+                    color:#ffffff;
+                    font: bold 13px 'Open Sans';          
+                    text-decoration:none;
+                    text-align: center;
+                    display: block;
+                }
+                .RBZ_offer_link, .RBZ_actions {
+                    &.RBZ_hide {
+                        display: none;
+                    }
+                }
+                .RBZ_offer_link:hover{
+                    background-color: #cbcbcb;
+                    cursor:pointer;
+                    color:$white;
+                }
+            }
+        }
+
+    }
+    
+}
