@@ -126,12 +126,15 @@
     {%     javascripts
     '@WebWebBundle/Resources/public/js/owl-carousel/owl.carousel.min.js'
     '@WebWebBundle/Resources/public/js/global/Global.js'
+    '@WebWebBundle/Resources/public/js/default/Index.js'
     %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
     {%     endjavascripts %}
     <script type="text/javascript">
         $(document).ready(function() {
             goGlobal.ready();
+            // ==== RUB Slider ====
+            goIndex.rubSlider();
         });
     </script>
 {% endblock %}
