@@ -1,5 +1,5 @@
 {% extends "@WebWeb/layoutPage.html.twig" %}
-
+{% import "@WebWeb/macros.html.twig" as macro %}
 
 {% block CSS %}
     {{ parent() }}
@@ -26,10 +26,8 @@
         <div id="div_RBZ_offers">
             {# inclusion de la macro des offres  #}
             {% for offer in offers %}
-                <div>{{ offer.title }}</div>
+                {{ macro.offer(offer) }}
             {% endfor %}
         </div>
 
 {% endblock %}
-
-

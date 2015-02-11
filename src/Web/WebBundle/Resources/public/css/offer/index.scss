@@ -3,40 +3,24 @@
 @import "../global/_config";
 
 //=== Menu des categories (tag)
-#div_RBZ_offerCategory {
-   margin-bottom: 30px;
-  height: 20px;
-  line-height: 20px;
-  ul {
-    list-style: none;
-    padding:0;
-    display: inline-block;
-    li {
-      list-style: none;
-      display: inline-block;
-      font-size: 12px;
-      margin-right: 20px;
-      text-align: center;
-      vertical-align: middle;
-      a {
-        text-transform: uppercase;
-        text-decoration: none;
-        color : $gray;
-      }
-      &.active a, a:hover {
-        font-weight: 600;
-      }
-    }
+#div_RBZ_stats {
+  margin-bottom: 30px;
+    div {
+        display: inline-block;
   }
+}
+
+#div_RBZ_bar {
+    width: 50%;
+    margin-right: 120px;
+}
+#div_RBZ_donut {
+    width: 30%;
 }
 
 //=== inclusion de la macro des offres (tag)
 #div_RBZ_offers {
   div {
-    width: 450px;
-    height: 325px;
     display: inline-block;
-    margin: 0 20px 30px 0px;
-    background-color: #000;
   }
 }

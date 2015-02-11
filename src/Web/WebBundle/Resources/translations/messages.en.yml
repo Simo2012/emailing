@@ -42,3 +42,7 @@ web.web.offer.index.categories.ecommerce: web.web.offer.index.categories.ecommer
 web.web.offer.index.categories.finances : finances
 web.web.offer.index.categories.divertissement: divertissement
 web.web.offer.index.categories.special: special
+
+# ==== Home Page ====
+web.web.home.index.price.title: Price
+web.web.home.index.offer.title: Last offers available

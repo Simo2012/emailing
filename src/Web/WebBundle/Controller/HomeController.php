@@ -25,6 +25,12 @@ class HomeController extends Controller
      */
     public function indexAction()
     {
-        return array();
+        $loManager = $this->getDoctrine()->getManager();
+        $loOffers = $loManager->getRepository('WebWebBundle:Offer')->findBy(array(), array(), 6);
+
+        return array(
+            'categories' => $this->container->getParameter('web.offerCategory'),
+            'offers' => $loOffers,
+        );
     } // indexAction
 }

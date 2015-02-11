@@ -1,5 +1,49 @@
 {% extends "@WebWeb/layoutPage.html.twig" %}
+{% import "@WebWeb/macros.html.twig" as macro %}
+
+{% block CSS %}
+    {{ parent() }}
+    {% stylesheets
+    '@WebWebBundle/Resources/public/css/offer/index.scss'
+    %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+    {% endstylesheets %}
+{% endblock %}
+{% block JAVASCRIPT %}
+    {{     parent() }}
+    {%     javascripts '@WebWebBundle/Resources/public/js/chartjs/Chart.js'
+                       '@WebWebBundle/Resources/public/js/home/Home.js'
+    %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {%     endjavascripts %}
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            goHome.ready();
+        });
+    </script>
+{% endblock %}
 
 {% block CONTENT %}
-    <div class="RBZ_wrapper">Home</div>
+
+    <h1>{{ "web.web.home.index.price.title" | trans }}</h1>
+    {# Graphiques des stats #}
+    <div id="div_RBZ_stats">
+        <div id="div_RBZ_bar">
+            <canvas id="canavs_RBZ_line" height="450" width="600"/>
+        </div>
+        <div id="div_RBZ_donut">
+            <canvas id="canavs_RBZ_donut" width="500" height="500"/>
+        </div>
+    </div>
+
+    <h1>{{ "web.web.home.index.offer.title" | trans }}</h1>
+    {# liste des offres  #}
+    <div id="div_RBZ_offers">
+        {# inclusion de la macro des offres  #}
+        {% for offer in offers %}
+            {{ macro.offer(offer) }}
+        {% endfor %}
+    </div>
+
 {% endblock %}
