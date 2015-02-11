@@ -16,10 +16,10 @@
         '@WebWebBundle/Resources/public/css/owl-carousel/owl.carousel.css'
         '@WebWebBundle/Resources/public/css/owl-carousel/owl.theme.css'
         '@WebWebBundle/Resources/public/css/knacss/knacss.scss'
-        '@WebWebBundle/Resources/public/css/default/home/header.scss'
-        '@WebWebBundle/Resources/public/css/default/home/rbzslider.scss'
-        '@WebWebBundle/Resources/public/css/default/home/content.scss'
-        '@WebWebBundle/Resources/public/css/default/home/footer.scss'
+        '@WebWebBundle/Resources/public/css/default/index/header.scss'
+        '@WebWebBundle/Resources/public/css/default/index/rbzslider.scss'
+        '@WebWebBundle/Resources/public/css/default/index/content.scss'
+        '@WebWebBundle/Resources/public/css/default/index/footer.scss'
         %}
         <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
         {%     endstylesheets %}
@@ -29,89 +29,89 @@
     	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
     {%     endif %}
 </head>
-<body class="RBZ_home_{{ app.request.locale }} RBZ_home_{{ app.request.locale | slice(0, 2) }}">
-    <header id="header_RBZ_home_header" role="banner" class="">
+<body class="RBZ_default_{{ app.request.locale }} RBZ_default_{{ app.request.locale | slice(0, 2) }}">
+    <header id="header_RBZ_default_header" role="banner" class="">
 {% block HEADER %}
-	<div class="RBZ_home_head">
-		<img class="RBZ_home_img_rubizzRed" src="{{ asset("/bundles/webweb/images/home/rubizz_red.png") }}">
-		<div class="RBZ_home_loginMenu">
-			<span class="RBZ_home_connection"><a href="">{{ "web.web.home.connection" | trans }}</a></span>
+	<div class="RBZ_default_head">
+		<img class="RBZ_default_img_rubizzRed" src="{{ asset("/bundles/webweb/images/home/rubizz_red.png") }}">
+		<div class="RBZ_default_loginMenu">
+			<span class="RBZ_default_connection"><a href="">{{ "web.web.default.index.connection" | trans }}</a></span>
             |
-			<span class="RBZ_home_register"><a href="">{{ "web.web.home.register" | trans }}</a></span>
+			<span class="RBZ_default_register"><a href="">{{ "web.web.default.index.register" | trans }}</a></span>
 		</div>
 	</div>
 {% endblock %}
     </header>
 
-    <section id="section_RBZ_home_main" role="main" class="">
+    <section id="section_RBZ_default_main" role="main" class="">
 {% block CONTENT %}
     {##########}
     {# SLIDER #}
     {##########}
     {% include "@WebWeb/Default/Index/rubslider.html.twig" %}
-    <div class="RBZ_home_content">
-        <div class="RBZ_home_community">
-            <div class="RBZ_home_community_detail">
-                <p class="RBZ_home_community_title">{{ "web.web.home.community.title" | trans }}</p>
-                <p class="RBZ_home_community_content">{{ "web.web.home.community.content" | trans }}</p>
-                <p class="RBZ_home_community_manage">{{ "web.web.home.community.manage" | trans }} ></p>
+    <div class="RBZ_default_content">
+        <div class="RBZ_default_community">
+            <div class="RBZ_default_community_detail">
+                <p class="RBZ_default_community_title">{{ "web.web.default.index.community.title" | trans }}</p>
+                <p class="RBZ_default_community_content">{{ "web.web.default.index.community.content" | trans }}</p>
+                <p class="RBZ_default_community_manage">{{ "web.web.default.index.community.manage" | trans }} ></p>
             </div>
         </div>
-        <div class="RBZ_home_mailinglist">
-            <div class="RBZ_home_mailinglist_detail">
-                <p class="RBZ_home_mailinglist_title">{{ "web.web.home.mailinglist.title" | trans }}</p>
-                <p class="RBZ_home_mailinglist_content">{{ "web.web.home.mailinglist.content" | trans }}</p>
-                <p class="RBZ_home_mailinglist_add">{{ "web.web.home.mailinglist.add" | trans }} ></p>
+        <div class="RBZ_default_mailinglist">
+            <div class="RBZ_default_mailinglist_detail">
+                <p class="RBZ_default_mailinglist_title">{{ "web.web.default.index.mailinglist.title" | trans }}</p>
+                <p class="RBZ_default_mailinglist_content">{{ "web.web.default.index.mailinglist.content" | trans }}</p>
+                <p class="RBZ_default_mailinglist_add">{{ "web.web.default.index.mailinglist.add" | trans }} ></p>
             </div>
         </div>
-        <div class="RBZ_home_cagnotte">
-            <div class="RBZ_home_cagnotte_detail">
-                <p class="RBZ_home_cagnotte_title">{{ "web.web.home.cagnotte.title" | trans }}</p>
-                <p class="RBZ_home_cagnotte_content">{{ "web.web.home.cagnotte.content" | trans }}</p>
-                <p class="RBZ_home_cagnotte_begin">{{ "web.web.home.cagnotte.begin" | trans }} ></p>
+        <div class="RBZ_default_cagnotte">
+            <div class="RBZ_default_cagnotte_detail">
+                <p class="RBZ_default_cagnotte_title">{{ "web.web.default.index.cagnotte.title" | trans }}</p>
+                <p class="RBZ_default_cagnotte_content">{{ "web.web.default.index.cagnotte.content" | trans }}</p>
+                <p class="RBZ_default_cagnotte_begin">{{ "web.web.default.index.cagnotte.begin" | trans }} ></p>
             </div>
         </div>
-        <div class="RBZ_home_follow">
-            <div class="RBZ_home_chrisbale">
-                <p class="RBZ_home_followdetail">{{ "web.web.home.christbale.detail" | trans }}</p>
-                <p class="RBZ_home_followsign">{{ "web.web.home.christbale.sign" | trans }}</p>
+        <div class="RBZ_default_follow">
+            <div class="RBZ_default_chrisbale">
+                <p class="RBZ_default_followdetail">{{ "web.web.default.index.christbale.detail" | trans }}</p>
+                <p class="RBZ_default_followsign">{{ "web.web.default.index.christbale.sign" | trans }}</p>
             </div>
-            <div class="RBZ_home_emmawat">
-                <p class="RBZ_home_followdetail">{{ "web.web.home.emmawats.detail" | trans }}</p>
-                <p class="RBZ_home_followsign">{{ "web.web.home.emmawats.sign" | trans }}</p>
+            <div class="RBZ_default_emmawat">
+                <p class="RBZ_default_followdetail">{{ "web.web.default.index.emmawats.detail" | trans }}</p>
+                <p class="RBZ_default_followsign">{{ "web.web.default.index.emmawats.sign" | trans }}</p>
             </div>
         </div>
     </div>
 {% endblock %}
-    </section> <!-- section_RBZ_home_main -->
+    </section> <!-- section_RBZ_default_main -->
 
-    <footer id="footer_RBZ_home_footer" role="contentinfo" class="">
+    <footer id="footer_RBZ_default_footer" role="contentinfo" class="">
 {% block FOOTER %}
-    <div class="RBZ_home_footer">
-        <div class="RBZ_home_clients"></div>
-        <div class="RBZ_home_footer_content">
-            <div class="RBZ_home_foot_menu1">
-                <p class=""><a href="">{{ "web.web.home.footer.about" | trans }}</a></p>
-                <p class=""><a href="">{{ "web.web.home.footer.faq" | trans }}</a></p>
-                <p class=""><a href="">{{ "web.web.home.footer.contact" | trans }}</a></p>
-                <p class=""><a href="">{{ "web.web.home.footer.jobs" | trans }}</a></p>
-                <p class=""><a href="">{{ "web.web.home.footer.advertisers" | trans }}</a></p>
+    <div class="RBZ_default_footer">
+        <div class="RBZ_default_clients"></div>
+        <div class="RBZ_default_footer_content">
+            <div class="RBZ_default_foot_menu1">
+                <p class=""><a href="">{{ "web.web.default.index.footer.about" | trans }}</a></p>
+                <p class=""><a href="">{{ "web.web.default.index.footer.faq" | trans }}</a></p>
+                <p class=""><a href="">{{ "web.web.default.index.footer.contact" | trans }}</a></p>
+                <p class=""><a href="">{{ "web.web.default.index.footer.jobs" | trans }}</a></p>
+                <p class=""><a href="">{{ "web.web.default.index.footer.advertisers" | trans }}</a></p>
             </div>
-            <div class="RBZ_home_foot_menu2">
-                <p class=""><a href="">{{ "web.web.home.footer.alloffers" | trans }}</a></p>
-                <p class=""><a href="">{{ "web.web.home.footer.maillist" | trans }}</a></p>
-                <p class=""><a href="">{{ "web.web.home.footer.howwork" | trans }}</a></p>
+            <div class="RBZ_default_foot_menu2">
+                <p class=""><a href="">{{ "web.web.default.index.footer.alloffers" | trans }}</a></p>
+                <p class=""><a href="">{{ "web.web.default.index.footer.maillist" | trans }}</a></p>
+                <p class=""><a href="">{{ "web.web.default.index.footer.howwork" | trans }}</a></p>
             </div>
-            <img class="RBZ_home_foot_rubizzblack" src="{{ asset("/bundles/webweb/images/home/rubizz_black.png") }}">
+            <img class="RBZ_default_foot_rubizzblack" src="{{ asset("/bundles/webweb/images/home/rubizz_black.png") }}">
             <div class="RBZ_clear"></div>
-            <div class="RBZ_home_fb"><a href="" class="RBZ_home_a100"></a></div>
-            <div class="RBZ_home_tw"><a href="" class="RBZ_home_a100"></a></div>
+            <div class="RBZ_default_fb"><a href="" class="RBZ_default_a100"></a></div>
+            <div class="RBZ_default_tw"><a href="" class="RBZ_default_a100"></a></div>
             <div class="RBZ_clear"></div>
-            <div class="RBZ_home_foot_menu3">
-                <span class="RBZ_home_bynatexo"><a href="">{{ "web.web.home.footer.bynatexo" | trans | replace({'%b%' : '<b>', '%eb%' : '</b>'}) | raw }}</a></span>
-                <span class="RBZ_home_allrights"><a href="">{{ "web.web.home.footer.allrights" | trans }}</a></span>
-                <span class="RBZ_home_mentions"><a href="">{{ "web.web.home.footer.mentions" | trans }}</a></span>
-                <span class="RBZ_home_conditions"><a href="">{{ "web.web.home.footer.condition" | trans }}</a></span>
+            <div class="RBZ_default_foot_menu3">
+                <span class="RBZ_default_bynatexo"><a href="">{{ "web.web.default.index.footer.bynatexo" | trans | replace({'%b%' : '<b>', '%eb%' : '</b>'}) | raw }}</a></span>
+                <span class="RBZ_default_allrights"><a href="">{{ "web.web.default.index.footer.allrights" | trans }}</a></span>
+                <span class="RBZ_default_mentions"><a href="">{{ "web.web.default.index.footer.mentions" | trans }}</a></span>
+                <span class="RBZ_default_conditions"><a href="">{{ "web.web.default.index.footer.condition" | trans }}</a></span>
             </div>
         </div>
     </div>

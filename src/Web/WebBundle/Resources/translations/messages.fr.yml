@@ -24,36 +24,36 @@ footer.credits:   © <span>Rubizz</span> by Natexo.
 web.web.layout.headerTitle: Rubizz
 
 # ==== Home Page ====
-web.web.home.connection: CONNEXION
-web.web.home.register: S'INSCRIRE
-web.web.home.community.title: Community 3.0
-web.web.home.community.content: Vous êtes bloggeur, trendsetter, twittos ou juste bien entouré, vous pouvez monétiser votre notoriété simplement et gratuitemnt
-web.web.home.community.manage: Gérez votre communauté
-web.web.home.mailinglist.title: Mailing List
-web.web.home.mailinglist.content: Ajoutez vos amis à partir de votre compte email, Facebook, Twitter ou Google + et créez votre propre Mailing List
-web.web.home.mailinglist.add: Ajoutez des contacts
-web.web.home.cagnotte.title: Encaissez votre cagnotte
-web.web.home.cagnotte.content: En recommandant des offres à vos contacts, vous gagnez de l'argent à chacune de leur contribution.
-web.web.home.cagnotte.begin: Commencez maintenant
-web.web.home.christbale.detail: Avec plus de 3 000 followers, j'ai pu leur faire bénéficier d'offres vraiment interessantes et orientées sur mon secteur.
-web.web.home.christbale.sign: Christian Bale - @c-bale
-web.web.home.emmawats.detail: Avec plus de 3 000 followers, j'ai pu leur faire bénéficier d'offres vraiment interessantes et orientées sur mon secteur.
-web.web.home.emmawats.sign: Eùùa Watsp - @Emma-ww
-web.web.home.footer.about: A propos
-web.web.home.footer.faq: FAQ
-web.web.home.footer.contact: Contact
-web.web.home.footer.jobs: Jobs
-web.web.home.footer.advertisers: Annonceurs
-web.web.home.footer.alloffers: Toutes les offres
-web.web.home.footer.maillist: Mailing list
-web.web.home.footer.howwork: Comment ça marche ?
-web.web.home.footer.bynatexo: 2014 %b%Rubizz%eb% by Natexo.
-web.web.home.footer.allrights: Tous droits réservés
-web.web.home.footer.mentions: Mentions légales
-web.web.home.footer.condition: Conditions générales d'utilisation
-web.web.home.slide1.text1: Gagne de l'argent en partageant des offres avec tes amis
-web.web.home.slide1.text2: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis arcu a nisi ultrices consequat. Etiam in mollis ex.
-web.web.home.slide1.button: Commencer gratuitement
+web.web.default.index.connection: CONNEXION
+web.web.default.index.register: S'INSCRIRE
+web.web.default.index.community.title: Community 3.0
+web.web.default.index.community.content: Vous êtes bloggeur, trendsetter, twittos ou juste bien entouré, vous pouvez monétiser votre notoriété simplement et gratuitemnt
+web.web.default.index.community.manage: Gérez votre communauté
+web.web.default.index.mailinglist.title: Mailing List
+web.web.default.index.mailinglist.content: Ajoutez vos amis à partir de votre compte email, Facebook, Twitter ou Google + et créez votre propre Mailing List
+web.web.default.index.mailinglist.add: Ajoutez des contacts
+web.web.default.index.cagnotte.title: Encaissez votre cagnotte
+web.web.default.index.cagnotte.content: En recommandant des offres à vos contacts, vous gagnez de l'argent à chacune de leur contribution.
+web.web.default.index.cagnotte.begin: Commencez maintenant
+web.web.default.index.christbale.detail: Avec plus de 3 000 followers, j'ai pu leur faire bénéficier d'offres vraiment interessantes et orientées sur mon secteur.
+web.web.default.index.christbale.sign: Christian Bale - @c-bale
+web.web.default.index.emmawats.detail: Avec plus de 3 000 followers, j'ai pu leur faire bénéficier d'offres vraiment interessantes et orientées sur mon secteur.
+web.web.default.index.emmawats.sign: Eùùa Watsp - @Emma-ww
+web.web.default.index.footer.about: A propos
+web.web.default.index.footer.faq: FAQ
+web.web.default.index.footer.contact: Contact
+web.web.default.index.footer.jobs: Jobs
+web.web.default.index.footer.advertisers: Annonceurs
+web.web.default.index.footer.alloffers: Toutes les offres
+web.web.default.index.footer.maillist: Mailing list
+web.web.default.index.footer.howwork: Comment ça marche ?
+web.web.default.index.footer.bynatexo: 2014 %b%Rubizz%eb% by Natexo.
+web.web.default.index.footer.allrights: Tous droits réservés
+web.web.default.index.footer.mentions: Mentions légales
+web.web.default.index.footer.condition: Conditions générales d'utilisation
+web.web.default.index.slide1.text1: Gagne de l'argent en partageant des offres avec tes amis
+web.web.default.index.slide1.text2: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis arcu a nisi ultrices consequat. Etiam in mollis ex.
+web.web.default.index.slide1.button: Commencer gratuitement
 
 # ==== Offer Page ====
 web.web.offer.index.title: Toutes les offres
