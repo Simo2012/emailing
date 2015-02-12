@@ -26,6 +26,17 @@ WebWebBundle_defaultJobs:
     path:     /jobs
     defaults: { _controller: "WebWebBundle:Default:jobs" }
 
+#==================================================
+# Home controller : page d'accueil interne
+#==================================================
+# ---- Page d'accueil interne ----
+WebWebBundle_homeIndex:
+    path:     /home
+    defaults: { _controller: "WebWebBundle:Home:index" }
+# ---- reference graphique ----
+WebWebBundle_homeGraphicStandards:
+    path:     /graphicsStandards
+    defaults: { _controller: "WebWebBundle:Home:graphicsStandards" }
 
 #==================================================
 # User controller : page profile, etc

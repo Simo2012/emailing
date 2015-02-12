@@ -118,7 +118,13 @@ services:
     web.web.contact.outlook:
         class: Web\WebBundle\Model\Contact\Outlook
         arguments: ["%web.api%"]
-        
+
+    # ==== Eléments de formulaires ====
+    flip:
+       class: Web\WebBundle\Form\Type\FlipType
+       tags:
+           - { name: form.type, alias: flip }
+
     # ==== Menu en twig ====
     web.web.twig.extension.menu:
         class: Web\WebBundle\Twig\Extension\MenuExtension

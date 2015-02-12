@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+div.RBZ_input {
+  margin-bottom: 20px;
+  label {font-family: 'Open Sans', sans-serif; font-size: 14px;color:#333333;display: block;margin:0;line-height: 30px;}
+  input[type=text],
+  input[type=email],
+  input[type=password] {background-color: #f8f8f8; border: 1px solid #d9d8d7;height: 30px;line-height: 30px;width: 100%;display: block;font-size:14px; color:#c7c7c7}
+
+  &.KNS_row {
+    label {
+      vertical-align: middle;margin: 0;
+    }
+    input[type=text],
+    input[type=email],
+    input[type=password] {width: 260px;display: table-cell;}
+    label {display: table-cell;color:#4d4d4d;font-size: 11px;}
+  }
+  &.RBZ_error {
+    input[type=text],
+    input[type=email],
+    input[type=password] {border: 1px solid $red-banner;padding-right: 30px;}
+  }
+}
+
+div.RBZ_flip {position: relative;width: 120px;-webkit-user-select:none; -moz-user-select:none; -ms-user-select: none; margin-bottom: 10px;
+  .RBZ_flip_checkbox { display: none; }
+  .RBZ_flip_label { display: block; overflow: hidden; cursor: pointer;border-radius: 20px;}
+  .RBZ_flip_inner { width: 200%; margin-left: -100%; -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.3s ease-in 0s; -o-transition: margin 0.3s ease-in 0s; transition: margin 0.3s ease-in 0s;}
+  .RBZ_flip_inner_left, .RBZ_flip_inner_right {float: left; width: 50%; height: 30px; padding: 0; line-height: 30px; font-size: 10px; color: white; font-family: 'Open Sans Semibold', sans-serif;text-align: center;}
+  .RBZ_flip_inner_left { padding-right: 25px; background-color: #6fc6bf; color: #FFFFFF; }
+  .RBZ_flip_inner_right { padding-left: 25px; background-color: #f34d5e; color: #FFFFFF; }
+  .RBZ_flip_switch { width: 14px; margin: 6px; background: #FFFFFF; border: 2px solid #ffffff; border-radius: 20px; position: absolute; top: 0; bottom: 0; right: 90px; -moz-transition: all 0.3s ease-in 0s; -webkit-transition: all 0.3s ease-in 0s; -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s; }
+  .RBZ_flip_checkbox:checked + .RBZ_flip_label .RBZ_flip_inner { margin-left: 0; }
+  .RBZ_flip_checkbox:checked + .RBZ_flip_label .RBZ_flip_switch { right: 10px; }
+}

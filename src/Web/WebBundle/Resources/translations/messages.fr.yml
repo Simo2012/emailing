@@ -79,3 +79,15 @@ offer.recommander: RECOMMANDER
 offer.facebook: Publier sur Facebook
 offer.twiter: Publier sur Twitter
 offer.mailling: Envoyer à ma mailling List
+offer.mailling: Envoyer à ma mailling List
+
+# ==== Home Page ====
+web.web.home.index.price.title: Vos gains
+web.web.home.index.offer.title: Dernières offres disponibles
+web.web.home.index.donut.piggyBank: Ma cagnotte
+web.web.home.index.donut.piggyBankTouch: Encaisser ma cagnotte
+web.web.home.index.donut.detail: Détailweb.web.home.index.offer.title: Dernières offres disponibles
+
+# ==== Standard Graphiques ====
+graphic.standards.form.text1: "{{ form_row(form.text1) }}"
+graphic.standards.form.text2: '<div class="RBZ_input">{{ form_label(form.text2) }} {{ form_widget(form.text2) }}</div>'
