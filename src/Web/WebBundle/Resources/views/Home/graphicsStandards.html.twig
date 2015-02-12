@@ -136,17 +136,17 @@ $poBuilder->add('text2', 'text', $laParams);
             </div>
             <div class="KNS_mod KNS_end KNS_w50">
                 <textarea name="" id="flip" cols="30" rows="2">
-        $laParams = array(
-            'label'     => 'web.web.form.sample_text',
-            'attr'      => array(
-                'checked_label'    => 'web.web.form.flip.yes',
-                'unchecked_label'  => 'web.web.form.flip.no',
-            ),
-            'required' => false,
-        );
-        $poBuilder->add('flip', 'flip', $laParams);
+$laParams = array(
+    'label'     => 'web.web.form.sample_text',
+    'attr'      => array(
+        'checked_label'    => 'web.web.form.flip.yes',
+        'unchecked_label'  => 'web.web.form.flip.no',
+    ),
+    'required' => false,
+);
+$poBuilder->add('flip', 'flip', $laParams);
 
-                    {{ "graphic.standards.form.flip" | trans }}
+{{ "graphic.standards.form.flip" | trans }}
                 </textarea>
             </div>
         </div>

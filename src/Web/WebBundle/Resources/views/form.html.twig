@@ -6,3 +6,20 @@
         </div>
     {%  endspaceless %}
 {% endblock form_row %}
+
+
+{# =========================== #}
+{# Affichage des flip checkbox #}
+{# =========================== #}
+{% block flip_widget %}
+    <div class="RBZ_flip">
+        <input type="checkbox" class="RBZ_flip_checkbox" {{ block('widget_attributes') }}{{ checked ? ' checked="checked"' : '' }} autocomplete="off" />
+        <label class="RBZ_flip_label" for="{{ id }}">
+            <div class="RBZ_flip_inner">
+                <div class="RBZ_flip_inner_left">{{ attr.checked_label | trans}}</div>
+                <div class="RBZ_flip_inner_right">{{ attr.unchecked_label | trans }}</div>
+            </div>
+            <div class="RBZ_flip_switch"></div>
+        </label>
+    </div>
+{% endblock %}

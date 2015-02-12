@@ -92,3 +92,6 @@ web.web.home.index.offer.title: Dernières offres disponibles
 # ==== Standard Graphiques ====
 graphic.standards.form.text1: "{{ form_row(form.text1) }}"
 graphic.standards.form.text2: '<div class="RBZ_input">{{ form_label(form.text2) }} {{ form_widget(form.text2) }}</div>'
+graphic.standards.form.flip: "{{ form_row(form.flip) }}"
+web.web.form.flip.yes:  oui
+web.web.form.flip.no: non
