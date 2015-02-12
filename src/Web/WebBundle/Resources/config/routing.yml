@@ -26,14 +26,6 @@ WebWebBundle_defaultJobs:
     path:     /jobs
     defaults: { _controller: "WebWebBundle:Default:jobs" }
 
-#==================================================
-# Home controller : page d'accueil interne
-#==================================================
-# ---- Page d'accueil interne ----
-WebWebBundle_homeIndex:
-    path:     /home
-    defaults: { _controller: "WebWebBundle:Home:index" }
-
 
 #==================================================
 # User controller : page profile, etc
@@ -66,3 +58,9 @@ WebWebBundle_userCashIn:
 WebWebBundle_offerIndex:
     path:     /offer/index
     defaults: { _controller: "WebWebBundle:Offer:index" }
+
+# ---- Page list ----
+WebWebBundle_offerList:
+    path:     /offer/list
+    defaults: { _controller: "WebWebBundle:Offer:list" }    
+

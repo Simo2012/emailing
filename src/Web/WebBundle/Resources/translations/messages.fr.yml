@@ -23,7 +23,7 @@ publisherMenu_jobs:               Jobs
 footer.credits:   © <span>Rubizz</span> by Natexo.
 web.web.layout.headerTitle: Rubizz
 
-# ==== Home Page ====
+# ==== Default Page ====
 web.web.default.index.connection: CONNEXION
 web.web.default.index.register: S'INSCRIRE
 web.web.default.index.community.title: Community 3.0
@@ -56,26 +56,26 @@ web.web.default.index.slide1.text2: Lorem ipsum dolor sit amet, consectetur adip
 web.web.default.index.slide1.button: Commencer gratuitement
 
 # ==== Offer Page ====
-web.web.offer.index.title: Toutes les offres
-web.web.offer.index.categories.quiz : Jeux concours
-web.web.offer.index.categories.quotation : Devis en ligne
-web.web.offer.index.categories.travel: Voyages
-web.web.offer.index.categories.ecommerce: e-commerce
-web.web.offer.index.categories.finances : Finances
-web.web.offer.index.categories.divertissement: Divertissement
-web.web.offer.index.categories.special: Offres spéciales
+# ==== Offer Page (index) ====
+web.web.offer.index.price.title: Vos gains
+web.web.offer.index.offer.title: Dernières offres disponibles
+web.web.offer.index.donut.piggyBank: Ma cagnotte
+web.web.offer.index.donut.piggyBankTouch: Encaisser ma cagnotte
+web.web.offer.index.donut.detail: Détail
+# ==== Offer Page (list) ====
+web.web.offer.list.title: Toutes les offres
+web.web.offer.list.categories.quiz : Jeux concours
+web.web.offer.list.categories.quotation : Devis en ligne
+web.web.offer.list.categories.travel: Voyages
+web.web.offer.list.categories.ecommerce: e-commerce
+web.web.offer.list.categories.finances : Finances
+web.web.offer.list.categories.divertissement: Divertissement
+web.web.offer.list.categories.special: Offres spéciales
 
 
-#========= Block Offre =============#
+#========= Block Offre macro =============#
 offer.prixdescription: à chaque participation
 offer.recommander: RECOMMANDER
 offer.facebook: Publier sur Facebook
 offer.twiter: Publier sur Twitter
 offer.mailling: Envoyer à ma mailling List
-
-# ==== Home Page ====
-web.web.home.index.price.title: Vos gains
-web.web.home.index.offer.title: Dernières offres disponibles
-web.web.home.index.donut.piggyBank: Ma cagnotte
-web.web.home.index.donut.piggyBankTouch: Encaisser ma cagnotte
-web.web.home.index.donut.detail: Détail

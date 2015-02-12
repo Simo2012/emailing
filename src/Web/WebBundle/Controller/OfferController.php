@@ -19,11 +19,28 @@ use Web\WebBundle\Entity\Offer;
 class OfferController extends Controller
 {
     /**
-     * Page d'accueil
+     * Page d'accueil des offres
      *
      * @Template()
      */
     public function indexAction()
+    {
+        $loManager = $this->getDoctrine()->getManager();
+        $loOffers = $loManager->getRepository('WebWebBundle:Offer')->findBy(array(), array(), 6);
+
+        return array(
+            'categories' => $this->container->getParameter('web.offerCategory'),
+            'offers' => $loOffers,
+        );
+    } // indexAction
+    
+    
+    /**
+     * Page toutes les offres
+     *
+     * @Template()
+     */
+    public function listAction()
     {
         $loManager = $this->getDoctrine()->getManager();
         $loOffers = $loManager->getRepository('WebWebBundle:Offer')->findAll();
@@ -32,7 +49,6 @@ class OfferController extends Controller
             'categories' => $this->container->getParameter('web.offerCategory'),
             'offers' => $loOffers,
         );
-    }
-
-// indexAction
+    }// indexAction
+    
 }

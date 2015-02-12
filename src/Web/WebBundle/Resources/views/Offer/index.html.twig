@@ -9,25 +9,51 @@
     <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
     {% endstylesheets %}
 {% endblock %}
+{% block JAVASCRIPT %}
+    {{     parent() }}
+    {%     javascripts '@WebWebBundle/Resources/public/js/chartjs/Chart.js'
+                       '@WebWebBundle/Resources/public/js/offer/Index.js'
+    %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {%     endjavascripts %}
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            goIndex.ready();
+        });
+    </script>
+{% endblock %}
 
 {% block CONTENT %}
 
-        <h1>{{ "web.web.offer.index.title" | trans }}</h1>
-        {# Menu des categories (tag) #}
-        <div id="div_RBZ_offerCategory">
-            <ul>
-                <li><a href="">TAG</a></li>
-                {% for category in categories %}
-                    <li><a href="">{{ category | trans }}</a></li>
-                {% endfor %}
-            </ul>
+    <h1>{{ "web.web.offer.index.price.title" | trans }}</h1>
+    {# Graphiques des stats #}
+    <div id="div_RBZ_stats">
+        {# bar-line #}
+        <div id="div_RBZ_bar">
+            <canvas id="canavs_RBZ_line"/>
         </div>
-        {# liste des offres  #}
-        <div id="div_RBZ_offers">
-            {# inclusion de la macro des offres  #}
-            {% for offer in offers %}
-                {{ macro.offer(offer) }}
-            {% endfor %}
+        {# donut #}
+        <div id="div_RBZ_donut">
+            <canvas id="canavs_RBZ_donut"/></canvas>
+            <div id="div_RBZ_donutDetail">
+                <div>{{ "web.web.offer.index.donut.piggyBank" | trans }}</div>
+                <div class="RBZ_piggyBank">125,00€</div>
+                <div id="div_RBZ_separator"></div>
+                <div class="RBZ_piggyBankText"><a href="">{{ "web.web.offer.index.donut.piggyBankTouch" | trans }}</a></div>
+                <a href="">{{ "web.web.offer.index.donut.detail" | trans }}</a>
+            </div>
         </div>
+    </div>
+    
+
+    <h1>{{ "web.web.offer.index.offer.title" | trans }}</h1>
+    {# liste des offres  #}
+    <div id="div_RBZ_offers">
+        {# inclusion de la macro des offres  #}
+        {% for offer in offers %}
+            {{ macro.offer(offer) }}
+        {% endfor %}
+    </div>
 
 {% endblock %}

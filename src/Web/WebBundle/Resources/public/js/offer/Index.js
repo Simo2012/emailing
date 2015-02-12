@@ -1,5 +1,5 @@
 /**
- * Classe de gestion des la page home (graphiques ...)
+ * Classe de gestion des la page Index (graphiques ...)
  *
  * <pre>
  * Elias 11/02/15 Création
@@ -8,11 +8,11 @@
  * @version 1.0
  * @package Popup
  */
-function Home()
+function Index()
 {
     // ==== Constructeur ====
 } // Popup
-Home.prototype = {
+Index.prototype = {
     /**
      * Traitements lancés en fin de chargement de la page
      */
@@ -78,4 +78,4 @@ Home.prototype = {
 }; // Popup.prototype
 
 //==== Définition de l'objet Popup goAaf ====
-var goHome = new Home();
+var goIndex = new Index();
