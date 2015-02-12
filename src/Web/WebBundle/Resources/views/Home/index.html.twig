@@ -4,7 +4,7 @@
 {% block CSS %}
     {{ parent() }}
     {% stylesheets
-    '@WebWebBundle/Resources/public/css/offer/index.scss'
+    '@WebWebBundle/Resources/public/css/home/index.scss'
     %}
     <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
     {% endstylesheets %}
@@ -30,10 +30,10 @@
     {# Graphiques des stats #}
     <div id="div_RBZ_stats">
         <div id="div_RBZ_bar">
-            <canvas id="canavs_RBZ_line" height="450" width="600"/>
+            <canvas id="canavs_RBZ_line"/>
         </div>
         <div id="div_RBZ_donut">
-            <canvas id="canavs_RBZ_donut" width="500" height="500"/>
+            <canvas id="canavs_RBZ_donut"/>
         </div>
     </div>
 

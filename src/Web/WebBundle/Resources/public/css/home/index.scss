@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+@import "../global/_config";
+
+//=== Menu des categories (tag)
+#div_RBZ_stats {
+  margin-bottom: 30px;
+    div {
+        display: inline-block;
+  }
+}
+
+#div_RBZ_bar {
+    width: 60%;
+    margin-right: 80px;
+        canvas {
+            height:450px;
+            width: 600px;
+        }
+}
+#div_RBZ_donut {
+    width: 30%;
+        canvas {
+        height: 500px;
+        width: 500px;
+    }
+}
+
+//=== inclusion de la macro des offres (tag)
+#div_RBZ_offers {
+  div {
+    display: inline-block;
+  }
+}
