@@ -5,19 +5,57 @@
 /* ==== Popup de login ==== */
 #div_RBZ_loginPopup {
     position: absolute;
-    top: 110px;
+    top: 180px;
     z-index: 2;
     #div_RBZ_content {
         width: 360px;
-        height: 360px;
-        background-color: #F1F1F1;
-        border-radius: 2px;
+        height: 370px;
+        background-color: #f1f1f1;
+        @include border-radius(2px, 2px);
         #div_RBZ_logo {
             width: 100%;
             display: block;
             text-align: center;
+            #div_RBZ_close {
+                position: absolute;
+                top: 0px;
+                right: 15px;
+                font-size: 40px;
+                color: #afafaf;
+                cursor: pointer;
+            }
             img {
-                margin: 50px auto;
+                margin: 40px auto 10px auto;
+            }
+            h3.RBZ_linesSided span::before, h3.RBZ_linesSided span::after {
+                width: 50px;
+            }
+        }
+        #div_RBZ_form {
+            width: 80%;
+            margin: 30px auto 0px auto;
+            div.RBZ_input {
+                margin-bottom: 10px;
+            }
+            input.RBZ_redButton {
+                margin-top: 25px;
+            }
+        }
+    }
+    #div_RBZ_notice {
+        margin-top: 20px;
+        text-align: center;
+        font: 14px 'Open Sans';
+        font-weight: 600;
+        span {
+            color: white;
+            a {
+                color: #f04f61;
+                text-decoration: none;
+                cursor: pointer;
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
     }
@@ -28,6 +66,7 @@
     top: 0px;
     opacity: 0.8;
     z-index: 1;
+    background-color: #000000;
 }
 
 /* ==== Popup de register ==== */
@@ -38,18 +77,53 @@
     padding-left: 80px;
     #div_RBZ_content {
         width: 360px;
-        height: 360px;
-        background-color: #F1F1F1;
-        border-radius: 2px;
+        height: 505px;
+        background-color: #f1f1f1;
+        @include border-radius(2px, 2px);
         #div_RBZ_logo {
             width: 100%;
             display: block;
             text-align: center;
+            #div_RBZ_close {
+                position: absolute;
+                top: 0px;
+                right: 15px;
+                font-size: 40px;
+                color: #afafaf;
+                cursor: pointer;
+            }
             img {
-                margin: 50px auto;
+                margin: 40px auto 10px auto;
             }
             h3.RBZ_linesSided span::before, h3.RBZ_linesSided span::after {
                 width: 50px;
+            }
+        }
+        #div_RBZ_form {
+            width: 80%;
+            margin: 30px auto 0px auto;
+            div.RBZ_input {
+                margin-bottom: 10px;
+            }
+            input.RBZ_redButton {
+                margin-top: 25px;
+            }
+        }
+    }
+    #div_RBZ_notice {
+        margin-top: 20px;
+        text-align: center;
+        font: 14px 'Open Sans';
+        font-weight: 600;
+        span {
+            color: white;
+            a {
+                color: #f04f61;
+                text-decoration: none;
+                cursor: pointer;
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
     }
@@ -61,9 +135,9 @@
     opacity: 0.8;
     z-index: 1;
     &.RBZ_fr_FR {
-        background: black url(/bundles/webweb/images/default/login/register-carousel-fr.png) no-repeat -160px 90px;
+        background: #000000 url(/bundles/webweb/images/default/login/register-carousel-fr.png) no-repeat -160px 90px;
     }
     &.RBZ_en_US {
-        background: black url(/bundles/webweb/images/default/login/register-carousel-us.png) no-repeat -160px 90px;
+        background: #000000 url(/bundles/webweb/images/default/login/register-carousel-us.png) no-repeat -160px 90px;
     }
 }

@@ -24,17 +24,26 @@ footer.credits:   © <span>Rubizz</span> by Natexo.
 web.web.layout.headerTitle: Rubizz
 
 # ==== Login/Inscription ====
-web.web.security.baseline:            DÉCOUVRIR GRATUITEMENT RUBIZZ
-web.web.security.firstname:           Votre prénom
-web.web.security.lastname:            Votre nom
-web.web.security.email:               Votre email
-web.web.security.password:            Votre mot de passe
-web.web.security.email_not_found:     Cet email n'est associé à aucun utilisateur.
-web.web.security.wrong_password:      Mot de passe incorrect.
-web.web.security.user_already_exists: Un utilisateur utilisant cet email existe déjà.
-web.web.security.invalid_email:       L'email saisi n'est pas un email valide.
-web.web.security.password_too_long:   Votre mot de passe ne doit pas excéder 12 caractères
-web.web.security.submit:              JE DÉCOUVRE
+web.web.security.login.baseline:        BON RETOUR SUR RUBIZZ
+web.web.security.register.baseline:     DÉCOUVRIR GRATUITEMENT RUBIZZ
+web.web.security.firstname:             Votre prénom
+web.web.security.lastname:              Votre nom
+web.web.security.email:                 Votre email
+web.web.security.password:              Votre mot de passe
+web.web.security.email_not_found:       Cet email n'est associé à aucun utilisateur.
+web.web.security.wrong_password:        Mot de passe incorrect.
+web.web.security.user_already_exists:   Un utilisateur utilisant cet email existe déjà.
+web.web.security.invalid_email:         L'email saisi n'est pas un email valide.
+web.web.security.password_too_long:     Votre mot de passe ne doit pas excéder 12 caractères
+web.web.security.login.submit:          SE CONNECTER
+web.web.security.register.submit:       JE DÉCOUVRE
+web.web.security.forgotten_password:    Mot de passe oublié ?
+web.web.security.not_registered:        Pas encore inscrit ?
+web.web.security.create_account:        Créez un compte
+web.web.security.legal_terms_sentences: En vous inscrivant, vous acceptez les
+web.web.security.legal_terms:           conditions d'utilisation
+web.web.security.have_account:          Vous avez déjà un compte ?
+web.web.security.connect:               Connectez-vous
 
 # ==== Home Page ====
 web.web.default.index.login: CONNEXION

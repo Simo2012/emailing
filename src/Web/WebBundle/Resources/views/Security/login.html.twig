@@ -1,17 +1,32 @@
 <div id="div_RBZ_loginPopup" style="{{ block('STYLE') }}">
     <div id="div_RBZ_content">
         <div id="div_RBZ_logo">
+            <div id="div_RBZ_close">&#735;</div>
             <img src="{{ asset('/bundles/webweb/images/default/login/login_rubizz_red.png') }}">
+            <h3 class="RBZ_linesSided"><span>{{ "web.web.security.login.baseline" | trans }}</span></h3>
         </div>
-        <form action="{{ path('WebWebBundle_securityLogin') }}" method="post" {{ form_enctype(form) }}>
-            {% if error is defined %}
-                <p class="RBZ_error">{{ error }}</p>
-            {% endif %}
-            {{ form_widget(form.email, { 'value' : last_email }) }}
-            {{ form_widget(form.password) }}
-            <input type="submit" value="{{ 'web.web.security.submit' | trans }}" />
-            {#<a href="{{ url("PublisherWebBundle_securityForgot") }}">{{ "publisher.web.login.forgotPassword" | trans }}</a>#}
-            {{ form_rest(form) }}
-        </form>
+        <div id="div_RBZ_form">
+            <form action="{{ path('WebWebBundle_securityLogin') }}" method="post" {{ form_enctype(form) }}>
+                {% if error is defined %}
+                    <p class="RBZ_error">{{ error }}</p>
+                {% endif %}
+                <div class="RBZ_input">
+                    {{ form_label(form.email) }}
+                    {{ form_widget(form.email, { 'value' : last_email }) }}
+                </div>
+                <div class="RBZ_input">
+                    {{ form_label(form.password) }}
+                    {{ form_widget(form.password) }}
+                </div>
+
+                <input type="submit" value="{{ 'web.web.security.login.submit' | trans }}" class="RBZ_redButton"/>
+                {{ form_rest(form) }}
+            </form>
+        </div>
+    </div>
+    <div id="div_RBZ_notice">
+        <span>{{ 'web.web.security.forgotten_password' | trans }}</span></span>
+        <br>
+        <span>{{ 'web.web.security.not_registered' | trans }}&nbsp;</span><span><a class="RBZ_register" href="">{{ 'web.web.security.create_account' | trans }}</a></span>
     </div>
 </div>

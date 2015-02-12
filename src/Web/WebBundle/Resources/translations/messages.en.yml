@@ -2,17 +2,26 @@
 web.web.layout.headerTitle: Rubizz
 
 # ==== Login/Inscription ====
-web.web.security.baseline:            DISCOVER RUBIZZ FOR FREE
-web.web.security.firstname:           Your name
-web.web.security.lastname:            Your last name
-web.web.security.email:               Your email
-web.web.security.password:            Your password
-web.web.security.email_not_found:     This email is not bound to any user.
-web.web.security.wrong_password:      Incorrect password.
-web.web.security.user_already_exists: A user using this email already exists.
-web.web.security.invalid_email:       The input email is not a valid email.
-web.web.security.password_too_long:   Your password shall not exceed 12 characters
-web.web.security.submit:              DISCOVER
+web.web.security.login.baseline:        WELCOME BACK TO RUBIZZ
+web.web.security.register.baseline:     DISCOVER RUBIZZ FOR FREE
+web.web.security.firstname:             Your name
+web.web.security.lastname:              Your last name
+web.web.security.email:                 Your email
+web.web.security.password:              Your password
+web.web.security.email_not_found:       This email is not bound to any user.
+web.web.security.wrong_password:        Incorrect password.
+web.web.security.user_already_exists:   A user using this email already exists.
+web.web.security.invalid_email:         The input email is not a valid email.
+web.web.security.password_too_long:     Your password shall not exceed 12 characters
+web.web.security.login.submit:          LOG IN
+web.web.security.register.submit:       DISCOVER
+web.web.security.forgotten_password:    Forgot your password?
+web.web.security.not_registered:        Don´t have an account yet?
+web.web.security.create_account:        Create one
+web.web.security.legal_terms_sentences: By subscribing I accept the
+web.web.security.legal_terms:           terms of use
+web.web.security.have_account:          Already have an account?
+web.web.security.connect:               Log in
 
 # ==== Home Page ====
 web.web.default.index.login: CONNECTION
