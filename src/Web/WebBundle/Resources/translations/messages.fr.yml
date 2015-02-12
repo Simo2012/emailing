@@ -76,3 +76,6 @@ offer.mailling: Envoyer à ma mailling List
 # ==== Home Page ====
 web.web.home.index.price.title: Vos gains
 web.web.home.index.offer.title: Dernières offres disponibles
+web.web.home.index.donut.piggyBank: Ma cagnotte
+web.web.home.index.donut.piggyBankTouch: Encaisser ma cagnotte
+web.web.home.index.donut.detail: Détail

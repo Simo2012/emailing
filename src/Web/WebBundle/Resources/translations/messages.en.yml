@@ -46,3 +46,6 @@ web.web.offer.index.categories.special: special
 # ==== Home Page ====
 web.web.home.index.price.title: Price
 web.web.home.index.offer.title: Last offers available
+web.web.home.index.donut.piggyBank: My Piggy Bank
+web.web.home.index.donut.piggyBankTouch: Touch my Piggy Bank
+web.web.home.index.donut.detail: Detail

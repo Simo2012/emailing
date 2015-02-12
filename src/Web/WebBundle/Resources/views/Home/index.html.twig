@@ -29,13 +29,23 @@
     <h1>{{ "web.web.home.index.price.title" | trans }}</h1>
     {# Graphiques des stats #}
     <div id="div_RBZ_stats">
+        {# bar-line #}
         <div id="div_RBZ_bar">
             <canvas id="canavs_RBZ_line"/>
         </div>
+        {# donut #}
         <div id="div_RBZ_donut">
-            <canvas id="canavs_RBZ_donut"/>
+            <canvas id="canavs_RBZ_donut"/></canvas>
+            <div id="div_RBZ_donutDetail">
+                <div>{{ "web.web.home.index.donut.piggyBank" | trans }}</div>
+                <div class="RBZ_piggyBank">125,00€</div>
+                <div id="div_RBZ_separator"></div>
+                <div class="RBZ_piggyBankText"><a href="">{{ "web.web.home.index.donut.piggyBankTouch" | trans }}</a></div>
+                <a href="">{{ "web.web.home.index.donut.detail" | trans }}</a>
+            </div>
         </div>
     </div>
+    
 
     <h1>{{ "web.web.home.index.offer.title" | trans }}</h1>
     {# liste des offres  #}
