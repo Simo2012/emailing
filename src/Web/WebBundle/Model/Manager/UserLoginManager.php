@@ -113,7 +113,7 @@ class UserLoginManager
         // ==== Enregistrement de la date de login ====
         $poUser->setDateLogin(new \DateTime());
         $this->manager->flush();
-    } // logUser
+    } // setUserInSession
 
     /**
      * Enregistre l'utilisateur et le log
