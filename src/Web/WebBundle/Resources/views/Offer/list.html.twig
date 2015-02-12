@@ -10,6 +10,19 @@
     {% endstylesheets %}
 {% endblock %}
 
+{% block JAVASCRIPT %}
+    {{     parent() }}
+    {%     javascripts  '@WebWebBundle/Resources/public/js/offer/Offer.js'  %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {%     endjavascripts %}
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            goOffer.ready();
+        });
+    </script>
+{% endblock %}
+
 {% block CONTENT %}
 
         <h1>{{ "web.web.offer.list.title" | trans }}</h1>
