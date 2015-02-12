@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+h1, .KNS_h1-like {
+  font-size: 24px;
+  font-size: 2.4rem;
+  font-family: 'Open Sans Bold', sans-serif;
+  color: #4d4d4d;
+}
+
+h2, .KNS_h2-like {
+  font-size: 18px;
+  font-size: 1.8rem;
+  font-family: 'Open Sans Bold', sans-serif;
+  color: #817c77;
+}
+
+h3, .KNS_h3-like {
+  font-size: 14px;
+  font-size: 1.4rem;
+  font-family: 'Open Sans Semibold', sans-serif;
+  color: #676059;
+}
+
+h3.RBZ_linesSided {
+  text-align: center;
+  line-height: 20px;
+  span {
+    display: inline-block;
+    position: relative;
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      height: 1px;
+      background-color: #e1e1e1;
+      top: 10px;
+      width: 100px;
+    }
+    &:before {
+      right: 100%;
+      margin-right: 10px;
+    }
+    &:after {
+      left: 100%;
+      margin-left: 10px;
+    }
+  }
+}
+

@@ -5,6 +5,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Web\WebBundle\Form\GraphicStandards;
 
 /**
  * Contrôleur home : page d'accueil derrière le firewall
@@ -33,4 +34,18 @@ class HomeController extends Controller
             'offers' => $loOffers,
         );
     } // indexAction
+
+    /**
+     * Page des standards graphique
+     *
+     * @Template()
+     */
+    public function graphicsStandardsAction()
+    {
+        $loForm = $this->createForm(new GraphicStandards());
+
+        return array(
+            'form' => $loForm->createView()
+        );
+    } // graphicsStandardsAction
 }
