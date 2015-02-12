@@ -3,26 +3,25 @@
 
 //=== graphiques
 #div_RBZ_stats {
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 //=== line bar
 #div_RBZ_bar {
     display: inline-block;
     width: 55%;
     margin-right: 80px;
-        canvas {
-            height:500px;
-            width: 750px;
-        }
+    canvas {
+        height:500px;
+        width: 750px;
+    }
 }
 //=== donut
 #div_RBZ_donut {
     display: inline-block;
     position: relative;
-    width: 35%;
     canvas {
-        height: 280px;
-        width: 280px;
+        height: 336px;
+        width: 336px;
     }
 }
 
@@ -43,7 +42,7 @@
         font-size: 40px;
         margin-bottom: 10px;
     }
-    
+
     .RBZ_piggyBankText {
         color : #f04f61;
         font: normal 16px 'Open Sans';
@@ -60,53 +59,11 @@
 
 //=== inclusion de la macro des offres (tag)
 #div_RBZ_AllOffers {
-    color : #f04f61;
     float: right;
     font : "Open Sans Bold" 14px;
     margin-bottom: 20px;
-
-}
-
-
-//=== inclusion de la macro des offres (tag)
-#div_RBZ_offers {
-  div {
-    display: inline-block;
-  }
-}
-
-
-/* ==== iPad ==== */
-@media (max-width: 767px) {
-    #div_RBZ_donutDetail {
-        font-size: 12px;
-        display: inline-block;
-        height: 336px;
-        width: 336px;
-        position: absolute;
-        text-align: center;
-        left: 0;
-        padding-top: 90px;
-        color : #bfbfbf;
-        font-weight: bold;
-
-        .RBZ_piggyBank {
-            color : #676059;
-            font-size: 20px;
-            margin-bottom: 5px;
-        }
-
-        .RBZ_piggyBankText {
-            color : #f04f61;
-            font: normal 16px 'Open Sans';
-            margin-top: 5px;
-            margin-bottom: 5px;
-        }
-        #div_RBZ_separator {
-            width: 144px;
-            margin-left:26px;
-            height:1.8px;
-            background-color: #D1D1D1;
-        }
+    a {
+        color : #f04f61;
     }
+
 }

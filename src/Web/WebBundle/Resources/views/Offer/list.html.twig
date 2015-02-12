@@ -15,12 +15,6 @@
     {%     javascripts  '@WebWebBundle/Resources/public/js/offer/Offer.js'  %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
     {%     endjavascripts %}
-
-    <script type="text/javascript">
-        $(document).ready(function() {
-            goOffer.ready();
-        });
-    </script>
 {% endblock %}
 
 {% block CONTENT %}
@@ -36,7 +30,7 @@
             </ul>
         </div>
         {# liste des offres  #}
-        <div id="div_RBZ_offers">
+        <div class="div_RBZ_offers">
             {# inclusion de la macro des offres  #}
             {% for offer in offers %}
                 {{ macro.offer(offer) }}

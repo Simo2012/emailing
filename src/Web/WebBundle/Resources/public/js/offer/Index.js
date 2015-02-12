@@ -65,7 +65,7 @@ Index.prototype = {
         // graph donut
         var ctxDonut = document.getElementById("canavs_RBZ_donut").getContext("2d");
         window.myDoughnut = new Chart(ctxDonut).Doughnut(doughnutData, {
-            responsive: true,
+            responsive: false,
             percentageInnerCutout : 75,
         });
 
@@ -79,3 +79,4 @@ Index.prototype = {
 
 //==== Définition de l'objet Popup goAaf ====
 var goIndex = new Index();
+goIndex.ready()

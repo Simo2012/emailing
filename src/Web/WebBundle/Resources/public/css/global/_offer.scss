@@ -4,9 +4,11 @@
     background: $light-grey;
 }
 .RBZ_offer_content {
+    display: inline-block;
     width: 470px;
     height: 330px;
-    margin: 0px auto;
+    margin-right: 8px;
+    background-color: red;
     position: relative;
     &.RBZ_expanded .RBZ_offer_body {
         height: 260px;
