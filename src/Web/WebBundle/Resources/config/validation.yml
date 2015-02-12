@@ -1,0 +1,9 @@
+Web\WebBundle\Entity\User:
+    properties:
+        email:
+            - Email:
+                message: "web.web.security.invalid_email"
+        password:
+            - Length:
+                max: 12
+                maxMessage: "web.web.security.password_too_long"

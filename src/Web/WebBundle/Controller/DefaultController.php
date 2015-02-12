@@ -23,8 +23,15 @@ class DefaultController extends Controller
      *
      * @Template()
      */
-    public function indexAction()
+    public function indexAction(Request $poRequest)
     {
+        // ==== Déjà loggé ====
+        $loSession = $poRequest->getSession();
+        $lbRegistered = $loSession->get('hasRegistered');
+        if (!empty($lbRegistered)) {
+            return $this->redirect($this->generateUrl('WebWebBundle_offerIndex'));
+        }
+
         return array();
     } // indexAction
 

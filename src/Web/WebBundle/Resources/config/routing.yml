@@ -1,4 +1,24 @@
 #==================================================
+# Security controller : page de login, inscription
+#==================================================
+# ---- Verification du login ----
+WebWebBundle_securityCheckLogin:
+    path:     /login/check
+    defaults: { _controller: "WebWebBundle:Security:checkLogin" }
+# ---- Login ----
+WebWebBundle_securityLogin:
+    path:     /login
+    defaults: { _controller: "WebWebBundle:Security:login" }
+# ---- Enregistrement ----
+WebWebBundle_securityRegister:
+    path:     /register
+    defaults: { _controller: "WebWebBundle:Security:register" }
+# ---- Logout ----
+WebWebBundle_securityLogout:
+    pattern: /logout
+    defaults: { _controller: "WebWebBundle:Security:logout" }
+
+#==================================================
 # Default controller : page d'accueil, inscription
 #==================================================
 # ---- Page d'accueil externe  ----
@@ -25,18 +45,6 @@ WebWebBundle_defaultContact:
 WebWebBundle_defaultJobs:
     path:     /jobs
     defaults: { _controller: "WebWebBundle:Default:jobs" }
-
-#==================================================
-# Home controller : page d'accueil interne
-#==================================================
-# ---- Page d'accueil interne ----
-WebWebBundle_homeIndex:
-    path:     /home
-    defaults: { _controller: "WebWebBundle:Home:index" }
-# ---- reference graphique ----
-WebWebBundle_homeGraphicStandards:
-    path:     /graphicsStandards
-    defaults: { _controller: "WebWebBundle:Home:graphicsStandards" }
 
 #==================================================
 # User controller : page profile, etc
@@ -69,7 +77,10 @@ WebWebBundle_userCashIn:
 WebWebBundle_offerIndex:
     path:     /offer/index
     defaults: { _controller: "WebWebBundle:Offer:index" }
-
+# ---- reference graphique ----
+WebWebBundle_offerGraphicStandards:
+    path:     /graphicsStandards
+    defaults: { _controller: "WebWebBundle:Offer:graphicsStandards" }
 # ---- Page list ----
 WebWebBundle_offerList:
     path:     /offer/list

@@ -1,0 +1,17 @@
+<div id="div_RBZ_loginPopup" style="{{ block('STYLE') }}">
+    <div id="div_RBZ_content">
+        <div id="div_RBZ_logo">
+            <img src="{{ asset('/bundles/webweb/images/default/login/login_rubizz_red.png') }}">
+        </div>
+        <form action="{{ path('WebWebBundle_securityLogin') }}" method="post" {{ form_enctype(form) }}>
+            {% if error is defined %}
+                <p class="RBZ_error">{{ error }}</p>
+            {% endif %}
+            {{ form_widget(form.email, { 'value' : last_email }) }}
+            {{ form_widget(form.password) }}
+            <input type="submit" value="{{ 'web.web.security.submit' | trans }}" />
+            {#<a href="{{ url("PublisherWebBundle_securityForgot") }}">{{ "publisher.web.login.forgotPassword" | trans }}</a>#}
+            {{ form_rest(form) }}
+        </form>
+    </div>
+</div>

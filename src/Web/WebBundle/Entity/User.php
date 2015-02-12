@@ -3,6 +3,7 @@
 namespace Web\WebBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 
 /**
  * User
@@ -10,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="user", uniqueConstraints={@ORM\UniqueConstraint(name="userEmail_uk", columns={"email"})})
  * @ORM\Entity
  */
-class User
+class User implements AdvancedUserInterface, \Serializable
 {
     /**
      * @var integer
@@ -45,7 +46,7 @@ class User
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_login", type="datetime", nullable=false)
+     * @ORM\Column(name="date_login", type="datetime", nullable=true)
      */
     private $dateLogin;
 
@@ -108,7 +109,7 @@ class User
     /**
      * @var string
      *
-     * @ORM\Column(name="bic", type="string", length=4096, nullable=false)
+     * @ORM\Column(name="bic", type="string", length=4096, nullable=true)
      */
     private $bic;
 
@@ -133,6 +134,23 @@ class User
      */
     private $availableAmount;
 
+
+    /**
+     * Constructeur
+     */
+    public function __construct()
+    {
+        $loNow = new \DateTime();
+        $this->dateCreate      = $loNow;
+        $this->dateUpdate      = $loNow;
+        $this->active          = true;
+        $this->useEmail        = false;
+        $this->useFacebook     = false;
+        $this->useTwitter      = false;
+        $this->optinNewsletter = false;
+        $this->nbContacts      = 0;
+        $this->availableAmount = 0;
+    }
 
 
     /**
@@ -511,5 +529,88 @@ class User
     public function getAvailableAmount()
     {
         return $this->availableAmount;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getUsername()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getSalt()
+    {
+        return '';
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getRoles()
+    {
+        return array('ROLE_USER');
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function eraseCredentials()
+    {
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function isAccountNonExpired()
+    {
+        return true;
+    } // isAccountNonExpired
+
+    /**
+     * @inheritDoc
+     */
+    public function isAccountNonLocked()
+    {
+        return true;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function isCredentialsNonExpired()
+    {
+        return true;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function isEnabled()
+    {
+        return $this->active;
+    }
+
+    /**
+     * @see \Serializable::serialize()
+     */
+    public function serialize()
+    {
+        return serialize(array(
+            $this->id,
+        ));
+    }
+
+    /**
+     * @see \Serializable::unserialize()
+     */
+    public function unserialize($serialized)
+    {
+        list (
+            $this->id,
+            ) = unserialize($serialized);
     }
 }

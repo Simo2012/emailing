@@ -23,8 +23,21 @@ publisherMenu_jobs:               Jobs
 footer.credits:   © <span>Rubizz</span> by Natexo.
 web.web.layout.headerTitle: Rubizz
 
-# ==== Default Page ====
-web.web.default.index.connection: CONNEXION
+# ==== Login/Inscription ====
+web.web.security.baseline:            DÉCOUVRIR GRATUITEMENT RUBIZZ
+web.web.security.firstname:           Votre prénom
+web.web.security.lastname:            Votre nom
+web.web.security.email:               Votre email
+web.web.security.password:            Votre mot de passe
+web.web.security.email_not_found:     Cet email n'est associé à aucun utilisateur.
+web.web.security.wrong_password:      Mot de passe incorrect.
+web.web.security.user_already_exists: Un utilisateur utilisant cet email existe déjà.
+web.web.security.invalid_email:       L'email saisi n'est pas un email valide.
+web.web.security.password_too_long:   Votre mot de passe ne doit pas excéder 12 caractères
+web.web.security.submit:              JE DÉCOUVRE
+
+# ==== Home Page ====
+web.web.default.index.login: CONNEXION
 web.web.default.index.register: S'INSCRIRE
 web.web.default.index.community.title: Community 3.0
 web.web.default.index.community.content: Vous êtes bloggeur, trendsetter, twittos ou juste bien entouré, vous pouvez monétiser votre notoriété simplement et gratuitemnt
@@ -78,7 +91,6 @@ offer.prixdescription: à chaque participation
 offer.recommander: RECOMMANDER
 offer.facebook: Publier sur Facebook
 offer.twiter: Publier sur Twitter
-offer.mailling: Envoyer à ma mailling List
 offer.mailling: Envoyer à ma mailling List
 
 # ==== Home Page ====

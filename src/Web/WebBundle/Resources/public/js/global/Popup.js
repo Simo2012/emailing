@@ -42,7 +42,7 @@ Popup.prototype = {
             }
             $("#div_RBZ_commonPopup").remove();
             // ==== Redéfinition de la taille du masque ====
-            $("#div_RBZ_commonShadow, #div_RBZ_commonShadowBis").css({ width : $(document).width(), height : $(document).height() });
+            $("#div_RBZ_commonShadow").css({ width : $(document).width(), height : $(document).height() });
             $("#div_RBZ_commonShadow").show();
             $("#section_RBZ_main").append(psAjax);
 

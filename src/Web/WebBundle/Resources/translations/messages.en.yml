@@ -1,8 +1,21 @@
 # ==== Layout global ====
 web.web.layout.headerTitle: Rubizz
 
+# ==== Login/Inscription ====
+web.web.security.baseline:            DISCOVER RUBIZZ FOR FREE
+web.web.security.firstname:           Your name
+web.web.security.lastname:            Your last name
+web.web.security.email:               Your email
+web.web.security.password:            Your password
+web.web.security.email_not_found:     This email is not bound to any user.
+web.web.security.wrong_password:      Incorrect password.
+web.web.security.user_already_exists: A user using this email already exists.
+web.web.security.invalid_email:       The input email is not a valid email.
+web.web.security.password_too_long:   Your password shall not exceed 12 characters
+web.web.security.submit:              DISCOVER
+
 # ==== Home Page ====
-web.web.default.index.connection: CONNECTION
+web.web.default.index.login: CONNECTION
 web.web.default.index.register: REGISTER
 web.web.default.index.community.title: Community 3.0
 web.web.default.index.community.content: You're a blogger, trendsetter, twittos or just good company, you can monetize your reputation easily and for free

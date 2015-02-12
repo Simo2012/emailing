@@ -6,6 +6,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Web\WebBundle\Entity\Offer;
+use Web\WebBundle\Form\GraphicStandards;
+
 /**
  * Contrôleur Offer : page de gestion des offres
  *
@@ -33,6 +35,20 @@ class OfferController extends Controller
             'offers' => $loOffers,
         );
     } // indexAction
+
+    /**
+     * Page des standards graphique
+     *
+     * @Template()
+     */
+    public function graphicsStandardsAction()
+    {
+        $loForm = $this->createForm(new GraphicStandards());
+
+        return array(
+            'form' => $loForm->createView()
+        );
+    } // graphicsStandardsAction
     
     
     /**

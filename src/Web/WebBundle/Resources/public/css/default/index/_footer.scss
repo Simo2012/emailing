@@ -6,14 +6,14 @@
 	background: $footer-grey;
 }
 .RBZ_default_footer {
-	background: $footer-grey url(/bundles/webweb/images/home/web_foot.png) right -180px bottom -125px no-repeat;;
+	background: $footer-grey url(/bundles/webweb/images/default/index/web_foot.png) right -180px bottom -125px no-repeat;;
 	width: 1600px;
 	height: 411px;
 	margin: 0px auto;
 	.RBZ_default_clients {
 		width: 960px;
 		height: 118px;
-		background: url(/bundles/webweb/images/home/clients.png) center top 35px no-repeat;
+		background: url(/bundles/webweb/images/default/index/clients.png) center top 35px no-repeat;
 		border-bottom: 1px solid $footer-border;
 		margin: 0px auto;
 	}
@@ -53,14 +53,14 @@
 		float: left;
 		width: 46px;
 		height: 46px;
-		background: url(/bundles/webweb/images/home/fb_foot.png) left top no-repeat;
+		background: url(/bundles/webweb/images/default/index/fb_foot.png) left top no-repeat;
 		margin-top: 32px;
 	}
 	.RBZ_default_tw {
 		float: left;
 		width: 44px;
 		height: 44px;
-		background: url(/bundles/webweb/images/home/tw_foot.png) left top no-repeat;
+		background: url(/bundles/webweb/images/default/index/tw_foot.png) left top no-repeat;
 		margin-top: 32px;
 		margin-left: 25px;
 	}
@@ -87,7 +87,7 @@
 		.RBZ_default_clients {
 			width: 555px;
 			height: 64px;
-			background: url(/bundles/webweb/images/home/clients_tablet.png) center top 20px no-repeat;
+			background: url(/bundles/webweb/images/default/index/clients_tablet.png) center top 20px no-repeat;
 		}
 		.RBZ_default_footer_content {
 			width: 550px;
@@ -141,7 +141,7 @@
 		.RBZ_default_clients {
 			width: 292px;
 			height: 92px;
-			background: url(/bundles/webweb/images/home/clients_smartphone.png) center top 15px no-repeat;
+			background: url(/bundles/webweb/images/default/index/clients_smartphone.png) center top 15px no-repeat;
 		}
 		.RBZ_default_footer_content {
 			width: 292px;

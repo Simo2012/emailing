@@ -1,12 +1,45 @@
 security:
+    encoders:
+        Web\WebBundle\Entity\User:
+            id: web.web.encoder.user_password
+
     providers:
-        in_memory:
-            memory: ~
+        users:
+            entity: { class: WebWebBundle:User, property: email }
+
+    role_hierarchy:
+        ROLE_ADMIN:
+            - ROLE_USER
 
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt|error)|css|images|js)/
             security: false
 
+        # ==== Règle pour les pages publiques ====
+        public_area:
+            pattern:         '^(/|(/[a-zA-Z_]{5}/)|(/[a-zA-Z_]{5}/(login|register)))$'
+            security:        false
+
+        # ==== Règle pour les pages privées (accessible par un utilisateur loggé) ====
+        secured_users_area:
+            pattern:         .*
+            provider:        users
+            anonymous: ~
+            form_login:
+                check_path:          WebWebBundle_securityCheckLogin
+                login_path:          WebWebBundle_defaultIndex
+                default_target_path: WebWebBundle_offerIndex
+                username_parameter:  email
+                password_parameter:  password
+            logout:
+                path:                WebWebBundle_securityLogout
+                target:              WebWebBundle_defaultIndex
+                invalidate_session:  true
+
         default:
             anonymous: ~
+
+    access_control:
+        - { path: '^(/|(/[a-zA-Z_]{5}/)|(/[a-zA-Z_]{5}/(login|register)))$', roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: '.*', roles: ROLE_USER }

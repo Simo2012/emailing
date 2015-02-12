@@ -26,7 +26,7 @@ Index.prototype = {
     rubSlider: function()
     {
         $(document).ready(function() {
-          $("#div_RUB_sliderContain").owlCarousel({
+          $("#div_RBZ_sliderContain").owlCarousel({
 //            items: 1,
 //            autoPlay: 3000,
 //            navigation: true,
