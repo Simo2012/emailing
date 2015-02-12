@@ -75,6 +75,7 @@ web.web.offer.index.offer.title: Dernières offres disponibles
 web.web.offer.index.donut.piggyBank: Ma cagnotte
 web.web.offer.index.donut.piggyBankTouch: Encaisser ma cagnotte
 web.web.offer.index.donut.detail: Détail
+web.web.offer.index.offer.seeAll: Voir toutes les offres
 # ==== Offer Page (list) ====
 web.web.offer.list.title: Toutes les offres
 web.web.offer.list.categories.quiz : Jeux concours

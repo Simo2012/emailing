@@ -55,7 +55,16 @@ web.web.offer.index.categories.ecommerce: web.web.offer.index.categories.ecommer
 web.web.offer.index.categories.finances : finances
 web.web.offer.index.categories.divertissement: divertissement
 web.web.offer.index.categories.special: special
-
+web.web.offer.index.offer.seeAll: See all offers
+# ==== Offer Page (list) ====
+web.web.offer.list.title: Toutes les offres
+web.web.offer.list.categories.quiz : Jeux concours
+web.web.offer.list.categories.quotation : Devis en ligne
+web.web.offer.list.categories.travel: Voyages
+web.web.offer.list.categories.ecommerce: e-commerce
+web.web.offer.list.categories.finances : Finances
+web.web.offer.list.categories.divertissement: Divertissement
+web.web.offer.list.categories.special: Offres spéciales
 # ==== Home Page ====
 web.web.home.index.price.title: Price
 web.web.home.index.offer.title: Last offers available
