@@ -2,7 +2,7 @@
 
 {% block CSS %}
     {{ parent() }}
-    {% stylesheets
+    {%     stylesheets
     'https://cdnjs.cloudflare.com/ajax/libs/codemirror/4.12.0/codemirror.min.css'
     'https://cdnjs.cloudflare.com/ajax/libs/codemirror/4.12.0/theme/3024-night.min.css'
     %}
@@ -12,16 +12,16 @@
             height: 100px;
         }
     </style>
-    {% endstylesheets %}
+    {%     endstylesheets %}
 {% endblock %}
 
 {% block JAVASCRIPT %}
     {{ parent() }}
-    {% javascripts
+    {%     javascripts
     'https://cdnjs.cloudflare.com/ajax/libs/codemirror/4.12.0/codemirror.js'
     %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
-    {% endjavascripts %}
+    {%     endjavascripts %}
     <script type="text/javascript">
         $(document).ready(function() {
             function addEditor(psSelector, mode) {
@@ -91,16 +91,16 @@
     </div>
     <div class="KNS_row KNS_mbl">
         <div class="KNS_mod">
-            <textarea name="" id="form1" cols="30" rows="7">
-                <?php
-                $laParams = array(
-                    'label'         => 'web.web.form.sample_text',
-                    'required'      => false,
-                );
-                $poBuilder->add('text1', 'text', $laParams);
+        <textarea name="" id="form1" cols="30" rows="7">
+<?php
+$laParams = array(
+    'label'         => 'web.web.form.sample_text',
+    'required'      => false,
+);
+$poBuilder->add('text1', 'text', $laParams);
 
-                {{ "graphic.standards.form.text1" | trans | nl2br }}
-            </textarea>
+            {{ "graphic.standards.form.text1" | trans | nl2br }}
+        </textarea>
         </div>
     </div>
 
@@ -116,19 +116,18 @@
             </div>
         </div>
     </div>
-
     <div class="KNS_row KNS_mbl">
         <div class="KNS_mod">
-            <textarea name="" id="form2" cols="30" rows="7">
-                <?php
-                $laParams = array(
-                    'label'         => 'web.web.form.sample_text',
-                    'required'      => false,
-                );
-                $poBuilder->add('text2', 'text', $laParams);
+        <textarea name="" id="form2" cols="30" rows="7">
+<?php
+$laParams = array(
+    'label'         => 'web.web.form.sample_text',
+    'required'      => false,
+);
+$poBuilder->add('text2', 'text', $laParams);
 
-                {{ "graphic.standards.form.text2" | trans | raw | nl2br }}
-            </textarea>
+            {{ "graphic.standards.form.text2" | trans | raw | nl2br }}
+        </textarea>
         </div>
     </div>
 
@@ -137,19 +136,36 @@
             {{ form_row(form.flip) }}
         </div>
         <div class="KNS_mod KNS_end KNS_w50">
-            <textarea name="" id="flip" cols="30" rows="2">
-                $laParams = array(
-                    'label'     => 'web.web.form.sample_text',
-                    'attr'      => array(
-                        'checked_label'    => 'web.web.form.flip.yes',
-                        'unchecked_label'  => 'web.web.form.flip.no',
-                    ),
-                    'required' => false,
-                );
-                $poBuilder->add('flip', 'flip', $laParams);
+        <textarea name="" id="flip" cols="30" rows="2">
+$laParams = array(
+    'label'     => 'web.web.form.sample_text',
+    'attr'      => array(
+        'checked_label'    => 'web.web.form.flip.yes',
+        'unchecked_label'  => 'web.web.form.flip.no',
+    ),
+    'required' => false,
+);
+$poBuilder->add('flip', 'flip', $laParams);
 
-                {{ "graphic.standards.form.flip" | trans }}
-            </textarea>
+            {{ "graphic.standards.form.flip" | trans }}
+        </textarea>
+        </div>
+    </div>
+
+    <h2 class="KNS_txtcenter">BOUTONS</h2>
+
+    <div class="KNS_row KNS_mbl">
+        <div class="KNS_mod KNS_start KNS_w40">
+            <input type="submit" value="SUBMIT" class="RBZ_redButton"/>
+            <br/><br/>
+            <a class="RBZ_redButton" href="#">SUBMIT</a>
+        </div>
+        <div class="KNS_mod KNS_end KNS_w50">
+        <textarea name="" id="flip" cols="30" rows="2">
+            <input type="submit" value="SUBMIT" class="RBZ_redButton"/>
+
+            <a class="RBZ_redButton" href="#">SUBMIT</a>
+        </textarea>
         </div>
     </div>
 {% endblock %}

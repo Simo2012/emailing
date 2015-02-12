@@ -34,3 +34,20 @@ div.RBZ_flip {position: relative;width: 80px;-webkit-user-select:none; -moz-user
   .RBZ_flip_checkbox:checked + .RBZ_flip_label .RBZ_flip_inner { margin-left: 0; }
   .RBZ_flip_checkbox:checked + .RBZ_flip_label .RBZ_flip_switch { right: 2px; }
 }
+
+
+input[type=submit].RBZ_redButton,
+a.RBZ_redButton {
+  font-family: "Open Sans Bold", sans-serif;
+  font-size: 14px;
+  height: 30px;
+  line-height: 30px;
+  color: #ffffff;
+  background-color: $red-banner;
+  width: 100%;
+  display: block;
+  line-height: 30px;
+  border: none;
+  @include border-radius(2px, 2px);
+  text-align: center;
+}
