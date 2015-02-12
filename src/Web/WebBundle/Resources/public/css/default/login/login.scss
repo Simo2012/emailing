@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+@import "../../global/_config";
+
+/* ==== Popup de register ==== */
+#div_RBZ_registerPopup {
+
+}
+#div_RBZ_registerShadow {
+    display: none;
+    position: absolute;
+    top: 0px;
+    opacity: 0.8;
+    z-index: 1;
+    &.RBZ_fr_FR {
+        background: black url(/bundles/webweb/images/default/login/register-carousel-fr.png) no-repeat -160px 90px;
+    }
+    &.RBZ_en_US {
+        background: black url(/bundles/webweb/images/default/login/register-carousel-us.png) no-repeat -160px 90px;
+    }
+}
