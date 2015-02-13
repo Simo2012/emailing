@@ -27,8 +27,17 @@
             img {
                 margin: 40px auto 10px auto;
             }
-            h3.RBZ_linesSided span::before, h3.RBZ_linesSided span::after {
-                width: 50px;
+            h3.RBZ_linesSided {
+                &.RBZ_fr_FR {
+                    span::before, span::after {
+                        width: 56px;
+                    }
+                }
+                &.RBZ_en_US {
+                    span::before, span::after {
+                        width: 48px;
+                    }
+                }
             }
         }
         #div_RBZ_form {
@@ -79,6 +88,12 @@
         width: 360px;
         height: 505px;
         background-color: #f1f1f1;
+        position: relative;
+        &.RBZ_fr_FR {
+            /* ---- Positionnement par rapport au texte sous la popup
+             qui dépasse à gauche et à droite en français ----*/
+            left: 22px;
+        }
         @include border-radius(2px, 2px);
         #div_RBZ_logo {
             width: 100%;
@@ -95,8 +110,17 @@
             img {
                 margin: 40px auto 10px auto;
             }
-            h3.RBZ_linesSided span::before, h3.RBZ_linesSided span::after {
-                width: 50px;
+            h3.RBZ_linesSided {
+                &.RBZ_fr_FR {
+                    span::before, span::after {
+                        width: 22px;
+                    }
+                }
+                &.RBZ_en_US {
+                    span::before, span::after {
+                        width: 44px;
+                    }
+                }
             }
         }
         #div_RBZ_form {
@@ -139,5 +163,49 @@
     }
     &.RBZ_en_US {
         background: #000000 url(/bundles/webweb/images/default/login/register-carousel-us.png) no-repeat -160px 90px;
+    }
+}
+
+/* ==== iPad ==== */
+@media (max-width: 767px) {
+    #div_RBZ_registerPopup {
+        padding-left: 0px;
+    }
+    #div_RBZ_registerShadow {
+        display: none;
+        position: absolute;
+        top: 0px;
+        opacity: 0.8;
+        z-index: 1;
+        &.RBZ_fr_FR {
+            background: none;
+            background-color: #000000;
+        }
+        &.RBZ_en_US {
+            background: none;
+            background-color: #000000;
+        }
+    }
+}
+
+/* ==== Smartphone ==== */
+@media (max-width: 480px) {
+    #div_RBZ_registerPopup {
+        padding-left: 0px;
+    }
+    #div_RBZ_registerShadow {
+        display: none;
+        position: absolute;
+        top: 0px;
+        opacity: 0.8;
+        z-index: 1;
+        &.RBZ_fr_FR {
+            background: none;
+            background-color: #000000;
+        }
+        &.RBZ_en_US {
+            background: none;
+            background-color: #000000;
+        }
     }
 }
