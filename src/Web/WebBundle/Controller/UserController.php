@@ -90,12 +90,13 @@ class UserController extends Controller {
      * @Template()
      */
     public function cashInAction() {
-        // ==== Déjà loggé ====
+        // ==== recuperation du user courant ====
         $loUser = $this->getUser();
-        if (!empty($loUser)) {
-            //
-        }
-        return array();
+
+        return array(
+            'user'  => $loUser,
+            'invoiceRequests' => array()
+        );
     }
 
 // cashInAction
