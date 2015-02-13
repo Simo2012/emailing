@@ -105,38 +105,33 @@ parameters:
             divertissement: web.web.offer.list.categories.divertissement
             special: web.web.offer.list.categories.special
 services:
-    # =================== ENCODERS ===================
-    # ==== Encodeur du mot de passe utilisateur ====
+    # =================== MODEL ===================
+    # ==== User ====
+    # ---- Connexion d'un utilisateur ----
+    web.web.manager.user_logger:
+        class: Web\WebBundle\Model\User\UserLogger
+        arguments: ["@doctrine.orm.entity_manager", "@security.encoder_factory", "@natexo_tool.filter.decrypt", "@request_stack", "@translator"]
+
+    # ==== ENCODERS ====
+    # ---- Encodeur du mot de passe utilisateur ----
     web.web.encoder.user_password:
         class: Web\WebBundle\Model\Encoder\UserPasswordEncoder
         arguments: ["@natexo_tool.filter.encrypt"]
 
-    # =================== MANAGERS ===================
-    # ---- Connexion d'un utilisateur ----
-    web.web.manager.user_login:
-        class: Web\WebBundle\Model\Manager\UserLoginManager
-        arguments: ["@doctrine.orm.entity_manager", "@security.encoder_factory", "@natexo_tool.filter.decrypt", "@request_stack", "@translator"]
-
 
     # ================ CONTACT VIA API ===============
-    # ==== Auto Post sur Facebook ==== 
+    # ---- Auto Post sur Facebook ----
     web.web.contact.facebook:
         class: Web\WebBundle\Model\Contact\Facebook
         arguments: ["%web.api%"]
-    # ==== Auto Post sur Twitter ====
+    # ---- Auto Post sur Twitter ----
     web.web.contact.twitter:
         class: Web\WebBundle\Model\Contact\Twitter
         arguments: []
-    # ==== Recuperation liste de contact Outlook/hotmail ====
+    # ---- Recuperation liste de contact Outlook/hotmail ----
     web.web.contact.outlook:
         class: Web\WebBundle\Model\Contact\Outlook
         arguments: ["%web.api%"]
-
-    # ==== Eléments de formulaires ====
-    flip:
-       class: Web\WebBundle\Form\Type\FlipType
-       tags:
-           - { name: form.type, alias: flip }
 
     # ==== Menu en twig ====
     web.web.twig.extension.menu:
@@ -152,13 +147,20 @@ services:
         arguments: ["@web.web.twig.extension.menu"]
 
 
-    # =================== FORMS ====================
-    # ==== Formulaire de login ====
+    # =================== FORM ====================
+    # ==== Éléments de formulaire ====
+    # ---- Flip ----
+    flip:
+       class: Web\WebBundle\Form\Type\FlipType
+       tags:
+           - { name: form.type, alias: flip }
+    # ==== Formulaires ====
+    # ---- Formulaire de login ----
     web.web.form.login_type:
         class: Web\WebBundle\Form\Security\LoginType
         tags:
             - { name: form.type, alias: WebWebLoginType }
-    # ==== Formulaire d'enregistrement ====
+    # ---- Formulaire d'enregistrement ----
     web.web.form.register_type:
         class: Web\WebBundle\Form\Security\RegisterType
         tags:

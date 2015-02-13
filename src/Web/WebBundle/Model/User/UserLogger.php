@@ -1,5 +1,5 @@
 <?php
-namespace Web\WebBundle\Model\Manager;
+namespace Web\WebBundle\Model\User;
 
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\CssSelector\Exception\SyntaxErrorException;
@@ -16,13 +16,13 @@ use Symfony\Bundle\FrameworkBundle\Translation\Translator;
  * Connexion des utilisateurs
  *
  * <pre>
- * Philippe 08/07/2014 Création
+ * Julien 11/02/2015 Création
  * </pre>
- * @author Philippe
+ * @author Julien
  * @version 1.0
- * @package Web
+ * @package Rubizz
  */
-class UserLoginManager
+class UserLogger
 {
     /**
      * Doctrine entity manager
