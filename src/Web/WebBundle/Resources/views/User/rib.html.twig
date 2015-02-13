@@ -1,17 +1,12 @@
 {% extends "@WebWeb/layoutPage.html.twig" %}
+
 {% block CSS %}
     {{ parent() }}
-    {%     stylesheets
-    'https://cdnjs.cloudflare.com/ajax/libs/codemirror/4.12.0/codemirror.min.css'
-    'https://cdnjs.cloudflare.com/ajax/libs/codemirror/4.12.0/theme/3024-night.min.css'
+    {% stylesheets
+    '@WebWebBundle/Resources/public/css/user/rib.scss'
     %}
     <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
-    <style>
-        .CodeMirror {
-            height: 100px;
-        }
-    </style>
-    {%     endstylesheets %}
+    {% endstylesheets %}
 {% endblock %}
 {% block CONTENT %}
     <div id="div_RBZ_userMenu">
@@ -19,34 +14,60 @@
             {{ menu('publisherUser') }}
         </div>
     </div>
-            <form action="{{ url('WebWebBundle_userRib') }}" method="post" {{ form_enctype(form) }} autocomplete="off">
-                
-                {% if error is defined %}
-                    <p class="RBZ_error">{{ error }}</p>
-                {% endif %}
-                    <div class="NXO_clear"></div>
-                    <div class="NXO_grayLabel">{{ "admin.sweepstake.form.iframe.active" | trans }}</div>
-                     <div class="KNS_row KNS_mbl">
-                        <div class="KNS_mod">
-                            {{ form_label(form.bic.bankName) }}
-                            {{ form_widget(form.bic.bankName) }}
+    <form action="{{ url('WebWebBundle_userRib') }}" method="post" {{ form_enctype(form) }} autocomplete="off">
+
+        {% if error is defined %}
+            <p class="RBZ_error">{{ error }}</p>
+        {% endif %}
+        <div class="RBZ_user_bic">
+            <div class="RBZ_user_bic_header">
+                <div class="RBZ_user_bic_header_title">
+                    <div class="KNS_row KNS_mbl">
+                        <div class="KNS_mod KNS_start KNS_w40">
+
+                            <h1>{{ 'web.web.user.titre1' | trans }}</h1>
                         </div>
-                     </div>
-                    {{ form_label(form.bic.bankCode) }}
+
+                    </div>
+                </div>
+                <div class="RBZ_user_bic_header_title">
+                    <div class="KNS_row KNS_mbl">
+                        <div class="KNS_mod KNS_start KNS_w40">
+                             <h3>{{ 'web.web.user.titre2' | trans }}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="RBZ_user_bic_header_input">
+                    {{ form_widget(form.bic) }}
+
+                    {{ form_widget(form.bic.bankName) }}
                     {{ form_widget(form.bic.bankCode) }}
-                    <div class="NXO_clear"></div>
-                    {{ form_label(form.bic.agencyCode) }}
+
                     {{ form_widget(form.bic.agencyCode) }}
-                    <div class="NXO_clear"></div>
-                    {{ form_label(form.bic.AccountNumber) }}
+
                     {{ form_widget(form.bic.AccountNumber) }}
-                    <div class="NXO_clear"></div>
-                    {{ form_label(form.bic.Key) }}
+
                     {{ form_widget(form.bic.Key) }}
-                     <div class="NXO_clear"></div>
-                <input type="submit" value="{{ 'web.web.user..submit' | trans }}" class="RBZ_redButton"/>
-                {{ form_rest(form) }}
-            </form>
-            <div class="NXO_clear"></div>
-    <div class="RBZ_wrapper">Rib</div>
+
+                </div>
+
+                <div class="RBZ_user_bic_header_input_border">
+                </div>
+
+            </div>
+
+            <div class="RBZ_user_bic_footer">
+                <div class="RBZ_user_bic_footer_input">
+                    <input type="submit" value="{{ 'web.web.user.submit' | trans }}" class="RBZ_redButton"/>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+        {{ form_rest(form) }}
+    </div>
+</form>
 {% endblock %}

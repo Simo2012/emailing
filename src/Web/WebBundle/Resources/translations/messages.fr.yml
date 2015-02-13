@@ -125,6 +125,10 @@ rubizz.form.bankCode: Code Banque
 rubizz.form.agencyCode: Code Agence
 rubizz.form.AccountNumber: N° du Compte
 rubizz.form.Key: clé
+web.web.user.titre1: Votre RIB
+web.web.user.titre2: Afin de recevoir vos paiements, vous devez renseigner vos coordonnées bancaires
+web.web.user.submit: MODIFIER >
+
 #============== Encaisser ma cagnotte =========================
 web.web.user.cashIn.cash.title: Encaisser ma cagnotte
 web.web.user.cashIn.cash.firstSection: "Pour demander le paiement de votre cagnotte, vous devez avoir atteint un seuil minimum de 50€. Une fois le paiement demandés, le versement effectif sur le compte se fera dans un délai de 10 jours."
