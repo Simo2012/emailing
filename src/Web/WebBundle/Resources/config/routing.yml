@@ -59,8 +59,10 @@ WebWebBundle_userParticular:
     defaults: { _controller: "WebWebBundle:User:particulars" }
 # ---- Page de saisie du rib ----
 WebWebBundle_userRib:
-    path:     /user/rib
+    path:     /user/rib/{piUserId}
     defaults: { _controller: "WebWebBundle:User:rib" }
+    requirements:
+        piUserId: \d+
 # ---- Page detail cagnotte ----
 WebWebBundle_userPot:
     path:     /user/pot

@@ -72,3 +72,11 @@ web.web.home.index.offer.title: Last offers available
 web.web.home.index.donut.piggyBank: My Piggy Bank
 web.web.home.index.donut.piggyBankTouch: Touch my Piggy Bank
 web.web.home.index.donut.detail: Detail
+
+
+#============== RIB =============================
+rubizz.form.bankName: Bank Name
+rubizz.form.bankCode: Bank Code
+rubizz.form.agencyCode: Agency Code
+rubizz.form.AccountNumber: Account Number
+rubizz.form.Key: key

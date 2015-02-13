@@ -3,7 +3,21 @@
 {% block CONTENT %}
     <div id="div_RBZ_userMenu">
         <div class="RBZ_wrapper">
-            {{ menu('publisherUser') }}
+                <form action="{{ url('WebWebBundle_userRib', {'piUserId': UserId }) }}" method="post" {{ form_enctype(form) }} autocomplete="off">
+                       {{ form_widget(form) }}    
+                    {{ form_widget(form.bic.bankCode) }}
+                           <div class="NXO_clear"></div>
+                           {{ form_widget(form.bic.agencyCode) }}
+                    <div class="NXO_clear"></div>
+                    {{ form_widget(form.bic.agencyCode) }}
+                      <div class="NXO_clear"></div>
+                      {{ form_widget(form.bic.AccountNumber) }}
+                    <div class="NXO_clear"></div>
+                      {{ form_widget(form.bic.Key) }}
+                       <input type="submit" value="Envoyer" />
+                </form>
+                      
+       <div class="NXO_clear"></div>
         </div>
     </div>
     <div class="RBZ_wrapper">Rib</div>

@@ -117,3 +117,11 @@ graphic.standards.form.text2: '<div class="RBZ_input">{{ form_label(form.text2) 
 graphic.standards.form.flip: "{{ form_row(form.flip) }}"
 web.web.form.flip.yes:  oui
 web.web.form.flip.no: non
+
+
+#============== RIB =============================
+rubizz.form.bankName: Nom de la banque
+rubizz.form.bankCode: Code Banque
+rubizz.form.agencyCode: Code Agence
+rubizz.form.AccountNumber: N° du Compte
+rubizz.form.Key: clé
