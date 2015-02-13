@@ -60,7 +60,7 @@ web.web.offer.index.title: All offers
 web.web.offer.index.categories.quiz : quiz
 web.web.offer.index.categories.quotation : quotation
 web.web.offer.index.categories.travel: travel
-web.web.offer.index.categories.ecommerce: web.web.offer.index.categories.ecommerce
+web.web.offer.index.categories.ecommerce: ecommerce
 web.web.offer.index.categories.finances : finances
 web.web.offer.index.categories.divertissement: divertissement
 web.web.offer.index.categories.special: special
@@ -73,10 +73,21 @@ web.web.home.index.donut.piggyBank: My Piggy Bank
 web.web.home.index.donut.piggyBankTouch: Touch my Piggy Bank
 web.web.home.index.donut.detail: Detail
 
-
+#============== USER PAGE =============================
 #============== RIB =============================
 rubizz.form.bankName: Bank Name
 rubizz.form.bankCode: Bank Code
 rubizz.form.agencyCode: Agency Code
 rubizz.form.AccountNumber: Account Number
 rubizz.form.Key: key
+#============== Encaisser ma cagnotte =========================
+web.web.user.cashIn.cash.title: Redeem my Piggy Bank
+web.web.user.cashIn.cash.firstSection: "A payment request requires a Piggy Bank balance of at least $50.  Once you have completed your request, the transaction will be completed in approximately  10 days."
+web.web.user.cashIn.cash.SecondSection: "<strong>IMPORTANT </strong>: You have not entered your bank account information in the <a href='%rib%'>YOUR RIB</a> section. Payment request cannot be completed without completing this information. Click<a href='%ici%'>here</a> to enter your bank account information."
+web.web.user.cashIn.cash.info: Received Payment
+web.web.user.cashIn.history.title: Payment History
+#============== tableau =============================
+web.web.user.cashIn.tabHistory.date:    DATE
+web.web.user.cashIn.tabHistory.desc:    DESCRIPTION
+web.web.user.cashIn.tabHistory.amount:  AMOUNT
+web.web.user.cashIn.tabHistory.statut:  STATUS
