@@ -1,12 +1,12 @@
 <?php
 
-namespace Web\WebBundle\Form;
+namespace Web\WebBundle\Form\User;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Web\WebBundle\Form\Transformer\UserRibTransformer;
-use Web\WebBundle\Form\BICType;
+use Web\WebBundle\Form\User\BicType;
 use Web\WebBundle\Controller\UserController;
 /**
  * Formulaire rib user
@@ -18,7 +18,7 @@ use Web\WebBundle\Controller\UserController;
  * @version 1.0
  * @package Web
  */
-class UserTypeBIC extends AbstractType {
+class UserBicType extends AbstractType {
     private $crypt;
     private $decrypt;
     /**
@@ -39,7 +39,7 @@ class UserTypeBIC extends AbstractType {
         
         $loUserRibTransformer = new UserRibTransformer($this->crypt,$this->decrypt);
         $poBuilder->addModelTransformer($loUserRibTransformer);
-        $poBuilder->add('bic', 'BicRib');
+        $poBuilder->add('bic', 'bictype');
   
     }// buildForm
 
@@ -60,6 +60,6 @@ class UserTypeBIC extends AbstractType {
      * @see \Symfony\Component\Form\FormTypeInterface::getName()
      */
     public function getName() {
-        return 'userbic';
+        return 'userbictype';
     }
 }

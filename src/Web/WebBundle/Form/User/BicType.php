@@ -1,6 +1,6 @@
 <?php
 
-namespace Web\WebBundle\Form;
+namespace Web\WebBundle\Form\User;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -16,7 +16,7 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
  * @version 1.0
  * @package Web
  */
-class BICType extends AbstractType {
+class BicType extends AbstractType {
 
     /**
      * (non-PHPdoc)
@@ -87,6 +87,6 @@ class BICType extends AbstractType {
      * @see \Symfony\Component\Form\FormTypeInterface::getName()
      */
     public function getName() {
-        return 'BicRib';
+        return 'bictype';
     }
 }

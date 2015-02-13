@@ -2,7 +2,7 @@
 
 namespace Web\WebBundle\Controller;
 
-use Web\WebBundle\Form\UserTypeBIC;
+use Web\WebBundle\Form\User\UserBicType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
@@ -47,13 +47,11 @@ class UserController extends Controller {
      *
      * @Template()
      */
-    public function ribAction($piUserId) {
+    public function ribAction() {
         $loManager = $this->getDoctrine()->getManager();
-
-        $loUser = $loManager->getRepository('WebWebBundle:User')->find($piUserId);
-
+        $loUser = $this->getUser();
         $loForm = $this->createForm(
-                new UserTypeBIC($this->get('natexo_tool.filter.encrypt'),
+                new UserBicType($this->get('natexo_tool.filter.encrypt'),
                         $this->get('natexo_tool.filter.decrypt')), $loUser
         );
         // ==== Traitement de la saisie ====
@@ -63,13 +61,10 @@ class UserController extends Controller {
             try {
                 $loUser->setDateUpdate(new \DateTime('now'));
                 $loManager->flush();
-                var_dump('ok');
-                exit();
             } catch (DBALException $poException) {
                 var_dump($poException);
             }
         }
-
         return array(
             'form' => $loForm->createView(),
             'UserId' => $loUser->getId()

@@ -154,7 +154,7 @@ services:
        class: Web\WebBundle\Form\Type\FlipType
        tags:
            - { name: form.type, alias: flip }
-    # ==== Formulaires ====
+    # ==== Security ====
     # ---- Formulaire de login ----
     web.web.form.login_type:
         class: Web\WebBundle\Form\Security\LoginType
@@ -165,16 +165,16 @@ services:
         class: Web\WebBundle\Form\Security\RegisterType
         tags:
             - { name: form.type, alias: WebWebRegisterType }
-
-    ##===========Formulaire============#
-    web.web.form.usertypebic:
-        class: Web\WebBundle\Form\UserTypeBIC
+    # ==== User ====
+    # ---- Formulaire RIB User ----
+    web.web.form.userbictype:
+        class: Web\WebBundle\Form\User\UserTypeBIC
         tags:
-            - { name: form.type, alias: userbic }
+            - { name: form.type, alias: userbictype }
         arguments: ["cypt", "decrypt"]
-        
+    # ---- Sous Formulaire RIB User ----
     web.web.form.bictype:
-        class: Web\WebBundle\Form\BICType
+        class: Web\WebBundle\Form\User\BicType
         tags:
-            - { name: form.type, alias: BicRib }
+            - { name: form.type, alias: bictype }
         arguments: ["crypt", "decrypt"]
