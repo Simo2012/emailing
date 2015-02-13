@@ -118,10 +118,15 @@ graphic.standards.form.flip: "{{ form_row(form.flip) }}"
 web.web.form.flip.yes:  oui
 web.web.form.flip.no: non
 
-
+#============== USER PAGE =============================
 #============== RIB =============================
 rubizz.form.bankName: Nom de la banque
 rubizz.form.bankCode: Code Banque
 rubizz.form.agencyCode: Code Agence
 rubizz.form.AccountNumber: N° du Compte
 rubizz.form.Key: clé
+#============== Encaisser ma cagnotte =========================
+web.web.user.cashIn.cash.title: Encaisser ma cagnotte
+web.web.user.cashIn.cash.firstSection: "Pour demander le paiement de votre cagnotte, vous devez avoir atteint un seuil minimum de 50€. Une fois le paiement demandés, le versement effectif sur le compte se fera dans un délai de 10 jours."
+web.web.user.cashIn.cash.SecondSection: "IMPORTANT : Vous n'avez pas renseigné vos coordonnées bancaires dans la rubrique VOTRE RIB. Aucune demande de paiement ne pourra être validée tant que vortre RIB ne sera complété. Cliquez ici pour renseigner vos coordonnées."
+web.web.user.cashIn.history.title: Historique de vos demandes de paiements

@@ -6,5 +6,15 @@
             {{ menu('publisherUser') }}
         </div>
     </div>
-    <div class="RBZ_wrapper">Encaisser</div>
+
+    {# Graphiques des stats #}
+    <div id="div_RBZ_cashIn">
+        <h1>{{ "web.web.user.cashIn.cash.title" | trans }}</h1>
+        <div id="div_RBZ_CashFirstSection">{{ "web.web.user.cashIn.cash.firstSection" | trans }}</div>
+        <div id="div_RBZ_CashSecondSection">{{ "web.web.user.cashIn.cash.SecondSection" | trans }}</div>
+    </div>
+    {# Historique #}
+    <div id="div_RBZ_cashInHistory">
+        <div>{{ "web.web.user.cashIn.history.title" | trans }}</div>
+    </div>
 {% endblock %}

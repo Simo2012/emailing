@@ -86,10 +86,15 @@ class UserController extends Controller {
 
     /**
      * Page encaisser la cagnotte
-     *
+     * 
      * @Template()
      */
     public function cashInAction() {
+        // ==== Déjà loggé ====
+        $loUser = $this->getUser();
+        if (!empty($loUser)) {
+            //
+        }
         return array();
     }
 
