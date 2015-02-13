@@ -122,5 +122,5 @@ Popup.prototype = {
     _endPrototype : null
 }; // Popup.prototype
 
-//==== Définition de l'objet Popup goAaf ====
+//==== Définition de l'objet Popup goPopup ====
 var goPopup = new Popup();

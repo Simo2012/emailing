@@ -35,5 +35,5 @@ Global.prototype = {
     _endPrototype : null
 }; // Global.prototype
 
-//==== Définition de l'objet Global goAaf ====
+//==== Définition de l'objet Global goGlobal ====
 var goGlobal = new Global();

@@ -1,23 +1,20 @@
-# ==== Layout global ====
-
 # ==== Menu principal ====
-publisherMenu_home:               accueil
-publisherMenu_offers:             toutes les offres
-publisherMenu_mailingList:        mailing list
-publisherMenu_howItWorks:         comment ça marche ?
-publisherMenu_recommendations:    vos recommendations
+rubizzMenu_home:               accueil
+rubizzMenu_offers:             toutes les offres
+rubizzMenu_mailingList:        mailing list
+rubizzMenu_howItWorks:         comment ça marche ?
+rubizzMenu_recommendations:    vos recommendations
 # ==== Menu Utilisateur ====
-publisherMenu_profile:            Mon profil
-publisherMenu_particulars:        Coordonnées
-publisherMenu_rib:                Votre RIB
-publisherMenu_pot:                Détail cagnotte
-publisherMenu_cashin:             Encaisser ma cagnotte
+rubizzMenu_profile:            Mon profil
+rubizzMenu_particulars:        Coordonnées
+rubizzMenu_rib:                Votre RIB
+rubizzMenu_pot:                Ma cagnotte
+rubizzMenu_cashin:             Encaisser ma cagnotte
 # ==== Menu Footer ====
-publisherMenu_about:              A propos
-publisherMenu_faq:                FAQ
-publisherMenu_contact:            Contact
-publisherMenu_jobs:               Jobs
-
+rubizzMenu_about:              A propos
+rubizzMenu_faq:                FAQ
+rubizzMenu_contact:            Contact
+rubizzMenu_jobs:               Jobs
 
 # ==== Layout Global ====
 footer.credits:   © <span>Rubizz</span> by Natexo.

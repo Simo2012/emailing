@@ -18,7 +18,7 @@
                 <ul id="ul_RBZ_menuProfile">
                     <li>
                         Romain Piraux<span class="RBZ_icons_selector"></span>
-                        {{ menu('publisherProfile') }}
+                        {{ menu('rubizzProfile') }}
                     </li>
                 </ul>
             </div>
@@ -28,11 +28,11 @@
     <div id="div_RBZ_navWrapper">
         <div class="RBZ_wrapper">
             {% if is_mobile() == false and is_tablet() == false %}
-                {{ menu('publisherMenu') }}
+                {{ menu('rubizzMenu') }}
             {% else %}
                 <a href="#" id="a_RBZ_linkMenuMobile"></a>
                 <div id="div_RBZ_menuMobile" class="RBZ_hide">
-                    {{ menu('publisherMenuMobile') }}
+                    {{ menu('rubizzMenuMobile') }}
                 </div>
             {% endif %}
 
@@ -42,7 +42,7 @@
                     <ul id="ul_RBZ_menuProfile">
                         <li>
                             Romain Piraux<span class="RBZ_icons_selector"></span>
-                            {{ menu('publisherProfile') }}
+                            {{ menu('rubizzProfile') }}
                         </li>
                     </ul>
                 </div>
@@ -56,6 +56,6 @@
 {% block FOOTER %}
     <div class="RBZ_wrapper">
         {{ "footer.credits" | trans | raw }}
-        {{ menu('publisherFooter') }}
+        {{ menu('rubizzFooter') }}
     </div>
 {% endblock %}

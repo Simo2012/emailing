@@ -56,5 +56,5 @@ Index.prototype = {
     _endPrototype : null
 }; // Index.prototype
 
-//==== Définition de l'objet Index goAaf ====
+//==== Définition de l'objet Index goIndex ====
 var goIndex = new Index();

@@ -1,6 +1,6 @@
 parameters:
     menus:
-        publisherMenu:
+        rubizzMenu:
             label: ""
             route: ""
             pages:
@@ -9,81 +9,81 @@ parameters:
                     route: WebWebBundle_offerList
                     class: RBZ_icons_home
                 Offers:
-                    label: publisherMenu_offers
+                    label: rubizzMenu_offers
                     route: WebWebBundle_defaultIndex
                 MailingList:
-                    label: publisherMenu_mailingList
-                    route: WebWebBundle_defaultIndex
+                    label: rubizzMenu_mailingList
+                    route: WebWebBundle_contactIndex
                 # ==== Exploitation ====
                 HowItWorks:
-                    label: publisherMenu_howItWorks
+                    label: rubizzMenu_howItWorks
                     route: WebWebBundle_defaultHowItWorks
                 Recommendations:
-                    label: publisherMenu_recommendations
+                    label: rubizzMenu_recommendations
                     route: WebWebBundle_defaultIndex
 
-        publisherMenuMobile:
+        rubizzMenuMobile:
             label: ""
             route: ""
             pages:
                 Home:
-                    label: publisherMenu_home
+                    label: rubizzMenu_home
                     route: WebWebBundle_offerList
                 Offers:
-                    label: publisherMenu_offers
+                    label: rubizzMenu_offers
                     route: WebWebBundle_defaultIndex
                 MailingList:
-                    label: publisherMenu_mailingList
+                    label: rubizzMenu_mailingList
                     route: WebWebBundle_defaultIndex
                 # ==== Exploitation ====
                 HowItWorks:
-                    label: publisherMenu_howItWorks
+                    label: rubizzMenu_howItWorks
                     route: WebWebBundle_defaultHowItWorks
                 Recommendations:
-                    label: publisherMenu_recommendations
+                    label: rubizzMenu_recommendations
                     route: WebWebBundle_defaultIndex
 
-        publisherProfile:
+        rubizzProfile:
             label: ""
             route: ""
             pages:
                 # ===== Développement ====
                 Profile:
-                    label: publisherMenu_profile
+                    label: rubizzMenu_profile
                     route: WebWebBundle_userProfile
 
-        publisherUser:
+        rubizzUser:
             label: ""
             route: ""
             pages:
                 Particular:
-                    label: publisherMenu_particulars
+                    label: rubizzMenu_particulars
                     route: WebWebBundle_userParticular
                 Rib:
-                    label: publisherMenu_rib
+                    label: rubizzMenu_rib
                     route: WebWebBundle_userRib
                 Pot:
-                    label: publisherMenu_pot
+                    label: rubizzMenu_pot
                     route: WebWebBundle_userPot
                 Cashin:
-                    label: publisherMenu_cashin
+                    label: rubizzMenu_cashin
                     route: WebWebBundle_userCashIn
 
-        publisherFooter:
+        rubizzFooter:
             label: ""
             route: ""
             pages:
                 Offers:
-                    label: publisherMenu_about
+                    label: rubizzMenu_about
                     route: WebWebBundle_defaultAbout
                 MailingList:
-                    label: publisherMenu_faq
+                    label: rubizzMenu_faq
                     route: WebWebBundle_defaultFaq
                 HowItWorks:
-                    label: publisherMenu_contact
+                    label: rubizzMenu_contact
                     route: WebWebBundle_defaultContact
                 Recommendations:
-                    label: publisherMenu_jobs
+                    label: rubizzMenu_jobs
                     route: WebWebBundle_defaultJobs
     # ---- Liste des identifiants api externes ----
     web.api:

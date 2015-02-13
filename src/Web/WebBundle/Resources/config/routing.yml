@@ -88,3 +88,10 @@ WebWebBundle_offerList:
     path:     /offer/list
     defaults: { _controller: "WebWebBundle:Offer:list" }    
 
+#==================================================
+# Contact controller : page mailing list, etc
+#==================================================
+# ---- Page index ----
+WebWebBundle_contactIndex:
+    path:     /contact/index
+    defaults: { _controller: "WebWebBundle:Contact:index" }

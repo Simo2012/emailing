@@ -60,9 +60,7 @@ class GraphicStandards extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $poResolver)
     {
         $poResolver->setDefaults(
-            array(
-                'publisherid' => ''
-            )
+            array()
         );
     } // setDefaultOptions
 

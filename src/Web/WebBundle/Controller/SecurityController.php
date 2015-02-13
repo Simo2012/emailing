@@ -17,7 +17,7 @@ use Web\WebBundle\Entity\User;
  * </pre>
  * @author Julien
  * @version 1.0
- * @package publisher
+ * @package Rubizz
  */
 class SecurityController extends Controller
 {

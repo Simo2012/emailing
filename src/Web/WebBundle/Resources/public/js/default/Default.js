@@ -138,5 +138,5 @@ Default.prototype = {
     _endPrototype : null
 }; // Default.prototype
 
-//==== Définition de l'objet Default goAaf ====
+//==== Définition de l'objet Default goDefault ====
 var goDefault = new Default();

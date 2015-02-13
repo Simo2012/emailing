@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
- * Contrôleur home : page d'accueil derrière le firewall
+ * Contrôleur user : pages relatives à l'utilisateur
  *
  * <pre>
  * Victor 07/02/2015 Création

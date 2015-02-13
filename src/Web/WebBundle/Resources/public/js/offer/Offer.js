@@ -46,6 +46,6 @@ Offer.prototype = {
     _endPrototype : null
 }; // Offer.prototype
 
-//==== Définition de l'objet Offer ====
+//==== Définition de l'objet Offer goOffer ====
 var goOffer = new Offer();
 goOffer.ready();

@@ -1,3 +1,21 @@
+# ==== Menu principal ====
+rubizzMenu_home:               Home
+rubizzMenu_offers:             All offers
+rubizzMenu_mailingList:        Mailing list
+rubizzMenu_howItWorks:         How does it work ?
+rubizzMenu_recommendations:    My recommendations
+# ==== Menu Utilisateur ====
+rubizzMenu_profile:            My profile
+rubizzMenu_particulars:        Contact information
+rubizzMenu_rib:                Your bank id
+rubizzMenu_pot:                My piggy bank
+rubizzMenu_cashin:             Redeem my piggy bank
+# ==== Menu Footer ====
+rubizzMenu_about:              About
+rubizzMenu_faq:                FAQ
+rubizzMenu_contact:            Contact
+rubizzMenu_jobs:               Jobs
+
 # ==== Layout global ====
 web.web.layout.headerTitle: Rubizz
 
@@ -55,16 +73,22 @@ web.web.default.index.slide1.text1: Gagne de l'argent en partageant des offres a
 web.web.default.index.slide1.text2: Lorem ipsum dolor sit amet, consecteturùbrùadipiscing elit. Nullam quis arcu a nisi ultrices consequat. Etiam in mollis ex.
 web.web.default.index.slide1.button: Commencer gratuitement
 
-# ==== Offer Page ====
-web.web.offer.index.title: All offers
-web.web.offer.index.categories.quiz : quiz
-web.web.offer.index.categories.quotation : quotation
-web.web.offer.index.categories.travel: travel
-web.web.offer.index.categories.ecommerce: ecommerce
-web.web.offer.index.categories.finances : finances
-web.web.offer.index.categories.divertissement: divertissement
-web.web.offer.index.categories.special: special
+# ==== Offer Page (index) ====
+web.web.offer.index.price.title: Your earnings
+web.web.offer.index.offer.title: Last available offers
+web.web.offer.index.donut.piggyBank: My piggy bank
+web.web.offer.index.donut.piggyBankTouch: Redeem my piggy bank
+web.web.offer.index.donut.detail: Detail
 web.web.offer.index.offer.seeAll: See all offers
+# ==== Offer Page (list) ====
+web.web.offer.list.title: All offers
+web.web.offer.list.categories.quiz : quiz
+web.web.offer.list.categories.quotation : quotation
+web.web.offer.list.categories.travel: travel
+web.web.offer.list.categories.ecommerce: e-commerce
+web.web.offer.list.categories.finances : finances
+web.web.offer.list.categories.divertissement: divertissement
+web.web.offer.list.categories.special: special
 
 # ==== Home Page ====
 web.web.home.index.price.title: Price

@@ -1,0 +1,20 @@
+{% extends "@WebWeb/layoutPage.html.twig" %}
+{% import "@WebWeb/macros.html.twig" as macro %}
+
+{% block CSS %}
+    {{ parent() }}
+    {% stylesheets
+    '@WebWebBundle/Resources/public/css/contact/index.scss'
+    %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+    {% endstylesheets %}
+{% endblock %}
+{% block JAVASCRIPT %}
+    {{ parent() }}
+    {% javascripts '@WebWebBundle/Resources/public/js/contact/Contact.js'%}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+
+{% block CONTENT %}
+{% endblock %}

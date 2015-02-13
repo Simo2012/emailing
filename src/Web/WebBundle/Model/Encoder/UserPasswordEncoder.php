@@ -12,7 +12,7 @@ use Symfony\Component\Security\Core\Encoder\PasswordEncoderInterface;
  * </pre>
  * @author Julien
  * @version 1.0
- * @package publisher
+ * @package rubizz
  */
 class UserPasswordEncoder implements PasswordEncoderInterface
 {

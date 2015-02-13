@@ -77,6 +77,6 @@ Index.prototype = {
     _endPrototype: null
 }; // Popup.prototype
 
-//==== Définition de l'objet Popup goAaf ====
+//==== Définition de l'objet Index goIndex ====
 var goIndex = new Index();
 goIndex.ready()
