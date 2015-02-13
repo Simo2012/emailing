@@ -163,3 +163,16 @@ services:
         class: Web\WebBundle\Form\Security\RegisterType
         tags:
             - { name: form.type, alias: WebWebRegisterType }
+
+    ##===========Formulaire============#
+    web.web.form.usertypebic:
+        class: Web\WebBundle\Form\UserTypeBIC
+        tags:
+            - { name: form.type, alias: userbic }
+        arguments: ["cypt", "decrypt"]
+        
+    web.web.form.bictype:
+        class: Web\WebBundle\Form\BICType
+        tags:
+            - { name: form.type, alias: BicRib }
+        arguments: ["crypt", "decrypt"]

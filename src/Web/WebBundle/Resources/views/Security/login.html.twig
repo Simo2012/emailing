@@ -3,7 +3,7 @@
         <div id="div_RBZ_logo">
             <div id="div_RBZ_close">&#735;</div>
             <img src="{{ asset('/bundles/webweb/images/default/login/login_rubizz_red.png') }}">
-            <h3 class="RBZ_linesSided"><span>{{ "web.web.security.login.baseline" | trans }}</span></h3>
+            <h3 class="RBZ_linesSided RBZ_{{ app.request.locale }}"><span>{{ "web.web.security.login.baseline" | trans }}</span></h3>
         </div>
         <div id="div_RBZ_form">
             <form action="{{ path('WebWebBundle_securityLogin') }}" method="post" {{ form_enctype(form) }}>
