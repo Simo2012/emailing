@@ -39,19 +39,22 @@
                 <a href="">{{ "web.web.offer.index.donut.detail" | trans }}</a>
             </div>
         </div>
-
     </div>
-
+    
 
     <h1>{{ "web.web.offer.index.offer.title" | trans }}</h1>
     <div id="div_RBZ_AllOffers"><a href="{{ url("WebWebBundle_offerList") }}">{{ "web.web.offer.index.offer.seeAll" | trans }}</a></div>
     <div class="KNS_clear"></div>
     {# liste des offres  #}
-    <div class="div_RBZ_offers">
-        {# inclusion de la macro des offres  #}
-        {% for offer in offers %}
-            {{ macro.offer(offer) }}
-        {% endfor %}
-    </div>
 
+    <div class="RBZ_offers KNS_grid">
+        <div class="KNS_grid2">
+            {# inclusion de la macro des offres  #}
+            {% for offer in offers %}
+            <div>
+                {{ macro.offer(offer) }}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}

@@ -60,12 +60,24 @@
 //=== inclusion de la macro des offres (tag)
 #div_RBZ_AllOffers {
     float: right;
-    font : "Open Sans Bold" 14px;
+    font : "Open Sans" 14px;
+    font-weight: bold;
     margin-bottom: 20px;
     a {
         color : #f04f61;
     }
 
+}
+
+.RBZ_offers {
+    &.KNS_grid > * {
+        margin-left: -20px !important;
+    }
+
+    /* default styles for each "cell" */
+    &.KNS_grid > * > * {
+        padding-left: 20px !important;
+    }
 }
 
 /* ==== iPad ==== */

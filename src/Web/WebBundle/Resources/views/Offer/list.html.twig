@@ -30,11 +30,15 @@
             </ul>
         </div>
         {# liste des offres  #}
-        <div class="div_RBZ_offers">
+        <div class="RBZ_offers KNS_grid">
+            <div class="KNS_grid2">
             {# inclusion de la macro des offres  #}
             {% for offer in offers %}
-                {{ macro.offer(offer) }}
+                <div>
+                    {{ macro.offer(offer) }}
+                </div>
             {% endfor %}
+            </div>
         </div>
 
 {% endblock %}
