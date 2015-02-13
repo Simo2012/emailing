@@ -1,5 +1,12 @@
 {% extends "@WebWeb/layoutPage.html.twig" %}
-
+{% block CSS %}
+    {{ parent() }}
+    {% stylesheets
+    '@WebWebBundle/Resources/public/css/user/cashIn.scss'
+    %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+    {% endstylesheets %}
+{% endblock %}
 {% block CONTENT %}
     <div id="div_RBZ_userMenu">
         <div class="RBZ_wrapper">
@@ -7,14 +14,42 @@
         </div>
     </div>
 
-    {# Graphiques des stats #}
+    <h1>{{ "web.web.user.cashIn.cash.title" | trans }}</h1>
+
+    {# cagnotte #}
     <div id="div_RBZ_cashIn">
-        <h1>{{ "web.web.user.cashIn.cash.title" | trans }}</h1>
         <div id="div_RBZ_CashFirstSection">{{ "web.web.user.cashIn.cash.firstSection" | trans }}</div>
-        <div id="div_RBZ_CashSecondSection">{{ "web.web.user.cashIn.cash.SecondSection" | trans }}</div>
+        <div id="div_RBZ_CashSecondSection">&#9888; {{ "web.web.user.cashIn.cash.SecondSection" | trans |replace({'%rib%': url("WebWebBundle_userRib"), '%ici%': url("WebWebBundle_userRib")}) |raw }}</div>
+        <div id="div_RBZ_CashThirdSection">
+            <div>{{ "web.web.offer.index.donut.piggyBank" | trans }}</div>
+            <div class="RBZ_piggyBank">125,00€</div>
+            <div class="RBZ_piggyBankText">
+                <a class="RBZ_redButton" href="#">{{ "web.web.user.cashIn.cash.info" | trans | upper }} &rsaquo; </a>
+            </div>
+        </div>
+
     </div>
+
+    <h3>{{ "web.web.user.cashIn.history.title" | trans }}</h3>
     {# Historique #}
     <div id="div_RBZ_cashInHistory">
-        <div>{{ "web.web.user.cashIn.history.title" | trans }}</div>
+        <table>
+            <tr>
+                <th>{{ "web.web.user.cashIn.tabHistory.date" | trans }}</th>
+                <th>{{ "web.web.user.cashIn.tabHistory.desc" | trans }}</th>
+                <th>{{ "web.web.user.cashIn.tabHistory.amount" | trans }}</th>
+                <th>{{ "web.web.user.cashIn.tabHistory.statut" | trans }}</th>
+            </tr>
+            {# inclusion des historiques #}
+            {#{% for  invoiceRequest  in invoiceRequests %}#}
+                <tr>
+                    <td>30/04/2014 </td>
+                    <td>demande en cours</td>
+                    <td>125</td>
+                    <td>statut</td>
+                </tr>
+            {#{% endfor %}#}
+
+        </table>
     </div>
 {% endblock %}
