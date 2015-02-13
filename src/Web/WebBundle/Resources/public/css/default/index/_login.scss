@@ -168,15 +168,16 @@
 
 /* ==== iPad ==== */
 @media (max-width: 767px) {
+    /* ==== Popup de login ==== */
+    #div_RBZ_loginPopup {
+        top: 120px;
+    }
+    /* ==== Popup de register ==== */
     #div_RBZ_registerPopup {
+        top: 40px;
         padding-left: 0px;
     }
     #div_RBZ_registerShadow {
-        display: none;
-        position: absolute;
-        top: 0px;
-        opacity: 0.8;
-        z-index: 1;
         &.RBZ_fr_FR {
             background: none;
             background-color: #000000;
@@ -190,22 +191,37 @@
 
 /* ==== Smartphone ==== */
 @media (max-width: 480px) {
+    /* ==== Popup de login ==== */
+    #div_RBZ_loginPopup {
+        top: 120px;
+    }
+    /* ==== Popup de register ==== */
+    #div_RBZ_registerPopup {
+        top: 40px;
+    }
+}
+
+
+/* ==== Petit Smartphone ==== */
+@media (max-width: 330px) {
+    /* ==== Popup de login ==== */
+    #div_RBZ_loginPopup {
+        top: 30px;
+        #div_RBZ_content {
+            width: 320px;
+        }
+    }
+    /* ==== Popup de register ==== */
     #div_RBZ_registerPopup {
         padding-left: 0px;
-    }
-    #div_RBZ_registerShadow {
-        display: none;
-        position: absolute;
         top: 0px;
-        opacity: 0.8;
-        z-index: 1;
-        &.RBZ_fr_FR {
-            background: none;
-            background-color: #000000;
-        }
-        &.RBZ_en_US {
-            background: none;
-            background-color: #000000;
+        #div_RBZ_content {
+            width: 320px;
+            &.RBZ_fr_FR {
+                /* ---- Positionnement par rapport au texte sous la popup
+                 qui dépasse à gauche et à droite en français ----*/
+                left: 0px;
+            }
         }
     }
 }
