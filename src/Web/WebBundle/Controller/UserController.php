@@ -75,18 +75,19 @@ class UserController extends Controller {
     public function potAction() {
         return array();
     }// potAction
-
+    
     /**
      * Page encaisser la cagnotte
      * 
      * @Template()
      */
     public function cashInAction() {
-        // ==== Déjà loggé ====
+        // ==== recuperation du user courant ====
         $loUser = $this->getUser();
-        if (!empty($loUser)) {
-            //
-        }
-        return array();
-    }// cashInAction
+
+        return array(
+            'user'  => $loUser,
+            'invoiceRequests' => array()
+        );
+    }
 }
