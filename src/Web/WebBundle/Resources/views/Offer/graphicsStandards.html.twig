@@ -39,6 +39,7 @@
             addEditor('#form2');
             addEditor('#flip');
             addEditor('#buttons');
+            addEditor('#table');
         });
     </script>
 {% endblock %}
@@ -166,6 +167,75 @@ $poBuilder->add('flip', 'flip', $laParams);
 <input type="submit" value="SUBMIT" class="RBZ_redButton"/>
 
 <a class="RBZ_redButton" href="#">SUBMIT</a>
+        </textarea>
+        </div>
+    </div>
+
+    <h2 class="KNS_txtcenter">TABLEAUX</h2>
+
+    <div class="KNS_row KNS_mbl">
+        <div class="KNS_mod">
+            <table class="RBZ_table">
+                <tr>
+                    <th>HEADER1</th>
+                    <th>HEADER2</th>
+                    <th class="KNS_txtcenter">HEADER3</th>
+                    <th>HEADER4</th>
+                </tr>
+                <tr>
+                    <td>texte</td>
+                    <td>texte</td>
+                    <td class="KNS_txtcenter">texte centré</td>
+                    <td>texte</td>
+                </tr>
+                <tr>
+                    <td>texte</td>
+                    <td>texte</td>
+                    <td class="KNS_txtcenter">texte centré</td>
+                    <td class="RBZ_red">texte rouge</td>
+                </tr>
+                <tr>
+                    <td>texte</td>
+                    <td>texte</td>
+                    <td class="KNS_txtcenter">texte centré</td>
+                    <td class="RBZ_blue">texte bleu</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="KNS_row KNS_mbl">
+        <div class="KNS_mod">
+        <textarea name="" id="table" cols="30" rows="7">
+<div class="KNS_row KNS_mbl">
+    <div class="KNS_mod">
+        <table class="RBZ_table">
+            <tr>
+                <th>HEADER1</th>
+                <th>HEADER2</th>
+                <th class="KNS_txtcenter">HEADER3</th>
+                <th>HEADER4</th>
+            </tr>
+            <tr>
+                <td>texte</td>
+                <td>texte</td>
+                <td class="KNS_txtcenter">texte</td>
+                <td>texte</td>
+            </tr>
+            <tr>
+                <td>texte</td>
+                <td>texte</td>
+                <td class="KNS_txtcenter">texte</td>
+                <td class="RBZ_red">texte rouge</td>
+            </tr>
+            <tr>
+                <td>texte</td>
+                <td>texte</td>
+                <td class="KNS_txtcenter">texte</td>
+                <td class="RBZ_blue">texte bleu</td>
+            </tr>
+        </table>
+    </div>
+</div>
         </textarea>
         </div>
     </div>
