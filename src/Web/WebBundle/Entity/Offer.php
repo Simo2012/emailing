@@ -120,16 +120,16 @@ class Offer
     private $platformId;
 
     /**
-     * @var simplearray
+     * @var array
      *
-     * @ORM\Column(name="category", type="simplearray", nullable=false)
+     * @ORM\Column(name="category", type="simple_array", nullable=false)
      */
     private $category;
 
     /**
-     * @var simplearray
+     * @var array
      *
-     * @ORM\Column(name="publishing", type="simplearray", nullable=false)
+     * @ORM\Column(name="publishing", type="simple_array", nullable=false)
      */
     private $publishing;
 
@@ -515,10 +515,10 @@ class Offer
     /**
      * Set category
      *
-     * @param \simplearray $category
+     * @param array $category
      * @return Offer
      */
-    public function setCategory(\simplearray $category)
+    public function setCategory(array $category)
     {
         $this->category = $category;
 
@@ -528,7 +528,7 @@ class Offer
     /**
      * Get category
      *
-     * @return \simplearray
+     * @return array
      */
     public function getCategory()
     {
@@ -538,10 +538,10 @@ class Offer
     /**
      * Set publishing
      *
-     * @param \simplearray $publishing
+     * @param array $publishing
      * @return Offer
      */
-    public function setPublishing(\simplearray $publishing)
+    public function setPublishing(array $publishing)
     {
         $this->publishing = $publishing;
 
@@ -551,7 +551,7 @@ class Offer
     /**
      * Get publishing
      *
-     * @return \simplearray
+     * @return array
      */
     public function getPublishing()
     {
