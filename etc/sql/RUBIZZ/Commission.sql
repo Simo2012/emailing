@@ -15,4 +15,4 @@ CREATE TABLE IF NOT EXISTS RUBIZZ.commission (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Commissions';
 
 -- ==== droits ====
-GRANT select, insert, update, delete ON RUBIZZ.commission to web@'%';
+GRANT select, insert, update, delete ON RUBIZZ.commissions to web@'%';
