@@ -6,7 +6,7 @@ rubizzMenu_howItWorks:         How does it work ?
 rubizzMenu_recommendations:    My recommendations
 # ==== Menu Utilisateur ====
 rubizzMenu_profile:            My profile
-rubizzMenu_particulars:        Contact information
+rubizzMenu_details:            Contact information
 rubizzMenu_rib:                Your bank id
 rubizzMenu_pot:                My piggy bank
 rubizzMenu_cashin:             Redeem my piggy bank

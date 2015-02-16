@@ -14,53 +14,42 @@
             {{ menu('rubizzUser') }}
         </div>
     </div>
-    <form action="{{ url('WebWebBundle_userRib') }}" method="post" {{ form_enctype(form) }} autocomplete="off">
+    <form action="" method="post" {{ form_enctype(form) }} autocomplete="off">
 
         {% if error is defined %}
             <p class="RBZ_error">{{ error }}</p>
         {% endif %}
-        <div class="RBZ_user_details">
-            <div class="RBZ_user_details_header">
-                <div class="RBZ_user_details_header_title">
-                    <div class="KNS_row KNS_mbl">
-                        <div class="KNS_mod KNS_start KNS_w40">
+        <h1>{{ 'web.web.user.details.title' | trans }}</h1>
 
-                            <h1>{{ 'web.web.user.details.titre1' | trans }}</h1>
-                        </div>
+        <div id="div_RBZ_userDetailsInfo">
 
-                    </div>
-                </div>
-                <div class="RBZ_user_details_header_title">
-                    <div class="KNS_row KNS_mbl">
-                        <div class="KNS_mod KNS_start KNS_w40">
-                            <h3>{{ 'web.web.user.details.titre2' | trans }}</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="RBZ_user_details_header_input">
-                    {{ form_widget(form) }}
-
-
-                    {{ form_rest(form) }}
-
-                </div>
-
-                <div class="RBZ_user_details_header_input_border">
-                </div>
-
+            <div id="div_RBZ_userPersonal">
+                <h3>1.{{ 'web.web.user.details.personal.title' | trans }}</h3>
+                {{ form_widget(form) }}
+                <div class="RBZ_input">{{ form_widget(form.lastname) }}</div>
+                <div class="RBZ_input">{{ form_widget(form.firstname) }}</div>
             </div>
-
-            <div class="RBZ_user_details_footer">
-                <div class="RBZ_user_details_footer_input">
-                    <input type="submit" value="{{ 'web.web.user.details.submit' | trans }}" class="RBZ_redButton"/>
-                </div>
+            <div id="div_RBZ_userNewsletter">
+                <h3>2.{{ 'web.web.user.details.newsletter.title' | trans }}</h3>
+                {{ form_widget(form.optin_newsletter) }}
             </div>
 
         </div>
+        <div id="div_RBZ_userDetailsConnection">
 
+            <div id="div_RBZ_userConnection">
+                <h3>3.{{ 'web.web.user.details.connection.title' | trans }}</h3>
+                <div class="RBZ_input">{{ form_widget(form.email) }}</div>
+                <div class="RBZ_input">{{ form_widget(form.password) }}</div>
+            </div>
+        </div>
+        <div class="KNS_clear"></div>
+        <hr />
+        <div class="RBZ_user_details_footer">
+            <div class="RBZ_user_details_footer_input">
+                <input type="submit" value="{{ 'web.web.user.details.submit' | trans }} &rsaquo;" class="RBZ_redButton"/>
+            </div>
+        </div>
 
-
-
-    </div>
-</form>
+    </form>
 {% endblock %}

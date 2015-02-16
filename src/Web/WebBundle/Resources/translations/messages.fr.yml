@@ -6,7 +6,7 @@ rubizzMenu_howItWorks:         comment ça marche ?
 rubizzMenu_recommendations:    vos recommendations
 # ==== Menu Utilisateur ====
 rubizzMenu_profile:            Mon profil
-rubizzMenu_particulars:        Coordonnées
+rubizzMenu_details:            Coordonnées
 rubizzMenu_rib:                Votre RIB
 rubizzMenu_pot:                Ma cagnotte
 rubizzMenu_cashin:             Encaisser ma cagnotte
@@ -133,6 +133,12 @@ web.web.user.cashIn.history.title:      Historique de vos demandes de paiements
 # ==== Détail cagnotte ====
 web.web.user.pot.titre: Détail de votre cagnotte
 web.web.user.pot.text: Cette rubrique regroupe tous les mouvements de votre cagnotte: Recommandations effectuées, paiement reçues... Cliquez sur le détail de l'opération pour visualiser les commissions par recommandations. Vous pouvez à tout moment récupérer le solde du dans la rubrique "Encaisser ma cagnotte" sous réserve que le montant mimimum de 50€ soit atteint.
+# ==== Coordonnées ====
+web.web.user.details.title:                 Coordonnées
+web.web.user.details.personal.title:        Vos informations personnelles
+web.web.user.details.newsletter.title:      Vos inscriptions Newsletter
+web.web.user.details.connection.title:      Identifiants de connexion
+web.web.user.details.submit:                Valider
 
 # ============ CONTACT PAGE ============
 # ==== Index ====
