@@ -75,6 +75,7 @@ class Recommendation
      */
     public function __construct()
     {
+        $this->dateCreate = new \DateTime('now');
         $this->contact = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -82,7 +83,7 @@ class Recommendation
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -105,7 +106,7 @@ class Recommendation
     /**
      * Get type
      *
-     * @return string 
+     * @return string
      */
     public function getType()
     {
@@ -128,7 +129,7 @@ class Recommendation
     /**
      * Get dateCreate
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDateCreate()
     {
@@ -151,7 +152,7 @@ class Recommendation
     /**
      * Get user
      *
-     * @return \Web\WebBundle\Entity\User 
+     * @return \Web\WebBundle\Entity\User
      */
     public function getUser()
     {
@@ -174,7 +175,7 @@ class Recommendation
     /**
      * Get offer
      *
-     * @return \Web\WebBundle\Entity\Offer 
+     * @return \Web\WebBundle\Entity\Offer
      */
     public function getOffer()
     {
@@ -207,7 +208,7 @@ class Recommendation
     /**
      * Get contact
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getContact()
     {
