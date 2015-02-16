@@ -27,9 +27,7 @@ class UserController extends Controller {
      */
     public function profileAction() {
         return array();
-    }
-
-// profileAction
+    }// profileAction
 
     /**
      * Page particular
@@ -38,9 +36,7 @@ class UserController extends Controller {
      */
     public function particularsAction() {
         return array();
-    }
-
-// particularAction
+    }// particularAction
 
     /**
      * Page rib
@@ -69,9 +65,7 @@ class UserController extends Controller {
             'form' => $loForm->createView(),
             'UserId' => $loUser->getId()
         );
-    }
-
-// ribAction
+    }// ribAction
 
     /**
      * Page cagnotte
@@ -80,10 +74,8 @@ class UserController extends Controller {
      */
     public function potAction() {
         return array();
-    }
-
-// potAction
-
+    }// potAction
+    
     /**
      * Page encaisser la cagnotte
      * 
@@ -98,6 +90,4 @@ class UserController extends Controller {
             'invoiceRequests' => array()
         );
     }
-
-// cashInAction
 }

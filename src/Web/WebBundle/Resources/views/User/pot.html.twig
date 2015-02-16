@@ -1,10 +1,38 @@
 {% extends "@WebWeb/layoutPage.html.twig" %}
-
+{% block CSS %}
+    {{ parent() }}
+    {% stylesheets
+    '@WebWebBundle/Resources/public/css/user/pot.scss'
+    %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+    {% endstylesheets %}
+{% endblock %}
 {% block CONTENT %}
     <div id="div_RBZ_userMenu">
         <div class="RBZ_wrapper">
             {{ menu('rubizzUser') }}
         </div>
     </div>
-    <div class="RBZ_wrapper">Cagnotte</div>
+    <div class="RBZ_wrapper">
+        <div class="RBZ_user_pot">
+            <div class="RBZ_user_pot_title">
+                <div class="KNS_row KNS_mbl">
+                    <div class="KNS_mod KNS_start KNS_w40">
+                        <h2>{{ 'web.web.user.pot.titre' | trans }}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="RBZ_user_pot_title">
+                <div class="KNS_row KNS_mbl">
+                    <div class="KNS_mod KNS_w40">
+                        <div class="RBZ_input">
+                            {{ 'web.web.user.pot.text' | trans }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
 {% endblock %}

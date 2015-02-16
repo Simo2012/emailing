@@ -125,3 +125,8 @@ web.web.user.cashIn.tabHistory.date:    DATE
 web.web.user.cashIn.tabHistory.desc:    DESCRIPTION
 web.web.user.cashIn.tabHistory.amount:  MONTANT
 web.web.user.cashIn.tabHistory.statut:  STATUT
+web.web.user.cashIn.cash.SecondSection: "IMPORTANT : Vous n'avez pas renseigné vos coordonnées bancaires dans la rubrique VOTRE RIB. Aucune demande de paiement ne pourra être validée tant que vortre RIB ne sera complété. Cliquez ici pour renseigner vos coordonnées."
+web.web.user.cashIn.history.title:      Historique de vos demandes de paiements
+#============ Détail cagnotte =======================
+web.web.user.pot.titre: Détail de votre cagnotte
+web.web.user.pot.text: Cette rubrique regroupe tous les mouvements de votre cagnotte: Recommandations effectuées, paiement reçues... Cliquez sur le détail de l'opération pour visualiser les commissions par recommandations. Vous pouvez à tout moment récupérer le solde du dans la rubrique "Encaisser ma cagnotte" sous réserve que le montant mimimum de 50€ soit atteint.
