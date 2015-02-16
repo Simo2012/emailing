@@ -25,10 +25,12 @@ CREATE TABLE IF NOT EXISTS RUBIZZ.offer (
     rem_volume        int(10) unsigned     NOT NULL COMMENT 'Number of available offers',
     rem_illimited     tinyint(3) unsigned  NOT NULL COMMENT 'If the volume is illimited',
     rem_member        decimal(10,2)        NOT NULL COMMENT 'Remuneration amount or % for the member',
+    brand_id          int(10) unsigned     NOT NULL COMMENT 'Corresponding brand',
 
     PRIMARY KEY (id),
     KEY offerCountryActive_idx (country, active, category),
-    CONSTRAINT offerSubsidiary_fk FOREIGN KEY (subsidiary_id) REFERENCES SYNCHRO.subsidiary (id) ON DELETE RESTRICT
+    CONSTRAINT offerSubsidiary_fk FOREIGN KEY (subsidiary_id) REFERENCES SYNCHRO.subsidiary (id) ON DELETE RESTRICT,
+    CONSTRAINT offerBrand_fk FOREIGN KEY (brand_id) REFERENCES SYNCHRO.brand (id) ON DELETE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Offers';
 
 -- ==== droits ====
