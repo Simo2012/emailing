@@ -33,23 +33,27 @@
     <h3>{{ "web.web.user.cashIn.history.title" | trans }}</h3>
     {# Historique #}
     <div id="div_RBZ_cashInHistory">
-        <table>
-            <tr>
-                <th>{{ "web.web.user.cashIn.tabHistory.date" | trans }}</th>
-                <th>{{ "web.web.user.cashIn.tabHistory.desc" | trans }}</th>
-                <th>{{ "web.web.user.cashIn.tabHistory.amount" | trans }}</th>
-                <th>{{ "web.web.user.cashIn.tabHistory.statut" | trans }}</th>
-            </tr>
-            {# inclusion des historiques #}
-            {#{% for  invoiceRequest  in invoiceRequests %}#}
-                <tr>
-                    <td>30/04/2014 </td>
-                    <td>demande en cours</td>
-                    <td>125</td>
-                    <td>statut</td>
-                </tr>
-            {#{% endfor %}#}
+        <div class="KNS_row KNS_mbl">
+            <div class="KNS_mod">
+                <table class="RBZ_table">
+                    <tr>
+                        <th>{{ "web.web.user.cashIn.tabHistory.date" | trans }}</th>
+                        <th>{{ "web.web.user.cashIn.tabHistory.desc" | trans }}</th>
+                        <th>{{ "web.web.user.cashIn.tabHistory.amount" | trans }}</th>
+                        <th>{{ "web.web.user.cashIn.tabHistory.statut" | trans }}</th>
+                    </tr>
+                    <tr>
+                        {# inclusion des historiques #}
+                        {#{% for  invoiceRequest  in invoiceRequests %}#}
+                        <td>30/04/2014 </td>
+                        <td>demande en cours</td>
+                        <td>125</td>
+                        <td>statut</td>
+                    </tr>
+                    {#{% endfor %}#}
 
-        </table>
+                </table>
+            </div>
+        </div>
     </div>
 {% endblock %}
