@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Web\WebBundle\Form\User\UserDetailsType;
 
 /**
  * Contrôleur user : pages relatives à l'utilisateur
@@ -30,13 +31,31 @@ class UserController extends Controller {
     }// profileAction
 
     /**
-     * Page particular
+     * Page details (coordonnées)
      *
      * @Template()
      */
-    public function particularsAction() {
-        return array();
-    }// particularAction
+    public function detailsAction() {
+        $loManager = $this->getDoctrine()->getManager();
+        $loUser = $this->getUser();
+        $loForm = $this->createForm(new UserDetailsType(), null);
+        
+        // ==== Traitement de la saisie ====
+        $loRequest = $this->getRequest();
+        if ($loRequest->isMethod('POST')) {
+            $loForm->bind($loRequest);
+            try {
+                $loUser->setDateUpdate(new \DateTime('now'));
+                $loManager->flush();
+            } catch (DBALException $poException) {
+                //var_dump($poException);
+            }
+        }
+        return array(
+            'form' => $loForm->createView(),
+            //'user' => $loUser
+        );
+    }// detailsAction
 
     /**
      * Page rib

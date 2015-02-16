@@ -1,0 +1,66 @@
+{% extends "@WebWeb/layoutPage.html.twig" %}
+
+{% block CSS %}
+    {{ parent() }}
+    {% stylesheets
+    '@WebWebBundle/Resources/public/css/user/details.scss'
+    %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+    {% endstylesheets %}
+{% endblock %}
+{% block CONTENT %}
+    <div id="div_RBZ_userMenu">
+        <div class="RBZ_wrapper">
+            {{ menu('publisherUser') }}
+        </div>
+    </div>
+    <form action="{{ url('WebWebBundle_userRib') }}" method="post" {{ form_enctype(form) }} autocomplete="off">
+
+        {% if error is defined %}
+            <p class="RBZ_error">{{ error }}</p>
+        {% endif %}
+        <div class="RBZ_user_details">
+            <div class="RBZ_user_details_header">
+                <div class="RBZ_user_details_header_title">
+                    <div class="KNS_row KNS_mbl">
+                        <div class="KNS_mod KNS_start KNS_w40">
+
+                            <h1>{{ 'web.web.user.details.titre1' | trans }}</h1>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="RBZ_user_details_header_title">
+                    <div class="KNS_row KNS_mbl">
+                        <div class="KNS_mod KNS_start KNS_w40">
+                            <h3>{{ 'web.web.user.details.titre2' | trans }}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="RBZ_user_details_header_input">
+                    {{ form_widget(form) }}
+
+
+                    {{ form_rest(form) }}
+
+                </div>
+
+                <div class="RBZ_user_details_header_input_border">
+                </div>
+
+            </div>
+
+            <div class="RBZ_user_details_footer">
+                <div class="RBZ_user_details_footer_input">
+                    <input type="submit" value="{{ 'web.web.user.details.submit' | trans }}" class="RBZ_redButton"/>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+</form>
+{% endblock %}
