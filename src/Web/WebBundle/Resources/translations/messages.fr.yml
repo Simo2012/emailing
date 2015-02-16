@@ -16,10 +16,18 @@ rubizzMenu_faq:                FAQ
 rubizzMenu_contact:            Contact
 rubizzMenu_jobs:               Jobs
 
+# ==== Standard Graphiques ====
+graphic.standards.form.text1: "{{ form_row(form.text1) }}"
+graphic.standards.form.text2: '<div class="RBZ_input">{{ form_label(form.text2) }} {{ form_widget(form.text2) }}</div>'
+graphic.standards.form.flip: "{{ form_row(form.flip) }}"
+web.web.form.flip.yes:  oui
+web.web.form.flip.no: non
+
 # ==== Layout Global ====
-footer.credits:   © <span>Rubizz</span> by Natexo.
+footer.credits: © <span>Rubizz</span> by Natexo.
 web.web.layout.headerTitle: Rubizz
 
+# ============ SECURITY PAGE ============
 # ==== Login/Inscription ====
 web.web.security.login.baseline:        BON RETOUR SUR RUBIZZ
 web.web.security.register.baseline:     DÉCOUVRIR GRATUITEMENT RUBIZZ
@@ -42,6 +50,7 @@ web.web.security.legal_terms:           conditions d'utilisation
 web.web.security.have_account:          Vous avez déjà un compte ?
 web.web.security.connect:               Connectez-vous
 
+# ============ DEFAULT PAGE ============
 # ==== Home Page ====
 web.web.default.index.login: CONNEXION
 web.web.default.index.register: S'INSCRIRE
@@ -74,7 +83,7 @@ web.web.default.index.slide1.text1: Gagne de l'argent en partageant des offres a
 web.web.default.index.slide1.text2: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis arcu a nisi ultrices consequat. Etiam in mollis ex.
 web.web.default.index.slide1.button: Commencer gratuitement
 
-# ==== Offer Page ====
+# ============ OFFER PAGE ============
 # ==== Offer Page (index) ====
 web.web.offer.index.price.title: Vos gains
 web.web.offer.index.offer.title: Dernières offres disponibles
@@ -91,154 +100,15 @@ web.web.offer.list.categories.ecommerce: e-commerce
 web.web.offer.list.categories.finances : Finances
 web.web.offer.list.categories.divertissement: Divertissement
 web.web.offer.list.categories.special: Offres spéciales
-
-
-#========= Block Offre macro =============#
+# ==== Block Offre macro ====
 offer.prixdescription: à chaque participation
 offer.recommander: RECOMMANDER
 offer.facebook: Publier sur Facebook
 offer.twiter: Publier sur Twitter
 offer.mailling: Envoyer à ma mailling List
 
-# ==== Standard Graphiques ====
-graphic.standards.form.text1: "{{ form_row(form.text1) }}"
-graphic.standards.form.text2: '<div class="RBZ_input">{{ form_label(form.text2) }} {{ form_widget(form.text2) }}</div>'
-graphic.standards.form.flip: "{{ form_row(form.flip) }}"
-web.web.form.flip.yes:  oui
-web.web.form.flip.no: non
-
-#============== USER PAGE =============================
-#============== RIB =============================
-rubizz.form.bankName: Nom de la banque
-rubizz.form.bankCode: Code Banque
-rubizz.form.agencyCode: Code Agence
-rubizz.form.AccountNumber: N° du Compte
-rubizz.form.Key: clé
-#============== Encaisser ma cagnotte =========================
-web.web.user.cashIn.cash.title: Encaisser ma cagnotte
-web.web.user.cashIn.cash.firstSection: "Pour demander le paiement de votre cagnotte, vous devez avoir atteint un seuil minimum de 50€. Une fois le paiement demandés, le versement effectif sur le compte se fera dans un délai de 10 jours."
-web.web.user.cashIn.cash.SecondSection: "<strong>IMPORTANT </strong>: Vous n'avez pas renseigné vos coordonnées bancaires dans la rubrique <a href='%rib%'>VOTRE RIB</a>. Aucune demande de paiement ne pourra être validée tant que votre RIB ne sera complété. Cliquez <a href='%ici%'>ici</a> pour renseigner vos coordonnées."
-web.web.user.cashIn.cash.info: Demander le paiement
-web.web.user.cashIn.history.title: Historique de vos demandes de paiements
-#============== tableau =============================
-web.web.user.cashIn.tabHistory.date:    DATE   
-web.web.user.cashIn.tabHistory.desc:    DESCRIPTION
-web.web.user.cashIn.tabHistory.amount:  MONTANT
-web.web.user.cashIn.tabHistory.statut:  STATUT
-# ==== Layout global ====
-
-# ==== Menu principal ====
-publisherMenu_home:               accueil
-publisherMenu_offers:             toutes les offres
-publisherMenu_mailingList:        mailing list
-publisherMenu_howItWorks:         comment ça marche ?
-publisherMenu_recommendations:    vos recommendations
-# ==== Menu Utilisateur ====
-publisherMenu_profile:            Mon profil
-publisherMenu_particulars:        Coordonnées
-publisherMenu_rib:                Votre RIB
-publisherMenu_pot:                Détail cagnotte
-publisherMenu_cashin:             Encaisser ma cagnotte
-# ==== Menu Footer ====
-publisherMenu_about:              A propos
-publisherMenu_faq:                FAQ
-publisherMenu_contact:            Contact
-publisherMenu_jobs:               Jobs
-
-
-# ==== Layout Global ====
-footer.credits:   © <span>Rubizz</span> by Natexo.
-web.web.layout.headerTitle: Rubizz
-
-# ==== Login/Inscription ====
-web.web.security.login.baseline:        BON RETOUR SUR RUBIZZ
-web.web.security.register.baseline:     DÉCOUVRIR GRATUITEMENT RUBIZZ
-web.web.security.firstname:             Votre prénom
-web.web.security.lastname:              Votre nom
-web.web.security.email:                 Votre email
-web.web.security.password:              Votre mot de passe
-web.web.security.email_not_found:       Cet email n'est associé à aucun utilisateur.
-web.web.security.wrong_password:        Mot de passe incorrect.
-web.web.security.user_already_exists:   Un utilisateur utilisant cet email existe déjà.
-web.web.security.invalid_email:         L'email saisi n'est pas un email valide.
-web.web.security.password_too_long:     Votre mot de passe ne doit pas excéder 12 caractères
-web.web.security.login.submit:          SE CONNECTER
-web.web.security.register.submit:       JE DÉCOUVRE
-web.web.security.forgotten_password:    Mot de passe oublié ?
-web.web.security.not_registered:        Pas encore inscrit ?
-web.web.security.create_account:        Créez un compte
-web.web.security.legal_terms_sentences: En vous inscrivant, vous acceptez les
-web.web.security.legal_terms:           conditions d'utilisation
-web.web.security.have_account:          Vous avez déjà un compte ?
-web.web.security.connect:               Connectez-vous
-
-# ==== Home Page ====
-web.web.default.index.login: CONNEXION
-web.web.default.index.register: S'INSCRIRE
-web.web.default.index.community.title: Community 3.0
-web.web.default.index.community.content: Vous êtes bloggeur, trendsetter, twittos ou juste bien entouré, vous pouvez monétiser votre notoriété simplement et gratuitemnt
-web.web.default.index.community.manage: Gérez votre communauté
-web.web.default.index.mailinglist.title: Mailing List
-web.web.default.index.mailinglist.content: Ajoutez vos amis à partir de votre compte email, Facebook, Twitter ou Google + et créez votre propre Mailing List
-web.web.default.index.mailinglist.add: Ajoutez des contacts
-web.web.default.index.cagnotte.title: Encaissez votre cagnotte
-web.web.default.index.cagnotte.content: En recommandant des offres à vos contacts, vous gagnez de l'argent à chacune de leur contribution.
-web.web.default.index.cagnotte.begin: Commencez maintenant
-web.web.default.index.christbale.detail: Avec plus de 3 000 followers, j'ai pu leur faire bénéficier d'offres vraiment interessantes et orientées sur mon secteur.
-web.web.default.index.christbale.sign: Christian Bale - @c-bale
-web.web.default.index.emmawats.detail: Avec plus de 3 000 followers, j'ai pu leur faire bénéficier d'offres vraiment interessantes et orientées sur mon secteur.
-web.web.default.index.emmawats.sign: Eùùa Watsp - @Emma-ww
-web.web.default.index.footer.about: A propos
-web.web.default.index.footer.faq: FAQ
-web.web.default.index.footer.contact: Contact
-web.web.default.index.footer.jobs: Jobs
-web.web.default.index.footer.advertisers: Annonceurs
-web.web.default.index.footer.alloffers: Toutes les offres
-web.web.default.index.footer.maillist: Mailing list
-web.web.default.index.footer.howwork: Comment ça marche ?
-web.web.default.index.footer.bynatexo: 2014 %b%Rubizz%eb% by Natexo.
-web.web.default.index.footer.allrights: Tous droits réservés
-web.web.default.index.footer.mentions: Mentions légales
-web.web.default.index.footer.condition: Conditions générales d'utilisation
-web.web.default.index.slide1.text1: Gagne de l'argent en partageant des offres avec tes amis
-web.web.default.index.slide1.text2: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis arcu a nisi ultrices consequat. Etiam in mollis ex.
-web.web.default.index.slide1.button: Commencer gratuitement
-
-# ==== Offer Page ====
-# ==== Offer Page (index) ====
-web.web.offer.index.price.title: Vos gains
-web.web.offer.index.offer.title: Dernières offres disponibles
-web.web.offer.index.donut.piggyBank: Ma cagnotte
-web.web.offer.index.donut.piggyBankTouch: Encaisser ma cagnotte
-web.web.offer.index.donut.detail: Détail
-web.web.offer.index.offer.seeAll: Voir toutes les offres
-# ==== Offer Page (list) ====
-web.web.offer.list.title: Toutes les offres
-web.web.offer.list.categories.quiz : Jeux concours
-web.web.offer.list.categories.quotation : Devis en ligne
-web.web.offer.list.categories.travel: Voyages
-web.web.offer.list.categories.ecommerce: e-commerce
-web.web.offer.list.categories.finances : Finances
-web.web.offer.list.categories.divertissement: Divertissement
-web.web.offer.list.categories.special: Offres spéciales
-
-
-#========= Block Offre macro =============#
-offer.prixdescription: à chaque participation
-offer.recommander: RECOMMANDER
-offer.facebook: Publier sur Facebook
-offer.twiter: Publier sur Twitter
-offer.mailling: Envoyer à ma mailling List
-
-# ==== Standard Graphiques ====
-graphic.standards.form.text1: "{{ form_row(form.text1) }}"
-graphic.standards.form.text2: '<div class="RBZ_input">{{ form_label(form.text2) }} {{ form_widget(form.text2) }}</div>'
-graphic.standards.form.flip: "{{ form_row(form.flip) }}"
-web.web.form.flip.yes:  oui
-web.web.form.flip.no: non
-
-#============== USER PAGE =============================
-#============== RIB =============================
+# ============ USER PAGE ============
+# ==== RIB ====
 rubizz.form.bankName: Nom de la banque
 rubizz.form.bankCode: Code Banque
 rubizz.form.agencyCode: Code Agence
@@ -247,14 +117,13 @@ rubizz.form.Key: clé
 web.web.user.bic.titre1: Votre RIB
 web.web.user.bic.titre2: Afin de recevoir vos paiements, vous devez renseigner vos coordonnées bancaires
 web.web.user.bic.submit: MODIFIER >
-
-#============== Encaisser ma cagnotte =========================
+# ==== Encaisser ma cagnotte ====
 web.web.user.cashIn.cash.title: Encaisser ma cagnotte
 web.web.user.cashIn.cash.firstSection: "Pour demander le paiement de votre cagnotte, vous devez avoir atteint un seuil minimum de 50€. Une fois le paiement demandés, le versement effectif sur le compte se fera dans un délai de 10 jours."
 web.web.user.cashIn.cash.SecondSection: "<strong>IMPORTANT </strong>: Vous n'avez pas renseigné vos coordonnées bancaires dans la rubrique <a href='%rib%'>VOTRE RIB</a>. Aucune demande de paiement ne pourra être validée tant que votre RIB ne sera complété. Cliquez <a href='%ici%'>ici</a> pour renseigner vos coordonnées."
 web.web.user.cashIn.cash.info: Demander le paiement
 web.web.user.cashIn.history.title: Historique de vos demandes de paiements
-#============== tableau =============================
+# ==== Tableau ====
 web.web.user.cashIn.tabHistory.date:    DATE   
 web.web.user.cashIn.tabHistory.desc:    DESCRIPTION
 web.web.user.cashIn.tabHistory.amount:  MONTANT
@@ -264,3 +133,23 @@ web.web.user.cashIn.history.title:      Historique de vos demandes de paiements
 #============ Détail cagnotte =======================
 web.web.user.pot.titre: Détail de votre cagnotte
 web.web.user.pot.text: Cette rubrique regroupe tous les mouvements de votre cagnotte: Recommandations effectuées, paiement reçues... Cliquez sur le détail de l'opération pour visualiser les commissions par recommandations. Vous pouvez à tout moment récupérer le solde du dans la rubrique "Encaisser ma cagnotte" sous réserve que le montant mimimum de 50€ soit atteint.
+
+# ============ CONTACT PAGE ============
+# ==== Index ====
+web.web.contact.index.mailing_list.title:             Mailing list
+web.web.contact.index.mailing_list.info:              Retrouvez dans cette rubrique l'ensemble des recommandations que vous avez réalisées auprès de vos contacts. Vous pouvez également consulter le montant de commissions perçues pour chacune d'elle.
+web.web.contact.index.mailing_list.you_have1:         Vous avez
+web.web.contact.index.mailing_list.active_contact:    contacts actifs
+web.web.contact.index.mailing_list.inactive_contact:  contacts inactifs
+web.web.contact.index.mailing_list.add_contact:       AJOUTER DES CONTACTS
+web.web.contact.index.mailing_list.search_contact:    Rechercher un contact
+web.web.contact.index.mailing_list.subscription:      INSCRIPTION
+web.web.contact.index.mailing_list.email:             EMAIL
+web.web.contact.index.mailing_list.lastname:          NOM
+web.web.contact.index.mailing_list.firstname:         PRÉNOM
+web.web.contact.index.mailing_list.commissions:       COMMISSIONS APPORTÉES
+web.web.contact.index.mailing_list.status:            STATUT
+web.web.contact.index.mailing_list.subscribed:        Abonné
+web.web.contact.index.mailing_list.unsubscribed:      Désabonné
+web.web.contact.index.mailing_list.subscribe:         RÉ-ABONNER
+web.web.contact.index.mailing_list.unsubscribe:       DÉSABONNER

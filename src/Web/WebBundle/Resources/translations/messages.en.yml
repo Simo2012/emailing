@@ -16,9 +16,18 @@ rubizzMenu_faq:                FAQ
 rubizzMenu_contact:            Contact
 rubizzMenu_jobs:               Jobs
 
+# ==== Standard Graphiques ====
+graphic.standards.form.text1: "{{ form_row(form.text1) }}"
+graphic.standards.form.text2: '<div class="RBZ_input">{{ form_label(form.text2) }} {{ form_widget(form.text2) }}</div>'
+graphic.standards.form.flip: "{{ form_row(form.flip) }}"
+web.web.form.flip.yes: yes
+web.web.form.flip.no: no
+
 # ==== Layout global ====
+footer.credits: © <span>Rubizz</span> by Natexo.
 web.web.layout.headerTitle: Rubizz
 
+# ============ SECURITY PAGE ============
 # ==== Login/Inscription ====
 web.web.security.login.baseline:        WELCOME BACK TO RUBIZZ
 web.web.security.register.baseline:     DISCOVER RUBIZZ FOR FREE
@@ -41,7 +50,8 @@ web.web.security.legal_terms:           terms of use
 web.web.security.have_account:          Already have an account?
 web.web.security.connect:               Log in
 
-# ==== Home Page ====
+# ============ DEFAULT PAGE ============
+# ==== Index ====
 web.web.default.index.login: CONNECTION
 web.web.default.index.register: REGISTER
 web.web.default.index.community.title: Community 3.0
@@ -73,6 +83,7 @@ web.web.default.index.slide1.text1: Gagne de l'argent en partageant des offres a
 web.web.default.index.slide1.text2: Lorem ipsum dolor sit amet, consecteturùbrùadipiscing elit. Nullam quis arcu a nisi ultrices consequat. Etiam in mollis ex.
 web.web.default.index.slide1.button: Commencer gratuitement
 
+# ============ OFFER PAGE ============
 # ==== Offer Page (index) ====
 web.web.offer.index.price.title: Your earnings
 web.web.offer.index.offer.title: Last available offers
@@ -89,29 +100,56 @@ web.web.offer.list.categories.ecommerce: e-commerce
 web.web.offer.list.categories.finances : finances
 web.web.offer.list.categories.divertissement: divertissement
 web.web.offer.list.categories.special: special
+# ==== Block Offre macro ====
+offer.prixdescription: à chaque participation
+offer.recommander: RECOMMANDER
+offer.facebook: Publier sur Facebook
+offer.twiter: Publier sur Twitter
+offer.mailling: Envoyer à ma mailling List
 
-# ==== Home Page ====
-web.web.home.index.price.title: Price
-web.web.home.index.offer.title: Last offers available
-web.web.home.index.donut.piggyBank: My Piggy Bank
-web.web.home.index.donut.piggyBankTouch: Touch my Piggy Bank
-web.web.home.index.donut.detail: Detail
-
-#============== USER PAGE =============================
-#============== RIB =============================
+# ============ USER PAGE ============
+# ==== RIB ====
 rubizz.form.bankName: Bank Name
 rubizz.form.bankCode: Bank Code
 rubizz.form.agencyCode: Agency Code
 rubizz.form.AccountNumber: Account Number
 rubizz.form.Key: key
-#============== Encaisser ma cagnotte =========================
+web.web.user.bic.titre1: Votre RIB
+web.web.user.bic.titre2: Afin de recevoir vos paiements, vous devez renseigner vos coordonnées bancaires
+web.web.user.bic.submit: MODIFIER >
+# ==== Encaisser ma cagnotte ====
 web.web.user.cashIn.cash.title: Redeem my Piggy Bank
 web.web.user.cashIn.cash.firstSection: "A payment request requires a Piggy Bank balance of at least $50.  Once you have completed your request, the transaction will be completed in approximately  10 days."
 web.web.user.cashIn.cash.SecondSection: "<strong>IMPORTANT </strong>: You have not entered your bank account information in the <a href='%rib%'>YOUR RIB</a> section. Payment request cannot be completed without completing this information. Click<a href='%ici%'>here</a> to enter your bank account information."
 web.web.user.cashIn.cash.info: Received Payment
 web.web.user.cashIn.history.title: Payment History
-#============== tableau =============================
+# ==== Tableau ====
 web.web.user.cashIn.tabHistory.date:    DATE
 web.web.user.cashIn.tabHistory.desc:    DESCRIPTION
 web.web.user.cashIn.tabHistory.amount:  AMOUNT
 web.web.user.cashIn.tabHistory.statut:  STATUS
+web.web.user.cashIn.cash.SecondSection: "IMPORTANT : Vous n'avez pas renseigné vos coordonnées bancaires dans la rubrique VOTRE RIB. Aucune demande de paiement ne pourra être validée tant que vortre RIB ne sera complété. Cliquez ici pour renseigner vos coordonnées."
+web.web.user.cashIn.history.title:      Historique de vos demandes de paiements
+#============ Détail cagnotte =======================
+web.web.user.pot.titre: Détail de votre cagnotte
+web.web.user.pot.text: Cette rubrique regroupe tous les mouvements de votre cagnotte: Recommandations effectuées, paiement reçues... Cliquez sur le détail de l'opération pour visualiser les commissions par recommandations. Vous pouvez à tout moment récupérer le solde du dans la rubrique "Encaisser ma cagnotte" sous réserve que le montant mimimum de 50€ soit atteint.
+
+# ============ CONTACT PAGE ============
+# ==== Index ====
+web.web.contact.index.mailing_list.title: Mailing list
+web.web.contact.index.mailing_list.info:              In this section you may find all the recommendations you have sent to your contacts.  You may also verify the amount of your commissions for each recommendation.
+web.web.contact.index.mailing_list.you_have1:         You have
+web.web.contact.index.mailing_list.active_contact:    active contacts
+web.web.contact.index.mailing_list.inactive_contact:  inactive contacts
+web.web.contact.index.mailing_list.add_contact:       ADD CONTACTS
+web.web.contact.index.mailing_list.search_contact:    Find a contact
+web.web.contact.index.mailing_list.subscription:      SUBSCRIPTION
+web.web.contact.index.mailing_list.email:             EMAIL
+web.web.contact.index.mailing_list.lastname:          LASTNAME
+web.web.contact.index.mailing_list.firstname:         NAME
+web.web.contact.index.mailing_list.commissions:       COMMISSIONS
+web.web.contact.index.mailing_list.status:            STATUS
+web.web.contact.index.mailing_list.subscribed:        Subscribed
+web.web.contact.index.mailing_list.unsubscribed:      Unsubscribed
+web.web.contact.index.mailing_list.subscribe:         SUBSCRIBE AGAIN
+web.web.contact.index.mailing_list.unsubscribe:       UNSUBSCRIBE
