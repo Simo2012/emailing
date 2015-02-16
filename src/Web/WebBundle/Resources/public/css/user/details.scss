@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+@import "../global/_config";
+
+//=== Div Rib(tag)
+.RBZ_user_details {
+    .RBZ_user_details_header {
+        
+        margin: 0px auto;
+        margin-top:30px;
+        .RBZ_user_details_header_title {
+           height: 60px;
+           margin-bottom: 0px;
+        }
+        .RBZ_user_details_header_input {
+           width: 400px;
+           margin-top: 0px;
+        }
+        .RBZ_user_details_header_input_border {
+            border-bottom: 1px solid $border-grey;
+            margin-top: 40px;
+            
+        }
+         
+    }
+    .RBZ_user_details_footer {
+        margin: 0px auto;
+        width: 200px;
+        height:102px;
+        .RBZ_user_details_footer_input{
+            width: 150px;
+            height:25px;
+            float: right;
+            margin-top: 30px;
+            margin-right: 0px;
+            
+        }
+      
+    }
+}

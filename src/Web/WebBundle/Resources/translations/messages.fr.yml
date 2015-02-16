@@ -138,7 +138,7 @@ publisherMenu_howItWorks:         comment ça marche ?
 publisherMenu_recommendations:    vos recommendations
 # ==== Menu Utilisateur ====
 publisherMenu_profile:            Mon profil
-publisherMenu_particulars:        Coordonnées
+publisherMenu_details:        Coordonnées
 publisherMenu_rib:                Votre RIB
 publisherMenu_pot:                Détail cagnotte
 publisherMenu_cashin:             Encaisser ma cagnotte
@@ -278,7 +278,7 @@ publisherMenu_howItWorks:         comment ça marche ?
 publisherMenu_recommendations:    vos recommendations
 # ==== Menu Utilisateur ====
 publisherMenu_profile:            Mon profil
-publisherMenu_particulars:        Coordonnées
+publisherMenu_details:        Coordonnées
 publisherMenu_rib:                Votre RIB
 publisherMenu_pot:                Détail cagnotte
 publisherMenu_cashin:             Encaisser ma cagnotte
