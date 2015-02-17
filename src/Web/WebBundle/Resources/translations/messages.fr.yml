@@ -139,16 +139,20 @@ web.web.user.details.personal.title:        Vos informations personnelles
 web.web.user.details.newsletter.title:      Vos inscriptions Newsletter
 web.web.user.details.connection.title:      Identifiants de connexion
 web.web.user.details.submit:                Valider
-
+web.web.user.details.newsletter.label:      Recevoir les nouvelles offres de Rubizz par email
+web.web.user.details.connection.passRepeat: Confirmer Mot de passe
+web.web.user.details.connection.oldPass:    Ancien Mot de passe
+web.web.user.details.connection.newPass:    Nouveau Mot de passe
+web.web.user.details.connection.passRepeatError: Les mots de passe doivent être identique
 # ============ CONTACT PAGE ============
 # ==== Index ====
 web.web.contact.index.mailing_list.title:             Mailing list
 web.web.contact.index.mailing_list.info:              Retrouvez dans cette rubrique l'ensemble des recommandations que vous avez réalisées auprès de vos contacts. Vous pouvez également consulter le montant de commissions perçues pour chacune d'elle.
-web.web.contact.index.mailing_list.you_have1:         Vous avez
-web.web.contact.index.mailing_list.active_contact:    contacts actifs
-web.web.contact.index.mailing_list.inactive_contact:  contacts inactifs
+web.web.contact.index.mailing_list.you_have:          Vous avez
+web.web.contact.index.mailing_list.active_contacts:   contacts actifs
+web.web.contact.index.mailing_list.inactive_contacts: contacts inactifs
 web.web.contact.index.mailing_list.add_contact:       AJOUTER DES CONTACTS
-web.web.contact.index.mailing_list.search_contact:    Rechercher un contact
+web.web.contact.index.mailing_list.find_contact:      Rechercher un contact
 web.web.contact.index.mailing_list.subscription:      INSCRIPTION
 web.web.contact.index.mailing_list.email:             EMAIL
 web.web.contact.index.mailing_list.lastname:          NOM

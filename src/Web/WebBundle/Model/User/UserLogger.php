@@ -145,7 +145,7 @@ class UserLogger
      *
      * @return User
      */
-    private function createUser($poUser)
+    public function createUser($poUser)
     {
         $loEncoder = $this->factory->getEncoder($poUser);
         $lsPassword = $loEncoder->encodePassword($poUser->getPassword(), $poUser->getSalt());
@@ -154,5 +154,17 @@ class UserLogger
                ->setCountry($lsCountry);
         $this->manager->persist($poUser);
         $this->manager->flush();
+    } // createUser
+    
+    /**
+     * Crypte un password
+     *
+     * @return User
+     */
+    public function cryptPass($poUser, $psPass)
+    {
+        $loEncoder = $this->factory->getEncoder($poUser);
+        $lsPassword = $loEncoder->encodePassword($psPass, $poUser->getSalt());
+        return $lsPassword;
     } // createUser
 }

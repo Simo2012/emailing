@@ -13,16 +13,74 @@
     {{ parent() }}
     {% javascripts '@WebWebBundle/Resources/public/js/contact/Contact.js'%}
     <script type="text/javascript" src="{{ asset_url }}"></script>
+    <script type="text/javascript">
+        goContact.ready();
+    </script>
     {% endjavascripts %}
 {% endblock %}
 
 {% block CONTENT %}
-    <table>
+    <table id="table_RBZ_mailing_list_title">
         <tr>
-            <td><h1>{{ "web.web.contact.index.mailing_list.title" | trans }}</h1></td>
+            <td class="RBZ_left"><h1>{{ 'web.web.contact.index.mailing_list.title' | trans }}</h1></td>
+            <td><a class="RBZ_redButton" href="#">{{ 'web.web.contact.index.mailing_list.add_contact' | trans }}</a></td>
+        </tr>
+        <tr>
+            <td class="RBZ_left RBZ_info">{{ 'web.web.contact.index.mailing_list.info' | trans }}</td>
             <td></td>
         </tr>
-
+        <tr>
+            <td class="RBZ_left RBZ_centered">{{ 'web.web.contact.index.mailing_list.you_have' | trans }} <span class="RBZ_active_contacts">NuMb3r {{ 'web.web.contact.index.mailing_list.active_contacts' | trans }}</span> / <span class="RBZ_inactive_contacts">NuMb3r {{ 'web.web.contact.index.mailing_list.inactive_contacts' | trans }}</span></td>
+            <td><div class="RBZ_input"><input type="text" value="{{ 'web.web.contact.index.mailing_list.find_contact' | trans }}"></input></div></td>
+        </tr>
     </table>
+
+    <table id="table_RBZ_mailing_list" class="RBZ_table">
+        <tr>
+            <th>{{ 'web.web.contact.index.mailing_list.subscription' | trans }}</th>
+            <th class="RBZ_email">{{ 'web.web.contact.index.mailing_list.email' | trans }}</th>
+            <th>{{ 'web.web.contact.index.mailing_list.lastname' | trans }}</th>
+            <th>{{ 'web.web.contact.index.mailing_list.firstname' | trans }}</th>
+            <th class="RBZ_commissions">{{ 'web.web.contact.index.mailing_list.commissions' | trans }}</th>
+            <th>{{ 'web.web.contact.index.mailing_list.status' | trans }}</th>
+        </tr>
+        {% for contact in contacts %}
+            {% if contact.subscriber %}
+                {% set status_class = 'RBZ_blue' %}
+            {% else %}
+                {% set status_class = 'RBZ_red' %}
+            {% endif %}
+            <tr>
+                <td>{{ contact.datecreate | localizeddate('short', 'none') }}</td>
+                <td>{{ contact.email }}</td>
+                <td>{{ contact.lastname }}</td>
+                <td>{{ contact.firstname }}</td>
+                <td>{#{{ contact.commissions }}#}</td>
+                <td class="RBZ_status {{ status_class }}">
+                    <div class="RBZ_pin_container">
+                    {% if contact.subscriber %}
+                        {{ 'web.web.contact.index.mailing_list.subscribed' | trans }}
+                    {% else %}
+                        {{ 'web.web.contact.index.mailing_list.unsubscribed' | trans }}
+                    {% endif %}
+                        <div id="div_RBZ_pin_{{ contact.id }}" class="RBZ_pin {{ status_class }}"></div>
+                        <div id="div_RBZ_menu_{{ contact.id }}" class="RBZ_pin_menu">
+                            <ul>
+                                <li class="{{ status_class }}">
+                                    {% if contact.subscriber %}
+                                        {{ 'web.web.contact.index.mailing_list.unsubscribe' | trans }}
+                                    {% else %}
+                                        {{ 'web.web.contact.index.mailing_list.subscribe' | trans }}
+                                    {% endif %}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    {{ macro.pagination(contacts) }}
 
 {% endblock %}

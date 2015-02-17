@@ -133,16 +133,26 @@ web.web.user.cashIn.history.title:      Historique de vos demandes de paiements
 # ==== Détail cagnotte ====
 web.web.user.pot.titre: Détail de votre cagnotte
 web.web.user.pot.text: Cette rubrique regroupe tous les mouvements de votre cagnotte: Recommandations effectuées, paiement reçues... Cliquez sur le détail de l'opération pour visualiser les commissions par recommandations. Vous pouvez à tout moment récupérer le solde du dans la rubrique "Encaisser ma cagnotte" sous réserve que le montant mimimum de 50€ soit atteint.
-
+# ==== Coordonnées ====
+web.web.user.details.title:                 Coordonnées
+web.web.user.details.personal.title:        Your profile
+web.web.user.details.newsletter.title:      Newletter subscription
+web.web.user.details.connection.title:      Id connection
+web.web.user.details.submit:                Confirm
+web.web.user.details.newsletter.label:      Receive new offers from Rubizz via Email
+web.web.user.details.connection.passRepeat: Confirm Password
+web.web.user.details.connection.oldPass:    Old Password
+web.web.user.details.connection.newPass:    New Password
+web.web.user.details.connection.passRepeatError: Les mots de passe doivent être identique
 # ============ CONTACT PAGE ============
 # ==== Index ====
 web.web.contact.index.mailing_list.title: Mailing list
 web.web.contact.index.mailing_list.info:              In this section you may find all the recommendations you have sent to your contacts.  You may also verify the amount of your commissions for each recommendation.
-web.web.contact.index.mailing_list.you_have1:         You have
-web.web.contact.index.mailing_list.active_contact:    active contacts
-web.web.contact.index.mailing_list.inactive_contact:  inactive contacts
+web.web.contact.index.mailing_list.you_have:          You have
+web.web.contact.index.mailing_list.active_contacts:   active contacts
+web.web.contact.index.mailing_list.inactive_contacts: inactive contacts
 web.web.contact.index.mailing_list.add_contact:       ADD CONTACTS
-web.web.contact.index.mailing_list.search_contact:    Find a contact
+web.web.contact.index.mailing_list.find_contact:      Find a contact
 web.web.contact.index.mailing_list.subscription:      SUBSCRIPTION
 web.web.contact.index.mailing_list.email:             EMAIL
 web.web.contact.index.mailing_list.lastname:          LASTNAME

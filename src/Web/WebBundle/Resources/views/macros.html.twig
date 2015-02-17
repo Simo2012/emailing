@@ -1,3 +1,55 @@
+{#=================================================#}
+{# Affichage de la pagination d'un objet Paginator #}
+{#=================================================#}
+{% macro pagination(poPaginator) %}
+    <div id="div_RBZ_pagination">
+        <table id="table_RBZ_pagination">
+            <tr>
+            {% set startPage = poPaginator.page - 2 %}
+            {% if startPage <= 0 %}
+                {% set startPage = 1 %}
+            {% endif %}
+            {% set endPage = startPage + 4 %}
+            {% if endPage > poPaginator.nbPages %}
+                {% set endPage = poPaginator.nbPages %}
+            {% endif %}
+
+            {# Si il y a déjà des paramètres dans l'url #}
+            {# Il faut échapper 3 fois les metacaractères #}
+            {% if poPaginator.url matches '/\\\?/' %}
+                {% set sym = '&' %}
+            {% else %}
+                {% set sym = '?' %}
+            {% endif %}
+
+            {% if poPaginator.page > 1 %}
+            <td>
+                <a id="a_RBZ_paginationPrevious" href="{{poPaginator.url }}{{ sym }}page={{ poPaginator.page - 1}}">&#8592;</a>
+            </td>
+            {% for index in range(startPage, poPaginator.page - 1) %}
+            <td>
+                <a href="{{ poPaginator.url }}?page={{ index }}">{{ index }}</a>
+            </td>
+            {% endfor %}
+            {% endif %}
+            <td class="RBZ_paginationCurrent"><div>{{ poPaginator.page }}</div></td>
+            {% if poPaginator.page < poPaginator.nbpages %}
+                {% for index in range(poPaginator.page + 1, endPage) %}
+            <td>
+                <a href="{{ poPaginator.url }}{{ sym }}page={{ index }}">{{ index }}</a>
+            </td>
+                {% endfor %}
+            <td><a id="a_RBZ_paginationNext" href="{{ poPaginator.url }}{{ sym }}page={{ poPaginator.page + 1 }}">&#8594;</a></td>
+            {% endif %}
+            </tr>
+        </table>
+    </div>
+    <div class="RBZ_clear"></div>
+{% endmacro %}
+
+{#========#}
+{# Offres #}
+{#========#}
 {% macro offer(offer) %}
     <div class="RBZ_offer_content">
         <img class="RBZ_offer_img" src="http://placehold.it/470x250">

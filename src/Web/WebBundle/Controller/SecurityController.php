@@ -34,7 +34,7 @@ class SecurityController extends Controller
         $loSession = $poRequest->getSession();
         $lbRegistered = $loSession->get('hasRegistered');
         if (!empty($lbRegistered)) {
-            return $this->redirect($this->generateUrl('WebWebBundle_homeIndex'));
+            return $this->redirect($this->generateUrl('WebWebBundle_offerIndex'));
         }
 
         // ==== Initialisation ====

@@ -20,11 +20,11 @@ table.RBZ_table {
     padding-left: 20px;
     &.RBZ_red {
       font-weight: bold;
-      color: #f04f61;
+      color: $table_red;
     }
     &.RBZ_blue {
       font-weight: bold;
-      color: #6fc6bf;
+      color: $table_blue;
     }
   }
   tr {

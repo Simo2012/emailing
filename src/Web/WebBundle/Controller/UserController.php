@@ -35,27 +35,51 @@ class UserController extends Controller {
      *
      * @Template()
      */
-    public function detailsAction() {
+    public function detailsAction()
+    {
         $loManager = $this->getDoctrine()->getManager();
         $loUser = $this->getUser();
-        $loForm = $this->createForm(new UserDetailsType(), null);
-        
+        $lsFormError = '';
+        $lbSucess = false;
+        //recuperer l'ancien mot de passe avant saisie
+        $lsCurentPass = $loUser->getPassword();
+        $loForm = $this->createForm(new UserDetailsType(), $loUser);
+
         // ==== Traitement de la saisie ====
         $loRequest = $this->getRequest();
         if ($loRequest->isMethod('POST')) {
             $loForm->bind($loRequest);
-            try {
-                $loUser->setDateUpdate(new \DateTime('now'));
-                $loManager->flush();
-            } catch (DBALException $poException) {
-                //var_dump($poException);
+            if ($loForm->isValid()) {
+                $laData = $loForm->getData();
+
+                $loUserLogger = $this->container->get('web.web.manager.user_logger');
+                $lsOldPass = $loUserLogger->cryptPass($loUser, $laData->getOldPassword());
+                // on compare l'ancien pass avec celui saisi dans le form
+                if ($lsOldPass == $lsCurentPass) {
+                    try {
+                        // ---- Déconnection de l'utilisateur en session ----
+                        //$loManager->detach($loUser);
+                        $loUser->setDateUpdate(new \DateTime('now'));
+                        $loUserLogger->createUser($loUser);
+                        $lbSucess = true;
+                    } catch (DBALException $poException) {
+                    }
+                } else {
+                    $lsFormError = "l'ancien mot de passe est invalide";
+                }
+            } else {
+                $loManager->refresh($loUser);
+                $lsFormError = $loForm->getErrorsAsString();
             }
         }
         return array(
             'form' => $loForm->createView(),
-            //'user' => $loUser
+            'errors' => $lsFormError,
+            'success' => $lbSucess
         );
-    }// detailsAction
+    }
+
+// detailsAction
 
     /**
      * Page rib

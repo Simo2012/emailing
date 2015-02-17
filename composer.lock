@@ -1062,17 +1062,17 @@
         },
         {
             "name": "natexo/natexo",
-            "version": "1.6.6",
+            "version": "1.6.9",
             "source": {
                 "type": "git",
                 "url": "/space/GIT/repositories/natexo.git",
-                "reference": "1.6.6"
+                "reference": "1.6.9"
             },
             "dist": {
                 "type": "tar",
-                "url": "http://satis.natexo.com//dist/natexo-natexo-1.6.6-27642b.tar",
-                "reference": "1.6.6",
-                "shasum": "956547e59ade4c28d6a9d06d691334d2757b60cb"
+                "url": "http://satis.natexo.com//dist/natexo-natexo-1.6.9-8a49e1.tar",
+                "reference": "1.6.9",
+                "shasum": "ec6a012ba5630807552bd9512eb9516a11a360e1"
             },
             "require": {
                 "php": ">=5.3.3"
@@ -1099,7 +1099,7 @@
             "keywords": [
                 "natexo"
             ],
-            "time": "2015-02-03 10:27:05"
+            "time": "2015-02-15 14:05:05"
         },
         {
             "name": "psr/log",

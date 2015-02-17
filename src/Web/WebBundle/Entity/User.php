@@ -134,6 +134,11 @@ class User implements AdvancedUserInterface, \Serializable
      */
     private $availableAmount;
 
+    /**
+     * @var string
+     *
+     */
+    private $oldPassword;
 
     /**
      * Constructeur
@@ -555,6 +560,28 @@ class User implements AdvancedUserInterface, \Serializable
         return array('ROLE_USER');
     }
 
+    /**
+     * Get old password
+     *
+     * @return string 
+     */
+    public function getOldPassword()
+    {
+        return $this->oldPassword;
+    }
+    
+    /**
+     * set old password
+     *
+     * @return string 
+     */
+    public function setOldPassword($psPassword)
+    {
+        $this->oldPassword = $psPassword;
+        
+        return $this;
+    }
+    
     /**
      * @inheritDoc
      */
