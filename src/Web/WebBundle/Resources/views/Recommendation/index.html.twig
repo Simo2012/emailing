@@ -1,0 +1,57 @@
+{% extends "@WebWeb/layoutPage.html.twig" %}
+{% import "@WebWeb/macros.html.twig" as macro %}
+
+{% block CSS %}
+    {{ parent() }}
+    {% stylesheets
+    '@WebWebBundle/Resources/public/css/recommendation/index.scss'
+    %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+    {% endstylesheets %}
+{% endblock %}
+{% block JAVASCRIPT %}
+    {{ parent() }}
+    {% javascripts '@WebWebBundle/Resources/public/js/recommendation/Recommendation.js'%}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    <script type="text/javascript">
+        goRecommendation.ready();
+    </script>
+    {% endjavascripts %}
+{% endblock %}
+
+{% block CONTENT %}
+    <table id="table_RBZ_title">
+        <tr>
+            <td class="RBZ_left"><h1>{{ 'web.web.contact.index.recommendation.title' | trans }}</h1></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="RBZ_left RBZ_info">{{ 'web.web.contact.index.recommendation.info' | trans }}</td>
+            <td><div class="RBZ_input"><input type="text" value="{{ 'web.web.contact.index.mailing_list.find_contact' | trans }}"></input></div></td>
+        </tr>
+    </table>
+
+    <table id="table_RBZ_mailing_list" class="RBZ_table">
+        <tr>
+            <th>{{ 'web.web.contact.index.recommendation.date' | trans }}</th>
+            <th class="RBZ_offer_name">{{ 'web.web.contact.index.recommendation.offer_name' | trans }}</th>
+            <th>{{ 'web.web.contact.index.recommendation.method' | trans }}</th>
+            <th>{{ 'web.web.contact.index.recommendation.commission' | trans }}</th>
+            <th>{{ 'web.web.contact.index.recommendation.volume' | trans }}</th>
+            <th>{{ 'web.web.contact.index.recommendation.total' | trans }}</th>
+        </tr>
+        {% for recommendation in recommendations %}
+            <tr>
+                <td>{{ recommendation.datecreate | localizeddate('short', 'none') }}</td>
+                <td>{{ recommendation.offer.title }}</td>
+                <td>{{ recommendation.type }}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    {{ macro.pagination(recommendations) }}
+
+{% endblock %}

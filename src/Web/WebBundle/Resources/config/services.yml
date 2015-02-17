@@ -20,7 +20,7 @@ parameters:
                     route: WebWebBundle_defaultHowItWorks
                 Recommendations:
                     label: rubizzMenu_recommendations
-                    route: WebWebBundle_defaultIndex
+                    route: WebWebBundle_recommendationIndex
 
         rubizzMenuMobile:
             label: ""

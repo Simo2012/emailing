@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Recommendation
  *
  * @ORM\Table(name="recommendation", indexes={@ORM\Index(name="recommendationUser_idx", columns={"user_id"}), @ORM\Index(name="recommendationOffer_idx", columns={"offer_id"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Web\WebBundle\Entity\Repository\RecommendationRepository")
  */
 class Recommendation
 {

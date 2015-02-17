@@ -35,6 +35,7 @@
             addEditor('#h2');
             addEditor('#h3');
             addEditor('#h3-fancy');
+            addEditor('#structure1');
             addEditor('#form1');
             addEditor('#form2');
             addEditor('#flip');
@@ -82,6 +83,35 @@
         <div class="KNS_mod KNS_end KNS_w50">
             <textarea name="" id="h3-fancy" cols="30" rows="2"><h3 class="RBZ_linesSided"><span>Titre h3 fancy</span></h3></textarea>
         </div>
+    </div>
+
+    <h2 class="KNS_txtcenter">STRUCTURE EN TABLEAU POUR LA PARTIE TITRES/FORMULAIRE</h2>
+
+    <div class="KNS_row KNS_mbl">
+        <table id="table_RBZ_title">
+            <tr>
+                <td class="RBZ_left"><h1>{{ 'web.web.contact.index.recommendation.title' | trans }}</h1></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="RBZ_left RBZ_info">{{ 'web.web.contact.index.recommendation.info' | trans }}</td>
+                <td><div class="RBZ_input"><input type="text" value="{{ 'web.web.contact.index.mailing_list.find_contact' | trans }}"></input></div></td>
+            </tr>
+        </table>
+    </div>
+    <div class="KNS_row KNS_mbl">
+        <textarea name="" id="structure1" cols="30" rows="7">
+<table id="table_RBZ_title">
+    <tr>
+        <td class="RBZ_left"><h1>Titre</h1></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td class="RBZ_left RBZ_info">Texte d'information</td>
+        <td><div class="RBZ_input"><input type="text" value="{{ 'web.web.contact.index.mailing_list.find_contact' | trans }}"></input></div></td>
+    </tr>
+</table>
+        </textarea>
     </div>
 
     <h2 class="KNS_txtcenter">FORMULAIRES</h2>

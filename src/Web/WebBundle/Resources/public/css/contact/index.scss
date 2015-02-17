@@ -2,21 +2,9 @@
 
 @import "../global/_config.scss";
 
-/* ---- Tableau des titres/formulaire ---- */
-#table_RBZ_mailing_list_title {
-    border: none;
-    border-collapse: collapse;
+/* ---- Structure tableau de la zone titres/formulaire ---- */
+#table_RBZ_title {
     td {
-        border: none;
-        border-collapse: collapse;
-        padding: 0px;
-        &.RBZ_left {
-            width: 80%;
-        }
-        &.RBZ_info {
-            font: 400 14px 'Open Sans';
-            padding-right: 10%;
-        }
         &.RBZ_centered {
             vertical-align: middle;
             font: 600 18px 'Open Sans';
@@ -28,16 +16,6 @@
                 &.RBZ_inactive_contacts {
                     color: #85827f;
                 }
-            }
-        }
-        a.RBZ_redButton {
-            margin-top: 5px;
-        }
-        div.RBZ_input {
-            margin-bottom: 0px;
-            input {
-                margin: 5px 0px;
-                width: 100%
             }
         }
     }

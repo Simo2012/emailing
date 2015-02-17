@@ -9,22 +9,22 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
- * Contrôleur contact : pages relatives aux contacts de l'utilisateur
+ * Contrôleur recommandation : pages relatives aux recommandations de l'utilisateur
  *
  * <pre>
- * Julien 13/02/2015 Création
+ * Julien 17/02/2015 Création
  * </pre>
  * @author Julien
  * @version 1.0
  * @package Rubizz
  */
-class ContactController extends Controller
+class RecommendationController extends Controller
 {
-
     /**
-     * Page d'accueil
+     * Liste des recommandations
      *
      * @Template()
+     * @return array
      */
     public function indexAction(Request $poRequest)
     {
@@ -32,16 +32,16 @@ class ContactController extends Controller
         $loManager = $this->getDoctrine()->getManager();
 
         // ==== Lecture des données ====
-        $loBuilder = $loManager->getRepository('WebWebBundle:Contact')->getAll();
+        $loBuilder = $loManager->getRepository('WebWebBundle:Recommendation')->getAll();
         $liNbItems = 10;
         Paginator::paginate($poRequest, $liPage, $liNbItems);
         $loPaginator = new Paginator($loBuilder);
         $loPaginator->setPage($liPage);
         $loPaginator->setNbItemsPerPage($liNbItems);
-        $loPaginator->setUrl($this->generateUrl('WebWebBundle_contactIndex'));
+        $loPaginator->setUrl($this->generateUrl('WebWebBundle_recommendationIndex'));
 
         return array(
-            'contacts' => $loPaginator
+            'recommendations' => $loPaginator
         );
     } // indexAction
 }

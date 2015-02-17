@@ -1,3 +1,4 @@
+/* ---- Tableau de base ---- */
 table.RBZ_table {
   border: none !important;
 
@@ -33,5 +34,32 @@ table.RBZ_table {
       background-color: #f9f9f9;
     }
   }
+}
 
+/* ---- Structure tableau de la zone titres/formulaire ---- */
+#table_RBZ_title {
+    border: none;
+    border-collapse: collapse;
+    td {
+        border: none;
+        border-collapse: collapse;
+        padding: 0px;
+        &.RBZ_left {
+            width: 80%;
+        }
+        &.RBZ_info {
+            font: 400 14px 'Open Sans';
+            padding-right: 10%;
+        }
+        a.RBZ_redButton {
+            margin-top: 5px;
+        }
+        div.RBZ_input {
+            margin-bottom: 0px;
+            input {
+                margin: 5px 0px;
+                width: 100%
+            }
+        }
+    }
 }

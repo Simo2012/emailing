@@ -19,8 +19,8 @@ use Web\WebBundle\Form\User\UserDetailsType;
  * @version 1.0
  * @package Rubizz
  */
-class UserController extends Controller {
-
+class UserController extends Controller
+{
     /**
      * Page d'accueil
      *

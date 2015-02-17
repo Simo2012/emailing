@@ -46,9 +46,9 @@ WebWebBundle_defaultJobs:
     path:     /jobs
     defaults: { _controller: "WebWebBundle:Default:jobs" }
 
-#==================================================
+#=====================================
 # User controller : page profile, etc
-#==================================================
+#=====================================
 # ---- Page profile ----
 WebWebBundle_userProfile:
     path:     /user/profile
@@ -86,7 +86,7 @@ WebWebBundle_offerGraphicStandards:
 # ---- Page list ----
 WebWebBundle_offerList:
     path:     /offer/list
-    defaults: { _controller: "WebWebBundle:Offer:list" }    
+    defaults: { _controller: "WebWebBundle:Offer:list" }
 
 #==================================================
 # Contact controller : page mailing list, etc
@@ -95,3 +95,11 @@ WebWebBundle_offerList:
 WebWebBundle_contactIndex:
     path:     /contact/index
     defaults: { _controller: "WebWebBundle:Contact:index" }
+
+#=======================================================
+# Recommendation controller : page recommandations, etc
+#=======================================================
+# ---- Page index ----
+WebWebBundle_recommendationIndex:
+    path:     /recommendation/index
+    defaults: { _controller: "WebWebBundle:Recommendation:index" }

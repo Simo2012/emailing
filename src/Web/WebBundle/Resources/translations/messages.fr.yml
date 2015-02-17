@@ -165,3 +165,14 @@ web.web.contact.index.mailing_list.subscribed:        Abonné
 web.web.contact.index.mailing_list.unsubscribed:      Désabonné
 web.web.contact.index.mailing_list.subscribe:         RÉ-ABONNER
 web.web.contact.index.mailing_list.unsubscribe:       DÉSABONNER
+
+# ============ RECOMMENDATION PAGE ============
+# ==== Index ====
+web.web.contact.index.recommendation.title:       Vos recommandations
+web.web.contact.index.recommendation.info:        Retrouvez dans cette rubrique, l'ensemble des recommandations que vous avez réaliser auprès de vos contacts. Vous pouvez également consulter le montant de commissions perçues pour chacune d'elle.
+web.web.contact.index.recommendation.date:        DATE
+web.web.contact.index.recommendation.offer_name:  NOM DE L'OFFRE
+web.web.contact.index.recommendation.method:      MODE
+web.web.contact.index.recommendation.commission:  COMMISSION
+web.web.contact.index.recommendation.volume:      VOLUME
+web.web.contact.index.recommendation.total:       TOTAL
