@@ -139,7 +139,11 @@ web.web.user.details.personal.title:        Vos informations personnelles
 web.web.user.details.newsletter.title:      Vos inscriptions Newsletter
 web.web.user.details.connection.title:      Identifiants de connexion
 web.web.user.details.submit:                Valider
-
+web.web.user.details.newsletter.label:      Recevoir les nouvelles offres de Rubizz par email
+web.web.user.details.connection.passRepeat: Confirmer Mot de passe
+web.web.user.details.connection.oldPass:    Ancien Mot de passe
+web.web.user.details.connection.newPass:    Nouveau Mot de passe
+web.web.user.details.connection.passRepeatError: Les mots de passe doivent être identique
 # ============ CONTACT PAGE ============
 # ==== Index ====
 web.web.contact.index.mailing_list.title:             Mailing list
