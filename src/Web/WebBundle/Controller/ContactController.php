@@ -26,8 +26,38 @@ class ContactController extends Controller {
      */
     public function indexAction() {
 
+        $laContacts = array(
+            array(
+                'id'           => 1,
+                'subscription' => '01.01.2015',
+                'email'        => 'janvier@2015.com',
+                'lastname'     => 'Demilkinze',
+                'firstname'    => 'Janvier',
+                'commissions'  => '1,00€',
+                'status'       => 'subscribed'
+            ),
+            array(
+                'id'           => 2,
+                'subscription' => '01.02.2015',
+                'email'        => 'fevrier@2015.com',
+                'lastname'     => 'Demilkinze',
+                'firstname'    => 'Février',
+                'commissions'  => '2,00€',
+                'status'       => 'unsubscribed'
+            ),
+            array(
+                'id'           => 3,
+                'subscription' => '01.03.2015',
+                'email'        => 'mars@2015.com',
+                'lastname'     => 'Demilkinze',
+                'firstname'    => 'Mars',
+                'commissions'  => '3,00€',
+                'status'       => 'subscribed'
+            ),
+        );
 
-
-        return array();
+        return array(
+            'contacts' => $laContacts
+        );
     } // indexAction
 }
