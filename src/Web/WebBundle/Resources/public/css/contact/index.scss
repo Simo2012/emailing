@@ -45,8 +45,13 @@
 /* ---- Tableau de listing ---- */
 #table_RBZ_mailing_list {
     tr {
-        th.RBZ_commissions {
-            width: 190px;
+        th {
+            &.RBZ_email {
+                width: 250px;
+            }
+            &.RBZ_commissions {
+                width: 190px;
+            }
         }
         td {
             &.RBZ_status {

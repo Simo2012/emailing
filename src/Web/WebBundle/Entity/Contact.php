@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Contact
  *
  * @ORM\Table(name="contact", uniqueConstraints={@ORM\UniqueConstraint(name="contactUserEmail_uk", columns={"user_id", "email"})}, indexes={@ORM\Index(name="IDX_4C62E638A76ED395", columns={"user_id"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Web\WebBundle\Entity\Repository\ContactRepository")
  */
 class Contact
 {

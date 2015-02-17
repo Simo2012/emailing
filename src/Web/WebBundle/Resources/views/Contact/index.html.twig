@@ -38,31 +38,36 @@
     <table id="table_RBZ_mailing_list" class="RBZ_table">
         <tr>
             <th>{{ 'web.web.contact.index.mailing_list.subscription' | trans }}</th>
-            <th>{{ 'web.web.contact.index.mailing_list.email' | trans }}</th>
+            <th class="RBZ_email">{{ 'web.web.contact.index.mailing_list.email' | trans }}</th>
             <th>{{ 'web.web.contact.index.mailing_list.lastname' | trans }}</th>
             <th>{{ 'web.web.contact.index.mailing_list.firstname' | trans }}</th>
             <th class="RBZ_commissions">{{ 'web.web.contact.index.mailing_list.commissions' | trans }}</th>
             <th>{{ 'web.web.contact.index.mailing_list.status' | trans }}</th>
         </tr>
         {% for contact in contacts %}
-            {% if contact.status == 'subscribed' %}
+            {% if contact.subscriber %}
                 {% set status_class = 'RBZ_blue' %}
             {% else %}
                 {% set status_class = 'RBZ_red' %}
             {% endif %}
             <tr>
-                <td>{{ contact.subscription }}</td>
+                <td>{{ contact.datecreate | localizeddate('short', 'none') }}</td>
                 <td>{{ contact.email }}</td>
                 <td>{{ contact.lastname }}</td>
                 <td>{{ contact.firstname }}</td>
-                <td>{{ contact.commissions }}</td>
+                <td>{#{{ contact.commissions }}#}</td>
                 <td class="RBZ_status {{ status_class }}">
-                    <div class="RBZ_pin_container">{{ contact.status }}
+                    <div class="RBZ_pin_container">
+                    {% if contact.subscriber %}
+                        {{ 'web.web.contact.index.mailing_list.subscribed' | trans }}
+                    {% else %}
+                        {{ 'web.web.contact.index.mailing_list.unsubscribed' | trans }}
+                    {% endif %}
                         <div id="div_RBZ_pin_{{ contact.id }}" class="RBZ_pin {{ status_class }}"></div>
                         <div id="div_RBZ_menu_{{ contact.id }}" class="RBZ_pin_menu">
                             <ul>
                                 <li class="{{ status_class }}">
-                                    {% if contact.status == 'subscribed' %}
+                                    {% if contact.subscriber %}
                                         {{ 'web.web.contact.index.mailing_list.unsubscribe' | trans }}
                                     {% else %}
                                         {{ 'web.web.contact.index.mailing_list.subscribe' | trans }}
@@ -75,5 +80,7 @@
             </tr>
         {% endfor %}
     </table>
+
+    {{ macro.pagination(contacts) }}
 
 {% endblock %}
