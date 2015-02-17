@@ -15,6 +15,10 @@ use Doctrine\ORM\EntityRepository;
  */
 class ContactRepository extends EntityRepository
 {
+    /**
+     * @todo Supprimer cette fonction dès que l'on aura des vraies donnéesà afficher dans la page de mailing list
+     * @return \Doctrine\ORM\QueryBuilder
+     */
     public function getAll()
     {
         $loQuery = $this->createQueryBuilder('c')
