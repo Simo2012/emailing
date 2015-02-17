@@ -17,7 +17,8 @@ class RegisterType extends AbstractType
             'label' => 'web.web.security.firstname',
             'attr'  => array(
                 'caption' => 'web.web.security.firstname',
-                'autocomplete'  => false
+                'autocomplete'  => false,
+                'required' => true,
             )
         );
         $poBuilder->add('firstname', 'text', $laParams);
@@ -25,7 +26,8 @@ class RegisterType extends AbstractType
             'label' => 'web.web.security.lastname',
             'attr'  => array(
                 'caption' => 'web.web.security.lastname',
-                'autocomplete'  => false
+                'autocomplete'  => false,
+                'required' => true,
             )
         );
         $poBuilder->add('lastname', 'text', $laParams);
@@ -33,7 +35,8 @@ class RegisterType extends AbstractType
             'label' => 'web.web.security.email',
             'attr'  => array(
                 'caption' => 'web.web.security.email',
-                'autocomplete'  => false
+                'autocomplete'  => false,
+                'required' => true,
             )
         );
         $poBuilder->add('email', 'email', $laParams);
@@ -41,7 +44,8 @@ class RegisterType extends AbstractType
             'label' => 'web.web.security.password',
             'attr'  => array(
                 'caption' => 'web.web.security.password',
-                'autocomplete'  => false
+                'autocomplete'  => false,
+                'required' => true,
             )
         );
         $poBuilder->add('password', 'password', $laParams);

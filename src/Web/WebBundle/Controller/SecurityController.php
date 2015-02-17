@@ -2,6 +2,7 @@
 namespace Web\WebBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\SecurityContext;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
@@ -48,14 +49,9 @@ class SecurityController extends Controller
                     $loUserLogger = $this->container->get('web.web.manager.user_logger');
                     $loUserLogger->logUser($loUser);
                 } catch(\Exception $e) {
-                    return array(
-                        'form'       => $loForm->createView(),
-                        'last_email' => $loUser->getEmail(),
-                        'error'      => $e->getMessage()
-                    );
+                    return new Response($e->getMessage());
                 }
-
-                return $this->redirect($this->generateUrl('WebWebBundle_offerIndex'));
+                return new Response('OK');
             }
         }
 
@@ -85,16 +81,9 @@ class SecurityController extends Controller
                     $loUserLogger = $this->container->get('web.web.manager.user_logger');
                     $loUserLogger->registerUser($loUser);
                 } catch(\Exception $e) {
-                    return array(
-                        'form'           => $loForm->createView(),
-                        'last_firstname' => $loUser->getFirstname(),
-                        'last_lastname'  => $loUser->getLastname(),
-                        'last_email'     => $loUser->getEmail(),
-                        'error'          => $e->getMessage()
-                    );
+                    return new Response($e->getMessage());
                 }
-
-                return $this->redirect($this->generateUrl('WebWebBundle_offerIndex'));
+                return new Response('OK');
             }
         }
 

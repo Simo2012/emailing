@@ -1,6 +1,7 @@
 <?php
 namespace Web\WebBundle\Model\User;
 
+use Doctrine\DBAL\DBALException;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\CssSelector\Exception\SyntaxErrorException;
 use Symfony\Component\Security\Core\Encoder\EncoderFactory;
@@ -143,7 +144,9 @@ class UserLogger
     /**
      * Création d'un nouvel utilisateur
      *
+     * @param $poUser
      * @return User
+     * @throws DBALException
      */
     public function createUser($poUser)
     {
@@ -152,8 +155,12 @@ class UserLogger
         $lsCountry = strtolower(substr($this->request->getLocale(), -2));
         $poUser->setPassword($lsPassword)
                ->setCountry($lsCountry);
-        $this->manager->persist($poUser);
-        $this->manager->flush();
+        try {
+            $this->manager->persist($poUser);
+            $this->manager->flush();
+        } catch(\Exception $e) {
+            throw new DBALException($this->translator->trans('web.web.security.empty_fields'));
+        }
     } // createUser
     
     /**

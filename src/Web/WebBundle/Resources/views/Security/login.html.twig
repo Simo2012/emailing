@@ -6,10 +6,9 @@
             <h3 class="RBZ_linesSided RBZ_{{ app.request.locale }}"><span>{{ "web.web.security.login.baseline" | trans }}</span></h3>
         </div>
         <div id="div_RBZ_form">
-            <form action="{{ path('WebWebBundle_securityLogin') }}" method="post" {{ form_enctype(form) }}>
-                {% if error is defined %}
-                    <p class="RBZ_error">{{ error }}</p>
-                {% endif %}
+            <form id="form_RBZ_login_form" action="{{ path('WebWebBundle_securityLogin') }}" method="post" {{ form_enctype(form) }}>
+                <div id="div_RBZ_error">
+                </div>
                 <div class="RBZ_input">
                     {{ form_label(form.email) }}
                     {{ form_widget(form.email, { 'value' : last_email }) }}
@@ -19,7 +18,7 @@
                     {{ form_widget(form.password) }}
                 </div>
 
-                <input type="submit" value="{{ 'web.web.security.login.submit' | trans }}" class="RBZ_redButton"/>
+                <input id="input_RBZ_login_form" type="submit" value="{{ 'web.web.security.login.submit' | trans }}" class="RBZ_redButton"/>
                 {{ form_rest(form) }}
             </form>
         </div>

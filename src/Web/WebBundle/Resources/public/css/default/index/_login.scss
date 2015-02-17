@@ -49,6 +49,14 @@
             input.RBZ_redButton {
                 margin-top: 25px;
             }
+            #div_RBZ_error {
+                color: $red-banner;
+                font-weight: 600;
+                position: absolute;
+                top: 130px;
+                width: 80%;
+                text-align: center;
+            }
         }
     }
     #div_RBZ_notice {
@@ -131,6 +139,14 @@
             }
             input.RBZ_redButton {
                 margin-top: 25px;
+            }
+            #div_RBZ_error {
+                color: $red-banner;
+                font-weight: 600;
+                position: absolute;
+                top: 130px;
+                width: 80%;
+                text-align: center;
             }
         }
     }

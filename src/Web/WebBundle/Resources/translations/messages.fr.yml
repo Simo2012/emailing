@@ -35,6 +35,7 @@ web.web.security.firstname:             Votre prénom
 web.web.security.lastname:              Votre nom
 web.web.security.email:                 Votre email
 web.web.security.password:              Votre mot de passe
+web.web.security.empty_fields:          Vous devez renseigner tous les champs.
 web.web.security.email_not_found:       Cet email n'est associé à aucun utilisateur.
 web.web.security.wrong_password:        Mot de passe incorrect.
 web.web.security.user_already_exists:   Un utilisateur utilisant cet email existe déjà.
@@ -144,6 +145,7 @@ web.web.user.details.connection.passRepeat: Confirmer Mot de passe
 web.web.user.details.connection.oldPass:    Ancien Mot de passe
 web.web.user.details.connection.newPass:    Nouveau Mot de passe
 web.web.user.details.connection.passRepeatError: Les mots de passe doivent être identique
+
 # ============ CONTACT PAGE ============
 # ==== Index ====
 web.web.contact.index.mailing_list.title:             Mailing list

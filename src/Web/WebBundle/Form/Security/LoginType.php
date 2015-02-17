@@ -17,7 +17,8 @@ class LoginType extends AbstractType
             'label' => 'web.web.security.email',
             'attr'  => array(
                 'caption' => 'web.web.security.email',
-                'autocomplete'  => false
+                'autocomplete' => false,
+                'required' => true,
             )
         );
         $poBuilder->add('email', 'email', $laParams);
@@ -25,7 +26,8 @@ class LoginType extends AbstractType
             'label' => 'web.web.security.password',
             'attr'  => array(
                 'caption' => 'web.web.security.password',
-                'autocomplete'  => false
+                'autocomplete' => false,
+                'required' => true,
             )
         );
         $poBuilder->add('password', 'password', $laParams);
