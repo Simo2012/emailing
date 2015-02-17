@@ -2,27 +2,19 @@
 
 @import "../global/_config";
 
-//=== Div Rib(tag)
-#div_RBZ_userDetailsInfo {
-    float:left;
-
-}
-#div_RBZ_userDetailsConnection {
-    float:right;
-
-}
-
-.RBZ_user_details_footer {
-    margin: 0px auto;
-    width: 200px;
-    height:102px;
-    .RBZ_user_details_footer_input{
-        width: 150px;
-        height:25px;
-        float: right;
-        margin-top: 30px;
-        margin-right: 0px;
-
+#div_RBZ_userDetails {
+    #div_RBZ_userDetailsInfo {
+        float:left;
+        width:350px;
+    }
+    #div_RBZ_userDetailsConnection {
+        float:right;
+        width:300px;
     }
 
+    #RBZ_user_detailsSubmit {
+        margin: 0px auto;
+        width: 200px;
+        margin-bottom: 20px;
+    }
 }
