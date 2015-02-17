@@ -52,9 +52,9 @@ class PaymentRequest
     /**
      * @var string
      *
-     * @ORM\Column(name="bankName", type="string", length=100, nullable=false)
+     * @ORM\Column(name="bank_name", type="string", length=100, nullable=false)
      */
-    private $bankname;
+    private $bankName;
 
     /**
      * @var \User
@@ -71,7 +71,7 @@ class PaymentRequest
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -94,7 +94,7 @@ class PaymentRequest
     /**
      * Get dateCreate
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDateCreate()
     {
@@ -117,7 +117,7 @@ class PaymentRequest
     /**
      * Get dateUpdate
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDateUpdate()
     {
@@ -140,7 +140,7 @@ class PaymentRequest
     /**
      * Get amount
      *
-     * @return string 
+     * @return string
      */
     public function getAmount()
     {
@@ -163,7 +163,7 @@ class PaymentRequest
     /**
      * Get status
      *
-     * @return string 
+     * @return string
      */
     public function getStatus()
     {
@@ -171,26 +171,26 @@ class PaymentRequest
     }
 
     /**
-     * Set bankname
+     * Set bankName
      *
-     * @param string $bankname
+     * @param string $bankName
      * @return PaymentRequest
      */
-    public function setBankname($bankname)
+    public function setBankName($bankName)
     {
-        $this->bankname = $bankname;
+        $this->bankName = $bankName;
 
         return $this;
     }
 
     /**
-     * Get bankname
+     * Get bankName
      *
-     * @return string 
+     * @return string
      */
-    public function getBankname()
+    public function getBankName()
     {
-        return $this->bankname;
+        return $this->bankName;
     }
 
     /**
@@ -209,7 +209,7 @@ class PaymentRequest
     /**
      * Get user
      *
-     * @return \Web\WebBundle\Entity\User 
+     * @return \Web\WebBundle\Entity\User
      */
     public function getUser()
     {

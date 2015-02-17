@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS RUBIZZ.offer (
     title             varchar(200)         NOT NULL COMMENT 'Offer title',
     text              varchar(4096)        NOT NULL COMMENT 'Offer text',
     url               varchar(200)         NOT NULL COMMENT 'Offer URL (orginal one)',
-    compensation      decimal(10,2)        NOT NULL COMMENT 'Compensation for thet offer',
+*    compensation      decimal(10,2)        NOT NULL COMMENT 'Compensation for thet offer',
     active            tinyint(3) unsigned  NOT NULL COMMENT 'User active or not',
     date_start        datetime             NOT NULL COMMENT 'Start of the offer availability',
     date_end          datetime             NOT NULL COMMENT 'End of the offer availability',

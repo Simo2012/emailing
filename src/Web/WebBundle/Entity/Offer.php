@@ -64,13 +64,6 @@ class Offer
     private $url;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="compensation", type="decimal", precision=10, scale=2, nullable=false)
-     */
-    private $compensation;
-
-    /**
      * @var boolean
      *
      * @ORM\Column(name="active", type="boolean", nullable=false)
@@ -336,29 +329,6 @@ class Offer
     public function getUrl()
     {
         return $this->url;
-    }
-
-    /**
-     * Set compensation
-     *
-     * @param string $compensation
-     * @return Offer
-     */
-    public function setCompensation($compensation)
-    {
-        $this->compensation = $compensation;
-
-        return $this;
-    }
-
-    /**
-     * Get compensation
-     *
-     * @return string
-     */
-    public function getCompensation()
-    {
-        return $this->compensation;
     }
 
     /**

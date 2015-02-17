@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS RUBIZZ.payment_request (
     user_id      int(10) UNSIGNED    NOT NULL COMMENT 'User Id (owner)',
     amount       decimal(10,2)       NOT NULL COMMENT 'Amount required (euros)',
     status       enum('waiting', 'confirmed', 'error') NOT NULL COMMENT 'Status of the request',
-    bankName     varchar(100)        NOT NULL COMMENT 'Bank name if confirmed',
+*    bank_name     varchar(100)        NOT NULL COMMENT 'Bank name if confirmed',
 
     PRIMARY KEY (id),
     KEY paymentRequestUser_idx (user_id, date_create),
