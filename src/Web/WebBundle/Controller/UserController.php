@@ -38,11 +38,16 @@ class UserController extends Controller
     public function detailsAction()
     {
         $loManager = $this->getDoctrine()->getManager();
-        $loUser = $this->getUser();
+        $loSessionUser = $this->getUser();
+        // ---- Déconnexion de l'utilisateur en session ----
+        $loManager->detach($loSessionUser);
         $lsFormError = '';
         $lbSucess = false;
+        $lbCheckEmail = true;
+        /* Récupération du User */
+        $loUser = $loManager->getRepository('WebWebBundle:User')->find($loSessionUser->getId());
         //recuperer l'ancien mot de passe avant saisie
-        $lsCurentPass = $loUser->getPassword();
+        $lsCurentPass = $loSessionUser->getPassword();
         $loForm = $this->createForm(new UserDetailsType(), $loUser);
 
         // ==== Traitement de la saisie ====
@@ -57,19 +62,24 @@ class UserController extends Controller
                 // on compare l'ancien pass avec celui saisi dans le form
                 if ($lsOldPass == $lsCurentPass) {
                     try {
-                        // ---- Déconnection de l'utilisateur en session ----
-                        //$loManager->detach($loUser);
                         $loUser->setDateUpdate(new \DateTime('now'));
-                        $loUserLogger->createUser($loUser);
+                        //définit si il faut une verification de l'email dans le modele
+                        if ($loUser->getEmail() == $loSessionUser->getEmail()) {
+                            $lbCheckEmail = false;
+                        }
+                        $loUserLogger->registerUser($loUser, $lbCheckEmail);
+
                         $lbSucess = true;
-                    } catch (DBALException $poException) {
+                    } catch (\Exception $poException) {
+                        $lsFormError = $poException->getMessage();
                     }
                 } else {
                     $lsFormError = "l'ancien mot de passe est invalide";
                 }
+                //---- Modification de l'utilisateur en session ----
+                $loSessionUser->setEmail($loUser->getEmail());
             } else {
                 $loManager->refresh($loUser);
-                $lsFormError = $loForm->getErrorsAsString();
             }
         }
         return array(

@@ -120,18 +120,21 @@ class UserLogger
      * Enregistre l'utilisateur et le log
      *
      * @param User $poUser Utilisateur
+     * @param Boolean $pbCheckEmail Verification ou non de l'email
      * @return User
      * @throws \ErrorException
      */
-    public function registerUser($poUser)
+    public function registerUser($poUser, $pbCheckEmail = true)
     {
         // ==== Création de l'utilisateur ====
         $lsEmail = $poUser->getEmail();
-        $loUser = $this->manager->getRepository('WebWebBundle:User')->findOneByEmail($lsEmail);
-        if (!empty($loUser)) {
-            throw new \ErrorException(
-                $this->translator->trans('web.web.security.user_already_exists')
-            );
+        if ($pbCheckEmail) {
+            $loUser = $this->manager->getRepository('WebWebBundle:User')->findOneByEmail($lsEmail);
+            if (!empty($loUser)) {
+                throw new \ErrorException(
+                    $this->translator->trans('web.web.security.user_already_exists')
+                );
+            }
         }
         $this->createUser($poUser);
 
