@@ -26,7 +26,7 @@ web.web.form.flip.no: non
 # ==== Layout Global ====
 footer.credits: © <span>Rubizz</span> by Natexo.
 web.web.layout.headerTitle: Rubizz
-
+web.web.form.ok: Enregistrement ok
 # ============ SECURITY PAGE ============
 # ==== Login/Inscription ====
 web.web.security.login.baseline:        BON RETOUR SUR RUBIZZ
@@ -145,6 +145,7 @@ web.web.user.details.connection.passRepeat: Confirmer Mot de passe
 web.web.user.details.connection.oldPass:    Ancien Mot de passe
 web.web.user.details.connection.newPass:    Nouveau Mot de passe
 web.web.user.details.connection.passRepeatError: Les mots de passe doivent être identique
+web.web.user.details.connection.oldPassError: Ancien mot de passe incorrect
 
 # ============ CONTACT PAGE ============
 # ==== Index ====

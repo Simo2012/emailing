@@ -17,11 +17,11 @@
     <form action="" method="post" {{ form_enctype(form) }} autocomplete="off">
 
         {% if errors != '' %}
-            <p class="RBZ_error">ko {{ errors }}</p>
+            <p class="RBZ_error">{{ errors}}</p>
         {% endif %}
         
         {% if  success == true %}
-            <p class="RBZ_error">ok {{ 'web.web.form.ok' | trans }}</p>
+            <p class="RBZ_ok">{{ 'web.web.form.ok' | trans }}</p>
         {% endif %}
 
 

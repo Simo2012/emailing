@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Web\WebBundle\Form\User\UserDetailsType;
-
+use Symfony\Component\Translation\Translator;
 /**
  * Contrôleur user : pages relatives à l'utilisateur
  *
@@ -44,6 +44,7 @@ class UserController extends Controller
         $lsFormError = '';
         $lbSucess = false;
         $lbCheckEmail = true;
+        $loTranslator = $this->get('translator');
         /* Récupération du User */
         $loUser = $loManager->getRepository('WebWebBundle:User')->find($loSessionUser->getId());
         //recuperer l'ancien mot de passe avant saisie
@@ -74,12 +75,13 @@ class UserController extends Controller
                         $lsFormError = $poException->getMessage();
                     }
                 } else {
-                    $lsFormError = "l'ancien mot de passe est invalide";
+                    $lsFormError = $loTranslator->trans('web.web.user.details.connection.oldPassError');
                 }
                 //---- Modification de l'utilisateur en session ----
                 $loSessionUser->setEmail($loUser->getEmail());
             } else {
                 $loManager->refresh($loUser);
+                $lsFormError = $loTranslator->trans('web.web.user.details.connection.passRepeatError');
             }
         }
         return array(
