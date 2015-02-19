@@ -25,7 +25,6 @@
         "sensio/framework-extra-bundle": "~3.0,>=3.0.2",
         "incenteev/composer-parameter-handler": "~2.0",
         "natexo/natexo" : "1.6.*",
-        "facebook/php-sdk-v4" : "4.0.*",
         "suncat/mobile-detect-bundle": "0.10.*"
     },
     "require-dev": {
