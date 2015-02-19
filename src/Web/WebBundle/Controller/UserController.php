@@ -137,12 +137,21 @@ class UserController extends Controller
      * @Template()
      */
     public function cashInAction() {
+        $loManager = $this->getDoctrine()->getManager();
         // ==== recuperation du user courant ====
         $loUser = $this->getUser();
-
+        
+        // ==== recuperation des paiements ====
+        $loPaymentRequest = $loManager->getRepository('WebWebBundle:PaymentRequest')->findBy(
+                array('user' => $loUser),
+                array('dateCreate' => 'desc'),
+                10,
+                0
+                );
+        
         return array(
             'user'  => $loUser,
-            'invoiceRequests' => array()
+            'invoiceRequests' => $loPaymentRequest
         );
     }
 }
