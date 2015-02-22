@@ -27,11 +27,25 @@ class OfferController extends Controller
      */
     public function indexAction()
     {
+        $loUser = $this->getUser();
         $loManager = $this->getDoctrine()->getManager();
-        $loOffers = $loManager->getRepository('WebWebBundle:Offer')->findBy(array(), array(), 6);
-
+        // recuperer les 6 dernieres offres
+        $loOffers = $loManager->getRepository('WebWebBundle:Offer')->findBy(
+                array(),
+                array('dateCreate' => 'desc'),
+                6,
+                0
+                );
+        $liAvailableAmount = $loUser->getAvailableAmount();
+        // calculer les gains par mois
+        $laEarnings = $loManager->getRepository('WebWebBundle:PaymentRequest')->earningByMonth($loUser);
+        foreach ($laEarnings as $laEarning){
+            $laEarningsByMonth[$laEarning['month']] = $laEarning['amount'];
+        }
+        
         return array(
-            'categories' => $this->container->getParameter('web.offerCategory'),
+            'earnings'  => $laEarningsByMonth,
+            'availableAmount' => $liAvailableAmount,           
             'offers' => $loOffers,
         );
     } // indexAction

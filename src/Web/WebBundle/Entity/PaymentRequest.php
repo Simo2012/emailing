@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * PaymentRequest
  *
  * @ORM\Table(name="payment_request", indexes={@ORM\Index(name="paymentRequestUser_fk", columns={"user_id"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Web\WebBundle\Entity\Repository\PaymentRequestRepository")
  */
 class PaymentRequest
 {

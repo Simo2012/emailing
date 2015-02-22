@@ -91,6 +91,11 @@ doctrine:
             type: memcache
             host: localhost
             port: 11211
+# Doctrine Configuration
+        dql:
+            datetime_functions:
+                month: Natexo\AdminBundle\DQL\MySQL\Month
+                year: Natexo\AdminBundle\DQL\MySQL\Year
 
 # ==== Swiftmailer Configuration ====
 swiftmailer:
