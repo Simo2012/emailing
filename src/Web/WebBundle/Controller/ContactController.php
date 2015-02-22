@@ -44,4 +44,17 @@ class ContactController extends Controller
             'contacts' => $loPaginator
         );
     } // indexAction
+
+    /** ajout de contact
+     *
+     * @Template()
+     */
+    public function addAction(Request $poRequest)
+    {
+        $lbRegistration = $poRequest->get('registration', false);
+
+        return array(
+            'registration' => $lbRegistration
+        );
+    } // addAction
 }

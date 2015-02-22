@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+@import "../global/_config.scss";
+@import "compass/css3";
+
+#div_RBZ_contactsWrapper {
+  position: relative;
+
+  #section_RBZ_contacts {
+    width: 760px;
+    display: block;
+    float: left;
+    #div_RBZ_congratulations {
+      margin-bottom: 50px;
+      a {
+        color: $red-banner;
+      }
+    }
+    #h1_RBZ_contacts {
+      margin-top: 0;
+    }
+
+    #a_RBZ_skipStep {
+      font-weight: 600;
+      background-color: #fcfcfc;
+      border: 1px solid rgba(102,102,102,.28);
+      @include border-radius(3px);
+      background-color: rgba(255,255,255,.77);
+      width: 176px;
+      height: 33px;
+      line-height: 33px;
+      display: block;
+      text-align: center;
+    }
+    .RBZ_blockContacts {
+      background-color: #ffffff;
+      border: 1px solid #efefef;
+      padding: 15px;
+      margin-bottom: 15px;
+      height: 65px;
+      span {
+        display: block;
+        font-weight: bold;
+        font-size: 18px;
+        color: #817b77;
+        line-height: 18px;
+      }
+      p {
+        margin-top: 0px;
+      }
+      a {
+        height: 35px;
+        line-height: 35px;
+        background-color: $red-banner;
+        color: $white;
+        @include border-radius(2px);
+        text-align: center;
+        padding: 0 15px;
+        font-weight: 600;
+        span {
+          font-weight: normal;
+          display: inline-block;
+          color: $white;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  #aside_RBZ_contacts {
+    position: absolute;
+    width: 300px;
+    right: -200px;
+    #div_RBZ_step1 {
+      background: url(/bundles/webweb/images/contact/globe.png) 20px 0 no-repeat;
+      width: 300px;
+      height: 200px;
+      padding: 110px 0 0 150px;
+    }
+    #div_RBZ_step2 {
+      background: url(/bundles/webweb/images/contact/letter.png) 110px 0 no-repeat;
+      width: 300px;
+      height: 200px;
+      padding: 15px 120px 0 0;
+    }
+    #div_RBZ_step3 {
+      background: url(/bundles/webweb/images/contact/card.png) top left no-repeat;
+      width: 300px;
+      height: 200px;
+      padding: 0 0 0 90px;
+    }
+    span {
+      font-size: 18px;
+      color: #494745;
+    }
+    p {
+      color: #929292;
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 0.25em;
+      line-height: 20px;
+    }
+  }
+}

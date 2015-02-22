@@ -177,3 +177,20 @@ web.web.contact.index.recommendation.method:      MODE
 web.web.contact.index.recommendation.commission:  COMMISSION
 web.web.contact.index.recommendation.volume:      VOLUME
 web.web.contact.index.recommendation.total:       TOTAL
+# ==== Add ====
+web.web.contact.add.congratulation:           Félicitations %firstname% !
+web.web.contact.add.congratulation.text:      "Vous êtes désormais inscrit à Rubizz. Une fois votre liste de contacts importée, vous pourrez commencer à gagner de l'argent en sélectionnant les offres à envoyer à votre réseau d'amis.<br><a href=\"%url%\">En savoir + sur le fonctionnement de Rubizz</a>"
+web.web.contact.add.addContacts:              Ajouter vos contacts
+web.web.contact.add.skipStep:                 IGNORER CETTE ÉTAPE
+web.web.contact.add.provider.email:           Email
+web.web.contact.add.addManually:              Ajouter manuellement des contacts
+web.web.contact.add.provider.gmail:           Gmail
+web.web.contact.add.provider.outlook:         Outlook
+web.web.contact.add.provider.yahoo:           Yahoo
+web.web.contact.add.add:                      AJOUTER&nbsp;&nbsp;&nbsp;&nbsp;<span>></span>
+web.web.contact.add.addContact:               Ajouter vos contacts %provider%
+web.web.contact.add.agreement:                Vous devez avoir le consentement des contacts que vous ajoutez. Chaque contact ajouté aura la possibilié de se désabonner pour ne plus recevoir vos recommandations.
+web.web.contact.add.step:                     Etape %step%
+web.web.contact.add.step1.text:               "Je m'inscris et<br>j'ajoute mes contacts"
+web.web.contact.add.step2.text:               Je recommande des<br>offres à mes amis
+web.web.contact.add.step3.text:               "Je gagnes de l'argent !"

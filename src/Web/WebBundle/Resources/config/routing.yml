@@ -103,3 +103,7 @@ WebWebBundle_contactIndex:
 WebWebBundle_recommendationIndex:
     path:     /recommendation/index
     defaults: { _controller: "WebWebBundle:Recommendation:index" }
+# ---- Page d'ajout ----
+WebWebBundle_contactAdd:
+    path:     /contact/add
+    defaults: { _controller: "WebWebBundle:Contact:add" }
