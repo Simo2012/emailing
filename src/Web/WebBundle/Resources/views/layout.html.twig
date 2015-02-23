@@ -46,8 +46,8 @@
 {%     if app.session.get('debugMode') %}
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
 {%     endif %}
-    {%     javascripts '@WebWebBundle/Resources/public/js/Global/global.js'
-                       '@WebWebBundle/Resources/public/js/Global/popup.js'
+    {%     javascripts '@WebWebBundle/Resources/public/js/global/Global.js'
+                       '@WebWebBundle/Resources/public/js/global/Popup.js'
     filter='?yui_js' %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
     {%     endjavascripts %}
