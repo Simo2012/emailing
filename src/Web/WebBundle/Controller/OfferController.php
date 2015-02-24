@@ -70,10 +70,13 @@ class OfferController extends Controller
      *
      * @Template()
      */
-    public function listAction()
+    public function listAction(Request $poRequest)
     {
         $loManager = $this->getDoctrine()->getManager();
-        $loOffers = $loManager->getRepository('WebWebBundle:Offer')->findAll();
+        //récupération du filtre catégorie si demandé
+        $lsCategory = $poRequest->query->get('category');
+
+        $loOffers = $loManager->getRepository('WebWebBundle:Offer')->searchByCategory($lsCategory);
 
         return array(
             'categories' => $this->container->getParameter('web.offerCategory'),

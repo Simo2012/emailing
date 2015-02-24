@@ -87,7 +87,7 @@ WebWebBundle_offerGraphicStandards:
 WebWebBundle_offerList:
     path:     /offer/list
     defaults: { _controller: "WebWebBundle:Offer:list" }
-
+    
 #==================================================
 # Contact controller : page mailing list, etc
 #==================================================

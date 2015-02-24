@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Offer
  *
  * @ORM\Table(name="offer", indexes={@ORM\Index(name="offerCountryActive_idx", columns={"country", "active", "category"}), @ORM\Index(name="offerSubsidiary_fk", columns={"subsidiary_id"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Web\WebBundle\Entity\Repository\OfferRepository")
  */
 class Offer
 {

@@ -24,8 +24,8 @@
         <div id="div_RBZ_offerCategory">
             <ul>
                 <li><a href="">TAG</a></li>
-                {% for category in categories %}
-                    <li><a href="">{{ category | trans }}</a></li>
+                {% for category, categoryTrans in categories %}
+                    <li><a href="{{ url("WebWebBundle_offerList", {'category': category }) }}">{{ categoryTrans | trans }}</a></li>
                 {% endfor %}
             </ul>
         </div>

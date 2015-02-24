@@ -97,13 +97,13 @@ parameters:
             redirect_uri: http://rubizz.anis.natexo.com/app_dev.php/
     # ---- Liste des tags ( offer) ----
     web.offerCategory:
-            quiz: web.web.offer.list.categories.quiz
-            quotation: web.web.offer.list.categories.quotation
+            game: web.web.offer.list.categories.quiz
+            estimate: web.web.offer.list.categories.quotation
             travel: web.web.offer.list.categories.travel
-            ecommerce: web.web.offer.list.categories.ecommerce
-            finances: web.web.offer.list.categories.finances
-            divertissement: web.web.offer.list.categories.divertissement
-            special: web.web.offer.list.categories.special
+            e-commerce: web.web.offer.list.categories.ecommerce
+            finance: web.web.offer.list.categories.finances
+            untertainment: web.web.offer.list.categories.divertissement
+            special-offer: web.web.offer.list.categories.special
 services:
     # =================== MODEL ===================
     # ==== User ====
