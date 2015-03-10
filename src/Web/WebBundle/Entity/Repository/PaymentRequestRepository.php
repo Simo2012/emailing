@@ -31,6 +31,18 @@ class PaymentRequestRepository extends EntityRepository
                         ->groupBy('month')
                         ->orderBy('pr.dateCreate', 'ASC');
 
+        return $loQuery->getQuery()->getResult;
+    }
+     /** Retourner la liste de transaction
+     * @return \Doctrine\ORM\QueryBuilder
+     */
+    public function getAllByUser($poUser)
+    {
+        $loQuery = $this->createQueryBuilder('pr')
+                        ->select('pr')
+                        ->where('pr.user = :user')
+                        ->setParameter('user', $poUser);
+
         return $loQuery->getQuery()->getResult();
     }
 }

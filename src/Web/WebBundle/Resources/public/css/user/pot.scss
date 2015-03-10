@@ -11,4 +11,78 @@
         height: 60px;
         margin-bottom: 0px;
     }
+
 }
+.RBZ_info{
+    margin-bottom: 30px;
+}
+/* ---- Tableau de listing ---- */
+#table_RBZ_pot {
+
+    .RBZ_user_pot_soldcredit {
+        color: $table_blue;
+
+    }
+    .RBZ_user_pot_solddebit {
+        color: $table_red;
+
+    }
+    .RBZ_user_pot_mtc, .RBZ_user_pot_mtd{
+        text-decoration:underline;
+    }
+
+}
+#table_RBZ_potDC
+{
+    margin-left: 90px;
+    width: 700px;
+    .table_RBZ_pot_td1_popup {
+        width: 500px;
+    }
+    .table_RBZ_pot_td2_popup {
+        width: 200px;
+    }
+    .RBZ_user_pot_soldcredit {
+        color: $table_blue;
+
+    }
+    .RBZ_user_pot_solddebit {
+        color: $table_red;
+
+    }
+
+}
+.RBZ_user_pot_c_header{
+    display: block;
+    width: 450px;
+    padding-bottom: 60px;
+    .RBZ_user_pot_cd_header_title{
+        float: left;
+        margin-left: 60px;    
+    }
+    .RBZ_user_pot_cd_header_mounth{
+        float: left;
+        margin-left: 60px;
+        color:#BEBEC5 ;
+        font: 15px fantasy;
+    }
+
+}
+
+.RBZ_user_pot_d_header{
+    display: block;
+    width: 400px;
+    padding-bottom: 60px;
+    .RBZ_user_pot_cd_header_title{
+        float: left;
+        margin-left: 60px;    
+    }
+    .RBZ_user_pot_cd_header_mounth{
+        float: left;
+        margin-left: 60px;
+        color:#BEBEC5 ;
+        font: 15px fantasy;
+    }
+
+}
+

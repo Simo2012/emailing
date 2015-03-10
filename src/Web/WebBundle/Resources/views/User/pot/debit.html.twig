@@ -1,0 +1,58 @@
+{% extends "@WebWeb/layoutPopupCagnotte.html.twig" %}
+
+{% block STYLE %}width:880px;height:600px;{% endblock %}
+{% block TITLE %}
+    Détail des mouvements
+{% endblock %}
+{% block CSS %}
+    {{ parent() }}
+    {% stylesheets
+    '@WebWebBundle/Resources/public/css/user/pot.scss'
+    %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+    {% endstylesheets %}
+{% endblock %}
+{% block CONTENT %}
+    <div class="RBZ_user_pot_d_header">
+        <div class="RBZ_user_pot_cd_header_title">
+
+
+            <h3>{{ 'web.web.user.pot.debit.title' | trans }}</h3>
+
+        </div>
+        <div class="RBZ_user_pot_cd_header_mounth">
+            {{ 'web.web.user.pot.mounth' | trans }} Avril
+        </div>
+    </div>
+    <table id="table_RBZ_potDC" class="RBZ_table">
+        <thead>
+
+
+            <tr class="table_RBZ_pot_tr_popup">
+                <th class="table_RBZ_pot_td1_popup">{{ 'web.web.user.pot.paiement' | trans }}</th>
+                <th class="table_RBZ_pot_td2_popup">{{ 'web.web.user.pot.paiement.mt' | trans }}</th>
+
+            </tr>
+        </thead>
+       
+         {%set total = 0%}
+        <tbody>
+            {% for paymentrequest in invoiceRequests %}
+                <tr class="table_RBZ_pot_tr_popup">
+                    <td class="table_RBZ_pot_td1_popup">Paiements sur le compte {{paymentrequest.bankName}} du {{paymentrequest.dateCreate | date("d.m.Y") }}</td>
+                    <td class="table_RBZ_pot_td2_popup"> {{paymentrequest.amount}}€</td>
+                    {%set total = total  + paymentrequest.amount %}
+                </tr>
+            {% endfor %}
+        </tbody>
+         <tfoot>
+            <tr>
+                <td>TOTAL</td>
+                <td class="RBZ_user_pot_solddebit">{{total}} €</td>
+            </tr>
+        </tfoot>
+    </table>
+{% endblock %}
+{% block SUBMIT %}
+    <input type="button" id="RBZ_coral" class="RBZ_coral" value="Fermer" >
+{% endblock %}

@@ -8,10 +8,10 @@ use Doctrine\ORM\Mapping as ORM;
  * Commission
  *
  * @ORM\Table(name="commission", indexes={@ORM\Index(name="commissionRecommendation_idx", columns={"recommendation_id"}), @ORM\Index(name="commissionDatecreateRecommendation_idx", columns={"date_create", "recommendation_id"}), @ORM\Index(name="commissionContact_fk", columns={"contact_id"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Web\WebBundle\Entity\Repository\CommissionRepository")
  */
-class Commission
-{
+class Commission {
+
     /**
      * @var integer
      *
@@ -48,23 +48,26 @@ class Commission
      */
     private $contact;
 
-
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="amount", type="decimal", precision=10, scale=2, nullable=false)
+     */
+    private $amount;
 
     /**
      * Constructeur, valeurs par défaut
      */
-    public function __construct()
-    {
+    public function __construct() {
         $this->dateCreate = new \DateTime('now');
-    } // __construct
+    }// __construct
 
     /**
      * Get id
      *
      * @return integer
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -74,8 +77,7 @@ class Commission
      * @param \DateTime $dateCreate
      * @return Commission
      */
-    public function setDateCreate($dateCreate)
-    {
+    public function setDateCreate($dateCreate) {
         $this->dateCreate = $dateCreate;
 
         return $this;
@@ -86,8 +88,7 @@ class Commission
      *
      * @return \DateTime
      */
-    public function getDateCreate()
-    {
+    public function getDateCreate() {
         return $this->dateCreate;
     }
 
@@ -97,8 +98,7 @@ class Commission
      * @param \Web\WebBundle\Entity\Recommendation $recommendation
      * @return Commission
      */
-    public function setRecommendation(\Web\WebBundle\Entity\Recommendation $recommendation = null)
-    {
+    public function setRecommendation(\Web\WebBundle\Entity\Recommendation $recommendation = null) {
         $this->recommendation = $recommendation;
 
         return $this;
@@ -109,8 +109,7 @@ class Commission
      *
      * @return \Web\WebBundle\Entity\Recommendation
      */
-    public function getRecommendation()
-    {
+    public function getRecommendation() {
         return $this->recommendation;
     }
 
@@ -120,8 +119,7 @@ class Commission
      * @param \Web\WebBundle\Entity\Contact $contact
      * @return Commission
      */
-    public function setContact(\Web\WebBundle\Entity\Contact $contact = null)
-    {
+    public function setContact(\Web\WebBundle\Entity\Contact $contact = null) {
         $this->contact = $contact;
 
         return $this;
@@ -132,8 +130,29 @@ class Commission
      *
      * @return \Web\WebBundle\Entity\Contact
      */
-    public function getContact()
-    {
+    public function getContact() {
         return $this->contact;
     }
+
+    /**
+     * Set amount
+     *
+     * @param string $amount
+     * @return Offer
+     */
+    public function setAmount($amount) {
+        $this->amount = $amount;
+
+        return $this;
+    }
+
+    /**
+     * Get amount
+     *
+     * @return string
+     */
+    public function getAmount() {
+        return $this->amount;
+    }
+
 }

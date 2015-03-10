@@ -9,6 +9,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Web\WebBundle\Form\User\UserDetailsType;
 use Symfony\Component\Translation\Translator;
+use Natexo\AdminBundle\Model\Paginator;
+
 /**
  * Contrôleur user : pages relatives à l'utilisateur
  *
@@ -19,8 +21,8 @@ use Symfony\Component\Translation\Translator;
  * @version 1.0
  * @package Rubizz
  */
-class UserController extends Controller
-{
+class UserController extends Controller {
+
     /**
      * Page d'accueil
      *
@@ -35,8 +37,7 @@ class UserController extends Controller
      *
      * @Template()
      */
-    public function detailsAction()
-    {
+    public function detailsAction() {
         $loManager = $this->getDoctrine()->getManager();
         $loSessionUser = $this->getUser();
         // ---- Déconnexion de l'utilisateur en session ----
@@ -89,9 +90,7 @@ class UserController extends Controller
             'errors' => $lsFormError,
             'success' => $lbSucess
         );
-    }
-
-// detailsAction
+    }// detailsAction
 
     /**
      * Page rib
@@ -102,8 +101,7 @@ class UserController extends Controller
         $loManager = $this->getDoctrine()->getManager();
         $loUser = $this->getUser();
         $loForm = $this->createForm(
-                new UserBicType($this->get('natexo_tool.filter.encrypt'),
-                        $this->get('natexo_tool.filter.decrypt')), $loUser
+                new UserBicType($this->get('natexo_tool.filter.encrypt'), $this->get('natexo_tool.filter.decrypt')), $loUser
         );
         // ==== Traitement de la saisie ====
         $loRequest = $this->getRequest();
@@ -127,10 +125,38 @@ class UserController extends Controller
      *
      * @Template()
      */
-    public function potAction() {
-        return array();
+    public function potAction(Request $poRequest) {
+        //return array();
+        // ==== Lecture des données ====
+        $piUserId = $poRequest->get('piUser');
+        $piTypeMouvement = $poRequest->get('piType');
+           // ==== Initialisation ====
+        $loManager = $this->getDoctrine()->getManager();
+        $loUser = $this->getUser();
+        $loBuilder = $loManager->getRepository('WebWebBundle:Movement')->getAllByUser($loUser);
+        $liNbItems = 3;
+        Paginator::paginate($poRequest, $liPage, $liNbItems);
+        $loPaginator = new Paginator($loBuilder);
+        $loPaginator->setPage($liPage);
+        $loPaginator->setNbItemsPerPage($liNbItems);
+        $loPaginator->setUrl($this->generateUrl('WebWebBundle_userPot'));
+        
+        if ($piUserId != 0 && !empty($piTypeMouvement)) {
+            if ($piTypeMouvement == 'credit') {
+                $commissions = $loManager->getRepository('WebWebBundle:Commission')->getUserCommissions($loUser);
+                return $this->render('WebWebBundle:user:pot/credit.html.twig',array('commissions' => $commissions));
+            } else {
+               $loPaymentRequest = $loManager->getRepository('WebWebBundle:PaymentRequest')->getAllByUser($loUser);
+                return $this->render('WebWebBundle:user:pot/debit.html.twig',array('invoiceRequests' => $loPaymentRequest));
+            }
+        }
+        
+        // ==== recuperation des paiements ====
+        return array(
+            'movements' => $loPaginator
+        );
     }// potAction
-    
+
     /**
      * Page encaisser la cagnotte
      * 
@@ -140,18 +166,16 @@ class UserController extends Controller
         $loManager = $this->getDoctrine()->getManager();
         // ==== recuperation du user courant ====
         $loUser = $this->getUser();
-        
+
         // ==== recuperation des paiements ====
         $loPaymentRequest = $loManager->getRepository('WebWebBundle:PaymentRequest')->findBy(
-                array('user' => $loUser),
-                array('dateCreate' => 'desc'),
-                10,
-                0
-                );
-        
+                array('user' => $loUser), array('dateCreate' => 'desc'), 10, 0
+        );
+
         return array(
-            'user'  => $loUser,
+            'user' => $loUser,
             'invoiceRequests' => $loPaymentRequest
         );
     }
+
 }

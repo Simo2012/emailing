@@ -131,9 +131,7 @@ web.web.user.cashIn.tabHistory.amount:  MONTANT
 web.web.user.cashIn.tabHistory.statut:  STATUT
 web.web.user.cashIn.cash.SecondSection: "IMPORTANT : Vous n'avez pas renseigné vos coordonnées bancaires dans la rubrique VOTRE RIB. Aucune demande de paiement ne pourra être validée tant que vortre RIB ne sera complété. Cliquez ici pour renseigner vos coordonnées."
 web.web.user.cashIn.history.title:      Historique de vos demandes de paiements
-# ==== Détail cagnotte ====
-web.web.user.pot.titre: Détail de votre cagnotte
-web.web.user.pot.text: Cette rubrique regroupe tous les mouvements de votre cagnotte: Recommandations effectuées, paiement reçues... Cliquez sur le détail de l'opération pour visualiser les commissions par recommandations. Vous pouvez à tout moment récupérer le solde du dans la rubrique "Encaisser ma cagnotte" sous réserve que le montant mimimum de 50€ soit atteint.
+
 # ==== Coordonnées ====
 web.web.user.details.title:                 Coordonnées
 web.web.user.details.personal.title:        Vos informations personnelles
@@ -146,6 +144,21 @@ web.web.user.details.connection.oldPass:    Ancien Mot de passe
 web.web.user.details.connection.newPass:    Nouveau Mot de passe
 web.web.user.details.connection.passRepeatError: Les mots de passe doivent être identique
 web.web.user.details.connection.oldPassError: Ancien mot de passe incorrect
+#===== POT =========
+web.web.user.pot.title: Détail de votre cagnotte
+web.web.user.pot.date: DATE
+web.web.user.pot.operation_name: OPERATION
+web.web.user.pot.debit: DEBIT
+web.web.user.pot.credit: CREDIT
+web.web.user.pot.solde: SOLDE
+web.web.user.pot.info: Cette rubrique regroupe tous les mouvements de votre cagnotte: Recommandations effectuées, paiement reçues... Cliquez sur le détail de l'opération pour visualiser les commissions par recommandations. Vous pouvez à tout moment récupérer le solde du dans la rubrique "Encaisser ma cagnotte" sous réserve que le montant mimimum de 50€ soit atteint.
+web.web.user.pot.recommandation_name: NOM RECOMMANDATION
+web.web.user.pot.recommandation.mt: MONTANT
+web.web.user.pot.paiement: PAIEMENT
+web.web.user.pot.paiement.mt: MONTANT
+web.web.user.pot.credit.title: Récapitulatif des mouvements par recommandation
+web.web.user.pot.debit.title: Récapitulatif des paiments effectués
+web.web.user.pot.mounth: MOIS
 
 # ============ CONTACT PAGE ============
 # ==== Index ====
@@ -194,3 +207,4 @@ web.web.contact.add.step:                     Etape %step%
 web.web.contact.add.step1.text:               "Je m'inscris et<br>j'ajoute mes contacts"
 web.web.contact.add.step2.text:               Je recommande des<br>offres à mes amis
 web.web.contact.add.step3.text:               "Je gagnes de l'argent !"
+
