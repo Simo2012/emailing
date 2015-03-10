@@ -15,7 +15,8 @@ use Doctrine\ORM\EntityRepository;
  */
 class PaymentRequestRepository extends EntityRepository
 {
-    /** calculer les gains par mois
+    /**
+     * calculer les gains par mois
      * @return \Doctrine\ORM\QueryBuilder
      */
     public function earningByMonth($poUser)
@@ -31,11 +32,13 @@ class PaymentRequestRepository extends EntityRepository
                         ->groupBy('month')
                         ->orderBy('pr.dateCreate', 'ASC');
 
-        return $loQuery->getQuery()->getResult;
+        return $loQuery->getQuery()->getResult();
     }
-     /** Retourner la liste de transaction
-     * @return \Doctrine\ORM\QueryBuilder
-     */
+
+     /**
+      * Retourner la liste de transaction
+      * @return \Doctrine\ORM\QueryBuilder
+      */
     public function getAllByUser($poUser)
     {
         $loQuery = $this->createQueryBuilder('pr')

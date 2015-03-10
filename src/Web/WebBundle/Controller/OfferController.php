@@ -31,22 +31,23 @@ class OfferController extends Controller
         $loManager = $this->getDoctrine()->getManager();
         // recuperer les 6 dernieres offres
         $loOffers = $loManager->getRepository('WebWebBundle:Offer')->findBy(
-                array(),
-                array('dateCreate' => 'desc'),
-                6,
-                0
-                );
+            array(),
+            array('dateCreate' => 'desc'),
+            6,
+            0
+        );
         $liAvailableAmount = $loUser->getAvailableAmount();
+        $laEarningsByMonth = array();
         // calculer les gains par mois
         $laEarnings = $loManager->getRepository('WebWebBundle:PaymentRequest')->earningByMonth($loUser);
         foreach ($laEarnings as $laEarning){
             $laEarningsByMonth[$laEarning['month']] = $laEarning['amount'];
         }
-        
+
         return array(
-            'earnings'  => $laEarningsByMonth,
-            'availableAmount' => $liAvailableAmount,           
-            'offers' => $loOffers,
+            'earnings'        => $laEarningsByMonth,
+            'availableAmount' => $liAvailableAmount,
+            'offers'          => $loOffers,
         );
     } // indexAction
 
@@ -63,8 +64,8 @@ class OfferController extends Controller
             'form' => $loForm->createView()
         );
     } // graphicsStandardsAction
-    
-    
+
+
     /**
      * Page toutes les offres
      *
@@ -83,5 +84,5 @@ class OfferController extends Controller
             'offers' => $loOffers,
         );
     }// indexAction
-    
+
 }
