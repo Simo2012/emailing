@@ -67,25 +67,25 @@ web.web.default.index.mailinglist.add: Add contacts
 web.web.default.index.cagnotte.title: Accept your piggy bank
 web.web.default.index.cagnotte.content: In recommending deals to your contacts, you earn money for each of their contribution.
 web.web.default.index.cagnotte.begin: Get Started
-web.web.default.index.christbale.detail: Avec plus de 3 000 followers, j'ai pu leur faire bénéficier d'offres vraiment interessantes et orientées sur mon secteur.
+web.web.default.index.christbale.detail: With more than 3,000 followers, I could make them really get interesting offers and oriented my area.
 web.web.default.index.christbale.sign: Christian Bale - @c-bale
-web.web.default.index.emmawats.detail: Avec plus de 3 000 followers, j'ai pu leur faire bénéficier d'offres vraiment interessantes et orientées sur mon secteur.
+web.web.default.index.emmawats.detail: With more than 3,000 followers, I could make them really get interesting offers and oriented my area.
 web.web.default.index.emmawats.sign: Eùùa Watsp - @Emma-ww
-web.web.default.index.footer.about: A propos
+web.web.default.index.footer.about: About
 web.web.default.index.footer.faq: FAQ
 web.web.default.index.footer.contact: Contact
 web.web.default.index.footer.jobs: Jobs
-web.web.default.index.footer.advertisers: Annonceurs
-web.web.default.index.footer.alloffers: Toutes les offres
+web.web.default.index.footer.advertisers: Advertisers
+web.web.default.index.footer.alloffers: All offers
 web.web.default.index.footer.maillist: Mailing list
-web.web.default.index.footer.howwork: Comment ça marche ?
+web.web.default.index.footer.howwork: how does it work?
 web.web.default.index.footer.bynatexo: 2014 %b%Rubizz%eb% by Natexo.
-web.web.default.index.footer.allrights: Tous droits réservés
-web.web.default.index.footer.mentions: Mentions légales
-web.web.default.index.footer.condition: Conditions générales d'utilisation
-web.web.default.index.slide1.text1: Gagne de l'argent en partageant des offres avec tes amis
+web.web.default.index.footer.allrights: all rights reserved
+web.web.default.index.footer.mentions: Legal Notice
+web.web.default.index.footer.condition: General terms of use
+web.web.default.index.slide1.text1: Makes money by sharing deals with friends
 web.web.default.index.slide1.text2: Lorem ipsum dolor sit amet, consecteturùbrùadipiscing elit. Nullam quis arcu a nisi ultrices consequat. Etiam in mollis ex.
-web.web.default.index.slide1.button: Commencer gratuitement
+web.web.default.index.slide1.button: Get started for free
 
 # ============ OFFER PAGE ============
 # ==== Offer Page (index) ====
@@ -137,22 +137,24 @@ web.web.user.cashIn.history.title:      Historique de vos demandes de paiements
 
 # ==== Détail cagnotte ====
 #===== POT =========
-web.web.user.pot.title: Detail of your piggy bank
+web.web.user.pot.title: Piggy Bank Details
 web.web.user.pot.date: DATE
-web.web.user.pot.operation_name: OPERATION
+web.web.user.pot.operation_name: Transaction
 web.web.user.pot.debit: DEBIT
 web.web.user.pot.credit: CREDIT
 web.web.user.pot.solde: BALANCE
-web.web.user.pot.info: "This section includes all the movements of your piggy bank: Recommendations made, payment received ... Click on the details of the transaction to view commissions recommendations. You can always recover the balance in the &laquo;Accept my piggy bank&raquo; provided that the mimimum of € 50 is reached."
+web.web.user.pot.info: "This section shows all your Piggy Bank transactions: Made recommendations, completed payments…Click on the operation detail to view your commission for each recommendation. As long as you have a minimum of $50, you may at any moment redeem the balance shown in the &laquo;Redeem my balance&raquo; section."
 web.web.user.pot.recommandation_name: RECOMMANDATION NAME
 web.web.user.pot.recommandation.mt: amount
 web.web.user.pot.paiement: PAYMENT
 web.web.user.pot.paiement.mt: AMOUNT
-web.web.user.pot.credit.title: Summary of movements recommendation
-web.web.user.pot.debit.title: Summary of payments
+web.web.user.pot.credit.title: Transaction Summary per Recommendation
+web.web.user.pot.debit.title: Transaction Details
 web.web.user.pot.mounth: MONTH
-web.web.user.pot.movement.name.payment: Payments received
-web.web.user.pot.movement.name.commission: Commissions received
+web.web.user.pot.movement.name.payment: Received Payment
+web.web.user.pot.movement.name.commission: Received Commission
+web.web.user.pot.paiement.word1: Payment to the
+web.web.user.pot.paiement.word2: account made on
 
 # ==== Coordonnées ====
 web.web.user.details.title:                 Coordonnées
