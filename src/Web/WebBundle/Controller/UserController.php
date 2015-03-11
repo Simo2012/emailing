@@ -21,23 +21,15 @@ use Natexo\AdminBundle\Model\Paginator;
  * @version 1.0
  * @package Rubizz
  */
-class UserController extends Controller {
-
-    /**
-     * Page d'accueil
-     *
-     * @Template()
-     */
-    public function profileAction() {
-        return array();
-    }// profileAction
-
+class UserController extends Controller
+{
     /**
      * Page details (coordonnées)
      *
      * @Template()
      */
-    public function detailsAction() {
+    public function detailsAction()
+    {
         $loManager = $this->getDoctrine()->getManager();
         $loSessionUser = $this->getUser();
         // ---- Déconnexion de l'utilisateur en session ----
@@ -90,14 +82,15 @@ class UserController extends Controller {
             'errors' => $lsFormError,
             'success' => $lbSucess
         );
-    }// detailsAction
+    } // detailsAction
 
     /**
      * Page rib
      *
      * @Template()
      */
-    public function ribAction() {
+    public function ribAction()
+    {
         $loManager = $this->getDoctrine()->getManager();
         $loUser = $this->getUser();
         $loForm = $this->createForm(
@@ -125,8 +118,8 @@ class UserController extends Controller {
      *
      * @Template()
      */
-    public function potAction(Request $poRequest) {
-        //return array();
+    public function potAction(Request $poRequest)
+    {
         // ==== Lecture des données ====
         $loDate = $poRequest->get('piDate');
         $piTypeMouvement = $poRequest->get('piType');
@@ -155,10 +148,11 @@ class UserController extends Controller {
 
     /**
      * Page encaisser la cagnotte
-     * 
+     *
      * @Template()
      */
-    public function cashInAction() {
+    public function cashInAction()
+    {
         $loManager = $this->getDoctrine()->getManager();
         // ==== recuperation du user courant ====
         $loUser = $this->getUser();
@@ -173,5 +167,4 @@ class UserController extends Controller {
             'invoiceRequests' => $loPaymentRequest
         );
     }
-
 }

@@ -49,10 +49,6 @@ WebWebBundle_defaultJobs:
 #=====================================
 # User controller : page profile, etc
 #=====================================
-# ---- Page profile ----
-WebWebBundle_userProfile:
-    path:     /user/profile
-    defaults: { _controller: "WebWebBundle:User:profile" }
 # ---- Page des coordonnées ----
 WebWebBundle_userDetails:
     path:     /user/details
