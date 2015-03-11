@@ -18,7 +18,7 @@ Index.prototype = {
      * Traitements lancés en fin de chargement de la page
      */
     ready: function(piAvailableAmount, paEarning)
-    {   
+    {
         //json decode
         var loEarnings = $.parseJSON(paEarning);
         // month bar line initialisation
@@ -83,13 +83,14 @@ Index.prototype = {
             bezierCurve : false,
             pointDotRadius : 5,
             datasetFill : false
-            
+
         });
         // graph donut
         var ctxDonut = document.getElementById("canavs_RBZ_donut").getContext("2d");
         window.myDoughnut = new Chart(ctxDonut).Doughnut(doughnutData, {
             responsive: false,
-            percentageInnerCutout : 75
+            percentageInnerCutout : 80,
+            segmentShowStroke: false,
         });
 
     }, // ready

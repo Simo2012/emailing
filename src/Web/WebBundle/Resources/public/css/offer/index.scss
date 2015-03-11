@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import "../global/_config";
+@import "compass";
 
 //=== graphiques
 #div_RBZ_stats {
@@ -7,54 +8,67 @@
 }
 //=== line bar
 #div_RBZ_bar {
-    display: inline-block;
+    float:left;
     width: 55%;
     margin-right: 80px;
+    height:235px;
     canvas {
-        height:500px;
+        height:235px;
         width: 750px;
     }
 }
-//=== donut
+
+// ==== Donut ====
+#div_RBZ_donutShade {
+    float:left;
+    position: relative;
+    padding:10px;
+    border-radius:127px;
+    @include background-image(linear-gradient(#CFCECC, #F1F1F1, #F1F1F1));
+}
 #div_RBZ_donut {
     display: inline-block;
     position: relative;
+    background:#F1F1F1;
+    border-radius:117px; border:0px;
     canvas {
-        height: 336px;
-        width: 336px;
+        height: 235px;
+        width: 235px;
     }
 }
 
+#a_RBZ_donutDetail { color:#BFBFBF; }
+
 #div_RBZ_donutDetail {
-    font-size: 16px;
+    font-size: 14px;
     display: inline-block;
-    height: 336px;
-    width: 336px;
+    height: 235px;
+    width: 235px;
     position: absolute;
     text-align: center;
     left: 0;
     top:0;
-    padding-top: 90px;
+    padding-top: 60px;
     color : #bfbfbf;
     font-weight: bold;
 
     .RBZ_piggyBank {
         color : #676059;
-        font-size: 40px;
-        margin-bottom: 10px;
+        font-size: 36px;
     }
 
-    .RBZ_piggyBankText {
-        color : #f04f61;
-        font: normal 16px 'Open Sans';
-        margin-top: 10px;
-        margin-bottom: 10px;
+    div.RBZ_piggyBankText {
+        font: normal 12px 'Open Sans';
+        margin-top: 6px;
+        margin-bottom: 8px;
+        a { color : #f04f61; font-weight:bold; }
     }
     #div_RBZ_separator {
-        width: 244px;
-        margin-left:46px;
-        height:1.8px;
-        background-color: #D1D1D1;
+        width: 180px;
+        margin-left:28px;
+        height:0px;
+        border-top:1px solid #D1D1D1;
+        border-bottom:1px solid white;
     }
 }
 

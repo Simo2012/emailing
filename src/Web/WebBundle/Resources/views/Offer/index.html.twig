@@ -25,27 +25,29 @@
 {% endblock %}
 
 {% block CONTENT %}
-
     <h1>{{ "web.web.offer.index.price.title" | trans }}</h1>
     {# Graphiques des stats #}
     <div id="div_RBZ_stats">
         {# bar-line #}
         <div id="div_RBZ_bar">
-            <canvas id="canavs_RBZ_line"/>
+            <canvas id="canavs_RBZ_line"></canvas>
         </div>
         {# donut #}
-        <div id="div_RBZ_donut">
-            <canvas id="canavs_RBZ_donut"/></canvas>
-            <div id="div_RBZ_donutDetail">
-                <div>{{ "web.web.offer.index.donut.piggyBank" | trans }}</div>
-                <div class="RBZ_piggyBank"> {{ availableAmount }} €</div>
-                <div id="div_RBZ_separator"></div>
-                <div class="RBZ_piggyBankText"><a href="{{ url("WebWebBundle_userCashIn") }}">{{ "web.web.offer.index.donut.piggyBankTouch" | trans }}</a></div>
-                <a href="{{ url("WebWebBundle_userPot") }}">{{ "web.web.offer.index.donut.detail" | trans }}</a>
+        <div id="div_RBZ_donutShade">
+            <div id="div_RBZ_donut">
+                <canvas id="canavs_RBZ_donut"/></canvas>
+                <div id="div_RBZ_donutDetail">
+                    <div>{{ "web.web.offer.index.donut.piggyBank" | trans }}</div>
+                    <div class="RBZ_piggyBank"> {{ 125 | number_format(2, ',', ' ') }}<sup>€</sup></div>
+                    <div id="div_RBZ_separator"></div>
+                    <div class="RBZ_piggyBankText"><a href="{{ url("WebWebBundle_userCashIn") }}">{{ "web.web.offer.index.donut.piggyBankTouch" | trans }}</a></div>
+                    <a id="a_RBZ_donutDetail" href="{{ url("WebWebBundle_userPot") }}">{{ "web.web.offer.index.donut.detail" | trans }}</a>
+                </div>
             </div>
         </div>
+        <div class="KNS_clear"></div>
     </div>
-    
+
 
     <h1>{{ "web.web.offer.index.offer.title" | trans }}</h1>
     <div id="div_RBZ_AllOffers"><a href="{{ url("WebWebBundle_offerList") }}">{{ "web.web.offer.index.offer.seeAll" | trans }}</a></div>
