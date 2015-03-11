@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS RUBIZZ.movement (
     date_movement       datetime                      NOT NULL COMMENT 'Movement Date',
     amount_movement     decimal(10,2)                 NOT NULL COMMENT 'Amount mouvement',
     PRIMARY KEY (id),
-    KEY DateUser_idx (date_movement, user_id),
+    KEY DateUser_idx (user_id, date_movement),
     CONSTRAINT movementUser_fk FOREIGN KEY (user_id) REFERENCES RUBIZZ.user (id) ON DELETE RESTRICT,
     CONSTRAINT movementPaymentrequest_fk FOREIGN KEY (payment_request_id) REFERENCES RUBIZZ.payment_request (id) ON DELETE RESTRICT,
     CONSTRAINT movementCommission_fk FOREIGN KEY (commission_id) REFERENCES RUBIZZ.commission (id) ON DELETE RESTRICT,
