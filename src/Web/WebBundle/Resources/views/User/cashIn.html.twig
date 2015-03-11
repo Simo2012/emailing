@@ -7,13 +7,14 @@
     <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
     {% endstylesheets %}
 {% endblock %}
-{% block CONTENT %}
+{% block MENU_USER %}
     <div id="div_RBZ_userMenu">
         <div class="RBZ_wrapper">
             {{ menu('rubizzUser') }}
         </div>
     </div>
-
+{% endblock %}
+{% block CONTENT %}
     <h1>{{ "web.web.user.cashIn.cash.title" | trans }}</h1>
 
     {# cagnotte #}
