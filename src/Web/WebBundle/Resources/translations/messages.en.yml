@@ -143,7 +143,7 @@ web.web.user.pot.operation_name: Transaction
 web.web.user.pot.debit: DEBIT
 web.web.user.pot.credit: CREDIT
 web.web.user.pot.solde: BALANCE
-web.web.user.pot.info: "This section shows all your Piggy Bank transactions: Made recommendations, completed payments…Click on the operation detail to view your commission for each recommendation. As long as you have a minimum of $50, you may at any moment redeem the balance shown in the &laquo;Redeem my balance&raquo; section."
+web.web.user.pot.info: "This section shows all your Piggy Bank transactions: Made recommendations, completed payments…Click on the operation detail to view your commission for each recommendation. As long as you have a minimum of $50, you may at any moment redeem the balance shown in the &laquo;Redeem my piggy bank&raquo; section."
 web.web.user.pot.recommandation_name: RECOMMANDATION NAME
 web.web.user.pot.recommandation.mt: amount
 web.web.user.pot.paiement: PAYMENT

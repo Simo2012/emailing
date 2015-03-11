@@ -22,21 +22,10 @@
     </div>
 {% endblock %}
 {% block CONTENT %}
-    <div class="RBZ_wrapper">
-        <div class="RBZ_user_pot">
-            <div class="RBZ_user_pot_title">
-                <div class="KNS_row KNS_mbl">
-                    <div class="KNS_mod KNS_start KNS_w40">
-                        <h1>{{ 'web.web.user.pot.title' | trans }}</h1>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="RBZ_info">
-            {{ 'web.web.user.pot.info' | trans }}
-        </div>
+    <h1>{{ 'web.web.user.pot.title' | trans }}</h1>
+    <p class="KNS_mbm">
+        {{ 'web.web.user.pot.info' | trans | raw }}
+    </p>
 
     </div>
     <table id="table_RBZ_pot" class="RBZ_table">
