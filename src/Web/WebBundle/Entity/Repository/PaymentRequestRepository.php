@@ -39,11 +39,17 @@ class PaymentRequestRepository extends EntityRepository
       * Retourner la liste de transaction
       * @return \Doctrine\ORM\QueryBuilder
       */
-    public function getAllByUser($poUser)
+    public function getAllByUser($poUser,$poDate)
     {
+        $loDate = explode('.',$poDate);
         $loQuery = $this->createQueryBuilder('pr')
                         ->select('pr')
                         ->where('pr.user = :user')
+                        ->andWhere('month(pr.dateCreate) = :month')
+                        ->andWhere('year(pr.dateCreate)= :year')
+                        ->setParameter('user', $poUser)
+                        ->setParameter('month', $loDate[0])
+                        ->setParameter('year', $loDate[1])
                         ->setParameter('user', $poUser);
 
         return $loQuery->getQuery()->getResult();

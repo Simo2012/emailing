@@ -22,11 +22,11 @@ class Movement
     private $id;
 
     /**
-     * @var string
+     * @var enum
      *
-     * @ORM\Column(name="movement_name", type="string", length=20, nullable=false)
+     * @ORM\Column(name="movement_type", type="string", nullable=false)
      */
-    private $movementName;
+    private $movementType;
 
     /**
      * @var \DateTime
@@ -85,26 +85,26 @@ class Movement
     }
 
     /**
-     * Set movementName
+     * Set movementType
      *
-     * @param string $movementName
+     * @param string $movementType
      * @return Movement
      */
-    public function setMovementName($movementName)
+    public function setMovementType($movementType)
     {
-        $this->movementName = $movementName;
+        $this->movementType = $movementType;
 
         return $this;
     }
 
     /**
-     * Get movementName
+     * Get movementType
      *
      * @return string 
      */
-    public function getMovementName()
+    public function getMovementType()
     {
-        return $this->movementName;
+        return $this->movementType;
     }
 
     /**

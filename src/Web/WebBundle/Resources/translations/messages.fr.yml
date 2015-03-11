@@ -163,7 +163,8 @@ web.web.user.pot.paiement.mt: MONTANT
 web.web.user.pot.credit.title: Récapitulatif des mouvements par recommandation
 web.web.user.pot.debit.title: Récapitulatif des paiments effectués
 web.web.user.pot.mounth: MOIS
-
+web.web.user.pot.movement.name.payment: Paiements reçus
+web.web.user.pot.movement.name.commission: Commissions perçues
 # ============ CONTACT PAGE ============
 # ==== Index ====
 web.web.contact.index.mailing_list.title:             Mailing list

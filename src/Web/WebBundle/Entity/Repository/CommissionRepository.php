@@ -24,15 +24,20 @@ class CommissionRepository extends EntityRepository
      * @param array $paRestriction
      * @return query la requete
      */
-    public function getUserCommissions($poUser)
+    public function getUserCommissions($poUser,$poDate)
     {
+        $loDate = explode('.',$poDate);
         $loQuery = $this->createQueryBuilder('c')
                 ->select('c, u, r, o')
                 ->join('c.recommendation', 'r')
                 ->join('r.offer', 'o')
                 ->join('r.user', 'u')
-                ->where('u = :user')
+                ->andWhere('u = :user')
+                ->andWhere('month(c.dateCreate) = :month')
+                ->andWhere('year(c.dateCreate)= :year')
                 ->setParameter('user', $poUser)
+                ->setParameter('month', $loDate[0])
+                ->setParameter('year', $loDate[1])
                 ->orderBy('c.dateCreate', 'DESC');
         return $loQuery->getQuery()->getResult();
     }//getUserTransactions
