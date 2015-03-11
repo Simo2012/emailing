@@ -155,7 +155,7 @@ web.web.user.pot.operation_name: OPERATION
 web.web.user.pot.debit: DEBIT
 web.web.user.pot.credit: CREDIT
 web.web.user.pot.solde: SOLDE
-web.web.user.pot.info: Cette rubrique regroupe tous les mouvements de votre cagnotte: Recommandations effectuées, paiement reçues... Cliquez sur le détail de l'opération pour visualiser les commissions par recommandations. Vous pouvez à tout moment récupérer le solde du dans la rubrique "Encaisser ma cagnotte" sous réserve que le montant mimimum de 50€ soit atteint.
+web.web.user.pot.info: "Cette rubrique regroupe tous les mouvements de votre cagnotte: Recommandations effectuées, paiement reçues... Cliquez sur le détail de l'opération pour visualiser les commissions par recommandations. Vous pouvez à tout moment récupérer le solde du dans la rubrique &laquo;Encaisser ma cagnotte&raquo; sous réserve que le montant mimimum de 50€ soit atteint."
 web.web.user.pot.recommandation_name: NOM RECOMMANDATION
 web.web.user.pot.recommandation.mt: MONTANT
 web.web.user.pot.paiement: PAIEMENT

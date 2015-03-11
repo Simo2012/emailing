@@ -143,7 +143,7 @@ web.web.user.pot.operation_name: OPERATION
 web.web.user.pot.debit: DEBIT
 web.web.user.pot.credit: CREDIT
 web.web.user.pot.solde: BALANCE
-web.web.user.pot.info: This section includes all the movements of your piggy bank: Recommendations made, payment received ... Click on the details of the transaction to view commissions recommendations. You can always recover the balance in the "Accept my piggy bank" provided that the mimimum of € 50 is reached.
+web.web.user.pot.info: "This section includes all the movements of your piggy bank: Recommendations made, payment received ... Click on the details of the transaction to view commissions recommendations. You can always recover the balance in the &laquo;Accept my piggy bank&raquo; provided that the mimimum of € 50 is reached."
 web.web.user.pot.recommandation_name: RECOMMANDATION NAME
 web.web.user.pot.recommandation.mt: amount
 web.web.user.pot.paiement: PAYMENT
