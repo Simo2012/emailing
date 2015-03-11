@@ -36,7 +36,7 @@
         <tbody>
             {% for paymentrequest in invoiceRequests %}
                 <tr class="table_RBZ_pot_tr_popup">
-                    <td class="table_RBZ_pot_td1_popup">Paiements sur le compte {{paymentrequest.bankName}} du {{paymentrequest.dateCreate | date("d.m.Y") }}</td>
+                    <td class="table_RBZ_pot_td1_popup">{{ 'web.web.user.pot.paiement.word1' | trans }} {{paymentrequest.bankName}} {{ 'web.web.user.pot.paiement.word2' | trans }} {{paymentrequest.dateCreate | date("d.m.Y") }}</td>
                     <td class="table_RBZ_pot_td2_popup"> {{paymentrequest.amount}}€</td>
                     {%set total = total  + paymentrequest.amount %}
                 </tr>

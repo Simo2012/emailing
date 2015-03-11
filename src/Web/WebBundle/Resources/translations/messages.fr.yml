@@ -165,6 +165,8 @@ web.web.user.pot.debit.title: Récapitulatif des paiments effectués
 web.web.user.pot.mounth: MOIS
 web.web.user.pot.movement.name.payment: Paiements reçus
 web.web.user.pot.movement.name.commission: Commissions perçues
+web.web.user.pot.paiement.word1: Paiement sur le compte
+web.web.user.pot.paiement.word2: du
 # ============ CONTACT PAGE ============
 # ==== Index ====
 web.web.contact.index.mailing_list.title:             Mailing list
