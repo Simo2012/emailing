@@ -1,41 +1,41 @@
 parameters:
+    # ==== Définitions des menus ====
     menus:
+        # ---- Menu principal logué ----
         rubizzMenu:
             label: ""
             route: ""
             pages:
                 Home:
                     label: ""
-                    route: WebWebBundle_offerList
+                    route: WebWebBundle_offerIndex
                     class: RBZ_icons_home
                 Offers:
                     label: rubizzMenu_offers
-                    route: WebWebBundle_defaultIndex
+                    route: WebWebBundle_offerList
                 MailingList:
                     label: rubizzMenu_mailingList
                     route: WebWebBundle_contactIndex
-                # ==== Exploitation ====
                 HowItWorks:
                     label: rubizzMenu_howItWorks
                     route: WebWebBundle_defaultHowItWorks
                 Recommendations:
                     label: rubizzMenu_recommendations
                     route: WebWebBundle_recommendationIndex
-
+        # ---- Menu principal logué (version mobile) ----
         rubizzMenuMobile:
             label: ""
             route: ""
             pages:
                 Home:
                     label: rubizzMenu_home
-                    route: WebWebBundle_offerList
+                    route: WebWebBundle_offerIndex
                 Offers:
                     label: rubizzMenu_offers
-                    route: WebWebBundle_defaultIndex
+                    route: WebWebBundle_offerList
                 MailingList:
                     label: rubizzMenu_mailingList
                     route: WebWebBundle_defaultIndex
-                # ==== Exploitation ====
                 HowItWorks:
                     label: rubizzMenu_howItWorks
                     route: WebWebBundle_defaultHowItWorks
