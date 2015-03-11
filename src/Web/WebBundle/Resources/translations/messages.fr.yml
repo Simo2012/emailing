@@ -24,9 +24,13 @@ web.web.form.flip.yes:  oui
 web.web.form.flip.no: non
 
 # ==== Layout Global ====
-footer.credits: © <span>Rubizz</span> by Natexo.
+footer.credits:             © <span>Rubizz</span> by Natexo.
 web.web.layout.headerTitle: Rubizz
-web.web.form.ok: Enregistrement ok
+web.web.form.ok:            Enregistrement réussi
+layout.myKitty:             Ma cagnotte
+layout.mailingList:         Mailing list
+
+
 # ============ SECURITY PAGE ============
 # ==== Login/Inscription ====
 web.web.security.login.baseline:        BON RETOUR SUR RUBIZZ
@@ -125,7 +129,7 @@ web.web.user.cashIn.cash.SecondSection: "<strong>IMPORTANT </strong>: Vous n'ave
 web.web.user.cashIn.cash.info: Demander le paiement
 web.web.user.cashIn.history.title: Historique de vos demandes de paiements
 # ==== Tableau ====
-web.web.user.cashIn.tabHistory.date:    DATE   
+web.web.user.cashIn.tabHistory.date:    DATE
 web.web.user.cashIn.tabHistory.desc:    DESCRIPTION
 web.web.user.cashIn.tabHistory.amount:  MONTANT
 web.web.user.cashIn.tabHistory.statut:  STATUT

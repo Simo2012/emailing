@@ -1,24 +1,21 @@
 {% extends "@WebWeb/layout.html.twig" %}
 
 {% block HEADER %}
-
     <div id="div_RBZ_banner" class="RBZ_wrapper">
         {% if is_granted('ROLE_USER') %}
             <div id="div_RBZ_counterMailingList" class="RBZ_icons_mailinglist">
-
-                    <span class="KNS_tiny-hidden">Mailing list</span><br>
-                    <span>100</span>
+                    <span class="KNS_tiny-hidden">{{ "layout.mailingList" | trans }}</span><br>
+                    <span>{{ app.user.nbContacts | number_format(0, ',', ' ') }}</span>
             </div>
             <div id="div_RBZ_counterGain" class="RBZ_icons_cagnotte">
-                <span class="KNS_tiny-hidden">Ma cagnotte</span><br>
-                <span>100&euro;</span>
+                <span class="KNS_tiny-hidden">{{ "layout.myKitty" | trans }}</span><br>
+                <span>{{ app.user.availableAmount | number_format(2, ',', ' ') }}&euro;</span>
             </div>
             {% if is_mobile() == false and is_tablet() == false %}
             <div id="div_RBZ_menuProfile" class="RBZ_icons_profile">
                 <ul id="ul_RBZ_menuProfile">
                     <li>
-                        {{ app.user.firstname | capitalize }} {{ app.user.lastname | capitalize }}<span class="RBZ_icons_selector"></span>
-                        {{ menu('rubizzProfile') }}
+                        <a href="{{ url("WebWebBundle_userProfile") }}">{{ app.user.firstname | capitalize }} {{ app.user.lastname | capitalize }} <span class="RBZ_icons_selector"></span></a>
                     </li>
                 </ul>
             </div>
@@ -41,8 +38,7 @@
                 <div id="div_RBZ_menuProfile" class="RBZ_icons_profile">
                     <ul id="ul_RBZ_menuProfile">
                         <li>
-                            Romain Piraux<span class="RBZ_icons_selector"></span>
-                            {{ menu('rubizzProfile') }}
+                            <a href="{{ url("WebWebBundle_userProfile") }}">{{ app.user.firstname | capitalize }} {{ app.user.lastname | capitalize }} <span class="RBZ_icons_selector"></a></span>
                         </li>
                     </ul>
                 </div>
@@ -52,9 +48,8 @@
     </div>
 {% endblock %}
 
-
 {% block FOOTER %}
-    <div class="RBZ_wrapper">
+    <div id="div_RBZ_footerWrapper" class="RBZ_wrapper">
         {{ "footer.credits" | trans | raw }}
         {{ menu('rubizzFooter') }}
     </div>

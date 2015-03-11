@@ -62,7 +62,6 @@ WebWebBundle_userRib:
     path:     /user/rib
     defaults: { _controller: "WebWebBundle:User:rib" }
     requirements:
-
 # ---- Page detail cagnotte ----
 WebWebBundle_userPot:
     path:     /user/pot/{piType}/{piUser}
@@ -89,7 +88,7 @@ WebWebBundle_offerGraphicStandards:
 WebWebBundle_offerList:
     path:     /offer/list
     defaults: { _controller: "WebWebBundle:Offer:list" }
-    
+
 #==================================================
 # Contact controller : page mailing list, etc
 #==================================================
