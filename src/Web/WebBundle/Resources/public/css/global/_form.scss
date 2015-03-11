@@ -13,7 +13,7 @@ div.RBZ_input {
     }
     input[type=text],
     input[type=email],
-    input[type=password] {width: 260px;display: table-cell;}
+    input[type=password] { padding-left:4px; width:260px; display:table-cell; }
     label {display: table-cell;color:#4d4d4d;font-size: 11px;}
   }
   &.RBZ_error {

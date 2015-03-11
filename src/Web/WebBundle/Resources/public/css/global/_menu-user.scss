@@ -36,7 +36,8 @@ div#div_RBZ_userMenu {
           background: url(/bundles/webweb/images/global/menu_user.png) 0 0 no-repeat
         }
         a {
-          color: #f04f61;
+            padding-right:5px;
+            color: #f04f61;
         }
       }
       a {
@@ -44,7 +45,6 @@ div#div_RBZ_userMenu {
         color: #6d6d6d;
         &:hover {
           color: #f04f61;
-          font-weight: bold;
         }
       }
     }
