@@ -66,9 +66,7 @@ WebWebBundle_userRib:
 # ---- Page detail cagnotte ----
 WebWebBundle_userPot:
     path:     /user/pot/{piType}/{piUser}
-    defaults: { _controller: "WebWebBundle:User:pot", piType = '', piUser = 0}
-    requirements:
-        piUser: \d+
+    defaults: { _controller: "WebWebBundle:User:pot", piType = '', piUser = ''}
 # ---- Page encaissement ----
 WebWebBundle_userCashIn:
     path:     /user/cash-in
