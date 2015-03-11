@@ -132,8 +132,24 @@ web.web.user.cashIn.tabHistory.statut:  STATUS
 web.web.user.cashIn.cash.SecondSection: "IMPORTANT : Vous n'avez pas renseigné vos coordonnées bancaires dans la rubrique VOTRE RIB. Aucune demande de paiement ne pourra être validée tant que vortre RIB ne sera complété. Cliquez ici pour renseigner vos coordonnées."
 web.web.user.cashIn.history.title:      Historique de vos demandes de paiements
 # ==== Détail cagnotte ====
-web.web.user.pot.titre: Détail de votre cagnotte
-web.web.user.pot.text: Cette rubrique regroupe tous les mouvements de votre cagnotte: Recommandations effectuées, paiement reçues... Cliquez sur le détail de l'opération pour visualiser les commissions par recommandations. Vous pouvez à tout moment récupérer le solde du dans la rubrique "Encaisser ma cagnotte" sous réserve que le montant mimimum de 50€ soit atteint.
+#===== POT =========
+web.web.user.pot.title: Detail of your kitty
+web.web.user.pot.date: DATE
+web.web.user.pot.operation_name: OPERATION
+web.web.user.pot.debit: DEBIT
+web.web.user.pot.credit: CREDIT
+web.web.user.pot.solde: BALANCE
+web.web.user.pot.info: This section includes all the movements of your kitty: Recommendations made, payment received ... Click on the details of the transaction to view commissions recommendations. You can always recover the balance in the "Accept my kitty" provided that the mimimum of € 50 is reached.
+web.web.user.pot.recommandation_name: RECOMMANDATION NAME
+web.web.user.pot.recommandation.mt: amount
+web.web.user.pot.paiement: PAYMENT
+web.web.user.pot.paiement.mt: AMOUNT
+web.web.user.pot.credit.title: Summary of movements recommendation
+web.web.user.pot.debit.title: Summary of payments
+web.web.user.pot.mounth: MONTH
+web.web.user.pot.movement.name.payment: Payments received
+web.web.user.pot.movement.name.commission: Commissions received
+
 # ==== Coordonnées ====
 web.web.user.details.title:                 Coordonnées
 web.web.user.details.personal.title:        Your profile
