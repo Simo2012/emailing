@@ -5,11 +5,12 @@
   margin: 10px 0 0 10px;
   float: left;
 }
-.RBZ_icons_home {
-  background: sprite($icons, home);
-  background-repeat: no-repeat;
-  background-position: sprite-position($icons, home, 0, -2);
-  @include sprite-dimensions($icons, home);
+.RBZ_icons_home a {
+    display: inline-block;
+    background: sprite($icons, home);
+    background-repeat: no-repeat;
+    background-position: sprite-position($icons, home, 0, -2);
+    @include sprite-dimensions($icons, home);
 }
 .RBZ_icons_profile {
   background: sprite($icons, profile);
