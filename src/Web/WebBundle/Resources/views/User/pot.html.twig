@@ -51,13 +51,13 @@
                 
                 {%   if movement.movementType == 'payment' %}
                     <td>{{ 'web.web.user.pot.movement.name.payment' | trans }}</td>
-                    <td><a class="RBZ_user_pot_mtd" href="#" hrefbis="{{ url("WebWebBundle_userPot",{"piType": 'debit', "piUser": movement.dateMovement | date("d.m.Y")}) }}">{{ movement.amountMovement }} €</a></td>
-                    <td><a class="RBZ_user_pot_mtc" href="#" hrefbis="{{ url("WebWebBundle_userPot",{"piType": 'credit', "piUser": movement.user.id}) }}"></a></td>
+                    <td><a class="RBZ_user_pot_mtd" href="#" hrefbis="{{ url("WebWebBundle_userPot",{"piType": 'debit', "piDate": movement.dateMovement | date("m.Y")}) }}">{{ movement.amountMovement }} €</a></td>
+                    <td><a class="RBZ_user_pot_mtc" href="#"></a></td>
                     <td class="RBZ_user_pot_sold{{'debit'}}">- {{ movement.amountMovement }} €</td>    
                 {% else %}
                     <td>{{ 'web.web.user.pot.movement.name.commission' | trans }}</td>
-                    <td><a class="RBZ_user_pot_mtd" href="#" hrefbis="{{ url("WebWebBundle_userPot",{"piType": 'debit', "piUser": movement.user.id }) }}"></a></td>
-                    <td><a class="RBZ_user_pot_mtc" href="#" hrefbis="{{ url("WebWebBundle_userPot",{"piType": 'credit', "piUser": movement.dateMovement | date("d.m.Y")}) }}">{{ movement.amountMovement }} €</a></td>
+                    <td><a class="RBZ_user_pot_mtd" href="#"></a></td>
+                    <td><a class="RBZ_user_pot_mtc" href="#" hrefbis="{{ url("WebWebBundle_userPot",{"piType": 'credit', "piDate": movement.dateMovement | date("m.Y")}) }}">{{ movement.amountMovement }} €</a></td>
                     <td class="RBZ_user_pot_sold{{'credit'}}">+ {{ movement.amountMovement }} €</td>
                 {%endif %}
 

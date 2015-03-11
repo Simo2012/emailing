@@ -128,7 +128,7 @@ class UserController extends Controller {
     public function potAction(Request $poRequest) {
         //return array();
         // ==== Lecture des données ====
-        $piUserId = $poRequest->get('piUser');
+        $loDate = $poRequest->get('piDate');
         $piTypeMouvement = $poRequest->get('piType');
            // ==== Initialisation ====
         $loManager = $this->getDoctrine()->getManager();
@@ -141,10 +141,10 @@ class UserController extends Controller {
         $loPaginator->setNbItemsPerPage($liNbItems);
         $loPaginator->setUrl($this->generateUrl('WebWebBundle_userPot'));
         if ($piTypeMouvement == 'credit') {
-            $commissions = $loManager->getRepository('WebWebBundle:Commission')->getUserCommissions($loUser);
+            $commissions = $loManager->getRepository('WebWebBundle:Commission')->getUserCommissions($loUser,$loDate);
             return $this->render('WebWebBundle:user:pot/credit.html.twig',array('commissions' => $commissions));
         } elseif ($piTypeMouvement == 'debit') {
-            $loPaymentRequest = $loManager->getRepository('WebWebBundle:PaymentRequest')->getAllByUser($loUser);
+            $loPaymentRequest = $loManager->getRepository('WebWebBundle:PaymentRequest')->getAllByUser($loUser,$loDate);
             return $this->render('WebWebBundle:user:pot/debit.html.twig',array('invoiceRequests' => $loPaymentRequest));
         }
         // ==== recuperation des paiements ====
