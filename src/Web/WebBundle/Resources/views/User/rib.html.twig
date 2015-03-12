@@ -24,33 +24,15 @@
         <div class="RBZ_user_bic">
             <div class="RBZ_user_bic_header">
                 <div class="RBZ_user_bic_header_title">
-                    <div class="KNS_row KNS_mbl">
-                        <div class="KNS_mod KNS_start KNS_w40">
+                    <h1>{{ 'web.web.user.bic.titre1' | trans }}</h1>
 
-                            <h1>{{ 'web.web.user.bic.titre1' | trans }}</h1>
-                        </div>
-
-                    </div>
                 </div>
                 <div class="RBZ_user_bic_header_title">
-                    <div class="KNS_row KNS_mbl">
-                        <div class="KNS_mod KNS_start KNS_w40">
-                             <h3>{{ 'web.web.user.bic.titre2' | trans }}</h3>
-                        </div>
-                    </div>
+                    <h3>{{ 'web.web.user.bic.titre2' | trans }}</h3>
+
                 </div>
                 <div class="RBZ_user_bic_header_input">
                     {{ form_widget(form.bic) }}
-
-                    {{ form_widget(form.bic.bankName) }}
-                    {{ form_widget(form.bic.bankCode) }}
-
-                    {{ form_widget(form.bic.agencyCode) }}
-
-                    {{ form_widget(form.bic.AccountNumber) }}
-
-                    {{ form_widget(form.bic.Key) }}
-
                 </div>
 
                 <div class="RBZ_user_bic_header_input_border">
