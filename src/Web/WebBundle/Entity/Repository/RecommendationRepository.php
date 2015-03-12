@@ -26,5 +26,23 @@ class RecommendationRepository extends EntityRepository
                         ->leftjoin('r.offer', 'o');
 
         return $loQuery;
-    }
+    } //getAll
+    
+    /**
+     * Il retourne la liste des recommandation faite par ce utilisateur pour ces contacts 
+     * @param type $poUser
+     * @return type
+     */
+    public function getAllByUser($poUser)
+    {
+        $loQuery = $this->createQueryBuilder('r')
+                        ->select('r, o, c')
+                        ->leftjoin('r.offer', 'o')
+                        ->leftjoin('r.contact', 'c')
+                        ->where('r.user = :user')
+                        ->setParameter('user', $poUser)
+                        ->groupBy('c.id');
+
+        return $loQuery;
+    }//getAllByUser
 }
