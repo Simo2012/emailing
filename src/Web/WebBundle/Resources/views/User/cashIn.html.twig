@@ -20,7 +20,9 @@
     {# cagnotte #}
     <div id="div_RBZ_cashIn">
         <div id="div_RBZ_CashFirstSection">{{ "web.web.user.cashIn.cash.firstSection" | trans }}</div>
-        <div id="div_RBZ_CashSecondSection">&#9888; {{ "web.web.user.cashIn.cash.SecondSection" | trans |replace({'%rib%': url("WebWebBundle_userRib"), '%ici%': url("WebWebBundle_userDetails")}) |raw }}</div>
+        {% if user.bic == null %}
+            <div id="div_RBZ_CashSecondSection">&#9888; {{ "web.web.user.cashIn.cash.SecondSection" | trans |replace({'%rib%': url("WebWebBundle_userRib"), '%ici%': url("WebWebBundle_userRib")}) |raw }}</div>
+        {%endif%}
         <div id="div_RBZ_CashThirdSection">
             <div>{{ "web.web.offer.index.donut.piggyBank" | trans }}</div>
             <div class="RBZ_piggyBank">{{ user.availableAmount }}€</div>
@@ -46,8 +48,8 @@
                     <tr>
                         {# inclusion des historiques #}
                         {% for invoiceRequest  in invoiceRequests %}
-                            <td>{{ invoiceRequest.dateCreate | date("d/m/Y H:m:s") }}</td>
-                            <td></td>
+                            <td>{{ invoiceRequest.dateCreate | date("d.m.Y") }}</td>
+                            <td>{{ 'web.web.user.cashIn.tabHistory.desc.transaction' | trans }} {{invoiceRequest.bankName}}</td>
                             <td>{{ invoiceRequest.amount }} €</td>
                             <td class="{{ (invoiceRequest.status == 'confirmed') ? 'RBZ_blue' : 'RBZ_red' }}">{{ invoiceRequest.status }} </td>
                         </tr>

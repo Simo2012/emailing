@@ -6,7 +6,7 @@
  * </pre>
  * @author Mohammed
  * @version 1.0
- * @package Offer
+ * @package Web
  */
 function Offer()
 {   
@@ -19,23 +19,36 @@ Offer.prototype = {
      */
     ready : function()
     {
-        //alert($(this));
+        // ==== Gestion de l'affichage de la description de l'offre ====
         $(document).on('mouseenter mouseleave', '.RBZ_offer_content', function(event) {
+            // ---- Affichage/dissimulation de la description ----
             $(this).toggleClass('RBZ_expanded').animate();
-            $('.RBZ_offer_description_hide').toggleClass('RBZ_hide').animate();
-            //$('RBZ_actions').siblings('a').find('RBZ_hide').hide();
-            if($('.RBZ_offer_input').find('a').hasClass('RBZ_hide')==false)
-            {                        
-                $('.RBZ_actions').siblings('a').toggleClass('RBZ_hide');
-                $('.RBZ_actions').parent().toggleClass('RBZ_expanded');
+            $(this).find('p.RBZ_offer_description').toggleClass('RBZ_hide').animate();
+            // ---- Dissimulation du menu du bouton de recommandation si il est ouvert lorsqu'on sort ----
+            var recommendButton = $(this).find('div.RBZ_offer_input');
+            var recommendButtonLink = $(this).find('div.RBZ_offer_input a.RBZ_actions');
+            if(event.type == 'mouseleave' && recommendButton.hasClass('RBZ_expanded')) {
+                recommendButton.toggleClass('RBZ_expanded');
+                recommendButtonLink.siblings('a').toggleClass('RBZ_hide');
+                recommendButtonLink.siblings('div.RBZ_arrow').toggleClass('RBZ_open');
             }
-                //alert();
-           
         });
-        $(document).on('click', '.RBZ_actions', function(event) {
-            //$('.RBZ_offer_description_hide').toggleClass('RBZ_hide').animate();
+
+        // ==== Gestion de l'affichage de menu du bouton de recommandation ====
+        // ---- Clic sur le bouton ----
+        $(document).on('click', 'a.RBZ_actions', function(event) {
             $(this).siblings('a').toggleClass('RBZ_hide');
             $(this).parent().toggleClass('RBZ_expanded');
+            $(this).siblings('div.RBZ_arrow').toggleClass('RBZ_open');
+            return false;
+        });
+        // ---- Clic sur la flèche du bouton ----
+        $(document).on('click', 'div.RBZ_arrow', function(event) {
+            $(this).siblings('a').toggleClass('RBZ_hide');
+            $(this).siblings('a.RBZ_actions').toggleClass('RBZ_hide');
+            $(this).parent().toggleClass('RBZ_expanded');
+            $(this).toggleClass('RBZ_open');
+            return false;
         });
         
     }, // ready

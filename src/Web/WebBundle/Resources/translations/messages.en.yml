@@ -104,12 +104,16 @@ web.web.offer.list.categories.ecommerce: e-commerce
 web.web.offer.list.categories.finances : finances
 web.web.offer.list.categories.divertissement: divertissement
 web.web.offer.list.categories.special: special
-# ==== Block Offre macro ====
-offer.prixdescription: à chaque participation
-offer.recommander: RECOMMANDER
-offer.facebook: Publier sur Facebook
-offer.twiter: Publier sur Twitter
-offer.mailling: Envoyer à ma mailling List
+# ==== Offer macro block ====
+web.web.offer.macro.see_website:                     See the website
+web.web.offer.macro.recommendation_description_CPC:  for each access to the website
+web.web.offer.macro.recommendation_description_CPL:  for each participation
+web.web.offer.macro.recommendation_description_CPA:  for each purchase
+web.web.offer.macro.recommendation_description_CPA%: of each purchase amount
+web.web.offer.macro.recommend:                       RECOMMEND
+web.web.offer.macro.facebook_publishing:             Publish on Facebook
+web.web.offer.macro.twitter_publishing:              Publish on Twitter
+web.web.offer.macro.mailing:                         Send to my mailling List
 
 # ============ USER PAGE ============
 # ==== RIB ====
@@ -123,10 +127,11 @@ web.web.user.bic.titre2: Afin de recevoir vos paiements, vous devez renseigner v
 web.web.user.bic.submit: MODIFIER >
 # ==== Encaisser ma cagnotte ====
 web.web.user.cashIn.cash.title: Redeem my Piggy Bank
-web.web.user.cashIn.cash.firstSection: "A payment request requires a Piggy Bank balance of at least $50.  Once you have completed your request, the transaction will be completed in approximately  10 days."
-web.web.user.cashIn.cash.SecondSection: "<strong>IMPORTANT </strong>: You have not entered your bank account information in the <a href='%rib%'>YOUR RIB</a> section. Payment request cannot be completed without completing this information. Click<a href='%ici%'>here</a> to enter your bank account information."
+web.web.user.cashIn.cash.firstSection: "A payment request requires a Piggy Bank balance of at least 50€.  Once you have completed your request, the transaction will be completed in approximately  10 days."
+web.web.user.cashIn.cash.SecondSection: "<strong>IMPORTANT </strong>: You have not entered your bank account information in the <a href='%rib%'>YOUR RIB</a> section. Payment request cannot be completed without completing this information. Click <a href='%ici%'>here</a> to enter your bank account information."
 web.web.user.cashIn.cash.info: Received Payment
-web.web.user.cashIn.history.title: Payment History
+web.web.user.cashIn.history.title: History of your payment requests
+web.web.user.cashIn.tabHistory.desc.transaction: Request for payment on the account
 # ==== Tableau ====
 web.web.user.cashIn.tabHistory.date:    DATE
 web.web.user.cashIn.tabHistory.desc:    DESCRIPTION
@@ -139,11 +144,11 @@ web.web.user.cashIn.history.title:      Historique de vos demandes de paiements
 #===== POT =========
 web.web.user.pot.title: Piggy Bank Details
 web.web.user.pot.date: DATE
-web.web.user.pot.operation_name: Transaction
+web.web.user.pot.operation_name: TRASACTION
 web.web.user.pot.debit: DEBIT
 web.web.user.pot.credit: CREDIT
 web.web.user.pot.solde: BALANCE
-web.web.user.pot.info: "This section shows all your Piggy Bank transactions: Made recommendations, completed payments…Click on the operation detail to view your commission for each recommendation. As long as you have a minimum of &euro;50, you may at any moment redeem the balance shown in the &laquo;Redeem my piggy bank&raquo; section."
+web.web.user.pot.info: "This section shows all your Piggy Bank transactions: Made recommendations, completed payments…Click on the operation detail to view your commission for each recommendation. As long as you have a minimum of 50&euro;, you may at any moment redeem the balance shown in the &laquo;Redeem my piggy bank&raquo; section."
 web.web.user.pot.recommandation_name: RECOMMANDATION NAME
 web.web.user.pot.recommandation.mt: amount
 web.web.user.pot.paiement: PAYMENT

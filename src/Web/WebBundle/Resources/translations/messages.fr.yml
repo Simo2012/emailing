@@ -105,12 +105,16 @@ web.web.offer.list.categories.ecommerce: e-commerce
 web.web.offer.list.categories.finances : Finances
 web.web.offer.list.categories.divertissement: Divertissement
 web.web.offer.list.categories.special: Offres spéciales
-# ==== Block Offre macro ====
-offer.prixdescription: à chaque participation
-offer.recommander: RECOMMANDER
-offer.facebook: Publier sur Facebook
-offer.twiter: Publier sur Twitter
-offer.mailling: Envoyer à ma mailling List
+# ==== Offer macro block ====
+web.web.offer.macro.see_website:                     Voir le site
+web.web.offer.macro.recommendation_description_CPC:  à chaque accès au site
+web.web.offer.macro.recommendation_description_CPL:  à chaque participation
+web.web.offer.macro.recommendation_description_CPA:  à chaque achat
+web.web.offer.macro.recommendation_description_CPA%: du montant de chaque achat
+web.web.offer.macro.recommend:                       RECOMMANDER
+web.web.offer.macro.facebook_publishing:             Publier sur Facebook
+web.web.offer.macro.twitter_publishing:              Publier sur Twitter
+web.web.offer.macro.mailing:                         Envoyer à ma mailing List
 
 # ============ USER PAGE ============
 # ==== RIB ====
@@ -128,6 +132,7 @@ web.web.user.cashIn.cash.firstSection: "Pour demander le paiement de votre cagno
 web.web.user.cashIn.cash.SecondSection: "<strong>IMPORTANT </strong>: Vous n'avez pas renseigné vos coordonnées bancaires dans la rubrique <a href='%rib%'>VOTRE RIB</a>. Aucune demande de paiement ne pourra être validée tant que votre RIB ne sera complété. Cliquez <a href='%ici%'>ici</a> pour renseigner vos coordonnées."
 web.web.user.cashIn.cash.info: Demander le paiement
 web.web.user.cashIn.history.title: Historique de vos demandes de paiements
+web.web.user.cashIn.tabHistory.desc.transaction: Demande de paiement sur le compte
 # ==== Tableau ====
 web.web.user.cashIn.tabHistory.date:    DATE
 web.web.user.cashIn.tabHistory.desc:    DESCRIPTION

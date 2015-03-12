@@ -54,17 +54,30 @@
     <div class="RBZ_offer_content">
         <img class="RBZ_offer_img" src="http://placehold.it/470x250">
         <div class="RBZ_offer_body" id="RBZ_offer_body">
+            <p class="RBZ_offer_brand_name">{{ offer.brand.name }}</p>
             <p class="RBZ_offer_title">{{ offer.title }}</p>
-            <p class="RBZ_offer_description">{{ offer.title }}<br>
-                <a class="RBZ_offer_description_hide RBZ_hide">{{ offer.text }}</a>
+            <p class="RBZ_offer_description RBZ_hide">
+                {{ offer.text }}
+                <br>
+                <a class="RBZ_offer_link" href="{{ offer.url }}">{{ 'web.web.offer.macro.see_website' | trans }}</a>
             </p>
+
             <div class="RBZ_offer_border"></div>
-            <span class="RBZ_offer_price"> {{ offer.title }} </span><span class="RBZ_offer_pricedescription">{{ "offer.prixdescription" | trans }}</span>       
+            {% if offer.remType in ['CPC', 'CPL', 'CPA'] %}
+                {% set symbol = '€' %}
+            {% elseif offer.remType == 'CPA%' %}
+                {% set symbol = '%' %}
+            {% endif %}
+            <div class="RBZ_offer_remuneration">
+                <span class="RBZ_offer_remuneration_amount">{{ offer.remMember }}&nbsp;{{ symbol }}</span>
+                <span class="RBZ_offer_remuneration_description">{{ ('web.web.offer.macro.recommendation_description_' ~ offer.remType) | trans }}</span>
+            </div>
             <div class="RBZ_offer_input">
-                <a href="#" class="RBZ_offer_link RBZ_hide">{{ "offer.mailling" | trans }}</a>
-                <a href="#" class="RBZ_offer_link RBZ_hide">{{ "offer.facebook" | trans }}</a>
-                <a href="#" class="RBZ_offer_link RBZ_hide">{{ "offer.twiter" | trans }} </a>
-                <a href="#" class="RBZ_actions">{{ "offer.recommander" | trans }}</a>
+                <a href="#" class="RBZ_offer_link RBZ_hide">{{ 'web.web.offer.macro.mailing' | trans }}</a>
+                <a href="#" class="RBZ_offer_link RBZ_hide">{{ 'web.web.offer.macro.facebook_publishing' | trans }}</a>
+                <a href="#" class="RBZ_offer_link RBZ_hide">{{ 'web.web.offer.macro.twitter_publishing' | trans }} </a>
+                <a href="#" class="RBZ_actions">{{ 'web.web.offer.macro.recommend' | trans }}</a>
+                <div class="RBZ_arrow">></div>
             </div>
         </div>         
     </div>
