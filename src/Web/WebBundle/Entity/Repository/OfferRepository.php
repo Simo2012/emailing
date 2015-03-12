@@ -17,21 +17,37 @@ use Doctrine\ORM\EntityRepository;
 class OfferRepository extends EntityRepository
 {
 
-    /** chercher par categorie
+    /**
+     * Recherche par categorie
+     *
      * @return \Doctrine\ORM\QueryBuilder
      */
     public function searchByCategory($psCategory = null)
     {
         $loQuery = $this->createQueryBuilder('o')
-                ->select('o')
-                ->orderBy('o.dateCreate', 'DESC');
-        //on filtre la categorie si demandé
+                        ->select('o')
+                        ->orderBy('o.dateCreate', 'DESC');
         if (!empty($psCategory)) {
             $loQuery->where('o.category in (:category)')
                     ->setParameter('category', $psCategory);
         }
 
+        return $loQuery->getQuery()->getResult();
+    } // searchByCategory
+
+    /**
+     * Lecture des 6 dernières offres
+     *
+     * @return array
+     */
+    public function getLast($piNumber)
+    {
+        $loQuery = $this->createQueryBuilder('o')
+                        ->select('o, partial b.{id, name}')
+                        ->join('o.brand', 'b')
+                        ->orderBy('o.dateCreate', 'DESC')
+                        ->setMaxResults($piNumber);
 
         return $loQuery->getQuery()->getResult();
-    }//searchByCategory
+    } // getLastSix
 }

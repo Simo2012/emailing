@@ -104,12 +104,16 @@ web.web.offer.list.categories.ecommerce: e-commerce
 web.web.offer.list.categories.finances : finances
 web.web.offer.list.categories.divertissement: divertissement
 web.web.offer.list.categories.special: special
-# ==== Block Offre macro ====
-offer.prixdescription: à chaque participation
-offer.recommander: RECOMMANDER
-offer.facebook: Publier sur Facebook
-offer.twiter: Publier sur Twitter
-offer.mailling: Envoyer à ma mailling List
+# ==== Offer macro block ====
+web.web.offer.macro.see_website:                     See the website
+web.web.offer.macro.recommendation_description_CPC:  for each access to the website
+web.web.offer.macro.recommendation_description_CPL:  for each participation
+web.web.offer.macro.recommendation_description_CPA:  for each purchase
+web.web.offer.macro.recommendation_description_CPA%: of each purchase amount
+web.web.offer.macro.recommend:                       RECOMMEND
+web.web.offer.macro.facebook_publishing:             Publish on Facebook
+web.web.offer.macro.twitter_publishing:              Publish on Twitter
+web.web.offer.macro.mailing:                         Send to my mailling List
 
 # ============ USER PAGE ============
 # ==== RIB ====

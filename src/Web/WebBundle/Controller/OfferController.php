@@ -27,18 +27,16 @@ class OfferController extends Controller
      */
     public function indexAction()
     {
-        $loUser = $this->getUser();
+        // ==== Initialisation ====
+        $loUser    = $this->getUser();
         $loManager = $this->getDoctrine()->getManager();
-        // recuperer les 6 dernieres offres
-        $loOffers = $loManager->getRepository('WebWebBundle:Offer')->findBy(
-            array(),
-            array('dateCreate' => 'desc'),
-            6,
-            0
-        );
+
+        // ==== Lecture des 6 dernieres offres ====
+        $loOffers = $loManager->getRepository('WebWebBundle:Offer')->getLast(6);
+
+        // ==== Calcul des gains pas mois ====
         $liAvailableAmount = $loUser->getAvailableAmount();
         $laEarningsByMonth = array();
-        // calculer les gains par mois
         $laEarnings = $loManager->getRepository('WebWebBundle:PaymentRequest')->earningByMonth($loUser);
         foreach ($laEarnings as $laEarning){
             $laEarningsByMonth[$laEarning['month']] = $laEarning['amount'];

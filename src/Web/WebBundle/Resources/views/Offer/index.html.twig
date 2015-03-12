@@ -28,11 +28,11 @@
     <h1>{{ "web.web.offer.index.price.title" | trans }}</h1>
     {# Graphiques des stats #}
     <div id="div_RBZ_stats">
-        {# bar-line #}
+        {# Bar-line #}
         <div id="div_RBZ_bar">
             <canvas id="canavs_RBZ_line"></canvas>
         </div>
-        {# donut #}
+        {# Donut #}
         <div id="div_RBZ_donutShade">
             <div id="div_RBZ_donut">
                 <canvas id="canavs_RBZ_donut"/></canvas>
@@ -48,15 +48,13 @@
         <div class="KNS_clear"></div>
     </div>
 
-
+    {# Liste des offres  #}
     <h1>{{ "web.web.offer.index.offer.title" | trans }}</h1>
     <div id="div_RBZ_AllOffers"><a href="{{ url("WebWebBundle_offerList") }}">{{ "web.web.offer.index.offer.seeAll" | trans }}</a></div>
     <div class="KNS_clear"></div>
-    {# liste des offres  #}
-
     <div class="RBZ_offers KNS_grid">
         <div class="KNS_grid2">
-            {# inclusion de la macro des offres  #}
+            {# Inclusion de la macro des offres  #}
             {% for offer in offers %}
             <div>
                 {{ macro.offer(offer) }}
