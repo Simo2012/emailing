@@ -123,10 +123,10 @@ web.web.user.bic.titre2: Afin de recevoir vos paiements, vous devez renseigner v
 web.web.user.bic.submit: MODIFIER >
 # ==== Encaisser ma cagnotte ====
 web.web.user.cashIn.cash.title: Redeem my Piggy Bank
-web.web.user.cashIn.cash.firstSection: "A payment request requires a Piggy Bank balance of at least $50.  Once you have completed your request, the transaction will be completed in approximately  10 days."
-web.web.user.cashIn.cash.SecondSection: "<strong>IMPORTANT </strong>: You have not entered your bank account information in the <a href='%rib%'>YOUR RIB</a> section. Payment request cannot be completed without completing this information. Click<a href='%ici%'>here</a> to enter your bank account information."
+web.web.user.cashIn.cash.firstSection: "A payment request requires a Piggy Bank balance of at least 50€.  Once you have completed your request, the transaction will be completed in approximately  10 days."
+web.web.user.cashIn.cash.SecondSection: "<strong>IMPORTANT </strong>: You have not entered your bank account information in the <a href='%rib%'>YOUR RIB</a> section. Payment request cannot be completed without completing this information. Click <a href='%ici%'>here</a> to enter your bank account information."
 web.web.user.cashIn.cash.info: Received Payment
-web.web.user.cashIn.history.title: Payment History
+web.web.user.cashIn.history.title: History of your payment requests
 # ==== Tableau ====
 web.web.user.cashIn.tabHistory.date:    DATE
 web.web.user.cashIn.tabHistory.desc:    DESCRIPTION

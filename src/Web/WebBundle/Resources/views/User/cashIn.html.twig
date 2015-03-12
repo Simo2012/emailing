@@ -20,7 +20,7 @@
     {# cagnotte #}
     <div id="div_RBZ_cashIn">
         <div id="div_RBZ_CashFirstSection">{{ "web.web.user.cashIn.cash.firstSection" | trans }}</div>
-        <div id="div_RBZ_CashSecondSection">&#9888; {{ "web.web.user.cashIn.cash.SecondSection" | trans |replace({'%rib%': url("WebWebBundle_userRib"), '%ici%': url("WebWebBundle_userDetails")}) |raw }}</div>
+        <div id="div_RBZ_CashSecondSection">&#9888; {{ "web.web.user.cashIn.cash.SecondSection" | trans |replace({'%rib%': url("WebWebBundle_userRib"), '%ici%': url("WebWebBundle_userRib")}) |raw }}</div>
         <div id="div_RBZ_CashThirdSection">
             <div>{{ "web.web.offer.index.donut.piggyBank" | trans }}</div>
             <div class="RBZ_piggyBank">{{ user.availableAmount }}€</div>
