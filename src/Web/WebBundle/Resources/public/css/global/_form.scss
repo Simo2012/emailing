@@ -15,6 +15,9 @@ div.RBZ_input {
     input[type=email],
     input[type=password] { padding-left:4px; width:260px; display:table-cell; }
     label {display: table-cell;color:#4d4d4d;font-size: 11px;}
+    input[type=text].RBZ_large,
+    input[type=email].RBZ_large,
+    input[type=password].RBZ_large { width:260px; }
   }
   &.RBZ_error {
     input[type=text],
@@ -27,7 +30,7 @@ div.RBZ_flip {position: relative;width: 80px;-webkit-user-select:none; -moz-user
   .RBZ_flip_checkbox { display: none; }
   .RBZ_flip_label { display: block; overflow: hidden; cursor: pointer;border-radius: 20px;}
   .RBZ_flip_inner { width: 200%; margin-left: -100%; -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.3s ease-in 0s; -o-transition: margin 0.3s ease-in 0s; transition: margin 0.3s ease-in 0s;}
-  .RBZ_flip_inner_left, .RBZ_flip_inner_right {float: left; width: 50%; height: 30px; padding: 0; line-height: 30px; font-size: 10px; color: white; font-family: 'Open Sans Semibold', sans-serif;text-align: center;}
+  .RBZ_flip_inner_left, .RBZ_flip_inner_right {float: left; width: 50%; height: 30px; padding: 0; line-height: 30px; font-size: 14px; color: white; font-family: 'Open Sans Semibold', sans-serif;text-align: center;}
   .RBZ_flip_inner_left { padding-right: 25px; background-color: #6fc6bf; color: #FFFFFF; }
   .RBZ_flip_inner_right { padding-left: 25px; background-color: #f34d5e; color: #FFFFFF; }
   .RBZ_flip_switch { width: 14px; height:14px;margin: 8px; background: #FFFFFF; border: 2px solid #ffffff; border-radius: 50%; position: absolute; top: 0; bottom: 0; right: 50px; -moz-transition: all 0.3s ease-in 0s; -webkit-transition: all 0.3s ease-in 0s; -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s; }

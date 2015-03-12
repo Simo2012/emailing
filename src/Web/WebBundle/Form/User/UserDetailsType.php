@@ -25,19 +25,20 @@ class UserDetailsType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $poBuilder, array $paOptions)
     {
-        // ==== Les champs de Rib  ====
         $laParams = array(
-            'label' => 'web.web.security.firstname',
+            'label' => 'web.web.user.details.firstname',
             'attr' => array(
-                'caption' => 'web.web.security.firstname',
+                'caption' => 'web.web.user.details.firstname',
+                'class'   => 'RBZ_large',
             )
         );
         $poBuilder->add('firstname', 'text', $laParams);
 
         $laParams = array(
-            'label' => 'web.web.security.lastname',
+            'label' => 'web.web.user.details.lastname',
             'attr' => array(
-                'caption' => 'web.web.security.lastname',
+                'caption' => 'web.web.user.details.lastname',
+                'class'   => 'RBZ_large',
             )
         );
         $poBuilder->add('lastname', 'text', $laParams);
@@ -53,32 +54,33 @@ class UserDetailsType extends AbstractType
         $poBuilder->add('optin_newsletter', 'flip', $laParams);
 
         $laParams = array(
-            'label' => 'web.web.security.email',
+            'label' => 'web.web.user.details.email',
             'attr' => array(
-                'caption' => 'web.web.security.email',
+                'caption' => 'web.web.user.details.email',
+                'class'   => 'RBZ_large',
             )
         );
         $poBuilder->add('email', 'email', $laParams);
-        
+
         $laParams = array(
-            'label' => 'web.web.user.details.connection.oldPass',
-            'attr' => array(
+            'label'    => 'web.web.user.details.connection.oldPass',
+            'attr'     => array(
                 'caption' => 'web.web.user.details.connection.oldPass',
+                'class'   => 'RBZ_large',
             ),
-            //'mapped' => false
+            'required' => false,
         );
         $poBuilder->add('oldPassword', 'password', $laParams);
 
         $poBuilder->add('password', 'repeated', array(
-            'type' => 'password',
+            'type'            => 'password',
+            'required'        => false,
             'invalid_message' => 'web.web.user.details.connection.passRepeatError',
-            'options' => array('required' => true),
-            'first_options' => array('label' => 'web.web.user.details.connection.newPass'),
-            'second_options' => array('label' => 'web.web.user.details.connection.passRepeat'),
+            'options'         => array('required' => false, 'attr' => array('class' => 'RBZ_large')),
+            'first_options'   => array('label' => 'web.web.user.details.connection.newPass'),
+            'second_options'  => array('label' => 'web.web.user.details.connection.passRepeat'),
         ));
-    }
-
-// buildForm
+    } // buildForm
 
     /**
      * (non-PHPdoc)
@@ -87,15 +89,13 @@ class UserDetailsType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $poResolver)
     {
         $poResolver->setDefaults(
-                array(
-                    'data_class' => 'Web\WebBundle\Entity\User',
-                    'csrf_protection' => true,
-                    'csrf_field_name' => '_tokenRBZ',
-                )
+            array(
+                'data_class' => 'Web\WebBundle\Entity\User',
+                'csrf_protection' => true,
+                'csrf_field_name' => '_tokenRBZ',
+            )
         );
-    }
-
-// setDefaultOptions
+    } // setDefaultOptions
 
     /**
      * (non-PHPdoc)
@@ -103,7 +103,6 @@ class UserDetailsType extends AbstractType
      */
     public function getName()
     {
-        return 'UserDetails';
-    }
-
+        return 'WebWebUserDetailsType';
+    } // getName
 }

@@ -152,7 +152,7 @@ class User implements AdvancedUserInterface, \Serializable
         $this->useEmail        = false;
         $this->useFacebook     = false;
         $this->useTwitter      = false;
-        $this->optinNewsletter = false;
+        $this->optinNewsletter = true;
         $this->nbContacts      = 0;
         $this->availableAmount = 0;
     }
@@ -161,7 +161,7 @@ class User implements AdvancedUserInterface, \Serializable
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -184,7 +184,7 @@ class User implements AdvancedUserInterface, \Serializable
     /**
      * Get country
      *
-     * @return string 
+     * @return string
      */
     public function getCountry()
     {
@@ -207,7 +207,7 @@ class User implements AdvancedUserInterface, \Serializable
     /**
      * Get dateCreate
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDateCreate()
     {
@@ -230,7 +230,7 @@ class User implements AdvancedUserInterface, \Serializable
     /**
      * Get dateUpdate
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDateUpdate()
     {
@@ -253,7 +253,7 @@ class User implements AdvancedUserInterface, \Serializable
     /**
      * Get dateLogin
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDateLogin()
     {
@@ -276,7 +276,7 @@ class User implements AdvancedUserInterface, \Serializable
     /**
      * Get firstname
      *
-     * @return string 
+     * @return string
      */
     public function getFirstname()
     {
@@ -299,7 +299,7 @@ class User implements AdvancedUserInterface, \Serializable
     /**
      * Get lastname
      *
-     * @return string 
+     * @return string
      */
     public function getLastname()
     {
@@ -322,7 +322,7 @@ class User implements AdvancedUserInterface, \Serializable
     /**
      * Get password
      *
-     * @return string 
+     * @return string
      */
     public function getPassword()
     {
@@ -345,7 +345,7 @@ class User implements AdvancedUserInterface, \Serializable
     /**
      * Get email
      *
-     * @return string 
+     * @return string
      */
     public function getEmail()
     {
@@ -368,7 +368,7 @@ class User implements AdvancedUserInterface, \Serializable
     /**
      * Get active
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getActive()
     {
@@ -391,7 +391,7 @@ class User implements AdvancedUserInterface, \Serializable
     /**
      * Get useFacebook
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getUseFacebook()
     {
@@ -414,7 +414,7 @@ class User implements AdvancedUserInterface, \Serializable
     /**
      * Get useTwitter
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getUseTwitter()
     {
@@ -437,7 +437,7 @@ class User implements AdvancedUserInterface, \Serializable
     /**
      * Get useEmail
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getUseEmail()
     {
@@ -460,7 +460,7 @@ class User implements AdvancedUserInterface, \Serializable
     /**
      * Get bic
      *
-     * @return string 
+     * @return string
      */
     public function getBic()
     {
@@ -483,7 +483,7 @@ class User implements AdvancedUserInterface, \Serializable
     /**
      * Get optinNewsletter
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getOptinNewsletter()
     {
@@ -506,7 +506,7 @@ class User implements AdvancedUserInterface, \Serializable
     /**
      * Get nbContacts
      *
-     * @return integer 
+     * @return integer
      */
     public function getNbContacts()
     {
@@ -529,7 +529,7 @@ class User implements AdvancedUserInterface, \Serializable
     /**
      * Get availableAmount
      *
-     * @return string 
+     * @return string
      */
     public function getAvailableAmount()
     {
@@ -563,25 +563,25 @@ class User implements AdvancedUserInterface, \Serializable
     /**
      * Get old password
      *
-     * @return string 
+     * @return string
      */
     public function getOldPassword()
     {
         return $this->oldPassword;
     }
-    
+
     /**
      * set old password
      *
-     * @return string 
+     * @return string
      */
     public function setOldPassword($psPassword)
     {
         $this->oldPassword = $psPassword;
-        
+
         return $this;
     }
-    
+
     /**
      * @inheritDoc
      */

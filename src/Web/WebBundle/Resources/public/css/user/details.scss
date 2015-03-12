@@ -5,11 +5,30 @@
 #div_RBZ_userDetails {
     #div_RBZ_userDetailsInfo {
         float:left;
-        width:350px;
+        width:455px;
+        div.KNS_row {
+            table-layout:auto;
+            label { width:120px; }
+        }
     }
+
     #div_RBZ_userDetailsConnection {
-        float:right;
-        width:300px;
+        float:left;
+        width:435px;
+        div.KNS_row {
+            table-layout:auto;
+            label { width:160px; }
+        }
+    }
+
+    #div_RBZ_userNewsletter {
+        width:455px;
+        div.KNS_row {
+            display:block; table-layout:auto;
+            label { width:auto; }
+        }
+        div.RBZ_input > label { display:inline-block; }
+        div.RBZ_flip { margin-left:40px; display:inline-block; }
     }
 
     #RBZ_user_detailsSubmit {
@@ -18,3 +37,6 @@
         margin-bottom: 20px;
     }
 }
+
+// ==== Messages d'erreurs ====
+p.RBZ_error, p.RBZ_ok { color:#F04F61; font-style:italic; }

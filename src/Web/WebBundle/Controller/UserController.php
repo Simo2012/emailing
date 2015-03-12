@@ -30,57 +30,61 @@ class UserController extends Controller
      */
     public function detailsAction()
     {
+        // ==== Initialisation ====
         $loManager = $this->getDoctrine()->getManager();
         $loSessionUser = $this->getUser();
         // ---- Déconnexion de l'utilisateur en session ----
         $loManager->detach($loSessionUser);
         $lsFormError = '';
-        $lbSucess = false;
+        $lbSuccess = false;
         $lbCheckEmail = true;
         $loTranslator = $this->get('translator');
-        /* Récupération du User */
         $loUser = $loManager->getRepository('WebWebBundle:User')->find($loSessionUser->getId());
-        //recuperer l'ancien mot de passe avant saisie
-        $lsCurentPass = $loSessionUser->getPassword();
-        $loForm = $this->createForm(new UserDetailsType(), $loUser);
+        // ---- Récuperer l'ancien mot de passe avant saisie ----
+        $lsCurrentPass = $loSessionUser->getPassword();
+        $loForm = $this->createForm('WebWebUserDetailsType', $loUser);
 
         // ==== Traitement de la saisie ====
         $loRequest = $this->getRequest();
         if ($loRequest->isMethod('POST')) {
             $loForm->bind($loRequest);
             if ($loForm->isValid()) {
-                $laData = $loForm->getData();
-
                 $loUserLogger = $this->container->get('web.web.manager.user_logger');
-                $lsOldPass = $loUserLogger->cryptPass($loUser, $laData->getOldPassword());
-                // on compare l'ancien pass avec celui saisi dans le form
-                if ($lsOldPass == $lsCurentPass) {
+                $lsNewPassword = $loUserLogger->cryptPass($loUser, $loUser->getPassword());
+                // ---- Faut-il mettre à jour le mot de passe ? ----
+                if ($loSessionUser->getPassword() != $lsNewPassword) {
+                    $lsOldPass = $loUserLogger->cryptPass($loUser, $loUser->getOldPassword());
+                    // ---- On compare l'ancien password avec celui saisi dans le form ----
+                    if ($lsOldPass == $lsCurrentPass) {
+                        $loUser->setPassword($lsNewPassword);
+                        $lbSuccess = true;
+                    } else {
+                        $lsFormError = $loTranslator->trans('web.web.user.details.connection.oldPassError');
+                    }
+                }
+                // ---- Faut-il mettre à jour l'email ? ----
+                if ($loSessionUser->getEmail() != $loUser->getEmail()) {
                     try {
-                        $loUser->setDateUpdate(new \DateTime('now'));
-                        //définit si il faut une verification de l'email dans le modele
-                        if ($loUser->getEmail() == $loSessionUser->getEmail()) {
-                            $lbCheckEmail = false;
-                        }
-                        $loUserLogger->registerUser($loUser, $lbCheckEmail);
-
-                        $lbSucess = true;
+                        $loUserLogger->registerUser($loUser, true);
+                        $lbSuccess = true;
                     } catch (\Exception $poException) {
                         $lsFormError = $poException->getMessage();
                     }
-                } else {
-                    $lsFormError = $loTranslator->trans('web.web.user.details.connection.oldPassError');
                 }
-                //---- Modification de l'utilisateur en session ----
-                $loSessionUser->setEmail($loUser->getEmail());
+                if (empty($lsFormError)) {
+                    $loUser->setDateUpdate(new \DateTime('now'));
+                    $loManager->flush();
+                    return $this->redirect($this->generateUrl('WebWebBundle_userDetails'));
+                }
             } else {
                 $loManager->refresh($loUser);
                 $lsFormError = $loTranslator->trans('web.web.user.details.connection.passRepeatError');
             }
         }
         return array(
-            'form' => $loForm->createView(),
-            'errors' => $lsFormError,
-            'success' => $lbSucess
+            'form'    => $loForm->createView(),
+            'errors'  => $lsFormError,
+            'success' => $lbSuccess
         );
     } // detailsAction
 

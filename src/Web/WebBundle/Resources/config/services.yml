@@ -178,3 +178,10 @@ services:
         tags:
             - { name: form.type, alias: bictype }
         arguments: ["crypt", "decrypt"]
+    # ---- Saisie des coordonnées ----
+    web.web.form.userDetails:
+        class: Web\WebBundle\Form\User\UserDetailsType
+        tags:
+            - { name: form.type, alias: WebWebUserDetailsType }
+
+
