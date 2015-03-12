@@ -113,14 +113,14 @@ offer.mailling: Envoyer à ma mailling List
 
 # ============ USER PAGE ============
 # ==== RIB ====
-rubizz.form.bankName: BANK NAME
-rubizz.form.bankCode: BANK CODE
-rubizz.form.agencyCode: AGENCY CODE
-rubizz.form.AccountNumber: ACCOUNT NUMBER
-rubizz.form.Key: KEY
-web.web.user.bic.titre1: Your RIB
-web.web.user.bic.titre2: To receive your payments, you must enter your bank details
-web.web.user.bic.submit: UPDATE >
+rubizz.form.bankName: Bank Name
+rubizz.form.bankCode: Bank Code
+rubizz.form.agencyCode: Agency Code
+rubizz.form.AccountNumber: Account Number
+rubizz.form.Key: key
+web.web.user.bic.titre1: Votre RIB
+web.web.user.bic.titre2: Afin de recevoir vos paiements, vous devez renseigner vos coordonnées bancaires
+web.web.user.bic.submit: MODIFIER >
 # ==== Encaisser ma cagnotte ====
 web.web.user.cashIn.cash.title: Redeem my Piggy Bank
 web.web.user.cashIn.cash.firstSection: "A payment request requires a Piggy Bank balance of at least $50.  Once you have completed your request, the transaction will be completed in approximately  10 days."

@@ -114,11 +114,11 @@ offer.mailling: Envoyer à ma mailling List
 
 # ============ USER PAGE ============
 # ==== RIB ====
-rubizz.form.bankName: NOM DE LA BANQUE
-rubizz.form.bankCode: CODE BANQUE
-rubizz.form.agencyCode: CODE AGENCE
-rubizz.form.AccountNumber: N° DE COMPTE
-rubizz.form.Key: CLE
+rubizz.form.bankName: Nom de la banque
+rubizz.form.bankCode: Code Banque
+rubizz.form.agencyCode: Code Agence
+rubizz.form.AccountNumber: N° du Compte
+rubizz.form.Key: clé
 web.web.user.bic.titre1: Votre RIB
 web.web.user.bic.titre2: Afin de recevoir vos paiements, vous devez renseigner vos coordonnées bancaires
 web.web.user.bic.submit: MODIFIER >
