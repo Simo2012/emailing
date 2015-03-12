@@ -127,6 +127,7 @@ web.web.user.cashIn.cash.firstSection: "A payment request requires a Piggy Bank 
 web.web.user.cashIn.cash.SecondSection: "<strong>IMPORTANT </strong>: You have not entered your bank account information in the <a href='%rib%'>YOUR RIB</a> section. Payment request cannot be completed without completing this information. Click <a href='%ici%'>here</a> to enter your bank account information."
 web.web.user.cashIn.cash.info: Received Payment
 web.web.user.cashIn.history.title: History of your payment requests
+web.web.user.cashIn.tabHistory.desc.transaction: Request for payment on the account
 # ==== Tableau ====
 web.web.user.cashIn.tabHistory.date:    DATE
 web.web.user.cashIn.tabHistory.desc:    DESCRIPTION

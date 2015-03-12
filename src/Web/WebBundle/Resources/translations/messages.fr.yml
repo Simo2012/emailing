@@ -128,6 +128,7 @@ web.web.user.cashIn.cash.firstSection: "Pour demander le paiement de votre cagno
 web.web.user.cashIn.cash.SecondSection: "<strong>IMPORTANT </strong>: Vous n'avez pas renseigné vos coordonnées bancaires dans la rubrique <a href='%rib%'>VOTRE RIB</a>. Aucune demande de paiement ne pourra être validée tant que votre RIB ne sera complété. Cliquez <a href='%ici%'>ici</a> pour renseigner vos coordonnées."
 web.web.user.cashIn.cash.info: Demander le paiement
 web.web.user.cashIn.history.title: Historique de vos demandes de paiements
+web.web.user.cashIn.tabHistory.desc.transaction: Demande de paiement sur le compte
 # ==== Tableau ====
 web.web.user.cashIn.tabHistory.date:    DATE
 web.web.user.cashIn.tabHistory.desc:    DESCRIPTION
