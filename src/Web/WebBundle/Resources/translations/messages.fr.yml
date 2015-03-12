@@ -142,17 +142,21 @@ web.web.user.cashIn.cash.SecondSection: "IMPORTANT : Vous n'avez pas renseigné 
 web.web.user.cashIn.history.title:      Historique de vos demandes de paiements
 
 # ==== Coordonnées ====
-web.web.user.details.title:                 Coordonnées
-web.web.user.details.personal.title:        Vos informations personnelles
-web.web.user.details.newsletter.title:      Vos inscriptions Newsletter
-web.web.user.details.connection.title:      Identifiants de connexion
-web.web.user.details.submit:                Valider
-web.web.user.details.newsletter.label:      Recevoir les nouvelles offres de Rubizz par email
-web.web.user.details.connection.passRepeat: Confirmer Mot de passe
-web.web.user.details.connection.oldPass:    Ancien Mot de passe
-web.web.user.details.connection.newPass:    Nouveau Mot de passe
+web.web.user.details.title:                      Coordonnées
+web.web.user.details.personal.title:             Vos informations personnelles
+web.web.user.details.newsletter.title:           Vos inscriptions Newsletter
+web.web.user.details.connection.title:           Identifiants de connexion
+web.web.user.details.submit:                     VALIDER
+web.web.user.details.newsletter.label:           Recevoir les nouvelles offres de Rubizz par email
+web.web.user.details.connection.passRepeat:      CONFIRMER MOT DE PASSE
+web.web.user.details.connection.oldPass:         ANCIEN MOT DE PASSE
+web.web.user.details.connection.newPass:         NOUVEAU MOT DE PASSE
 web.web.user.details.connection.passRepeatError: Les mots de passe doivent être identique
-web.web.user.details.connection.oldPassError: Ancien mot de passe incorrect
+web.web.user.details.connection.oldPassError:    Ancien mot de passe incorrect
+web.web.user.details.firstname:                  VOTRE PRÉNOM
+web.web.user.details.lastname:                   VOTRE NOM
+web.web.user.details.email:                      EMAIL
+
 #===== POT =========
 web.web.user.pot.title: Détail de votre cagnotte
 web.web.user.pot.date: DATE

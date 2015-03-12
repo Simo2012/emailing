@@ -162,17 +162,21 @@ web.web.user.pot.paiement.word1: Payment to the
 web.web.user.pot.paiement.word2: account made on
 
 # ==== Coordonnées ====
-web.web.user.details.title:                 Coordonnées
-web.web.user.details.personal.title:        Your profile
-web.web.user.details.newsletter.title:      Newletter subscription
-web.web.user.details.connection.title:      Id connection
-web.web.user.details.submit:                Confirm
-web.web.user.details.newsletter.label:      Receive new offers from Rubizz via Email
-web.web.user.details.connection.passRepeat: Confirm Password
-web.web.user.details.connection.oldPass:    Old Password
-web.web.user.details.connection.newPass:    New Password
-web.web.user.details.connection.passRepeatError: Les mots de passe doivent être identique
-web.web.user.details.connection.oldPassError: Incorrect older password
+web.web.user.details.title:                      Information
+web.web.user.details.personal.title:             Your profile
+web.web.user.details.newsletter.title:           Newletter subscription
+web.web.user.details.connection.title:           Connection identifier
+web.web.user.details.submit:                     CONFIRM
+web.web.user.details.newsletter.label:           Receive new offers from Rubizz via Email
+web.web.user.details.connection.passRepeat:      CONFIRM PASSWORD
+web.web.user.details.connection.oldPass:         OLD PASSWORD
+web.web.user.details.connection.newPass:         NEW PASSWORD
+web.web.user.details.connection.passRepeatError: The passwords must be identical
+web.web.user.details.connection.oldPassError:    Incorrect older password
+web.web.user.details.firstname:                  YOUR FIRST NAME
+web.web.user.details.lastname:                   YOUR LAST NAME
+web.web.user.details.email:                      YOUR EMAIL
+
 # ============ CONTACT PAGE ============
 # ==== Index ====
 web.web.contact.index.mailing_list.title: Mailing list

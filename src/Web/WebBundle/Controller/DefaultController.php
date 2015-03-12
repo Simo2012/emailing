@@ -31,6 +31,12 @@ class DefaultController extends Controller
         if (!empty($lbRegistered)) {
             return $this->redirect($this->generateUrl('WebWebBundle_offerIndex'));
         }
+        //$loDecrypt = $this->get('natexo_tool.filter.decrypt'); // DEBUG
+        //$laDebug = $loDecrypt->filter('!1!ulrNRlS3IceSiT8iHYsvYwBJ3csonBoOgpg,FA7c7PY='); // DEBUG
+        //var_dump($laDebug); // DEBUG
+        //$loEncrypt = $this->get('natexo_tool.filter.encrypt'); // DEBUG
+        //$lsDebug = $loEncrypt->filter(array('bubu')); // DEBUG
+        //echo "DEBUG: {$lsDebug}<br />"; // DEBUG
 
         return array();
     } // indexAction
