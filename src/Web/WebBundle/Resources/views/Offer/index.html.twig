@@ -49,8 +49,14 @@
     </div>
 
     {# Liste des offres  #}
-    <h1>{{ "web.web.offer.index.offer.title" | trans }}</h1>
-    <div id="div_RBZ_AllOffers"><a href="{{ url("WebWebBundle_offerList") }}">{{ "web.web.offer.index.offer.seeAll" | trans }}</a></div>
+    <table id="table_RBZ_title">
+    <tr><td>
+            <h1>{{ "web.web.offer.index.offer.title" | trans }}</h1>
+        </td><td class="KNS_right">
+            <div id="div_RBZ_AllOffers"><a href="{{ url("WebWebBundle_offerList") }}">{{ "web.web.offer.index.offer.seeAll" | trans }} &nbsp; &rsaquo;</a></div>
+        </td>
+    </tr>
+    </table>
     <div class="KNS_clear"></div>
     <div class="RBZ_offers KNS_grid">
         <div class="KNS_grid2">

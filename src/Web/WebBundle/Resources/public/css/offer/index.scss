@@ -72,18 +72,18 @@
     }
 }
 
-//=== inclusion de la macro des offres (tag)
+// ==== Titre des offres ====
+h1 { margin-bottom:0px; }
+#table_RBZ_title {
+    td { padding:0px; }
+}
 #div_RBZ_AllOffers {
-    float: right;
-    font : "Open Sans" 14px;
+    font: "Open Sans" 14px;
     font-weight: bold;
-    margin-bottom: 20px;
-    a {
-        color : #f04f61;
-    }
-
+    a { color : #f04f61; }
 }
 
+// ==== inclusion de la macro des offres (tag) ====
 .RBZ_offers {
     &.KNS_grid > * {
         margin-left: -20px !important;

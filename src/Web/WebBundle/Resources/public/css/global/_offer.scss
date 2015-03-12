@@ -53,7 +53,7 @@
         .RBZ_offer_border {
             border-top: 3px solid $border-grey;
             width: 40px;
-            position: absolute; 
+            position: absolute;
             bottom: 40px;
             margin-left: 15px;
         }
@@ -117,7 +117,6 @@
                     font: bold 13px/28px 'Open Sans';
                     text-decoration: none;
                     text-align: center;
-                    padding-right: 20px;
                 }
                 &.RBZ_hide {
                     display: none;
@@ -177,7 +176,7 @@
                     color: #817c77;
                     font: normal 10px 'Open Sans';
                     margin: 0 10px 0 10px;
-                }                
+                }
             }
 
             .RBZ_offer_border {
@@ -185,7 +184,7 @@
                 margin-top: 30px;
                 margin-left: 15px;
                 width: 45px;
-                position: absolute; 
+                position: absolute;
                 bottom: 89px;
             }
             .RBZ_offer_remuneration {
@@ -194,7 +193,7 @@
                 color: #f04f61;
                 font: bold 20px 'Open Sans';
                 margin-left: 10px;
-                position: absolute; 
+                position: absolute;
                 bottom: 65px;
             }
             .RBZ_offer_remuneration_description {
@@ -202,7 +201,7 @@
                 color: #676059;
                 font: italic 10px 'Open Sans';
                 margin: 20px 20px 20px 20px;
-                position: absolute; 
+                position: absolute;
                 bottom: 65px;
                 left: 60px;
             }
@@ -215,7 +214,7 @@
                 color:#ffffff;
                 font: bold 13px 'Open Sans';
                 text-align: center;
-                position: absolute; 
+                position: absolute;
                 right:  72px;
                 bottom: 15px;
                 border: 1px solid $border-grey;
@@ -260,5 +259,5 @@
         }
 
     }
-    
+
 }
