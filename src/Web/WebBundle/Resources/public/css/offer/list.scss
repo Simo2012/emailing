@@ -4,28 +4,32 @@
 
 //=== Menu des categories (tag)
 #div_RBZ_offerCategory {
-   margin-bottom: 30px;
-  height: 20px;
-  line-height: 20px;
-  ul {
-    list-style: none;
-    padding:0;
-    display: inline-block;
-    li {
-      list-style: none;
-      display: inline-block;
-      font-size: 12px;
-      margin-right: 20px;
-      text-align: center;
-      vertical-align: middle;
-      a {
-        text-transform: uppercase;
-        text-decoration: none;
-        color : $gray;
-      }
-      &.active a, a:hover {
-        font-weight: 600;
-      }
+    margin-top: -15px;
+    margin-bottom: 20px;
+    height: 20px;
+    line-height: 20px;
+    ul {
+        list-style: none;
+        padding:0;
+        display: inline-block;
+        li {
+            list-style: none;
+            display: inline-block;
+            font-size: 12px;
+            margin-right: 20px;
+            text-align: center;
+            vertical-align: middle;
+            a {
+                text-transform: uppercase;
+                text-decoration: none;
+                color : $sub-menu;
+            }
+            &.active a, a:hover {
+                font-weight: 600;
+            }
+        }
     }
-  }
+    #a_RBZ_ActiveCategory {
+        color: $red-banner;
+    }
 }

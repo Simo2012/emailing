@@ -97,6 +97,7 @@ web.web.offer.index.donut.detail: Detail
 web.web.offer.index.offer.seeAll: See all offers
 # ==== Offer Page (list) ====
 web.web.offer.list.title: All offers
+web.web.offer.list.all: All
 web.web.offer.list.categories.quiz : quiz
 web.web.offer.list.categories.quotation : quotation
 web.web.offer.list.categories.travel: travel
