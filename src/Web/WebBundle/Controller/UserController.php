@@ -95,24 +95,20 @@ class UserController extends Controller
      */
     public function ribAction()
     {
+        // ==== Initialisation ====
         $loManager = $this->getDoctrine()->getManager();
         $loUser = $this->getUser();
-        $loForm = $this->createForm(
-                new UserBicType($this->get('natexo_tool.filter.encrypt'), $this->get('natexo_tool.filter.decrypt')), $loUser
-        );
+        $loForm = $this->createForm('WebWebUserBicType', $loUser);
+
         // ==== Traitement de la saisie ====
         $loRequest = $this->getRequest();
         if ($loRequest->isMethod('POST')) {
             $loForm->bind($loRequest);
-            try {
-                $loUser->setDateUpdate(new \DateTime('now'));
-                $loManager->flush();
-            } catch (DBALException $poException) {
-                var_dump($poException);
-            }
+            $loUser->setDateUpdate(new \DateTime('now'));
+            $loManager->flush();
         }
         return array(
-            'form' => $loForm->createView(),
+            'form'   => $loForm->createView(),
             'UserId' => $loUser->getId()
         );
     }// ribAction
