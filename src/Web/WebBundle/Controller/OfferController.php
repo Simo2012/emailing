@@ -30,7 +30,8 @@ class OfferController extends Controller
         // ==== Initialisation ====
         $loUser    = $this->getUser();
         $loManager = $this->getDoctrine()->getManager();
-
+        $loTranslator = $this->get('translator');
+        
         // ==== Lecture des 6 dernieres offres ====
         $loOffers = $loManager->getRepository('WebWebBundle:Offer')->getLast(6);
 
@@ -41,11 +42,18 @@ class OfferController extends Controller
         foreach ($laEarnings as $laEarning){
             $laEarningsByMonth[$laEarning['month']] = $laEarning['amount'];
         }
+        
+        // ==== Gestion de la traduction des mois ====
+        $laMonths = array();
+        for ($liMonth = 1; $liMonth <= 12; $liMonth++) {
+            $laMonths[] = $loTranslator->trans('web.web.offer.list.month.' . $liMonth);
+        }
 
         return array(
             'earnings'        => $laEarningsByMonth,
             'availableAmount' => $liAvailableAmount,
             'offers'          => $loOffers,
+            'months'          => $laMonths
         );
     } // indexAction
 

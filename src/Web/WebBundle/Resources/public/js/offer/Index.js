@@ -17,11 +17,14 @@ Index.prototype = {
     /**
      * Traitements lancés en fin de chargement de la page
      */
-    ready: function(piAvailableAmount, paEarning)
+    ready: function(piAvailableAmount, paEarning, paMonths)
     {
-        //json decode
+        // ==== json decode ====
         var loEarnings = $.parseJSON(paEarning);
-        // month bar line initialisation
+        // ---- liste des mois traduits ----
+        var laMonths = $.parseJSON(paMonths);
+
+        // ==== month bar line initialisation ====
         var jan = loEarnings[1] === undefined ? 0 : loEarnings[1];
         var feb = loEarnings[2] === undefined ? 0 : loEarnings[2];
         var mar = loEarnings[3] === undefined ? 0 : loEarnings[3];
@@ -35,16 +38,15 @@ Index.prototype = {
         var nov = loEarnings[11] === undefined ? 0 : loEarnings[11];
         var dec = loEarnings[12] === undefined ? 0 : loEarnings[12];
 
-        // montant restant donut
+        //  ==== montant restant donut ====
         var liRemainingAmount = 0;
        if(piAvailableAmount <= 150) {
             liRemainingAmount = 150 - piAvailableAmount;
         }
 
         // ==== Graph stats ====
-
         var lineChartData = {
-            labels: ["JAN", "FEV", "MAR", "AVR", "MAI", "JUN", "JUL", "AOU", "SEP", "OCT", "NOV", "DEC"],
+            labels: laMonths,
             datasets: [
                 {
                     label: "Gains",

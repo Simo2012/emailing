@@ -19,7 +19,7 @@
     {%     endjavascripts %}
     <script>
         $(function() {
-           goIndex.ready({{ availableAmount }}, '{{earnings |json_encode|raw}}');
+           goIndex.ready({{ availableAmount }}, '{{earnings |json_encode |raw}}', '{{months |json_encode |raw}}');
         });
     </script>
 {% endblock %}
