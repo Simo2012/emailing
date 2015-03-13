@@ -105,6 +105,18 @@ web.web.offer.list.categories.ecommerce: e-commerce
 web.web.offer.list.categories.finances : finances
 web.web.offer.list.categories.divertissement: divertissement
 web.web.offer.list.categories.special: special
+web.web.offer.list.month.1:     Jan
+web.web.offer.list.month.2:     Feb
+web.web.offer.list.month.3:     Mar
+web.web.offer.list.month.4:     Apr
+web.web.offer.list.month.5:     May
+web.web.offer.list.month.6:     Jun
+web.web.offer.list.month.7:     Jul
+web.web.offer.list.month.8:     Aug
+web.web.offer.list.month.9:     Sep
+web.web.offer.list.month.10:    Oct
+web.web.offer.list.month.11:    Nov
+web.web.offer.list.month.12:    Dec
 # ==== Offer macro block ====
 web.web.offer.macro.see_website:                     See the website
 web.web.offer.macro.recommendation_description_CPC:  for each access to the website
