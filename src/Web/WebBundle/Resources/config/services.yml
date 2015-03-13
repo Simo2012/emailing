@@ -165,19 +165,19 @@ services:
         class: Web\WebBundle\Form\Security\RegisterType
         tags:
             - { name: form.type, alias: WebWebRegisterType }
+
     # ==== User ====
     # ---- Formulaire RIB User ----
     web.web.form.userbictype:
-        class: Web\WebBundle\Form\User\UserTypeBIC
+        class: Web\WebBundle\Form\User\UserBicType
         tags:
-            - { name: form.type, alias: userbictype }
-        arguments: ["cypt", "decrypt"]
+            - { name: form.type, alias: WebWebUserBicType }
+        arguments: ["@natexo_tool.filter.encrypt", "@natexo_tool.filter.decrypt"]
     # ---- Sous Formulaire RIB User ----
     web.web.form.bictype:
         class: Web\WebBundle\Form\User\BicType
         tags:
-            - { name: form.type, alias: bictype }
-        arguments: ["crypt", "decrypt"]
+            - { name: form.type, alias: WebWebBicType }
     # ---- Saisie des coordonnées ----
     web.web.form.userDetails:
         class: Web\WebBundle\Form\User\UserDetailsType

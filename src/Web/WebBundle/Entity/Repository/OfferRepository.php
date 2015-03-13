@@ -24,9 +24,11 @@ class OfferRepository extends EntityRepository
      */
     public function searchByCategory($psCategory = null)
     {
+
         $loQuery = $this->createQueryBuilder('o')
                         ->select('o')
                         ->orderBy('o.dateCreate', 'DESC');
+        // ==== Pas de filtre pour le tag all ====
         if (!empty($psCategory)) {
             $loQuery->where('o.category in (:category)')
                     ->setParameter('category', $psCategory);

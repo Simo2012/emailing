@@ -1,5 +1,4 @@
 {% extends "@WebWeb/layoutPage.html.twig" %}
-
 {% block CSS %}
     {{ parent() }}
     {% stylesheets
@@ -17,41 +16,22 @@
 {% endblock %}
 {% block CONTENT %}
     <form action="{{ url('WebWebBundle_userRib') }}" method="post" {{ form_enctype(form) }} autocomplete="off">
+{%     if error is defined %}
+    <p class="RBZ_error">{{ error }}</p>
+{%     endif %}
+    <h1>{{ 'web.web.user.bic.titre1' | trans }}</h1>
+    <h3>{{ 'web.web.user.bic.titre2' | trans }}</h3>
 
-        {% if error is defined %}
-            <p class="RBZ_error">{{ error }}</p>
-        {% endif %}
-        <div class="RBZ_user_bic">
-            <div class="RBZ_user_bic_header">
-                <div class="RBZ_user_bic_header_title">
-                    <h1>{{ 'web.web.user.bic.titre1' | trans }}</h1>
-
-                </div>
-                <div class="RBZ_user_bic_header_title">
-                    <h3>{{ 'web.web.user.bic.titre2' | trans }}</h3>
-
-                </div>
-                <div class="RBZ_user_bic_header_input">
-                    {{ form_widget(form.bic) }}
-                </div>
-
-                <div class="RBZ_user_bic_header_input_border">
-                </div>
-
-            </div>
-
-            <div class="RBZ_user_bic_footer">
-                <div class="RBZ_user_bic_footer_input">
-                    <input type="submit" value="{{ 'web.web.user.bic.submit' | trans }}" class="RBZ_redButton"/>
-                </div>
-            </div>
-
-        </div>
-
-
-
-
-        {{ form_rest(form) }}
+    <div id="div_RBZ_userBic">
+        {{ form_widget(form.bic) }}
     </div>
-</form>
+
+    <div id="div_RBZ_userBorder"></div>
+
+    <div id="div_RBZ_userFooter">
+        <input type="submit" value="{{ 'web.web.user.details.submit' | trans }} &nbsp; &rsaquo;" class="RBZ_redButton"/>
+    </div>
+
+    {{ form_rest(form) }}
+    </form>
 {% endblock %}

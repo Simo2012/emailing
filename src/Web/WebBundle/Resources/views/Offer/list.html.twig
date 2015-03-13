@@ -23,9 +23,9 @@
         {# Menu des categories (tag) #}
         <div id="div_RBZ_offerCategory">
             <ul>
-                <li><a href="">TAG</a></li>
+                <li><a {{ (categoryActive == '') ? 'id="a_RBZ_ActiveCategory"' }} href="{{ url("WebWebBundle_offerList") }}">{{ "web.web.offer.list.all" | trans }}</a></li>
                 {% for category, categoryTrans in categories %}
-                    <li><a href="{{ url("WebWebBundle_offerList", {'category': category }) }}">{{ categoryTrans | trans }}</a></li>
+                    <li><a {{ (category == categoryActive) ? 'id="a_RBZ_ActiveCategory"' }} href="{{ url("WebWebBundle_offerList", {'category': category }) }}">{{ categoryTrans | trans }}</a></li>
                 {% endfor %}
             </ul>
         </div>

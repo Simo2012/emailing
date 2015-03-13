@@ -98,6 +98,7 @@ web.web.offer.index.donut.detail: Détail
 web.web.offer.index.offer.seeAll: Voir toutes les offres
 # ==== Offer Page (list) ====
 web.web.offer.list.title: Toutes les offres
+web.web.offer.list.all: Tous
 web.web.offer.list.categories.quiz : Jeux concours
 web.web.offer.list.categories.quotation : Devis en ligne
 web.web.offer.list.categories.travel: Voyages
@@ -112,20 +113,20 @@ web.web.offer.macro.recommendation_description_CPL:  à chaque participation
 web.web.offer.macro.recommendation_description_CPA:  à chaque achat
 web.web.offer.macro.recommendation_description_CPA%: du montant de chaque achat
 web.web.offer.macro.recommend:                       RECOMMANDER
+web.web.offer.macro.recommended:                     ENVOYÉ
 web.web.offer.macro.facebook_publishing:             Publier sur Facebook
 web.web.offer.macro.twitter_publishing:              Publier sur Twitter
 web.web.offer.macro.mailing:                         Envoyer à ma mailing List
 
 # ============ USER PAGE ============
 # ==== RIB ====
-rubizz.form.bankName: Nom de la banque
-rubizz.form.bankCode: Code Banque
-rubizz.form.agencyCode: Code Agence
-rubizz.form.AccountNumber: N° du Compte
-rubizz.form.Key: clé
+rubizz.form.bankName:      NOM DE LA BANQUE
+rubizz.form.bankCode:      CODE BANQUE
+rubizz.form.agencyCode:    CODE AGENCE
+rubizz.form.AccountNumber: N° DU COMPTE
+rubizz.form.Key:           CLÉ
 web.web.user.bic.titre1: Votre RIB
 web.web.user.bic.titre2: Afin de recevoir vos paiements, vous devez renseigner vos coordonnées bancaires
-web.web.user.bic.submit: MODIFIER >
 # ==== Encaisser ma cagnotte ====
 web.web.user.cashIn.cash.title: Encaisser ma cagnotte
 web.web.user.cashIn.cash.firstSection: "Pour demander le paiement de votre cagnotte, vous devez avoir atteint un seuil minimum de 50€. Une fois le paiement demandés, le versement effectif sur le compte se fera dans un délai de 10 jours."

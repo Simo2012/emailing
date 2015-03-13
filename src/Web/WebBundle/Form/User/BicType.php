@@ -23,41 +23,43 @@ class BicType extends AbstractType {
      * @see \Symfony\Component\Form\AbstractType::buildForm()
      */
     public function buildForm(FormBuilderInterface $poBuilder, array $paOptions) {
-        // ==== Les champs de Rib  ====
-        //var_dump($paOptions);
-        //exit();
+        // ==== Les champs de RIB ====
         $laParams = array(
             'label' => 'rubizz.form.bankName',
             'attr' => array(
                 'caption' => 'rubizz.form.bankName',
+                'class'   => 'RBZ_large',
             ),
         );
         $poBuilder->add('bankName', 'text', $laParams);
-        
+
         $laParams = array(
             'label' => 'rubizz.form.bankCode',
             'attr' => array(
                 'caption' => 'rubizz.form.bankCode',
+                'class'   => 'RBZ_large',
             ),
         );
         $poBuilder->add('bankCode', 'text', $laParams);
-        
+
         $laParams = array(
             'label' => 'rubizz.form.agencyCode',
             'attr' => array(
                 'caption' => 'rubizz.form.agencyCode',
+                'class'   => 'RBZ_large',
             ),
         );
         $poBuilder->add('agencyCode', 'text', $laParams);
-        
+
           $laParams = array(
             'label' => 'rubizz.form.AccountNumber',
             'attr' => array(
                 'caption' => 'rubizz.form.AccountNumber',
+                'class'   => 'RBZ_large',
             ),
         );
         $poBuilder->add('AccountNumber', 'text', $laParams);
-        
+
         $laParams = array(
             'label' => 'rubizz.form.Key',
             'attr' => array(
@@ -65,28 +67,13 @@ class BicType extends AbstractType {
             ),
         );
         $poBuilder->add('Key', 'text', $laParams);
-        //var_dump($paOptions);
-       // exit();
-         
-    }// buildForm
-
-    /**
-     * (non-PHPdoc)
-     * @see \Symfony\Component\Form\AbstractType::setDefaultOptions()
-     */
-    public function setDefaultOptions(OptionsResolverInterface $poResolver) {
-        $poResolver->setDefaults(
-                array(
-                    
-                )
-        );
-    }// setDefaultOptions
+    } // buildForm
 
     /**
      * (non-PHPdoc)
      * @see \Symfony\Component\Form\FormTypeInterface::getName()
      */
     public function getName() {
-        return 'bictype';
+        return 'WebWebBicType';
     }
 }
