@@ -31,9 +31,10 @@ class OfferController extends Controller
         $loUser    = $this->getUser();
         $loManager = $this->getDoctrine()->getManager();
         $loTranslator = $this->get('translator');
+        $lsLocale = $this->getRequest()->getLocale();
         
         // ==== Lecture des 6 dernieres offres ====
-        $loOffers = $loManager->getRepository('WebWebBundle:Offer')->getLast(6);
+        $loOffers = $loManager->getRepository('WebWebBundle:Offer')->getLast(6, $lsLocale);
 
         // ==== Calcul des gains pas mois ====
         $liAvailableAmount = $loUser->getAvailableAmount();
@@ -79,11 +80,14 @@ class OfferController extends Controller
      */
     public function listAction(Request $poRequest)
     {
+        // ==== Initialisation ====
         $loManager = $this->getDoctrine()->getManager();
+        $lsLocale = $this->getRequest()->getLocale();
         // ==== récupération du filtre catégorie si demandé ====
         $lsCategory = $poRequest->query->get('category');
 
-        $loOffers = $loManager->getRepository('WebWebBundle:Offer')->searchByCategory($lsCategory);
+        $loOffers = $loManager->getRepository('WebWebBundle:Offer')
+                              ->searchByCategory($lsCategory, $lsLocale);
 
         return array(
             'categories'        => $this->container->getParameter('web.offerCategory'),
