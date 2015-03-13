@@ -113,6 +113,7 @@ web.web.offer.macro.recommendation_description_CPL:  à chaque participation
 web.web.offer.macro.recommendation_description_CPA:  à chaque achat
 web.web.offer.macro.recommendation_description_CPA%: du montant de chaque achat
 web.web.offer.macro.recommend:                       RECOMMANDER
+web.web.offer.macro.recommended:                     ENVOYÉ
 web.web.offer.macro.facebook_publishing:             Publier sur Facebook
 web.web.offer.macro.twitter_publishing:              Publier sur Twitter
 web.web.offer.macro.mailing:                         Envoyer à ma mailing List
