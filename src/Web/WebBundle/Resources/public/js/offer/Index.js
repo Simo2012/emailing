@@ -40,8 +40,8 @@ Index.prototype = {
 
         //  ==== montant restant donut ====
         var liRemainingAmount = 0;
-       if(piAvailableAmount <= 150) {
-            liRemainingAmount = 150 - piAvailableAmount;
+       if(piAvailableAmount <= 50) {
+            liRemainingAmount = 50 - piAvailableAmount;
         }
 
         // ==== Graph stats ====
@@ -67,7 +67,7 @@ Index.prototype = {
                 value: piAvailableAmount,
                 color: "#F7464A",
                 highlight: "#C94251",
-                label: "Gain"
+                label: "Earning"
             },
             {
                 value: liRemainingAmount,
