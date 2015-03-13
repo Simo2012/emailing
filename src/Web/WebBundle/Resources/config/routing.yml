@@ -114,3 +114,10 @@ WebWebBundle_recommendationIndex:
 WebWebBundle_contactAdd:
     path:     /contact/add
     defaults: { _controller: "WebWebBundle:Contact:add" }
+
+#==================
+# Track controller
+#==================
+WebWebBundle_trackTag:
+    path:     /track/tag
+    defaults: { _controller: "WebWebBundle:Track:tag" }
