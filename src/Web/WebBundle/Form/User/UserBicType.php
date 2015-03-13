@@ -36,11 +36,11 @@ class UserBicType extends AbstractType {
      * @see \Symfony\Component\Form\AbstractType::buildForm()
      */
     public function buildForm(FormBuilderInterface $poBuilder, array $paOptions) {
-        
+
         $loUserRibTransformer = new UserRibTransformer($this->crypt,$this->decrypt);
         $poBuilder->addModelTransformer($loUserRibTransformer);
-        $poBuilder->add('bic', 'bictype');
-  
+        $poBuilder->add('bic', 'WebWebBicType');
+
     }// buildForm
 
     /**
@@ -60,6 +60,6 @@ class UserBicType extends AbstractType {
      * @see \Symfony\Component\Form\FormTypeInterface::getName()
      */
     public function getName() {
-        return 'userbictype';
+        return 'WebWebUserBicType';
     }
 }
