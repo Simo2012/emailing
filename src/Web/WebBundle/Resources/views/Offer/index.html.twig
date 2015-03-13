@@ -63,7 +63,7 @@
             {# Inclusion de la macro des offres  #}
             {% for offer in offers %}
             <div>
-                {{ macro.offer(offer) }}
+                {{ macro.offer(offer, true) }}
             </div>
             {% endfor %}
         </div>

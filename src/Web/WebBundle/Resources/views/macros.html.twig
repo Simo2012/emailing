@@ -50,7 +50,8 @@
 {#========#}
 {# Offres #}
 {#========#}
-{% macro offer(offer) %}
+{% macro offer(offer, active) %}
+    {% set active = active | default(false) %}
     <div class="RBZ_offer_content">
         <img class="RBZ_offer_img" src="http://placehold.it/470x250">
         <div class="RBZ_offer_body" id="RBZ_offer_body">
@@ -72,12 +73,24 @@
                 <span class="RBZ_offer_remuneration_amount">{{ offer.remMember | number_format(2, ',', ' ') }}&nbsp;{{ symbol }}</span>
                 <span class="RBZ_offer_remuneration_description">{{ ('web.web.offer.macro.recommendation_description_' ~ offer.remType) | trans }}</span>
             </div>
-            <div class="RBZ_offer_input">
-                <a href="#" class="RBZ_offer_link RBZ_hide">{{ 'web.web.offer.macro.mailing' | trans }}</a>
-                <a href="#" class="RBZ_offer_link RBZ_hide">{{ 'web.web.offer.macro.facebook_publishing' | trans }}</a>
-                <a href="#" class="RBZ_offer_link RBZ_hide">{{ 'web.web.offer.macro.twitter_publishing' | trans }} </a>
-                <a href="#" class="RBZ_actions">{{ 'web.web.offer.macro.recommend' | trans }} &nbsp; &rsaquo;</a>
-            </div>
-        </div>
+
+            {% if active %}
+                <div class="RBZ_offer_input">
+                {% if 'email' in offer.publishing %}
+                    <a href="#" class="RBZ_offer_link RBZ_hide">{{ 'web.web.offer.macro.mailing' | trans }}</a>
+                {% endif %}
+                {% if 'facebook' in offer.publishing %}
+                    <a href="#" class="RBZ_offer_link RBZ_hide">{{ 'web.web.offer.macro.facebook_publishing' | trans }}</a>
+                {% endif %}
+                {% if 'twitter' in offer.publishing %}
+                    <a href="#" class="RBZ_offer_link RBZ_hide">{{ 'web.web.offer.macro.twitter_publishing' | trans }} </a>
+                {% endif %}
+                    <a href="#" class="RBZ_actions">{{ 'web.web.offer.macro.recommend' | trans }}</a>
+                    <div class="RBZ_arrow">></div>
+                </div>
+            {% else %}
+                <div class="RBZ_recommended">{{ 'web.web.offer.macro.recommended' | trans }}</div>
+            {% endif %}
+        </div>         
     </div>
 {% endmacro %}
