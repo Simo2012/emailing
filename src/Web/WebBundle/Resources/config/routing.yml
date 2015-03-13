@@ -67,9 +67,9 @@ WebWebBundle_userCashIn:
     path:     /user/cash-in
     defaults: { _controller: "WebWebBundle:User:cashIn" }
 
-#==================================================
+#====================================
 # Offer controller : page offer, etc
-#==================================================
+#====================================
 # ---- Page index ----
 WebWebBundle_offerIndex:
     path:     /offer/index
@@ -83,13 +83,25 @@ WebWebBundle_offerList:
     path:     /offer/list
     defaults: { _controller: "WebWebBundle:Offer:list" }
 
-#==================================================
+#=============================================
 # Contact controller : page mailing list, etc
-#==================================================
+#=============================================
 # ---- Page index ----
 WebWebBundle_contactIndex:
     path:     /contact/index
     defaults: { _controller: "WebWebBundle:Contact:index" }
+# ---- Abonner (menu contextuel de la page d'index) ----
+WebWebBundle_contactSubscribe:
+    path:     /contact/subscribe/{piContactId}
+    defaults: { _controller: "WebWebBundle:Contact:subscribe" }
+    requirements:
+        piContactId: \d+
+# ---- Désabonner (menu contextuel de la page d'index) ----
+WebWebBundle_contactUnsubscribe:
+    path:     /contact/unsubscribe/{piContactId}
+    defaults: { _controller: "WebWebBundle:Contact:unsubscribe" }
+    requirements:
+        piContactId: \d+
 
 #=======================================================
 # Recommendation controller : page recommandations, etc

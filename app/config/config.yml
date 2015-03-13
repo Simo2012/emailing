@@ -98,6 +98,9 @@ doctrine:
             port: 11211
 # Doctrine Configuration
         dql:
+            numeric_functions:
+                if: Natexo\AdminBundle\DQL\MySQL\IfElse
+                count_distinct_if: Natexo\AdminBundle\DQL\MySQL\CountDistinctIf
             datetime_functions:
                 month: Natexo\AdminBundle\DQL\MySQL\Month
                 year: Natexo\AdminBundle\DQL\MySQL\Year

@@ -154,6 +154,7 @@ services:
        class: Web\WebBundle\Form\Type\FlipType
        tags:
            - { name: form.type, alias: flip }
+
     # ==== Security ====
     # ---- Formulaire de login ----
     web.web.form.login_type:
@@ -168,20 +169,27 @@ services:
 
     # ==== User ====
     # ---- Formulaire RIB User ----
-    web.web.form.userbictype:
+    web.web.form.user_bic_type:
         class: Web\WebBundle\Form\User\UserBicType
         tags:
             - { name: form.type, alias: WebWebUserBicType }
         arguments: ["@natexo_tool.filter.encrypt", "@natexo_tool.filter.decrypt"]
     # ---- Sous Formulaire RIB User ----
-    web.web.form.bictype:
+    web.web.form.bic_type:
         class: Web\WebBundle\Form\User\BicType
         tags:
             - { name: form.type, alias: WebWebBicType }
     # ---- Saisie des coordonnées ----
-    web.web.form.userDetails:
+    web.web.form.user_details_type:
         class: Web\WebBundle\Form\User\UserDetailsType
         tags:
             - { name: form.type, alias: WebWebUserDetailsType }
+
+    # ==== Contact ====
+    # ---- Formulaire de recherche ----
+    web.web.form.contact_search_type:
+        class: Web\WebBundle\Form\Contact\ContactSearchType
+        tags:
+            - { name: form.type, alias: WebWebContactSearchType }
 
 

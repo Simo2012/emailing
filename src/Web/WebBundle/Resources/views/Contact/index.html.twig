@@ -23,15 +23,21 @@
     <table id="table_RBZ_title">
         <tr>
             <td class="RBZ_left"><h1>{{ 'web.web.contact.index.mailing_list.title' | trans }}</h1></td>
-            <td><a class="RBZ_redButton" href="#">{{ 'web.web.contact.index.mailing_list.add_contact' | trans }}</a></td>
+            <td><a class="RBZ_redButton RBZ_arrow" href="#">{{ 'web.web.contact.index.mailing_list.add_contact' | trans }} &nbsp; &rsaquo;</a></td>
         </tr>
         <tr>
             <td class="RBZ_left RBZ_info">{{ 'web.web.contact.index.mailing_list.info' | trans }}</td>
             <td></td>
         </tr>
         <tr>
-            <td class="RBZ_left RBZ_centered">{{ 'web.web.contact.index.mailing_list.you_have' | trans }} <span class="RBZ_active_contacts">NuMb3r {{ 'web.web.contact.index.mailing_list.active_contacts' | trans }}</span> / <span class="RBZ_inactive_contacts">NuMb3r {{ 'web.web.contact.index.mailing_list.inactive_contacts' | trans }}</span></td>
-            <td><div class="RBZ_input"><input type="text" value="{{ 'web.web.contact.index.mailing_list.find_contact' | trans }}"></input></div></td>
+            <td class="RBZ_left RBZ_centered">{{ 'web.web.contact.index.mailing_list.you_have' | trans }} <span class="RBZ_active_contacts">{{ number.subscribed }} {{ 'web.web.contact.index.mailing_list.active_contacts' | trans }}</span> / <span class="RBZ_inactive_contacts">{{ number.unsubscribed }} {{ 'web.web.contact.index.mailing_list.inactive_contacts' | trans }}</span></td>
+            <td>
+                <form action="" method="post" enctype="{{ form_enctype(form) }}">
+                    <div class="RBZ_input">
+                        {{ form_widget(form.name) }}
+                    </div>
+                </form>
+            </td>
         </tr>
     </table>
 
@@ -45,33 +51,33 @@
             <th>{{ 'web.web.contact.index.mailing_list.status' | trans }}</th>
         </tr>
         {% for contact in contacts %}
-            {% if contact.subscriber %}
+            {% if contact.0.subscriber %}
                 {% set status_class = 'RBZ_blue' %}
             {% else %}
                 {% set status_class = 'RBZ_red' %}
             {% endif %}
             <tr>
-                <td>{{ contact.datecreate | localizeddate('short', 'none') }}</td>
-                <td>{{ contact.email }}</td>
-                <td>{{ contact.lastname }}</td>
-                <td>{{ contact.firstname }}</td>
-                <td>{#{{ contact.commissions }}#}</td>
+                <td>{{ contact.0.datecreate | localizeddate('short', 'none') }}</td>
+                <td>{{ contact.0.email }}</td>
+                <td>{{ contact.0.lastname }}</td>
+                <td>{{ contact.0.firstname }}</td>
+                <td>{{ contact.commissions | number_format('2', ',', ' ') }} &euro;</td>
                 <td class="RBZ_status {{ status_class }}">
                     <div class="RBZ_pin_container">
-                    {% if contact.subscriber %}
+                    {% if contact.0.subscriber %}
                         {{ 'web.web.contact.index.mailing_list.subscribed' | trans }}
                     {% else %}
                         {{ 'web.web.contact.index.mailing_list.unsubscribed' | trans }}
                     {% endif %}
-                        <div id="div_RBZ_pin_{{ contact.id }}" class="RBZ_pin {{ status_class }}"></div>
-                        <div id="div_RBZ_menu_{{ contact.id }}" class="RBZ_pin_menu">
+                        <div id="div_RBZ_pin_{{ contact.0.id }}" class="RBZ_pin {{ status_class }}"></div>
+                        <div id="div_RBZ_menu_{{ contact.0.id }}" class="RBZ_pin_menu">
                             <ul>
                                 <li class="{{ status_class }}">
-                                    {% if contact.subscriber %}
-                                        {{ 'web.web.contact.index.mailing_list.unsubscribe' | trans }}
-                                    {% else %}
-                                        {{ 'web.web.contact.index.mailing_list.subscribe' | trans }}
-                                    {% endif %}
+                                {% if contact.0.subscriber %}
+                                    <a href="{{ url('WebWebBundle_contactUnsubscribe', { 'piContactId': contact.0.id, 'page': page }) }}">{{ 'web.web.contact.index.mailing_list.unsubscribe' | trans }}</a>
+                                {% else %}
+                                    <a href="{{ url('WebWebBundle_contactSubscribe', { 'piContactId': contact.0.id, 'page': page }) }}">{{ 'web.web.contact.index.mailing_list.subscribe' | trans }}</a>
+                                {% endif %}
                                 </li>
                             </ul>
                         </div>

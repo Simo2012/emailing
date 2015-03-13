@@ -14,38 +14,38 @@ class RegisterType extends AbstractType
     public function buildForm(FormBuilderInterface $poBuilder, array $paOptions)
     {
         $laParams = array(
-            'label' => 'web.web.security.firstname',
-            'attr'  => array(
-                'caption' => 'web.web.security.firstname',
-                'autocomplete'  => false,
-                'required' => true,
+            'label'    => 'web.web.security.firstname',
+            'required' => true,
+            'attr'     => array(
+                'caption'      => 'web.web.security.firstname',
+                'autocomplete' => false
             )
         );
         $poBuilder->add('firstname', 'text', $laParams);
         $laParams = array(
-            'label' => 'web.web.security.lastname',
-            'attr'  => array(
-                'caption' => 'web.web.security.lastname',
-                'autocomplete'  => false,
-                'required' => true,
+            'label'    => 'web.web.security.lastname',
+            'required' => true,
+            'attr'     => array(
+                'caption'      => 'web.web.security.lastname',
+                'autocomplete' => false
             )
         );
         $poBuilder->add('lastname', 'text', $laParams);
         $laParams = array(
-            'label' => 'web.web.security.email',
-            'attr'  => array(
-                'caption' => 'web.web.security.email',
-                'autocomplete'  => false,
-                'required' => true,
+            'label'    => 'web.web.security.email',
+            'required' => true,
+            'attr'     => array(
+                'caption'      => 'web.web.security.email',
+                'autocomplete' => false
             )
         );
         $poBuilder->add('email', 'email', $laParams);
         $laParams = array(
-            'label' => 'web.web.security.password',
-            'attr'  => array(
-                'caption' => 'web.web.security.password',
-                'autocomplete'  => false,
-                'required' => true,
+            'label'    => 'web.web.security.password',
+            'required' => true,
+            'attr'     => array(
+                'caption'      => 'web.web.security.password',
+                'autocomplete' => false
             )
         );
         $poBuilder->add('password', 'password', $laParams);

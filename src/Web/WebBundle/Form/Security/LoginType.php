@@ -14,20 +14,20 @@ class LoginType extends AbstractType
     public function buildForm(FormBuilderInterface $poBuilder, array $paOptions)
     {
         $laParams = array(
-            'label' => 'web.web.security.email',
-            'attr'  => array(
+            'label'    => 'web.web.security.email',
+            'required' => true,
+            'attr'     => array(
                 'caption' => 'web.web.security.email',
-                'autocomplete' => false,
-                'required' => true,
+                'autocomplete' => false
             )
         );
         $poBuilder->add('email', 'email', $laParams);
         $laParams = array(
-            'label' => 'web.web.security.password',
-            'attr'  => array(
+            'label'    => 'web.web.security.password',
+            'required' => true,
+            'attr'     => array(
                 'caption' => 'web.web.security.password',
-                'autocomplete' => false,
-                'required' => true,
+                'autocomplete' => false
             )
         );
         $poBuilder->add('password', 'password', $laParams);

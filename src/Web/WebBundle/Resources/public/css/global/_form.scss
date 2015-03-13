@@ -1,57 +1,91 @@
 @charset "UTF-8";
 
 div.RBZ_input {
-  margin-bottom: 20px;
-  label {font-family: 'Open Sans', sans-serif; font-size: 14px;color:#afafaf;display: block;margin:0;line-height: 30px;}
-  input[type=text],
-  input[type=email],
-  input[type=password] {background-color: #f8f8f8; border: 1px solid #d9d8d7;height: 30px;line-height: 30px;width: 100%;display: block;font-size:14px; color:#676059}
-
-  &.KNS_row {
+    margin-bottom: 20px;
     label {
-      vertical-align: middle;margin: 0;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 14px;
+        color:#afafaf;
+        display: block;
+        margin:0;
+        line-height: 30px;
     }
     input[type=text],
     input[type=email],
-    input[type=password] { padding-left:4px; width:260px; display:table-cell; }
-    label {display: table-cell;color:#4d4d4d;font-size: 11px;}
-    input[type=text].RBZ_large,
-    input[type=email].RBZ_large,
-    input[type=password].RBZ_large { width:260px; }
-  }
-  &.RBZ_error {
-    input[type=text],
-    input[type=email],
-    input[type=password] {border: 1px solid $red-banner;padding-right: 30px;}
-  }
+    input[type=password] {
+        background-color: $white;
+        border: 1px solid #d9d8d7;
+        height: 30px;
+        line-height: 30px;
+        width: 100%;
+        display: block;
+        font-size:14px;
+        color: #676059;
+        &.RBZ_magnifier {
+            font-size: 12px;
+            background: $white url("/bundles/webweb/images/global/magnifier.png") no-repeat 5px 5px;
+            padding-left: 30px;
+        }
+    }
+
+    &.KNS_row {
+        label {
+            vertical-align: middle;margin: 0;
+        }
+        input[type=text],
+        input[type=email],
+        input[type=password] {
+            padding-left:4px;
+            width:260px;
+            display:table-cell;
+        }
+        label {
+            display: table-cell;
+            color: #4d4d4d;
+            font-size: 11px;
+        }
+        input[type=text].RBZ_large,
+        input[type=email].RBZ_large,
+        input[type=password].RBZ_large {
+            width:260px;
+        }
+    }
+    &.RBZ_error {
+        input[type=text],
+        input[type=email],
+        input[type=password] {
+            border: 1px solid $red-banner;
+            padding-right: 30px;
+        }
+    }
 }
 
 div.RBZ_flip {position: relative;width: 80px;-webkit-user-select:none; -moz-user-select:none; -ms-user-select: none; margin-bottom: 10px;
-  .RBZ_flip_checkbox { display: none; }
-  .RBZ_flip_label { display: block; overflow: hidden; cursor: pointer;border-radius: 20px;}
-  .RBZ_flip_inner { width: 200%; margin-left: -100%; -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.3s ease-in 0s; -o-transition: margin 0.3s ease-in 0s; transition: margin 0.3s ease-in 0s;}
-  .RBZ_flip_inner_left, .RBZ_flip_inner_right {float: left; width: 50%; height: 30px; padding: 0; line-height: 30px; font-size: 14px; color: white; font-family: 'Open Sans Semibold', sans-serif;text-align: center;}
-  .RBZ_flip_inner_left { padding-right: 25px; background-color: #6fc6bf; color: #FFFFFF; }
-  .RBZ_flip_inner_right { padding-left: 25px; background-color: #f34d5e; color: #FFFFFF; }
-  .RBZ_flip_switch { width: 14px; height:14px;margin: 8px; background: #FFFFFF; border: 2px solid #ffffff; border-radius: 50%; position: absolute; top: 0; bottom: 0; right: 50px; -moz-transition: all 0.3s ease-in 0s; -webkit-transition: all 0.3s ease-in 0s; -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s; }
-  .RBZ_flip_checkbox:checked + .RBZ_flip_label .RBZ_flip_inner { margin-left: 0; }
-  .RBZ_flip_checkbox:checked + .RBZ_flip_label .RBZ_flip_switch { right: 2px; }
+    .RBZ_flip_checkbox { display: none; }
+    .RBZ_flip_label { display: block; overflow: hidden; cursor: pointer;border-radius: 20px;}
+    .RBZ_flip_inner { width: 200%; margin-left: -100%; -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.3s ease-in 0s; -o-transition: margin 0.3s ease-in 0s; transition: margin 0.3s ease-in 0s;}
+    .RBZ_flip_inner_left, .RBZ_flip_inner_right {float: left; width: 50%; height: 30px; padding: 0; line-height: 30px; font-size: 14px; color: white; font-family: 'Open Sans Semibold', sans-serif;text-align: center;}
+    .RBZ_flip_inner_left { padding-right: 25px; background-color: #6fc6bf; color: $white; }
+    .RBZ_flip_inner_right { padding-left: 25px; background-color: #f34d5e; color: $white; }
+    .RBZ_flip_switch { width: 14px; height:14px;margin: 8px; background: $white; border: 2px solid $white; border-radius: 50%; position: absolute; top: 0; bottom: 0; right: 50px; -moz-transition: all 0.3s ease-in 0s; -webkit-transition: all 0.3s ease-in 0s; -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s; }
+    .RBZ_flip_checkbox:checked + .RBZ_flip_label .RBZ_flip_inner { margin-left: 0; }
+    .RBZ_flip_checkbox:checked + .RBZ_flip_label .RBZ_flip_switch { right: 2px; }
 }
 
 
 input[type=submit].RBZ_redButton,
 a.RBZ_redButton {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  height: 30px;
-  line-height: 30px;
-  color: #ffffff;
-  background-color: $red-banner;
-  width: 100%;
-  display: block;
-  line-height: 30px;
-  border: none;
-  @include border-radius(2px, 2px);
-  text-align: center;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+    color: $white;
+    background-color: $red-banner;
+    width: 100%;
+    display: block;
+    line-height: 30px;
+    border: none;
+    @include border-radius(2px, 2px);
+    text-align: center;
 }

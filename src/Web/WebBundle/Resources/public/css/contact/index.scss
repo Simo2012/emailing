@@ -76,6 +76,10 @@
                                 &.RBZ_red {
                                     background-color: $table_red;
                                 }
+                                a {
+                                    text-decoration: none;
+                                    color: inherit;
+                                }
                             }
                         }
                     }

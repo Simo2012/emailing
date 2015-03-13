@@ -2,6 +2,7 @@
 
 namespace Web\WebBundle\Entity;
 
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -79,6 +80,13 @@ class Contact
      * })
      */
     private $user;
+
+    /**
+     * @var collection
+     *
+     * @ORM\OneToMany(targetEntity="Commission", mappedBy="contact")
+     **/
+    private $commissions;
 
 
 
