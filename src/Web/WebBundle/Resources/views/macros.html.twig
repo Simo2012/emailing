@@ -76,7 +76,7 @@
                 <span class="RBZ_offer_remuneration_description">{{ ('web.web.offer.macro.recommendation_description_' ~ offer.remType) | trans }}</span>
             </div>
 
-            {% if not recommended or (recommended and (type | length) < 3) %}
+            {% if not recommended or (recommended and ((offer.publishing | length) - (type | length)) > 0) %}
                 <div class="RBZ_offer_input">
                 {% if 'email' in offer.publishing and 'email' not in type %}
                     <a href="#" class="RBZ_offer_link RBZ_hide">{{ 'web.web.offer.macro.mailing' | trans }}</a>
