@@ -78,7 +78,11 @@ Offer.prototype = {
         var controllerUrl = '';
         $(document).on('click', 'a.RBZ_twitter', function(event){
             controllerUrl = $(this).attr('href');
-            window.open(controllerUrl, 'Tweet', 'width=550, height=420');
+            var width  = 550;
+            var height = 420;
+            var left   = ($(window).width()  - width)  / 2;
+            var top    = ($(window).height() - height) / 2;
+            window.open(controllerUrl, 'Tweet', 'width='+width+', height='+height+', left='+left+', top='+top);
             return false;
         });
         // ---- Définition de la callback qui observe la réponse de l'API Twitter pour

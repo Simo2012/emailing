@@ -28,10 +28,10 @@ class OfferController extends Controller
     public function indexAction()
     {
         // ==== Initialisation ====
-        $loUser    = $this->getUser();
-        $loManager = $this->getDoctrine()->getManager();
+        $loUser       = $this->getUser();
+        $loManager    = $this->getDoctrine()->getManager();
         $loTranslator = $this->get('translator');
-        $lsLocale = $this->getRequest()->getLocale();
+        $lsLocale     = $this->getRequest()->getLocale();
         
         // ==== Lecture des 6 dernieres offres ====
         $loOffers = $loManager->getRepository('WebWebBundle:Offer')->getLast(6, $lsLocale);
@@ -87,19 +87,27 @@ class OfferController extends Controller
     public function listAction(Request $poRequest)
     {
         // ==== Initialisation ====
+        $loUser    = $this->getUser();
         $loManager = $this->getDoctrine()->getManager();
-        $lsLocale = $this->getRequest()->getLocale();
+        $lsLocale  = $this->getRequest()->getLocale();
+
         // ==== récupération du filtre catégorie si demandé ====
         $lsCategory = $poRequest->query->get('category');
 
+        // ==== Lecture des offres ====
         $loOffers = $loManager->getRepository('WebWebBundle:Offer')
                               ->searchByCategory($lsCategory, $lsLocale);
 
+        // ==== Lecture des recommandations de l'utilisateur ====
+        $laRecommendedOffers = $loManager->getRepository('WebWebBundle:Offer')
+                                         ->getRecommendedIdsByUser($loUser);
+
         return array(
-            'categories'     => $this->container->getParameter('web.offerCategory'),
-            'offers'         => $loOffers,
-            'categoryActive' => $lsCategory,
-            'from'           => 'list'
+            'categories'        => $this->container->getParameter('web.offerCategory'),
+            'offers'            => $loOffers,
+            'recommendedOffers' => $laRecommendedOffers,
+            'categoryActive'    => $lsCategory,
+            'from'              => 'list'
         );
     }// indexAction
 
