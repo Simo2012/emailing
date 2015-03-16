@@ -56,37 +56,36 @@ web.web.security.have_account:          Vous avez déjà un compte ?
 web.web.security.connect:               Connectez-vous
 
 # ============ DEFAULT PAGE ============
-# ==== Home Page ====
-web.web.default.index.login: CONNEXION
-web.web.default.index.register: S'INSCRIRE
-web.web.default.index.community.title: Community 3.0
-web.web.default.index.community.content: Vous êtes bloggeur, trendsetter, twittos ou juste bien entouré, vous pouvez monétiser votre notoriété simplement et gratuitemnt
-web.web.default.index.community.manage: Gérez votre communauté
-web.web.default.index.mailinglist.title: Mailing List
-web.web.default.index.mailinglist.content: Ajoutez vos amis à partir de votre compte email, Facebook, Twitter ou Google + et créez votre propre Mailing List
-web.web.default.index.mailinglist.add: Ajoutez des contacts
-web.web.default.index.cagnotte.title: Encaissez votre cagnotte
-web.web.default.index.cagnotte.content: En recommandant des offres à vos contacts, vous gagnez de l'argent à chacune de leur contribution.
-web.web.default.index.cagnotte.begin: Commencez maintenant
-web.web.default.index.christbale.detail: Avec plus de 3 000 followers, j'ai pu leur faire bénéficier d'offres vraiment interessantes et orientées sur mon secteur.
-web.web.default.index.christbale.sign: Christian Bale - @c-bale
-web.web.default.index.emmawats.detail: Avec plus de 3 000 followers, j'ai pu leur faire bénéficier d'offres vraiment interessantes et orientées sur mon secteur.
-web.web.default.index.emmawats.sign: Eùùa Watsp - @Emma-ww
-web.web.default.index.footer.about: A propos
-web.web.default.index.footer.faq: FAQ
-web.web.default.index.footer.contact: Contact
-web.web.default.index.footer.jobs: Jobs
-web.web.default.index.footer.advertisers: Annonceurs
-web.web.default.index.footer.alloffers: Toutes les offres
-web.web.default.index.footer.maillist: Mailing list
-web.web.default.index.footer.howwork: Comment ça marche ?
-web.web.default.index.footer.bynatexo: 2014 %b%Rubizz%eb% by Natexo.
-web.web.default.index.footer.allrights: Tous droits réservés
-web.web.default.index.footer.mentions: Mentions légales
-web.web.default.index.footer.condition: Conditions générales d'utilisation
-web.web.default.index.slide1.text1: Gagne de l'argent en partageant des offres avec tes amis
-web.web.default.index.slide1.text2: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis arcu a nisi ultrices consequat. Etiam in mollis ex.
-web.web.default.index.slide1.button: Commencer gratuitement
+# ---- Page d'accueil ----
+web.web.default.index.headerText:     "Gagnez de l'argent<br />en partageant nos bons<br />plans avec vos amis"
+web.web.default.index.headerButton:   Commencer gratuitement
+web.web.default.index.headerLogin:    CONNEXION
+web.web.default.index.headerRegister: "S'INSCRIRE"
+web.web.default.index.headerHowTitle: Comment ça marche ?
+web.web.default.index.headerHowText:  "Inscrivez-vous sur le site, sélectionnez les offres qui vous intéressent et partagez-les en un clic avec<br />vos amis. S'ils participent aux offres, vous gagnez autant de commissions que de participations !"
+web.web.default.index.headerHowLink:  Plus d'informations
+web.web.default.index.createTitle:    Créez votre réseau Rubizz
+web.web.default.index.createText:     "Importez votre carnet d'adresses dans votre<br />compte Rubizz et créez votre propre réseau<br />d'influence."
+web.web.default.index.createLink:     Gérer ma communauté
+web.web.default.index.communityTitle: Community 3.0
+web.web.default.index.communityText:  "Partagez vos bons plans en un clic via votre<br />carnet d'adresse, votre Facebook ou votre<br />Twitter."
+web.web.default.index.communityLink:  Ajoutez des contacts
+web.web.default.index.chooseTitle:    Sélectionnez vos offres
+web.web.default.index.chooseText:     "Mode, sport, High-Tech, jeux...<br />Sélectionnez parmi nos bons plans ceux<br />qui vont plaire à vos amis."
+web.web.default.index.chooseLink:     Découvrez les offres
+web.web.default.index.redeemTitle:    Encaissez votre cagnotte
+web.web.default.index.redeemText:     "Vous avez eu du flair ! Vos amis ont apprécié<br />vos bons plans, ce qui vous amène une jolie<br />petite somme. Grâce à Rubizz, votre<br />cagnotte est directement créditée sur votre<br /> compte bancaire !"
+web.web.default.index.redeemLink:     Commencez maintenant
+web.web.default.index.footerAbout:    A propos
+web.web.default.index.footerHow:      Comment ça marche ?
+web.web.default.index.footerFaq:      FAQ
+web.web.default.index.footerContact:  Contact
+web.web.default.index.footerJobs:     Jobs
+web.web.default.index.footerAdv:      Annonceurs
+web.web.default.index.footerCopy:     "&copy; 2014 <strong>Rubizz</strong> by Natexo. Tous droits réservés"
+web.web.default.index.footerLegal:    Mentions légales
+web.web.default.index.footerGtu:      "Conditions générales d'utilisation"
+
 
 # ============ OFFER PAGE ============
 # ==== Offer Page (index) ====

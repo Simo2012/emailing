@@ -46,7 +46,8 @@ Default.prototype = {
 
     _manageLoginPopupOpening: function()
     {
-        $(document).on("click", "span.RBZ_default_login a", function() {
+        $(document).on("click", "#a_RBZ_login", function() {
+            console.log("DEBUG login"); // DEBUG
             var lsUrl = $(this).attr('hrefbis');
             Default.prototype.ajaxPopupLogin(lsUrl);
             return false;
@@ -56,8 +57,6 @@ Default.prototype = {
     _manageLoginPopupSubmitting: function(psLoginUrl)
     {
         $(document).on("click", "#input_RBZ_login_form ", function() {
-            console.log('click');
-            console.log(psLoginUrl);
             Default.prototype.ajaxPopupLoginSubmit('form_RBZ_login_form', psLoginUrl);
             return false;
         });
@@ -74,8 +73,9 @@ Default.prototype = {
 
     _manageRegisterPopupOpening: function()
     {
-        $(document).on("click", "span.RBZ_default_register a", function() {
+        $(document).on("click", "a.RBZ_register", function() {
             var lsUrl = $(this).attr('hrefbis');
+            window.scrollTo(0, 0);
             Default.prototype.ajaxPopupRegister(lsUrl);
             return false;
         });
@@ -137,7 +137,6 @@ Default.prototype = {
             contentType: false,
             processData: false,
             success: function(psReturn) {
-                console.log(psReturn);
                 if ('OK' == psReturn) {
                     $("#div_RBZ_loginPopup").remove();
                     $("#div_RBZ_loginShadow").hide();

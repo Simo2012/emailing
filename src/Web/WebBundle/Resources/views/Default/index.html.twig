@@ -11,134 +11,146 @@
     <!--[if lt IE 9]>
     <script type="text/javascript" src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    {% block CSS %}
-        {% stylesheets
-        '@WebWebBundle/Resources/public/css/owl-carousel/owl.carousel.css'
-        '@WebWebBundle/Resources/public/css/owl-carousel/owl.theme.css'
-        '@WebWebBundle/Resources/public/css/default/index/index.scss'
-        %}
+{% block CSS %}
+{%     stylesheets '@WebWebBundle/Resources/public/css/default/index/index.scss' %}
         <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
-        {% endstylesheets %}
-    {% endblock %}
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700,600,400' rel='stylesheet' type='text/css'>
-    {% if app.session.get('debugMode') %}
-        <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
-    {% endif %}
-</head>
-<body class="RBZ_default_{{ app.request.locale }} RBZ_default_{{ app.request.locale | slice(0, 2) }}">
-    <header id="header_RBZ_default_header" role="banner" class="">
-{% block HEADER %}
-	<div class="RBZ_default_head">
-		<img class="RBZ_default_img_rubizzRed" src="{{ asset("/bundles/webweb/images/default/index/rubizz_red.png") }}">
-		<div class="RBZ_default_loginMenu">
-			<span class="RBZ_default_login"><a href="" hrefbis="{{ url("WebWebBundle_securityLogin") }}">{{ "web.web.default.index.login" | trans }}</a></span>
-            |
-			<span class="RBZ_default_register"><a href="" hrefbis="{{ url("WebWebBundle_securityRegister") }}">{{ "web.web.default.index.register" | trans }}</a></span>
-		</div>
-	</div>
+{%     endstylesheets %}
 {% endblock %}
+    <link href='http://fonts.googleapis.com/css?family=Nunito:400,700' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700,600,400' rel='stylesheet' type='text/css'>
+{% if app.session.get('debugMode') %}
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
+{% endif %}
+</head>
+<body class="RBZ_{{ app.request.locale }} RBZ_{{ app.request.locale | slice(0, 2) }}">
+{# ====================== #}
+{# ==== Tête de page ==== #}
+{# ====================== #}
+    <header id="header_RBZ_default_header" role="banner" class="">
+        <div id="div_RBZ_headerInside">
+            <img id="img_RBZ_headerGuy" src="{{ asset("/bundles/webweb/images/default/index/header.png") }}" alt="" />
+            <div id="div_RBZ_headerText">
+                <div id="div_RBZ_headerLogin">
+                    <a id="a_RBZ_login" href="#" hrefbis="{{ url("WebWebBundle_securityLogin") }}">{{ "web.web.default.index.headerLogin" | trans }}</a> &nbsp;&#9474;&nbsp;
+                    <a class="RBZ_register" href="#" hrefbis="{{ url("WebWebBundle_securityRegister") }}">{{ "web.web.default.index.headerRegister" | trans }}</a>
+                </div>
+                <p>{{ "web.web.default.index.headerText" | trans | raw }}</p>
+                <a class="RBZ_register" id="a_RBZ_subscribe" href="#" hrefbis="{{ url("WebWebBundle_securityRegister") }}"><span>{{ "web.web.default.index.headerButton" | trans }} &nbsp;&rsaquo;</span></a>
+            </div>
+            <div class="KNS_clear"></div>
+            <div id="div_RBZ_headerHow" class="RBZ_indexBlocks">
+                <h1>{{ "web.web.default.index.headerHowTitle" | trans }}</h1>
+                <p>{{ "web.web.default.index.headerHowText" | trans | raw }}</p>
+                <a class="RBZ_register" href="#" hrefbis="{{ url("WebWebBundle_securityRegister") }}">{{ "web.web.default.index.headerHowLink" | trans }} &nbsp;&rsaquo;</a>
+            </div>
+        </div>
     </header>
 
+{# ======================= #}
+{# ==== Corps de page ==== #}
+{# ======================= #}
     <section id="section_RBZ_default_main" role="main" class="">
-{% block CONTENT %}
-    {##########}
-    {# SLIDER #}
-    {##########}
-    {% include "@WebWeb/Default/Index/rubslider.html.twig" %}
-    <div class="RBZ_default_content">
-        <div class="RBZ_default_community">
-            <div class="RBZ_default_community_detail">
-                <p class="RBZ_default_community_title">{{ "web.web.default.index.community.title" | trans }}</p>
-                <p class="RBZ_default_community_content">{{ "web.web.default.index.community.content" | trans }}</p>
-                <span class="RBZ_default_register"><a href="" hrefbis="{{ url("WebWebBundle_securityRegister") }}"> <p class="RBZ_default_community_manage">{{ "web.web.default.index.community.manage" | trans }} ></p></a></span>
+{# ==== Block create your Rubizz network ==== #}
+        <div id="div_RBZ_create">
+            <div id="div_RBZ_createInside">
+                <img src="{{ asset("/bundles/webweb/images/default/index/create.png") }}" alt="" />
+                <div class="RBZ_indexBlocks">
+                    <h1>{{ "web.web.default.index.createTitle" | trans }}</h1>
+                    <p>{{ "web.web.default.index.createText" | trans | raw }}</p>
+                    <a class="RBZ_register" href="#" hrefbis="{{ url("WebWebBundle_securityRegister") }}">{{ "web.web.default.index.createLink" | trans }} &nbsp;&rsaquo;</a>
+                </div>
+                <div class="KNS_clear"></div>
             </div>
         </div>
-        <div class="RBZ_default_mailinglist">
-            <div class="RBZ_default_mailinglist_detail">
-                <p class="RBZ_default_mailinglist_title">{{ "web.web.default.index.mailinglist.title" | trans }}</p>
-                <p class="RBZ_default_mailinglist_content">{{ "web.web.default.index.mailinglist.content" | trans }}</p>
-                <span class="RBZ_default_register"><a href="" hrefbis="{{ url("WebWebBundle_securityRegister") }}"> <p class="RBZ_default_mailinglist_add">{{ "web.web.default.index.mailinglist.add" | trans }} ></p></a></span>
+
+{# ==== Community 3.0 ==== #}
+        <div id="div_RBZ_community">
+            <div id="div_RBZ_communityInside">
+                <img src="{{ asset("/bundles/webweb/images/default/index/community.png") }}" alt="" />
+                <div class="RBZ_indexBlocks">
+                    <h1>{{ "web.web.default.index.communityTitle" | trans }}</h1>
+                    <p>{{ "web.web.default.index.communityText" | trans | raw }}</p>
+                    <a class="RBZ_register" href="#" hrefbis="{{ url("WebWebBundle_securityRegister") }}">{{ "web.web.default.index.communityLink" | trans }} &nbsp;&rsaquo;</a>
+                </div>
+                <div class="KNS_clear"></div>
             </div>
         </div>
-        <div class="RBZ_default_cagnotte">
-            <div class="RBZ_default_cagnotte_detail">
-                <p class="RBZ_default_cagnotte_title">{{ "web.web.default.index.cagnotte.title" | trans }}</p>
-                <p class="RBZ_default_cagnotte_content">{{ "web.web.default.index.cagnotte.content" | trans }}</p>
-                <span class="RBZ_default_register"><a href="" hrefbis="{{ url("WebWebBundle_securityRegister") }}"><p class="RBZ_default_cagnotte_begin">{{ "web.web.default.index.cagnotte.begin" | trans }} ></p></a></span>
+
+{# ==== Choose your deals ==== #}
+        <div id="div_RBZ_choose">
+            <div id="div_RBZ_chooseInside">
+                <img src="{{ asset("/bundles/webweb/images/default/index/choose.png") }}" alt="" />
+                <div class="RBZ_indexBlocks">
+                    <h1>{{ "web.web.default.index.chooseTitle" | trans }}</h1>
+                    <p>{{ "web.web.default.index.chooseText" | trans | raw }}</p>
+                    <a class="RBZ_register" href="#" hrefbis="{{ url("WebWebBundle_securityRegister") }}">{{ "web.web.default.index.chooseLink" | trans }} &nbsp;&rsaquo;</a>
+                </div>
+                <div class="KNS_clear"></div>
             </div>
         </div>
-        <div class="RBZ_default_follow">
-            <div class="RBZ_default_chrisbale">
-                <p class="RBZ_default_followdetail">{{ "web.web.default.index.christbale.detail" | trans }}</p>
-                <p class="RBZ_default_followsign">{{ "web.web.default.index.christbale.sign" | trans }}</p>
-            </div>
-            <div class="RBZ_default_emmawat">
-                <p class="RBZ_default_followdetail">{{ "web.web.default.index.emmawats.detail" | trans }}</p>
-                <p class="RBZ_default_followsign">{{ "web.web.default.index.emmawats.sign" | trans }}</p>
+
+{# ==== Redeem your piggy bank ==== #}
+        <div id="div_RBZ_redeem">
+            <div id="div_RBZ_redeemInside">
+                <img src="{{ asset("/bundles/webweb/images/default/index/redeem.png") }}" alt="" />
+                <div class="RBZ_indexBlocks">
+                    <h1>{{ "web.web.default.index.redeemTitle" | trans }}</h1>
+                    <p>{{ "web.web.default.index.redeemText" | trans | raw }}</p>
+                    <a class="RBZ_register" href="#" hrefbis="{{ url("WebWebBundle_securityRegister") }}">{{ "web.web.default.index.redeemLink" | trans }} &nbsp;&rsaquo;</a>
+                </div>
+                <div class="KNS_clear"></div>
             </div>
         </div>
-    </div>
-{% endblock %}
+
     </section> <!-- section_RBZ_default_main -->
 
     <!-- popup -->
     <div id="div_RBZ_loginShadow" class="RBZ_{{ app.request.locale }}"></div>
     <div id="div_RBZ_registerShadow" class="RBZ_{{ app.request.locale }}"></div>
 
-    <footer id="footer_RBZ_default_footer" role="contentinfo" class="">
-{% block FOOTER %}
-    <div class="RBZ_default_footer">
-        <div class="RBZ_default_clients"></div>
-        <div class="RBZ_default_footer_content">
-            <div class="RBZ_default_foot_menu1">
-                <p class=""><a href="">{{ "web.web.default.index.footer.about" | trans }}</a></p>
-                <p class=""><a href="">{{ "web.web.default.index.footer.faq" | trans }}</a></p>
-                <p class=""><a href="">{{ "web.web.default.index.footer.contact" | trans }}</a></p>
-                <p class=""><a href="">{{ "web.web.default.index.footer.jobs" | trans }}</a></p>
-                <p class=""><a href="">{{ "web.web.default.index.footer.advertisers" | trans }}</a></p>
-            </div>
-            <div class="RBZ_default_foot_menu2">
-                <p class=""><span class="RBZ_default_register"><a href="" hrefbis="{{ url("WebWebBundle_securityRegister") }}">{{ "web.web.default.index.footer.alloffers" | trans }}</a></span></p>
-                <p class=""><a href="">{{ "web.web.default.index.footer.maillist" | trans }}</a></p>
-                <p class=""><a href="">{{ "web.web.default.index.footer.howwork" | trans }}</a></p>
-            </div>
-            <img class="RBZ_default_foot_rubizzblack" src="{{ asset("/bundles/webweb/images/default/index/rubizz_black.png") }}">
-            <div class="RBZ_clear"></div>
-            <div class="RBZ_default_fb"><a href="" class="RBZ_default_a100"></a></div>
-            <div class="RBZ_default_tw"><a href="" class="RBZ_default_a100"></a></div>
-            <div class="RBZ_clear"></div>
-            <div class="RBZ_default_foot_menu3">
-                <span class="RBZ_default_bynatexo"><a href="">{{ "web.web.default.index.footer.bynatexo" | trans | replace({'%b%' : '<b>', '%eb%' : '</b>'}) | raw }}</a></span>
-                <span class="RBZ_default_allrights"><a href="">{{ "web.web.default.index.footer.allrights" | trans }}</a></span>
-                <span class="RBZ_default_mentions"><a href="">{{ "web.web.default.index.footer.mentions" | trans }}</a></span>
-                <span class="RBZ_default_conditions"><a href="">{{ "web.web.default.index.footer.condition" | trans }}</a></span>
-            </div>
+{# ====================== #}
+{# ==== Pied de page ==== #}
+{# ====================== #}
+    <footer id="footer_RBZ_footer" role="contentinfo">
+        <div id="div_RBZ_footerInside">
+            <table id="table_RBZ_footerLinks">
+            <tr><td><a href="#">{{ "web.web.default.index.footerAbout" | trans }}</a></td>
+                <td><a href="#">{{ "web.web.default.index.footerContact" | trans }}</a></td>
+            </tr>
+            <tr><td><a href="#">{{ "web.web.default.index.footerHow" | trans }}</a></td>
+                <td><a href="#">{{ "web.web.default.index.footerJobs" | trans }}</a></td>
+            </tr>
+            <tr><td><a href="#">{{ "web.web.default.index.footerFaq" | trans }}</a></td>
+                <td><a href="#">{{ "web.web.default.index.footerAdv" | trans }}</a></td>
+            </tr>
+            </table>
+            <p id="p_RBZ_footerCommunity">
+                <a href="#"><img src="{{ asset("/bundles/webweb/images/default/index/facebook.png") }}" alt="" /></a>
+                <a id="a_RBZ_twitter" href="#"><img src="{{ asset("/bundles/webweb/images/default/index/twitter.png") }}" alt="" /></a>
+            </p>
+            <p id="p_RBZ_rights">
+                {{ "web.web.default.index.footerCopy" | trans | raw }}
+                <a href="#">{{ "web.web.default.index.footerLegal" | trans }}</a>
+                <a href="#">{{ "web.web.default.index.footerGtu" | trans }}</a>
+            </p>
         </div>
-    </div>
-{% endblock %}
     </footer>
 
-{% block JAVASCRIPT %}
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    {% if app.session.get('debugMode') %}
+{%     if app.session.get('debugMode') %}
         <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
-    {% endif %}
-    {% javascripts
-    '@WebWebBundle/Resources/public/js/owl-carousel/owl.carousel.min.js'
+{%     endif %}
+{%     javascripts
     '@WebWebBundle/Resources/public/js/global/Global.js'
-    '@WebWebBundle/Resources/public/js/default/Index.js'
     '@WebWebBundle/Resources/public/js/default/Default.js'
-    %}
+%}
     <script type="text/javascript" src="{{ asset_url }}"></script>
-    {% endjavascripts %}
+{%     endjavascripts %}
     <script type="text/javascript">
         $(document).ready(function() {
             goGlobal.ready();
             goDefault.ready("{{ url('WebWebBundle_offerIndex') }}");
-            // ==== RBZ Slider ====
-            goIndex.rubSlider();
         });
     </script>
-{% endblock %}
 </body>
 </html>
