@@ -70,11 +70,6 @@
                     {% set type = [] %}
                 {% endif %}
             <div>
-                <pre>
-                {{ dump(recommended) }}
-                {{ dump(type) }}
-                {{ dump(type | length) }}
-                </pre>
                 {{ macro.offer(offer, recommended, type, from) }}
             </div>
             {% endfor %}
