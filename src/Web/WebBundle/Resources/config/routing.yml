@@ -114,7 +114,18 @@ WebWebBundle_recommendationIndex:
 WebWebBundle_contactAdd:
     path:     /contact/add
     defaults: { _controller: "WebWebBundle:Contact:add" }
-
+# ---- Page recommandation via FB ----
+WebWebBundle_recommendByFacebook:
+    path:     /recommendation/recommendByFacebook/{piOfferId}/{psFrom}
+    defaults: { _controller: "WebWebBundle:Recommendation:recommendByFacebook", psFrom: 'index' }
+    requirements:
+        piOfferId: \d+
+# ---- Aprés soummission ----
+WebWebBundle_addRecommendationByFacebook:
+    path:     /recommendation/addRecommendationByFacebook/{piOfferId}/{psFrom}
+    defaults: { _controller: "WebWebBundle:Recommendation:addRecommendationByFacebook", psFrom: 'index' }
+    requirements:
+        piOfferId: \d+
 #==================
 # Track controller
 #==================

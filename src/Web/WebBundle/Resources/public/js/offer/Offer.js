@@ -42,6 +42,7 @@ Offer.prototype = {
             $(this).siblings('div.RBZ_arrow').toggleClass('RBZ_open');
             return false;
         });
+        
         // ---- Clic sur la flèche du bouton ----
         $(document).on('click', 'div.RBZ_arrow', function(event) {
             $(this).siblings('a').toggleClass('RBZ_hide');
@@ -52,6 +53,20 @@ Offer.prototype = {
         });
         
     }, // ready
+    
+    // ==== Gestion du bouton post sur facebook ====
+    _manageFacebookButton: function()
+    {
+       // ==== Gestion des recommandation Facebook ====
+        var facebookUrl = '';
+        $(document).on('click', 'a.RBZ_facebook', function() {
+            facebookUrl = $(this).attr('href');
+            window.open(facebookUrl, 'Facebook', 'width=550, height=420');
+            
+            return false;
+        });
+
+    }, // _manageFacebookButton
 
     /**
      * Token de fin
@@ -62,3 +77,4 @@ Offer.prototype = {
 //==== Définition de l'objet Offer goOffer ====
 var goOffer = new Offer();
 goOffer.ready();
+goOffer._manageFacebookButton();

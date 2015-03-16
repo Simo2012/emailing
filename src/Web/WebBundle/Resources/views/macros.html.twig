@@ -50,8 +50,9 @@
 {#========#}
 {# Offres #}
 {#========#}
-{% macro offer(offer, active) %}
+{% macro offer(offer, active, from) %}
     {% set active = active | default(false) %}
+    {% set psFrom = psFrom | default('index') %}
     <div class="RBZ_offer_content">
         <img class="RBZ_offer_img" src="http://placehold.it/470x250">
         <div class="RBZ_offer_body" id="RBZ_offer_body">
@@ -80,7 +81,7 @@
                     <a href="#" class="RBZ_offer_link RBZ_hide">{{ 'web.web.offer.macro.mailing' | trans }}</a>
                 {% endif %}
                 {% if 'facebook' in offer.publishing %}
-                    <a href="#" class="RBZ_offer_link RBZ_hide">{{ 'web.web.offer.macro.facebook_publishing' | trans }}</a>
+                    <a href="{{ url("WebWebBundle_recommendByFacebook", {'piOfferId': offer.id, 'psFrom': from }) }}" class="RBZ_offer_link RBZ_hide RBZ_facebook">{{ 'web.web.offer.macro.facebook_publishing' | trans }}</a>
                 {% endif %}
                 {% if 'twitter' in offer.publishing %}
                     <a href="#" class="RBZ_offer_link RBZ_hide">{{ 'web.web.offer.macro.twitter_publishing' | trans }} </a>

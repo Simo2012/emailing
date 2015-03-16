@@ -31,6 +31,7 @@ class OfferRepository extends EntityRepository
                         ->select('o')
                         ->where('o.country = :local')
                         ->setParameter('local', $lsLocale)
+                        ->andWhere('o.active = 1')
                         ->orderBy('o.dateCreate', 'DESC');
         // ==== Pas de filtre pour le tag all ====
         if (!empty($psCategory)) {
@@ -56,6 +57,7 @@ class OfferRepository extends EntityRepository
                         ->join('o.brand', 'b')
                         ->where('o.country = :local')
                         ->setParameter('local', $lsLocale)
+                        ->andWhere('o.active = 1')
                         ->orderBy('o.dateCreate', 'DESC')
                         ->setMaxResults($piNumber);
 
