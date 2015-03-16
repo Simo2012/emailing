@@ -103,10 +103,10 @@ class RecommendationController extends Controller
     {
         // ==== Initialisation ====
         $loManager = $this->getDoctrine()->getManager();
-        $loOffer = $loManager->getRepository('WebWebBundle:Offer')->find($piOfferId);
-        $lsLocale = $this->getRequest()->getLocale();
+        $loOffer   = $loManager->getRepository('WebWebBundle:Offer')->find($piOfferId);
+        $lsLocale  = $this->get('request_stack')->getCurrentRequest()->getLocale();
         $loModelFb = $this->get('web.web.contact.facebook');
-        $lsUrl = $loModelFb->generateUrl($loOffer, $lsLocale, $psFrom);
+        $lsUrl     = $loModelFb->generateUrl($loOffer, $lsLocale, $psFrom);
 
         return $this->redirect($lsUrl);
 
@@ -117,38 +117,38 @@ class RecommendationController extends Controller
      *
      * @return string
      */
-    public function addRecommendationByFacebookAction($piOfferId, $psFrom = 'index')
+    public function addRecommendationByFacebookAction($piOfferId, $psFrom)
     {
         // ==== Initialisation ====
         $loManager = $this->getDoctrine()->getManager();
-        $loOffer = $loManager->getRepository('WebWebBundle:Offer')->find($piOfferId);
-        $loUser = $this->getUser();
+        $loOffer   = $loManager->getRepository('WebWebBundle:Offer')->find($piOfferId);
+        $loUser    = $this->getUser();
         // ---- Récupération de l'id si soumission ----
-        $lsPostId = $this->getRequest()->query->get('post_id');
+        $lsPostId = $this->get('request_stack')->getCurrentRequest()->query->get('post_id');
+
         // ==== Enregistrement de la recommandation fb ====
         $loRecommendation = $loManager->getRepository('WebWebBundle:Recommendation')->findOneBy(
-                array('user' => $loUser, 'offer' => $loOffer, 'type' => 'facebook')
+            array('user' => $loUser, 'offer' => $loOffer, 'type' => 'facebook')
         );
-        // ---- l'user à publié sur son mur ----
+        // ---- L'utilisateur à publié sur son mur ----
         if (isset($lsPostId) && !empty($lsPostId) && empty($loRecommendation)) {
-            // ==== Enregistrement de la recommandation fb ====
             $loRecommendation = new Recommendation();
-            $loRecommendation->setUser($loUser);
-            $loRecommendation->setOffer($loOffer);
-            $loRecommendation->setType('facebook');
-            $loRecommendation->setDateCreate(new \DateTime);
+            $loRecommendation->setUser($loUser)
+                             ->setOffer($loOffer)
+                             ->setType('facebook')
+                             ->setDateCreate(new \DateTime);
             $loUser->setUseFacebook(true);
             $loManager->persist($loRecommendation);
-            $loManager->persist($loUser);
             $loManager->flush();
         }
-        
         /*$lsRoute = $psFrom == 'index' ? 'WebWebBundle_offerIndex' : 'WebWebBundle_offerList';
         return $this->redirect($this->generateUrl($lsRoute));*/
         
         return new Response("<script language='javascript'>window.close()</script>");
-        
     } // addRecommendationByFacebookAction
     
+    public function recommendByEmail($piOfferId)
+    {
 
+    } // recommendByEmail
 }
