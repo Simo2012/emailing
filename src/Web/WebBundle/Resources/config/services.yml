@@ -106,7 +106,7 @@ parameters:
             special-offer: web.web.offer.list.categories.special
 services:
     # =================== MODEL ===================
-    # ==== User ====
+    # ==== USER ====
     # ---- Connexion d'un utilisateur ----
     web.web.manager.user_logger:
         class: Web\WebBundle\Model\User\UserLogger
@@ -118,8 +118,7 @@ services:
         class: Web\WebBundle\Model\Encoder\UserPasswordEncoder
         arguments: ["@natexo_tool.filter.encrypt"]
 
-
-    # ================ CONTACT VIA API ===============
+    # ==== CONTACT VIA API ====
     # ---- Auto Post sur Facebook ----
     web.web.contact.facebook:
         class: Web\WebBundle\Model\Contact\Facebook
@@ -133,7 +132,8 @@ services:
         class: Web\WebBundle\Model\Contact\Outlook
         arguments: ["%web.api%"]
 
-    # ==== Menu en twig ====
+    # ==== MENU ====
+    # ---- Menu en twig ----
     web.web.twig.extension.menu:
         class: Web\WebBundle\Twig\Extension\MenuExtension
         tags:

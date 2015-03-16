@@ -10,13 +10,13 @@
     {% endstylesheets %}
 {% endblock %}
 {% block JAVASCRIPT %}
-    {{     parent() }}
-    {%     javascripts '@WebWebBundle/Resources/public/js/chartjs/Chart.js'
-                       '@WebWebBundle/Resources/public/js/offer/Index.js'
-                       '@WebWebBundle/Resources/public/js/offer/Offer.js'
+    {{ parent() }}
+    {% javascripts '@WebWebBundle/Resources/public/js/chartjs/Chart.js'
+                   '@WebWebBundle/Resources/public/js/offer/Index.js'
+                   '@WebWebBundle/Resources/public/js/offer/Offer.js'
     %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
-    {%     endjavascripts %}
+    {% endjavascripts %}
     <script>
         $(function() {
            goIndex.ready({{ availableAmount }}, '{{earnings |json_encode |raw}}', '{{months |json_encode |raw}}');
@@ -62,8 +62,13 @@
         <div class="KNS_grid2">
             {# Inclusion de la macro des offres  #}
             {% for offer in offers %}
+                {% if offer.id in recommendedOffers %}
+                    {% set recommended = true %}
+                {% else %}
+                    {% set recommended = false %}
+                {% endif %}
             <div>
-                {{ macro.offer(offer, true, 'index') }}
+                {{ macro.offer(offer, recommended, from) }}
             </div>
             {% endfor %}
         </div>

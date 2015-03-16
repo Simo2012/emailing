@@ -90,6 +90,10 @@ WebWebBundle_offerList:
 WebWebBundle_contactIndex:
     path:     /contact/index
     defaults: { _controller: "WebWebBundle:Contact:index" }
+# ---- Page d'ajout ----
+WebWebBundle_contactAdd:
+    path:     /contact/add
+    defaults: { _controller: "WebWebBundle:Contact:add" }
 # ---- Abonner (menu contextuel de la page d'index) ----
 WebWebBundle_contactSubscribe:
     path:     /contact/subscribe/{piContactId}
@@ -110,22 +114,26 @@ WebWebBundle_contactUnsubscribe:
 WebWebBundle_recommendationIndex:
     path:     /recommendation/index
     defaults: { _controller: "WebWebBundle:Recommendation:index" }
-# ---- Page d'ajout ----
-WebWebBundle_contactAdd:
-    path:     /contact/add
-    defaults: { _controller: "WebWebBundle:Contact:add" }
-# ---- Page recommandation via FB ----
+# ---- Recommandation Twitter ----
+WebWebBundle_recommendationRecommendByTwitter:
+    path:     /recommendation/recommendByTwitter/{piOfferId}/{psFrom}
+    defaults: { _controller: "WebWebBundle:Recommendation:recommendByTwitter" }
+    requirements:
+        piOfferId: \d+
+        piFrom: \w+
+# ---- Recommandation Faceboook ----
 WebWebBundle_recommendByFacebook:
     path:     /recommendation/recommendByFacebook/{piOfferId}/{psFrom}
     defaults: { _controller: "WebWebBundle:Recommendation:recommendByFacebook", psFrom: 'index' }
     requirements:
         piOfferId: \d+
-# ---- Aprés soummission ----
+# ---- Recommandation Faceboook (après soummission) ----
 WebWebBundle_addRecommendationByFacebook:
     path:     /recommendation/addRecommendationByFacebook/{piOfferId}/{psFrom}
     defaults: { _controller: "WebWebBundle:Recommendation:addRecommendationByFacebook", psFrom: 'index' }
     requirements:
         piOfferId: \d+
+        
 #==================
 # Track controller
 #==================

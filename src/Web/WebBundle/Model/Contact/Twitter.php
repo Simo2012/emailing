@@ -15,39 +15,25 @@ namespace Web\WebBundle\Model\Contact;
  */
 class Twitter
 {
-
     /**
      * Constructeur, injection des dépendances
      */
     public function __construct()
     {
     } // __constructeur
-    
+
     /**
-     * Return un lien permettant le postage sur facebook
+     * Retourne une URL permettant la publication sur Twitter
      *
      * @param \Web\WebBundle\Entity\Offer $poOffer
+     * @return string
      */
     public function generateUrl($poOffer)
     {
-        $lsLink = $poOffer->getUrl();
-        $lsDesc = $poOffer->getTitle();
-        
-        $lsUrl = "https://twitter.com/share?";
-        $lsUrl .= "url={$lsLink}&via=rubizz&text={$lsDesc}";
+        $lsLink  = $poOffer->getUrl();
+        $lsTitle = $poOffer->getTitle();
+        $lsUrl   = "https://twitter.com/intent/tweet?url={$lsLink}&text={$lsTitle}"; // &via=rubizz_FR
                 
         return $lsUrl;
-    } //generateUrl
-    
-    /**
-    * Sauvegarde
-    * 
-    * @param \Web\WebBundle\Entity\User $poUser
-    */
-    public function saveDetailsUser($poUser)
-    {
-        // enregistrement boolean dans entité user
-        $poUser->setUseTwitter(true);
-    } // saveDetailsUser
-
+    } // generateUrl
  }

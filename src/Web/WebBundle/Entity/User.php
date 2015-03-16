@@ -135,6 +135,13 @@ class User implements AdvancedUserInterface, \Serializable
     private $availableAmount;
 
     /**
+     * @var collection
+     *
+     * @ORM\OneToMany(targetEntity="User", mappedBy="user")
+     **/
+    private $recommendations;
+
+    /**
      * @var string
      *
      */
@@ -534,6 +541,29 @@ class User implements AdvancedUserInterface, \Serializable
     public function getAvailableAmount()
     {
         return $this->availableAmount;
+    }
+
+    /**
+     * Set recommendations
+     *
+     * @param collection $recommendations
+     * @return User
+     */
+    public function setRecommendations($recommendations)
+    {
+        $this->recommendations = $recommendations;
+
+        return $this;
+    }
+
+    /**
+     * Get recommendations
+     *
+     * @return collection
+     */
+    public function getRecommendations()
+    {
+        return $this->recommendations;
     }
 
     /**

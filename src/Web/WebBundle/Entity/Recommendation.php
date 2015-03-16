@@ -38,7 +38,7 @@ class Recommendation
     /**
      * @var \User
      *
-     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="recommendations")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      * })
@@ -48,7 +48,7 @@ class Recommendation
     /**
      * @var \Offer
      *
-     * @ORM\ManyToOne(targetEntity="Offer")
+     * @ORM\ManyToOne(targetEntity="Offer", inversedBy="recommendations")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="offer_id", referencedColumnName="id")
      * })

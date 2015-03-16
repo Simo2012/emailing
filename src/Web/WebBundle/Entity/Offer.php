@@ -181,6 +181,13 @@ class Offer
      */
     private $brand;
 
+    /**
+     * @var collection
+     *
+     * @ORM\OneToMany(targetEntity="Recommendation", mappedBy="offer")
+     **/
+    private $recommendations;
+
 
 
     /**
@@ -697,5 +704,28 @@ class Offer
     public function getBrand()
     {
         return $this->brand;
+    }
+
+    /**
+     * Set recommendations
+     *
+     * @param collection $recommendations
+     * @return Offer
+     */
+    public function setRecommendations($recommendations)
+    {
+        $this->recommendations = $recommendations;
+
+        return $this;
+    }
+
+    /**
+     * Get recommendations
+     *
+     * @return collection
+     */
+    public function getRecommendations()
+    {
+        return $this->recommendations;
     }
 }

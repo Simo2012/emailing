@@ -29,10 +29,11 @@ class OfferRepository extends EntityRepository
         
         $loQuery = $this->createQueryBuilder('o')
                         ->select('o')
-                        ->where('o.country = :local')
-                        ->setParameter('local', $lsLocale)
+                        ->where('o.country = :locale')
+                        ->setParameter('locale', $lsLocale)
                         ->andWhere('o.active = 1')
                         ->orderBy('o.dateCreate', 'DESC');
+
         // ==== Pas de filtre pour le tag all ====
         if (!empty($psCategory)) {
             $loQuery->andWhere('o.category in (:category)')
@@ -55,12 +56,28 @@ class OfferRepository extends EntityRepository
         $loQuery = $this->createQueryBuilder('o')
                         ->select('o, partial b.{id, name}')
                         ->join('o.brand', 'b')
-                        ->where('o.country = :local')
-                        ->setParameter('local', $lsLocale)
+                        ->where('o.country = :locale')
+                        ->setParameter('locale', $lsLocale)
                         ->andWhere('o.active = 1')
                         ->orderBy('o.dateCreate', 'DESC')
                         ->setMaxResults($piNumber);
 
         return $loQuery->getQuery()->getResult();
-    } // getLastSix
+    } // getLast
+
+    public function getRecommendedIdsByUser($poUser)
+    {
+        $loQuery = $this->createQueryBuilder('o')
+            ->select('o.id')
+            ->leftjoin('o.recommendations', 'r')
+            ->where('r.user = :user')
+            ->setParameter('user', $poUser);
+
+        $laRecommendedOffers = array();
+        foreach ($loQuery->getQuery()->getScalarResult() as $laRecommendation) {
+            $laRecommendedOffers[] = $laRecommendation['id'];
+        }
+
+        return $laRecommendedOffers;
+    } // getRecommendedIdsByUser
 }

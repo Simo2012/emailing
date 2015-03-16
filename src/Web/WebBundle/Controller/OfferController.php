@@ -36,6 +36,10 @@ class OfferController extends Controller
         // ==== Lecture des 6 dernieres offres ====
         $loOffers = $loManager->getRepository('WebWebBundle:Offer')->getLast(6, $lsLocale);
 
+        // ==== Lecture des recommandations de l'utilisateur ====
+        $laRecommendedOffers = $loManager->getRepository('WebWebBundle:Offer')
+                                         ->getRecommendedIdsByUser($loUser);
+
         // ==== Calcul des gains pas mois ====
         $liAvailableAmount = $loUser->getAvailableAmount();
         $laEarningsByMonth = array();
@@ -51,10 +55,12 @@ class OfferController extends Controller
         }
 
         return array(
-            'earnings'        => $laEarningsByMonth,
-            'availableAmount' => $liAvailableAmount,
-            'offers'          => $loOffers,
-            'months'          => $laMonths
+            'earnings'          => $laEarningsByMonth,
+            'availableAmount'   => $liAvailableAmount,
+            'offers'            => $loOffers,
+            'recommendedOffers' => $laRecommendedOffers,
+            'months'            => $laMonths,
+            'from'              => 'index'
         );
     } // indexAction
 
@@ -90,9 +96,10 @@ class OfferController extends Controller
                               ->searchByCategory($lsCategory, $lsLocale);
 
         return array(
-            'categories'        => $this->container->getParameter('web.offerCategory'),
-            'offers'            => $loOffers,
-            'categoryActive'    => $lsCategory
+            'categories'     => $this->container->getParameter('web.offerCategory'),
+            'offers'         => $loOffers,
+            'categoryActive' => $lsCategory,
+            'from'           => 'list'
         );
     }// indexAction
 

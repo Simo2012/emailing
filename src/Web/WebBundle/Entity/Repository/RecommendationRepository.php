@@ -29,7 +29,8 @@ class RecommendationRepository extends EntityRepository
     } //getAll
     
     /**
-     * Il retourne la liste des recommandation faite par ce utilisateur pour ces contacts 
+     * Retourne la liste des recommandations faites par un utilisateur pour ses contacts
+     *
      * @param type $poUser
      * @return type
      */
@@ -37,7 +38,7 @@ class RecommendationRepository extends EntityRepository
     {
         $loQuery = $this->createQueryBuilder('r')
                         ->select('r, o, c')
-                        ->leftjoin('r.offer', 'o')
+                        ->join('r.offer', 'o')
                         ->leftjoin('r.contact', 'c')
                         ->where('r.user = :user')
                         ->setParameter('user', $poUser)

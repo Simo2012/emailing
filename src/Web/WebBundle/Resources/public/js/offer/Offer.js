@@ -51,7 +51,9 @@ Offer.prototype = {
             $(this).toggleClass('RBZ_open');
             return false;
         });
-        
+
+        // ==== Gestion des recommandations Twitter ====
+        Offer.prototype._manageTwitterButton();
     }, // ready
     
     // ==== Gestion du bouton post sur facebook ====
@@ -67,6 +69,36 @@ Offer.prototype = {
         });
 
     }, // _manageFacebookButton
+
+    _manageTwitterButton: function()
+    {
+        // ==== Gestion des recommandation Twitter ====
+        // ---- Catch du clic et appel de l'action du controller qui se
+        // charge de construire puis appeler l'url de partage Twitter ----
+        var controllerUrl = '';
+        $(document).on('click', 'a.RBZ_twitter', function(event){
+            controllerUrl = $(this).attr('href');
+            window.open(controllerUrl, 'Tweet', 'width=550, height=420');
+            return false;
+        });
+        // ---- Définition de la callback qui observe la réponse de l'API Twitter pour
+        // déterminer si l'offre à bien été postée (Clic sur "Tweeter" dans la popup) ----
+        var callback = function(e){
+            if(e && e.data){
+                var data;
+                try{
+                    data = JSON.parse(e.data);
+                }catch(e){
+                    // Don't care.
+                }
+                if(data && data.params && data.params.indexOf('tweet') > -1){
+                    window.location = controllerUrl + '?tweeted=tweeted'
+                }
+            }
+        };
+        // ---- Mise en place de l'event listener qui se charge d'écouter l'API et d'exécuter la callback ----
+        window.addEventListener ? window.addEventListener("message", callback, !1) : window.attachEvent("onmessage", callback);
+    }, // _manageTwitterButton
 
     /**
      * Token de fin
