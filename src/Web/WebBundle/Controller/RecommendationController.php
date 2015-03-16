@@ -125,9 +125,13 @@ class RecommendationController extends Controller
         $loUser = $this->getUser();
         // ---- Récupération de l'id si soumission ----
         $lsPostId = $this->getRequest()->query->get('post_id');
-
+        // ==== Enregistrement de la recommandation fb ====
+        $loRecommendation = $loManager->getRepository('WebWebBundle:Recommendation')->findOneBy(
+                array('user' => $loUser, 'offer' => $loOffer, 'type' => 'facebook')
+        );
         // ---- l'user à publié sur son mur ----
-        if (isset($lsPostId) && !empty($lsPostId)) {
+        if (isset($lsPostId) && !empty($lsPostId) && empty($loRecommendation)) {
+            // ==== Enregistrement de la recommandation fb ====
             $loRecommendation = new Recommendation();
             $loRecommendation->setUser($loUser);
             $loRecommendation->setOffer($loOffer);
