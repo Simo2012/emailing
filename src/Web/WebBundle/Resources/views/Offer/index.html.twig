@@ -62,13 +62,20 @@
         <div class="KNS_grid2">
             {# Inclusion de la macro des offres  #}
             {% for offer in offers %}
-                {% if offer.id in recommendedOffers %}
+                {% if offer.id in recommendedOffers | keys %}
                     {% set recommended = true %}
+                    {% set type = recommendedOffers[offer.id] %}
                 {% else %}
                     {% set recommended = false %}
+                    {% set type = [] %}
                 {% endif %}
             <div>
-                {{ macro.offer(offer, recommended, from) }}
+                <pre>
+                {{ dump(recommended) }}
+                {{ dump(type) }}
+                {{ dump(type | length) }}
+                </pre>
+                {{ macro.offer(offer, recommended, type, from) }}
             </div>
             {% endfor %}
         </div>

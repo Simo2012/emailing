@@ -68,14 +68,14 @@ class OfferRepository extends EntityRepository
     public function getRecommendedIdsByUser($poUser)
     {
         $loQuery = $this->createQueryBuilder('o')
-            ->select('o.id')
-            ->leftjoin('o.recommendations', 'r')
-            ->where('r.user = :user')
-            ->setParameter('user', $poUser);
+                        ->select('o.id, r.type')
+                        ->leftjoin('o.recommendations', 'r')
+                        ->where('r.user = :user')
+                        ->setParameter('user', $poUser);
 
         $laRecommendedOffers = array();
         foreach ($loQuery->getQuery()->getScalarResult() as $laRecommendation) {
-            $laRecommendedOffers[] = $laRecommendation['id'];
+            $laRecommendedOffers[$laRecommendation['id']][] = $laRecommendation['type'];
         }
 
         return $laRecommendedOffers;
