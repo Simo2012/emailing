@@ -85,7 +85,11 @@ web.web.default.index.footerAdv:      Annonceurs
 web.web.default.index.footerCopy:     "&copy; 2014 <strong>Rubizz</strong> by Natexo. Tous droits réservés"
 web.web.default.index.footerLegal:    Mentions légales
 web.web.default.index.footerGtu:      "Conditions générales d'utilisation"
-
+# ============ Contact form popup ============
+web.web.default.contact.title:  CONTACTEZ-NOUS
+web.web.default.contact.send:   ENVOYER
+web.web.default.contact.subject: L'objet de votre demande
+web.web.default.contact.message: Votre message
 
 # ============ OFFER PAGE ============
 # ==== Offer Page (index) ====

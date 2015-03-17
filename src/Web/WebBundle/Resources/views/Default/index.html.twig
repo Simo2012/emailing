@@ -115,7 +115,7 @@
         <div id="div_RBZ_footerInside">
             <table id="table_RBZ_footerLinks">
             <tr><td><a href="#">{{ "web.web.default.index.footerAbout" | trans }}</a></td>
-                <td><a href="#">{{ "web.web.default.index.footerContact" | trans }}</a></td>
+                <td id="li_RBZ_contactPopupCall"><a href="#" hrefbis="{{ url("WebWebBundle_defaultContact") }}">{{ "web.web.default.index.footerContact" | trans }}</a></td>
             </tr>
             <tr><td><a href="#">{{ "web.web.default.index.footerHow" | trans }}</a></td>
                 <td><a href="#">{{ "web.web.default.index.footerJobs" | trans }}</a></td>
@@ -143,6 +143,7 @@
 {%     javascripts
     '@WebWebBundle/Resources/public/js/global/Global.js'
     '@WebWebBundle/Resources/public/js/default/Default.js'
+    '@WebWebBundle/Resources/public/js/global/Popup.js'
 %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
 {%     endjavascripts %}
@@ -150,6 +151,8 @@
         $(document).ready(function() {
             goGlobal.ready();
             goDefault.ready("{{ url('WebWebBundle_offerIndex') }}");
+            // ==== Formulaire de contact ====
+            goPopup.ready('#div_RBZ_registerShadow');
         });
     </script>
 </body>
