@@ -27,16 +27,16 @@
         <tbody>
             {% for commission in commissions %}
                 <tr class="RBZ_body">
-                    <td class="RBZ_name">{{commission.recommendation.offer.title}}</td>
-                    <td class="RBZ_amount">{{commission.AMOUNT}}€</td>
-                    {%set total = total + commission.AMOUNT %}
+                    <td class="RBZ_name">{{ commission.recommendation.offer.title }}</td>
+                    <td class="RBZ_amount">{{ commission.AMOUNT }}€</td>
+                    {% set total = total + commission.AMOUNT %}
                 </tr>
             {% endfor %}
         </tbody>
          <tfoot>
             <tr class="RBZ_footer">
                 <td>TOTAL</td>
-                <td class="RBZ_user_pot_soldcredit">{{total}}€</td>
+                <td class="RBZ_user_pot_soldcredit">{{ total }}€</td>
             </tr>
         </tfoot>
     </table>
