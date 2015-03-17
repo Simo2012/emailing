@@ -152,6 +152,7 @@ Popup.prototype = {
         $(document).on("click", "#li_RBZ_contactPopupCall a", function() {
             var lsUrl = $(this).attr('hrefbis');
             Popup.prototype.ajaxPopupContact(lsUrl);
+            scroll(0, 0);
             return false;
         });
     }, // _manageContactPopupOpening
