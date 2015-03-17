@@ -54,4 +54,24 @@ class ContactRepository extends EntityRepository
 
         return $loQuery->getQuery()->getScalarResult();
     } // countByUser
+
+    /**
+     * Lecture du nombre de contacts actifs d'un utilisateur
+     *
+     * @param $poUser
+     * @return array
+     */
+    public function getActiveNumberByUser($poUser)
+    {
+        $loQuery = $this->createQueryBuilder('c')
+                        ->select('count(c)')
+                        ->where('c.subscriber = 1')
+                        ->andWhere('c.directUnsubscribe = 0')
+                        ->andWhere('c.user = :user')
+                        ->setParameter('user', $poUser);
+
+        $laResult = $loQuery->getQuery()->getScalarResult();
+
+        return $laResult[0][1];
+    } // getActiveNumberByUser
 }

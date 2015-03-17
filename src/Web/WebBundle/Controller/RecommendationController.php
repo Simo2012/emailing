@@ -52,6 +52,7 @@ class RecommendationController extends Controller
      * Recommandation par Twitter
      *
      * @param $piOfferId
+     * @param $psFrom
      * @return RedirectResponse
      */
     public function recommendByTwitterAction($piOfferId, $psFrom)
@@ -87,16 +88,14 @@ class RecommendationController extends Controller
             return $this->redirect($lsUrl);
         }
 
-        if ($psFrom == 'index') {
-            return $this->redirect($this->generateUrl('WebWebBundle_offerIndex'));
-        } elseif ($psFrom == 'list') {
-            return $this->redirect($this->generateUrl('WebWebBundle_offerList'));
-        }
+        return $this->redirect($this->generateUrl('WebWebBundle_offer'.ucfirst($psFrom)));
     } // recommendByTwitter
-    
+
     /**
-     * Publication sur Facebook
+     * Recommendation par Facebook - Publication
      *
+     * @param $piOfferId
+     * @param $psFrom
      * @return string
      */
     public function recommendByFacebookAction($piOfferId, $psFrom)
@@ -111,10 +110,12 @@ class RecommendationController extends Controller
         return $this->redirect($lsUrl);
 
     } // recommendByFacebookAction
-    
+
     /**
-     * Retour de publication sur Facebook
+     * Recommendation par Facebook - Retour de publication
      *
+     * @param $piOfferId
+     * @param $psFrom
      * @return string
      */
     public function addRecommendationByFacebookAction($piOfferId, $psFrom)
@@ -146,9 +147,37 @@ class RecommendationController extends Controller
         
         return new Response("<script language='javascript'>window.close()</script>");
     } // addRecommendationByFacebookAction
-    
-    public function recommendByEmail($piOfferId)
-    {
 
+    /**
+     * Recommendation par email
+     *
+     * @param $piOfferId
+     * @param $psFrom
+     * @return RedirectResponse
+     */
+    public function recommendByEmailAction($piOfferId, $psFrom)
+    {
+        // ==== Initialisation ====
+        $loManager = $this->getDoctrine()->getManager();
+        $loOffer   = $loManager->getRepository('WebWebBundle:Offer')->find($piOfferId);
+        $loUser    = $this->getUser();
+
+        // ==== Enregistrement du tweet ====
+        $loRecommendation = $loManager->getRepository('WebWebBundle:Recommendation')->findOneBy(
+            array('user' => $loUser, 'offer' => $loOffer, 'type' => 'email')
+        );
+        if (empty($loRecommendation)) {
+            $loRecommendation = new Recommendation();
+            $loRecommendation->setDateCreate(new \DateTime())
+                             ->setUser($loUser)
+                             ->setOffer($loOffer)
+                             ->setType('email')
+                             ->setToSend(true);
+            $loManager->persist($loRecommendation);
+            $loUser->setUseTwitter(true);
+            $loManager->flush();
+        }
+
+        return $this->redirect($this->generateUrl('WebWebBundle_offer'.ucfirst($psFrom)));
     } // recommendByEmail
 }

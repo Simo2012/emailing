@@ -30,6 +30,12 @@ web.web.form.ok:            Success
 layout.myKitty:             My piggy bank
 layout.mailingList:         Mailing list
 
+# ============ POPUP ============
+# ==== Confirmation ====
+web.web.popup.confirmation.title:          CONFIRMATION DEMAND
+web.web.popup.confirmation.cancel_button:  CANCEL
+web.web.popup.confirmation.confirm_button: CONFIRM
+
 # ============ SECURITY PAGE ============
 # ==== Login/Inscription ====
 web.web.security.login.baseline:        WELCOME BACK TO RUBIZZ
@@ -54,9 +60,7 @@ web.web.security.legal_terms:           terms of use
 web.web.security.have_account:          Already have an account?
 web.web.security.connect:               Log in
 
-#====================
-# Default contrôleur
-#====================
+# ============ DEFAULT PAGE ============
 # ---- Page d'accueil ----
 web.web.default.index.headerText:     "Earn money<br />by recommending<br />deals to your friends"
 web.web.default.index.headerButton:   Start for free
@@ -133,6 +137,7 @@ web.web.offer.macro.recommended:                     SENT
 web.web.offer.macro.facebook_publishing:             Publish on Facebook
 web.web.offer.macro.twitter_publishing:              Publish on Twitter
 web.web.offer.macro.mailing:                         Send to my mailling List
+web.web.offer.macro.email_confirm_message:           Do you wish to recommend this offer to your <strong>%number% contacts</strong> ?
 
 # ============ USER PAGE ============
 # ==== RIB ====
@@ -168,16 +173,17 @@ web.web.user.pot.credit: CREDIT
 web.web.user.pot.solde: BALANCE
 web.web.user.pot.info: "This section shows all your Piggy Bank transactions: Made recommendations, completed payments…Click on the operation detail to view your commission for each recommendation. As long as you have a minimum of 50&euro;, you may at any moment redeem the balance shown in the &laquo;Redeem my piggy bank&raquo; section."
 web.web.user.pot.recommandation_name: RECOMMANDATION NAME
-web.web.user.pot.recommandation.mt: amount
-web.web.user.pot.paiement: PAYMENT
-web.web.user.pot.paiement.mt: AMOUNT
+web.web.user.pot.recommandation.amount: amount
+web.web.user.pot.payment: PAYMENT
+web.web.user.pot.payment.amount: AMOUNT
 web.web.user.pot.credit.title: Transaction Summary per Recommendation
 web.web.user.pot.debit.title: Transaction Details
 web.web.user.pot.mounth: MONTH
-web.web.user.pot.movement.name.payment: Received Payment
-web.web.user.pot.movement.name.commission: Received Commission
-web.web.user.pot.paiement.word1: Payment to the
-web.web.user.pot.paiement.word2: account made on
+web.web.user.pot.movement.payment: Received Payment
+web.web.user.pot.movement.commission: Received Commission
+web.web.user.pot.payment.word1: Payment to the
+web.web.user.pot.payment.word2: account made on
+web.web.user.pot.movement.popup.title: Detail of movements
 
 # ==== Coordonnées ====
 web.web.user.details.title:                      Information

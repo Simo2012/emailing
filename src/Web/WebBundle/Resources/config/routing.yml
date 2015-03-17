@@ -114,24 +114,31 @@ WebWebBundle_contactUnsubscribe:
 WebWebBundle_recommendationIndex:
     path:     /recommendation/index
     defaults: { _controller: "WebWebBundle:Recommendation:index" }
-# ---- Recommandation Twitter ----
+# ---- Recommandation par Twitter ----
 WebWebBundle_recommendationRecommendByTwitter:
     path:     /recommendation/recommendByTwitter/{piOfferId}/{psFrom}
     defaults: { _controller: "WebWebBundle:Recommendation:recommendByTwitter", psFrom: 'index' }
     requirements:
         piOfferId: \d+
         piFrom: \w+
-# ---- Recommandation Faceboook ----
+# ---- Recommandation par Faceboook ----
 WebWebBundle_recommendByFacebook:
     path:     /recommendation/recommendByFacebook/{piOfferId}/{psFrom}
     defaults: { _controller: "WebWebBundle:Recommendation:recommendByFacebook", psFrom: 'index' }
     requirements:
         piOfferId: \d+
         piFrom: \w+
-# ---- Recommandation Faceboook (après soummission) ----
+# ---- Recommandation par Faceboook (après soummission) ----
 WebWebBundle_addRecommendationByFacebook:
     path:     /recommendation/addRecommendationByFacebook/{piOfferId}/{psFrom}
     defaults: { _controller: "WebWebBundle:Recommendation:addRecommendationByFacebook", psFrom: 'index' }
+    requirements:
+        piOfferId: \d+
+        piFrom: \w+
+# ---- Recommandation par email ----
+WebWebBundle_recommendationRecommendByEmail:
+    path:     /recommendation/recommendByEmail/{piOfferId}/{psFrom}
+    defaults: { _controller: "WebWebBundle:Recommendation:recommendByEmail", psFrom: 'index' }
     requirements:
         piOfferId: \d+
         piFrom: \w+

@@ -18,14 +18,12 @@ Pot.prototype = {
      */
     ready: function ()
     {
-        $(".RBZ_user_pot_mtd").click(function () {
-            console.log(($(this).attr('hrefbis')));
+        $(".RBZ_user_pot_debit").click(function () {
             goPopup.ajaxPopup($(this).attr('hrefbis'));
 
             return false;
         });
-        $(".RBZ_user_pot_mtc").click(function () {
-            console.log(($(this).attr('hrefbis')));
+        $(".RBZ_user_pot_credit").click(function () {
             goPopup.ajaxPopup($(this).attr('hrefbis'));
 
             return false;

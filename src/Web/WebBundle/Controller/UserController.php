@@ -127,7 +127,7 @@ class UserController extends Controller
         $loManager = $this->getDoctrine()->getManager();
         $loUser = $this->getUser();
         $loBuilder = $loManager->getRepository('WebWebBundle:Movement')->getAllByUser($loUser);
-        $liNbItems = 3;
+        $liNbItems = 5;
         Paginator::paginate($poRequest, $liPage, $liNbItems);
         $loPaginator = new Paginator($loBuilder);
         $loPaginator->setPage($liPage);
@@ -159,7 +159,7 @@ class UserController extends Controller
 
         // ==== recuperation des paiements ====
         $loPaymentRequest = $loManager->getRepository('WebWebBundle:PaymentRequest')->findBy(
-                array('user' => $loUser), array('dateCreate' => 'desc'), 10, 0
+            array('user' => $loUser), array('dateCreate' => 'desc'), 10, 0
         );
 
         return array(

@@ -35,9 +35,16 @@ Popup.prototype = {
         
         // ==== Popup Commune ====
         // fermeture popup
-        $(document).on("click", "#a_RBZ_commonPopupClose, button#RBZ_closePopupButton", this.ajaxPopupClose);
+        $(document).on("click", "#a_RBZ_commonPopupClose, button#RBZ_closePopupButton", function() {
+            if ($(this).hasClass('RBZ_hide_popup')) {
+                Popup.prototype.popupClose();
+                return false;
+            } else {
+                Popup.prototype.ajaxPopupClose();
+            }
+        });
         
-        //appel ajax popup
+        // ==== Appel ajax popup ====
         $("a.RBZ_ajaxPopup").click(function() {
             var lsUrl = $(this).attr('hrefbis');
             Popup.prototype.ajaxPopup(lsUrl);
@@ -65,6 +72,7 @@ Popup.prototype = {
             var liWidth = $("#div_RBZ_commonPopup").width(), liDocumentWidth = $(window).width(), liLeft = 0;
             if (liWidth < liDocumentWidth) liLeft = Math.round((liDocumentWidth - liWidth) / 2);
             $("#div_RBZ_commonPopup").css('left', liLeft);
+            $("#div_RBZ_commonPopup").show();
 
             // ==== Appel de la closure de fin de chargement ====
             if (poClosure != undefined) {
@@ -72,54 +80,6 @@ Popup.prototype = {
             }
         });
     }, // ajaxPopup
-    
-    /**
-     * Validation d'un formulaire dans une popup
-     */
-    ajaxPopSubmit: function(psFormName, pbRefresh, poClosure)
-    {
-        var loForm = $("#" + psFormName);
-        var loData = new FormData(loForm[0]);
-        $.ajax({
-            url: loForm.attr('action'),
-            type: 'POST',
-            data: loData,
-            cache: false,
-            contentType: false,
-            processData: false,
-            success: function(psReturn) {
-                if ('OK' == psReturn) {
-                    $("#div_RBZ_commonPopup").remove();
-                    $("#div_RBZ_commonShadow").hide();
-                    if (pbRefresh == true) {
-                        location.reload();
-                    } else if (pbRefresh != undefined) {
-                        window.location = pbRefresh;
-                    }
-
-                    // ==== Appel de la closure de fin de chargement ====
-                    if (poClosure != undefined) {
-                        poClosure();
-                    }
-                } else {
-                    $("#div_RBZ_commonPopup").remove();
-                    $("#section_RBZ_main").append(psReturn);
-
-                    // ==== Centrage ====
-                    var liWidth = $("#div_RBZ_commonPopup").width(), liDocumentWidth = $(document).width(), liLeft = 0;
-                    if (liWidth < liDocumentWidth) liLeft = Math.round((liDocumentWidth - liWidth) / 2);
-                        $("#div_RBZ_commonPopup").css('left', liLeft);
-
-
-                    // ==== Appel de la closure de fin de chargement ====
-                    if (poClosure != undefined) {
-                        poClosure();
-                    }
-                }
-                $(document).scrollTop(0);
-            }
-        });
-    }, // ajaxPopSubmit
 
     /**
     * Fermeture de la popup
@@ -130,6 +90,57 @@ Popup.prototype = {
         $("#div_RBZ_commonShadow").hide();
         return false;
     }, // ajaxPopupClose
+
+    /**
+     * Fermeture de la popup
+     */
+    popupClose: function()
+    {
+        $("#div_RBZ_commonPopup").hide();
+        $("#div_RBZ_commonShadow").hide();
+        return false;
+    }, // ajaxPopupClose
+
+    /**
+     * Popup de confirmation
+     *
+     * @param msg
+     * @param successClosure
+     * @param errorClosure
+     */
+    confirm: function(msg, successClosure, errorClosure)
+    {
+        // ==== Dimensionnement du shadow ====
+        $("#div_RBZ_commonShadow").css({ width : $(document).width(), height : $(document).height() });
+
+        // ==== Centrage ====
+        var liWidth = $("#div_RBZ_commonPopup").width();
+        var liDocumentWidth = $(window).width();
+        var liLeft = 0;
+        if (liWidth < liDocumentWidth) {
+            liLeft = Math.round((liDocumentWidth - liWidth) / 2);
+        }
+
+        $("#div_RBZ_commonPopup").css('left', liLeft);
+        $('#div_RBZ_commonShadow').show();
+
+        $('#div_RBZ_commonPopup #div_RBZ_commonPopupContent div.RBZ_confirm_popup_content').html(msg);
+        $('#div_RBZ_commonPopup').show();
+
+        $('#div_RBZ_commonPopup button.RBZ_validate').unbind().click(function() {
+            $('#div_RBZ_commonPopup').hide();
+            $('#div_RBZ_commonShadow').hide();
+            successClosure();
+        });
+
+        $('#div_RBZ_commonPopup button.RBZ_cancel').unbind().click(function() {
+            $('#div_RBZ_commonPopup').hide();
+            $('#div_RBZ_commonShadow').hide();
+            if (errorClosure != undefined) {
+                errorClosure();
+            }
+        });
+    }, // confirm
     
     
     /**

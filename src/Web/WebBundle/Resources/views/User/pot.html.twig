@@ -35,19 +35,19 @@
             <th>{{ 'web.web.user.pot.credit' | trans }}</th>
             <th>{{ 'web.web.user.pot.solde' | trans }}</th>
         </tr>
-        {% for movement  in movements %}
+        {% for movement in movements %}
             <tr>
                 <td>{{ movement.dateMovement | date("d.m.Y") }}</td>
 
-                {%   if movement.movementType == 'payment' %}
-                    <td>{{ 'web.web.user.pot.movement.name.payment' | trans }}</td>
-                    <td><a class="RBZ_user_pot_mtd" href="#" hrefbis="{{ url("WebWebBundle_userPot",{"piType": 'debit', "piDate": movement.dateMovement | date("m.Y")}) }}">{{ movement.amountMovement }} €</a></td>
-                    <td><a class="RBZ_user_pot_mtc" href="#"></a></td>
+                {% if movement.movementType == 'payment' %}
+                    <td>{{ 'web.web.user.pot.movement.payment' | trans }}</td>
+                    <td><a class="RBZ_user_pot_debit" href="#" hrefbis="{{ url("WebWebBundle_userPot",{"piType": 'debit', "piDate": movement.dateMovement | date("m.Y")}) }}">{{ movement.amountMovement }} €</a></td>
+                    <td><a class="RBZ_user_pot_credit" href="#"></a></td>
                     <td class="RBZ_user_pot_sold{{'debit'}}">- {{ movement.amountMovement }} €</td>
                 {% else %}
-                    <td>{{ 'web.web.user.pot.movement.name.commission' | trans }}</td>
-                    <td><a class="RBZ_user_pot_mtd" href="#"></a></td>
-                    <td><a class="RBZ_user_pot_mtc" href="#" hrefbis="{{ url("WebWebBundle_userPot",{"piType": 'credit', "piDate": movement.dateMovement | date("m.Y")}) }}">{{ movement.amountMovement }} €</a></td>
+                    <td>{{ 'web.web.user.pot.movement.commission' | trans }}</td>
+                    <td><a class="RBZ_user_pot_debit" href="#"></a></td>
+                    <td><a class="RBZ_user_pot_credit" href="#" hrefbis="{{ url("WebWebBundle_userPot",{"piType": 'credit', "piDate": movement.dateMovement | date("m.Y")}) }}">{{ movement.amountMovement }} €</a></td>
                     <td class="RBZ_user_pot_sold{{'credit'}}">+ {{ movement.amountMovement }} €</td>
                 {%endif %}
 
@@ -55,6 +55,4 @@
         {% endfor %}
     </table>
     {{ macro.pagination(movements) }}
-
-
 {% endblock %}

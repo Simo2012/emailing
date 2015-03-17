@@ -54,13 +54,20 @@ class OfferController extends Controller
             $laMonths[] = $loTranslator->trans('web.web.offer.list.month.' . $liMonth);
         }
 
+        $liUserContactsNumber = $loManager->getRepository('WebWebBundle:Contact')->getActiveNumberByUser($loUser);
+        $lsEmailConfirmMessage = $loTranslator->trans(
+            'web.web.offer.macro.email_confirm_message',
+            array('%number%' => $liUserContactsNumber)
+        );
+
         return array(
-            'earnings'          => $laEarningsByMonth,
-            'availableAmount'   => $liAvailableAmount,
-            'offers'            => $loOffers,
-            'recommendedOffers' => $laRecommendedOffers,
-            'months'            => $laMonths,
-            'from'              => 'index'
+            'earnings'            => $laEarningsByMonth,
+            'availableAmount'     => $liAvailableAmount,
+            'offers'              => $loOffers,
+            'recommendedOffers'   => $laRecommendedOffers,
+            'months'              => $laMonths,
+            'emailConfirmMessage' => $lsEmailConfirmMessage,
+            'from'                => 'index'
         );
     } // indexAction
 

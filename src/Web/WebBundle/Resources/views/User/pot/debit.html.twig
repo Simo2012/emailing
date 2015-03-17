@@ -1,51 +1,42 @@
-{% extends "@WebWeb/layoutPopupCagnotte.html.twig" %}
+{% extends "@WebWeb/layoutPopup.html.twig" %}
 
 {% block STYLE %}width:880px;height:600px;{% endblock %}
 {% block TITLE %}
-    Détail des mouvements
+    {{ 'web.web.user.pot.movement.popup.title' | trans }}
 {% endblock %}
 {% block CSS %}
     {{ parent() }}
-    {% stylesheets
-    '@WebWebBundle/Resources/public/css/user/pot.scss'
-    %}
+    {% stylesheets '@WebWebBundle/Resources/public/css/user/pot.scss' %}
     <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
     {% endstylesheets %}
 {% endblock %}
 {% block CONTENT %}
     <div class="RBZ_user_pot_d_header">
         <div class="RBZ_user_pot_cd_header_title">
-
-
             <h3>{{ 'web.web.user.pot.debit.title' | trans }}</h3>
-
         </div>
     </div>
-    <table id="table_RBZ_potDC" class="RBZ_table">
+    <table id="table_RBZ_pot_movements" class="RBZ_table">
         <thead>
-
-
-            <tr class="table_RBZ_pot_tr_popup">
-                <th class="table_RBZ_pot_td1_popup">{{ 'web.web.user.pot.paiement' | trans }}</th>
-                <th class="table_RBZ_pot_td2_popup">{{ 'web.web.user.pot.paiement.mt' | trans }}</th>
-
+            <tr class="RBZ_header">
+                <th class="RBZ_name">{{ 'web.web.user.pot.payment' | trans }}</th>
+                <th class="RBZ_amount">{{ 'web.web.user.pot.amount' | trans }}</th>
             </tr>
         </thead>
-       
-         {%set total = 0%}
+        {% set total = 0 %}
         <tbody>
             {% for paymentrequest in invoiceRequests %}
-                <tr class="table_RBZ_pot_tr_popup">
-                    <td class="table_RBZ_pot_td1_popup">{{ 'web.web.user.pot.paiement.word1' | trans }} {{paymentrequest.bankName}} {{ 'web.web.user.pot.paiement.word2' | trans }} {{paymentrequest.dateCreate | date("d.m.Y") }}</td>
-                    <td class="table_RBZ_pot_td2_popup"> {{paymentrequest.amount}}€</td>
-                    {%set total = total  + paymentrequest.amount %}
+                <tr class="RBZ_body">
+                    <td class="RBZ_name">{{ 'web.web.user.pot.payment.word1' | trans }} {{paymentrequest.bankName}} {{ 'web.web.user.pot.payment.word2' | trans }} {{paymentrequest.dateCreate | date("d.m.Y") }}</td>
+                    <td class="RBZ_amount"> {{paymentrequest.amount}}€</td>
+                    {%set total = total + paymentrequest.amount %}
                 </tr>
             {% endfor %}
         </tbody>
          <tfoot>
-            <tr>
+            <tr class="RBZ_footer">
                 <td>TOTAL</td>
-                <td class="RBZ_user_pot_solddebit">{{total}} €</td>
+                <td class="RBZ_total">{{total}} €</td>
             </tr>
         </tfoot>
     </table>

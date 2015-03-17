@@ -1,0 +1,14 @@
+{% extends "@WebWeb/layoutPopup.html.twig" %}
+
+{% block STYLE %}{% endblock %}
+{% block CLASS %}RBZ_hide_popup{% endblock %}
+{% block TITLE %}
+    {{ 'web.web.popup.confirmation.title' | trans }}
+{% endblock %}
+{% block CONTENT %}
+    <div class="RBZ_confirm_popup_content"></div>
+{% endblock %}
+{% block SUBMIT %}
+    <button type="button" class="RBZ_cancel">{{ 'web.web.popup.confirmation.cancel_button' | trans }}</button>
+    <button type="button" class="RBZ_validate">{{ 'web.web.popup.confirmation.confirm_button' | trans }}</button>
+{% endblock %}

@@ -2,10 +2,11 @@
 -- Table des recommandations
 -- ===========================
 CREATE TABLE IF NOT EXISTS RUBIZZ.recommendation (
-    id           int(10) unsigned     NOT NULL AUTO_INCREMENT COMMENT 'Unique id',
-    user_id      int(10) unsigned     NOT NULL COMMENT 'Corresponding user',
-    offer_id     int(10) unsigned     NOT NULL COMMENT 'Corresponding offer',
+    id           int(10)    unsigned  NOT NULL AUTO_INCREMENT COMMENT 'Unique id',
+    user_id      int(10)    unsigned  NOT NULL COMMENT 'Corresponding user',
+    offer_id     int(10)    unsigned  NOT NULL COMMENT 'Corresponding offer',
     type         enum('email', 'facebook', 'twitter') NOT NULL COMMENT 'Type of recommendation',
+    to_send      tinyint(3) unsigned  NOT NULL DEFAULT 0 COMMENT 'Recommendation of type email sending status',
     date_create  datetime             NOT NULL COMMENT 'Creation date',
 
     PRIMARY KEY (id),

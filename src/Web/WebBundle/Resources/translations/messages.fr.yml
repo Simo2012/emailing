@@ -30,6 +30,11 @@ web.web.form.ok:            Enregistrement réussi
 layout.myKitty:             Ma cagnotte
 layout.mailingList:         Mailing list
 
+# ============ POPUP ============
+# ==== Confirmation ====
+web.web.popup.confirmation.title:          DEMANDE DE CONFIRMATION
+web.web.popup.confirmation.cancel_button:  ANNULER
+web.web.popup.confirmation.confirm_button: CONFIRMER
 
 # ============ SECURITY PAGE ============
 # ==== Login/Inscription ====
@@ -132,6 +137,7 @@ web.web.offer.macro.recommended:                     ENVOYÉ
 web.web.offer.macro.facebook_publishing:             Publier sur Facebook
 web.web.offer.macro.twitter_publishing:              Publier sur Twitter
 web.web.offer.macro.mailing:                         Envoyer à ma mailing List
+web.web.offer.macro.email_confirm_message:           Souhaitez-vous recommander cette offre à vos <strong>%number% contacts</strong> ?
 
 # ============ USER PAGE ============
 # ==== RIB ====
@@ -182,16 +188,16 @@ web.web.user.pot.credit: CREDIT
 web.web.user.pot.solde: SOLDE
 web.web.user.pot.info: "Cette rubrique regroupe tous les mouvements de votre cagnotte: Recommandations effectuées, paiement reçues... Cliquez sur le détail de l'opération pour visualiser les commissions par recommandations. Vous pouvez à tout moment récupérer le solde du dans la rubrique &laquo;Encaisser ma cagnotte&raquo; sous réserve que le montant mimimum de 50€ soit atteint."
 web.web.user.pot.recommandation_name: NOM RECOMMANDATION
-web.web.user.pot.recommandation.mt: MONTANT
-web.web.user.pot.paiement: PAIEMENT
-web.web.user.pot.paiement.mt: MONTANT
+web.web.user.pot.payment: PAIEMENT
+web.web.user.pot.amount: MONTANT
 web.web.user.pot.credit.title: Récapitulatif des mouvements par recommandation
 web.web.user.pot.debit.title: Récapitulatif des paiments effectués
 web.web.user.pot.mounth: MOIS
-web.web.user.pot.movement.name.payment: Paiements reçus
-web.web.user.pot.movement.name.commission: Commissions perçues
-web.web.user.pot.paiement.word1: Paiement sur le compte
-web.web.user.pot.paiement.word2: du
+web.web.user.pot.movement.payment: Paiements reçus
+web.web.user.pot.movement.commission: Commissions perçues
+web.web.user.pot.payment.word1: Paiement sur le compte
+web.web.user.pot.payment.word2: du
+web.web.user.pot.movement.popup.title: Détail des mouvements
 # ============ CONTACT PAGE ============
 # ==== Index ====
 web.web.contact.index.mailing_list.title:             Mailing list

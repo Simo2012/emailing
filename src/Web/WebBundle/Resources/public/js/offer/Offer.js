@@ -54,25 +54,17 @@ Offer.prototype = {
 
         // ==== Gestion des recommandations Twitter ====
         Offer.prototype._manageTwitterButton();
-    }, // ready
-    
-    // ==== Gestion du bouton post sur facebook ====
-    _manageFacebookButton: function()
-    {
-       // ==== Gestion des recommandation Facebook ====
-        var facebookUrl = '';
-        $(document).on('click', 'a.RBZ_facebook', function() {
-            facebookUrl = $(this).attr('href');
-            window.open(facebookUrl, 'Facebook', 'width=550, height=420');
-            
-            return false;
-        });
 
-    }, // _manageFacebookButton
+        // ==== Gestion des recommandations Facebook ====
+        Offer.prototype._manageFacebookButton();
+
+        // ==== Gestion des recommandations Email ====
+        Offer.prototype._manageEmailButton();
+    }, // ready
 
     _manageTwitterButton: function()
     {
-        // ==== Gestion des recommandation Twitter ====
+        // ==== Gestion des recommandations Twitter ====
         // ---- Catch du clic et appel de l'action du controller qui se
         // charge de construire puis appeler l'url de partage Twitter ----
         var controllerUrl = '';
@@ -104,6 +96,41 @@ Offer.prototype = {
         window.addEventListener ? window.addEventListener("message", callback, !1) : window.attachEvent("onmessage", callback);
     }, // _manageTwitterButton
 
+    _manageFacebookButton: function()
+    {
+        // ==== Gestion des recommandations Facebook ====
+        var facebookUrl = '';
+        $(document).on('click', 'a.RBZ_facebook', function() {
+            facebookUrl = $(this).attr('href');
+            window.open(facebookUrl, 'Facebook', 'width=550, height=420');
+
+            return false;
+        });
+
+    }, // _manageFacebookButton
+
+    _manageEmailButton: function()
+    {
+        // ==== Gestion des recommandations Email ====
+        var controllerUrl = '';
+        $(document).on('click', 'a.RBZ_email', function() {
+            controllerUrl = $(this).attr('href');
+            console.log(controllerUrl);
+            goPopup.confirm(Offer.prototype._emailConfirmMessage, function() { window.location = controllerUrl; })
+            return false;
+        });
+    }, // _manageEmailButton
+
+    setEmailConfirmMessage: function(message)
+    {
+        Offer.prototype._emailConfirmMessage = message;
+    }, // setEmailConfirmMessage
+
+    /**
+     * Message de confirmation de la recommendation par email
+     */
+    _emailConfirmMessage: '',
+
     /**
      * Token de fin
      */
@@ -113,4 +140,3 @@ Offer.prototype = {
 //==== Définition de l'objet Offer goOffer ====
 var goOffer = new Offer();
 goOffer.ready();
-goOffer._manageFacebookButton();

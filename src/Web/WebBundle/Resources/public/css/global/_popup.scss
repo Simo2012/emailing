@@ -1,63 +1,84 @@
 @charset "UTF-8";
 
+/* ==== Popup fond commun ==== */
+#div_RBZ_commonShadow {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    z-index: 9;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
 /* ==== Popup commune ==== */
 #div_RBZ_commonPopup {
-    min-height:300px;
-    min-width:540px;
-    position:absolute;
-    top:150px; left:200px;
-    border:1px solid $border-grey;
-    background-color:white;
-    z-index:100005;
+    display: none;
+    height: 250px;
+    width: 500px;
+    position: fixed;
+    border: 1px solid $border-grey;
+    box-shadow: 0px 0px 5px 2px $border-grey;
+    background-color: white;
+    z-index: 10;
     text-align: center;
-    
-    #div_RBZ_commonPopupTitle {
-        font-size:21px;
-        margin-top: 40px;
-        margin-bottom:20px;
-        font-weight:normal;
-        color:#071925;
-        text-shadow: 0 0 1px rgba(0,0,0,0.3);
-    }
-    
+    top: 200px;
+    margin: 0px auto 0px auto;
     #a_RBZ_commonPopupClose {
-        position:absolute;
-        width:41px;
-        height:40px;
-        top:-1px;
-        right:-1px;
-        background:url(/bundles/webweb/images/global/icons/close.png) no-repeat left top;
+        position: absolute;
+        width: 41px;
+        height: 40px;
+        top: -1px;
+        right: -1px;
+        background: url(/bundles/webweb/images/global/icons/close.png) no-repeat left top;
+    }
+    #div_RBZ_commonPopupTitle {
+        font-size: 21px;
+        height: 80px;
+        line-height: 80px;
+        font-weight: normal;
+        color: #071925;
+        text-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
     }
     #div_RBZ_commonPopupContent {
         border-top: 1px solid $border-grey;
         border-bottom: 1px solid $border-grey;
-        background-color: #F9F9F9; padding-top: 40px;
-        padding-bottom: 30px; min-height: 100px;
-    
-        #div_RBZ_commonPopupContentText {
-            max-width: 430px;
-            text-align: center;
-            padding-left: 100px;
+        height: 88px;
+        background-color: $gray-bg;
+        display: block;
+        position: relative;
+        width: 100%;
+        div.RBZ_confirm_popup_content {
+            width: 500px;
+            height: 86px;
+            display: table-cell;
+            vertical-align: middle;
+            margin: auto;
         }
     }
     #div_RBZ_commonPopupSubmit {
-        margin-top : 25px;
-    
-        button{
-            margin-right: 10px}
+        height: 80px;
+        line-height: 80px;
+        button {
+            display: inline-block;
+            margin: auto 5px auto 5px;
+            height: 30px;
+            width: 100px;
+            font-size: 12px;
+            &.RBZ_cancel {
+                color: $sub-menu;
+                background-color: $gray-bg;
+                border: 1px solid $border-grey;
+                border-radius: 2px;
+            }
+            &.RBZ_validate {
+                color: $white;
+                background-color: $red-banner;
+                border: 1px solid $red-banner;
+                border-radius: 2px;
+            }
+        }
     }
-}
-/* ==== Popup fond commun ==== */  
-#div_RBZ_commonShadow {
-    display:none;
-    position:absolute;
-    top:0px;
-    height:0px;
-    width:100%;
-    height:100%;
-    z-index:9;
-    background-color:#fff;
-    opacity:0.5;
 }
 
 /* ==== Popup Bouton commun ==== */  

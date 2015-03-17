@@ -1,54 +1,40 @@
-
-{% extends "@WebWeb/layoutPopupCagnotte.html.twig" %}
-
+{% extends "@WebWeb/layoutPopup.html.twig" %}
 
 {% block STYLE %}width:880px;height:600px;{% endblock %}
 {% block TITLE %}
-    Détail des mouvements
+    {{ 'web.web.user.pot.movement.popup.title' | trans }}
 {% endblock %}
 {% block CSS %}
     {{ parent() }}
-    {% stylesheets
-    '@WebWebBundle/Resources/public/css/user/pot.scss'
-    %}
+    {% stylesheets '@WebWebBundle/Resources/public/css/user/pot.scss' %}
     <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
     {% endstylesheets %}
 {% endblock %}
 {% block CONTENT %}
-
-
     <div class="RBZ_user_pot_c_header">
         <div class="RBZ_user_pot_cd_header_title">
-
-
             <h3>{{ 'web.web.user.pot.credit.title' | trans }}</h3>
-
         </div>
     </div>
-
-
-
-    <table id="table_RBZ_potDC" class="RBZ_table">
+    <table id="table_RBZ_pot_movements" class="RBZ_table">
         <thead>
-            <tr>
-                <th class="table_RBZ_pot_td1_popup">{{ 'web.web.user.pot.recommandation_name' | trans }}</th>
-                <th class="table_RBZ_pot_td2_popup">{{ 'web.web.user.pot.recommandation.mt' | trans }}</th>
-
+            <tr class="RBZ_header">
+                <th class="RBZ_name">{{ 'web.web.user.pot.recommandation_name' | trans }}</th>
+                <th class="RBZ_amount">{{ 'web.web.user.pot.amount' | trans }}</th>
             </tr>
         </thead>
-       {%set total = 0%}
+        {% set total = 0 %}
         <tbody>
             {% for commission in commissions %}
-                
-                <tr class="table_RBZ_pot_tr_popup">
-                    <td class="table_RBZ_pot_td1_popup">{{commission.recommendation.offer.title}}</td>
-                    <td class="table_RBZ_pot_td2_popup">{{commission.AMOUNT}}€</td>
-                    {%set total = total  + commission.AMOUNT %}
+                <tr class="RBZ_body">
+                    <td class="RBZ_name">{{commission.recommendation.offer.title}}</td>
+                    <td class="RBZ_amount">{{commission.AMOUNT}}€</td>
+                    {%set total = total + commission.AMOUNT %}
                 </tr>
             {% endfor %}
         </tbody>
          <tfoot>
-            <tr>
+            <tr class="RBZ_footer">
                 <td>TOTAL</td>
                 <td class="RBZ_user_pot_soldcredit">{{total}}€</td>
             </tr>

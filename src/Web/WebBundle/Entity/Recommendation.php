@@ -29,6 +29,13 @@ class Recommendation
     private $type;
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="to_send", type="boolean", nullable=false)
+     */
+    private $toSend = '0';
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="date_create", type="datetime", nullable=false)
@@ -111,6 +118,29 @@ class Recommendation
     public function getType()
     {
         return $this->type;
+    }
+
+    /**
+     * Set toSend
+     *
+     * @param int $toSend
+     * @return Recommendation
+     */
+    public function setToSend($toSend)
+    {
+        $this->toSend = $toSend;
+
+        return $this;
+    }
+
+    /**
+     * Get toSend
+     *
+     * @return int
+     */
+    public function getToSend()
+    {
+        return $this->toSend;
     }
 
     /**
