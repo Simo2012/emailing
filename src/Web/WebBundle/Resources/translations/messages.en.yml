@@ -86,11 +86,6 @@ web.web.default.index.footer.condition: General terms of use
 web.web.default.index.slide1.text1: Makes money by sharing deals with friends
 web.web.default.index.slide1.text2: Lorem ipsum dolor sit amet, consecteturùbrùadipiscing elit. Nullam quis arcu a nisi ultrices consequat. Etiam in mollis ex.
 web.web.default.index.slide1.button: Get started for free
-# ============ Contact form popup ============
-web.web.default.contact.title:  CONTACT US
-web.web.default.contact.send:   SEND
-web.web.default.contact.subject: The subject of your request
-web.web.default.contact.message: Your message
 
 # ============ OFFER PAGE ============
 # ==== Offer Page (index) ====

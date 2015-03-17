@@ -87,11 +87,6 @@ web.web.default.index.footer.condition: Conditions générales d'utilisation
 web.web.default.index.slide1.text1: Gagne de l'argent en partageant des offres avec tes amis
 web.web.default.index.slide1.text2: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis arcu a nisi ultrices consequat. Etiam in mollis ex.
 web.web.default.index.slide1.button: Commencer gratuitement
-# ============ Contact form popup ============
-web.web.default.contact.title:  CONTACTEZ-NOUS
-web.web.default.contact.send:   ENVOYER
-web.web.default.contact.subject: L'objet de votre demande
-web.web.default.contact.message: Votre message
 
 # ============ OFFER PAGE ============
 # ==== Offer Page (index) ====
