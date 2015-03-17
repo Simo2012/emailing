@@ -238,6 +238,22 @@ class MenuExtension extends \Twig_Extension
                 $lsController = '#';
                 $laSubmenu['route'] = '';
             }
+            if (!empty($laSubmenu['routebis'])) {
+                if (!isset($laSubmenu['visible']) || $laSubmenu['visible']) {
+                    $lsHrefBis = $this->controller[0]->generateUrl($laSubmenu['routebis'], array(), true);
+                    if (isset($laSubmenu['domain_'.$this->environment])) {
+                        $lsHrefBis = preg_replace('/[a-z]+.admin/', $laSubmenu['domain'], $lsHrefBis);
+                    }
+                } else {
+                    $lsHrefBis = '#';
+                }
+                $loRoute = $this->router->getRouteCollection()->get($laSubmenu['routebis']);
+                $lsController = $loRoute->getDefault('_controller');
+            } else {
+                $lsHrefBis = '';
+                $lsController = '#';
+                $laSubmenu['routebis'] = '';
+            }
             // ---- Read the option sub branch ----
             $lbActive = false;
             $lsSubSource = '';
@@ -276,8 +292,9 @@ class MenuExtension extends \Twig_Extension
                         }
                     }
                 }
+                $lsHrefBisFinal = $lsHrefBis != "" ? "hrefbis='{$lsHrefBis}'" : "" ;
                 $lsSource .= "<li" . $this->getLiOptions($laSubmenu) .
-                    "><a " . $this->getAOptions($laSubmenu) . " href='{$lsHref}'>" .
+                    "><a " . $this->getAOptions($laSubmenu) . " href='{$lsHref}' $lsHrefBisFinal>" .
                     $this->translator->trans($lsLabel) . '</a>';
             }
             $lsSource .= $lsSubSource;
@@ -352,7 +369,7 @@ class MenuExtension extends \Twig_Extension
     {
         $paMenu = array_diff_key(
             $paMenu,
-            array('label' => null, 'route' => null, 'pages' => null, 'role' => null, 'target' => null)
+            array('label' => null, 'route' => null, 'routebis' => null, 'pages' => null, 'role' => null, 'target' => null)
         );
         $lsOptions = '';
         foreach ($paMenu as $lsName => $lsValue) {

@@ -2,7 +2,7 @@
  * Classe de gestion des popups
  *
  * <pre>
- * Victor 09/02/15 Création
+ * Elias 09/02/15 Création
  * </pre>
  * @author Elias
  * @version 1.0
@@ -11,13 +11,28 @@
 function Popup()
 {
     // ==== Constructeur ====
+    // ---- Affectation du fond noir ou blanc ----
+    Popup.prototype._divShadow = '#div_RBZ_commonShadow';
 } // Popup
 Popup.prototype = {
     /**
      * Traitements lancés en fin de chargement de la page
      */
-    ready : function()
+    ready : function(psDivShadow)
     {
+        // ==== Popup Contact ====
+        // ---- Affectation du fond selon la page ----
+        if(psDivShadow !== undefined){
+            Popup.prototype._divShadow = psDivShadow;
+        }
+
+        // Ouverture du popup de contact
+        Popup.prototype._manageContactPopupOpening();
+        // Soumission du popup de contact
+        Popup.prototype._manageContactPopupSubmitting();
+        // Fermeture du popup de contact
+        Popup.prototype._manageContactPopupClosing();
+        
         // ==== Popup Commune ====
         // fermeture popup
         $(document).on("click", "#a_RBZ_commonPopupClose, button#RBZ_closePopupButton", this.ajaxPopupClose);
@@ -115,6 +130,92 @@ Popup.prototype = {
         $("#div_RBZ_commonShadow").hide();
         return false;
     }, // ajaxPopupClose
+    
+    
+    /**
+    * ========================= Popup Contact =========================
+    */
+    
+    _manageContactPopupOpening: function()
+    {
+        $(document).on("click", "#li_RBZ_contactPopupCall a", function() {
+            var lsUrl = $(this).attr('hrefbis');
+            Popup.prototype.ajaxPopupContact(lsUrl);
+            return false;
+        });
+    }, // _manageContactPopupOpening
+
+    _manageContactPopupSubmitting: function()
+    {
+        $(document).on("click", "#input_RBZ_contact_form", function() {
+            Popup.prototype.ajaxPopupContactSubmit('form_RBZ_contact_form');
+            return false;
+        });
+    }, // _manageLoginPopupSubmitting
+
+    _manageContactPopupClosing: function()
+    {
+        $(document).on("click", "#div_RBZ_contactPopup #div_RBZ_close", function() {
+            $("#div_RBZ_contactPopup").detach();
+            $(Popup.prototype._divShadow).hide();
+            return false;
+        });
+    }, // _manageContactPopupClosing
+
+    /**
+     * Appel du popup de contact en ajax
+     */
+    ajaxPopupContact: function(psUrl)
+    {
+        // ==== Définition de la popup ====
+        $.get(psUrl, function(psAjax) {
+            if (psAjax == 'refresh') {
+                location.reload();
+            }
+            $("#div_RBZ_contactPopup").remove();
+            // ==== Redéfinition de la taille du masque ====
+            $(Popup.prototype._divShadow).css({ width : $(document).width(), height : $(document).height() });
+            $(Popup.prototype._divShadow).show();
+            $("body").append(psAjax);
+
+            // ==== Centrage ====
+            var liWidth = $("#div_RBZ_contactPopup").width(), liDocumentWidth = $(window).width(), liLeft = 0;
+            if (liWidth < liDocumentWidth) liLeft = Math.round((liDocumentWidth - liWidth) / 2);
+            $("#div_RBZ_contactPopup").css('left', liLeft);
+        });
+    }, // ajaxPopupContact
+
+    /**
+     * Validation du formulaire dans le popup de contact
+     */
+    ajaxPopupContactSubmit: function(psFormName, psUrl)
+    {
+        var loForm = $("#" + psFormName);
+        var loData = new FormData(loForm[0]);
+        $.ajax({
+            url: loForm.attr('action'),
+            type: 'POST',
+            data: loData,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function(psReturn) {
+                if ('OK' == psReturn) {
+                    $("#div_RBZ_contactPopup").remove();
+                    $(Popup.prototype._divShadow).hide();
+                    if (psUrl != undefined) {
+                        window.location = psUrl;
+                    } else {
+                        location.reload();
+                    }
+                } else {
+                    $("#div_RBZ_error").text('');
+                    $("#div_RBZ_error").append(psReturn);
+                }
+            }
+        });
+    }, // ajaxPopupLoginSubmit
+    
     
     /**
      * Token de fin

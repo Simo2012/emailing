@@ -81,7 +81,8 @@ parameters:
                     route: WebWebBundle_defaultFaq
                 HowItWorks:
                     label: rubizzMenu_contact
-                    route: WebWebBundle_defaultContact
+                    routebis: WebWebBundle_defaultContact
+                    id: li_RBZ_contactPopupCall
                 Recommendations:
                     label: rubizzMenu_jobs
                     route: WebWebBundle_defaultJobs
@@ -191,5 +192,11 @@ services:
         class: Web\WebBundle\Form\Contact\ContactSearchType
         tags:
             - { name: form.type, alias: WebWebContactSearchType }
+            
+    # ==== Formulaire de Contact ====
+    web.web.form.contact_type:
+        class: Web\WebBundle\Form\Defaul\ContactType
+        tags:
+            - { name: form.type, alias: WebWebContactType }
 
 

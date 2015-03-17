@@ -18,7 +18,7 @@ security:
 
         # ==== Règle pour les pages publiques ====
         public_area:
-            pattern:         '^(/|(/[a-zA-Z_]{5}/)|(/[a-zA-Z_]{5}/(login|register)))$'
+            pattern:         '^(/|(/[a-zA-Z_]{5}/)|(/[a-zA-Z_]{5}/(login|register|contact)))$'
             security:        false
 
         # ==== Règle pour les pages privées (accessible par un utilisateur loggé) ====
@@ -41,5 +41,5 @@ security:
             anonymous: ~
 
     access_control:
-        - { path: '^(/|(/[a-zA-Z_]{5}/)|(/[a-zA-Z_]{5}/(login|register)))$', roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: '^(/|(/[a-zA-Z_]{5}/)|(/[a-zA-Z_]{5}/(login|register|contact)))$', roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: '.*', roles: ROLE_USER }

@@ -11,7 +11,6 @@
 function Index()
 {
     // ==== Constructeur ====
-       //Index.prototype._availableAmount = 50;
 } // Popup
 Index.prototype = {
     /**
