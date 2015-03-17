@@ -1,5 +1,42 @@
-{% extends "@WebWeb/layoutPage.html.twig" %}
-
-{% block CONTENT %}
-    <div class="RBZ_wrapper">contact</div>
-{% endblock %}
+<div id="div_RBZ_contactPopup" style="{{ block('STYLE') }}">
+    <div id="div_RBZ_content" class="RBZ_{{ app.request.locale }}">
+        <div id="div_RBZ_logo">
+            <div id="div_RBZ_close">&#735;</div>
+            <img src="{{ asset('/bundles/webweb/images/default/login/login_rubizz_red.png') }}">
+            <h3 class="RBZ_linesSided RBZ_{{ app.request.locale }}"><span>{{ "web.web.default.contact.title" | trans }}</span></h3>
+        </div>
+        <div id="div_RBZ_form">
+            <form id="form_RBZ_contact_form" action="{{ path('WebWebBundle_defaultContact') }}" method="post" {{ form_enctype(form) }}>
+                <div id="div_RBZ_error">
+                    {% if error is defined %}
+                        {{ error }}
+                    {% endif %}
+                </div>
+                <div class="RBZ_input">
+                    {{ form_label(form.lastname) }}
+                    {{ form_widget(form.lastname)}}
+                </div>
+                <div class="RBZ_input">
+                    {{ form_label(form.firstname) }}
+                    {{ form_widget(form.firstname) }}
+                </div>
+                <div class="RBZ_input">
+                    {{ form_label(form.email) }}
+                    {{ form_widget(form.email) }}
+                </div>
+                <div class="RBZ_input">
+                    {{ form_label(form.subject) }}
+                    {{ form_widget(form.subject) }}
+                </div>
+                <div class="RBZ_input">
+                    {{ form_label(form.message) }}
+                    {{ form_widget(form.message) }}
+                </div>
+                <div>
+                    <input id="input_RBZ_contact_form" type="submit" value="{{ 'web.web.default.contact.send' | trans }}" class="RBZ_redButton"/>
+                </div>
+                {{ form_rest(form) }}
+            </form>
+        </div>
+    </div>
+</div>

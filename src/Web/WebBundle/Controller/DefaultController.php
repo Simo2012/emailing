@@ -5,7 +5,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
-
+use Symfony\Component\HttpFoundation\Response;
 /**
  * Contrôleur default : page d'accueil, inscription
  *
@@ -72,15 +72,52 @@ class DefaultController extends Controller
     } // faqAction
 
     /**
-     * Page contact
+     * Popup formulaire de contact
      *
      * @Template()
      */
-    public function contactAction()
+    public function contactAction(Request $poRequest)
     {
-        return array();
-    } // contactAction
+        // ==== Initialisation ====
+        $loForm = $this->createForm('WebWebContactType');
+        $loTranslator = $this->get('translator');
 
+        if ($poRequest->isMethod('POST')) {
+            $loForm->handleRequest($poRequest);
+            $laData = $loForm->getData();
+            // ---- Verification champ vides ----
+            foreach ($laData as $lsData) {
+                if (empty($lsData)) {
+                    return new Response($loTranslator->trans('web.web.security.empty_fields'));
+                }
+            }
+            if ($loForm->isValid()) {
+                // ---- Préparation du texte html ----
+                $lsHtml  = "Nom : " . $laData['lastname'] . '<br />';
+                $lsHtml .= "Prénom : " . $laData['firstname'] . '<br />';
+                $lsHtml .= "Email : " . $laData['email'] . '<br />';
+                $lsHtml .= "Sujet : " . $laData['subject'] . '<br />';
+                $lsHtml .= "Message :  <br />" . $laData['message'];
+                try {
+                    // ---- envoi de l'email ----
+                    $loEmail = \Swift_Message::newInstance()
+                            ->setSubject("Nouveau message reçu depuis le formulaire de contact Rubizz")
+                            ->setFrom(array('admin@natexo.com' => 'Natexo admin'))
+                            ->setTo("scicluna@natexo.com")
+                            ->setBody($lsHtml, 'text/html');
+                    $this->container->get('mailer')->send($loEmail);
+                } catch (\Exception $lsError) {
+                    return new Response($lsError->getMessage());
+                }
+                return new Response('OK');
+            }
+        }
+
+        return array(
+            'form' => $loForm->createView()
+        );
+    } // contactAction
+    
     /**
      * Page jobs
      *
