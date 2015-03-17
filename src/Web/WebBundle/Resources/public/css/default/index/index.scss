@@ -16,10 +16,11 @@ body { margin:0; }
     #div_RBZ_headerInside {
         position:relative; max-width:1220px; height:865px; margin-left:auto; margin-right:auto;
         #img_RBZ_headerGuy { float:left; margin-top:13px; }
+        #img_RBZ_headerGuyPad, #img_RBZ_headerGuyPhone { display:none; }
         #div_RBZ_headerText {
             float:right; position:relative; text-align:center;
             #div_RBZ_headerLogin {
-                position:absolute; top:45px; right:0px; color:white;
+                position:absolute; top:45px; right:10px; color:white;
                 a {
                     color:white; text-decoration:none; font-family:'Open Sans',sans-serif; font-size:16px; font-weight:600;
                     &:hover { text-decoration:underline; }
@@ -40,12 +41,14 @@ body { margin:0; }
         #div_RBZ_headerHow { position:absolute; bottom:65px; left:345px; }
     }
 }
+#br_RBZ_footer { display:none; }
 
 // ==== Blocs de l'index ====
+img.RBZ_phone { display:none; }
 div.RBZ_indexBlocks {
     font-family:'Open Sans',sans-serif;
     h1 { margin:0px;  font-size:32px; font-weight:normal; color:#484745; }
-    p { margin-top:10px; font-size:18px; color:#929292; }
+    p { margin-top:10px; font-size:18px; color:#929292; margin-bottom:10px; }
     a {
         font-size:18px; font-weight:bold; color:#F15060; text-decoration:none;
         &:hover { text-decoration:underline; }
@@ -111,11 +114,11 @@ div.RBZ_indexBlocks {
             }
         }
         #p_RBZ_footerCommunity {
-            margin-top:35px;
+            margin-top:35px; margin-left:10px;
             #a_RBZ_twitter { margin-left:20px; }
         }
         #p_RBZ_rights {
-            color:#A8A8A8; font-size:12px;
+            margin-left:10px; color:#A8A8A8; font-size:12px;
             a {
                 margin-left:20px; color:#A8A8A8; text-decoration:none;
                 &:hover { text-decoration:underline; }
@@ -128,3 +131,147 @@ div.RBZ_indexBlocks {
 body.RBZ_fr {
     #header_RBZ_default_header #div_RBZ_headerInside #div_RBZ_headerText #a_RBZ_subscribe { font-size:24px; }
 }
+// ===========================
+// ==== Responsive : iPad ====
+// ===========================
+@media (max-width: 1150px) {
+    // ---- Header ----
+    #header_RBZ_default_header {
+        height:680px;
+        background:white url(/bundles/webweb/images/default/index/pad/header_bg.png) repeat-x left top;
+        #div_RBZ_headerInside {
+            height:680px;
+            #img_RBZ_headerGuy { display:none; }
+            #img_RBZ_headerGuyPad { display:block; float:left; margin-top:15px; }
+            #div_RBZ_headerText {
+                float:none; position:absolute; top:0px; right:10px;
+                p { font-size:32px; line-height:40px; margin-bottom:0px; }
+                #a_RBZ_subscribe {
+                    width:326px; height:89px; margin-left:80px; line-height:90px; font-size:24px;
+                    background:url(/bundles/webweb/images/default/index/pad/button.png) no-repeat left top;
+                    span { margin-right:55px; }
+                }
+            }
+            #div_RBZ_headerHow { position:inline; bottom:auto; left:auto; margin-left:50px; margin-top:20px; }
+        }
+    }
+    // ---- Blocs de l'index ----
+    div.RBZ_indexBlocks {
+        h1 { font-size:28px; }
+        p { margin-top:10px; font-size:16px; }
+        a { font-size:16px; }
+    }
+    // ---- Bloc create your Rubizz network ----
+    #div_RBZ_create {
+        height:auto;
+        #div_RBZ_createInside {
+            height:auto; text-align:center; padding:40px 0px;
+            img { float:none; margin-top:0px; }
+            div.RBZ_indexBlocks { float:none; margin:30px 0px 0px 0px; }
+        }
+    }
+    // ---- Bloc community 3.0 ----
+    #div_RBZ_community {
+        height:auto;
+        #div_RBZ_communityInside {
+            height:auto; text-align:center; padding:40px 0px;
+            img { float:none; margin-top:0px; }
+            div.RBZ_indexBlocks { float:none; margin:10px 0px 0px 0px; }
+        }
+    }
+    // ---- Bloc choose your deals ----
+    #div_RBZ_choose {
+        height:auto;
+        #div_RBZ_chooseInside {
+            height:auto; text-align:center; padding:40px 0px;
+            img { float:none; margin-top:0px; }
+            div.RBZ_indexBlocks { float:none; margin:20px 0px 0px 0px; }
+        }
+    }
+    // ---- Bloc redeem your piggy bank ----
+    #div_RBZ_redeem {
+        height:auto;
+        #div_RBZ_redeemInside {
+            height:auto; text-align:center; padding:40px 0px;
+            img { float:none; margin-top:0px; }
+            div.RBZ_indexBlocks { float:none; margin:0px 0px 0px 0px; }
+        }
+    }
+    // ---- Footer ----
+    #footer_RBZ_footer {
+        #div_RBZ_footerInside {
+            #table_RBZ_footerLinks {
+                a { font-size:16px; }
+            }
+        }
+    }
+    // ---- Adaptations au français ----
+    body.RBZ_fr {
+        #header_RBZ_default_header #div_RBZ_headerInside #div_RBZ_headerText #a_RBZ_subscribe { font-size:18px; }
+    }
+}
+
+// =============================
+// ==== Responsive : iPhone ====
+// =============================
+@media (max-width: 560px) {
+    // ---- Header ----
+    #header_RBZ_default_header {
+        height:auto;
+        background:white url(/bundles/webweb/images/default/index/phone/header_bg.png) repeat-x left top;
+        #div_RBZ_headerInside {
+            height:auto; text-align:center; padding-top:10px;
+            #img_RBZ_headerGuy { display:none; }
+            #img_RBZ_headerGuyPad { display:none; }
+            #img_RBZ_headerGuyPhone { display:block; margin-left:auto; margin-right:auto; margin-top:10px; }
+            #div_RBZ_headerText {
+                float:none; position:relative; top:auto; right:auto;
+                p { font-size:24px; line-height:28px; margin-bottom:0px; margin-top:20px; }
+                #a_RBZ_subscribe {
+                    width:274px; height:72px; margin-left:0px; margin-top:30px; line-height:55px; font-size:24px;
+                    background:url(/bundles/webweb/images/default/index/phone/button.png) no-repeat left top;
+                    span { margin-right:0px; }
+                }
+                #div_RBZ_headerLogin {
+                    position:relative; top:auto; right:auto; margin-top:5px;
+                    a { font-size:12px; }
+                }
+            }
+            #div_RBZ_headerHow {
+                position:relative; bottom:auto; left:auto; margin-left:0px; margin-top:50px; margin-bottom:30px;
+                padding-left:20px; padding-right:20px;
+            }
+        }
+    }
+    // ---- Blocs de l'index ----
+    div.RBZ_indexBlocks {
+        h1 { font-size:26px; }
+        p { margin-top:10px; font-size:14px; }
+        a { font-size:14px; }
+    }
+    // ---- Bloc create your Rubizz network ----
+    #div_RBZ_create {
+        height:auto;
+        #div_RBZ_createInside {
+            height:auto; text-align:center; padding:40px 0px;
+            img { float:none; margin-top:0px; }
+            div.RBZ_indexBlocks { float:none; margin:30px 0px 0px 0px; }
+        }
+    }
+    img.RBZ_phone { display:block; margin-left:auto; margin-right:auto; }
+    img.RBZ_nophone { display:none; }
+    // ---- Footer ----
+    #footer_RBZ_footer {
+        background:#353537;
+        #div_RBZ_footerInside {
+            #table_RBZ_footerLinks {
+                td { display:table-cell !important; width:auto; }
+            }
+            #p_RBZ_rights {
+                text-align:center; margin-left:0px;
+                #br_RBZ_footer { display:block; }
+            }
+        }
+    }
+}
+
