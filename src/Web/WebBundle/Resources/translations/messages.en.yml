@@ -54,38 +54,39 @@ web.web.security.legal_terms:           terms of use
 web.web.security.have_account:          Already have an account?
 web.web.security.connect:               Log in
 
-# ============ DEFAULT PAGE ============
-# ==== Index ====
-web.web.default.index.login: CONNECTION
-web.web.default.index.register: REGISTER
-web.web.default.index.community.title: Community 3.0
-web.web.default.index.community.content: You're a blogger, trendsetter, twittos or just good company, you can monetize your reputation easily and for free
-web.web.default.index.community.manage: Manage your community
-web.web.default.index.mailinglist.title: Mailing List
-web.web.default.index.mailinglist.content: Add friends from your email account, Facebook, Twitter or Google+ and create your own Mailing List
-web.web.default.index.mailinglist.add: Add contacts
-web.web.default.index.cagnotte.title: Accept your piggy bank
-web.web.default.index.cagnotte.content: In recommending deals to your contacts, you earn money for each of their contribution.
-web.web.default.index.cagnotte.begin: Get Started
-web.web.default.index.christbale.detail: With more than 3,000 followers, I could make them really get interesting offers and oriented my area.
-web.web.default.index.christbale.sign: Christian Bale - @c-bale
-web.web.default.index.emmawats.detail: With more than 3,000 followers, I could make them really get interesting offers and oriented my area.
-web.web.default.index.emmawats.sign: Eùùa Watsp - @Emma-ww
-web.web.default.index.footer.about: About
-web.web.default.index.footer.faq: FAQ
-web.web.default.index.footer.contact: Contact
-web.web.default.index.footer.jobs: Jobs
-web.web.default.index.footer.advertisers: Advertisers
-web.web.default.index.footer.alloffers: All offers
-web.web.default.index.footer.maillist: Mailing list
-web.web.default.index.footer.howwork: how does it work?
-web.web.default.index.footer.bynatexo: 2014 %b%Rubizz%eb% by Natexo.
-web.web.default.index.footer.allrights: all rights reserved
-web.web.default.index.footer.mentions: Legal Notice
-web.web.default.index.footer.condition: General terms of use
-web.web.default.index.slide1.text1: Makes money by sharing deals with friends
-web.web.default.index.slide1.text2: Lorem ipsum dolor sit amet, consecteturùbrùadipiscing elit. Nullam quis arcu a nisi ultrices consequat. Etiam in mollis ex.
-web.web.default.index.slide1.button: Get started for free
+#====================
+# Default contrôleur
+#====================
+# ---- Page d'accueil ----
+web.web.default.index.headerText:     "Earn money<br />by recommending<br />deals to your friends"
+web.web.default.index.headerButton:   Start for free
+web.web.default.index.headerLogin:    LOG IN
+web.web.default.index.headerRegister: SIGN UP
+web.web.default.index.headerHowTitle: How does it work?
+web.web.default.index.headerHowText:  "Register on the website, whoose the deals you like ans share them with your friends with just one<br />click. If they redeem the deals, you earn a commission!"
+web.web.default.index.headerHowLink:  More information
+web.web.default.index.createTitle:    Create your Rubizz Network
+web.web.default.index.createText:     "Import your address book to your Rubizz<br />account and create your own influence<br />network."
+web.web.default.index.createLink:     Manage my Network
+web.web.default.index.communityTitle: Community 3.0
+web.web.default.index.communityText:  "Share your deals with just one click using<br />your address book, Facebook or Twitter."
+web.web.default.index.communityLink:  Add contacts
+web.web.default.index.chooseTitle:    Choose your deals
+web.web.default.index.chooseText:     "Fashion, Sport, High-Tech, Games...<br />Choose from our selection of great deals<br />that will please your friends."
+web.web.default.index.chooseLink:     Discover deals
+web.web.default.index.redeemTitle:    Redeem your piggy bank
+web.web.default.index.redeemText:     "You've done well! Your friends have enjoyed<br />your recommendations, which gives you a<br />pretty nice amount to redeem. Thanks to<br />Rubizz your piggy bank is transferred directly<br />to your bank account!"
+web.web.default.index.redeemLink:     Start now
+web.web.default.index.footerAbout:    About
+web.web.default.index.footerHow:      How does it work?
+web.web.default.index.footerFaq:      FAQ
+web.web.default.index.footerContact:  Contact
+web.web.default.index.footerJobs:     Jobs
+web.web.default.index.footerAdv:      Advertisers
+web.web.default.index.footerCopy:     "&copy; 2014 <strong>Rubizz</strong> by Natexo. All rights reserved"
+web.web.default.index.footerLegal:    Legal notices
+web.web.default.index.footerGtu:      General terms of use
+
 
 # ============ OFFER PAGE ============
 # ==== Offer Page (index) ====

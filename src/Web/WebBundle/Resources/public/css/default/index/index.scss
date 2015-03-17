@@ -5,8 +5,125 @@
 @import "../../global/config";
 @import "../../global/form";
 @import "../../global/titles";
-@import "header";
-@import "rbzslider";
-@import "content";
-@import "footer";
 @import "login";
+
+// ==== Header ====
+body { margin:0; }
+#header_RBZ_default_header {
+    height:865px;
+    background:white url(/bundles/webweb/images/default/index/header_bg.png) repeat-x left top;
+    #div_RBZ_headerInside {
+        position:relative; max-width:1220px; height:865px; margin-left:auto; margin-right:auto;
+        #img_RBZ_headerGuy { float:left; margin-top:13px; }
+        #div_RBZ_headerText {
+            float:right; position:relative; text-align:center;
+            #div_RBZ_headerLogin {
+                position:absolute; top:45px; right:0px; color:white;
+                a {
+                    color:white; text-decoration:none; font-family:'Open Sans',sans-serif; font-size:16px; font-weight:600;
+                    &:hover { text-decoration:underline; }
+                }
+            }
+            p {
+                margin-bottom:20px; margin-top:205px;
+                font-family:'Nunito',sans-serif; font-size:48px; font-weight:bold; color:white; text-align:center; line-height:55px;
+            }
+            #a_RBZ_subscribe {
+                display:inline-block; width:468px; height:122px; margin-left:85px;
+                text-decoration:none; line-height:122px;
+                font-family:'Nunito',sans-serif; font-size:28px; font-weight:bold; color:white; text-align:center;
+                background:url(/bundles/webweb/images/default/index/button.png) no-repeat left top;
+                span { margin-right:60px; }
+            }
+        }
+        #div_RBZ_headerHow { position:absolute; bottom:65px; left:345px; }
+    }
+}
+
+// ==== Blocs de l'index ====
+div.RBZ_indexBlocks {
+    font-family:'Open Sans',sans-serif;
+    h1 { margin:0px;  font-size:32px; font-weight:normal; color:#484745; }
+    p { margin-top:10px; font-size:18px; color:#929292; }
+    a {
+        font-size:18px; font-weight:bold; color:#F15060; text-decoration:none;
+        &:hover { text-decoration:underline; }
+    }
+}
+
+// ==== Bloc create your Rubizz network ====
+#div_RBZ_create {
+    height:465px; background-color:#F1F1F1;
+    #div_RBZ_createInside {
+        height:465px; max-width:980px; margin-left:auto; margin-right:auto;
+        img { float:left; margin-top:50px; }
+        div.RBZ_indexBlocks { float:left; margin-top:140px; margin-left:50px; }
+    }
+}
+
+// ==== Bloc community 3.0 ====
+#div_RBZ_community {
+    height:505px; background-color:#4ABDC4;
+    #div_RBZ_communityInside {
+        height:510px; max-width:980px; margin-left:auto; margin-right:auto;
+        img { float:right; margin-top:85px; }
+        div.RBZ_indexBlocks {
+            float:right; margin-top:140px; margin-right:50px;
+            p { color:white; }
+            a { color:#8DF8FF; }
+        }
+    }
+}
+
+// ==== Bloc choose your deals ====
+#div_RBZ_choose {
+    height:485px; background-color:#F1F1F1;
+    #div_RBZ_chooseInside {
+        height:485px; max-width:930px; margin-left:auto; margin-right:auto;
+        img { float:left; margin-top:90px; }
+        div.RBZ_indexBlocks { float:left; margin-top:130px; margin-left:50px; }
+    }
+}
+
+// ==== Bloc redeem your piggy bank ====
+#div_RBZ_redeem {
+    height:500px; background-color:white;
+    #div_RBZ_redeemInside {
+        height:500px; max-width:980px; margin-left:auto; margin-right:auto;
+        img { float:right; margin-top:100px; }
+        div.RBZ_indexBlocks { float:right; margin-top:120px; margin-right:50px; }
+    }
+}
+
+// ==== Footer ====
+#footer_RBZ_footer {
+    height:310px; background:#353537 url(/bundles/webweb/images/default/index/footer.png) no-repeat right bottom;
+    #div_RBZ_footerInside {
+        position:relative; max-width:1220px; height:310px; margin-left:auto; margin-right:auto;
+        font-family:'Open Sans',sans-serif; padding-top:45px;
+        #table_RBZ_footerLinks {
+            table-layout:auto; border:none; width:auto; max-width:auto;
+            td { width:255px; height:30px; border:none; }
+            a {
+                font-size:20px; text-decoration:none; color:#A8A8A8;
+                &:hover { text-decoration:underline; }
+            }
+        }
+        #p_RBZ_footerCommunity {
+            margin-top:35px;
+            #a_RBZ_twitter { margin-left:20px; }
+        }
+        #p_RBZ_rights {
+            color:#A8A8A8; font-size:12px;
+            a {
+                margin-left:20px; color:#A8A8A8; text-decoration:none;
+                &:hover { text-decoration:underline; }
+            }
+        }
+    }
+}
+
+// ==== Adaptations au français ====
+body.RBZ_fr {
+    #header_RBZ_default_header #div_RBZ_headerInside #div_RBZ_headerText #a_RBZ_subscribe { font-size:24px; }
+}
