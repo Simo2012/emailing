@@ -18,7 +18,9 @@ class LoginType extends AbstractType
             'required' => true,
             'attr'     => array(
                 'caption' => 'web.web.security.email',
-                'autocomplete' => false
+                'autocomplete' => false,
+                'placeholder'  => 'web.web.contact.add.provider.email',
+                'class'        => 'RBZ_placeholder'
             )
         );
         $poBuilder->add('email', 'email', $laParams);
@@ -27,7 +29,9 @@ class LoginType extends AbstractType
             'required' => true,
             'attr'     => array(
                 'caption' => 'web.web.security.password',
-                'autocomplete' => false
+                'autocomplete' => false,
+                'placeholder'  => 'web.web.security.pass.placeholder',
+                'class'        => 'RBZ_placeholder'
             )
         );
         $poBuilder->add('password', 'password', $laParams);

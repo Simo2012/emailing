@@ -63,6 +63,9 @@ web.web.security.legal_terms_sentences: By subscribing I accept the
 web.web.security.legal_terms:           terms of use
 web.web.security.have_account:          Already have an account?
 web.web.security.connect:               Log in
+web.web.security.pass.placeholder:      Password
+web.web.security.lastname.placeholder:  Lastname
+web.web.security.firstname.placeholder: Firstname
 
 # ============ DEFAULT PAGE ============
 # ---- Page d'accueil ----
@@ -95,10 +98,12 @@ web.web.default.index.footerCopy:     "&copy; 2014 <strong>Rubizz</strong> by Na
 web.web.default.index.footerLegal:    Legal notices
 web.web.default.index.footerGtu:      General terms of use
 # ============ Contact form popup ============
-web.web.default.contact.title:  CONTACT US
-web.web.default.contact.send:   SEND
-web.web.default.contact.subject: The subject of your request
-web.web.default.contact.message: Your message
+web.web.default.contact.title:          CONTACT US
+web.web.default.contact.send:           SEND
+web.web.default.contact.subject:        The subject of your request
+web.web.default.contact.message:        Your message
+web.web.default.subject.placeholder:    Subject
+web.web.default.message.placeholder:    Message
 
 # ============ OFFER PAGE ============
 # ==== Offer Page (index) ====

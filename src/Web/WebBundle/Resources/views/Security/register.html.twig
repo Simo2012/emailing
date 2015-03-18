@@ -13,12 +13,12 @@
                     {% endif %}
                 </div>
                 <div class="RBZ_input">
-                    {{ form_label(form.firstname) }}
-                    {{ form_widget(form.firstname, { 'value' : last_firstname }) }}
-                </div>
-                <div class="RBZ_input">
                     {{ form_label(form.lastname) }}
                     {{ form_widget(form.lastname, { 'value' : last_lastname }) }}
+                </div>
+                <div class="RBZ_input">
+                    {{ form_label(form.firstname) }}
+                    {{ form_widget(form.firstname, { 'value' : last_firstname }) }}
                 </div>
                 <div class="RBZ_input">
                     {{ form_label(form.email) }}

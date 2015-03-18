@@ -77,8 +77,8 @@ input[type=submit].RBZ_redButton,
 a.RBZ_redButton {
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
-    font-size: 12px;
-    height: 30px;
+    font-size: 14.5px;
+    height: 35px;
     line-height: 30px;
     color: $white;
     background-color: $red-banner;
@@ -86,6 +86,11 @@ a.RBZ_redButton {
     display: block;
     line-height: 30px;
     border: none;
-    @include border-radius(2px, 2px);
+    @include border-radius(5px, 5px);
     text-align: center;
+}
+
+.RBZ_placeholder {
+    font-size: 14px;
+    padding-left: 20px;
 }

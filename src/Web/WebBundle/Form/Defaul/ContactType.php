@@ -18,7 +18,9 @@ class ContactType extends AbstractType
             'required' => true,
             'attr' => array(
                 'caption' => 'web.web.security.lastname',
-                'autocomplete' => false
+                'autocomplete' => false,
+                'placeholder'  => 'web.web.security.lastname.placeholder',
+                'class'        => 'RBZ_placeholder'
             )
         );
         $poBuilder->add('lastname', 'text', $laParams);
@@ -28,7 +30,9 @@ class ContactType extends AbstractType
             'required' => true,
             'attr' => array(
                 'caption' => 'web.web.security.firstname',
-                'autocomplete' => false
+                'autocomplete' => false,
+                'placeholder'  => 'web.web.security.lastname.placeholder',
+                'class'        => 'RBZ_placeholder'
             )
         );
         $poBuilder->add('firstname', 'text', $laParams);
@@ -38,7 +42,9 @@ class ContactType extends AbstractType
             'required' => true,
             'attr' => array(
                 'caption' => 'web.web.security.email',
-                'autocomplete' => false
+                'autocomplete' => false,
+                'placeholder'  => 'web.web.contact.add.provider.email',
+                'class'        => 'RBZ_placeholder'
             )
         );
 
@@ -49,7 +55,9 @@ class ContactType extends AbstractType
             'required' => true,
             'attr' => array(
                 'caption' => 'web.web.default.contact.subject',
-                'autocomplete' => false
+                'autocomplete' => false,
+                'placeholder'  => 'web.web.default.subject.placeholder',
+                'class'        => 'RBZ_placeholder'
             )
         );
         $poBuilder->add('subject', 'text', $laParams);
@@ -59,7 +67,9 @@ class ContactType extends AbstractType
             'required' => true,
             'attr' => array(
                 'caption' => 'web.web.default.contact.message',
-                'autocomplete' => false
+                'autocomplete' => false,
+                'placeholder'  => 'web.web.default.message.placeholder',
+                'class'        => 'RBZ_placeholder'
             )
         );
         $poBuilder->add('message', 'textarea', $laParams);
