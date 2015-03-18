@@ -120,14 +120,14 @@
     <footer id="footer_RBZ_footer" role="contentinfo">
         <div id="div_RBZ_footerInside">
             <table id="table_RBZ_footerLinks">
-            <tr><td><a href="#">{{ "web.web.default.index.footerAbout" | trans }}</a></td>
-                <td id="li_RBZ_contactPopupCall"><a href="#" hrefbis="{{ url("WebWebBundle_defaultContact") }}">{{ "web.web.default.index.footerContact" | trans }}</a></td>
+            <tr><td><a href="{{ url('WebWebBundle_defaultLogoutAbout') }}">{{ "web.web.default.index.footerAbout" | trans }}</a></td>
+                <td id="li_RBZ_contactPopupCall"><a href="#" hrefbis="{{ url("WebWebBundle_defaultLogoutContact") }}">{{ "web.web.default.index.footerContact" | trans }}</a></td>
             </tr>
-            <tr><td><a href="#">{{ "web.web.default.index.footerHow" | trans }}</a></td>
-                <td><a href="#">{{ "web.web.default.index.footerJobs" | trans }}</a></td>
+            <tr><td><a href="{{ url('WebWebBundle_defaultLogoutHowItWorks') }}">{{ "web.web.default.index.footerHow" | trans }}</a></td>
+                <td><a href="http://careers.natexo.com" target="_blank">{{ "web.web.default.index.footerJobs" | trans }}</a></td>
             </tr>
-            <tr><td><a href="#">{{ "web.web.default.index.footerFaq" | trans }}</a></td>
-                <td><a href="#">{{ "web.web.default.index.footerAdv" | trans }}</a></td>
+            <tr><td><a href="{{ url('WebWebBundle_defaultLogoutFaq') }}">{{ "web.web.default.index.footerFaq" | trans }}</a></td>
+                <td><a href="http://natexo.com/" target="_blank">{{ "web.web.default.index.footerAdv" | trans }}</a></td>
             </tr>
             </table>
             <p id="p_RBZ_footerCommunity">
@@ -136,8 +136,8 @@
             </p>
             <p id="p_RBZ_rights">
                 {{ "web.web.default.index.footerCopy" | trans | raw }} <br id="br_RBZ_footer" />
-                <a href="#">{{ "web.web.default.index.footerLegal" | trans }}</a>
-                <a href="#">{{ "web.web.default.index.footerGtu" | trans }}</a>
+                <a href="{{ url('WebWebBundle_defaultLogoutLegal') }}">{{ "web.web.default.index.footerLegal" | trans }}</a>
+                <a href="{{ url('WebWebBundle_defaultLogoutTerms') }}">{{ "web.web.default.index.footerGtu" | trans }}</a>
             </p>
         </div>
     </footer>

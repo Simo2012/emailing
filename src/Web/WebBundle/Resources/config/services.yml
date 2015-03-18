@@ -95,9 +95,28 @@ parameters:
                     label: rubizzMenu_contact
                     routebis: WebWebBundle_defaultContact
                     id: li_RBZ_contactPopupCall
-                Recommendations:
-                    label: rubizzMenu_jobs
-                    route: WebWebBundle_defaultJobs
+#                Recommendations:
+#                    label: rubizzMenu_jobs
+#                    route: WebWebBundle_defaultJobs
+
+        rubizzFooterLogout:
+            label: ""
+            route: ""
+            pages:
+                Offers:
+                    label: rubizzMenu_about
+                    route: WebWebBundle_defaultLogoutAbout
+                MailingList:
+                    label: rubizzMenu_faq
+                    route: WebWebBundle_defaultLogoutFaq
+                HowItWorks:
+                    label: rubizzMenu_contact
+                    routebis: WebWebBundle_defaultLogoutContact
+                    id: li_RBZ_contactPopupCall
+#                Recommendations:
+#                    label: rubizzMenu_jobs
+#                    route: WebWebBundle_defaultJobs
+
     # ---- Liste des identifiants api externes ----
     web.api:
         outlook:

@@ -15,7 +15,7 @@ WebWebBundle_securityRegister:
     defaults: { _controller: "WebWebBundle:Security:register" }
 # ---- Logout ----
 WebWebBundle_securityLogout:
-    pattern: /logout
+    pattern:  /logout
     defaults: { _controller: "WebWebBundle:Security:logout" }
 
 #==================================================
@@ -29,7 +29,7 @@ WebWebBundle_defaultIndex:
 WebWebBundle_defaultHowItWorks:
     path:     /hiw
     defaults: { _controller: "WebWebBundle:Default:howItWorks" }
-# ---- Page A propos  ----
+# ---- Page à propos  ----
 WebWebBundle_defaultAbout:
     path:     /about
     defaults: { _controller: "WebWebBundle:Default:about" }
@@ -41,10 +41,38 @@ WebWebBundle_defaultFaq:
 WebWebBundle_defaultContact:
     path:     /contact
     defaults: { _controller: "WebWebBundle:Default:contact" }
-# ---- Page Jobs  ----
-WebWebBundle_defaultJobs:
-    path:     /jobs
-    defaults: { _controller: "WebWebBundle:Default:jobs" }
+# ---- Page Condition légales  ----
+WebWebBundle_defaultLegal:
+    path:     /legal
+    defaults: { _controller: "WebWebBundle:Default:legal" }
+# ---- Page CGU  ----
+WebWebBundle_defaultTerms:
+    path:     /terms
+    defaults: { _controller: "WebWebBundle:Default:terms" }
+# ---- Page comment ça marche  ----
+WebWebBundle_defaultLogoutHowItWorks:
+    path:     /logout/hiw
+    defaults: { _controller: "WebWebBundle:Default:howItWorks" }
+# ---- Page à propos  ----
+WebWebBundle_defaultLogoutAbout:
+    path:     /logout/about
+    defaults: { _controller: "WebWebBundle:Default:about" }
+# ---- Page FAQ  ----
+WebWebBundle_defaultLogoutFaq:
+    path:     /logout/faq
+    defaults: { _controller: "WebWebBundle:Default:faq" }
+# ---- Page Contact  ----
+WebWebBundle_defaultLogoutContact:
+    path:     /logout/contact
+    defaults: { _controller: "WebWebBundle:Default:contact" }
+# ---- Page Condition légales  ----
+WebWebBundle_defaultLogoutLegal:
+    path:     /logout/legal
+    defaults: { _controller: "WebWebBundle:Default:legal" }
+# ---- Page CGU  ----
+WebWebBundle_defaultLogoutTerms:
+    path:     /logout/terms
+    defaults: { _controller: "WebWebBundle:Default:terms" }
 
 #=====================================
 # User controller : page profile, etc

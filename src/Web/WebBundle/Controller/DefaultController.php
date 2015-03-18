@@ -2,10 +2,9 @@
 namespace Web\WebBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
+
 /**
  * Contrôleur default : page d'accueil, inscription
  *
@@ -52,7 +51,7 @@ class DefaultController extends Controller
     } // howItWorksAction
 
     /**
-     * Page A porpos
+     * Page à propos
      *
      * @Template()
      */
@@ -117,6 +116,26 @@ class DefaultController extends Controller
             'form' => $loForm->createView()
         );
     } // contactAction
+
+    /**
+     * Page Mentions légales
+     *
+     * @Template()
+     */
+    public function legalAction()
+    {
+        return array();
+    } // legalAction
+
+    /**
+     * Page conditions générales
+     *
+     * @Template()
+     */
+    public function termsAction()
+    {
+        return array();
+    } // termsAction
     
     /**
      * Page jobs
