@@ -92,6 +92,8 @@ div#div_RBZ_menuProfile {
 #div_RBZ_banner ul#ul_RBZ_menuProfile li {
   a {
       color: $white;
+      display:block;
+      height:100%;
   }
 }
 #div_RBZ_banner ul#ul_RBZ_menuProfile li:hover {
