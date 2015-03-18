@@ -12,10 +12,11 @@
                 <span>{{ app.user.availableAmount | number_format(2, ',', ' ') }}&euro;</span>
             </div>
             {% if is_mobile() == false and is_tablet() == false %}
-            <div id="div_RBZ_menuProfile" class="RBZ_icons_profile">
+            <div id="div_RBZ_menuProfile">
                 <ul id="ul_RBZ_menuProfile">
                     <li>
-                        <span class="RBZ_icons_profile"></span> <a id="a_RBZ_name">{{ app.user.firstname | capitalize }} {{ app.user.lastname | capitalize }} &nbsp; <strong>&#94;</strong></a>
+                        <span class="RBZ_icons_profile"></span> <a id="a_RBZ_name">{{ app.user.firstname | capitalize }} {{ app.user.lastname | capitalize }} <span id="span_RBZ_down">&nbsp; &#709;</span></a>
+                        <div class="KNS_clear"></div>
                         {{ menu('rubizzProfile') }}
                     </li>
                 </ul>
@@ -36,12 +37,14 @@
 
             {% if is_granted('ROLE_USER') %}
                 {% if is_mobile() %}
-                <div id="div_RBZ_menuProfile" class="RBZ_icons_profile">
+                <div id="div_RBZ_menuProfile">
                     <ul id="ul_RBZ_menuProfile">
                         <li>
-                            <span class="RBZ_icons_profile"></span> <a id="a_RBZ_name">{{ app.user.firstname | capitalize }} {{ app.user.lastname | capitalize }} &nbsp; <strong>&#94;</strong></a>
+                            <span class="RBZ_icons_profile"></span> <a id="a_RBZ_name">{{ app.user.firstname | capitalize }} {{ app.user.lastname | capitalize }} <span id="span_RBZ_down">&nbsp; &#709;</span></a>
+                            <div class="KNS_clear"></div>
                             {{ menu('rubizzProfile') }}
                         </li>
+                        
                     </ul>
                 </div>
                 {% endif %}

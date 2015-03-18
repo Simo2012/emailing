@@ -55,7 +55,7 @@ div#div_RBZ_menuProfile {
       cursor: pointer;
       padding-left: 7px;
       position: relative;
-      span {
+      .RBZ_icons_profile {
         width: 36px;
         height: 36px;
         display: inline-block;
@@ -82,13 +82,6 @@ div#div_RBZ_menuProfile {
   }
 }
 
-/*div#div_RBZ_menuProfile ul:first-child{
-    border-top: 1px solid #D4D4D4;
-    border-left: 1px solid #D4D4D4;
-    border-right: 1px solid #D4D4D4;
-    border-top-left-radius: 2px;
-    border-top-right-radius: 2px;
-}*/
 #a_RBZ_name {
     float: right;
     margin-right: 10px;
@@ -97,10 +90,19 @@ div#div_RBZ_menuProfile {
 }
 #div_RBZ_banner div#div_RBZ_menuProfile,
 #div_RBZ_banner ul#ul_RBZ_menuProfile li {
-  background-color: $white;
   a {
-      color: $black;
+      color: $white;
   }
+}
+#div_RBZ_banner ul#ul_RBZ_menuProfile li:hover {
+    background-color: $white;
+    a {
+        color: $black;
+    }
+}
+#div_RBZ_banner ul#ul_RBZ_menuProfile li ul li {
+    background-color: $white;
+    color: $black;
 }
 #div_RBZ_banner ul#ul_RBZ_menuProfile li ul li:hover {
     background-color: #EBEBEB;

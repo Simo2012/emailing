@@ -18,8 +18,14 @@ Global.prototype = {
      */
     ready : function()
     {
-        $(document).on('mouseenter mouseleave', '#ul_RBZ_menuProfile > li', function(event) {
+        $(document).on('mouseenter', '#ul_RBZ_menuProfile > li', function(event) {
             $(this).children('ul').toggle();
+            $('#span_RBZ_down').html('&nbsp; &#708;');
+            return false;
+        });
+        $(document).on('mouseleave', '#ul_RBZ_menuProfile > li', function(event) {
+            $(this).children('ul').toggle();
+            $('#span_RBZ_down').html('&nbsp; &#709;');
             return false;
         });
 
