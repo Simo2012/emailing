@@ -142,10 +142,4 @@ WebWebBundle_recommendationRecommendByEmail:
     requirements:
         piOfferId: \d+
         piFrom: \w+
-        
-#==================
-# Track controller
-#==================
-WebWebBundle_trackTag:
-    path:     /track/tag
-    defaults: { _controller: "WebWebBundle:Track:tag" }
+

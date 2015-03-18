@@ -135,7 +135,7 @@ services:
     # ---- Auto Post sur Facebook ----
     web.web.contact.facebook:
         class: Web\WebBundle\Model\Contact\Facebook
-        arguments: [%web.api%]
+        arguments: ["%web.api%"]
     # ---- Auto Post sur Twitter ----
     web.web.contact.twitter:
         class: Web\WebBundle\Model\Contact\Twitter
@@ -144,6 +144,10 @@ services:
     web.web.contact.outlook:
         class: Web\WebBundle\Model\Contact\Outlook
         arguments: ["%web.api%"]
+
+    # ==== Img vide pour tracking ====
+    web.web.response.emptyImg:
+        class: Web\WebBundle\Model\Response\EmptyImgResponse
 
     # ==== MENU ====
     # ---- Menu en twig ----
@@ -204,7 +208,7 @@ services:
         class: Web\WebBundle\Form\Contact\ContactSearchType
         tags:
             - { name: form.type, alias: WebWebContactSearchType }
-            
+
     # ==== Formulaire de Contact ====
     web.web.form.contact_type:
         class: Web\WebBundle\Form\Defaul\ContactType

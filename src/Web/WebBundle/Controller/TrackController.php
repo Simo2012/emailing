@@ -19,12 +19,38 @@ use Symfony\Component\HttpFoundation\Request;
 class TrackController extends Controller
 {
     /**
-     * Action de test
-     *
-     * @Template()
+     * Tag d'ouverture
      */
-    public function tagAction()
+    public function openAction()
     {
-        return array();
-    } // tagAction
+        $loResponse = $this->get('web.web.response.emptyImg')->get();
+        return $loResponse;
+    } // openAction
+
+    /**
+     * Tag de clic
+     */
+    public function clickAction()
+    {
+        $loResponse = $this->get('web.web.response.emptyImg')->get();
+        return $loResponse;
+    } // clickAction
+
+    /**
+     * Tag de lead
+     */
+    public function leadAction()
+    {
+        $loResponse = $this->get('web.web.response.emptyImg')->get();
+        return $loResponse;
+    } // leadAction
+
+    /**
+     * Tag d'achat
+     */
+    public function saleAction()
+    {
+        $loResponse = $this->get('web.web.response.emptyImg')->get();
+        return $loResponse;
+    } // saleAction
 }
