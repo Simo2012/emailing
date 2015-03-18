@@ -59,6 +59,13 @@ class Track
     /**
      * @var \DateTime
      *
+     * @ORM\Column(name="date_lead", type="datetime", nullable=true)
+     */
+    private $dateLead;
+
+    /**
+     * @var \DateTime
+     *
      * @ORM\Column(name="date_sale", type="datetime", nullable=true)
      */
     private $dateSale;
@@ -225,6 +232,29 @@ class Track
     public function getDateClick()
     {
         return $this->dateClick;
+    }
+
+    /**
+     * Set dateLead
+     *
+     * @param \DateTime $dateLead
+     * @return Track
+     */
+    public function setDateLead($dateLead)
+    {
+        $this->dateLead = $dateLead;
+
+        return $this;
+    }
+
+    /**
+     * Get dateLead
+     *
+     * @return \DateTime
+     */
+    public function getDateLead()
+    {
+        return $this->dateLead;
     }
 
     /**

@@ -4,6 +4,8 @@ namespace Web\WebBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\RequestContext;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
  * Contrôleur track : gestion des tags de tracking
@@ -21,36 +23,96 @@ class TrackController extends Controller
     /**
      * Tag d'ouverture
      */
-    public function openAction()
+    public function openAction(Request $poRequest)
     {
+        // ==== Initialisation ====
+        $liRecommendationId = $poRequest->get('piRecommendationId');
+        $lsEmail = $poRequest->get('email');
         $loResponse = $this->get('web.web.response.emptyImg')->get();
+        $loTracking = $this->get('web.web.tracking');
+        if (!$loTracking->readRecommendation($liRecommendationId)) {
+            trigger_error('OpenTag la recommendation n\'existe pas');
+            return $loResponse;
+        }
+
+        // ==== Prise en compte du tracking ====
+        $loTracking->handleOpenTag($lsEmail);
+        $loTracking->writeCookies($loResponse, $lsEmail);
+
         return $loResponse;
     } // openAction
 
     /**
      * Tag de clic
      */
-    public function clickAction()
+    public function clickAction(Request $poRequest)
     {
-        $loResponse = $this->get('web.web.response.emptyImg')->get();
+        // ==== Initialisation ====
+        $liRecommendationId = $poRequest->get('piRecommendationId');
+        $lsEmail = $poRequest->get('email');
+        $loTracking = $this->get('web.web.tracking');
+        if (!$loTracking->readRecommendation($liRecommendationId)) {
+            trigger_error('ClickTag la recommendation n\'existe pas');
+            $loResponse = new Response();
+            return $loResponse;
+        }
+
+        // ==== Prise en compte du tracking ====
+        $loTracking->handleClickTag($lsEmail);
+        $loResponse = new RedirectResponse($loTracking->getClickUrl());
+        $loTracking->writeCookies($loResponse, $lsEmail);
+
         return $loResponse;
     } // clickAction
 
     /**
      * Tag de lead
      */
-    public function leadAction()
+    public function leadAction(Request $poRequest)
     {
+        // ==== Initialisation ====
+        $liOfferId = $poRequest->get('operation');
+        $lsTransaction = $poRequest->get('transaction');
         $loResponse = $this->get('web.web.response.emptyImg')->get();
+        if (empty($liOfferId) || empty($lsTransaction)) {
+            trigger_error('LeadTag paramètres incorrects');
+            return $loResponse;
+        }
+        $loTracking = $this->get('web.web.tracking');
+        if (!$loTracking->readCookies($poRequest)) {
+            trigger_error('LeadTag cookies inexistant');
+            return $loResponse;
+        }
+
+        // ==== Prise en compte du tracking ====
+        $loTracking->handleLeadTag($lsTransaction);
+
         return $loResponse;
     } // leadAction
 
     /**
      * Tag d'achat
      */
-    public function saleAction()
+    public function saleAction(Request $poRequest)
     {
+        // ==== Initialisation ====
+        $liOfferId = $poRequest->get('operation');
+        $lsTransaction = $poRequest->get('transaction');
+        $lsAmount = $poRequest->get('amount');
         $loResponse = $this->get('web.web.response.emptyImg')->get();
+        if (empty($liOfferId) || empty($lsTransaction)) {
+            trigger_error('SaleTag paramètres incorrects');
+            return $loResponse;
+        }
+        $loTracking = $this->get('web.web.tracking');
+        if (!$loTracking->readCookies($poRequest)) {
+            trigger_error('LeadTag cookies inexistant');
+            return $loResponse;
+        }
+
+        // ==== Prise en compte du tracking ====
+        $loTracking->handleSaleTag($lsTransaction, $lsAmount);
+
         return $loResponse;
     } // saleAction
 }

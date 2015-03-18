@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS RUBIZZ.track (
     contact_id         int(10) UNSIGNED NULL     COMMENT 'Contact Id if email',
     date_open          datetime         NULL     COMMENT 'Open date if email',
     date_click         datetime         NULL     COMMENT 'Click date',
+    date_lead          datetime         NULL     COMMENT 'Lead date',
     date_sale          datetime         NULL     COMMENT 'Sale date (transformation)',
     sale_amount        decimal(10,2)    NULL     COMMENT 'Sale amount given by the website',
 

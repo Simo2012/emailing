@@ -56,9 +56,31 @@ class Commission {
     private $amount;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="amount_rbz", type="decimal", precision=10, scale=2, nullable=false)
+     */
+    private $amountRbz;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="transaction", type="string", length=255, nullable=false)
+     */
+    private $transaction;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="valid_offer", type="boolean", nullable=false)
+     */
+    private $validOffer;
+
+    /**
      * Constructeur, valeurs par défaut
      */
-    public function __construct() {
+    public function __construct()
+    {
         $this->dateCreate = new \DateTime('now');
     }// __construct
 
@@ -67,7 +89,8 @@ class Commission {
      *
      * @return integer
      */
-    public function getId() {
+    public function getId()
+    {
         return $this->id;
     }
 
@@ -77,7 +100,8 @@ class Commission {
      * @param \DateTime $dateCreate
      * @return Commission
      */
-    public function setDateCreate($dateCreate) {
+    public function setDateCreate($dateCreate)
+    {
         $this->dateCreate = $dateCreate;
 
         return $this;
@@ -88,7 +112,8 @@ class Commission {
      *
      * @return \DateTime
      */
-    public function getDateCreate() {
+    public function getDateCreate()
+    {
         return $this->dateCreate;
     }
 
@@ -98,7 +123,8 @@ class Commission {
      * @param \Web\WebBundle\Entity\Recommendation $recommendation
      * @return Commission
      */
-    public function setRecommendation(\Web\WebBundle\Entity\Recommendation $recommendation = null) {
+    public function setRecommendation(\Web\WebBundle\Entity\Recommendation $recommendation = null)
+    {
         $this->recommendation = $recommendation;
 
         return $this;
@@ -109,7 +135,8 @@ class Commission {
      *
      * @return \Web\WebBundle\Entity\Recommendation
      */
-    public function getRecommendation() {
+    public function getRecommendation()
+    {
         return $this->recommendation;
     }
 
@@ -119,7 +146,8 @@ class Commission {
      * @param \Web\WebBundle\Entity\Contact $contact
      * @return Commission
      */
-    public function setContact(\Web\WebBundle\Entity\Contact $contact = null) {
+    public function setContact(\Web\WebBundle\Entity\Contact $contact = null)
+    {
         $this->contact = $contact;
 
         return $this;
@@ -130,7 +158,8 @@ class Commission {
      *
      * @return \Web\WebBundle\Entity\Contact
      */
-    public function getContact() {
+    public function getContact()
+    {
         return $this->contact;
     }
 
@@ -140,7 +169,8 @@ class Commission {
      * @param string $amount
      * @return Offer
      */
-    public function setAmount($amount) {
+    public function setAmount($amount)
+    {
         $this->amount = $amount;
 
         return $this;
@@ -151,8 +181,77 @@ class Commission {
      *
      * @return string
      */
-    public function getAmount() {
+    public function getAmount()
+    {
         return $this->amount;
     }
 
+    /**
+     * Set transaction
+     *
+     * @param string $transaction
+     * @return Offer
+     */
+    public function setTransaction($transaction)
+    {
+        $this->transaction = $transaction;
+
+        return $this;
+    }
+
+    /**
+     * Get transaction
+     *
+     * @return string
+     */
+    public function getTransaction()
+    {
+        return $this->transaction;
+    }
+
+    /**
+     * Set amountRbz
+     *
+     * @param string $amountRbz
+     * @return Offer
+     */
+    public function setAmountRbz($amountRbz)
+    {
+        $this->amountRbz = $amountRbz;
+
+        return $this;
+    }
+
+    /**
+     * Get amountRbz
+     *
+     * @return string
+     */
+    public function getAmountRbz()
+    {
+        return $this->amountRbz;
+    }
+
+    /**
+     * Set validOffer
+     *
+     * @param boolean $validOffer
+     * @return User
+     */
+    public function setValidOffer($validOffer)
+    {
+        $this->validOffer = $validOffer;
+
+        return $this;
+    }
+
+    /**
+     * Get validOffer
+     *
+     * @return boolean
+     */
+    public function getValidOffer()
+    {
+        return $this->validOffer;
+    }
 }

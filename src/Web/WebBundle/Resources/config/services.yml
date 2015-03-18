@@ -164,9 +164,15 @@ services:
         class: Web\WebBundle\Model\Contact\Outlook
         arguments: ["%web.api%"]
 
-    # ==== Img vide pour tracking ====
+    # ==== Tracking ====
+    # ---- Img vide pour tracking ----
     web.web.response.emptyImg:
         class: Web\WebBundle\Model\Response\EmptyImgResponse
+    # ---- Gestion du tracking ----
+    web.web.tracking:
+        class: Web\WebBundle\Model\Tracking
+        arguments: ["@doctrine.orm.entity_manager", "@natexo_tool.filter.encrypt", "@natexo_tool.filter.decrypt"]
+
 
     # ==== MENU ====
     # ---- Menu en twig ----

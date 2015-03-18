@@ -3,6 +3,7 @@
 namespace Web\WebBundle\Entity\Repository;
 
 use Doctrine\ORM\EntityRepository;
+use Web\WebBundle\Entity\Offer;
 
 /**
  * CommissionsRepository
@@ -41,5 +42,21 @@ class CommissionRepository extends EntityRepository
                 ->orderBy('c.dateCreate', 'DESC');
         return $loQuery->getQuery()->getResult();
     }//getUserTransactions
-    
+
+    /**
+     * Compte le nombre de commissions pour une offre
+     *
+     * @param Offer $poOffer L'offre à considérer
+     * @return integer Le nombre
+     */
+    public function countOffer(Offer $poOffer)
+    {
+        $loQuery = $this->createQueryBuilder('c')
+                        ->select('count(c.id) as nb')
+                        ->join('c.recommendation', 'r')
+                        ->where('r.offer = :offer')
+                        ->setParameter('offer', $poOffer);
+        $laResult = $loQuery->getQuery()->getScalarResult();
+        return $laResult[0]['nb'];
+    } // countOffer
 }
