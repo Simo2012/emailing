@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS RUBIZZ.commission (
     date_create        datetime          NOT NULL COMMENT 'Creation date',
     recommendation_id  int(10) unsigned  NOT NULL COMMENT 'Corresponding recommendation',
     contact_id         int(10) unsigned  NULL     COMMENT 'Corresponding contact if type email',
-
+    amount             decimal(10,2)     NOT NULL DEFAULT '0.00' COMMENT 'Calculation of the amount of an comission',
     PRIMARY KEY (id),
     KEY commissionRecommendation_idx (recommendation_id),
     KEY commissionDatecreateRecommendation_idx (date_create, recommendation_id),
