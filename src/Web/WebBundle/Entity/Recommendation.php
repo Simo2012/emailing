@@ -33,7 +33,7 @@ class Recommendation
      *
      * @ORM\Column(name="to_send", type="boolean", nullable=false)
      */
-    private $toSend = '0';
+    private $toSend = false;
 
     /**
      * @var \DateTime
