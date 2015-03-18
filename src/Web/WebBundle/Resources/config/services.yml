@@ -50,7 +50,19 @@ parameters:
                 # ===== Développement ====
                 Profile:
                     label: rubizzMenu_profile
-                    route: WebWebBundle_userProfile
+                    route: WebWebBundle_userDetails
+                Rib:
+                    label: rubizzMenu_myRib
+                    route: WebWebBundle_userRib
+                Pot:
+                    label: rubizzMenu_detailPot
+                    route: WebWebBundle_userPot
+                Cashin:
+                    label: rubizzMenu_cashin
+                    route: WebWebBundle_userCashIn
+                Logout:
+                    label: rubizzMenu_logout
+                    route: WebWebBundle_securityLogout
 
         rubizzUser:
             label: ""

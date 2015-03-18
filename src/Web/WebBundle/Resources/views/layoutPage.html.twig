@@ -15,7 +15,8 @@
             <div id="div_RBZ_menuProfile" class="RBZ_icons_profile">
                 <ul id="ul_RBZ_menuProfile">
                     <li>
-                        <a href="{{ url("WebWebBundle_userDetails") }}">{{ app.user.firstname | capitalize }} {{ app.user.lastname | capitalize }} <span class="RBZ_icons_selector"></span></a>
+                        <span class="RBZ_icons_profile"></span> <a id="a_RBZ_name">{{ app.user.firstname | capitalize }} {{ app.user.lastname | capitalize }} &nbsp; &rsaquo;</a>
+                        {{ menu('rubizzProfile') }}
                     </li>
                 </ul>
             </div>
@@ -38,7 +39,8 @@
                 <div id="div_RBZ_menuProfile" class="RBZ_icons_profile">
                     <ul id="ul_RBZ_menuProfile">
                         <li>
-                            <a href="{{ url("WebWebBundle_userDetails") }}">{{ app.user.firstname | capitalize }} {{ app.user.lastname | capitalize }} <span class="RBZ_icons_selector"></a></span>
+                            <span class="RBZ_icons_profile"></span> <a id="a_RBZ_name">{{ app.user.firstname | capitalize }} {{ app.user.lastname | capitalize }} &nbsp; &rsaquo;</a>
+                            {{ menu('rubizzProfile') }}
                         </li>
                     </ul>
                 </div>

@@ -4,6 +4,10 @@ rubizzMenu_offers:             All offers
 rubizzMenu_mailingList:        Mailing list
 rubizzMenu_howItWorks:         How does it work ?
 rubizzMenu_recommendations:    My recommendations
+# ==== Menu Utilisateur header ====
+rubizzMenu_myRib:              My RIB
+rubizzMenu_detailPot:          Detail piggy bank
+rubizzMenu_logout:             Log out
 # ==== Menu Utilisateur ====
 rubizzMenu_profile:            My profile
 rubizzMenu_details:            Contact information

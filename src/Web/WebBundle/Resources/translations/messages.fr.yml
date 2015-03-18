@@ -4,6 +4,10 @@ rubizzMenu_offers:             toutes les offres
 rubizzMenu_mailingList:        mailing list
 rubizzMenu_howItWorks:         comment ça marche ?
 rubizzMenu_recommendations:    vos recommendations
+# ==== Menu Utilisateur header ====
+rubizzMenu_myRib:              Mon RIB
+rubizzMenu_detailPot:          Détail cagnotte
+rubizzMenu_logout:             Déconnexion
 # ==== Menu Utilisateur ====
 rubizzMenu_profile:            Mon profil
 rubizzMenu_details:            Coordonnées

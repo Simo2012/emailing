@@ -47,20 +47,20 @@ div#div_RBZ_menuProfile {
   font-size: 1.2rem;
   margin: 30px 25px 0 0;
   display: block;
-  height: 40px;
+  min-width: 200px;
   ul {
     font-size: 14px;
-    height: 40px;
-    line-height: 40px;
+    line-height: 27px;
     & > li {
       cursor: pointer;
-      padding-left: 45px;
+      padding-left: 7px;
       position: relative;
       span {
-        width: 12px;
-        height: 6px;
+        width: 36px;
+        height: 36px;
         display: inline-block;
         margin-left: 5px;
+        margin-top: 5px;
       }
     }
   }
@@ -68,18 +68,35 @@ div#div_RBZ_menuProfile {
     cursor: default;
     position: absolute;
     display: none;
+    border-bottom: 1px solid #D4D4D4;
+    border-left: 1px solid #D4D4D4;
+    border-right: 1px solid #D4D4D4;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
     left: 0;
     width: 100%;
     li {
-      padding-left: 10px;
+      padding-left: 20px;
       display: block;
     }
   }
 }
-#div_RBZ_banner div#div_RBZ_menuProfile,
-#div_RBZ_banner ul#ul_RBZ_menuProfile li ul {
-  background-color: $red-banner;
+#a_RBZ_name {
+    position: absolute;
+    right: 15px;
+    top: 10px;
 }
+#div_RBZ_banner div#div_RBZ_menuProfile,
+#div_RBZ_banner ul#ul_RBZ_menuProfile li {
+  background-color: $white;
+  a {
+      color: $black;
+  }
+}
+#div_RBZ_banner ul#ul_RBZ_menuProfile li ul li:hover {
+    background-color: #EBEBEB;
+}
+
 #div_RBZ_navWrapper div#div_RBZ_menuProfile,
 #div_RBZ_navWrapper ul#ul_RBZ_menuProfile li ul {
   background-color: $black-nav;
