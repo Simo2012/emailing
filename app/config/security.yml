@@ -5,7 +5,7 @@ security:
 
     providers:
         users:
-            entity: { class: WebWebBundle:User, property: email }
+            entity: { class: "WebWebBundle:User", property: email }
 
     role_hierarchy:
         ROLE_ADMIN:
@@ -18,12 +18,15 @@ security:
 
         # ==== Règle pour les pages publiques ====
         public_area:
-            pattern:         '^(/|(/[a-zA-Z_]{5}/)|(/[a-zA-Z_]{5}/(login|register|contact)))$'
-            security:        false
+            pattern:  '^(/|(/[a-zA-Z_]{5}/)|(/[a-zA-Z_]{5}/(login|register|contact)))$'
+            security: false
+        tracking_area:
+            pattern:  '^/track/(open/\d+|click/\d+|lead|sale).*$'
+            security: false
 
         # ==== Règle pour les pages privées (accessible par un utilisateur loggé) ====
         secured_users_area:
-            pattern:         .*
+            pattern:         ^.*
             provider:        users
             anonymous: ~
             form_login:
@@ -42,4 +45,5 @@ security:
 
     access_control:
         - { path: '^(/|(/[a-zA-Z_]{5}/)|(/[a-zA-Z_]{5}/(login|register|contact)))$', roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: '.*', roles: ROLE_USER }
+        - { path: '^/track/(open/\d+|click/\d+|lead|sale).*$', roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: '^.*', roles: ROLE_USER }
