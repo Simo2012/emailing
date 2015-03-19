@@ -104,7 +104,9 @@ web.web.default.contact.subject:        L'objet de votre demande
 web.web.default.contact.message:        Votre message
 web.web.default.subject.placeholder:    Objet
 web.web.default.message.placeholder:    Message
-
+# ============ Contact unsubscribe ============
+web.web.default.unsubscribe.text:       Confirmez-vous votre demande de désinscription au programme Rubizz ?
+web.web.default.unsubscribe.confirm:    Votre adresse e-mail a été désinscrite !
 # ============ OFFER PAGE ============
 # ==== Offer Page (index) ====
 web.web.offer.index.price.title: Mes gains

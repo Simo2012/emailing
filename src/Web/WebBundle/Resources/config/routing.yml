@@ -73,7 +73,10 @@ WebWebBundle_defaultLogoutLegal:
 WebWebBundle_defaultLogoutTerms:
     path:     /logout/terms
     defaults: { _controller: "WebWebBundle:Default:terms" }
-
+# ---- Page de désabonnement  ----
+WebWebBundle_defaultLogoutUnsubscribe:
+    path:     /logout/unsubscribe
+    defaults: { _controller: "WebWebBundle:Default:unsubscribe" }
 #=====================================
 # User controller : page profile, etc
 #=====================================

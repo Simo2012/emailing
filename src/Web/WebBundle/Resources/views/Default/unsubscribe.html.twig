@@ -1,0 +1,31 @@
+{% extends "@WebWeb/layoutPage.html.twig" %}
+{% block CSS %}
+    {{ parent() }}
+    {% stylesheets
+    '@WebWebBundle/Resources/public/css/default/unsubscribe.scss'
+    %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+    {% endstylesheets %}
+{% endblock %}
+{% block CONTENT %}
+    <div id="div_RBZ_content">
+        <div id="div_RBZ_unsubscribe">
+            {# formulaire non soumis encore #}
+            {% if not confirm %}
+                <div id="div_RBZ_unsubscribeText">{{ 'web.web.default.unsubscribe.text' | trans }}</div>
+            {% else %}
+                <div id="div_RBZ_unsubscribeText">{{ 'web.web.default.unsubscribe.confirm' | trans }}</div>
+            {% endif %}
+            <div>{{ email }}</div>
+            {# formulaire non soumis encore #}
+            {% if not confirm %}
+                <div id="div_RBZ_form">
+                    <form id="form_RBZ_login_form" action="{{ path('WebWebBundle_defaultLogoutUnsubscribe') }}" method="post">
+                        <input type="hidden" name="email"  value="{{ email }}">
+                        <input id="input_RBZ_login_form" type="submit" value="{{ 'web.web.popup.confirmation.confirm_button' | trans }} &nbsp; &rsaquo;" class="RBZ_redButtonPopup"/>
+                    </form>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

@@ -147,4 +147,37 @@ class DefaultController extends Controller
     {
         return array();
     } // jobsAction
+    
+    /**
+     * Page de désabonnement
+     *
+     * @Template()
+     */
+    public function unsubscribeAction(Request $poRequest)
+    {
+        // ==== Initialisation ====
+        $loManager = $this->getDoctrine()->getManager();
+        $loUser = null;
+        // ==== Récupération de l'email ====
+        $lsEmail = $poRequest->query->get('email');
+        // ---- Boolean permettant de savoir si il y a eu soumission dans le twig 
+        $lbIsConfirmed = false;
+        
+        if ($poRequest->isMethod('POST')) {
+            $lbIsConfirmed = true;
+            $lsEmail = $poRequest->request->get('email');
+            if (!empty($lsEmail)) {
+                $loUser  = $loManager->getRepository('WebWebBundle:User')->findOneByEmail($lsEmail);
+            }
+            if (!empty($loUser)) {
+                $loUser->setDateUpdate(new \DateTime('now'));
+                $loUser->setOptinNewsletter(false);
+                $loManager->flush();
+            }
+        }
+        return array(
+            'email'   => $lsEmail,
+            'confirm' => $lbIsConfirmed
+        );
+    } // unsubscribeAction
 }
