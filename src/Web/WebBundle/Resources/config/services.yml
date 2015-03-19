@@ -91,9 +91,9 @@ parameters:
                 MailingList:
                     label: rubizzMenu_faq
                     route: WebWebBundle_defaultFaq
-                HowItWorks:
+                Contact:
                     label: rubizzMenu_contact
-                    routebis: WebWebBundle_defaultContact
+                    route: WebWebBundle_defaultContact
                     id: li_RBZ_contactPopupCall
 #                Recommendations:
 #                    label: rubizzMenu_jobs
@@ -111,7 +111,7 @@ parameters:
                     route: WebWebBundle_defaultLogoutFaq
                 HowItWorks:
                     label: rubizzMenu_contact
-                    routebis: WebWebBundle_defaultLogoutContact
+                    route: WebWebBundle_defaultLogoutContact
                     id: li_RBZ_contactPopupCall
 #                Recommendations:
 #                    label: rubizzMenu_jobs

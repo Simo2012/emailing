@@ -6,7 +6,7 @@
             <h3 class="RBZ_linesSided RBZ_{{ app.request.locale }}"><span>{{ "web.web.default.contact.title" | trans }}</span></h3>
         </div>
         <div id="div_RBZ_form">
-            <form id="form_RBZ_contact_form" action="{{ path('WebWebBundle_defaultContact') }}" method="post" {{ form_enctype(form) }}>
+            <form id="form_RBZ_contact_form" action="{{ path('WebWebBundle_defaultLogoutContact') }}" method="post" {{ form_enctype(form) }}>
                 <div id="div_RBZ_error">
                     {% if error is defined %}
                         {{ error }}

@@ -150,7 +150,7 @@ Popup.prototype = {
     _manageContactPopupOpening: function()
     {
         $(document).on("click", "#li_RBZ_contactPopupCall a", function() {
-            var lsUrl = $(this).attr('hrefbis');
+            var lsUrl = $(this).attr('href');
             Popup.prototype.ajaxPopupContact(lsUrl);
             scroll(0, 0);
             return false;
@@ -200,7 +200,7 @@ Popup.prototype = {
     /**
      * Validation du formulaire dans le popup de contact
      */
-    ajaxPopupContactSubmit: function(psFormName, psUrl)
+    ajaxPopupContactSubmit: function(psFormName)
     {
         var loForm = $("#" + psFormName);
         var loData = new FormData(loForm[0]);
@@ -215,11 +215,6 @@ Popup.prototype = {
                 if ('OK' == psReturn) {
                     $("#div_RBZ_contactPopup").remove();
                     $(Popup.prototype._divShadow).hide();
-                    if (psUrl != undefined) {
-                        window.location = psUrl;
-                    } else {
-                        location.reload();
-                    }
                 } else {
                     $("#div_RBZ_error").text('');
                     $("#div_RBZ_error").append(psReturn);
