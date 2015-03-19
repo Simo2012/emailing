@@ -1,0 +1,52 @@
+{% extends "@WebWeb/layout.html.twig" %}
+{% block CSS %}
+{{     parent() }}
+{%     stylesheets '@WebWebBundle/Resources/public/css/global/layoutPageOut.scss' %}
+        <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+{%     endstylesheets %}
+{% endblock %}
+{% block HEADER %}
+    <div id="div_RBZ_banner" class="RBZ_wrapper">
+        <div id="div_RBZ_headerMenu">
+            <span class="RBZ_nowrap">
+                <a href="">{{ "web.web.layoutPageOut.home" | trans }}</a> <div class="RBZ_menuVBar"></div>
+                <a href="">{{ "web.web.layoutPageOut.hiw" | trans }}</a> <div class="RBZ_menuVBar"></div>
+            </span>
+            <span class="RBZ_nowrap">
+                <a href="">{{ "web.web.layoutPageOut.login" | trans }}</a> <div class="RBZ_menuVBar"></div>
+                <a href="">{{ "web.web.layoutPageOut.signup" | trans }}</a>
+            </span>
+        </div>
+    </div>
+{% endblock %}
+
+{% block FOOTER %}
+    <div id="div_RBZ_footerWrapper" class="RBZ_wrapper">
+        <p id="p_RBZ_footerLinks">
+            <span class="RBZ_nowrap">
+                <a href="">{{ "rubizzMenu_home" | trans }}</a>
+                <a href="{{ url('WebWebBundle_defaultLogoutAbout') }}">{{ "web.web.default.index.footerAbout" | trans }}</a>
+            </span>
+            <span class="RBZ_nowrap">
+                <a href="{{ url('WebWebBundle_defaultLogoutHowItWorks') }}">{{ "web.web.default.index.footerHow" | trans }}</a>
+                <a href="{{ url('WebWebBundle_defaultLogoutFaq') }}">{{ "web.web.default.index.footerFaq" | trans }}</a>
+            </span>
+            <span class="RBZ_nowrap">
+                <a href="{{ url("WebWebBundle_defaultLogoutContact") }}">{{ "web.web.default.index.footerContact" | trans }}</a>
+                <a href="http://careers.natexo.com" target="_blank">{{ "web.web.default.index.footerJobs" | trans }}</a>
+                <a href="http://natexo.com/" target="_blank">{{ "web.web.default.index.footerAdv" | trans }}</a>
+            </span>
+        </p>
+        <p id="p_RBZ_footerCommunity">
+            <a href="#"><img src="{{ asset("/bundles/webweb/images/default/index/facebook.png") }}" alt="" /></a>
+            <a id="a_RBZ_twitter" href="#"><img src="{{ asset("/bundles/webweb/images/default/index/twitter.png") }}" alt="" /></a>
+        </p>
+        <p id="p_RBZ_rights">
+            {{ "web.web.default.index.footerCopy" | trans | raw }}
+            <span class="RBZ_nowrap">
+                <a href="{{ url('WebWebBundle_defaultLogoutLegal') }}">{{ "web.web.default.index.footerLegal" | trans }}</a>
+                <a href="{{ url('WebWebBundle_defaultLogoutTerms') }}">{{ "web.web.default.index.footerGtu" | trans }}</a>
+            </span>
+         </p>
+    </div>
+{% endblock %}

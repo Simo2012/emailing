@@ -34,6 +34,12 @@ web.web.form.ok:            Enregistrement réussi
 layout.myKitty:             Ma cagnotte
 layout.mailingList:         Mailing list
 
+# ==== Layout pages non connectées ====
+web.web.layoutPageOut.home:   ACCUEIL
+web.web.layoutPageOut.hiw:    COMMENT ÇA MARCHE ?
+web.web.layoutPageOut.login:  CONNEXION
+web.web.layoutPageOut.signup: S'INSCRIRE
+
 # ============ POPUP ============
 # ==== Confirmation ====
 web.web.popup.confirmation.title:          DEMANDE DE CONFIRMATION
