@@ -77,6 +77,28 @@ input[type=submit].RBZ_redButton,
 a.RBZ_redButton {
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+    color: $white;
+    background-color: $red-banner;
+    width: 100%;
+    display: block;
+    line-height: 30px;
+    border: none;
+    @include border-radius(2px, 2px);
+    text-align: center;
+}
+
+.RBZ_placeholder {
+    font-size: 14px;
+    padding-left: 20px;
+}
+/* ==== Boutton pour les popups login etc. ==== */
+input[type=submit].RBZ_redButtonPopup,
+a.RBZ_redButtonPopup {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
     font-size: 14.5px;
     height: 35px;
     line-height: 30px;

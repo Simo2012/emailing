@@ -33,7 +33,7 @@ class PaymentRequestRepository extends EntityRepository
                         ->orderBy('pr.dateCreate', 'ASC');
 
         return $loQuery->getQuery()->getResult();
-    }
+    } // earningByMonth
 
     /**
     * Retourner la liste de transaction
@@ -52,5 +52,5 @@ class PaymentRequestRepository extends EntityRepository
                         ->setParameter('year', $loDate[1]);
 
         return $loQuery->getQuery()->getResult();
-    }
+    } // getAllByUser
 }
