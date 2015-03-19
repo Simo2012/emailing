@@ -41,6 +41,13 @@ class Recommendation
      * @ORM\Column(name="date_create", type="datetime", nullable=false)
      */
     private $dateCreate;
+    
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="recommended", type="boolean", nullable=false)
+     */
+    private $recommended;
 
     /**
      * @var \User
@@ -84,6 +91,7 @@ class Recommendation
     {
         $this->dateCreate = new \DateTime('now');
         $this->contact = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->recommended = false;
     }
 
 
@@ -164,6 +172,29 @@ class Recommendation
     public function getDateCreate()
     {
         return $this->dateCreate;
+    }
+    
+    /**
+     * Set recommended
+     *
+     * @param int $recommended
+     * @return Recommendation
+     */
+    public function setRecommended($recommended)
+    {
+        $this->recommended = $recommended;
+
+        return $this;
+    }
+
+    /**
+     * Get recommended
+     *
+     * @return int
+     */
+    public function getRecommended()
+    {
+        return $this->recommended;
     }
 
     /**

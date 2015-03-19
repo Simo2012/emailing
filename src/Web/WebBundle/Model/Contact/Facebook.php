@@ -30,15 +30,21 @@ class Facebook
         $this->clientId = $paramsApi['facebook']['client_id'];
     } // __constructeur
     
+    
     /**
-     * Return un lien permettant le postage sur facebook
+     * Retourne un lien permettant le postage sur facebook
      *
      * @param \Web\WebBundle\Entity\Offer $poOffer
+     * @param \Web\WebBundle\Entity\Recommendation $poRecommendation
+     * @param string $psLocale
+     * @param string $psFrom
      */
-    public function generateUrl($poOffer, $psLocale, $psFrom)
+    public function generateUrl($poOffer, $poRecommendation, $psLocale, $psFrom)
     {
         // ==== Initialisations ====
-        $lsLink = $poOffer->getUrl();
+        // ---- Url de tracking ----
+        $liRecommendationId = $poRecommendation->getId();
+        $lsLink = "http://rubizz.anis.natexo.com/app_dev.php/track/click/{$liRecommendationId}";
         $lsDesc = $poOffer->getTitle();
         $lsPathPicture = "http://img.enqueteetselonvous.com/RBZ/";
         $lsCountry = $poOffer->getCountry();
@@ -51,9 +57,9 @@ class Facebook
         $lsUrl .="&link={$lsLink}";
         $lsUrl .="&picture={$lsPicture}";
         $lsUrl .="&redirect_uri=http://rubizz.anis.natexo.com/app_dev.php/{$psLocale}";
-        $lsUrl .="/recommendation/addRecommendationByFacebook/{$lsOfferId}/{$psFrom}";
+        $lsUrl .="/recommendation/addRecommendationByFacebook/{$lsOfferId}/{$psFrom}/{$liRecommendationId}";
 
         return $lsUrl;
-    } //generateUrl
+    } //generateUrl 
 
  }

@@ -161,11 +161,12 @@ WebWebBundle_recommendByFacebook:
         piFrom: \w+
 # ---- Recommandation par Faceboook (après soummission) ----
 WebWebBundle_addRecommendationByFacebook:
-    path:     /recommendation/addRecommendationByFacebook/{piOfferId}/{psFrom}
+    path:     /recommendation/addRecommendationByFacebook/{piOfferId}/{psFrom}/{piRecommendationId}
     defaults: { _controller: "WebWebBundle:Recommendation:addRecommendationByFacebook", psFrom: 'index' }
     requirements:
         piOfferId: \d+
         piFrom: \w+
+        piRecommendationId: \d+
 # ---- Recommandation par email ----
 WebWebBundle_recommendationRecommendByEmail:
     path:     /recommendation/recommendByEmail/{piOfferId}/{psFrom}

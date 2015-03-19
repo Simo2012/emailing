@@ -64,12 +64,21 @@ class RecommendationController extends Controller
         $loRequest = $this->get('request_stack')->getCurrentRequest();
         $lsTweeted = $loRequest->get('tweeted');
         $lbTweeted = empty($lsTweeted) ? false : true;
+        
+        // ==== Recherche de la recommendation ====
+        $loRecommendation = $loManager->getRepository('WebWebBundle:Recommendation')->findOneBy(
+            array('user' => $loUser, 'offer' => $loOffer, 'type' => 'twitter')
+        );
 
         if ($lbTweeted) {
+            // ==== Modification de la recommandation ====
+            if (!empty($loRecommendation)) {
+                $loRecommendation->setRecommended(true);
+                $loUser->setUseTwitter(true);
+                $loManager->flush();
+            }
+        } else {
             // ==== Enregistrement du tweet ====
-            $loRecommendation = $loManager->getRepository('WebWebBundle:Recommendation')->findOneBy(
-                array('user' => $loUser, 'offer' => $loOffer, 'type' => 'twitter')
-            );
             if (empty($loRecommendation)) {
                 $loRecommendation = new Recommendation();
                 $loRecommendation->setDateCreate(new \DateTime())
@@ -77,14 +86,13 @@ class RecommendationController extends Controller
                                  ->setOffer($loOffer)
                                  ->setType('twitter');
                 $loManager->persist($loRecommendation);
-                $loUser->setUseTwitter(true);
                 $loManager->flush();
             }
-        } else {
+            
             // ==== Construction et appel de l'url Twitter ====
             $loTwitter = $this->container->get('web.web.contact.twitter');
-            $lsUrl = $loTwitter->generateUrl($loOffer);
-
+            $lsUrl = $loTwitter->generateUrl($loOffer, $loRecommendation);
+            
             return $this->redirect($lsUrl);
         }
 
@@ -104,9 +112,25 @@ class RecommendationController extends Controller
         $loManager = $this->getDoctrine()->getManager();
         $loOffer   = $loManager->getRepository('WebWebBundle:Offer')->find($piOfferId);
         $lsLocale  = $this->get('request_stack')->getCurrentRequest()->getLocale();
+        $loUser = $this->getUser();
+        
+        // ==== Enregistrement de la recommandation fb ====
+        $loRecommendation = $loManager->getRepository('WebWebBundle:Recommendation')->findOneBy(
+            array('user' => $loUser, 'offer' => $loOffer, 'type' => 'facebook')
+        );
+        // ==== Création d'une recommendation ====
+        if (empty($loRecommendation)) {
+            $loRecommendation = new Recommendation();
+            $loRecommendation->setUser($loUser)
+                             ->setOffer($loOffer)
+                             ->setType('facebook')
+                             ->setDateCreate(new \DateTime);
+            $loManager->persist($loRecommendation);
+            $loManager->flush();
+        }
         $loModelFb = $this->get('web.web.contact.facebook');
-        $lsUrl     = $loModelFb->generateUrl($loOffer, $lsLocale, $psFrom);
-
+        $lsUrl     = $loModelFb->generateUrl($loOffer, $loRecommendation, $lsLocale, $psFrom);
+        
         return $this->redirect($lsUrl);
 
     } // recommendByFacebookAction
@@ -118,28 +142,22 @@ class RecommendationController extends Controller
      * @param $psFrom
      * @return string
      */
-    public function addRecommendationByFacebookAction($piOfferId, $psFrom)
+    public function addRecommendationByFacebookAction($piOfferId, $psFrom, $piRecommendationId)
     {
         // ==== Initialisation ====
         $loManager = $this->getDoctrine()->getManager();
         $loOffer   = $loManager->getRepository('WebWebBundle:Offer')->find($piOfferId);
-        $loUser    = $this->getUser();
+        $loUser = $this->getUser();
+        
         // ---- Récupération de l'id si soumission ----
         $lsPostId = $this->get('request_stack')->getCurrentRequest()->query->get('post_id');
-
-        // ==== Enregistrement de la recommandation fb ====
-        $loRecommendation = $loManager->getRepository('WebWebBundle:Recommendation')->findOneBy(
-            array('user' => $loUser, 'offer' => $loOffer, 'type' => 'facebook')
-        );
         // ---- L'utilisateur à publié sur son mur ----
-        if (isset($lsPostId) && !empty($lsPostId) && empty($loRecommendation)) {
-            $loRecommendation = new Recommendation();
-            $loRecommendation->setUser($loUser)
-                             ->setOffer($loOffer)
-                             ->setType('facebook')
-                             ->setDateCreate(new \DateTime);
+        if (isset($lsPostId) && !empty($lsPostId) && !empty($piRecommendationId)) {
+            $loRecommendation = $loManager->getRepository('WebWebBundle:Recommendation')->findOneBy(
+                array('user' => $loUser, 'offer' => $loOffer, 'type' => 'facebook')
+            );
+            $loRecommendation->setRecommended(true);
             $loUser->setUseFacebook(true);
-            $loManager->persist($loRecommendation);
             $loManager->flush();
         }
         /*$lsRoute = $psFrom == 'index' ? 'WebWebBundle_offerIndex' : 'WebWebBundle_offerList';
@@ -172,7 +190,8 @@ class RecommendationController extends Controller
                              ->setUser($loUser)
                              ->setOffer($loOffer)
                              ->setType('email')
-                             ->setToSend(true);
+                             ->setToSend(true)
+                             ->setRecommended(true);
             $loManager->persist($loRecommendation);
             $loUser->setUseTwitter(true);
             $loManager->flush();

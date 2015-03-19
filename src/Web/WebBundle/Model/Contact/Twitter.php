@@ -26,11 +26,14 @@ class Twitter
      * Retourne une URL permettant la publication sur Twitter
      *
      * @param \Web\WebBundle\Entity\Offer $poOffer
+     * @param \Web\WebBundle\Entity\Recommendation $poRecommendation
      * @return string
      */
-    public function generateUrl($poOffer)
+    public function generateUrl($poOffer, $poRecommendation)
     {
-        $lsLink  = $poOffer->getUrl();
+        // ---- Url de tracking ----
+        $liRecommendationId = $poRecommendation->getId();
+        $lsLink = "http://rubizz.anis.natexo.com/app_dev.php/track/click/{$liRecommendationId}";
         $lsTitle = $poOffer->getTitle();
         $lsUrl   = "https://twitter.com/intent/tweet?url={$lsLink}&text={$lsTitle}"; // &via=rubizz_FR
                 

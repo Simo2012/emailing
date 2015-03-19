@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS RUBIZZ.recommendation (
     type         enum('email', 'facebook', 'twitter') NOT NULL COMMENT 'Type of recommendation',
     to_send      tinyint(3) unsigned  NOT NULL DEFAULT 0 COMMENT 'Recommendation of type email sending status',
     date_create  datetime             NOT NULL COMMENT 'Creation date',
+    recommended  tinyint(1) unsigned  NOT NULL DEFAULT 0 COMMENT 'To know if the recommendation is really posted',
 
     PRIMARY KEY (id),
     KEY recommendationUser_idx (user_id),
