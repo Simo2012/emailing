@@ -17,6 +17,7 @@ body { margin:0; }
         position:relative; max-width:1220px; height:865px; margin-left:auto; margin-right:auto;
         #img_RBZ_headerGuy { float:left; margin-top:13px; }
         #img_RBZ_headerGuyPad, #img_RBZ_headerGuyPhone { display:none; }
+        #img_RBZ_headerBeta { position:absolute; top:60px; left:165px; }
         #div_RBZ_headerText {
             float:right; position:relative; text-align:center;
             #div_RBZ_headerLogin {
@@ -143,6 +144,7 @@ body.RBZ_fr {
             height:680px;
             #img_RBZ_headerGuy { display:none; }
             #img_RBZ_headerGuyPad { display:block; float:left; margin-top:15px; }
+            #img_RBZ_headerBeta { top:55px; left:162px; }
             #div_RBZ_headerText {
                 float:none; position:absolute; top:0px; right:10px;
                 p { font-size:32px; line-height:40px; margin-bottom:0px; }
@@ -199,6 +201,7 @@ body.RBZ_fr {
     }
     // ---- Footer ----
     #footer_RBZ_footer {
+        background:#353537 url(/bundles/webweb/images/default/index/pad/footer.png) no-repeat right bottom;
         #div_RBZ_footerInside {
             #table_RBZ_footerLinks {
                 a { font-size:16px; }
@@ -224,6 +227,7 @@ body.RBZ_fr {
             #img_RBZ_headerGuy { display:none; }
             #img_RBZ_headerGuyPad { display:none; }
             #img_RBZ_headerGuyPhone { display:block; margin-left:auto; margin-right:auto; margin-top:10px; }
+            #img_RBZ_headerBeta { display:none; }
             #div_RBZ_headerText {
                 float:none; position:relative; top:auto; right:auto;
                 p { font-size:24px; line-height:28px; margin-bottom:0px; margin-top:20px; }
