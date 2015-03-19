@@ -81,6 +81,13 @@ div#div_RBZ_menuProfile {
     }
   }
 }
+/*div#div_RBZ_menuProfile ul:first-child:hover{
+    border-top: 1px solid #D4D4D4;
+    border-left: 1px solid #D4D4D4;
+    border-right: 1px solid #D4D4D4;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}*/
 
 #a_RBZ_name {
     float: right;
@@ -101,6 +108,7 @@ div#div_RBZ_menuProfile {
     a {
         color: $black;
     }
+    z-index: 100;
 }
 #div_RBZ_banner ul#ul_RBZ_menuProfile li ul li {
     background-color: $white;
