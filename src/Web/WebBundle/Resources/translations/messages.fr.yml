@@ -3,16 +3,16 @@ rubizzMenu_home:               accueil
 rubizzMenu_offers:             toutes les offres
 rubizzMenu_mailingList:        mailing list
 rubizzMenu_howItWorks:         comment ça marche ?
-rubizzMenu_recommendations:    vos recommendations
+rubizzMenu_recommendations:    Mes recommendations
 # ==== Menu Utilisateur header ====
 rubizzMenu_myRib:              Mon RIB
-rubizzMenu_detailPot:          Détail cagnotte
+rubizzMenu_detailPot:          Détail de ma cagnotte
 rubizzMenu_logout:             Déconnexion
 # ==== Menu Utilisateur ====
-rubizzMenu_profile:            Mon profil
-rubizzMenu_details:            Coordonnées
-rubizzMenu_rib:                Votre RIB
-rubizzMenu_pot:                Ma cagnotte
+rubizzMenu_profile:            Mes coordonnées
+rubizzMenu_details:            Mes coordonnées
+rubizzMenu_rib:                Mon RIB
+rubizzMenu_pot:                Détail de ma cagnotte
 rubizzMenu_cashin:             Encaisser ma cagnotte
 # ==== Menu Footer ====
 rubizzMenu_about:              A propos
@@ -44,10 +44,10 @@ web.web.popup.confirmation.confirm_button: CONFIRMER
 # ==== Login/Inscription ====
 web.web.security.login.baseline:        BON RETOUR SUR RUBIZZ
 web.web.security.register.baseline:     DÉCOUVRIR GRATUITEMENT RUBIZZ
-web.web.security.firstname:             Votre prénom
-web.web.security.lastname:              Votre nom
-web.web.security.email:                 Votre email
-web.web.security.password:              Votre mot de passe
+web.web.security.firstname:             Mon prénom
+web.web.security.lastname:              Mon nom
+web.web.security.email:                 Mon email
+web.web.security.password:              Mon mot de passe
 web.web.security.empty_fields:          Vous devez renseigner tous les champs.
 web.web.security.email_not_found:       Cet email n'est associé à aucun utilisateur.
 web.web.security.wrong_password:        Mot de passe incorrect.
@@ -107,7 +107,7 @@ web.web.default.message.placeholder:    Message
 
 # ============ OFFER PAGE ============
 # ==== Offer Page (index) ====
-web.web.offer.index.price.title: Vos gains
+web.web.offer.index.price.title: Mes gains
 web.web.offer.index.offer.title: Dernières offres disponibles
 web.web.offer.index.donut.piggyBank: Ma cagnotte
 web.web.offer.index.donut.piggyBankTouch: Encaisser ma cagnotte
@@ -155,7 +155,7 @@ rubizz.form.bankCode:      CODE BANQUE
 rubizz.form.agencyCode:    CODE AGENCE
 rubizz.form.AccountNumber: N° DU COMPTE
 rubizz.form.Key:           CLÉ
-web.web.user.bic.titre1: Votre RIB
+web.web.user.bic.titre1: Mon RIB
 web.web.user.bic.titre2: Afin de recevoir vos paiements, vous devez renseigner vos coordonnées bancaires
 # ==== Encaisser ma cagnotte ====
 web.web.user.cashIn.cash.title: Encaisser ma cagnotte
@@ -173,7 +173,7 @@ web.web.user.cashIn.cash.SecondSection: "IMPORTANT : Vous n'avez pas renseigné 
 web.web.user.cashIn.history.title:      Historique de vos demandes de paiements
 
 # ==== Coordonnées ====
-web.web.user.details.title:                      Coordonnées
+web.web.user.details.title:                      Mes coordonnées
 web.web.user.details.personal.title:             Vos informations personnelles
 web.web.user.details.newsletter.title:           Vos inscriptions Newsletter
 web.web.user.details.connection.title:           Identifiants de connexion
@@ -189,7 +189,7 @@ web.web.user.details.lastname:                   VOTRE NOM
 web.web.user.details.email:                      EMAIL
 
 #===== POT =========
-web.web.user.pot.title: Détail de votre cagnotte
+web.web.user.pot.title: Détail de ma cagnotte
 web.web.user.pot.date: DATE
 web.web.user.pot.operation_name: OPERATION
 web.web.user.pot.debit: DEBIT
@@ -229,7 +229,7 @@ web.web.contact.index.mailing_list.unsubscribe:       DÉSABONNER
 
 # ============ RECOMMENDATION PAGE ============
 # ==== Index ====
-web.web.contact.index.recommendation.title:       Vos recommandations
+web.web.contact.index.recommendation.title:       Mes recommandations
 web.web.contact.index.recommendation.info:        Retrouvez dans cette rubrique, l'ensemble des recommandations que vous avez réaliser auprès de vos contacts. Vous pouvez également consulter le montant de commissions perçues pour chacune d'elle.
 web.web.contact.index.recommendation.date:        DATE
 web.web.contact.index.recommendation.offer_name:  NOM DE L'OFFRE

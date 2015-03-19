@@ -5,14 +5,14 @@ rubizzMenu_mailingList:        Mailing list
 rubizzMenu_howItWorks:         How does it work ?
 rubizzMenu_recommendations:    My recommendations
 # ==== Menu Utilisateur header ====
-rubizzMenu_myRib:              My RIB
-rubizzMenu_detailPot:          Detail piggy bank
+rubizzMenu_myRib:              My bank id
+rubizzMenu_detailPot:          Detail of my piggy bank
 rubizzMenu_logout:             Log out
 # ==== Menu Utilisateur ====
-rubizzMenu_profile:            My profile
-rubizzMenu_details:            Contact information
-rubizzMenu_rib:                Your bank id
-rubizzMenu_pot:                My piggy bank
+rubizzMenu_profile:            My details
+rubizzMenu_details:            My details
+rubizzMenu_rib:                My bank id
+rubizzMenu_pot:                Detail of my piggy bank
 rubizzMenu_cashin:             Redeem my piggy bank
 # ==== Menu Footer ====
 rubizzMenu_about:              About
@@ -107,7 +107,7 @@ web.web.default.message.placeholder:    Message
 
 # ============ OFFER PAGE ============
 # ==== Offer Page (index) ====
-web.web.offer.index.price.title: Your earnings
+web.web.offer.index.price.title: My earnings
 web.web.offer.index.offer.title: Last available offers
 web.web.offer.index.donut.piggyBank: My piggy bank
 web.web.offer.index.donut.piggyBankTouch: Redeem my piggy bank
@@ -155,7 +155,7 @@ rubizz.form.bankCode:      BANK CODE
 rubizz.form.agencyCode:    AGENCY CODE
 rubizz.form.AccountNumber: ACCOUNT NUMBER
 rubizz.form.Key:           KEY
-web.web.user.bic.titre1:   Your bank id
+web.web.user.bic.titre1:   My bank id
 web.web.user.bic.titre2:   To receive your payments, you must enter your bank details
 # ==== Encaisser ma cagnotte ====
 web.web.user.cashIn.cash.title: Redeem my Piggy Bank
@@ -174,7 +174,7 @@ web.web.user.cashIn.history.title:      Historique de vos demandes de paiements
 
 # ==== Détail cagnotte ====
 #===== POT =========
-web.web.user.pot.title: Piggy Bank Details
+web.web.user.pot.title: Detail of my piggy bank
 web.web.user.pot.date: DATE
 web.web.user.pot.operation_name: TRASACTION
 web.web.user.pot.debit: DEBIT
@@ -195,8 +195,8 @@ web.web.user.pot.payment.word2: account made on
 web.web.user.pot.movement.popup.title: Detail of movements
 
 # ==== Coordonnées ====
-web.web.user.details.title:                      Information
-web.web.user.details.personal.title:             Your profile
+web.web.user.details.title:                      My details
+web.web.user.details.personal.title:             My profile
 web.web.user.details.newsletter.title:           Newletter subscription
 web.web.user.details.connection.title:           Connection identifier
 web.web.user.details.submit:                     CONFIRM
@@ -206,9 +206,9 @@ web.web.user.details.connection.oldPass:         OLD PASSWORD
 web.web.user.details.connection.newPass:         NEW PASSWORD
 web.web.user.details.connection.passRepeatError: The passwords must be identical
 web.web.user.details.connection.oldPassError:    Incorrect older password
-web.web.user.details.firstname:                  YOUR FIRST NAME
-web.web.user.details.lastname:                   YOUR LAST NAME
-web.web.user.details.email:                      YOUR EMAIL
+web.web.user.details.firstname:                  My FIRST NAME
+web.web.user.details.lastname:                   My LAST NAME
+web.web.user.details.email:                      My EMAIL
 
 # ============ CONTACT PAGE ============
 # ==== Index ====
@@ -232,7 +232,7 @@ web.web.contact.index.mailing_list.unsubscribe:       UNSUBSCRIBE
 
 # ============ RECOMMENDATION PAGE ============
 # ==== Index ====
-web.web.contact.index.recommendation.title:       Your recommendations
+web.web.contact.index.recommendation.title:       My recommendations
 web.web.contact.index.recommendation.info:        In this section you may find all recommendations made to your contacts. You may also find your commission amount for each recommendation made.
 web.web.contact.index.recommendation.date:        DATE
 web.web.contact.index.recommendation.offer_name:  NAME OF THE OFFER
