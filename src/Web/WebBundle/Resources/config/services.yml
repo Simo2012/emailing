@@ -95,7 +95,11 @@ parameters:
                     label: rubizzMenu_contact
                     route: WebWebBundle_defaultContact
                     id: li_RBZ_contactPopupCall
+<<<<<<< HEAD
                     hrefbis: true
+=======
+                    hrefbis: bobo
+>>>>>>> branch 'master' of git@95.131.143.161:rubizz.git
 #                Recommendations:
 #                    label: rubizzMenu_jobs
 #                    route: WebWebBundle_defaultJobs
