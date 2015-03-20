@@ -93,7 +93,7 @@ parameters:
                     route: WebWebBundle_defaultFaq
                 Contact:
                     label: rubizzMenu_contact
-                    route: WebWebBundle_defaultContact
+                    route: WebWebBundle_defaultLogoutContact
                     id: li_RBZ_contactPopupCall
                     hrefbis: true
 #                Recommendations:
@@ -114,6 +114,7 @@ parameters:
                     label: rubizzMenu_contact
                     route: WebWebBundle_defaultLogoutContact
                     id: li_RBZ_contactPopupCall
+                    hrefbis: true
 #                Recommendations:
 #                    label: rubizzMenu_jobs
 #                    route: WebWebBundle_defaultJobs

@@ -149,8 +149,8 @@ Popup.prototype = {
     
     _manageContactPopupOpening: function()
     {
-        $(document).on("click", "#li_RBZ_contactPopupCall a", function() {
-            var lsUrl = $(this).attr('href');
+        $(document).on("click", "#li_RBZ_contactPopupCall a:first", function() {
+            var lsUrl = $(this).attr('hrefbis');
             Popup.prototype.ajaxPopupContact(lsUrl);
             scroll(0, 0);
             return false;
