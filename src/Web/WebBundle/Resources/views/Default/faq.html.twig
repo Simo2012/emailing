@@ -1,4 +1,4 @@
-{% extends "@WebWeb/layoutPage.html.twig" %}
+{% extends app.user.id is defined ? "@WebWeb/layoutPage.html.twig" : "@WebWeb/layoutPageOut.html.twig" %}
 {% block CSS %}
     {{ parent() }}
     {% stylesheets
@@ -66,8 +66,6 @@
                     </div>
                 </div>
             {% endfor %}
-            <br />
-            <br />
             {# Rubrique ma cagnotte #}
             <div class="div_RBZ_faqPicture"><img src="{{ asset('/bundles/webweb/images/default/faq/guy.png') }}"></div>
 
@@ -79,8 +77,7 @@
                     </div>
                 </div>
             {% endfor %}
-            <br />
-            <br />
+
             {# Rubrique mon compte #}
             <div class="div_RBZ_faqPicture"><img src="{{ asset('/bundles/webweb/images/default/faq/guy.png') }}"></div>
 
@@ -93,7 +90,8 @@
                 </div>
             {% endfor %}
         </div>
-
+            <br />
+            <br />
         <div class="KNS_clear"></div>
     </div>
 {% endblock %}
