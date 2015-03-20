@@ -95,6 +95,7 @@ parameters:
                     label: rubizzMenu_contact
                     route: WebWebBundle_defaultContact
                     id: li_RBZ_contactPopupCall
+                    hrefbis: bobo
 #                Recommendations:
 #                    label: rubizzMenu_jobs
 #                    route: WebWebBundle_defaultJobs

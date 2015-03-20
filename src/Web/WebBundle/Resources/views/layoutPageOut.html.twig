@@ -5,26 +5,36 @@
         <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
 {%     endstylesheets %}
 {% endblock %}
+{% block JAVASCRIPT %}
+{{     parent() }}
+{%     javascripts '@WebWebBundle/Resources/public/js/default/Default.js' %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+{%     endjavascripts %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            goDefault.ready("{{ url('WebWebBundle_offerIndex') }}");
+        });
+    </script>
+{% endblock %}
 {% block HEADER %}
     <div id="div_RBZ_banner" class="RBZ_wrapper">
         <div id="div_RBZ_headerMenu">
             <span class="RBZ_nowrap">
-                <a href="">{{ "web.web.layoutPageOut.home" | trans }}</a> <div class="RBZ_menuVBar"></div>
-                <a href="">{{ "web.web.layoutPageOut.hiw" | trans }}</a> <div class="RBZ_menuVBar"></div>
+                <a href="{{ url('WebWebBundle_defaultIndex') }}">{{ "web.web.layoutPageOut.home" | trans }}</a> <div class="RBZ_menuVBar"></div>
+                <a id="a_RBZ_headerHiw" href="{{ url('WebWebBundle_defaultLogoutHowItWorks') }}">{{ "web.web.layoutPageOut.hiw" | trans }}</a> <div class="RBZ_menuVBar"></div>
             </span>
             <span class="RBZ_nowrap">
-                <a href="">{{ "web.web.layoutPageOut.login" | trans }}</a> <div class="RBZ_menuVBar"></div>
-                <a href="">{{ "web.web.layoutPageOut.signup" | trans }}</a>
+                <a id="a_RBZ_login" href="#">{{ "web.web.layoutPageOut.login" | trans }}</a> <div class="RBZ_menuVBar"></div>
+                <a class="RBZ_register" href="#">{{ "web.web.layoutPageOut.signup" | trans }}</a>
             </span>
         </div>
     </div>
 {% endblock %}
-
 {% block FOOTER %}
     <div id="div_RBZ_footerWrapper" class="RBZ_wrapper">
         <p id="p_RBZ_footerLinks">
             <span class="RBZ_nowrap">
-                <a href="">{{ "rubizzMenu_home" | trans }}</a>
+                <a href="{{ url('WebWebBundle_defaultIndex') }}">{{ "rubizzMenu_home" | trans }}</a>
                 <a href="{{ url('WebWebBundle_defaultLogoutAbout') }}">{{ "web.web.default.index.footerAbout" | trans }}</a>
             </span>
             <span class="RBZ_nowrap">
@@ -32,7 +42,7 @@
                 <a href="{{ url('WebWebBundle_defaultLogoutFaq') }}">{{ "web.web.default.index.footerFaq" | trans }}</a>
             </span>
             <span class="RBZ_nowrap">
-                <a href="{{ url("WebWebBundle_defaultLogoutContact") }}">{{ "web.web.default.index.footerContact" | trans }}</a>
+                <a id="li_RBZ_contactPopupCall" href="{{ url("WebWebBundle_defaultLogoutContact") }}">{{ "web.web.default.index.footerContact" | trans }}</a>
                 <a href="http://careers.natexo.com" target="_blank">{{ "web.web.default.index.footerJobs" | trans }}</a>
                 <a href="http://natexo.com/" target="_blank">{{ "web.web.default.index.footerAdv" | trans }}</a>
             </span>
