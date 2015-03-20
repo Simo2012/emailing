@@ -276,8 +276,9 @@ class MenuExtension extends \Twig_Extension
                         }
                     }
                 }
+                $lbHrefBis = in_array('hrefbis', array_keys($laSubmenu));
                 $lsSource .= "<li" . $this->getLiOptions($laSubmenu) .
-                    "><a " . $this->getAOptions($laSubmenu) . " href='{$lsHref}'>" .
+                    "><a " . $this->getAOptions($laSubmenu, $lsHref) . " href='" . ($lbHrefBis ? '#' : $lsHref) . "'>" .
                     $this->translator->trans($lsLabel) . '</a>';
             }
             $lsSource .= $lsSubSource;
@@ -352,7 +353,9 @@ class MenuExtension extends \Twig_Extension
     {
         $paMenu = array_diff_key(
             $paMenu,
-            array('label' => null, 'route' => null, 'pages' => null, 'role' => null, 'target' => null)
+            array(
+                'label' => null, 'route' => null, 'pages' => null, 'role' => null, 'target' => null, 'hrefbis' => null
+            )
         );
         $lsOptions = '';
         foreach ($paMenu as $lsName => $lsValue) {
@@ -370,12 +373,15 @@ class MenuExtension extends \Twig_Extension
      *
      * @param array $paMenu The definition of the option
      */
-    protected function getAOptions(array $paMenu)
+    protected function getAOptions(array $paMenu, $psHref = '#')
     {
-        $paMenu = array_intersect_key($paMenu, array('target' => null));
+        $paMenu = array_intersect_key($paMenu, array('target' => null, 'hrefbis' => null));
         $lsOptions = '';
         foreach ($paMenu as $lsName => $lsValue) {
             if (!is_array($lsValue)) {
+                if ('hrefbis' == strtolower($lsName)) {
+                    $lsValue = $psHref;
+                }
                 $lsOptions .= " {$lsName}='{$lsValue}'";
             } else {
                 $lsOptions .= " {$lsName}='" . implode(' ', $lsValue) . "'";

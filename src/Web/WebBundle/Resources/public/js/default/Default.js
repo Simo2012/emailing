@@ -47,7 +47,6 @@ Default.prototype = {
     _manageLoginPopupOpening: function()
     {
         $(document).on("click", "#a_RBZ_login", function() {
-            console.log("DEBUG login"); // DEBUG
             var lsUrl = $(this).attr('hrefbis');
             Default.prototype.ajaxPopupLogin(lsUrl);
             return false;
