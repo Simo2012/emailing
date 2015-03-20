@@ -113,6 +113,66 @@ web.web.default.message.placeholder:    Message
 # ============ Contact unsubscribe ============
 web.web.default.unsubscribe.text:       Confirmez-vous votre demande de désinscription au programme Rubizz ?
 web.web.default.unsubscribe.confirm:    Votre adresse e-mail a été désinscrite !
+# ============ FAQ page ============
+web.web.default.faq.menu.inscription:       Inscription
+web.web.default.faq.menu.contacts:          Mes contacts
+web.web.default.faq.menu.account:           Mon compte
+# ---- FAQ page ----
+web.web.default.faq.question.1:                 Quelles sont les informations demandées pour l’inscription ?
+web.web.default.faq.question.inside.1:          Vos nom et prénom, une adresse email et un mot de passe sont suffisants pour vous inscrire sur Rubizz. De ce fait, l’inscription ne vous prend que quelques secondes. Vous pourrez ensuite vous connecter à votre espace privé en renseignant simplement votre email et votre mot de passe.
+web.web.default.faq.question.2:                 Dois-je avoir une entreprise pour utiliser Rubizz et percevoir des commissions ?
+web.web.default.faq.question.inside.2:          Rubizz est ouvert à tous les particuliers. Il ne s’agit pas d’un site à vocation professionnelle, mais bien d’un site public auquel n’importe qui peut s’adonner à des activités de partage de bons plans en ligne.
+web.web.default.faq.question.3:                 Mes données personnelles sont-elles transmises à des partenaires de Rubizz ?
+web.web.default.faq.question.inside.3:          La politique de confidentialité des données ne nous autorise pas à transmettre vos données personnelles à des tiers. Les informations que vous saisissez sur notre site sont conservées dans nos bases de données et ne sont en aucun cas transmises.
+web.web.default.faq.question.4:                 Est-ce que l’utilisation de Rubizz est gratuite ?
+web.web.default.faq.question.inside.4:          Rubizz est entièrement gratuit. Aucune contribution financière ne vous sera demandée lors de l’utilisation de nos services.
+web.web.default.faq.question.5:                 Comment je m’inscris ?
+web.web.default.faq.question.inside.5:          Vous pouvez soit cliquer sur le bouton Commencer sur la page d’accueil, soit cliquer sur le lien S’inscrire en haut à droite de chaque page.  Remplissez le formulaire avec vos nom, prénom et email, et choisissez un mot de passe. Ca y est, vous êtes inscrit.  Vous pouvez ensuite importer des adresses email dans votre carnet Rubizz afin de pouvoir partager des bons plans et gagner de l’argent.
+web.web.default.faq.question.6:                 J’ai perdu mon mot de passe.
+web.web.default.faq.question.inside.6:          Pas de souci, nous vous le renvoyons sur votre messagerie. Cliquez sur le lien Mot de passe oublié sur la page de connexion, et indiquez votre adresse email. Une fois votre mot de passe récupéré, pensez à le changer en allant dans votre profil.
+web.web.default.faq.question.7:                 Comment ajouter et retirer des contacts ?
+web.web.default.faq.question.inside.7:          Pour ajouter des contacts, allez dans la rubrique Mailing List et cliquez sur Ajouter des contacts. Vous pouvez soit les ajouter un par un, soit les importer depuis votre messagerie.Pour retirer des contacts, cliquez sur le point bleu à droite du contact que vous voulez retirer, et sélectionnez « Désabonner ». Votre contact ne recevra plus vos recommandations. Vous pouvez à tout moment le ré-abonner en cliquant sur le point rouge du contact et en sélectionnant « Ré-abonner ».
+web.web.default.faq.question.8:                 Jusqu’à combien de contacts puis-je ajouter ?
+web.web.default.faq.question.inside.8:          Votre carnet Rubizz est illimité, vous pouvez en ajouter autant que vous le souhaitez. C’est vous qui gérez ensuite la liste des abonnés et ceux qui ne souhaitent plus recevoir de recommandation.
+web.web.default.faq.question.9:                 Peut-on créer des groupes d’amis ?
+web.web.default.faq.question.inside.9:          Nous partons du principe que tous vos amis devraient recevoir vos recommandations. Il serait dommage que vous n’envoyiez pas le même bon plan à Pierre et Paul, alors que tous les deux pourraient finalement être intéressés et vous permettre de percevoir deux commissions au lieu d’une. Nous vous suggérons donc d’envoyer vos recommandations à un maximum de personnes. 
+web.web.default.faq.question.10:                Que vont recevoir mes contacts si je les ajoute à ma Mailing List?
+web.web.default.faq.question.inside.10:         Tous les contacts que vous ajoutez à votre Mailing List vont recevoir vos recommandations sous forme d’email de votre part. Ces emails contiennent un lien vers l’offre. Ils sont libres de cliquer et de suivre votre recommandation ou non.
+web.web.default.faq.question.11:                Je ne souhaite pas partager les bons plans par mail, mais uniquement sur Facebook et/ou Twitter, est-ce possible ?
+web.web.default.faq.question.inside.11:         Vous pouvez publier nos offres sur vos profils Facebook et/ou Twitter seulement. Dans ce cas, tous vos contacts Facebook et Twitter auront accès à votre bon plan.
+web.web.default.faq.question.12:                Un de mes contacts ne souhaite plus recevoir de bon plan Rubizz de ma part. Peut-il se désabonner de ma Mailing List ?
+web.web.default.faq.question.inside.12:         Si l’un de vos contacts ne souhaite plus recevoir vos recommandations, il peut se désabonner en cliquant sur le lien de désabonnement en bas de l’un des emails reçus de votre part. Vous pouvez aussi le désabonner vous-même en allant dans votre Mailing List. Vous pourrez le ré-abonner ultérieurement s’il le souhaite.
+web.web.default.faq.question.13:                Puis-je sélectionner les personnes à qui je veux envoyer un bon plan ?
+web.web.default.faq.question.inside.13:         "Vous pouvez envoyer vos recommandations à trois cibles différentes :<br />-	par email à votre Mailing List<br />-	à vos contacts Facebook en choisissant la publication sur Facebook<br />-	à vos followers en choisissant la publication sur Twitter"
+web.web.default.faq.question.14:                Où puis-je voir le résultat de mes recommandations ?
+web.web.default.faq.question.inside.14:         Vous pouvez visualiser vos commissions jour après jour en vous rendant dans la rubrique Vos recommandations. Pour chacune des offres, vous pouvez consulter le nombre de personnes qui ont suivi votre recommandation et le montant des commissions correspondant.
+web.web.default.faq.question.15:                Pour percevoir ma commission, mes contacts doivent-ils obligatoirement cliquer sur le lien que je leur ai envoyé ?
+web.web.default.faq.question.inside.15:         En cliquant sur le lien que vous leur avez envoyé, nous avons la preuve technique que votre contact a accédé au site partenaire par votre intermédiaire. Nous pouvons donc vous attribuer la commission. S’il accède au site partenaire sans cliquer sur ce lien, nous ne pourrons pas vous attribuer de commission.
+web.web.default.faq.question.16:                Un des mes contacts a participé à un bon plan, mais je ne vois aucune commission. Comment est-ce possible ?
+web.web.default.faq.question.inside.16:         "Il y a deux raisons possibles à ce que la commission ne vous ait pas été attribuée :<br /> -	soit votre contact a profité du bon plan mais sans cliquer sur le lien reçu de votre part (il aura peut-être saisi directement l’url dans son navigateur)<br /> -	soit votre contact a profité du bon plan en cliquant sur le lien qu’un autre membre Rubizz lui a envoyé. Il n‘est en effet pas exclu que des membres aient des contacts en commun."
+web.web.default.faq.question.17:                Que se passe-t-il si un de mes contacts reçoit le même bon plan de la part d’un autre membre du site ?
+web.web.default.faq.question.inside.17:         Si l’un de vos contacts reçoit deux fois le même bon plan de la part de deux personnes différentes, c’est l’expéditeur du lien sur lequel il aura cliqué en premier qui touchera la commission. L’autre membre ne recevra pas de commission.
+web.web.default.faq.question.18:                Que se passe-t-il si un de mes contacts utilise deux fois un bon plan ? Est-ce que je perçois plusieurs fois la commission ?
+web.web.default.faq.question.inside.18:         Vous ne pouvez percevoir qu’une seule fois la commission par contact et par offre. Qu’il clique une fois ou dix fois sur le lien, vous ne percevrez qu’une seule commission.
+web.web.default.faq.question.19:                Quand puis-je percevoir le montant de ma cagnotte ?
+web.web.default.faq.question.inside.19:         Dès que votre cagnotte atteint 50 €, vous pouvez à tout moment demander le paiement de votre cagnotte. Pour cela, rendez-vous dans votre compte, rubrique Encaisser ma cagnotte, et cliquez sur le bouton Demander le paiement. Le versement se fait par virement bancaire sur votre compte dans un délai de 10 jours.
+web.web.default.faq.question.20:                Y a-t-il un plafond de virement pour le versement de la cagnotte ?
+web.web.default.faq.question.inside.20:         Vous pouvez demander le paiement de tout montant à votre crédit, du moment qu’il atteint 50 €. En-deçà de ce montant, nous refuserons votre demande.
+web.web.default.faq.question.21:                Quels sont les différents moyens de paiement de la cagnotte ? Quels sont les délais ?
+web.web.default.faq.question.inside.21:         Nous ne versons les commissions que par virement bancaire. Il vous appartient donc de renseigner vos coordonnées bancaires dans votre espace Rubizz. Il faut ensuite compter une dizaine de jours pour que l’argent soit sur votre compte.
+web.web.default.faq.question.22:                J’ai demandé le paiement de ma cagnotte, ma demande est « en attente » et ma cagnotte n’a pas changé. Quels sont les délais de traitement ?
+web.web.default.faq.question.inside.22:         Les demandes de paiement « en attente » sont bien enregistrées. Elles sont traitées dans un délai de 5 jours ouvrés. Dès que le virement est effectué, le statut de la demande change et vous recevez un email de confirmation. L’argent est normalement disponible sur votre compte dans les jours qui suivent, en fonction des délais de traitement interbancaires.
+web.web.default.faq.question.23:                Lorsque je perçois des commissions, dois-je effectuer une déclaration auprès de <br /> l’administration fiscale ?
+web.web.default.faq.question.inside.23:         Notre site étant présent sur plusieurs pays, les règles fiscales ne sont pas les mêmes d’un pays à l’autre. Nous vous invitons à vous rapprocher de votre service des impôts pour connaître les modalités de déclaration.
+web.web.default.faq.question.24:                J’ai demandé le paiement de ma cagnotte. Dois-je attendre que ma cagnotte soit remise à 0 pour pouvoir à nouveau envoyer des bons plans ?
+web.web.default.faq.question.inside.24:         Votre demande de paiement ne vous empêche pas de continuer à partager des offres. Les commissions perçues seront ajoutées à votre cagnotte, même si celle-ci n’a pas encore été débitée du montant de la demande de paiement. Au moment du virement sur votre compte, votre cagnotte sera remise à jour et ne contiendra que les commissions perçues après la demande de versement.
+web.web.default.faq.question.25:                Puis-je modifier mon mot de passe ?
+web.web.default.faq.question.inside.25:         Nous vous conseillons de changer régulièrement votre mot de passe, notamment en cas d’oubli, si nous avons dû vous le renvoyer par email. Pour cela, il suffit de vous rendre dans votre espace personnel, en cliquant sur la flèche à droite de votre nom, en haut de page, et de redéfinir votre mot de passe dans la partie Coordonnées.
+web.web.default.faq.question.26:                Suis-je obligé(e) de donner mes coordonnées bancaires ?
+web.web.default.faq.question.inside.26:         Nous procédons au versement des commissions par virement bancaire uniquement. Il faut donc nous transmettre vos coordonnées bancaires via votre espace personnel. Rassurez-vous, vos données sont confidentielles et ne seront en aucun cas transmises à un tiers.
+web.web.default.faq.question.27:                Mes coordonnées bancaires ont changé. Comment puis-je transmettre mes nouvelles coordonnées ?
+web.web.default.faq.question.inside.27:         Vous pouvez mettre à jour vos coordonnées bancaires en allant dans votre espace personnel, rubrique Votre RIB et en cliquant sur Modifier. Vous recevez ensuite un email de confirmation.
+
 # ============ OFFER PAGE ============
 # ==== Offer Page (index) ====
 web.web.offer.index.price.title: Mes gains

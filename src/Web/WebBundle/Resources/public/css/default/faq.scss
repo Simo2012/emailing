@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+@import "../global/_config";
+
+#div_RBZ_faqLeft {
+    float: left;
+    #div_RBZ_faqMenu {
+        //position: fixed;
+        max-width: 200px;
+        margin-top: 200px;
+        li {
+            list-style-type: none;
+            border-top : 1px solid $gray;
+            padding: 8px;
+            padding-left: 15px;
+        }
+    }
+}
+
+#div_RBZ_faqRight {
+    //color: #D5D5D5;
+    float: left;
+    margin-left: 50px;
+    margin-top: 70px;
+    .div_RBZ_faqQuestion {
+        cursor:pointer;
+        position: relative;
+        width: 710px;
+        background-color: $white;
+        margin-bottom: 10px;
+        padding: 15px;
+        
+        h6 {
+            max-width: 650px;
+            margin-bottom: 0px;
+            font-size: 14px;
+        }
+        span {
+            position: absolute;
+            right: 15px;
+            top:15px;
+        }
+        .div_RBZ_faqQuestionInside {
+            margin-top: 15px;
+            display: none;
+            font-size: 13.3px;
+        }
+    }
+    .div_RBZ_faqPicture {
+        margin-bottom: 10px;
+        margin-top: 20px;
+    }
+    h1 {
+        color: $table_red;
+        font-size: 35px;
+    }
+}
