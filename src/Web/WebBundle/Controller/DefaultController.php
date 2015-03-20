@@ -157,7 +157,7 @@ class DefaultController extends Controller
     {
         // ==== Initialisation ====
         $loManager = $this->getDoctrine()->getManager();
-        $loUser = null;
+        $loContact = null;
         // ==== Récupération de l'email ====
         $lsEmail = $poRequest->query->get('email');
         // ---- Boolean permettant de savoir si il y a eu soumission dans le twig 
@@ -167,11 +167,11 @@ class DefaultController extends Controller
             $lbIsConfirmed = true;
             $lsEmail = $poRequest->request->get('email');
             if (!empty($lsEmail)) {
-                $loUser  = $loManager->getRepository('WebWebBundle:User')->findOneByEmail($lsEmail);
+                $loContact  = $loManager->getRepository('WebWebBundle:Contact')->findOneByEmail($lsEmail);
             }
-            if (!empty($loUser)) {
-                $loUser->setDateUpdate(new \DateTime('now'));
-                $loUser->setOptinNewsletter(false);
+            if (!empty($loContact)) {
+                $loContact->setDateUpdate(new \DateTime('now'));
+                $loContact->setDirectUnsubscribe(true);
                 $loManager->flush();
             }
         }
