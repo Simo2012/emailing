@@ -20,7 +20,7 @@ Faq.prototype = {
     {
         $(document).on('click', '.div_RBZ_faqQuestion', function() {
             $(this).children('div').toggle();
-            $('.RBZ_faq_down').html('&nbsp; &#708;');
+            $(this).children('.RBZ_faq_down').html('&nbsp; &#708;');
             return false;
         });
         $(document).on('click', '#div_RBZ_faqMenu ul li', function() {

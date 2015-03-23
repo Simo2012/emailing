@@ -1,5 +1,89 @@
 {% extends app.user.id is defined ? "@WebWeb/layoutPage.html.twig" : "@WebWeb/layoutPageOut.html.twig" %}
+{% block CSS %}
+    {{ parent() }}
+    {% stylesheets
+    '@WebWebBundle/Resources/public/css/default/hiw.scss'
+    %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block JAVASCRIPT %}
+    {{ parent() }}
+    {% javascripts '@WebWebBundle/Resources/public/js/default/Hiw.js'                   
+    %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
 
 {% block CONTENT %}
-    <h1>Mais, comment ça marche ? </h1>
+    <div id="div_RBZ_content">
+        {# Page inscription page1 #}
+        <div id="div_RBZ_hiw_p1">
+            <div id="div_RBZ_hiw_p1_description">
+                <h1>{{ "web.web.default.hiw.p1.title" | trans | raw}}</h1>
+                <p>{{ "web.web.default.hiw.p1.desc" | trans | raw}}</p>
+            </div>
+        </div>
+
+        {# Page mailing list page2 #}
+        <div id="div_RBZ_hiw_p2">
+            <div id="div_RBZ_hiw_p2_left">
+            </div>
+            <div id="div_RBZ_hiw_p2_right">
+                <h1>{{ "web.web.default.hiw.p2.title" | trans | raw}}</h1>
+                <p>{{ "web.web.default.hiw.p2.desc" | trans | raw}}</p>
+                <p>{{ "web.web.default.hiw.p2.descNext" | trans | raw}}</p>
+            </div>
+            <div class="KNS_clear"></div>
+        </div>
+
+        {# Page mes bons plans page4 #}
+        <div id="div_RBZ_hiw_p4">
+            <div id="div_RBZ_hiw_p4_description">
+                <h1>{{ "web.web.default.hiw.p4.title" | trans | raw}}</h1>
+                <p>{{ "web.web.default.hiw.p4.desc" | trans | raw}}</p>
+            </div>
+            <div id="div_RBZ_hiw_p4_left">
+            </div>
+            <div id="div_RBZ_hiw_p4_right">
+                <p>{{ "web.web.default.hiw.p4.text1" | trans | raw}}</p>
+                <p>{{ "web.web.default.hiw.p4.text2" | trans | raw}}</p>
+                <p>{{ "web.web.default.hiw.p4.text3" | trans | raw}}</p>
+            </div>
+            <div class="KNS_clear"></div>
+        </div>
+
+        {# Page mes bons plans page5 
+        <div id="div_RBZ_hiw_p5">
+            <div id="div_RBZ_hiw_p5_left">
+                <div>
+                    <p>image</p>
+                    <p>{{ "web.web.default.hiw.p5.text1.title" | trans | raw}}</p>
+                    <p>{{ "web.web.default.hiw.p5.text1.text" | trans | raw}}</p>
+                </div>
+                <div>
+                    <p>image</p>
+                    <p>{{ "web.web.default.hiw.p5.text2.title" | trans | raw}}</p>
+                    <p>{{ "web.web.default.hiw.p5.text2.text" | trans | raw}}</p>
+                </div>
+            </div>
+            <div id="div_RBZ_hiw_p4_right">
+                <div id="div_hiw_diamond">
+                </div>
+                <div>
+                    <p>image</p>
+                    <p>{{ "web.web.default.hiw.p5.text3.title" | trans | raw}}</p>
+                    <p>{{ "web.web.default.hiw.p5.text3.text" | trans | raw}}</p>
+                </div>
+                <div id="div_RBZ_hiw_p5_description">
+                    <h1>{{ "web.web.default.hiw.p5.title" | trans | raw}}</h1>
+                    <p>{{ "web.web.default.hiw.p5.desc" | trans | raw}}</p>
+                </div>
+            </div>
+            <div class="KNS_clear"></div>
+        </div>
+        #}
+
+    </div>
 {% endblock %}

@@ -18,7 +18,7 @@
 
 {% block CONTENT %}
     <div id="div_RBZ_content">
-        {# Block de gauche #}
+        {# Block de gauche menu #}
         <div id="div_RBZ_faqLeft">
             <div id="div_RBZ_faqMenu">
                 <ul>
@@ -30,12 +30,17 @@
                 </ul>
             </div>
         </div>
-        {# Block de droite #}
+        {# Block de droite FAQ #}
         <div id="div_RBZ_faqRight">
+            <div id="div_RBZ_faqRightImg">
+                <img src="{{ asset('/bundles/webweb/images/default/faq/faq.png') }}">
+            </div>
             <h1>{{ "rubizzMenu_faq" | trans }} Rubizz</h1>
-            {# Rubrique inscription #}
-            <div class="div_RBZ_faqPicture"><img src="{{ asset('/bundles/webweb/images/default/faq/guy.png') }}"></div>
 
+            {# Rubrique inscription #}
+            <div class="div_RBZ_faqPicture">
+                <img src="{{ asset('/bundles/webweb/images/default/faq/guy.png') }}"> <span>{{ ("web.web.default.faq.menu.inscription") | trans }}</span>
+            </div>
             {% for number in 1..6 %}
                 <div id="{{ ("block" ~  number) }}" class="div_RBZ_faqQuestion">
                     <h6>{{ ("web.web.default.faq.question." ~ number) | trans  | raw }}</h6> <span class="RBZ_faq_down">&nbsp; &#709;</span>
@@ -45,8 +50,10 @@
                 </div>
             {% endfor %}
             {# Rubrique mes contacts #}
-            <div class="div_RBZ_faqPicture"><img src="{{ asset('/bundles/webweb/images/default/faq/guy.png') }}"></div>
-
+            {# Rubrique inscription #}
+            <div class="div_RBZ_faqPicture">
+                <img src="{{ asset('/bundles/webweb/images/default/faq/girl.png') }}"> <span>{{ ("web.web.default.faq.menu.contacts") | trans }}</span>
+            </div>
             {% for number in 7..12 %}
                 <div id="{{ ("block" ~  number) }}" class="div_RBZ_faqQuestion">
                     <h6>{{ ("web.web.default.faq.question." ~ number) | trans  | raw }}</h6> <span class="RBZ_faq_down">&nbsp; &#709;</span>
@@ -56,8 +63,10 @@
                 </div>
             {% endfor %}
             {# Rubrique mes recommandations #}
-            <div class="div_RBZ_faqPicture"><img src="{{ asset('/bundles/webweb/images/default/faq/guy.png') }}"></div>
-
+            {# Rubrique inscription #}
+            <div class="div_RBZ_faqPicture">
+                <img src="{{ asset('/bundles/webweb/images/default/faq/girl2.png') }}"> <span>{{ ("rubizzMenu_recommendations") | trans }}</span>
+            </div>
             {% for number in 13..18 %}
                 <div id="{{ ("block" ~  number) }}" class="div_RBZ_faqQuestion">
                     <h6>{{ ("web.web.default.faq.question." ~ number) | trans  | raw }}</h6> <span class="RBZ_faq_down">&nbsp; &#709;</span>
@@ -67,8 +76,10 @@
                 </div>
             {% endfor %}
             {# Rubrique ma cagnotte #}
-            <div class="div_RBZ_faqPicture"><img src="{{ asset('/bundles/webweb/images/default/faq/guy.png') }}"></div>
-
+            {# Rubrique inscription #}
+            <div class="div_RBZ_faqPicture">
+                <img src="{{ asset('/bundles/webweb/images/default/faq/guy.png') }}"> <span>{{ ("web.web.offer.index.donut.piggyBank") | trans }}</span>
+            </div>
             {% for number in 19..24 %}
                 <div id="{{ ("block" ~  number) }}" class="div_RBZ_faqQuestion">
                     <h6>{{ ("web.web.default.faq.question." ~ number) | trans  | raw }}</h6> <span class="RBZ_faq_down">&nbsp; &#709;</span>
@@ -79,8 +90,10 @@
             {% endfor %}
 
             {# Rubrique mon compte #}
-            <div class="div_RBZ_faqPicture"><img src="{{ asset('/bundles/webweb/images/default/faq/guy.png') }}"></div>
-
+            {# Rubrique inscription #}
+            <div class="div_RBZ_faqPicture">
+                <img src="{{ asset('/bundles/webweb/images/default/faq/girl2.png') }}"> <span>{{ ("web.web.default.faq.menu.account") | trans }}</span>
+            </div>
             {% for number in 25..27 %}
                 <div id="{{ ("block" ~  number) }}" class="div_RBZ_faqQuestion">
                     <h6>{{ ("web.web.default.faq.question." ~ number) | trans | raw }}</h6> <span class="RBZ_faq_down">&nbsp; &#709;</span>
@@ -90,8 +103,6 @@
                 </div>
             {% endfor %}
         </div>
-            <br />
-            <br />
         <div class="KNS_clear"></div>
     </div>
 {% endblock %}
