@@ -39,8 +39,8 @@ class OfferRepository extends EntityRepository
 
         // ==== Pas de filtre pour le tag all ====
         if (!empty($psCategory)) {
-            $loQuery->andWhere(':category in o.category')
-                    ->setParameter('category', $psCategory);
+            $loQuery->andWhere('o.category like :category')
+                    ->setParameter('category', '%'.$psCategory.'%');
         }
 
         return $loQuery->getQuery()->getResult();
