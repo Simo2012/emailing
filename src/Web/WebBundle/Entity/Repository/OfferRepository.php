@@ -36,7 +36,7 @@ class OfferRepository extends EntityRepository
                         ->setParameter('locale', $lsLocale)
                         ->andWhere('o.active = 1')
                         ->orderBy('o.dateCreate', 'DESC');
-
+        var_dump($psCategory);
         // ==== Pas de filtre pour le tag all ====
         if (!empty($psCategory)) {
             $loQuery->andWhere('o.category in (:category)')

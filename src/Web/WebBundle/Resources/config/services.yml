@@ -131,11 +131,11 @@ parameters:
             redirect_uri: http://rubizz.anis.natexo.com/app_dev.php/
     # ---- Liste des tags ( offer) ----
     web.offerCategory:
-            game: web.web.offer.list.categories.quiz
-            estimate: web.web.offer.list.categories.quotation
-            travel: web.web.offer.list.categories.travel
-            e-commerce: web.web.offer.list.categories.ecommerce
-            finance: web.web.offer.list.categories.finances
+            sweepstake:    web.web.offer.list.categories.sweepstake
+            estimate:      web.web.offer.list.categories.quotation
+            travel:        web.web.offer.list.categories.travel
+            e-commerce:    web.web.offer.list.categories.ecommerce
+            finance:       web.web.offer.list.categories.finances
             untertainment: web.web.offer.list.categories.divertissement
             special-offer: web.web.offer.list.categories.special
 services:

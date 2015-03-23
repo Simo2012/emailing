@@ -185,7 +185,7 @@ web.web.offer.index.offer.seeAll: Voir toutes les offres
 # ==== Offer Page (list) ====
 web.web.offer.list.title: Toutes les offres
 web.web.offer.list.all: Tous
-web.web.offer.list.categories.quiz : Jeux concours
+web.web.offer.list.categories.sweepstake : Jeux concours
 web.web.offer.list.categories.quotation : Devis en ligne
 web.web.offer.list.categories.travel: Voyages
 web.web.offer.list.categories.ecommerce: e-commerce
