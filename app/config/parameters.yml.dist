@@ -1,7 +1,7 @@
 # This file is auto-generated during the composer install
 parameters:
     database_driver: pdo_mysql
-    database_host: entreprise.natexo.com
+    database_host: entreprise
     database_port: 3306
     database_name: RUBIZZ
     database_user: web
