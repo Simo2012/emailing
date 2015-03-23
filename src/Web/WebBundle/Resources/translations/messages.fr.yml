@@ -173,7 +173,29 @@ web.web.default.faq.question.inside.26:         Nous procédons au versement des
 web.web.default.faq.question.27:                Mes coordonnées bancaires ont changé. Comment puis-je transmettre mes nouvelles coordonnées ?
 web.web.default.faq.question.inside.27:         Vous pouvez mettre à jour vos coordonnées bancaires en allant dans votre espace personnel, rubrique Votre RIB et en cliquant sur Modifier. Vous recevez ensuite un email de confirmation.
 # ============ HIW page ============
-
+web.web.default.hiw.slider.title:   Comment <br />ça marche ?
+# ---- Inscription page 1----
+web.web.default.hiw.p1.title:   Je m'inscris sur le site
+web.web.default.hiw.p1.desc:    Renseignez vos nom, prénom et email. Choisissez un mot de passe, et hop, vous êtes inscrit(e) !<br /> Vous pourrez par la suite vous connecter à votre compte en indiquant votre email et votre mot de passe.
+# ---- Mailing list page 2----
+web.web.default.hiw.p2.title:       J’importe <br />ma Mailing List
+web.web.default.hiw.p2.desc:        Créez votre Mailing List Rubizz comme un carnet d’adresses email. Cette Mailing List regroupera toutes les personnes avec qui vous voulez partager vos bons plans.
+web.web.default.hiw.p2.descNext:    Vous pouvez soit insérer un par un les emails de vos contacts, soit les sélectionner directement depuis vos répertoires de messageries. Votre carnet d’adresses sera ensuite conservé sur votre compte Rubizz, et vous pourrez ajouter et désabonner des contacts comme bon vous semble.
+# ---- Mailing list page 4----
+web.web.default.hiw.p4.title:       Je partage mes bons plans
+web.web.default.hiw.p4.desc:        Dès que vous avez fait votre choix, pour chacune des offres, cliquez sur Recommander. <br />Vous avez 3 possibilités pour communiquer un bon plan
+web.web.default.hiw.p4.text1:       Vous pouvez l’envoyer à votre <span>Mailing List</span>, vos contacts recevront un email contenant le lien du bon plan
+web.web.default.hiw.p4.text2:       Vous pouvez la publier sur <span>Facebook</span>, vos contacts Facebook recevront une notification de votre part concernant le bon plan
+web.web.default.hiw.p4.text3:       Vous pouvez la publier sur Twitter, vos contacts <span>Twitter</span> recevront une notification de votre part concernant le bon plan
+# ---- Mailing list page 5----
+web.web.default.hiw.p5.title:       Je gagne de l'argent
+web.web.default.hiw.p5.desc:        Le site Rubizz propose 3 types de bons plans avec un système de commissionnement différent
+web.web.default.hiw.p5.text1.title: Offre Visite
+web.web.default.hiw.p5.text1.text:  "L'offre consiste à visiter un site web : vous percevez une commission à chaque fois que l’un de vos contact accède à ce site en cliquant sur le lien reçu de votre part"
+web.web.default.hiw.p5.text2.title: Offre Participation
+web.web.default.hiw.p5.text2.text:  "L'offre consiste à participer à une opération de type jeu-concours : vous percevez une commission à chaque fois que l’un de vos contacts remplit un formulaire de participation"
+web.web.default.hiw.p5.text3.title: Offre Achat
+web.web.default.hiw.p5.text3.text:  "L'offre consiste à acheter un article sur un site partenaire : vous percevez une commission (forfaitaire ou proportionnelle au montant) à chaque achat effectué par vos contacts"
 # ============ OFFER PAGE ============
 # ==== Offer Page (index) ====
 web.web.offer.index.price.title: Mes gains

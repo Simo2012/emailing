@@ -18,8 +18,24 @@
 
 {% block CONTENT %}
     <div id="div_RBZ_content">
+        {# Slider #}
+        <div id="div_RBZ_hiw_slider">
+            <h3>{{ "web.web.default.hiw.slider.title" | trans |raw }}</h3>
+            <ul>
+                <li id="span_RBZ_hiwSliderTop"><span>&nbsp; &#708;</span></li>
+                <li class="li_RBZ_hiwMenu">1<span class="span_RBZ_hiwCircle"></span></li>
+                <li class="li_RBZ_hiwMenu">2<span class="span_RBZ_hiwCircle"></span></li>
+                <li class="li_RBZ_hiwMenu">3<span class="span_RBZ_hiwCircle"></span></li>
+                <li class="li_RBZ_hiwMenu">4<span class="span_RBZ_hiwCircle"></span></li>
+                <li class="li_RBZ_hiwMenu">5<span class="span_RBZ_hiwCircle"></span></li>
+                <li class="li_RBZ_hiwMenu">6<span class="span_RBZ_hiwCircle"></span></li>
+                <li id="span_RBZ_hiwSliderDown"><span>&nbsp; &#709;</span></li>
+            </ul>
+        </div>
+
         {# Page inscription page1 #}
-        <div id="div_RBZ_hiw_p1">
+        <div id="div_RBZ_hiw_p1" class="div_RBZ_hiw_page">
+            <img src="{{ asset('/bundles/webweb/images/default/hiw/p1.gif') }}">
             <div id="div_RBZ_hiw_p1_description">
                 <h1>{{ "web.web.default.hiw.p1.title" | trans | raw}}</h1>
                 <p>{{ "web.web.default.hiw.p1.desc" | trans | raw}}</p>
@@ -27,8 +43,9 @@
         </div>
 
         {# Page mailing list page2 #}
-        <div id="div_RBZ_hiw_p2">
+        <div id="div_RBZ_hiw_p2" class="div_RBZ_hiw_page">
             <div id="div_RBZ_hiw_p2_left">
+                <img src="{{ asset('/bundles/webweb/images/default/hiw/p2.gif') }}">
             </div>
             <div id="div_RBZ_hiw_p2_right">
                 <h1>{{ "web.web.default.hiw.p2.title" | trans | raw}}</h1>
@@ -38,13 +55,19 @@
             <div class="KNS_clear"></div>
         </div>
 
+        {# Page selection bons plans page3 #}
+        <div id="div_RBZ_hiw_p3" class="div_RBZ_hiw_page">
+            <img src="{{ asset('/bundles/webweb/images/default/hiw/p3.jpg') }}">
+        </div>
+
         {# Page mes bons plans page4 #}
-        <div id="div_RBZ_hiw_p4">
+        <div id="div_RBZ_hiw_p4" class="div_RBZ_hiw_page">
             <div id="div_RBZ_hiw_p4_description">
                 <h1>{{ "web.web.default.hiw.p4.title" | trans | raw}}</h1>
                 <p>{{ "web.web.default.hiw.p4.desc" | trans | raw}}</p>
             </div>
             <div id="div_RBZ_hiw_p4_left">
+                <img src="{{ asset('/bundles/webweb/images/default/hiw/p4.png') }}">
             </div>
             <div id="div_RBZ_hiw_p4_right">
                 <p>{{ "web.web.default.hiw.p4.text1" | trans | raw}}</p>
@@ -54,26 +77,27 @@
             <div class="KNS_clear"></div>
         </div>
 
-        {# Page mes bons plans page5 
-        <div id="div_RBZ_hiw_p5">
+        {# Page je gagne de l'argent page5 #}
+        <div id="div_RBZ_hiw_p5" class="div_RBZ_hiw_page">
             <div id="div_RBZ_hiw_p5_left">
-                <div>
-                    <p>image</p>
-                    <p>{{ "web.web.default.hiw.p5.text1.title" | trans | raw}}</p>
+                <div class="div_RBZ_hiwP5Block">
+                    <p><img src="{{ asset('/bundles/webweb/images/default/hiw/p5_ico1.png') }}"></p>
+                    <p class="div_RBZ_hiwP5BlockTitle">{{ "web.web.default.hiw.p5.text1.title" | trans | raw}}</p>
                     <p>{{ "web.web.default.hiw.p5.text1.text" | trans | raw}}</p>
                 </div>
-                <div>
-                    <p>image</p>
-                    <p>{{ "web.web.default.hiw.p5.text2.title" | trans | raw}}</p>
+                <div class="div_RBZ_hiwP5Block">
+                    <p><img src="{{ asset('/bundles/webweb/images/default/hiw/p5_ico2.png') }}"></p>
+                    <p class="div_RBZ_hiwP5BlockTitle">{{ "web.web.default.hiw.p5.text2.title" | trans | raw}}</p>
                     <p>{{ "web.web.default.hiw.p5.text2.text" | trans | raw}}</p>
                 </div>
             </div>
-            <div id="div_RBZ_hiw_p4_right">
+            <div id="div_RBZ_hiw_p5_right">
                 <div id="div_hiw_diamond">
+                    {#<img src="{{ asset('/bundles/webweb/images/default/hiw/p5.png') }}">#}
                 </div>
-                <div>
-                    <p>image</p>
-                    <p>{{ "web.web.default.hiw.p5.text3.title" | trans | raw}}</p>
+                <div class="div_RBZ_hiwP5Block">
+                    <p><img src="{{ asset('/bundles/webweb/images/default/hiw/p5_ico3.png') }}"></p>
+                    <p class="div_RBZ_hiwP5BlockTitle">{{ "web.web.default.hiw.p5.text3.title" | trans | raw}}</p>
                     <p>{{ "web.web.default.hiw.p5.text3.text" | trans | raw}}</p>
                 </div>
                 <div id="div_RBZ_hiw_p5_description">
@@ -83,7 +107,11 @@
             </div>
             <div class="KNS_clear"></div>
         </div>
-        #}
+
+        {# Page j'encaisse ma cagnotte page6 #}
+        <div id="div_RBZ_hiw_p6" class="div_RBZ_hiw_page">
+            <img src="{{ asset('/bundles/webweb/images/default/hiw/p6.jpg') }}">
+        </div>
 
     </div>
 {% endblock %}
