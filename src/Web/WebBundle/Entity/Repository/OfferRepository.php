@@ -3,6 +3,7 @@
 namespace Web\WebBundle\Entity\Repository;
 
 use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\QueryBuilder;
 
 /**
  * OfferRepository repository
@@ -20,7 +21,9 @@ class OfferRepository extends EntityRepository
     /**
      * Recherche par categorie
      *
-     * @return \Doctrine\ORM\QueryBuilder
+     * @param null $psCategory
+     * @param string $psLocale
+     * @return QueryBuilder
      */
     public function searchByCategory($psCategory = null, $psLocale = 'en_US')
     {
