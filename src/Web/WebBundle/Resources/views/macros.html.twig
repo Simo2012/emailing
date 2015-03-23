@@ -55,7 +55,7 @@
     {% set type        = type        | default([]) %}
     {% set from        = from        | default('index') %}
     <div class="RBZ_offer_content">
-        <img class="RBZ_offer_img" src="http://placehold.it/470x250">
+        <img class="RBZ_offer_img" src="http://img.rubizz.{{ (app.request.locale[3:]) | lower }}/RUBIZZ/OFFERS/IMAGES/{{ offer.id }}.jpg">
         <div class="RBZ_offer_body" id="RBZ_offer_body">
             <p class="RBZ_offer_brand_name">{{ offer.brand.name }}</p>
             <p class="RBZ_offer_title">{{ offer.title }}</p>
