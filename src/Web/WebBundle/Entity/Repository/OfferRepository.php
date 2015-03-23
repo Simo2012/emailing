@@ -3,6 +3,7 @@
 namespace Web\WebBundle\Entity\Repository;
 
 use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\QueryBuilder;
 
 /**
  * OfferRepository repository
@@ -20,12 +21,14 @@ class OfferRepository extends EntityRepository
     /**
      * Recherche par categorie
      *
-     * @return \Doctrine\ORM\QueryBuilder
+     * @param null $psCategory
+     * @param string $psLocale
+     * @return QueryBuilder
      */
-    public function searchByCategory($psCategory = null, $psLocale = 'en_EN')
+    public function searchByCategory($psCategory = null, $psLocale = 'en_US')
     {
         // ==== Formatage de la locale ====
-        $lsLocale = strtolower(substr($psLocale, 0, 2));
+        $lsLocale = strtolower(substr($psLocale, -2, 2));
         
         $loQuery = $this->createQueryBuilder('o')
                         ->select('o')
@@ -36,8 +39,8 @@ class OfferRepository extends EntityRepository
 
         // ==== Pas de filtre pour le tag all ====
         if (!empty($psCategory)) {
-            $loQuery->andWhere('o.category in (:category)')
-                    ->setParameter('category', $psCategory);
+            $loQuery->andWhere('o.category like :category')
+                    ->setParameter('category', '%'.$psCategory.'%');
         }
 
         return $loQuery->getQuery()->getResult();
