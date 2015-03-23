@@ -25,7 +25,7 @@ class OfferRepository extends EntityRepository
     public function searchByCategory($psCategory = null, $psLocale = 'en_US')
     {
         // ==== Formatage de la locale ====
-        $lsLocale = strtolower(substr($psLocale, 0, 2));
+        $lsLocale = strtolower(substr($psLocale, -2, 2));
         
         $loQuery = $this->createQueryBuilder('o')
                         ->select('o')
