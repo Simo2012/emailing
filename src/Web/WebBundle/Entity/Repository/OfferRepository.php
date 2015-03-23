@@ -22,7 +22,7 @@ class OfferRepository extends EntityRepository
      *
      * @return \Doctrine\ORM\QueryBuilder
      */
-    public function searchByCategory($psCategory = null, $psLocale = 'en_EN')
+    public function searchByCategory($psCategory = null, $psLocale = 'en_US')
     {
         // ==== Formatage de la locale ====
         $lsLocale = strtolower(substr($psLocale, 0, 2));
