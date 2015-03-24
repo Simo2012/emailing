@@ -196,6 +196,7 @@ web.web.default.hiw.p5.text2.title: Offre Participation
 web.web.default.hiw.p5.text2.text:  "L'offre consiste à participer à une opération de type jeu-concours : vous percevez une commission à chaque fois que l’un de vos contacts remplit un formulaire de participation"
 web.web.default.hiw.p5.text3.title: Offre Achat
 web.web.default.hiw.p5.text3.text:  "L'offre consiste à acheter un article sur un site partenaire : vous percevez une commission (forfaitaire ou proportionnelle au montant) à chaque achat effectué par vos contacts"
+
 # ============ OFFER PAGE ============
 # ==== Offer Page (index) ====
 web.web.offer.index.price.title: Mes gains
@@ -345,4 +346,3 @@ web.web.contact.add.step:                     Etape %step%
 web.web.contact.add.step1.text:               "Je m'inscris et<br>j'ajoute mes contacts"
 web.web.contact.add.step2.text:               Je recommande des<br>offres à mes amis
 web.web.contact.add.step3.text:               "Je gagnes de l'argent !"
-

@@ -93,13 +93,14 @@
             </div>
             <div id="div_RBZ_hiw_p5_right">
                 <div id="div_hiw_diamond">
-                    {#<img src="{{ asset('/bundles/webweb/images/default/hiw/p5.png') }}">#}
+                    <img src="{{ asset('/bundles/webweb/images/default/hiw/p5.png') }}">
                 </div>
                 <div class="div_RBZ_hiwP5Block">
                     <p><img src="{{ asset('/bundles/webweb/images/default/hiw/p5_ico3.png') }}"></p>
                     <p class="div_RBZ_hiwP5BlockTitle">{{ "web.web.default.hiw.p5.text3.title" | trans | raw}}</p>
                     <p>{{ "web.web.default.hiw.p5.text3.text" | trans | raw}}</p>
                 </div>
+                <div class="KNS_clear"></div>
                 <div id="div_RBZ_hiw_p5_description">
                     <h1>{{ "web.web.default.hiw.p5.title" | trans | raw}}</h1>
                     <p>{{ "web.web.default.hiw.p5.desc" | trans | raw}}</p>
@@ -110,7 +111,7 @@
 
         {# Page j'encaisse ma cagnotte page6 #}
         <div id="div_RBZ_hiw_p6" class="div_RBZ_hiw_page">
-            <img src="{{ asset('/bundles/webweb/images/default/hiw/p6.jpg') }}">
+            <img src="{{ asset('/bundles/webweb/images/default/hiw/p6_' ~ app.request.locale ~ '.png') }}">
         </div>
 
     </div>

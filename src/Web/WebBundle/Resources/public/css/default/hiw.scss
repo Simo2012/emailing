@@ -151,18 +151,17 @@ body {
     margin-top: 60px;
     color: #A3A3A3;
     #div_RBZ_hiw_p5_left{
-        //background-color: yellow;
         max-width:240px;
         margin-right: 20px;
         float: left;
     }
     #div_RBZ_hiw_p5_right {
-        backgroung-color: red;
-        //padding-top: 60px; 
-        max-width: 570px;
+        position: relative;
         float: right;
         color: #A3A3A3;
         #div_RBZ_hiw_p5_description {
+            position:absolute;
+            bottom: 0;
             text-align:center;
             margin: 30px auto 60px;
             h1 {
@@ -174,10 +173,18 @@ body {
                 font-size: 17px;
             }
         }
+        #div_hiw_diamond {
+            float:left;
+        }
+        .div_RBZ_hiwP5Block{
+            float:right;
+            margin-left: -100px;
+        }
     }
     .div_RBZ_hiwP5Block {
+        line-height: 2 !important;
         text-align: justify;
-        max-width:240px;
+        max-width: 240px;
         margin-bottom: 30px;
         .div_RBZ_hiwP5BlockTitle {
             color: #35B3C1;
