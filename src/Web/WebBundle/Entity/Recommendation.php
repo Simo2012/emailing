@@ -85,6 +85,15 @@ class Recommendation
     private $contact;
 
     /**
+     * @var \Commission
+     *
+     * @ORM\OneToMany(targetEntity="Commission", mappedBy="recommendation")
+     **/
+    private $commissions;
+
+
+
+    /**
      * Constructor
      */
     public function __construct()
@@ -93,7 +102,6 @@ class Recommendation
         $this->contact = new \Doctrine\Common\Collections\ArrayCollection();
         $this->recommended = false;
     }
-
 
     /**
      * Get id
@@ -274,5 +282,28 @@ class Recommendation
     public function getContact()
     {
         return $this->contact;
+    }
+
+    /**
+     * Set commissions
+     *
+     * @param \Commission $commissions
+     * @return Recommendation
+     */
+    public function setCommissions($commissions)
+    {
+        $this->commissions = $commissions;
+
+        return $this;
+    }
+
+    /**
+     * Get commissions
+     *
+     * @return \Commission
+     */
+    public function getCommissions()
+    {
+        return $this->commissions;
     }
 }

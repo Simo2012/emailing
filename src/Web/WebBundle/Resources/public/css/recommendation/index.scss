@@ -1,1 +1,16 @@
 @charset "UTF-8";
+@import "../global/_config";
+
+#table_RBZ_mailing_list {
+    th {
+        &.RBZ_offer_name {
+            width: 300px;
+        }
+    }
+    td {
+        &.RBZ_total {
+            color: $table_blue;
+            font-weight: bold;
+        }
+    }
+}

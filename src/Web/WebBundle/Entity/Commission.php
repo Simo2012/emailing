@@ -31,7 +31,7 @@ class Commission {
     /**
      * @var \Recommendation
      *
-     * @ORM\ManyToOne(targetEntity="Recommendation")
+     * @ORM\ManyToOne(targetEntity="Recommendation", inversedBy="commissions")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="recommendation_id", referencedColumnName="id")
      * })

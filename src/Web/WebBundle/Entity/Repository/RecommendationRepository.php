@@ -46,4 +46,29 @@ class RecommendationRepository extends EntityRepository
 
         return $loQuery;
     }//getAllByUser
+
+    /**
+     * Lecture des recommandations par utilisateur
+     *
+     * @param $poUser
+     * @return \Doctrine\ORM\QueryBuilder
+     */
+    public function getByUser($poUser)
+    {
+        $loQuery = $this->createQueryBuilder('r')
+                        ->select(
+                            'r, o, c, c.amount as commission, count(c.id) as volume, c.amount * count(c.id) as total'
+                        )
+                        ->join('r.commissions', 'c')
+                        ->join('r.offer', 'o')
+                        ->leftjoin('r.contact', 'co')
+                        ->where('r.user = :user')
+                        ->setParameter('user', $poUser)
+                        ->groupBy('r.id');
+
+//        var_dump($loQuery->getQuery()->getScalarResult()); // DEBUG
+//        die;
+
+        return $loQuery;
+    } // getByUser
 }

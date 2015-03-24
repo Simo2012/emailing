@@ -35,7 +35,7 @@ class RecommendationController extends Controller
         $loUser    = $this->getUser();
 
         // ==== Lecture des données ====
-        $loBuilder = $loManager->getRepository('WebWebBundle:Recommendation')->getAllByUser($loUser);
+        $loBuilder = $loManager->getRepository('WebWebBundle:Recommendation')->getByUser($loUser);
         $liNbItems = 10;
         Paginator::paginate($poRequest, $liPage, $liNbItems);
         $loPaginator = new Paginator($loBuilder);

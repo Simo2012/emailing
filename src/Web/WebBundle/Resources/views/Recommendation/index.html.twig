@@ -42,12 +42,12 @@
         </tr>
         {% for recommendation in recommendations %}
             <tr>
-                <td>{{ recommendation.datecreate | localizeddate('short', 'none') }}</td>
-                <td>{{ recommendation.offer.title }}</td>
-                <td>{{ recommendation.type }}</td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>{{ recommendation.0.datecreate | localizeddate('short', 'none') }}</td>
+                <td>{{ recommendation.0.offer.title }}</td>
+                <td>{{ recommendation.0.type }}</td>
+                <td>{{ recommendation.commission }}</td>
+                <td>{{ recommendation.volume }}</td>
+                <td class="RBZ_total">{{ recommendation.total }}&euro;</td>
             </tr>
         {% endfor %}
     </table>
