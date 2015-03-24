@@ -55,6 +55,10 @@ class Tracking
 
     /**
      * Constructeur, injection des paramètres
+     *
+     * @param ObjectManager $poManager
+     * @param ApiEncryptFilter $poEncrypt
+     * @param ApiDecryptFilter $poDecrypt
      */
     public function __construct(ObjectManager $poManager, ApiEncryptFilter $poEncrypt, ApiDecryptFilter $poDecrypt)
     {
@@ -80,6 +84,7 @@ class Tracking
      * Gère le tag d'ouverture
      *
      * @param string $psEmail Email du contact
+     * @return bool
      */
     public function handleOpenTag($psEmail)
     {
@@ -101,6 +106,7 @@ class Tracking
             $laParams['contactid'] = $this->contactId;
         }
         $loStmt->execute($laParams);
+
         return true;
     } // handleOpenTag
 
@@ -108,6 +114,7 @@ class Tracking
      * Gère le tag de clic
      *
      * @param string $psEmail Email du contact
+     * @return bool
      */
     public function handleClickTag($psEmail)
     {
@@ -146,6 +153,7 @@ class Tracking
     public function getClickUrl()
     {
         $loOffer = $this->recommendation->getOffer();
+
         return $loOffer->getUrl();
     } // getClickUrl
 
@@ -177,6 +185,7 @@ class Tracking
      * Lecture des cookies pour récupérer la recommendation
      *
      * @param Request $poRequest La requête active
+     * @return bool
      */
     public function readCookies(Request $poRequest)
     {
@@ -213,6 +222,7 @@ class Tracking
         if (empty($this->contactId)) {
             $this->contactId = null;
         }
+
         return true;
     } // readCookies
 
@@ -220,6 +230,7 @@ class Tracking
      * Gère le tag de lead
      *
      * @param string $psTransaction Identifiant de la transaction chez le marchand
+     * @return bool
      */
     public function handleLeadTag($psTransaction)
     {
@@ -254,7 +265,8 @@ class Tracking
      * Gère le tag de vente
      *
      * @param string $psTransaction Identifiant de la transaction chez le marchand
-     * @param string $psAmount      Montant de la transaction
+     * @param string $psAmount Montant de la transaction
+     * @return bool
      */
     public function handleSaleTag($psTransaction, $psAmount)
     {
@@ -283,6 +295,7 @@ class Tracking
         if (in_array($loOffer->getRemType(), array('CPC', 'CPL', 'CPA', 'CPA%'))) {
             $this->writeCommission($psTransaction, $psAmount);
         }
+
         return true;
     } // handleSaleTag
 
@@ -290,6 +303,7 @@ class Tracking
      * Lecture du contact de l'utilisateur s'il existe
      *
      * @param string $psEmail Email du contact
+     * @return null
      */
     protected function getContact($psEmail)
     {
@@ -302,6 +316,7 @@ class Tracking
                 $liContactId = $loContact->getId();
             }
         }
+
         return $liContactId;
     } // getContact
 
@@ -309,6 +324,7 @@ class Tracking
      * Filtrage d'un montant renvoyé par un marchand
      *
      * @param string $psAmount Le montant
+     * @return float
      */
     protected function filterAmount($psAmount)
     {
@@ -336,6 +352,7 @@ class Tracking
                 $liAmount = $loOffer->getRemMember() / 100 * $psAmount;
                 break;
         }
+
         return $liAmount;
     } // getAmount
 
@@ -359,6 +376,7 @@ class Tracking
                 $liAmount = $loOffer->getRemAdvertiser() / 100 * $psAmount;
                 break;
         }
+
         return $liAmount;
     } // getAmountRbz
 
@@ -366,7 +384,7 @@ class Tracking
      * Création d'une commission
      *
      * @param string $psTransaction Identifiant de la transaction chez le marchand
-     * @param float  $piAmount      Le montant de l'achat
+     * @param float|int $piAmount Le montant de l'achat
      */
     protected function writeCommission($psTransaction, $piAmount = 0)
     {
