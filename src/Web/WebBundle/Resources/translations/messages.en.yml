@@ -173,29 +173,29 @@ web.web.default.faq.question.inside.26:         Yes. We deposit commissions excl
 web.web.default.faq.question.27:                My bank account information has changed.  How can I enter my new bank account information?
 web.web.default.faq.question.inside.27:         Yes. By accessing your account settings you´ll be able to update your bank account information.  A confirmation email will be sent after successfully updating the information.
 # ============ HIW page ============
-web.web.default.hiw.slider.title:   Comment <br />ça marche ?
+web.web.default.hiw.slider.title:   How <br />does it Work ?
 # ---- Inscription page 1----
-web.web.default.hiw.p1.title:   Je m'inscris sur le site
-web.web.default.hiw.p1.desc:    Renseignez vos nom, prénom et email. Choisissez un mot de passe, et hop, vous êtes inscrit(e) !<br /> Vous pourrez par la suite vous connecter à votre compte en indiquant votre email et votre mot de passe.
+web.web.default.hiw.p1.title:       I want to register to the website
+web.web.default.hiw.p1.desc:        Fill in your name, last name and email.  Choose a password and presto, you are registered!.<br />Then you´ll be able to sign in by entering your email and password  (I don´t think this is necessary)
 # ---- Mailing list page 2----
-web.web.default.hiw.p2.title:       J’importe <br />ma Mailing List
-web.web.default.hiw.p2.desc:        Créez votre Mailing List Rubizz comme un carnet d’adresses email. Cette Mailing List regroupera toutes les personnes avec qui vous voulez partager vos bons plans.
-web.web.default.hiw.p2.descNext:    Vous pouvez soit insérer un par un les emails de vos contacts, soit les sélectionner directement depuis vos répertoires de messageries. Votre carnet d’adresses sera ensuite conservé sur votre compte Rubizz, et vous pourrez ajouter et désabonner des contacts comme bon vous semble.
+web.web.default.hiw.p2.title:       Import <br /> your Mailing List
+web.web.default.hiw.p2.desc:        Import your mailing list to your Rubizz address book. This mailing list will include all the people you want to share deals with.
+web.web.default.hiw.p2.descNext:    You can either manually insert email addresses to your Rubizz Address book or select them and upload them directly from your personal address book.
 # ---- Mailing list page 4----
-web.web.default.hiw.p4.title:       Je partage mes bons plans
-web.web.default.hiw.p4.desc:        Dès que vous avez fait votre choix, pour chacune des offres, cliquez sur Recommander. <br />Vous avez 3 possibilités pour communiquer un bon plan
-web.web.default.hiw.p4.text1:       Vous pouvez l’envoyer à votre <span>Mailing List</span>, vos contacts recevront un email contenant le lien du bon plan
-web.web.default.hiw.p4.text2:       Vous pouvez la publier sur <span>Facebook</span>, vos contacts Facebook recevront une notification de votre part concernant le bon plan
-web.web.default.hiw.p4.text3:       Vous pouvez la publier sur Twitter, vos contacts <span>Twitter</span> recevront une notification de votre part concernant le bon plan
+web.web.default.hiw.p4.title:       Share the deals you like
+web.web.default.hiw.p4.desc:        After you´ve made your choice, click Share on each deal.<br />You have 3 ways to share a deal
+web.web.default.hiw.p4.text1:       You can send a link to the offer to your <span>Mailing List</span>
+web.web.default.hiw.p4.text2:       You can share on <span>Facebook</span> and your friends will receive a notification on your behalf containing the deal.
+web.web.default.hiw.p4.text3:       You publish on <span>Twitter</span> and your followers will receive a notification from on your behalf.
 # ---- Mailing list page 5----
-web.web.default.hiw.p5.title:       Je gagne de l'argent
-web.web.default.hiw.p5.desc:        Le site Rubizz propose 3 types de bons plans avec un système de commissionnement différent
-web.web.default.hiw.p5.text1.title: Offre Visite
-web.web.default.hiw.p5.text1.text:  "L'offre consiste à visiter un site web : vous percevez une commission à chaque fois que l’un de vos contact accède à ce site en cliquant sur le lien reçu de votre part"
-web.web.default.hiw.p5.text2.title: Offre Participation
-web.web.default.hiw.p5.text2.text:  "L'offre consiste à participer à une opération de type jeu-concours : vous percevez une commission à chaque fois que l’un de vos contacts remplit un formulaire de participation"
-web.web.default.hiw.p5.text3.title: Offre Achat
-web.web.default.hiw.p5.text3.text:  "L'offre consiste à acheter un article sur un site partenaire : vous percevez une commission (forfaitaire ou proportionnelle au montant) à chaque achat effectué par vos contacts"
+web.web.default.hiw.p5.title:       EARN MONEY
+web.web.default.hiw.p5.desc:        Share 3 types of deals, each with a unique commission system
+web.web.default.hiw.p5.text1.title: Deal View
+web.web.default.hiw.p5.text1.text:  Receive a commission every time one of your contacts clicks on the link sent by you.
+web.web.default.hiw.p5.text2.title: Deal participation
+web.web.default.hiw.p5.text2.text:  Receive a commission for every participation form that your friends complete.
+web.web.default.hiw.p5.text3.title: Deal Purchase
+web.web.default.hiw.p5.text3.text:  Receive a commission (Flat rate or proportional to the amount) for every contact that completes a purchase in our partner´s website.
 
 # ============ OFFER PAGE ============
 # ==== Offer Page (index) ====

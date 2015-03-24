@@ -18,16 +18,21 @@ Faq.prototype = {
      */
     ready: function()
     {
-        $(document).on('click', '.div_RBZ_faqQuestion', function() {
+        $(document).on('click', '.RBZ_faqQuestion', function() {
             $(this).children('div').toggle();
-            $(this).children('.RBZ_faq_down').html('&nbsp; &#708;');
+            $(this).children('.RBZ_faq_down').toggleClass('selected');
+            if ($(this).children('.RBZ_faq_down').hasClass('selected')) {
+                $(this).children('.RBZ_faq_down').html('&nbsp; &#708;');
+            } else {
+                $(this).children('.RBZ_faq_down').html('&nbsp; &#709;');
+            }
             return false;
         });
         $(document).on('click', '#div_RBZ_faqMenu ul li', function() {
             // ==== Réinitialisation ====
-            $('#div_RBZ_faqMenu ul li').css('border-left','none');
+            $('#div_RBZ_faqMenu ul li').css('border-left', 'none');
             // ---- Effet active ----
-            $(this).css('border-left','3px solid #f04f61');
+            $(this).css('border-left', '3px solid #f04f61');
         });
     }, // ready
 
