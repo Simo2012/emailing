@@ -61,13 +61,9 @@ class RecommendationRepository extends EntityRepository
                         )
                         ->join('r.commissions', 'c')
                         ->join('r.offer', 'o')
-                        ->leftjoin('r.contact', 'co')
                         ->where('r.user = :user')
                         ->setParameter('user', $poUser)
                         ->groupBy('r.id');
-
-//        var_dump($loQuery->getQuery()->getScalarResult()); // DEBUG
-//        die;
 
         return $loQuery;
     } // getByUser
