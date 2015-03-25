@@ -122,7 +122,7 @@ class Tracking
         $this->contactId = $this->getContact($psEmail);
         $lsIp = sprintf('%u', ip2long($_SERVER['REMOTE_ADDR']));
         $lsRequest = 'INSERT INTO RUBIZZ.track SET date_create = now(), date_update = now(), ';
-        $lsRequest .= 'ip_address = :ip, recommendation_id = :recoid, date_open = now() ';
+        $lsRequest .= 'ip_address = :ip, recommendation_id = :recoid, date_click = now() ';
         if (!empty($this->contactId)) {
             $lsRequest .= ',contact_id = :contactid ';
         }
