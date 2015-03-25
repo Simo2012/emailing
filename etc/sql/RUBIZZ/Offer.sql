@@ -29,6 +29,7 @@ CREATE TABLE IF NOT EXISTS RUBIZZ.offer (
 
     PRIMARY KEY (id),
     KEY offerCountryActive_idx (country, active, category),
+    KEY offerPlatform_idx (platform, active, date_start),
     CONSTRAINT offerSubsidiary_fk FOREIGN KEY (subsidiary_id) REFERENCES SYNCHRO.subsidiary (id) ON DELETE RESTRICT,
     CONSTRAINT offerBrand_fk FOREIGN KEY (brand_id) REFERENCES SYNCHRO.brand (id) ON DELETE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Offers';
