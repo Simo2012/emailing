@@ -1,9 +1,9 @@
 #a_RBZ_linkMenuMobile {
-  background: sprite($icons, menu);
-  @include sprite-dimensions($icons, menu);
-  display: block;
-  margin: 10px 0 0 10px;
-  float: left;
+    background: sprite($icons, menu);
+    @include sprite-dimensions($icons, menu);
+    display: block;
+    margin: 10px 0 0 10px;
+    float: left;
 }
 .RBZ_icons_home a {
     display: inline-block;
@@ -13,81 +13,91 @@
     @include sprite-dimensions($icons, home);
 }
 .RBZ_icons_profile {
-  background: sprite($icons, profile);
-  background-repeat: no-repeat;
+    background: sprite($icons, profile);
+    background-repeat: no-repeat;
 }
 .RBZ_icons_selector {
-  background: sprite($icons, selector);
-  background-repeat: no-repeat;
+    background: sprite($icons, selector);
+    background-repeat: no-repeat;
 }
 .RBZ_icons_cagnotte {
-  background: sprite($icons, cagnotte);
-  background-repeat: no-repeat;
+    background: sprite($icons, cagnotte);
+    background-repeat: no-repeat;
 }
 .RBZ_icons_mailinglist {
-  background: sprite($icons, mailinglist);
-  background-repeat: no-repeat;
+    background: sprite($icons, mailinglist);
+    background-repeat: no-repeat;
 }
 
 #header_RBZ_header {
-  ul {
-    list-style: none;
-    padding: 0;
-    li {
-      list-style: none;
-      a {
-        text-decoration: none;
-      }
+    ul {
+        list-style: none;
+        padding: 0;
+        li {
+            list-style: none;
+            a {
+                text-decoration: none;
+            }
+        }
     }
-  }
 }
 
 div#div_RBZ_menuProfile {
-  float: right;
-  font-size: 1.2rem;
-  margin: 30px 25px 0 0;
-  display: block;
-  min-width: 200px;
-  ul {
-    font-size: 14px;
-    line-height: 27px;
-    & > li {
-      cursor: pointer;
-      padding-left: 7px;
-      position: relative;
-      .RBZ_icons_profile {
-        width: 36px;
-        height: 36px;
-        display: inline-block;
-        margin-left: 5px;
-        margin-top: 5px;
-      }
+    float: right;
+    font-size: 1.2rem;
+    margin: 30px 25px 0 0;
+    display: block;
+    min-width: 200px;
+    ul {
+        font-size: 14px;
+        line-height: 37px;
+        & > li {
+            cursor: pointer;
+            padding-left: 7px;
+            position: relative;
+            .RBZ_icons_profile {
+                width: 36px;
+                height: 36px;
+                display: inline-block;
+                margin-left: 5px;
+                margin-top: 5px;
+            }
+        }
     }
-  }
-  li ul {
-    cursor: default;
-    position: absolute;
-    display: none;
-    border-bottom: 1px solid #D4D4D4;
-    border-left: 1px solid #D4D4D4;
-    border-right: 1px solid #D4D4D4;
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px;
-    left: 0;
-    width: 100%;
-    li {
-      padding-left: 20px;
-      display: block;
+    li ul {
+        cursor: default;
+        position: absolute;
+        display: none;
+        border-bottom: 1px solid #D4D4D4;
+        border-left: 1px solid #D4D4D4;
+        border-right: 1px solid #D4D4D4;
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+        left: 0;
+        width: 100%;
+        li {
+            padding-left: 40px;
+            display: block;
+
+        }
     }
-  }
+    // ---- Icone du menu deroulant ----
+    #li_RBZ_headerIcoProfil {
+        background: url(/bundles/webweb/images/global/icons_menu/ico-profil.png) 10px 10px no-repeat;
+    }
+    #li_RBZ_headerIcoRib {
+        background: url(/bundles/webweb/images/global/icons_menu/ico-card.png) 10px 10px no-repeat;
+    }
+    #li_RBZ_headerIcoPot {
+        background: url(/bundles/webweb/images/global/icons_menu/ico-book.png) 10px 10px no-repeat;
+    }
+    #li_RBZ_headerIcoCash {
+        background: url(/bundles/webweb/images/global/icons_menu/ico-wallet.png) 10px 10px no-repeat;
+    }
+    #li_RBZ_headerIcoLogout {
+        background: url(/bundles/webweb/images/global/icons_menu/ico-logout.png) 10px 10px no-repeat;
+    }
 }
-/*div#div_RBZ_menuProfile ul:first-child:hover{
-    border-top: 1px solid #D4D4D4;
-    border-left: 1px solid #D4D4D4;
-    border-right: 1px solid #D4D4D4;
-    border-top-left-radius: 2px;
-    border-top-right-radius: 2px;
-}*/
 
 #a_RBZ_name {
     float: right;
@@ -97,11 +107,11 @@ div#div_RBZ_menuProfile {
 }
 #div_RBZ_banner div#div_RBZ_menuProfile,
 #div_RBZ_banner ul#ul_RBZ_menuProfile li {
-  a {
-      color: $white;
-      display:block;
-      height:100%;
-  }
+    a {
+        color: $white;
+        display:block;
+        height:100%;
+    }
 }
 #div_RBZ_banner ul#ul_RBZ_menuProfile li:hover {
     background-color: $white;
@@ -120,75 +130,75 @@ div#div_RBZ_menuProfile {
 
 #div_RBZ_navWrapper div#div_RBZ_menuProfile,
 #div_RBZ_navWrapper ul#ul_RBZ_menuProfile li ul {
-  background-color: $black-nav;
+    background-color: $black-nav;
 }
 #header_RBZ_header {
-  background-color: $red-banner;
-  color: $white;
-  a {
+    background-color: $red-banner;
     color: $white;
-  }
+    a {
+        color: $white;
+    }
 }
 #div_RBZ_banner {
-  height: 100px;
-  background: url(/bundles/webweb/images/global/logo.png) 0 20px no-repeat;
-  #div_RBZ_counterMailingList,
-  #div_RBZ_counterGain {;
-      height: 40px;
-      display: block;
-      padding-left: 45px;
-      float: right;
-      font-size: 1.2rem;
-      color: #fab2ba;
-      margin: 30px 12px 0 0;
-      span:last-child {
-        font-size: 18px;
-        font-weight: bold;
-        color: #ffffff;
-      }
-  }
-  #div_RBZ_counterMailingList {
-      margin-left:10px;
-  }
+    height: 100px;
+    background: url(/bundles/webweb/images/global/logo.png) 0 20px no-repeat;
+    #div_RBZ_counterMailingList,
+    #div_RBZ_counterGain {;
+                          height: 40px;
+                          display: block;
+                          padding-left: 45px;
+                          float: right;
+                          font-size: 1.2rem;
+                          color: #fab2ba;
+                          margin: 30px 12px 0 0;
+                          span:last-child {
+                              font-size: 18px;
+                              font-weight: bold;
+                              color: #ffffff;
+                          }
+    }
+    #div_RBZ_counterMailingList {
+        margin-left:10px;
+    }
 }
 #div_RBZ_navWrapper {
-  background-color: $black-nav;
-  height: 40px;
-  line-height: 40px;
-  @include box-shadow(0 -2px 4px rgba(0,0,0,.36));
-  ul {
-    list-style: none;
-    padding:0;
-    display: inline-block;
-    li {
-      list-style: none;
-      display: inline-block;
-      font-size: 12px;
-      margin-right: 20px;
-      text-align: center;
-      vertical-align: middle;
-      font-weight: 600;
-      &.icons-home {
-        width: 24px;
-        height: 24px;
-        line-height: 40px;
-        a {
-          width: 20px;
-          height: 24px;
-          display: block;
-        }
-      }
-      a {
-        color: #C0C0C0;
-        text-transform: uppercase;
-        text-decoration: none;
-      }
-      &.RBZ_linkHome {
+    background-color: $black-nav;
+    height: 40px;
+    line-height: 40px;
+    @include box-shadow(0 -2px 4px rgba(0,0,0,.36));
+    ul {
+        list-style: none;
+        padding:0;
+        display: inline-block;
+        li {
+            list-style: none;
+            display: inline-block;
+            font-size: 12px;
+            margin-right: 20px;
+            text-align: center;
+            vertical-align: middle;
+            font-weight: 600;
+            &.icons-home {
+                width: 24px;
+                height: 24px;
+                line-height: 40px;
+                a {
+                    width: 20px;
+                    height: 24px;
+                    display: block;
+                }
+            }
+            a {
+                color: #C0C0C0;
+                text-transform: uppercase;
+                text-decoration: none;
+            }
+            &.RBZ_linkHome {
 
-      }
-      &.active a, a:hover {
-        color: white;
-      }
+            }
+            &.active a, a:hover {
+                color: white;
+            }
+        }
     }
-  }
 }

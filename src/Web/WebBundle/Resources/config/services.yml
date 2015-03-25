@@ -51,18 +51,23 @@ parameters:
                 Profile:
                     label: rubizzMenu_profile
                     route: WebWebBundle_userDetails
+                    id:    li_RBZ_headerIcoProfil
                 Rib:
                     label: rubizzMenu_myRib
                     route: WebWebBundle_userRib
+                    id:    li_RBZ_headerIcoRib
                 Pot:
                     label: rubizzMenu_detailPot
                     route: WebWebBundle_userPot
+                    id:    li_RBZ_headerIcoPot
                 Cashin:
                     label: rubizzMenu_cashin
                     route: WebWebBundle_userCashIn
+                    id:    li_RBZ_headerIcoCash
                 Logout:
                     label: rubizzMenu_logout
                     route: WebWebBundle_securityLogout
+                    id:    li_RBZ_headerIcoLogout
 
         rubizzUser:
             label: ""
