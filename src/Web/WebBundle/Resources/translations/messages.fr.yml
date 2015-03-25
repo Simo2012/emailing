@@ -196,6 +196,17 @@ web.web.default.hiw.p5.text2.title: Offre Participation
 web.web.default.hiw.p5.text2.text:  "L'offre consiste à participer à une opération de type jeu-concours : vous percevez une commission à chaque fois que l’un de vos contacts remplit un formulaire de participation"
 web.web.default.hiw.p5.text3.title: Offre Achat
 web.web.default.hiw.p5.text3.text:  "L'offre consiste à acheter un article sur un site partenaire : vous percevez une commission (forfaitaire ou proportionnelle au montant) à chaque achat effectué par vos contacts"
+# ============ A propos page ============
+web.web.default.about.title:        A propos
+web.web.default.about.p1:           Rubizz est un site gratuit et accessible à tous qui permet de gagner des commissions en partageant des bons plans avec ses amis.
+web.web.default.about.p2:           Rubizz propose des offres de partenaires variés. Les membres inscrits sur Rubizz ont la possibilité de partager les offres de leur choix en les recommandant à leur entourage, soit par mail à une liste de contacts importée dans leur compte Rubizz, soit en les publiant auprès de leurs contacts Facebook et/ou Twitter.
+web.web.default.about.subTitle1:    Pourquoi Rubizz ?
+web.web.default.about.p3:           Rubizz est une contraction des mots Rubis et Business. En analogie avec la pierre précieuse, Rubizz invite à voir dans son principe une sorte de mine de diamants grâce à laquelle un peu de business permettrait de s’enrichir.
+web.web.default.about.subTitle2:    Créer son réseau.
+web.web.default.about.p4:           Rubizz propose un environnement Business dans une ambiance Friendly. Chaque personne qui s’inscrit sur le site devient un membre Rubizz, avec son environnement privé et ses outils faciles à prendre en main. Elle crée son propre réseau de collaborateurs en impliquant son entourage dans l’intérêt unique de leur faire profiter de bons plans.
+web.web.default.about.subTitle3:    Améliorer sa stratégie.
+web.web.default.about.p5:           Rubizz rémunère selon les performances de chaque membre. Il ne s’agit pas de partager toutes les offres présentes sur le site, mais plutôt de jouer la stratégie en sélectionnant celles qui semblent pertinentes par rapport aux centres d’intérêt de ses contacts.
+web.web.default.about.p6:           Rubizz laisse une liberté totale à ses membres quant à leur façon de gérer leur business. Ils créent leur réseau en fonction de leurs affinités, sélectionnent les bons plans qu’ils souhaitent partager, décident des supports de diffusion des offres (diffusion par email ou publication sur les réseaux sociaux), adaptent leur liste de contacts, et gèrent le montant de leur cagnotte.
 
 # ============ OFFER PAGE ============
 # ==== Offer Page (index) ====

@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+@import "../global/_config";
+
+// ==== About  ====
+#div_RBZ_about {
+    h1 {
+        color: $table_red;
+        font-size: 35px;
+    }
+    h2 {
+        color: #4d4d4d;
+        font-size: 2.4rem;
+    }
+    p {
+        max-width: 550px;
+        text-align: justify;
+    }
+    #div_RBZ_aboutTop {
+        #div_RBZ_aboutTopLeft {
+            float : left;
+        }
+        #div_RBZ_aboutTopRight {
+            float : right;
+        }
+    }
+    #div_RBZ_aboutBottom {
+        margin-top: 50px;
+        margin-bottom: 100px;
+        #div_RBZ_aboutBottomLeft {
+            float: left;
+            margin-right: 50px;
+        }
+        #div_RBZ_aboutBottomRight {
+            float: right;
+        }
+    }
+}
+
+/* ==== Grand iPad ==== */
+@media (max-width: 960px) {
+    #div_RBZ_aboutTopRight {
+        display: none;
+    }
+}
+
+/* ==== Smartphone ==== */
+@media (max-width: 480px) {
+    #div_RBZ_aboutBottomLeft {
+        display: none;
+    }
+}

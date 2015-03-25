@@ -1,5 +1,43 @@
 {% extends "@WebWeb/layoutPage.html.twig" %}
 
-{% block CONTENT %}
-    <div class="RBZ_wrapper">À propos</div>
+{% block CSS %}
+    {{ parent() }}
+    {% stylesheets
+    '@WebWebBundle/Resources/public/css/default/about.scss'
+    %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+    {% endstylesheets %}
 {% endblock %}
+
+{% block CONTENT %}
+    <div id="div_RBZ_content">
+        {# Block haut gauche #}
+        <div id="div_RBZ_about">
+            <div id="div_RBZ_aboutTop">
+                <div id="div_RBZ_aboutTopLeft">
+                    <h1>{{ "web.web.default.about.title" | trans | raw}}</h1>
+                    <p>{{ "web.web.default.about.p1" | trans | raw}}</p>
+                    <p>{{ "web.web.default.about.p2" | trans | raw}}</p>
+                    <h2>{{ "web.web.default.about.subTitle1" | trans | raw}}</h2>
+                    <p>{{ "web.web.default.about.p3" | trans | raw}}</p>
+                </div>
+                <div id="div_RBZ_aboutTopRight">
+                    <img src="{{ asset('/bundles/webweb/images/default/about/girl.png') }}">
+                </div>
+                <div class="KNS_clear"></div>
+            </div>
+            <div id="div_RBZ_aboutBottom">
+                <div id="div_RBZ_aboutBottomLeft">
+                    <img src="{{ asset('/bundles/webweb/images/default/about/boy.png') }}">
+                </div>
+                <div id="div_RBZ_aboutBottomRight">
+                    <h2>{{ "web.web.default.about.subTitle2" | trans | raw}}</h2>
+                    <p>{{ "web.web.default.about.p4" | trans | raw}}</p>
+                    <h2>{{ "web.web.default.about.subTitle3" | trans | raw}}</h2>
+                    <p>{{ "web.web.default.about.p5" | trans | raw}}</p>
+                    <p>{{ "web.web.default.about.p6" | trans | raw}}</p>
+                </div>
+                <div class="KNS_clear"></div>
+            </div>
+        </div>
+    {% endblock %}
