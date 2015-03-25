@@ -51,10 +51,10 @@ class OfferRepository extends EntityRepository
      *
      * @return array
      */
-    public function getLast($piNumber, $psLocale = 'en_EN')
+    public function getLast($piNumber, $psLocale = 'en_US')
     {
         // ==== Formatage de la locale ====
-        $lsLocale = strtolower(substr($psLocale, 0, 2));
+        $lsLocale = strtolower(substr($psLocale, -2, 2));
 
         $loQuery = $this->createQueryBuilder('o')
                         ->select('o, partial b.{id, name}')
