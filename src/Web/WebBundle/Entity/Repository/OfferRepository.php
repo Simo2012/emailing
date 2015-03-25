@@ -49,6 +49,8 @@ class OfferRepository extends EntityRepository
     /**
      * Lecture des 6 dernières offres
      *
+     * @param $piNumber
+     * @param string $psLocale
      * @return array
      */
     public function getLast($piNumber, $psLocale = 'en_US')
@@ -68,6 +70,12 @@ class OfferRepository extends EntityRepository
         return $loQuery->getQuery()->getResult();
     } // getLast
 
+    /**
+     * Lecture des ids des offres recommandées pour un utilisateur
+     *
+     * @param $poUser
+     * @return array
+     */
     public function getRecommendedIdsByUser($poUser)
     {
         $loQuery = $this->createQueryBuilder('o')
