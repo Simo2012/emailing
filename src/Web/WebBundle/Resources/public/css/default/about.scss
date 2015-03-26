@@ -4,6 +4,7 @@
 
 // ==== About  ====
 #div_RBZ_about {
+    margin-top: -40px;
     h1 {
         color: $table_red;
         font-size: 35px;
@@ -11,16 +12,19 @@
     h2 {
         color: #4d4d4d;
         font-size: 2.4rem;
+        margin-bottom: 0px;
     }
     p {
         max-width: 550px;
         text-align: justify;
+        margin-bottom: 30px;
     }
     #div_RBZ_aboutTop {
         #div_RBZ_aboutTopLeft {
             float : left;
         }
         #div_RBZ_aboutTopRight {
+            padding-top: 50px;
             float : right;
         }
     }
@@ -30,6 +34,7 @@
         #div_RBZ_aboutBottomLeft {
             float: left;
             margin-right: 50px;
+            //padding-top: 70px;
         }
         #div_RBZ_aboutBottomRight {
             float: right;

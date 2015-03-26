@@ -173,7 +173,7 @@ web.web.default.faq.question.inside.26:         Yes. We deposit commissions excl
 web.web.default.faq.question.27:                My bank account information has changed.  How can I enter my new bank account information?
 web.web.default.faq.question.inside.27:         Yes. By accessing your account settings you´ll be able to update your bank account information.  A confirmation email will be sent after successfully updating the information.
 # ============ HIW page ============
-web.web.default.hiw.slider.title:   How <br />does it Work ?
+web.web.default.hiw.slider.title:   How does<br /> it Work ?
 # ---- Inscription page 1----
 web.web.default.hiw.p1.title:       I want to register to the website
 web.web.default.hiw.p1.desc:        Fill in your name, last name and email.  Choose a password and presto, you are registered!.<br />Then you´ll be able to sign in by entering your email and password  (I don´t think this is necessary)
@@ -197,16 +197,16 @@ web.web.default.hiw.p5.text2.text:  Receive a commission for every participation
 web.web.default.hiw.p5.text3.title: Deal Purchase
 web.web.default.hiw.p5.text3.text:  Receive a commission (Flat rate or proportional to the amount) for every contact that completes a purchase in our partner´s website.
 # ============ A propos page ============
-web.web.default.about.title:        A propos
-web.web.default.about.p1:           Rubizz est un site gratuit et accessible à tous qui permet de gagner des commissions en partageant des bons plans avec ses amis.
-web.web.default.about.p2:           Rubizz propose des offres de partenaires variés. Les membres inscrits sur Rubizz ont la possibilité de partager les offres de leur choix en les recommandant à leur entourage, soit par mail à une liste de contacts importée dans leur compte Rubizz, soit en les publiant auprès de leurs contacts Facebook et/ou Twitter.
-web.web.default.about.subTitle1:    Pourquoi Rubizz ?
-web.web.default.about.p3:           Rubizz est une contraction des mots Rubis et Business. En analogie avec la pierre précieuse, Rubizz invite à voir dans son principe une sorte de mine de diamants grâce à laquelle un peu de business permettrait de s’enrichir.
-web.web.default.about.subTitle2:    Créer son réseau.
-web.web.default.about.p4:           Rubizz propose un environnement Business dans une ambiance Friendly. Chaque personne qui s’inscrit sur le site devient un membre Rubizz, avec son environnement privé et ses outils faciles à prendre en main. Elle crée son propre réseau de collaborateurs en impliquant son entourage dans l’intérêt unique de leur faire profiter de bons plans.
-web.web.default.about.subTitle3:    Améliorer sa stratégie.
-web.web.default.about.p5:           Rubizz rémunère selon les performances de chaque membre. Il ne s’agit pas de partager toutes les offres présentes sur le site, mais plutôt de jouer la stratégie en sélectionnant celles qui semblent pertinentes par rapport aux centres d’intérêt de ses contacts.
-web.web.default.about.p6:           Rubizz laisse une liberté totale à ses membres quant à leur façon de gérer leur business. Ils créent leur réseau en fonction de leurs affinités, sélectionnent les bons plans qu’ils souhaitent partager, décident des supports de diffusion des offres (diffusion par email ou publication sur les réseaux sociaux), adaptent leur liste de contacts, et gèrent le montant de leur cagnotte.
+web.web.default.about.title:        About us
+web.web.default.about.p1:           Rubizz is a free web site that allows anyone to earn money by sharing deals with their friends.
+web.web.default.about.p2:           Choose from a great variety of deals, share them and start earning money.  You share using email, Facebook and/our Twitter.
+web.web.default.about.subTitle1:    Why Rubizz ?
+web.web.default.about.p3:           Created by mixing the words Ruby and Business, Rubizz is an analogy of the gemstone and the opportunity it´s users have to earn money.
+web.web.default.about.subTitle2:    Create your network
+web.web.default.about.p4:           Business offers a business environment in a friendly atmosphere.  We make it easy for you to share interesting deals and earn commissions.
+web.web.default.about.subTitle3:    Improve its strategy
+web.web.default.about.p5:           With Rubizz you have total freedom on how to handle your list.  You may select the type of deals you want to send your contacts.
+web.web.default.about.p6:           Rubizz leaves total freedom to its members on how they manage their business.
 
 # ============ OFFER PAGE ============
 # ==== Offer Page (index) ====
