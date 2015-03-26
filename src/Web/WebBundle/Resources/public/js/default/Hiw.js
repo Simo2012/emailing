@@ -73,7 +73,7 @@ Hiw.prototype = {
             $("body").css("background-color", "#ADE1EC");
             $("#div_RBZ_hiw_slider").css("color", "#fff");
             $("#div_RBZ_hiw_slider h3").css("color", "#fff");
-            $("RBZ_hiwCircle").css("background-color", "#fff");
+            $(".RBZ_hiwCircle").css("background-color", "#fff");
             $("#header_RBZ_header #div_RBZ_banner").css("background-image", "url(/bundles/webweb/images/global/logo.png)");
             $("#header_RBZ_header #div_RBZ_banner #div_RBZ_headerMenu a").css("color", "#fff");
             $("#header_RBZ_header #div_RBZ_banner #div_RBZ_headerMenu div.RBZ_menuVBar").css("border-left", "1px solid #fff");
@@ -83,7 +83,7 @@ Hiw.prototype = {
             // ---- menu du slider ----
             $("#div_RBZ_hiw_slider").css("color", "gray");
             $("#div_RBZ_hiw_slider h3").css("color", "gray");
-            $("RBZ_hiwCircle").css("background-color", "gray");
+            $(".RBZ_hiwCircle").css("background-color", "gray");
             // ---- Si l'utilisateur est en mode logout ----
             if (!Popup.prototype._pbIsConnected) {
                 $("#header_RBZ_header #div_RBZ_banner").css("background-image", "url(/bundles/webweb/images/global/redLogo.png)");

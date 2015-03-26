@@ -60,6 +60,9 @@
             </div>
             <div id="div_RBZ_hiw_p4_left">
                 <img src="{{ asset('/bundles/webweb/images/default/hiw/p4.png') }}">
+                <div id="div_RBZ_hiw_p4_leftImg">
+                    <img src="{{ asset('/bundles/webweb/images/default/hiw/mobile.gif') }}">
+                </div>
             </div>
             <div id="div_RBZ_hiw_p4_right">
                 <p>{{ "web.web.default.hiw.p4.text1" | trans | raw}}</p>
@@ -117,7 +120,7 @@
     <script type="text/javascript">
         $(document).ready(function() {
             // ==== Gestion des pages ====
-                goHiw.ready( {{app.user.id is defined }});
+            goHiw.ready( {{app.user.id is defined }});
         });
     </script>
     {% endjavascripts %}
