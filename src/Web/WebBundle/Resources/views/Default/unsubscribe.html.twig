@@ -1,4 +1,4 @@
-{% extends "@WebWeb/layoutPage.html.twig" %}
+{% extends app.user.id is defined ? "@WebWeb/layoutPage.html.twig" : "@WebWeb/layoutPageOut.html.twig" %}
 {% block CSS %}
     {{ parent() }}
     {% stylesheets
