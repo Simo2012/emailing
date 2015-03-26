@@ -1,5 +1,17 @@
 {% extends "@WebWeb/layoutPage.html.twig" %}
 
+{% block CSS %}
+    {{ parent() }}
+    {% stylesheets
+    '@WebWebBundle/Resources/public/css/default/about.scss'
+    %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+    {% endstylesheets %}
+{% endblock %}
+
 {% block CONTENT %}
-    <div class="RBZ_wrapper">Conditions légales</div>
+    <div id="div_RBZ_content">
+        <h1>{{ "web.web.default.index.footerLegal" | trans }}</h1>
+        {% include '@WebWeb/Default/legalNotices/' ~ app.request.locale ~ '.html.twig' %}
+    </div>
 {% endblock %}
