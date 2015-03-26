@@ -33,3 +33,15 @@
         color: $red-banner;
     }
 }
+
+// ==== inclusion de la macro des offres (tag) ====
+.RBZ_offers {
+    &.KNS_grid > * {
+        margin-left: -20px !important;
+    }
+
+    /* default styles for each "cell" */
+    &.KNS_grid > * > * {
+        padding-left: 20px !important;
+    }
+}

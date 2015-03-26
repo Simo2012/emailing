@@ -10,12 +10,6 @@
     margin-right: 8px;
     margin-bottom: 25px;
     position: relative;
-    &.RBZ_expanded .RBZ_offer_body {
-        height: 260px;
-        position: absolute;
-        top: 70px;
-
-    }
     .RBZ_offer_img {
         width: 470px;
         height: 215px;
@@ -25,8 +19,13 @@
         width: 470px;
         height: 115px;
         background: $white;
-        position: relative;
+        position: absolute;
         border-top: 1px solid $border-grey;
+//        &.RBZ_expanded {
+//            height: 260px;
+//            position: absolute;
+//            top: 70px;
+//        }
         .RBZ_offer_brand_name {
             color: #817c77;
             font: bold 14px 'Open Sans';

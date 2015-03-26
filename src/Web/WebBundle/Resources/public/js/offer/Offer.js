@@ -19,38 +19,11 @@ Offer.prototype = {
      */
     ready : function()
     {
-        // ==== Gestion de l'affichage de la description de l'offre ====
-        $(document).on('mouseenter mouseleave', '.RBZ_offer_content', function(event) {
-            // ---- Affichage/dissimulation de la description ----
-            $(this).toggleClass('RBZ_expanded').animate();
-            $(this).find('p.RBZ_offer_description').toggleClass('RBZ_hide').animate();
-            // ---- Dissimulation du menu du bouton de recommandation si il est ouvert lorsqu'on sort ----
-            var recommendButton = $(this).find('div.RBZ_offer_input');
-            var recommendButtonLink = $(this).find('div.RBZ_offer_input a.RBZ_actions');
-            if(event.type == 'mouseleave' && recommendButton.hasClass('RBZ_expanded')) {
-                recommendButton.toggleClass('RBZ_expanded');
-                recommendButtonLink.siblings('a').toggleClass('RBZ_hide');
-                recommendButtonLink.siblings('div.RBZ_arrow').toggleClass('RBZ_open');
-            }
-        });
+        // ==== Gestion de l'affichage de la description ====
+        Offer.prototype._manageDescriptionDisplaying();
 
         // ==== Gestion de l'affichage de menu du bouton de recommandation ====
-        // ---- Clic sur le bouton ----
-        $(document).on('click', 'a.RBZ_actions', function(event) {
-            $(this).siblings('a').toggleClass('RBZ_hide');
-            $(this).parent().toggleClass('RBZ_expanded');
-            $(this).siblings('div.RBZ_arrow').toggleClass('RBZ_open');
-            return false;
-        });
-        
-        // ---- Clic sur la flèche du bouton ----
-        $(document).on('click', 'div.RBZ_arrow', function(event) {
-            $(this).siblings('a').toggleClass('RBZ_hide');
-            $(this).siblings('a.RBZ_actions').toggleClass('RBZ_hide');
-            $(this).parent().toggleClass('RBZ_expanded');
-            $(this).toggleClass('RBZ_open');
-            return false;
-        });
+        Offer.prototype._manageRecommendationMenuButton();
 
         // ==== Gestion des recommandations Twitter ====
         Offer.prototype._manageTwitterButton();
@@ -62,6 +35,79 @@ Offer.prototype = {
         Offer.prototype._manageEmailButton();
     }, // ready
 
+    /**
+     * Gère l'affichage de la description d'une offre
+     * @private
+     */
+    _manageDescriptionDisplaying: function()
+    {
+
+        $(document).on('mouseenter', '.RBZ_offer_img.RBZ_expandable_body', function(event) {
+            // ---- Initialisation ----
+            var image = $(this);
+            var body = image.parent().find('div.RBZ_offer_body');
+            var content = image.parent(); // .RBZ_offer_content
+            var description = content.find('p.RBZ_offer_description');
+            // ---- Affichage de la description ----
+            if (!body.hasClass('RBZ_expanded')) {
+                body.toggleClass('RBZ_expanded');
+                description.toggleClass('RBZ_hide');
+                body.animate({height: '260px', top: '70px'}, 500, 'easeOutCirc');
+            }
+        });
+        $(document).on('mouseleave', '.RBZ_offer_content', function(event) {
+            // ---- Initialisation ----
+            var image = $(this);
+            var body = image.parent().find('div.RBZ_offer_body');
+            var content = image.parent(); // .RBZ_offer_content
+            var description = content.find('p.RBZ_offer_description');
+            // ---- Affichage de la description ----
+            if (body.hasClass('RBZ_expanded')) {
+                description.toggleClass('RBZ_hide');
+                body.toggleClass('RBZ_expanded');
+                body.animate({height: '115px', top: '215px'}, 500, 'easeOutCirc');
+            }
+        });
+    }, // _manageDescriptionDisplaying
+
+    /**
+     * Gestion de l'affichage du menu du bouton de recommandation
+     * @private
+     */
+    _manageRecommendationMenuButton: function()
+    {
+        // ---- Survol du bouton ----
+        $(document).on('mouseenter', 'a.RBZ_actions', function(event) {
+            console.log(event.type);
+            var button = $(this).parent();
+            var buttonLink = $(this);
+            var buttonArrow = button.find('div.RBZ_arrow');
+            if (!button.hasClass('RBZ_expanded')) {
+                button.toggleClass('RBZ_expanded');
+                buttonLink.siblings('a').toggleClass('RBZ_hide');
+                buttonArrow.toggleClass('RBZ_open');
+            }
+            return false;
+        });
+        // ---- Arrêt du survol du bouton ----
+        $(document).on('mouseleave', 'div.RBZ_offer_input', function(event) {
+            console.log(event.type);
+            var button = $(this);
+            var buttonLink = $(this).find('a.RBZ_actions');
+            var buttonArrow = button.find('div.RBZ_arrow');
+            if (button.hasClass('RBZ_expanded')) {
+                button.toggleClass('RBZ_expanded');
+                buttonLink.siblings('a').toggleClass('RBZ_hide');
+                buttonArrow.toggleClass('RBZ_open');
+            }
+            return false;
+        });
+    }, // _manageRecommandationMenuButton
+
+    /**
+     * Gère la recommandation par Twitter
+     * @private
+     */
     _manageTwitterButton: function()
     {
         // ==== Gestion des recommandations Twitter ====
@@ -96,6 +142,10 @@ Offer.prototype = {
         window.addEventListener ? window.addEventListener("message", callback, !1) : window.attachEvent("onmessage", callback);
     }, // _manageTwitterButton
 
+    /**
+     * Gère la recommandation par Facebook
+     * @private
+     */
     _manageFacebookButton: function()
     {
         // ==== Gestion des recommandations Facebook ====
@@ -109,6 +159,10 @@ Offer.prototype = {
 
     }, // _manageFacebookButton
 
+    /**
+     * Gère la recommandation par email
+     * @private
+     */
     _manageEmailButton: function()
     {
         // ==== Gestion des recommandations Email ====
@@ -121,6 +175,9 @@ Offer.prototype = {
         });
     }, // _manageEmailButton
 
+    /**
+     * Set le message de confirmation de recommandation par email
+     */
     setEmailConfirmMessage: function(message)
     {
         Offer.prototype._emailConfirmMessage = message;

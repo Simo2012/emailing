@@ -15,6 +15,7 @@
                    '@WebWebBundle/Resources/public/js/offer/Index.js'
                    '@WebWebBundle/Resources/public/js/offer/Offer.js'
     %}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
     <script>
@@ -61,19 +62,19 @@
     <div class="KNS_clear"></div>
     <div class="RBZ_offers KNS_grid">
         <div class="KNS_grid2">
-            {# Inclusion de la macro des offres  #}
-            {% for offer in offers %}
-                {% if offer.id in recommendedOffers | keys %}
-                    {% set recommended = true %}
-                    {% set type = recommendedOffers[offer.id] %}
-                {% else %}
-                    {% set recommended = false %}
-                    {% set type = [] %}
-                {% endif %}
+        {# Inclusion de la macro des offres  #}
+        {% for offer in offers %}
+            {% if offer.id in recommendedOffers | keys %}
+                {% set recommended = true %}
+                {% set type = recommendedOffers[offer.id] %}
+            {% else %}
+                {% set recommended = false %}
+                {% set type = [] %}
+            {% endif %}
             <div>
-                {{ macro.offer(offer, recommended, type, from) }}
+            {{ macro.offer(offer, recommended, type, from) }}
             </div>
-            {% endfor %}
+        {% endfor %}
         </div>
     </div>
 {% endblock %}
