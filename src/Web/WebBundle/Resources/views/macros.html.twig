@@ -55,8 +55,8 @@
     {% set type        = type        | default([]) %}
     {% set from        = from        | default('index') %}
     <div class="RBZ_offer_content">
-        <img class="RBZ_offer_img" src="http://img.rubizz.{{ (app.request.locale[3:]) | lower }}/RUBIZZ/OFFERS/IMAGES/{{ offer.id }}.jpg">
-        <div class="RBZ_offer_body" id="RBZ_offer_body">
+        <img class="RBZ_offer_img RBZ_expandable_body" src="http://img.rubizz.{{ (app.request.locale[3:]) | lower }}/RUBIZZ/OFFERS/IMAGES/{{ offer.id }}.jpg">
+        <div class="RBZ_offer_body">
             <p class="RBZ_offer_brand_name">{{ offer.brand.name }}</p>
             <p class="RBZ_offer_title">{{ offer.title }}</p>
             <p class="RBZ_offer_description RBZ_hide">
@@ -66,33 +66,33 @@
             </p>
 
             <div class="RBZ_offer_border"></div>
-            {% if offer.remType in ['CPC', 'CPL', 'CPA'] %}
-                {% set symbol = '€' %}
-            {% elseif offer.remType == 'CPA%' %}
-                {% set symbol = '%' %}
-            {% endif %}
+        {% if offer.remType in ['CPC', 'CPL', 'CPA'] %}
+            {% set symbol = '€' %}
+        {% elseif offer.remType == 'CPA%' %}
+            {% set symbol = '%' %}
+        {% endif %}
             <div class="RBZ_offer_remuneration">
                 <span class="RBZ_offer_remuneration_amount">{{ offer.remMember | number_format(2, ',', ' ') }}&nbsp;{{ symbol }}</span>
                 <span class="RBZ_offer_remuneration_description">{{ ('web.web.offer.macro.recommendation_description_' ~ offer.remType) | trans }}</span>
             </div>
 
-            {% if not recommended or (recommended and ((offer.publishing | length) - (type | length)) > 0) %}
-                <div class="RBZ_offer_input">
-                {% if 'email' in offer.publishing and 'email' not in type %}
-                    <a href="{{ url('WebWebBundle_recommendationRecommendByEmail', {'piOfferId': offer.id, 'psFrom': from }) }}" class="RBZ_offer_link RBZ_email RBZ_hide">{{ 'web.web.offer.macro.mailing' | trans }}</a>
-                {% endif %}
-                {% if 'facebook' in offer.publishing and 'facebook' not in type %}
-                    <a href="{{ url("WebWebBundle_recommendByFacebook", {'piOfferId': offer.id, 'psFrom': from }) }}" class="RBZ_offer_link RBZ_facebook RBZ_hide">{{ 'web.web.offer.macro.facebook_publishing' | trans }}</a>
-                {% endif %}
-                {% if 'twitter' in offer.publishing and 'twitter' not in type %}
-                    <a href="{{ url('WebWebBundle_recommendationRecommendByTwitter', {'piOfferId': offer.id, 'psFrom': from}) }}" class="RBZ_offer_link RBZ_twitter RBZ_hide">{{ 'web.web.offer.macro.twitter_publishing' | trans }} </a>
-                {% endif %}
-                    <a href="#" class="RBZ_actions">{{ 'web.web.offer.macro.recommend' | trans }}</a>
-                    <div class="RBZ_arrow">></div>
-                </div>
-            {% else %}
-                <div class="RBZ_recommended">{{ 'web.web.offer.macro.recommended' | trans }}</div>
+        {% if not recommended or (recommended and ((offer.publishing | length) - (type | length)) > 0) %}
+            <div class="RBZ_offer_input">
+            {% if 'email' in offer.publishing and 'email' not in type %}
+                <a href="{{ url('WebWebBundle_recommendationRecommendByEmail', {'piOfferId': offer.id, 'psFrom': from }) }}" class="RBZ_offer_link RBZ_email RBZ_hide">{{ 'web.web.offer.macro.mailing' | trans }}</a>
             {% endif %}
+            {% if 'facebook' in offer.publishing and 'facebook' not in type %}
+                <a href="{{ url("WebWebBundle_recommendByFacebook", {'piOfferId': offer.id, 'psFrom': from }) }}" class="RBZ_offer_link RBZ_facebook RBZ_hide">{{ 'web.web.offer.macro.facebook_publishing' | trans }}</a>
+            {% endif %}
+            {% if 'twitter' in offer.publishing and 'twitter' not in type %}
+                <a href="{{ url('WebWebBundle_recommendationRecommendByTwitter', {'piOfferId': offer.id, 'psFrom': from}) }}" class="RBZ_offer_link RBZ_twitter RBZ_hide">{{ 'web.web.offer.macro.twitter_publishing' | trans }} </a>
+            {% endif %}
+                <a href="#" class="RBZ_actions">{{ 'web.web.offer.macro.recommend' | trans }}</a>
+                <div class="RBZ_arrow">></div>
+            </div>
+        {% else %}
+            <div class="RBZ_recommended">{{ 'web.web.offer.macro.recommended' | trans }}</div>
+        {% endif %}
         </div>
     </div>
 {% endmacro %}
