@@ -78,7 +78,6 @@ Offer.prototype = {
     {
         // ---- Survol du bouton ----
         $(document).on('mouseenter', 'a.RBZ_actions', function(event) {
-            console.log(event.type);
             var button = $(this).parent();
             var buttonLink = $(this);
             var buttonArrow = button.find('div.RBZ_arrow');
@@ -91,7 +90,6 @@ Offer.prototype = {
         });
         // ---- Arrêt du survol du bouton ----
         $(document).on('mouseleave', 'div.RBZ_offer_input', function(event) {
-            console.log(event.type);
             var button = $(this);
             var buttonLink = $(this).find('a.RBZ_actions');
             var buttonArrow = button.find('div.RBZ_arrow');
