@@ -10,6 +10,16 @@
     {% endstylesheets %}
 {% endblock %}
 
+{% block JAVASCRIPT %}
+    {{ parent() }}
+    {% javascripts '@WebWebBundle/Resources/public/js/contact/Contact.js'%}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    <script type="text/javascript">
+        goContact.handleProvider();
+    </script>
+    {% endjavascripts %}
+{% endblock %}
+
 {% block CONTENT %}
 <div id="div_RBZ_contactsWrapper">
     <section id="section_RBZ_contacts">
@@ -28,22 +38,22 @@
 
 
         <div class="RBZ_blockContacts">
-            <a id="a_RBZ_importEmail" class="KNS_right" href="#">{{ "web.web.contact.add.add" | trans | raw }}</a>
+            <a id="a_RBZ_importEmail" class="KNS_right" href="#" hrefbis="{{ url('WebWebBundle_contactAddPopup') }}">{{ "web.web.contact.add.add" | trans | raw }}</a>
             <span>{{ "web.web.contact.add.provider.email" | trans}}</span>
             <p>{{ "web.web.contact.add.addManually" | trans }}</p>
         </div>
         <div class="RBZ_blockContacts">
-            <a id="a_RBZ_importGmail" class="KNS_right" href="#">{{ "web.web.contact.add.add" | trans | raw }}</a>
+            <a id="a_RBZ_importGmail" class="KNS_right" href="#" hrefbis="{{ urlGoogle }}">{{ "web.web.contact.add.add" | trans | raw }}</a>
             <span>{{ "web.web.contact.add.provider.gmail" | trans}}</span>
             <p>{{ "web.web.contact.add.addContact" | trans({'%provider%': 'Gmail'}) }}</p>
         </div>
         <div class="RBZ_blockContacts">
-            <a id="a_RBZ_importOutlook" class="KNS_right" href="#">{{ "web.web.contact.add.add" | trans | raw }}</a>
+            <a id="a_RBZ_importOutlook" class="KNS_right" href="#" hrefbis="{{ urlOutlook }}">{{ "web.web.contact.add.add" | trans | raw }}</a>
             <span>{{ "web.web.contact.add.provider.outlook" | trans}}</span>
             <p>{{ "web.web.contact.add.addContact" | trans({'%provider%': 'Outlook'}) }}</p>
         </div>
         <div class="RBZ_blockContacts">
-            <a id="a_RBZ_importYahoo" class="KNS_right" href="#">{{ "web.web.contact.add.add" | trans | raw }}</a>
+            <a id="a_RBZ_importYahoo" class="KNS_right" href="#" hrefbis="{{ urlYahoo }}">{{ "web.web.contact.add.add" | trans | raw }}</a>
             <span>{{ "web.web.contact.add.provider.yahoo" | trans}}</span>
             <p>{{ "web.web.contact.add.addContact" | trans({'%provider%': 'Yahoo'}) }}</p>
         </div>

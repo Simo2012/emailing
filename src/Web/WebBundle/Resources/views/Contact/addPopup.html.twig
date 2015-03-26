@@ -1,0 +1,32 @@
+{% extends "@WebWeb/layoutPopup.html.twig" %}
+
+{% block STYLE %}{% endblock %}
+{% block CLASS %}RBZ_hide_popup{% endblock %}
+{% block TITLE %}
+    {{ 'web.web.contact.popup.title' | trans }}
+{% endblock %}
+{% block CONTENT %}
+    <div class="RBZ_confirm_popup_content">
+        <form id="form_RBZ_addContact" action="{{ url('WebWebBundle_contactAddPopup') }}" method="post" enctype="{{ form_enctype(form) }}">
+            <div id="div_RBZ_emailsContainer" data-prototype="
+                <a href='#' class='RBZ_removeContact'><img src='/bundles/admincommon/images/global/layoutHome/close.png' alt='' /></a>
+                <div class='KNS_row KNS_mbs'>
+                    {{ form_widget(form.emails.vars.prototype) | e }}
+                </div>
+            ">
+                <a id="a_RBZ_addContact" class="KNS_right" href="#">{{ 'web.web.contact.popup.add' | trans }}</a>
+                {% for email in form.emails %}
+                    <div class="KNS_row KNS_mbs">
+                        {{ form_widget(form.email) }}
+                    </div>
+                {% endfor %}
+            </div>
+            {{ form_widget(form._token) }}
+            <div id="div_RBZ_error"></div>
+        </form>
+    </div>
+{% endblock %}
+{% block SUBMIT %}
+    <button type="button" class="RBZ_cancel">{{ 'web.web.popup.confirmation.cancel_button' | trans }}</button>
+    <button type="button" id="button_RBZ_contactSubmit" class="RBZ_validate">{{ 'web.web.popup.confirmation.confirm_button' | trans }}</button>
+{% endblock %}

@@ -12,7 +12,7 @@ parameters:
     mailer_user: belhassen@arpedia.com
     mailer_password: 2PFhF4sYgCRzY0I9
     mailer_sender_address: null
-    locale: en
+    locale: en_US
     secret: SymfonyRubizzToken
 natexo_tool:
     error_manager:

@@ -88,7 +88,13 @@ class Contact
      **/
     private $commissions;
 
-
+    public function __construct() {
+        $loNow = new \DateTime();
+        $this->dateCreate           = $loNow;
+        $this->dateUpdate           = $loNow;
+        $this->subscriber           = true;
+        $this->directUnsubscribe    = false;
+    } // __construct
 
     /**
      * Get id

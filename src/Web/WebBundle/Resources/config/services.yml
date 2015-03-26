@@ -170,6 +170,11 @@ services:
     web.web.contact.outlook:
         class: Web\WebBundle\Model\Contact\Outlook
         arguments: ["%web.api%"]
+    # ---- Model d'ajout de contact ----
+    web.web.contact.email:
+        class: Web\WebBundle\Model\Contact\Email
+        arguments: ["@doctrine.orm.entity_manager"]
+
 
     # ==== Tracking ====
     # ---- Img vide pour tracking ----
@@ -240,6 +245,11 @@ services:
         class: Web\WebBundle\Form\Contact\ContactSearchType
         tags:
             - { name: form.type, alias: WebWebContactSearchType }
+    # ---- Formulaire d'ajout de contact ----
+    web.web.form.contact_add_type:
+        class: Web\WebBundle\Form\Contact\ContactAddType
+        tags:
+            - { name: form.type, alias: WebWebContactAddType }
 
     # ==== Formulaire de Contact ====
     web.web.form.contact_type:

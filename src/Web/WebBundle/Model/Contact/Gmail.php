@@ -2,7 +2,7 @@
 
 namespace Web\WebBundle\Model\Contact;
 
-use ArrayIterator;
+use Web\WebBundle\Model\Contact\Importer;
 
 /**
  * Modéle permettant de récuperer la liste des contacts gmail
@@ -14,7 +14,8 @@ use ArrayIterator;
  * @version 1.0
  * @package Web
  */
-class Gmail extends ArrayIterator {
+class Gmail extends Importer
+{
 
     /**
      * Permet de recuperer les codes api
@@ -29,9 +30,9 @@ class Gmail extends ArrayIterator {
      * Constructeur, injection des dépendances
      */
     public function __construct() {
-        $this->clientId = '1086839973461-3khcu8rfsbn9ailo003qc270osd2rjqf.apps.googleusercontent.com';
-        $this->clientSecret = '6dgNwrD2yDCE_n0b_BIavjnu';
-        $this->redirectUri = 'http://rubizz.mohammed.natexo.com';
+        $this->clientId = '1063487764464-c3qg16aa50tb0bm1livj7siialgqq26u.apps.googleusercontent.com';
+        $this->clientSecret = '10hywwKk5PSDoTF9aa6ODoTp';
+        $this->redirectUri = 'http://rubizz.victor.natexo.com/app_dev.php/oauth2callback';
     }// __constructeur
 
 
@@ -50,14 +51,13 @@ class Gmail extends ArrayIterator {
     
     /**
      * Permet d'avoir le token pour accéder a list des contacts
-     * 
-     * getToken
+     *
      * @param type $locode
      * @return type
      */
-    public function getToken($locode) {
+    public function setToken($lsCode) {
         $laFields = array(
-            'code' => urlencode($locode),
+            'code' => urlencode($lsCode),
             'client_id' => $this->clientId,
             'client_secret' => $this->clientSecret,
             'redirect_uri' => $this->redirectUri,
@@ -76,56 +76,42 @@ class Gmail extends ArrayIterator {
         curl_setopt($locurl, CURLOPT_RETURNTRANSFER, TRUE);
         curl_setopt($locurl, CURLOPT_SSL_VERIFYPEER, 0);
         curl_setopt($locurl, CURLOPT_SSL_VERIFYHOST, 0);
-        $laresult = curl_exec($locurl);
+        $lsResponse = curl_exec($locurl);
         curl_close($locurl);
-
-        return json_decode($laresult);
-    }//getToken
+        $laResult = json_decode($lsResponse, true);
+        $this->token = $laResult['access_token'];
+    }//setToken
 
     /**
      * Accés a liste des contacts 
      * 
      * GetContacts
      */
-    public function getContacts() {
-
-        if (isset($_GET["code"])) {
-            $lsaccesstoken = $this->getToken($_GET["code"])->access_token;
-            $lsurl = 'https://www.google.com/m8/feeds/contacts/default/full?max-results=120&oauth_token=' . $lsaccesstoken;
-            $lsxmlresponse = $this->getContents($lsurl);
-            if ((strlen(stristr($lsxmlresponse, 'Authorization required')) > 0) && (strlen(stristr($lsxmlresponse, 'Error ')) > 0)) {
-                return null;
+    public function readContacts()
+    {
+        if (!empty($this->token)) {
+            $lsurl = 'https://www.google.com/m8/feeds/contacts/default/full&oauth_token=' . $this->token;
+            $lsXmlResponse = $this->getContents($lsurl);
+            var_dump($lsXmlResponse);
+            if ((strlen(stristr($lsXmlResponse, 'Login required')) > 0) && (strlen(stristr($lsXmlResponse, 'Error')) > 0)) {
+                return false;
             }
-            $loxml = new \SimpleXMLElement($lsxmlresponse);
-            $loxml->registerXPathNamespace('gd', 'http://schemas.google.com/g/2005');
-            $this->putContact($loxml);
-        }
-    }//getContacts
-    
-    /**
-     * Ajouter les contacts dans le tableau ArrayIterator
-     * 
-     * putContact
-     * @param type $loxml
-     */
-    public function putContact($loxml) {
-        $cp = 0;
-        foreach ($loxml->entry as $key) {
-            foreach ($key->xpath('gd:email') as $email) {
-
-                if ((string) $key->title == "") {
-                    $this[$cp]['name'] = "No Name";
-                    
-                } else {
-                    $this[$cp]['name'] = (string) $key->title;
+            $loXml = new \SimpleXMLElement($lsXmlResponse);
+            $loXml->registerXPathNamespace('gd', 'http://schemas.google.com/g/2005');
+            foreach ($loXml->entry as $loEntry) {
+                foreach ($loEntry->xpath('gd:email') as $loEmail) {
+                    $laContact = array();
+                    if (empty($loEntry->title)) {
+                        $laContact['name'] = "No Name";
+                    } else {
+                        $laContact['name'] = $loEntry->title;
+                    }
+                    $laContact['email'] = $loEmail->attributes()->address;
+                    $this->addContact($laContact);
                 }
-                $this[$cp]['email'] = $email->attributes()->address;
-                $cp++;
             }
-            
-       
         }
-    }//putContact
+    } // readContacts
     
     /**
      * Retourn le contenu des list des contact 
@@ -149,28 +135,8 @@ class Gmail extends ArrayIterator {
         curl_setopt($locurl, CURLOPT_SSL_VERIFYPEER, 0); //To stop cURL from verifying the peer's certificate.
         curl_setopt($locurl, CURLOPT_SSL_VERIFYHOST, 0);
 
-        $locontents = curl_exec($locurl);
+        $lsResponse = curl_exec($locurl);
         curl_close($locurl);
-        return $locontents;
-    }//getContent
-
-    /**
-     * lire les contacts dans le tableau array
-     * 
-     * readContacts
-     */
-    public function readContacts() {
-        $this->getContacts();
-
-        if ($this != null) {
-            for ($i = 0; $i < $this->count(); $i++)
-                echo 'email contact : ' . $this[$i]['email'] .
-                ' =====> nom contact ' . $this[$i]['name'] . ' <br>';
-        }
-
-
-        exit;
-    }//readContacts
-
-// test
+        return $lsResponse;
+    } // getContent
 }

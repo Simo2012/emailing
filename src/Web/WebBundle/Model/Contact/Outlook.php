@@ -13,7 +13,7 @@ namespace Web\WebBundle\Model\Contact;
  * @package Web
  */
 
-class Outlook extends \ArrayIterator
+class Outlook extends Importer
 {
     /**
      * Permet de recuperer les codes api
@@ -44,9 +44,9 @@ class Outlook extends \ArrayIterator
      */
     public function __construct(array $paramsApi)
     {
-        $this->clientId = $paramsApi['outlook']['client_id'];
-        $this->clientSecret = $paramsApi['outlook']['client_secret'];
-        $this->redirectUri = $paramsApi['outlook']['redirect_uri'];
+        $this->clientId = $paramsApi['client_id'];
+        $this->clientSecret = $paramsApi['client_secret'];
+        $this->redirectUri = $paramsApi['redirect_uri'];
     }
 
 // __constructeur

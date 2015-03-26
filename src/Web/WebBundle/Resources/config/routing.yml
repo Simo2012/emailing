@@ -125,6 +125,10 @@ WebWebBundle_contactIndex:
 WebWebBundle_contactAdd:
     path:     /contact/add
     defaults: { _controller: "WebWebBundle:Contact:add" }
+# ---- Popup d'ajout ----
+WebWebBundle_contactAddPopup:
+    path:     /contact/add/popup
+    defaults: { _controller: "WebWebBundle:Contact:addPopup" }
 # ---- Abonner (menu contextuel de la page d'index) ----
 WebWebBundle_contactSubscribe:
     path:     /contact/subscribe/{piContactId}

@@ -142,7 +142,6 @@ Class Util
     public function normalize_url($url)
     {
       $parts = parse_url($url);
-        var_dump($parts);
       $scheme = $parts['scheme'];
       $host = $parts['host'];
       $port = isset($parts['port'])?$parts['port']: NULL;

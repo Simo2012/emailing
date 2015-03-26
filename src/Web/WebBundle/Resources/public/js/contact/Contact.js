@@ -39,7 +39,63 @@ Contact.prototype = {
                 $("#div_RBZ_menu_" + id).show();
             }
         });
-    } // ready
+    }, // ready
+
+    handleProvider: function () {
+        $(document).on('click', '#a_RBZ_importGmail, #a_RBZ_importOutlook, #a_RBZ_importYahoo', function() {
+            var popup = window.open($(this).attr('hrefbis'), '', 'height=400,width=600');
+            if (window.focus) {newwindow.focus()}
+            return false;
+        });
+
+        $(document).on('click', '#a_RBZ_importEmail', function() {
+            goPopup.ajaxPopup($(this).attr('hrefbis'));
+            return false;
+        });
+
+        $(document).on("click", "#a_RBZ_addContact", function() {
+            Contact.prototype._contactId++;
+            var lsProto = $("#div_RBZ_emailsContainer").attr('data-prototype').replace(/__name__/g, Contact.prototype._contactId);
+            $("#div_RBZ_emailsContainer").append(lsProto);
+            return false;
+        });
+
+        $(document).on("click", "#button_RBZ_contactSubmit", function() {
+            $('#form_RBZ_addContact').submit();
+            return false;
+        });
+
+        /**
+         * Validation du formulaire dans le popup de contact
+         */
+        $(document).on("submit", "#form_RBZ_addContact", function() {
+            var loData = new FormData($(this)[0]);
+            console.log('submit');
+            $.ajax({
+                url: $(this).attr('action'),
+                type: 'POST',
+                data: loData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (psReturn) {
+                    if ('OK' == psReturn) {
+                        $("#div_RBZ_commonPopup").remove();
+                        $("#div_RBZ_commonShadow").hide();
+                        return false;
+                    } else {
+                        $("#div_RBZ_error").text('');
+                        $("#div_RBZ_error").append(psReturn);
+                    }
+                }
+            });
+            return false;
+        });
+    },
+
+    _contactId: 0
+
+
 }; // Contact.prototype
 
 //==== Définition de l'objet Contact goContact ====

@@ -1,3 +1,13 @@
+OAuthGoogle:
+    pattern: /oauth2callback
+    defaults: { _controller: "WebWebBundle:Contact:getGoogleAuth"}
+OAuthOutlook:
+    pattern: /authOutlook
+    defaults: { _controller: "WebWebBundle:Contact:getOutlookAuth"}
+OAuthYahoo:
+    pattern: /authYahoo
+    defaults: { _controller: "WebWebBundle:Contact:getYahooAuth"}
+
 # ==================
 # ==== Tracking ====
 # ==================
@@ -21,7 +31,6 @@ WebWebBundle_leadTag:
 WebWebBundle_saleTag:
     path:     /track/sale
     defaults: { _controller: "WebWebBundle:Track:sale" }
-
 
 # ====================
 # ==== Bundle web ====

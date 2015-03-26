@@ -14,7 +14,7 @@
 /* ==== Popup commune ==== */
 #div_RBZ_commonPopup {
     display: none;
-    height: 250px;
+    min-height: 250px;
     width: 500px;
     position: fixed;
     border: 1px solid $border-grey;
@@ -43,17 +43,18 @@
     #div_RBZ_commonPopupContent {
         border-top: 1px solid $border-grey;
         border-bottom: 1px solid $border-grey;
-        height: 88px;
+        min-height: 88px;
         background-color: $gray-bg;
         display: block;
         position: relative;
         width: 100%;
         div.RBZ_confirm_popup_content {
             width: 500px;
-            height: 86px;
+            min-height: 86px;
             display: table-cell;
             vertical-align: middle;
             margin: auto;
+            padding: 20px;
         }
     }
     #div_RBZ_commonPopupSubmit {
