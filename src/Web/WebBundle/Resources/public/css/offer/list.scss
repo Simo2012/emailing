@@ -34,14 +34,23 @@
     }
 }
 
-// ==== inclusion de la macro des offres (tag) ====
+// ==== Inclusion de la macro des offres (tag) ====
 .RBZ_offers {
-    &.KNS_grid > * {
-        margin-left: -20px !important;
-    }
-
-    /* default styles for each "cell" */
-    &.KNS_grid > * > * {
-        padding-left: 20px !important;
+    .RBZ_grid {
+        width: 49.8%;
+        position: relative;
+        display: inline-block;
+        &.RBZ_left {
+            .RBZ_grid_item {
+                padding-right: 8px;
+                margin-bottom: 25px;
+            }
+        }
+        &.RBZ_right {
+            .RBZ_grid_item {
+                padding-left: 8px;
+                margin-bottom: 25px;
+            }
+        }
     }
 }
