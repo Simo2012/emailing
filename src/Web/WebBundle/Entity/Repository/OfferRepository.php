@@ -27,14 +27,18 @@ class OfferRepository extends EntityRepository
      */
     public function searchByCategory($psCategory = null, $psLocale = 'en_US')
     {
-        // ==== Formatage de la locale ====
+        // ==== Initialisation ====
         $lsLocale = strtolower(substr($psLocale, -2, 2));
-        
+        $loNow = new \DateTime();
+        $loNow->setTime(23, 59, 59);
+
         $loQuery = $this->createQueryBuilder('o')
                         ->select('o')
-                        ->where('o.country = :locale')
+                        ->where('o.active = 1')
+                        ->andWhere('o.country = :locale')
                         ->setParameter('locale', $lsLocale)
-                        ->andWhere('o.active = 1')
+                        ->andWhere('o.dateStart <= :now')
+                        ->setParameter('now', $loNow)
                         ->orderBy('o.dateCreate', 'DESC');
 
         // ==== Pas de filtre pour le tag all ====
@@ -55,15 +59,19 @@ class OfferRepository extends EntityRepository
      */
     public function getLast($piNumber, $psLocale = 'en_US')
     {
-        // ==== Formatage de la locale ====
+        // ==== Initialisation ====
         $lsLocale = strtolower(substr($psLocale, -2, 2));
+        $loNow = new \DateTime();
+        $loNow->setTime(23, 59, 59);
 
         $loQuery = $this->createQueryBuilder('o')
                         ->select('o, partial b.{id, name}')
                         ->join('o.brand', 'b')
-                        ->where('o.country = :locale')
+                        ->where('o.active = 1')
+                        ->andWhere('o.country = :locale')
                         ->setParameter('locale', $lsLocale)
-                        ->andWhere('o.active = 1')
+                        ->andWhere('o.dateStart <= :now')
+                        ->setParameter('now', $loNow)
                         ->orderBy('o.dateCreate', 'DESC')
                         ->setMaxResults($piNumber);
 

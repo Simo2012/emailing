@@ -246,6 +246,7 @@ web.web.offer.macro.recommendation_description_CPA:  for each purchase
 web.web.offer.macro.recommendation_description_CPA%: of each purchase amount
 web.web.offer.macro.recommend:                       RECOMMEND
 web.web.offer.macro.recommended:                     SENT
+web.web.offer.macro.stopped:                         FINISHED
 web.web.offer.macro.facebook_publishing:             Publish on Facebook
 web.web.offer.macro.twitter_publishing:              Publish on Twitter
 web.web.offer.macro.mailing:                         Send to my mailling List
