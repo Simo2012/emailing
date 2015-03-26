@@ -3,164 +3,168 @@
 <!--[if IE 8]> <html class="KNS_no-js KNS_ie8 KNS_ie678" lang="{{ app.request.locale }}"> <![endif]-->
 <!--[if IE 9]> <html class="KNS_no-js KNS_ie9" lang="{{ app.request.locale }}"> <![endif]-->
 <!--[if gt IE 9]> <!--><html class="KNS_no-js" lang="{{ app.request.locale }}"> <!--<![endif]-->
-<head>
-    <meta charset="UTF-8" />
-    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
-    <title>{% block TITLE %}{{ "web.web.layout.headerTitle" | trans }}{% endblock %}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <!--[if lt IE 9]>
-    <script type="text/javascript" src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-{% block CSS %}
-{%     stylesheets '@WebWebBundle/Resources/public/css/default/index/index.scss' %}
-        <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
-{%     endstylesheets %}
-{% endblock %}
-    <link href='http://fonts.googleapis.com/css?family=Nunito:400,700' rel='stylesheet' type='text/css' />
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700,600,400' rel='stylesheet' type='text/css'>
-{% if app.session.get('debugMode') %}
-    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
-{% endif %}
-</head>
-<body class="RBZ_{{ app.request.locale }} RBZ_{{ app.request.locale | slice(0, 2) }}">
-{# ====================== #}
-{# ==== Tête de page ==== #}
-{# ====================== #}
-    <header id="header_RBZ_default_header" role="banner" class="">
-        <div id="div_RBZ_headerInside">
-            <img id="img_RBZ_headerGuy" src="{{ asset("/bundles/webweb/images/default/index/header.png") }}" alt="" />
-            <img id="img_RBZ_headerGuyPad" src="{{ asset("/bundles/webweb/images/default/index/pad/header.png") }}" alt="" />
-            <img id="img_RBZ_headerGuyPhone" src="{{ asset("/bundles/webweb/images/default/index/phone/header.png") }}" alt="" />
-            <img id="img_RBZ_headerBeta" src="{{ asset("/bundles/webweb/images/default/index/beta.png") }}" alt="" />
-            <div id="div_RBZ_headerText">
-                <div id="div_RBZ_headerLogin">
-                    <a id="a_RBZ_login" href="#" hrefbis="{{ url("WebWebBundle_securityLogin") }}">{{ "web.web.default.index.headerLogin" | trans }}</a> &nbsp;&#9474;&nbsp;
-                    <a class="RBZ_register" href="#" hrefbis="{{ url("WebWebBundle_securityRegister") }}">{{ "web.web.default.index.headerRegister" | trans }}</a>
-                </div>
-                <p>{{ "web.web.default.index.headerText" | trans | raw }}</p>
-                <a class="RBZ_register" id="a_RBZ_subscribe" href="#" hrefbis="{{ url("WebWebBundle_securityRegister") }}"><span>{{ "web.web.default.index.headerButton" | trans }} &nbsp;&rsaquo;</span></a>
-            </div>
-            <div class="KNS_clear"></div>
-            <div id="div_RBZ_headerHow" class="RBZ_indexBlocks">
-                <h1>{{ "web.web.default.index.headerHowTitle" | trans }}</h1>
-                <p>{{ "web.web.default.index.headerHowText" | trans | raw }}</p>
-                <a href="{{ url("WebWebBundle_defaultLogoutHowItWorks") }}">{{ "web.web.default.index.headerHowLink" | trans }} &nbsp;&rsaquo;</a>
-            </div>
-        </div>
-    </header>
+    <head>
+        <meta charset="UTF-8" />
+        <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+        <title>{% block TITLE %}{{ "web.web.layout.headerTitle" | trans }}{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <!--[if lt IE 9]>
+        <script type="text/javascript" src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        {% block CSS %}
+            {%     stylesheets '@WebWebBundle/Resources/public/css/default/index/index.scss' %}
+            <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+            {%     endstylesheets %}
+        {% endblock %}
+        <link href='http://fonts.googleapis.com/css?family=Nunito:400,700' rel='stylesheet' type='text/css' />
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700,600,400' rel='stylesheet' type='text/css'>
+        {% if app.session.get('debugMode') %}
+            <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" />
+        {% endif %}
+    </head>
+    <body class="RBZ_{{ app.request.locale }} RBZ_{{ app.request.locale | slice(0, 2) }}">
+        {# ====================== #}
+        {# ==== Tête de page ==== #}
+        {# ====================== #}
+        <header id="header_RBZ_default_header" role="banner" class="">
+            <div id="div_RBZ_headerInside">
+                <img id="img_RBZ_headerGuy" src="{{ asset("/bundles/webweb/images/default/index/header.png") }}" alt="" />
+                <img id="img_RBZ_headerGuyPad" src="{{ asset("/bundles/webweb/images/default/index/pad/header.png") }}" alt="" />
+                <img id="img_RBZ_headerGuyPhone" src="{{ asset("/bundles/webweb/images/default/index/phone/header.png") }}" alt="" />
+                <img id="img_RBZ_headerBeta" src="{{ asset("/bundles/webweb/images/default/index/beta.png") }}" alt="" />
+                <div id="div_RBZ_headerText">
+                    <div id="div_RBZ_headerLogin">
+                        <a href="{{ url('WebWebBundle_defaultIndex') }}">{{ "rubizzMenu_home" | trans | upper }}</a> &nbsp;&#9474;&nbsp;
 
-{# ======================= #}
-{# ==== Corps de page ==== #}
-{# ======================= #}
-    <section id="section_RBZ_default_main" role="main" class="">
-{# ==== Block create your Rubizz network ==== #}
-        <div id="div_RBZ_create">
-            <div id="div_RBZ_createInside">
-                <img class="RBZ_nophone" src="{{ asset("/bundles/webweb/images/default/index/create.png") }}" alt="" />
-                <img class="RBZ_phone" src="{{ asset("/bundles/webweb/images/default/index/phone/create.png") }}" alt="" />
-                <div class="RBZ_indexBlocks">
-                    <h1>{{ "web.web.default.index.createTitle" | trans }}</h1>
-                    <p>{{ "web.web.default.index.createText" | trans | raw }}</p>
-                    <a class="RBZ_register" href="#" hrefbis="{{ url("WebWebBundle_securityRegister") }}">{{ "web.web.default.index.createLink" | trans }} &nbsp;&rsaquo;</a>
+                        <a href="{{ url('WebWebBundle_defaultLogoutHowItWorks') }}">{{ "web.web.default.index.footerHow" | trans | upper }}</a> &nbsp;&#9474;&nbsp;
+
+                        <a id="a_RBZ_login" href="#" hrefbis="{{ url("WebWebBundle_securityLogin") }}">{{ "web.web.default.index.headerLogin" | trans }}</a> &nbsp;&#9474;&nbsp;
+                        <a class="RBZ_register" href="#" hrefbis="{{ url("WebWebBundle_securityRegister") }}">{{ "web.web.default.index.headerRegister" | trans }}</a>
+                    </div>
+                    <p>{{ "web.web.default.index.headerText" | trans | raw }}</p>
+                    <a class="RBZ_register" id="a_RBZ_subscribe" href="#" hrefbis="{{ url("WebWebBundle_securityRegister") }}"><span>{{ "web.web.default.index.headerButton" | trans }} &nbsp;&rsaquo;</span></a>
                 </div>
                 <div class="KNS_clear"></div>
-            </div>
-        </div>
-
-{# ==== Community 3.0 ==== #}
-        <div id="div_RBZ_community">
-            <div id="div_RBZ_communityInside">
-                <img class="RBZ_nophone" src="{{ asset("/bundles/webweb/images/default/index/community.png") }}" alt="" />
-                <img class="RBZ_phone" src="{{ asset("/bundles/webweb/images/default/index/phone/community.png") }}" alt="" />
-                <div class="RBZ_indexBlocks">
-                    <h1>{{ "web.web.default.index.communityTitle" | trans }}</h1>
-                    <p>{{ "web.web.default.index.communityText" | trans | raw }}</p>
-                    <a class="RBZ_register" href="#" hrefbis="{{ url("WebWebBundle_securityRegister") }}">{{ "web.web.default.index.communityLink" | trans }} &nbsp;&rsaquo;</a>
+                <div id="div_RBZ_headerHow" class="RBZ_indexBlocks">
+                    <h1>{{ "web.web.default.index.headerHowTitle" | trans }}</h1>
+                    <p>{{ "web.web.default.index.headerHowText" | trans | raw }}</p>
+                    <a href="{{ url("WebWebBundle_defaultLogoutHowItWorks") }}">{{ "web.web.default.index.headerHowLink" | trans }} &nbsp;&rsaquo;</a>
                 </div>
-                <div class="KNS_clear"></div>
             </div>
-        </div>
+        </header>
 
-{# ==== Choose your deals ==== #}
-        <div id="div_RBZ_choose">
-            <div id="div_RBZ_chooseInside">
-                <img class="RBZ_nophone" src="{{ asset("/bundles/webweb/images/default/index/choose.png") }}" alt="" />
-                <img class="RBZ_phone" src="{{ asset("/bundles/webweb/images/default/index/phone/choose.png") }}" alt="" />
-                <div class="RBZ_indexBlocks">
-                    <h1>{{ "web.web.default.index.chooseTitle" | trans }}</h1>
-                    <p>{{ "web.web.default.index.chooseText" | trans | raw }}</p>
-                    <a class="RBZ_register" href="#" hrefbis="{{ url("WebWebBundle_securityRegister") }}">{{ "web.web.default.index.chooseLink" | trans }} &nbsp;&rsaquo;</a>
+        {# ======================= #}
+        {# ==== Corps de page ==== #}
+        {# ======================= #}
+        <section id="section_RBZ_default_main" role="main" class="">
+            {# ==== Block create your Rubizz network ==== #}
+            <div id="div_RBZ_create">
+                <div id="div_RBZ_createInside">
+                    <img class="RBZ_nophone" src="{{ asset("/bundles/webweb/images/default/index/create.png") }}" alt="" />
+                    <img class="RBZ_phone" src="{{ asset("/bundles/webweb/images/default/index/phone/create.png") }}" alt="" />
+                    <div class="RBZ_indexBlocks">
+                        <h1>{{ "web.web.default.index.createTitle" | trans }}</h1>
+                        <p>{{ "web.web.default.index.createText" | trans | raw }}</p>
+                        <a class="RBZ_register" href="#" hrefbis="{{ url("WebWebBundle_securityRegister") }}">{{ "web.web.default.index.createLink" | trans }} &nbsp;&rsaquo;</a>
+                    </div>
+                    <div class="KNS_clear"></div>
                 </div>
-                <div class="KNS_clear"></div>
             </div>
-        </div>
 
-{# ==== Redeem your piggy bank ==== #}
-        <div id="div_RBZ_redeem">
-            <div id="div_RBZ_redeemInside">
-                <img class="RBZ_nophone" src="{{ asset("/bundles/webweb/images/default/index/redeem.png") }}" alt="" />
-                <img class="RBZ_phone" src="{{ asset("/bundles/webweb/images/default/index/phone/redeem.png") }}" alt="" />
-                <div class="RBZ_indexBlocks">
-                    <h1>{{ "web.web.default.index.redeemTitle" | trans }}</h1>
-                    <p>{{ "web.web.default.index.redeemText" | trans | raw }}</p>
-                    <a class="RBZ_register" href="#" hrefbis="{{ url("WebWebBundle_securityRegister") }}">{{ "web.web.default.index.redeemLink" | trans }} &nbsp;&rsaquo;</a>
+            {# ==== Community 3.0 ==== #}
+            <div id="div_RBZ_community">
+                <div id="div_RBZ_communityInside">
+                    <img class="RBZ_nophone" src="{{ asset("/bundles/webweb/images/default/index/community.png") }}" alt="" />
+                    <img class="RBZ_phone" src="{{ asset("/bundles/webweb/images/default/index/phone/community.png") }}" alt="" />
+                    <div class="RBZ_indexBlocks">
+                        <h1>{{ "web.web.default.index.communityTitle" | trans }}</h1>
+                        <p>{{ "web.web.default.index.communityText" | trans | raw }}</p>
+                        <a class="RBZ_register" href="#" hrefbis="{{ url("WebWebBundle_securityRegister") }}">{{ "web.web.default.index.communityLink" | trans }} &nbsp;&rsaquo;</a>
+                    </div>
+                    <div class="KNS_clear"></div>
                 </div>
-                <div class="KNS_clear"></div>
             </div>
-        </div>
 
-    </section> <!-- section_RBZ_default_main -->
+            {# ==== Choose your deals ==== #}
+            <div id="div_RBZ_choose">
+                <div id="div_RBZ_chooseInside">
+                    <img class="RBZ_nophone" src="{{ asset("/bundles/webweb/images/default/index/choose.png") }}" alt="" />
+                    <img class="RBZ_phone" src="{{ asset("/bundles/webweb/images/default/index/phone/choose.png") }}" alt="" />
+                    <div class="RBZ_indexBlocks">
+                        <h1>{{ "web.web.default.index.chooseTitle" | trans }}</h1>
+                        <p>{{ "web.web.default.index.chooseText" | trans | raw }}</p>
+                        <a class="RBZ_register" href="#" hrefbis="{{ url("WebWebBundle_securityRegister") }}">{{ "web.web.default.index.chooseLink" | trans }} &nbsp;&rsaquo;</a>
+                    </div>
+                    <div class="KNS_clear"></div>
+                </div>
+            </div>
 
-    <!-- popup -->
-    <div id="div_RBZ_loginShadow" class="RBZ_{{ app.request.locale }}"></div>
-    <div id="div_RBZ_registerShadow" class="RBZ_{{ app.request.locale }}"></div>
+            {# ==== Redeem your piggy bank ==== #}
+            <div id="div_RBZ_redeem">
+                <div id="div_RBZ_redeemInside">
+                    <img class="RBZ_nophone" src="{{ asset("/bundles/webweb/images/default/index/redeem.png") }}" alt="" />
+                    <img class="RBZ_phone" src="{{ asset("/bundles/webweb/images/default/index/phone/redeem.png") }}" alt="" />
+                    <div class="RBZ_indexBlocks">
+                        <h1>{{ "web.web.default.index.redeemTitle" | trans }}</h1>
+                        <p>{{ "web.web.default.index.redeemText" | trans | raw }}</p>
+                        <a class="RBZ_register" href="#" hrefbis="{{ url("WebWebBundle_securityRegister") }}">{{ "web.web.default.index.redeemLink" | trans }} &nbsp;&rsaquo;</a>
+                    </div>
+                    <div class="KNS_clear"></div>
+                </div>
+            </div>
 
-{# ====================== #}
-{# ==== Pied de page ==== #}
-{# ====================== #}
-    <footer id="footer_RBZ_footer" role="contentinfo">
-        <div id="div_RBZ_footerInside">
-            <table id="table_RBZ_footerLinks">
-            <tr><td><a href="{{ url('WebWebBundle_defaultLogoutAbout') }}">{{ "web.web.default.index.footerAbout" | trans }}</a></td>
-                <td id="li_RBZ_contactPopupCall"><a href="#" hrefbis="{{ url("WebWebBundle_defaultLogoutContact") }}">{{ "web.web.default.index.footerContact" | trans }}</a></td>
-            </tr>
-            <tr><td><a href="{{ url('WebWebBundle_defaultLogoutHowItWorks') }}">{{ "web.web.default.index.footerHow" | trans }}</a></td>
-                <td><a href="http://careers.natexo.com" target="_blank">{{ "web.web.default.index.footerJobs" | trans }}</a></td>
-            </tr>
-            <tr><td><a href="{{ url('WebWebBundle_defaultLogoutFaq') }}">{{ "web.web.default.index.footerFaq" | trans }}</a></td>
-                <td><a href="http://natexo.com/" target="_blank">{{ "web.web.default.index.footerAdv" | trans }}</a></td>
-            </tr>
-            </table>
-            <p id="p_RBZ_footerCommunity">
-                <a href="#"><img src="{{ asset("/bundles/webweb/images/default/index/facebook.png") }}" alt="" /></a>
-                <a id="a_RBZ_twitter" href="#"><img src="{{ asset("/bundles/webweb/images/default/index/twitter.png") }}" alt="" /></a>
-            </p>
-            <p id="p_RBZ_rights">
-                {{ "web.web.default.index.footerCopy" | trans | raw }} <br id="br_RBZ_footer" />
-                <a href="{{ url('WebWebBundle_defaultLogoutLegal') }}">{{ "web.web.default.index.footerLegal" | trans }}</a>
-                <a href="{{ url('WebWebBundle_defaultLogoutTerms') }}">{{ "web.web.default.index.footerGtu" | trans }}</a>
-            </p>
-        </div>
-    </footer>
+        </section> <!-- section_RBZ_default_main -->
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-{%     if app.session.get('debugMode') %}
-        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
-{%     endif %}
-{%     javascripts
+        <!-- popup -->
+        <div id="div_RBZ_loginShadow" class="RBZ_{{ app.request.locale }}"></div>
+        <div id="div_RBZ_registerShadow" class="RBZ_{{ app.request.locale }}"></div>
+
+        {# ====================== #}
+        {# ==== Pied de page ==== #}
+        {# ====================== #}
+        <footer id="footer_RBZ_footer" role="contentinfo">
+            <div id="div_RBZ_footerInside">
+                <table id="table_RBZ_footerLinks">
+                    <tr><td><a href="{{ url('WebWebBundle_defaultLogoutAbout') }}">{{ "web.web.default.index.footerAbout" | trans }}</a></td>
+                        <td id="li_RBZ_contactPopupCall"><a href="#" hrefbis="{{ url("WebWebBundle_defaultLogoutContact") }}">{{ "web.web.default.index.footerContact" | trans }}</a></td>
+                    </tr>
+                    <tr><td><a href="{{ url('WebWebBundle_defaultLogoutHowItWorks') }}">{{ "web.web.default.index.footerHow" | trans }}</a></td>
+                        <td><a href="http://careers.natexo.com" target="_blank">{{ "web.web.default.index.footerJobs" | trans }}</a></td>
+                    </tr>
+                    <tr><td><a href="{{ url('WebWebBundle_defaultLogoutFaq') }}">{{ "web.web.default.index.footerFaq" | trans }}</a></td>
+                        <td><a href="http://natexo.com/" target="_blank">{{ "web.web.default.index.footerAdv" | trans }}</a></td>
+                    </tr>
+                </table>
+                <p id="p_RBZ_footerCommunity">
+                    <a href="#"><img src="{{ asset("/bundles/webweb/images/default/index/facebook.png") }}" alt="" /></a>
+                    <a id="a_RBZ_twitter" href="#"><img src="{{ asset("/bundles/webweb/images/default/index/twitter.png") }}" alt="" /></a>
+                </p>
+                <p id="p_RBZ_rights">
+                    {{ "web.web.default.index.footerCopy" | trans | raw }} <br id="br_RBZ_footer" />
+                    <a href="{{ url('WebWebBundle_defaultLogoutLegal') }}">{{ "web.web.default.index.footerLegal" | trans }}</a>
+                    <a href="{{ url('WebWebBundle_defaultLogoutTerms') }}">{{ "web.web.default.index.footerGtu" | trans }}</a>
+                </p>
+            </div>
+        </footer>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        {%     if app.session.get('debugMode') %}
+            <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+        {%     endif %}
+        {%     javascripts
     '@WebWebBundle/Resources/public/js/global/Global.js'
     '@WebWebBundle/Resources/public/js/default/Default.js'
     '@WebWebBundle/Resources/public/js/global/Popup.js'
-%}
-    <script type="text/javascript" src="{{ asset_url }}"></script>
-{%     endjavascripts %}
-    <script type="text/javascript">
-        $(document).ready(function() {
-            goGlobal.ready();
-            goDefault.ready("{{ url('WebWebBundle_offerIndex') }}");
-            // ==== Formulaire de contact ====
-            goPopup.ready('#div_RBZ_registerShadow');
-        });
-    </script>
-</body>
+        %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+        {%     endjavascripts %}
+        <script type="text/javascript">
+            $(document).ready(function() {
+                goGlobal.ready();
+                goDefault.ready("{{ url('WebWebBundle_offerIndex') }}");
+                // ==== Formulaire de contact ====
+                goPopup.ready('#div_RBZ_registerShadow');
+            });
+        </script>
+    </body>
 </html>

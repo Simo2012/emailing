@@ -1,8 +1,8 @@
 /**
- * Classe de gestion globale
+ * Classe de gestion de la pge HIW
  *
  * <pre>
- * Victor 08/02/15 Création
+ * Elias 08/03/15 Création
  * </pre>
  * @author Elias
  * @version 1.0
@@ -11,19 +11,13 @@
 function Hiw()
 {
     // ==== Constructeur ====
-    // ---- Permet de savoir si l'user est connecté ----
-    Popup.prototype._pbIsConnected = false;
-} // Global
+} // Hiw
 Hiw.prototype = {
     /**
      * Traitements lancés en fin de chargement de la page
      */
-    ready: function(pbIsConnected)
+    ready: function()
     {
-        // ---- Permet de savoir si l'user est connecté ----
-        if (pbIsConnected !== undefined) {
-            Popup.prototype._pbIsConnected = pbIsConnected;
-        }
         $(document).on('click', '.RBZ_hiwMenu', function() {
             var numberPage = $(this).text();
             Hiw.prototype._manageChangePage($(this), numberPage);
@@ -74,23 +68,12 @@ Hiw.prototype = {
             $("#div_RBZ_hiw_slider").css("color", "#fff");
             $("#div_RBZ_hiw_slider h3").css("color", "#fff");
             $(".RBZ_hiwCircle").css("background-color", "#fff");
-            $("#header_RBZ_header #div_RBZ_banner").css("background-image", "url(/bundles/webweb/images/global/logo.png)");
-            $("#header_RBZ_header #div_RBZ_banner #div_RBZ_headerMenu a").css("color", "#fff");
-            $("#header_RBZ_header #div_RBZ_banner #div_RBZ_headerMenu div.RBZ_menuVBar").css("border-left", "1px solid #fff");
-            $("#header_RBZ_header #div_RBZ_banner #div_RBZ_headerMenu div.RBZ_menuVBar").css("border-right", "1px solid #fff");
         } else {
             $("body").css("background-color", "#F1F1F1");
             // ---- menu du slider ----
             $("#div_RBZ_hiw_slider").css("color", "gray");
             $("#div_RBZ_hiw_slider h3").css("color", "gray");
             $(".RBZ_hiwCircle").css("background-color", "gray");
-            // ---- Si l'utilisateur est en mode logout ----
-            if (!Popup.prototype._pbIsConnected) {
-                $("#header_RBZ_header #div_RBZ_banner").css("background-image", "url(/bundles/webweb/images/global/redLogo.png)");
-                $("#header_RBZ_header #div_RBZ_banner #div_RBZ_headerMenu a").css("color", "#353537");
-                $("#header_RBZ_header #div_RBZ_banner #div_RBZ_headerMenu div.RBZ_menuVBar").css("border-left", "1px solid #353537");
-                $("#header_RBZ_header #div_RBZ_banner #div_RBZ_headerMenu div.RBZ_menuVBar").css("border-right", "1px solid #353537");
-            }
         }
         $("#div_RBZ_hiw_p" + piNumberPage).show();
 

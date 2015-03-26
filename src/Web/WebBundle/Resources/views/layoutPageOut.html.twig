@@ -1,15 +1,15 @@
 {% extends "@WebWeb/layout.html.twig" %}
 {% block CSS %}
-{{     parent() }}
-{%     stylesheets '@WebWebBundle/Resources/public/css/global/layoutPageOut.scss' %}
-        <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
-{%     endstylesheets %}
+    {{     parent() }}
+    {%     stylesheets '@WebWebBundle/Resources/public/css/global/layoutPageOut.scss' %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+    {%     endstylesheets %}
 {% endblock %}
 {% block JAVASCRIPT %}
-{{     parent() }}
-{%     javascripts '@WebWebBundle/Resources/public/js/default/Default.js' %}
+    {{     parent() }}
+    {%     javascripts '@WebWebBundle/Resources/public/js/default/Default.js' %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
-{%     endjavascripts %}
+    {%     endjavascripts %}
     <script type="text/javascript">
         $(document).ready(function() {
             goDefault.ready("{{ url('WebWebBundle_offerIndex') }}");
@@ -28,6 +28,8 @@
                 <a class="RBZ_register" href="#" hrefbis="{{ url("WebWebBundle_securityRegister") }}">{{ "web.web.layoutPageOut.signup" | trans }}</a>
             </span>
         </div>
+    </div>
+    <div id="div_RBZ_navWrapperLogOut">
     </div>
 {% endblock %}
 {% block CONTENT %}
@@ -60,6 +62,6 @@
                 <a href="{{ url('WebWebBundle_defaultLogoutLegal') }}">{{ "web.web.default.index.footerLegal" | trans }}</a>
                 <a href="{{ url('WebWebBundle_defaultLogoutTerms') }}">{{ "web.web.default.index.footerGtu" | trans }}</a>
             </span>
-         </p>
+        </p>
     </div>
 {% endblock %}

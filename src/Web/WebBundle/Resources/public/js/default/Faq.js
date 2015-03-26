@@ -1,8 +1,8 @@
 /**
- * Classe de gestion globale
+ * Classe de gestion de la page FAQ
  *
  * <pre>
- * Victor 08/02/15 Création
+ * Elias 08/03/15 Création
  * </pre>
  * @author Elias
  * @version 1.0
@@ -11,7 +11,7 @@
 function Faq()
 {
     // ==== Constructeur ====
-} // Global
+} // Faq
 Faq.prototype = {
     /**
      * Traitements lancés en fin de chargement de la page
