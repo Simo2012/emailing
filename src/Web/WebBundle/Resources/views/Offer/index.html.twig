@@ -60,10 +60,10 @@
     </tr>
     </table>
     <div class="KNS_clear"></div>
-    <div class="RBZ_offers KNS_grid">
-        <div class="KNS_grid2">
+    <div class="RBZ_offers">
         {# Inclusion de la macro des offres  #}
         {% for offer in offers %}
+        <div class="RBZ_grid {{ cycle(['RBZ_left', 'RBZ_right'], loop.index0) }}">
             {% if offer.id in recommendedOffers | keys %}
                 {% set recommended = true %}
                 {% set type = recommendedOffers[offer.id] %}
@@ -71,10 +71,10 @@
                 {% set recommended = false %}
                 {% set type = [] %}
             {% endif %}
-            <div>
+            <div class="RBZ_grid_item">
             {{ macro.offer(offer, recommended, type, from) }}
             </div>
-        {% endfor %}
         </div>
+        {% endfor %}
     </div>
 {% endblock %}
