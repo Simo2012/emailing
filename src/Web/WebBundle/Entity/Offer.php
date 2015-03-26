@@ -728,4 +728,21 @@ class Offer
     {
         return $this->recommendations;
     }
+
+    /**
+     * Permet de savoir si l'offre est recommendable
+     *
+     * @return bool
+     */
+    public function isRecommendable()
+    {
+        $loNow = new \DateTime();
+        $loNow->setTime(0, 0, 0);
+        $loDiff = $loNow->diff($this->dateEnd);
+        if ($loDiff->format('%r%d') >= 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
