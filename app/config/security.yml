@@ -1,7 +1,7 @@
 security:
     encoders:
         Web\WebBundle\Entity\User:
-            id: web.web.encoder.user_password
+            id: web.web.model.encoder.user_password
 
     providers:
         users:
