@@ -46,7 +46,7 @@ class SecurityController extends Controller
             $loForm->handleRequest($poRequest);
             if ($loForm->isValid()) {
                 try {
-                    $loUserLogger = $this->container->get('web.web.manager.user_logger');
+                    $loUserLogger = $this->container->get('web.web.model.user.user_logger');
                     $loUserLogger->logUser($loUser);
                 } catch(\Exception $e) {
                     return new Response($e->getMessage());
@@ -78,7 +78,7 @@ class SecurityController extends Controller
             $loForm->handleRequest($poRequest);
             if ($loForm->isValid()) {
                 try {
-                    $loUserLogger = $this->container->get('web.web.manager.user_logger');
+                    $loUserLogger = $this->container->get('web.web.model.user.user_logger');
                     $loUserLogger->registerUser($loUser);
                 } catch(\Exception $e) {
                     return new Response($e->getMessage());

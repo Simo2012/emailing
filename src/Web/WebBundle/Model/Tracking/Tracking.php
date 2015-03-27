@@ -1,5 +1,5 @@
 <?php
-namespace Web\WebBundle\Model;
+namespace Web\WebBundle\Model\Tracking;
 
 use Doctrine\Common\Persistence\ObjectManager;
 use Web\WebBundle\Entity\Recommendation;
