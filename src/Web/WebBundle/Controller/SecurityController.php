@@ -48,9 +48,9 @@ class SecurityController extends Controller
             if ($loForm->isValid()) {
                 try {
                     $loUserLogger = $this->container->get('web.web.model.user.user_logger');
-                    $loUserLogger->logUser($loUser);
+                    $loLoguedUser = $loUserLogger->logUser($loUser);
 
-                    if ($loUser->getNbContacts() == 0) {
+                    if ($loLoguedUser->getNbContacts() == 0) {
                         $lsUrl = $this->generateUrl('WebWebBundle_contactAdd', array(), true);
                     } else {
                         $lsUrl = $this->generateUrl('WebWebBundle_offerIndex', array(), true);
