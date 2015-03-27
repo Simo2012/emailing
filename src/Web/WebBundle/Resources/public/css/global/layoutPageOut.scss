@@ -10,7 +10,7 @@
     width: 100%;
     z-index: 150;
     background-color: $red-banner;
-    span.RBZ_nowrap { white-space:nowrap; font-weight:normal; }
+    span.RBZ_nowrap { display:inline-rubizz; white-space:nowrap; font-weight:normal; }
     #div_RBZ_banner {
         position:relative; background-image:url(/bundles/webweb/images/global/logo.png);
         &.RBZ_wrapper { max-width:960px; width:auto; }
