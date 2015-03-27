@@ -4,6 +4,7 @@ namespace Web\WebBundle\Controller;
 
 use Natexo\AdminBundle\Model\Paginator;
 use Natexo\ToolBundle\Model\Filter\ApiEncryptFilter;
+use Proxies\__CG__\Web\WebBundle\Entity\Contact;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Cookie;
@@ -111,7 +112,7 @@ class ContactController extends Controller
             $loGmailHelper->readContacts();
             $loGmailHelper->saveContacts();
         }
-        return new Response('OK');
+        return $this->render('WebWebBundle:Contact:popupProvider.html.twig');
     }
 
     public function getOutlookAuthAction(Request $poRequest)
@@ -122,7 +123,7 @@ class ContactController extends Controller
             $loOutlookHelper->readContacts();
             $loOutlookHelper->saveContacts();
         }
-        return new Response('OK');
+        return $this->render('WebWebBundle:Contact:popupProvider.html.twig');
     }
 
     public function getYahooAuthAction(Request $poRequest)
@@ -133,7 +134,7 @@ class ContactController extends Controller
             $loYahooHelper->readContacts();
             $loYahooHelper->saveContacts();
         }
-        return new Response('OK');
+        return $this->render('WebWebBundle:Contact:popupProvider.html.twig');
     }
 
     /**
