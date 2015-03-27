@@ -29,8 +29,8 @@ class Facebook
     {
         $this->paramsApi = $paramsApi['facebook'];
     } // __constructeur
-    
-    
+
+
     /**
      * Retourne un lien permettant le postage sur facebook
      *
@@ -38,6 +38,7 @@ class Facebook
      * @param \Web\WebBundle\Entity\Recommendation $poRecommendation
      * @param string $psLocale
      * @param string $psFrom
+     * @return string
      */
     public function generateUrl($poOffer, $poRecommendation, $psLocale, $psFrom)
     {
