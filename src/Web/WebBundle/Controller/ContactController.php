@@ -191,7 +191,7 @@ class ContactController extends Controller
 
         if ($loForm->isValid()) {
             $laData = $loForm->getData();
-            $loImporter = $this->container->get('web.web.contact.email');
+            $loImporter = $this->container->get('web.web.model.contact.email');
             $loImporter->addContactsFromEmails($laData['emails'], $this->getUser());
             return new Response('OK');
         } else {}

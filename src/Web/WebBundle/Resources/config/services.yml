@@ -135,39 +135,54 @@ parameters:
             client_secret: c66332c201f416b8423e3a457aa92e01
             redirect_uri: http://rubizz.anis.natexo.com/app_dev.php/
     # ---- Liste des tags ( offer) ----
-    web.offerCategory:
-            sweepstake:    web.web.offer.list.categories.sweepstake
-            estimate:      web.web.offer.list.categories.quotation
-            travel:        web.web.offer.list.categories.travel
-            e-commerce:    web.web.offer.list.categories.ecommerce
-            finance:       web.web.offer.list.categories.finances
-            untertainment: web.web.offer.list.categories.divertissement
-            special-offer: web.web.offer.list.categories.special
+    web.offer_category:
+        sweepstake:    web.web.offer.list.categories.sweepstake
+        estimate:      web.web.offer.list.categories.quotation
+        travel:        web.web.offer.list.categories.travel
+        e-commerce:    web.web.offer.list.categories.ecommerce
+        finance:       web.web.offer.list.categories.finances
+        untertainment: web.web.offer.list.categories.divertissement
+        special-offer: web.web.offer.list.categories.special
 services:
     # =================== MODEL ===================
     # ==== USER ====
     # ---- Connexion d'un utilisateur ----
-    web.web.manager.user_logger:
+    web.web.model.user.user_logger:
         class: Web\WebBundle\Model\User\UserLogger
         arguments: ["@doctrine.orm.entity_manager", "@security.encoder_factory", "@natexo_tool.filter.decrypt", "@request_stack", "@translator"]
 
     # ==== ENCODERS ====
     # ---- Encodeur du mot de passe utilisateur ----
-    web.web.encoder.user_password:
+    web.web.model.encoder.user_password:
         class: Web\WebBundle\Model\Encoder\UserPasswordEncoder
         arguments: ["@natexo_tool.filter.encrypt"]
 
-    # ==== CONTACT VIA API ====
+    # ==== TRACKING ====
+    # ---- Chainage des modèles ----
+    web.web.model.tracking.tracking_chain:
+        class: Web\WebBundle\Model\Tracking\TrackingChain
+    # ---- Modèle CAKE ----
+#    admin.rubizz.offerTrackingCake:
+#        class: AdminRubizz\RubizzBundle\Model\Offer\Stat\CakeStat
+#        arguments: ["%admin.rubizz.cake%", "@doctrine.orm.rubizzRubizz_entity_manager"]
+#        tags:
+#            - { name: offer-stat, alias: cake }
+    # ---- Gestion du tracking ----
+    web.web.model.tracking.tracking:
+        class: Web\WebBundle\Model\Tracking\Tracking
+        arguments: ["@doctrine.orm.entity_manager", "@natexo_tool.filter.encrypt", "@natexo_tool.filter.decrypt"]
+
+    # ==== CONTACT ====
     # ---- Auto Post sur Facebook ----
-    web.web.contact.facebook:
+    web.web.model.contact.facebook:
         class: Web\WebBundle\Model\Contact\Facebook
         arguments: ["%web.api%"]
     # ---- Auto Post sur Twitter ----
-    web.web.contact.twitter:
+    web.web.model.contact.twitter:
         class: Web\WebBundle\Model\Contact\Twitter
         arguments: []
-    # ---- Recuperation liste de contact Outlook/hotmail ----
-    web.web.contact.outlook:
+    # ---- Récuperation liste de contact Outlook/hotmail ----
+    web.web.model.contact.outlook:
         class: Web\WebBundle\Model\Contact\Outlook
         arguments: ["%web.api%"]
     # ---- Model d'ajout de contact ----
@@ -175,30 +190,28 @@ services:
         class: Web\WebBundle\Model\Contact\Email
         arguments: ["@doctrine.orm.entity_manager"]
 
-
-    # ==== Tracking ====
+    # ==== RESPONSE ====
     # ---- Img vide pour tracking ----
-    web.web.response.emptyImg:
+    web.web.model.response.empty_img_response:
         class: Web\WebBundle\Model\Response\EmptyImgResponse
-    # ---- Gestion du tracking ----
-    web.web.tracking:
-        class: Web\WebBundle\Model\Tracking
-        arguments: ["@doctrine.orm.entity_manager", "@natexo_tool.filter.encrypt", "@natexo_tool.filter.decrypt"]
 
-
+    # =================== TWIG ===================
     # ==== MENU ====
     # ---- Menu en twig ----
-    web.web.twig.extension.menu:
+    web.web.twig.extension.menu_extension:
         class: Web\WebBundle\Twig\Extension\MenuExtension
         tags:
             - { name: twig.extension }
         arguments: ["@twig.loader", "@translator", "@security.context", "%kernel.environment%", "@router", "%menus%"]
-    # ---- menu listener ----
-    web.web.menu.listener:
+
+    # =================== EVENT LISTENER ===================
+    # ==== MENU ====
+    # ---- Menu listener ----
+    web.web.event_listener.controller_listener:
         class: Web\WebBundle\EventListener\ControllerListener
         tags:
             - { name: kernel.event_listener, event: kernel.controller, method: onKernelController }
-        arguments: ["@web.web.twig.extension.menu"]
+        arguments: ["@web.web.twig.extension.menu_extension"]
 
 
     # =================== FORM ====================

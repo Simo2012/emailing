@@ -110,7 +110,7 @@ class OfferController extends Controller
                                          ->getRecommendedIdsByUser($loUser);
 
         return array(
-            'categories'        => $this->container->getParameter('web.offerCategory'),
+            'categories'        => $this->container->getParameter('web.offer_category'),
             'offers'            => $loOffers,
             'recommendedOffers' => $laRecommendedOffers,
             'categoryActive'    => $lsCategory,

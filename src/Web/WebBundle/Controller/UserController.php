@@ -49,7 +49,7 @@ class UserController extends Controller
         if ($loRequest->isMethod('POST')) {
             $loForm->bind($loRequest);
             if ($loForm->isValid()) {
-                $loUserLogger = $this->container->get('web.web.manager.user_logger');
+                $loUserLogger = $this->container->get('web.web.model.user.user_logger');
                 $lsNewPassword = $loUserLogger->cryptPass($loUser, $loUser->getPassword());
                 // ---- Faut-il mettre à jour le mot de passe ? ----
                 if ($loSessionUser->getPassword() != $lsNewPassword) {

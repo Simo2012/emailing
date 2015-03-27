@@ -28,8 +28,8 @@ class TrackController extends Controller
         // ==== Initialisation ====
         $liRecommendationId = $poRequest->get('piRecommendationId');
         $lsEmail = $poRequest->get('email');
-        $loResponse = $this->get('web.web.response.emptyImg')->get();
-        $loTracking = $this->get('web.web.tracking');
+        $loResponse = $this->get('web.web.model.response.empty_img_response')->get();
+        $loTracking = $this->get('web.web.model.tracking.tracking');
         if (!$loTracking->readRecommendation($liRecommendationId)) {
             trigger_error('OpenTag la recommendation n\'existe pas');
             return $loResponse;
@@ -50,7 +50,7 @@ class TrackController extends Controller
         // ==== Initialisation ====
         $liRecommendationId = $poRequest->get('piRecommendationId');
         $lsEmail = $poRequest->get('email');
-        $loTracking = $this->get('web.web.tracking');
+        $loTracking = $this->get('web.web.model.tracking.tracking');
         if (!$loTracking->readRecommendation($liRecommendationId)) {
             trigger_error('ClickTag la recommendation n\'existe pas');
             $loResponse = new Response();
@@ -73,12 +73,12 @@ class TrackController extends Controller
         // ==== Initialisation ====
         $liOfferId = $poRequest->get('operation');
         $lsTransaction = $poRequest->get('transaction');
-        $loResponse = $this->get('web.web.response.emptyImg')->get();
+        $loResponse = $this->get('web.web.model.response.empty_img_response')->get();
         if (empty($liOfferId) || empty($lsTransaction)) {
             trigger_error('LeadTag paramètres incorrects');
             return $loResponse;
         }
-        $loTracking = $this->get('web.web.tracking');
+        $loTracking = $this->get('web.web.model.tracking.tracking');
         if (!$loTracking->readCookies($poRequest)) {
             trigger_error('LeadTag cookies inexistant');
             return $loResponse;
@@ -99,12 +99,12 @@ class TrackController extends Controller
         $liOfferId = $poRequest->get('operation');
         $lsTransaction = $poRequest->get('transaction');
         $lsAmount = $poRequest->get('amount');
-        $loResponse = $this->get('web.web.response.emptyImg')->get();
+        $loResponse = $this->get('web.web.model.response.empty_img_response')->get();
         if (empty($liOfferId) || empty($lsTransaction)) {
             trigger_error('SaleTag paramètres incorrects');
             return $loResponse;
         }
-        $loTracking = $this->get('web.web.tracking');
+        $loTracking = $this->get('web.web.model.tracking.tracking');
         if (!$loTracking->readCookies($poRequest)) {
             trigger_error('LeadTag cookies inexistant');
             return $loResponse;

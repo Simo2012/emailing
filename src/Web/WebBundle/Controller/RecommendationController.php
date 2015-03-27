@@ -90,7 +90,7 @@ class RecommendationController extends Controller
             }
             
             // ==== Construction et appel de l'url Twitter ====
-            $loTwitter = $this->container->get('web.web.contact.twitter');
+            $loTwitter = $this->container->get('web.web.model.contact.twitter');
             $lsUrl = $loTwitter->generateUrl($loOffer, $loRecommendation);
             
             return $this->redirect($lsUrl);
@@ -128,7 +128,7 @@ class RecommendationController extends Controller
             $loManager->persist($loRecommendation);
             $loManager->flush();
         }
-        $loModelFb = $this->get('web.web.contact.facebook');
+        $loModelFb = $this->get('web.web.model.contact.facebook');
         $lsUrl     = $loModelFb->generateUrl($loOffer, $loRecommendation, $lsLocale, $psFrom);
         
         return $this->redirect($lsUrl);

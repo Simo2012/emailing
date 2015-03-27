@@ -83,6 +83,7 @@ body {
 // ==== Page 2 ====
 #div_RBZ_hiw_p2{
     display: none;
+    margin-top: 60px;
     #div_RBZ_hiw_p2_left{
         background-color: gray;
         float: left;
@@ -108,13 +109,14 @@ body {
 // ==== Page 3 ====
 #div_RBZ_hiw_p3{
     display: none;
-    padding-top: 60px;
-    padding-bottom: 60px;
+    margin-top: 60px;
+    padding-bottom: 150px;
 }
 
 // ==== Page 4 ====
 #div_RBZ_hiw_p4{
     display: none;
+    margin-top: 60px;
     position: relative;
     #div_RBZ_hiw_p4_description {
         text-align:center;
@@ -162,6 +164,7 @@ body {
 
 // ==== Page 5 ====
 #div_RBZ_hiw_p5{
+    margin-top: 60px;
     // ---- Ecrasement css knacss----
     p{
         line-height: 2;
@@ -213,5 +216,6 @@ body {
 }
 // ==== Page 6 ====
 #div_RBZ_hiw_p6{
+    margin-top: 60px;
     display: none;
 }
