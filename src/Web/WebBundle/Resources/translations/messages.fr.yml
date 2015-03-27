@@ -332,7 +332,7 @@ web.web.contact.index.mailing_list.subscribe:         RÉ-ABONNER
 web.web.contact.index.mailing_list.unsubscribe:       DÉSABONNER
 # ==== Popup ====
 web.web.contact.popup.title:                          AJOUTER DES CONTACTS
-web.web.contact.popup.add:                            Ajouter un autre email
+web.web.contact.popup.add:                            Ajouter un autre contact
 
 # ============ RECOMMENDATION PAGE ============
 # ==== Index ====

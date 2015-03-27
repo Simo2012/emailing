@@ -2,6 +2,11 @@
 
 namespace Web\WebBundle\Model\Contact;
 
+use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Bundle\FrameworkBundle\Routing\Router;
+use Doctrine\Common\Persistence\ObjectManager;
+use Natexo\ToolBundle\Model\Filter\ApiDecryptFilter;
+
 /**
  * Modèle permettant de récupérer la liste des contacts Outlook / Hotmail
  *
@@ -36,11 +41,30 @@ class Outlook extends Importer
     /**
      * Constructeur, injection des dépendances
      */
-    public function __construct(array $paramsApi)
+    public function __construct(RequestStack $poStack, Router $poRouter, ObjectManager $poManager, ApiDecryptFilter $poDecrypter)
     {
-        $this->clientId = $paramsApi['client_id'];
-        $this->clientSecret = $paramsApi['client_secret'];
-        $this->redirectUri = $paramsApi['redirect_uri'];
+        parent::__construct($poManager, $poDecrypter, $poStack);
+        $this->url = $poRouter->generate('OAuthOutlook', array(), true);
+        switch ($this->getRequest()->getHost()) {
+            case 'www.rubizz.fr':
+                $lskey = '000000004C147831';
+                $lsSecret = 'BHgcPhsPonYoGPxvr8VwZVDgFMY7OXkH';
+                $lsUrl = 'http://www.rubizz.fr/authOutlook';
+                break;
+            case 'www.rubizz.us':
+                $lskey = '000000004014EB43';
+                $lsSecret = 'y-JAV7LoXx7Z3fxfh2iVbpiubxhzhkJe';
+                $lsUrl = 'http://www.rubizz.us/authOutlook';
+                break;
+            default:
+                $lskey = '000000004C147233';
+                $lsSecret = 'YKssmSJ4P4VihF0xxwJM4PcDEedJkHL1';
+                $lsUrl = 'http://rubizz.victor.natexo.com/app_dev.php/authOutlook';
+                break;
+        }
+        $this->clientId = $lskey;
+        $this->clientSecret = $lsSecret;
+        $this->redirectUri = $lsUrl;
     } // __construct
 
     /**
@@ -116,20 +140,18 @@ class Outlook extends Importer
       *
      * @return array les contacts
      */
-    public function getContacts()
+    public function readContacts()
     {
         $laContacts = array();
         $laContactsList = $this->getContactsFromApi();
         if (count($laContactsList) > 0) {
             foreach ($laContactsList['data'] as $laContact) {
-                $laContacts[] = array(
+                $this->addContact(array(
                     'firstname' => trim($laContact['first_name']),
-                    'lastname' => trim($laContact['last_name']),
-                    'email' => trim($laContact['emails']['preferred'])
-                );
+                    'lastname'  => trim($laContact['last_name']),
+                    'email'     => trim($laContact['emails']['preferred'])
+                ));
             }
         }
-        
-        return $laContacts;
-    } // getContacts
+    } //readContacts
 }

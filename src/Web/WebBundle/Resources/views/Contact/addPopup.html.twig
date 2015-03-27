@@ -11,13 +11,29 @@
             <div id="div_RBZ_emailsContainer" data-prototype="
                 <a href='#' class='RBZ_removeContact'><img src='/bundles/admincommon/images/global/layoutHome/close.png' alt='' /></a>
                 <div class='KNS_row KNS_mbs'>
-                    {{ form_widget(form.emails.vars.prototype) | e }}
+                        <div class='RBZ_input'>
+                            {{ form_widget(form.contacts.vars.prototype.lastname) | e }}
+                        </div>
+                        <div class='RBZ_input KNS_mlm KNS_mrm'>
+                            {{ form_widget(form.contacts.vars.prototype.firstname) | e }}
+                        </div>
+                        <div class='RBZ_input'>
+                            {{ form_widget(form.contacts.vars.prototype.email) | e }}
+                        </div>
                 </div>
             ">
-                <a id="a_RBZ_addContact" class="KNS_right" href="#">{{ 'web.web.contact.popup.add' | trans }}</a>
-                {% for email in form.emails %}
+                <a id="a_RBZ_addContact" class="KNS_right KNS_mbs" href="#">{{ 'web.web.contact.popup.add' | trans }}</a>
+                {% for contact in form.contacts %}
                     <div class="KNS_row KNS_mbs">
-                        {{ form_widget(form.email) }}
+                        <div class="RBZ_input">
+                            {{ form_widget(contact.lastname) }}
+                        </div>
+                        <div class="RBZ_input KNS_mlm KNS_mrm">
+                            {{ form_widget(contact.firstname) }}
+                        </div>
+                        <div class="RBZ_input">
+                            {{ form_widget(contact.email) }}
+                        </div>
                     </div>
                 {% endfor %}
             </div>
@@ -25,6 +41,11 @@
             <div id="div_RBZ_error"></div>
         </form>
     </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#a_RBZ_addContact').trigger('click');
+        })
+    </script>
 {% endblock %}
 {% block SUBMIT %}
     <button type="button" class="RBZ_cancel">{{ 'web.web.popup.confirmation.cancel_button' | trans }}</button>
