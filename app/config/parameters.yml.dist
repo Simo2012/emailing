@@ -6,14 +6,17 @@ parameters:
     database_name: RUBIZZ
     database_user: web
     database_password: web
-    mailer_transport: smtp
-    mailer_host: smtp.critsend.com
-    mailer_port: 25
-    mailer_user: belhassen@arpedia.com
-    mailer_password: 2PFhF4sYgCRzY0I9
-    mailer_sender_address: null
     locale: en_US
     secret: SymfonyRubizzToken
+
+    # ==== Configuration Amazon ====
+    mailer_transport: smtp
+    mailer_host: email-smtp.eu-west-1.amazonaws.com
+    mailer_port: 25
+    mailer_user: AKIAIXPGQOPLPS44Q6QA
+    mailer_password: AkwsyS58/EcQKk09c2PPp8rvDR8GAkdmoQs6qxkWfOPZ
+    mailer_encryption: tls
+
 natexo_tool:
     error_manager:
         email: laurent@natexo.com
