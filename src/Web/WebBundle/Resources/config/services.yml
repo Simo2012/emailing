@@ -131,9 +131,12 @@ parameters:
             client_secret: lhdePv718CLann8t1w6iyUMeKf-M-0Cm
             redirect_uri: http://rubizz.anis.natexo.com/app_dev.php/
         facebook:
-            client_id: 1544677199143364
-            client_secret: c66332c201f416b8423e3a457aa92e01
-            redirect_uri: http://rubizz.anis.natexo.com/app_dev.php/
+            fr:
+                client_id: 1544677199143364
+                client_secret: c66332c201f416b8423e3a457aa92e01
+            us:
+                client_id: 840839625988357
+                client_secret: 9264be342502bbb7107932c7793ef358
     # ---- Liste des tags ( offer) ----
     web.offer_category:
         sweepstake:    web.web.offer.list.categories.sweepstake

@@ -3,7 +3,7 @@
 namespace Web\WebBundle\Model\Contact;
 
 /**
- * Modéle permettant de récuperer la liste des contacts Outlook / hotmail
+ * Modèle permettant de récupérer la liste des contacts Outlook / Hotmail
  *
  * <pre>
  * Elias 08/02/2015 Création
@@ -15,12 +15,6 @@ namespace Web\WebBundle\Model\Contact;
 
 class Outlook extends Importer
 {
-    /**
-     * Permet de recuperer les codes api
-     * array paramsFacebook
-     * @var bundle
-     */
-    
     /**
      *
      * @var string id api 
@@ -47,9 +41,7 @@ class Outlook extends Importer
         $this->clientId = $paramsApi['client_id'];
         $this->clientSecret = $paramsApi['client_secret'];
         $this->redirectUri = $paramsApi['redirect_uri'];
-    }
-
-// __constructeur
+    } // __construct
 
     /**
      * Retourne un lien permettant l'acceptation du membre
@@ -62,7 +54,7 @@ class Outlook extends Importer
         $lsUrl .= "&response_type=code&redirect_uri={$this->redirectUri}";
 
         return $lsUrl;
-    } //generateUrl
+    } // generateUrl
 
     /**
      * Récupere les contacts depuis l'api
@@ -88,10 +80,10 @@ class Outlook extends Importer
                 return json_decode($loResultJson, true);
             }
         }
-    } //getContactsFromApi
+    } // getContactsFromApi
 
     /**
-     * recupere le token de l'api
+     * Récupère le token de l'api
      * 
      */
     public function getAccessToken()
@@ -117,10 +109,11 @@ class Outlook extends Importer
         $laResponse = json_decode($loResultJson, true);
 
         return isset($laResponse['access_token']) ? $laResponse['access_token'] : '';
-    }//getAccessToken
+    } // getAccessToken
     
      /**
-     * Récupere la liste des contacts formaté
+     * Récupère la liste des contacts formaté
+      *
      * @return array les contacts
      */
     public function getContacts()
@@ -138,5 +131,5 @@ class Outlook extends Importer
         }
         
         return $laContacts;
-    } //getContacts
+    } // getContacts
 }

@@ -17,9 +17,9 @@ class Facebook
 {
     /**
      *
-     * @var string id api 
+     * @var array param FB 
      */
-    private $clientId;
+    private $paramsApi;
 
     
     /**
@@ -27,10 +27,10 @@ class Facebook
      */
     public function __construct(array $paramsApi)
     {
-        $this->clientId = $paramsApi['facebook']['client_id'];
+        $this->paramsApi = $paramsApi['facebook'];
     } // __constructeur
-    
-    
+
+
     /**
      * Retourne un lien permettant le postage sur facebook
      *
@@ -38,6 +38,7 @@ class Facebook
      * @param \Web\WebBundle\Entity\Recommendation $poRecommendation
      * @param string $psLocale
      * @param string $psFrom
+     * @return string
      */
     public function generateUrl($poOffer, $poRecommendation, $psLocale, $psFrom)
     {
@@ -46,17 +47,18 @@ class Facebook
         $liRecommendationId = $poRecommendation->getId();
         $lsLink = "http://rubizz.anis.natexo.com/app_dev.php/track/click/{$liRecommendationId}";
         $lsDesc = $poOffer->getTitle();
-        $lsPathPicture = "http://img.enqueteetselonvous.com/RBZ/";
-        $lsCountry = $poOffer->getCountry();
-        $lsPicture = $lsPathPicture . strtoupper($lsCountry) . "/RUBIZZ/50/bg600.jpg";
         $lsOfferId = $poOffer->getId();
+        $lsLocale = strtolower(substr($psLocale, -2, 2));
+        $lsPicture = "http://img.rubizz.".$lsLocale."/RUBIZZ/OFFERS/IMAGES/{$lsOfferId}.jpg";
+        $lsFbClientId = $this->paramsApi[$lsLocale]['client_id'];
 
+        // ---- Url Facebook ----
         $lsUrl = "https://www.facebook.com/dialog/feed?";
-        $lsUrl .="app_id={$this->clientId}";
+        $lsUrl .="app_id={$lsFbClientId}";
         $lsUrl .="&display=popup&caption={$lsDesc}";
         $lsUrl .="&link={$lsLink}";
         $lsUrl .="&picture={$lsPicture}";
-        $lsUrl .="&redirect_uri=http://rubizz.anis.natexo.com/app_dev.php/{$psLocale}";
+        $lsUrl .="&redirect_uri=http://rubizz.{$lsLocale}/{$psLocale}";
         $lsUrl .="/recommendation/addRecommendationByFacebook/{$lsOfferId}/{$psFrom}/{$liRecommendationId}";
 
         return $lsUrl;
