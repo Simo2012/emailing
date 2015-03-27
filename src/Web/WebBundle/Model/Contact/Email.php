@@ -42,6 +42,9 @@ class Email
     public function addContactsFromEmails(array $paContacts, User $poUser)
     {
         // ==== Initialisation ====
+        if (empty($paContacts)) {
+            return;
+        }
         foreach ($paContacts as $laContact) {
             // ---- Insertion via PDO (gain de perf (insert or duplicate key) ----
             $lsSql  = "INSERT IGNORE INTO contact SET date_create = NOW(), date_update = NOW(), user_id = :user_id,";
