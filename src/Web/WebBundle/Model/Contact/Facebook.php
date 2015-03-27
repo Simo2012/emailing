@@ -46,17 +46,16 @@ class Facebook
         $liRecommendationId = $poRecommendation->getId();
         $lsLink = "http://rubizz.anis.natexo.com/app_dev.php/track/click/{$liRecommendationId}";
         $lsDesc = $poOffer->getTitle();
-        $lsPathPicture = "http://img.enqueteetselonvous.com/RBZ/";
-        $lsCountry = $poOffer->getCountry();
-        $lsPicture = $lsPathPicture . strtoupper($lsCountry) . "/RUBIZZ/50/bg600.jpg";
         $lsOfferId = $poOffer->getId();
-
+        $lsLocale = strtolower(substr($psLocale, -2, 2));
+        $lsPicture = "http://img.rubizz.".$lsLocale."/RUBIZZ/OFFERS/IMAGES/{$lsOfferId}.jpg";
+        // ---- Url Facebook ----
         $lsUrl = "https://www.facebook.com/dialog/feed?";
         $lsUrl .="app_id={$this->clientId}";
         $lsUrl .="&display=popup&caption={$lsDesc}";
         $lsUrl .="&link={$lsLink}";
         $lsUrl .="&picture={$lsPicture}";
-        $lsUrl .="&redirect_uri=http://rubizz.anis.natexo.com/app_dev.php/{$psLocale}";
+        $lsUrl .="&redirect_uri=http://rubizz.{$lsLocale}/{$psLocale}";
         $lsUrl .="/recommendation/addRecommendationByFacebook/{$lsOfferId}/{$psFrom}/{$liRecommendationId}";
 
         return $lsUrl;
