@@ -5,6 +5,10 @@
 
 // ==== En tête ====
 #header_RBZ_header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 150;
     background-color: $red-banner;
     span.RBZ_nowrap { white-space:nowrap; font-weight:normal; }
     #div_RBZ_banner {
