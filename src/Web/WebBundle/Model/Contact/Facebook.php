@@ -17,9 +17,9 @@ class Facebook
 {
     /**
      *
-     * @var string id api 
+     * @var array param FB 
      */
-    private $clientId;
+    private $paramsApi;
 
     
     /**
@@ -27,7 +27,7 @@ class Facebook
      */
     public function __construct(array $paramsApi)
     {
-        $this->clientId = $paramsApi['facebook']['client_id'];
+        $this->paramsApi = $paramsApi['facebook'];
     } // __constructeur
     
     
@@ -49,9 +49,11 @@ class Facebook
         $lsOfferId = $poOffer->getId();
         $lsLocale = strtolower(substr($psLocale, -2, 2));
         $lsPicture = "http://img.rubizz.".$lsLocale."/RUBIZZ/OFFERS/IMAGES/{$lsOfferId}.jpg";
+        $lsFbClientId = $this->paramsApi[$lsLocale]['client_id'];
+
         // ---- Url Facebook ----
         $lsUrl = "https://www.facebook.com/dialog/feed?";
-        $lsUrl .="app_id={$this->clientId}";
+        $lsUrl .="app_id={$lsFbClientId}";
         $lsUrl .="&display=popup&caption={$lsDesc}";
         $lsUrl .="&link={$lsLink}";
         $lsUrl .="&picture={$lsPicture}";
