@@ -1,21 +1,24 @@
 # This file is auto-generated during the composer install
 parameters:
+    # ==== Configuration MySQL ====
     database_driver: pdo_mysql
+    database_user: web
+    database_password: web
     database_host: entreprise
     database_port: 3306
     database_name: RUBIZZ
-    database_user: web
-    database_password: web
-    locale: en_US
-    secret: SymfonyRubizzToken
 
-    # ==== Configuration Amazon ====
+    # ==== Configuration Mailer (Amazon) ====
     mailer_transport: smtp
     mailer_host: email-smtp.eu-west-1.amazonaws.com
     mailer_port: 25
     mailer_user: AKIAIXPGQOPLPS44Q6QA
     mailer_password: AkwsyS58/EcQKk09c2PPp8rvDR8GAkdmoQs6qxkWfOPZ
     mailer_encryption: tls
+
+    # ==== Divers ====
+    locale: en_US
+    secret: SymfonyRubizzToken
 
 natexo_tool:
     error_manager:
