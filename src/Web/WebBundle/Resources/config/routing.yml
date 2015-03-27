@@ -158,18 +158,16 @@ WebWebBundle_recommendationRecommendByTwitter:
         piFrom: \w+
 # ---- Recommandation par Faceboook ----
 WebWebBundle_recommendByFacebook:
-    path:     /recommendation/recommendByFacebook/{piOfferId}/{psFrom}
-    defaults: { _controller: "WebWebBundle:Recommendation:recommendByFacebook", psFrom: 'index' }
+    path:     /recommendation/recommendByFacebook/{piOfferId}
+    defaults: { _controller: "WebWebBundle:Recommendation:recommendByFacebook" }
     requirements:
         piOfferId: \d+
-        piFrom: \w+
 # ---- Recommandation par Faceboook (après soummission) ----
 WebWebBundle_addRecommendationByFacebook:
-    path:     /recommendation/addRecommendationByFacebook/{piOfferId}/{psFrom}/{piRecommendationId}
-    defaults: { _controller: "WebWebBundle:Recommendation:addRecommendationByFacebook", psFrom: 'index' }
+    path:     /recommendation/addRecommendationByFacebook/{piOfferId}/{piRecommendationId}
+    defaults: { _controller: "WebWebBundle:Recommendation:addRecommendationByFacebook" }
     requirements:
         piOfferId: \d+
-        piFrom: \w+
         piRecommendationId: \d+
 # ---- Recommandation par email ----
 WebWebBundle_recommendationRecommendByEmail:

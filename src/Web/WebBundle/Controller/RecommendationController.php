@@ -103,10 +103,9 @@ class RecommendationController extends Controller
      * Recommendation par Facebook - Publication
      *
      * @param $piOfferId
-     * @param $psFrom
      * @return string
      */
-    public function recommendByFacebookAction($piOfferId, $psFrom)
+    public function recommendByFacebookAction($piOfferId)
     {
         // ==== Initialisation ====
         $loManager = $this->getDoctrine()->getManager();
@@ -129,7 +128,7 @@ class RecommendationController extends Controller
             $loManager->flush();
         }
         $loModelFb = $this->get('web.web.model.contact.facebook');
-        $lsUrl     = $loModelFb->generateUrl($loOffer, $loRecommendation, $lsLocale, $psFrom);
+        $lsUrl     = $loModelFb->generateUrl($loOffer, $loRecommendation, $lsLocale);
         
         return $this->redirect($lsUrl);
 
@@ -139,10 +138,9 @@ class RecommendationController extends Controller
      * Recommendation par Facebook - Retour de publication
      *
      * @param $piOfferId
-     * @param $psFrom
      * @return string
      */
-    public function addRecommendationByFacebookAction($piOfferId, $psFrom, $piRecommendationId)
+    public function addRecommendationByFacebookAction($piOfferId, $piRecommendationId)
     {
         // ==== Initialisation ====
         $loManager = $this->getDoctrine()->getManager();
@@ -160,10 +158,9 @@ class RecommendationController extends Controller
             $loUser->setUseFacebook(true);
             $loManager->flush();
         }
-        /*$lsRoute = $psFrom == 'index' ? 'WebWebBundle_offerIndex' : 'WebWebBundle_offerList';
-        return $this->redirect($this->generateUrl($lsRoute));*/
-        
-        return new Response("<script language='javascript'>window.close()</script>");
+        // ==== Fermeture de la popup et rechargement de la fênetre parent en JS ====
+        $lsRedirect = "<script language='javascript'>window.close();window.opener.location.reload();</script>";
+        return new Response($lsRedirect);
     } // addRecommendationByFacebookAction
 
     /**

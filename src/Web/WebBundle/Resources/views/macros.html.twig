@@ -83,7 +83,7 @@
                     <a href="{{ url('WebWebBundle_recommendationRecommendByEmail', {'piOfferId': offer.id, 'psFrom': from }) }}" class="RBZ_offer_link RBZ_email RBZ_hide">{{ 'web.web.offer.macro.mailing' | trans }}</a>
                 {% endif %}
                 {% if 'facebook' in offer.publishing and 'facebook' not in type %}
-                    <a href="{{ url("WebWebBundle_recommendByFacebook", {'piOfferId': offer.id, 'psFrom': from }) }}" class="RBZ_offer_link RBZ_facebook RBZ_hide">{{ 'web.web.offer.macro.facebook_publishing' | trans }}</a>
+                    <a href="{{ url("WebWebBundle_recommendByFacebook", {'piOfferId': offer.id }) }}" class="RBZ_offer_link RBZ_facebook RBZ_hide">{{ 'web.web.offer.macro.facebook_publishing' | trans }}</a>
                 {% endif %}
                 {% if 'twitter' in offer.publishing and 'twitter' not in type %}
                     <a href="{{ url('WebWebBundle_recommendationRecommendByTwitter', {'piOfferId': offer.id, 'psFrom': from}) }}" class="RBZ_offer_link RBZ_twitter RBZ_hide">{{ 'web.web.offer.macro.twitter_publishing' | trans }} </a>

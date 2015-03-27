@@ -37,10 +37,9 @@ class Facebook
      * @param \Web\WebBundle\Entity\Offer $poOffer
      * @param \Web\WebBundle\Entity\Recommendation $poRecommendation
      * @param string $psLocale
-     * @param string $psFrom
      * @return string
      */
-    public function generateUrl($poOffer, $poRecommendation, $psLocale, $psFrom)
+    public function generateUrl($poOffer, $poRecommendation, $psLocale)
     {
         // ==== Initialisations ====
         // ---- Url de tracking ----
@@ -59,7 +58,7 @@ class Facebook
         $lsUrl .="&link={$lsLink}";
         $lsUrl .="&picture={$lsPicture}";
         $lsUrl .="&redirect_uri=http://rubizz.{$lsLocale}/{$psLocale}";
-        $lsUrl .="/recommendation/addRecommendationByFacebook/{$lsOfferId}/{$psFrom}/{$liRecommendationId}";
+        $lsUrl .="/recommendation/addRecommendationByFacebook/{$lsOfferId}/{$liRecommendationId}";
 
         return $lsUrl;
     } //generateUrl 
