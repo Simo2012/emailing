@@ -102,3 +102,22 @@
     }
   }
 }
+
+#div_RBZ_commonPopup {
+  width: 700px !important;
+  div.RBZ_confirm_popup_content {
+    width: 700px !important;
+    #form_RBZ_addContact {
+      .KNS_row > *, .KNS_col {
+        display: inline-block;
+
+      }
+    }
+    div.RBZ_input {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+#div_RBZ_commonPopup #div_RBZ_commonPopupContent div.RBZ_confirm_popup_content {width: 700px  !important;}
+

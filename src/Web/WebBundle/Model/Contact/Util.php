@@ -1,6 +1,6 @@
 <?php
-namespace Web\WebBundle\Model\Contact;
 
+namespace Web\WebBundle\Model\Contact;
 
 /**
  * Build a query parameter string according to OAuth Spec.
@@ -10,7 +10,7 @@ namespace Web\WebBundle\Model\Contact;
  * @link http://oauth.net/core/1.0/#rfc.section.9.1.1
  */
 
-Class Util
+Class Util extends Importer
 {
     public function oauth_http_build_query($params, $excludeOauthParams=false)
     {

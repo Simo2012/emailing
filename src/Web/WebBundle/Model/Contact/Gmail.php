@@ -2,7 +2,11 @@
 
 namespace Web\WebBundle\Model\Contact;
 
+use Symfony\Bundle\FrameworkBundle\Routing\Router;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Web\WebBundle\Model\Contact\Importer;
+use Doctrine\Common\Persistence\ObjectManager;
+use Natexo\ToolBundle\Model\Filter\ApiDecryptFilter;
 
 /**
  * Modèle permettant de récupérer la liste des contacts gmail
@@ -16,6 +20,12 @@ use Web\WebBundle\Model\Contact\Importer;
  */
 class Gmail extends Importer
 {
+
+    /**
+     * Permet de recuperer les codes api
+     * array GMAIL
+     * @var bundle
+     */
     private $clientId;
     private $clientSecret;
     private $redirectUri;
@@ -23,11 +33,12 @@ class Gmail extends Importer
     /**
      * Constructeur, injection des dépendances
      */
-    public function __construct() {
+    public function __construct(RequestStack $poStack, Router $poRouter, ObjectManager $poManager, ApiDecryptFilter $poDecrypter) {
+        parent::__construct($poManager, $poDecrypter, $poStack);
         $this->clientId = '1063487764464-c3qg16aa50tb0bm1livj7siialgqq26u.apps.googleusercontent.com';
         $this->clientSecret = '10hywwKk5PSDoTF9aa6ODoTp';
-        $this->redirectUri = 'http://rubizz.victor.natexo.com/app_dev.php/oauth2callback';
-    } // __construct
+        $this->redirectUri = $poRouter->generate('OAuthGoogle', array(), true);
+    }// __constructeur
 
 
     /**
@@ -81,9 +92,9 @@ class Gmail extends Importer
     public function readContacts()
     {
         if (!empty($this->token)) {
-            $lsUrl = 'https://www.google.com/m8/feeds/contacts/default/full&oauth_token=' . $this->token;
-            $lsXmlResponse = $this->getContents($lsUrl);
-            var_dump($lsXmlResponse);
+            $lsurl = 'https://www.google.com/m8/feeds/contacts/default/full'
+                .'?v=3.0&max-results=10000&oauth_token=' . $this->token;
+            $lsXmlResponse = $this->getContents($lsurl);
             if ((strlen(stristr($lsXmlResponse, 'Login required')) > 0) && (strlen(stristr($lsXmlResponse, 'Error')) > 0)) {
                 return false;
             }
@@ -92,12 +103,12 @@ class Gmail extends Importer
             foreach ($loXml->entry as $loEntry) {
                 foreach ($loEntry->xpath('gd:email') as $loEmail) {
                     $laContact = array();
-                    if (empty($loEntry->title)) {
-                        $laContact['name'] = "No Name";
-                    } else {
-                        $laContact['name'] = $loEntry->title;
-                    }
-                    $laContact['email'] = $loEmail->attributes()->address;
+                    // if (empty($loEntry->title)) {
+                    //     $laContact['name'] = "No Name";
+                    // } else {
+                    //     $laContact['name'] = (string) $loEntry->title;
+                    // }
+                    $laContact['email'] = (string) $loEmail->attributes()->address;
                     $this->addContact($laContact);
                 }
             }

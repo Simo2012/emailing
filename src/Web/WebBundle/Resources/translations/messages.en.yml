@@ -335,7 +335,7 @@ web.web.contact.index.mailing_list.subscribe:         SUBSCRIBE AGAIN
 web.web.contact.index.mailing_list.unsubscribe:       UNSUBSCRIBE
 # ==== Popup ====
 web.web.contact.popup.title:                          ADD CONTACTS
-web.web.contact.popup.add:                            Add another email
+web.web.contact.popup.add:                            Add another contact
 
 # ============ RECOMMENDATION PAGE ============
 # ==== Index ====
