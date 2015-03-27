@@ -361,6 +361,6 @@ web.web.contact.add.add:                      ADD&nbsp;&nbsp;&nbsp;&nbsp;<span>>
 web.web.contact.add.addContact:               Add contacts from %provider%
 web.web.contact.add.agreement:                You need to have the consent of all added contacts.  Every added contact will have the option to unsubscribe and stop receiving your recommendations.
 web.web.contact.add.step:                     Step %step%
-web.web.contact.add.step1.text:               "Join and add your contacts"
-web.web.contact.add.step2.text:               Recommend offers to your friends
+web.web.contact.add.step1.text:               "Join and<br>add your contacts"
+web.web.contact.add.step2.text:               Recommend offers<br>to your friends
 web.web.contact.add.step3.text:               "Earn money!"

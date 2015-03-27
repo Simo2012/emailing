@@ -70,24 +70,26 @@
   #aside_RBZ_contacts {
     position: absolute;
     width: 300px;
-    right: -200px;
+    right: -150px;
+    padding-left: 20px;
+    border-left: 1px solid $border-grey;
     #div_RBZ_step1 {
-      background: url(/bundles/webweb/images/contact/globe.png) 20px 0 no-repeat;
+      background: url(/bundles/webweb/images/contact/illu-step1.png) 0 0 no-repeat;
       width: 300px;
       height: 200px;
-      padding: 110px 0 0 150px;
+      padding: 120px 0 0 80px;
     }
     #div_RBZ_step2 {
-      background: url(/bundles/webweb/images/contact/letter.png) 110px 0 no-repeat;
+      background: url(/bundles/webweb/images/contact/illu-step2.png) 0 0 no-repeat;
       width: 300px;
       height: 200px;
-      padding: 15px 120px 0 0;
+      padding: 120px 0 0 80px;
     }
     #div_RBZ_step3 {
-      background: url(/bundles/webweb/images/contact/card.png) top left no-repeat;
+      background: url(/bundles/webweb/images/contact/illu-step3.png) 0 0 no-repeat;
       width: 300px;
-      height: 200px;
-      padding: 0 0 0 90px;
+      height: 185px;
+      padding: 120px 0 0 80px;
     }
     span {
       font-size: 18px;

@@ -27,7 +27,7 @@
         <div id="div_RBZ_congratulations">
             <h1>{{ "web.web.contact.add.congratulation" | trans({'%firstname%': app.user.firstname | capitalize}) }}</h1>
 
-            <p>{{ "web.web.contact.add.congratulation.text" | trans | raw }}</p>
+            <p>{{ "web.web.contact.add.congratulation.text" | trans({'%url%': url('WebWebBundle_defaultHowItWorks')}) | raw }}</p>
         </div>
         {% endif %}
 
