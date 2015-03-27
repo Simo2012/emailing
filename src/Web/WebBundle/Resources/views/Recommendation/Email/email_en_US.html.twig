@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Recommendation Rubizz</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style type="text/css">
+            .ReadMsgBody {width: 100%;}
+            .ExternalClass {width: 100%;}
+            td { border-collapse: collapse; }
+        </style>
+    </head>
+    <body bgcolor="#ffffff">
+        <center>
+            <table width="468" border="0" cellpadding="0" cellspacing="0" align="center"  style="margin: 0 auto;">
+
+                <tr>
+                    <td width="468" height="45" bgcolor="#ffffff" style="background-color:#ffffff;text-align: center;vertical-align:middle;">
+                        <font color="#494745" face="Arial, Helvetica, Verdana, sans-serif" style="font-size:12px;"><b>A deal recommendation from {{user.firstname}}</b></font></td>
+                </tr>
+            </table>
+            <table width="468" border="0" cellpadding="0" cellspacing="0" align="center"  style="margin: 0 auto;">
+                <tr>
+                    <td bgcolor="#f04f61" style="background-color:#f04f61;text-align: center;vertical-align:middle;">
+                        <a href="http://rubizz.us" style="font-weight:bold; font-family:Arial, Verdana, sans-serif;color:#ffffff;text-decoration:none;font-size:18px;">
+                            <img style="display:block;" src="http://img.rubizz.us/RUBIZZ/client/images/Rec-logo-head.gif" width="95" height="40" border="0" alt="Rubizz" /></a></td>
+                    <td width="373" height="40" bgcolor="#f04f61" style="background-color:#f04f61;">
+                    </td>
+                </tr>
+            </table>
+            <table width="468" border="0" cellpadding="0" cellspacing="0" align="center"  style="margin: 0 auto;">
+                <tr>
+                    <td  width="468" height="99" bgcolor="#ffffff" style="background-color:#ffffff;text-align: left;vertical-align:middle;" align="left">
+                        <font color="#494745" face="Arial, Helvetica, Verdana, sans-serif" style="font-size:12px;">Hello,<br/>
+                            I want to share this amazing deal I found on Rubizz.<br/><br/>
+
+                            See you soon,<br/>
+                            {{ user.firstname }} </font></td>
+                </tr>
+                <tr>
+                    <td width="468" height="1" bgcolor="#cecece" style="background-color:#cecece;"> 
+                    </td>
+                </tr>
+                <tr>
+                    <td width="468" height="21" bgcolor="#ffffff" style="background-color:#ffffff;">
+                    </td>
+                </tr>
+            </table>
+
+
+            <table width="466" border="0" cellpadding="0" cellspacing="0" align="center"  style="margin: 0 auto;">
+                <tr>
+                    <td bgcolor="#ffffff" style="background-color:#ffffff;border: 1px solid #f0f0f0;">
+                        <img style="display:block;" src="http://img.rubizz.us/RUBIZZ/OFFERS/IMAGES/{{ offer.id }}.jpg" width="466" height="215" alt="" /></td>
+                </tr>
+            </table>
+            <table width="468" border="0" cellpadding="0" cellspacing="0" align="center"  style="margin: 0 auto;">
+                <tr>
+                    <td width="17" height="147" bgcolor="#ffffff" style="background-color:#ffffff;border-bottom: 1px solid #f0f0f0;border-left: 1px solid #f0f0f0;">
+                    </td>
+                    <td width="449" height="147" bgcolor="#ffffff" style="background-color:#ffffff;text-align: left;vertical-align:middle;border-right:1px  solid #f0f0f0;border-bottom:1px  solid #f0f0f0;" align="left">
+                        <font color="#494745" face="Arial, Helvetica, Verdana, sans-serif" style="font-size:14px;"><b>{{ offer.brand.name }}</b><br/>
+                            {{ offer.title }} </font><br/><br/>
+                        <font color="#494745" face="Arial, Helvetica, Verdana, sans-serif" style="font-size:12px;">{{ offer.text }}
+                        </font></td>
+                </tr>
+            </table>
+            <table width="468" border="0" cellpadding="0" cellspacing="0" align="center"  style="margin: 0 auto;">
+                <tr>
+                    <td width="468" height="18" bgcolor="#ffffff" style="background-color:#ffffff;">
+                    </td>
+                </tr>
+            </table>
+            <table width="468" border="0" cellpadding="0" cellspacing="0" align="center"  style="margin: 0 auto;">
+                <tr>
+                    <td width="120" height="45" bgcolor="#ffffff" style="background-color:#ffffff;">
+                    </td>
+                    <td  width="232" height="45" bgcolor="#f04f61" style="background-color:#f04f61;text-align: center;vertical-align:middle;border-radius:5px;">
+                        <a href="{{ clickTagUrl }}" style="text-decoration:none;color:#ffffff;"><font color="#ffffff" face="Arial, Helvetica, Verdana, sans-serif" style="font-size:18px;"><b>Discover this deal</b></font></a></td>
+                    <td width="116" height="45" bgcolor="#ffffff" style="background-color:#ffffff;">
+                    </td>
+                </tr>
+            </table>
+            <table width="468" border="0" cellpadding="0" cellspacing="0" align="center"  style="margin: 0 auto;">
+                <tr>
+                    <td width="468" height="22" bgcolor="#ffffff" style="background-color:#ffffff;">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="468" height="1" bgcolor="#cecece" style="background-color:#cecece;">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="468" height="135" bgcolor="#ffffff" style="background-color:#ffffff;text-align: left;vertical-align:middle;" align="left">
+                        <font color="#494745" face="Arial, Helvetica, Verdana, sans-serif" style="font-size:12px;"><br/>You are receiving this email because you are part of the guest list {{ user.firstname}} {{ user.lastname}}, in the website Rubizz. <br/>
+                            Rubizz allows to share the best tips with friends.<br/><br/>
+
+                            If you no longer wish to receive tips from {{user.lastname}} {{user.firstname}} in the website Rubizz, <a href="http://rubizz.us/en_US/logout/unsubscribe?email={{ contact.email }}" style="text-decoration:underline;color:#494745;">click here</a>.<br/><br/>
+
+                            You can also join the community to share Rubizz your turn the best tips with your network of friends. <a href="http://rubizz.us" style="text-decoration:underline;color:#f04f61;">Discover Rubizz ></a><br/>&nbsp;
+
+                        </font></td>
+                </tr>
+                <tr>
+                    <td width="468" height="1" bgcolor="#cecece" style="background-color:#cecece;">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="468" height="39" bgcolor="#ffffff" style="background-color:#ffffff;text-align: left;vertical-align:middle;" align="left">
+                        <font color="#494745" face="Arial, Helvetica, Verdana, sans-serif" style="font-size:11px;">&copy;2015 Rubizz. All rights reserved. 15 East 32nd St, 8th Floor - New York, NY 10016
+                        </font></td>
+                </tr>
+                <tr>
+                    <td width="468" height="1" bgcolor="#cecece" style="background-color:#cecece;">
+                    </td>
+                </tr>
+
+            </table>
+            <table width="468" border="0" cellpadding="0" cellspacing="0" align="center" style="margin: 0 auto;">
+                <tr>
+                    <td bgcolor="#ffffff" style="background-color:#ffffff;">
+                        <a href="#">
+                            <img style="display:block;" src="http://img.rubizz.us/RUBIZZ/client/images/img-f.gif" width="50" height="48" border="0" alt="" /></a></td>
+                    <td bgcolor="#ffffff" style="background-color:#ffffff;">
+                        <a href="#">
+                            <img style="display:block;" src="http://img.rubizz.us/RUBIZZ/client/images/img-t.gif" width="38" height="48" border="0" alt="" /></a></td>
+                    <td bgcolor="#ffffff" style="background-color:#ffffff;" width="261" height="48">
+                    </td>
+                    <td bgcolor="#ffffff" style="background-color:#ffffff;">
+                        <a href="http://rubizz.us" style="font-weight:bold; font-family:Arial, Verdana, sans-serif;color:#494745;text-decoration:none;font-size:12px;"><img style="display:block;" src="http://img.rubizz.us/RUBIZZ/client/images/logo-foot.gif" width="119" height="48" border="0" alt="" /></a></td>
+                </tr>
+
+
+            </table>
+        </center>
+        <img width='1' height='1' alt='' src='{{ openTagUrl }}'>
+    </body>
+</html>

@@ -142,6 +142,14 @@ class User implements AdvancedUserInterface, \Serializable
     private $recommendations;
 
     /**
+     * Les contacts d'un user
+     *
+     * @var array
+     * @ORM\OneToMany(targetEntity="Contact", mappedBy="user", cascade={"persist"})
+     */
+    private $contacts;
+
+    /**
      * @var string
      *
      */
@@ -564,6 +572,16 @@ class User implements AdvancedUserInterface, \Serializable
     public function getRecommendations()
     {
         return $this->recommendations;
+    }
+
+    /**
+     * Get contacts
+     *
+     * @return array
+     */
+    public function getContacts()
+    {
+        return $this->contacts;
     }
 
     /**

@@ -2,6 +2,8 @@
 
 namespace Web\WebBundle\Model\Contact;
 
+use Web\WebBundle\Model\Tracking\TrackingChain;
+
 
 /**
  * Auto Post sur facebook grâce au partage de réseau sociaux
@@ -16,17 +18,29 @@ namespace Web\WebBundle\Model\Contact;
 class Facebook
 {
     /**
+     * Modèle de génération d'url de tracking
      *
-     * @var array param FB 
+     * @var AbstractTracking $tracking
+     */
+    private $tracking;
+
+    /**
+     * Paramètres API Facebook
+     *
+     * @var array $paramsApi
      */
     private $paramsApi;
 
-    
+
     /**
      * Constructeur, injection des dépendances
+     *
+     * @param TrackingChain $poTrackingChain
+     * @param array $paramsApi
      */
-    public function __construct(array $paramsApi)
+    public function __construct(TrackingChain $poTrackingChain, array $paramsApi)
     {
+        $this->tracking  = $poTrackingChain;
         $this->paramsApi = $paramsApi['facebook'];
     } // __constructeur
 
@@ -39,12 +53,13 @@ class Facebook
      * @param string $psLocale
      * @return string
      */
-    public function generateUrl($poOffer, $poRecommendation, $psLocale)
+    public function generateClickTagUrl($poOffer, $poRecommendation, $psLocale)
     {
         // ==== Initialisations ====
         // ---- Url de tracking ----
         $liRecommendationId = $poRecommendation->getId();
-        $lsLink = "http://rubizz.anis.natexo.com/app_dev.php/track/click/{$liRecommendationId}";
+        $loTracking = $this->tracking->getModel($poRecommendation->getOffer()->getPlatform());
+        $lsLink = $loTracking->getClickTagUrl($poRecommendation);
         $lsDesc = $poOffer->getTitle();
         $lsOfferId = $poOffer->getId();
         $lsLocale = strtolower(substr($psLocale, -2, 2));
@@ -61,6 +76,6 @@ class Facebook
         $lsUrl .="/recommendation/addRecommendationByFacebook/{$lsOfferId}/{$liRecommendationId}";
 
         return $lsUrl;
-    } //generateUrl 
+    } // generateClickTagUrl
 
  }

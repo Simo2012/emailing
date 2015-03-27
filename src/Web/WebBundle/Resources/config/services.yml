@@ -1,4 +1,9 @@
 parameters:
+    # ==== Locales par pays ====
+    web.rubizz.locales:
+        fr: fr_FR
+        us: en_US
+
     # ==== Définitions des menus ====
     menus:
         # ---- Menu principal logué ----
@@ -146,6 +151,32 @@ parameters:
         finance:       web.web.offer.list.categories.finances
         untertainment: web.web.offer.list.categories.divertissement
         special-offer: web.web.offer.list.categories.special
+
+
+
+    # ==== Paramétrage CAKE de l'API ====
+    web.rubizz.cake:
+        us: { api_key: "RdSSe7pR4jg", affiliate_id: "336" }
+        fr: false
+
+    # ==== Tracking URL ====
+    # ---- Manual ----
+    web.tracking_url.manual:
+        domain:
+            us: rubizz.us
+            fr: rubizz.fr
+    # ---- Cake ----
+    web.tracking_url.cake:
+        domain:
+            us: dayzers.net/i.ashx
+            fr: dayzers.net/i.ashx
+        parameters:
+            # Id de la creative chez Cake
+            creative_id:  c
+            # Id de la recommandation Rubizz chez Rubizz
+            sub_id_1:     s1
+
+
 services:
     # =================== MODEL ===================
     # ==== USER ====
@@ -164,12 +195,18 @@ services:
     # ---- Chainage des modèles ----
     web.web.model.tracking.tracking_chain:
         class: Web\WebBundle\Model\Tracking\TrackingChain
+    # ---- Modèle MANUAL (Rubizz) ----
+    web.web.model.tracking.manual_tracking:
+        class: Web\WebBundle\Model\Tracking\ManualTracking
+        arguments: ["%web.tracking_url.manual%"]
+        tags:
+            - { name: offer-tracking, alias: manual }
     # ---- Modèle CAKE ----
-#    admin.rubizz.offerTrackingCake:
-#        class: AdminRubizz\RubizzBundle\Model\Offer\Stat\CakeStat
-#        arguments: ["%admin.rubizz.cake%", "@doctrine.orm.rubizzRubizz_entity_manager"]
-#        tags:
-#            - { name: offer-stat, alias: cake }
+    web.web.model.tracking.cake_tracking:
+        class: Web\WebBundle\Model\Tracking\CakeTracking
+        arguments: ["%web.tracking_url.cake%", "%web.rubizz.cake%"]
+        tags:
+            - { name: offer-tracking, alias: cake }
     # ---- Gestion du tracking ----
     web.web.model.tracking.tracking:
         class: Web\WebBundle\Model\Tracking\Tracking
@@ -179,11 +216,11 @@ services:
     # ---- Auto Post sur Facebook ----
     web.web.model.contact.facebook:
         class: Web\WebBundle\Model\Contact\Facebook
-        arguments: ["%web.api%"]
+        arguments: ["@web.web.model.tracking.tracking_chain", "%web.api%"]
     # ---- Auto Post sur Twitter ----
     web.web.model.contact.twitter:
         class: Web\WebBundle\Model\Contact\Twitter
-        arguments: []
+        arguments: ["@web.web.model.tracking.tracking_chain"]
     # ---- Récuperation liste de contact Outlook/hotmail ----
     web.web.model.contact.outlook:
         class: Web\WebBundle\Model\Contact\Outlook
@@ -207,6 +244,12 @@ services:
     # ---- Img vide pour tracking ----
     web.web.model.response.empty_img_response:
         class: Web\WebBundle\Model\Response\EmptyImgResponse
+
+    # ==== RECOMMENDATION ====
+    # ---- Recommendation email sender ----
+    web.web.model.recommendation.email_sender:
+        class: Web\WebBundle\Model\Recommendation\EmailSender
+        arguments: ["@doctrine.orm.entity_manager", "@templating", "@mailer", "@translator", "@web.web.model.tracking.tracking_chain", "%web.rubizz.locales%"]
 
     # =================== TWIG ===================
     # ==== MENU ====

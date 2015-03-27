@@ -74,7 +74,7 @@ class Contact
     /**
      * @var \User
      *
-     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="contacts")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      * })
@@ -87,6 +87,8 @@ class Contact
      * @ORM\OneToMany(targetEntity="Commission", mappedBy="contact")
      **/
     private $commissions;
+
+
 
     public function __construct() {
         $loNow = new \DateTime();
@@ -288,5 +290,28 @@ class Contact
     public function getUser()
     {
         return $this->user;
+    }
+
+    /**
+     * Set commissions
+     *
+     * @param Collection $commissions
+     * @return Contact
+     */
+    public function setCommissions($commissions)
+    {
+        $this->commissions = $commissions;
+
+        return $this;
+    }
+
+    /**
+     * Get commissions
+     *
+     * @return Collection
+     */
+    public function getCommissions()
+    {
+        return $this->commissions;
     }
 }

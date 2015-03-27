@@ -364,3 +364,5 @@ web.web.contact.add.step:                     Step %step%
 web.web.contact.add.step1.text:               "Join and<br>add your contacts"
 web.web.contact.add.step2.text:               Recommend offers<br>to your friends
 web.web.contact.add.step3.text:               "Earn money!"
+# ---- Email ----
+admin.rubizz.email.recommendation.subject: A deal recommendation from %firstname%

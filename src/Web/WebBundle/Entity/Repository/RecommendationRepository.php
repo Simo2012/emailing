@@ -67,4 +67,28 @@ class RecommendationRepository extends EntityRepository
 
         return $loQuery;
     } // getByUser
+
+    /**
+     * Méthode findBy customisée pour charger les entités user, offer et contact
+     * et éviter le lazy loading
+     *
+     * @param $paCriterias
+     * @return array
+     */
+    public function getBy($paCriterias)
+    {
+        $loQuery = $this->createQueryBuilder('r')
+                        ->select('r, o, u, c')
+                        ->join('r.offer', 'o')
+                        ->join('r.user', 'u')
+                        ->join('u.contacts', 'c')
+                        ->where('c.subscriber = 1 and c.directUnsubscribe = 0');
+
+        foreach ($paCriterias as $lsCriteria => $lsValue) {
+            $loQuery->andWhere("r.{$lsCriteria} = :{$lsCriteria}")
+                    ->setParameter($lsCriteria, $lsValue);
+        }
+
+        return $loQuery->getQuery()->getResult();
+    } // getBy
 }

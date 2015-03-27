@@ -91,7 +91,7 @@ class RecommendationController extends Controller
             
             // ==== Construction et appel de l'url Twitter ====
             $loTwitter = $this->container->get('web.web.model.contact.twitter');
-            $lsUrl = $loTwitter->generateUrl($loOffer, $loRecommendation);
+            $lsUrl = $loTwitter->generateClickTagUrl($loOffer, $loRecommendation);
             
             return $this->redirect($lsUrl);
         }
@@ -127,17 +127,17 @@ class RecommendationController extends Controller
             $loManager->persist($loRecommendation);
             $loManager->flush();
         }
-        $loModelFb = $this->get('web.web.model.contact.facebook');
-        $lsUrl     = $loModelFb->generateUrl($loOffer, $loRecommendation, $lsLocale);
+        $loFacebook = $this->get('web.web.model.contact.facebook');
+        $lsUrl      = $loFacebook->generateClickTagUrl($loOffer, $loRecommendation, $lsLocale);
         
         return $this->redirect($lsUrl);
-
     } // recommendByFacebookAction
 
     /**
      * Recommendation par Facebook - Retour de publication
      *
      * @param $piOfferId
+     * @param $piRecommendationId
      * @return string
      */
     public function addRecommendationByFacebookAction($piOfferId, $piRecommendationId)

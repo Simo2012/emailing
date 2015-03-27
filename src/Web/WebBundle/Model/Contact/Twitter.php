@@ -1,6 +1,7 @@
 <?php
 
 namespace Web\WebBundle\Model\Contact;
+use Web\WebBundle\Model\Tracking\TrackingChain;
 
 
 /**
@@ -16,10 +17,20 @@ namespace Web\WebBundle\Model\Contact;
 class Twitter
 {
     /**
-     * Constructeur, injection des dépendances
+     * Modèle de génération d'url de tracking
+     *
+     * @var AbstractTracking $tracking
      */
-    public function __construct()
+    private $tracking;
+
+    /**
+     * Constructeur, injection des dépendances
+     *
+     * @param \Web\WebBundle\Model\Tracking\TrackingChain $poTrackingChain
+     */
+    public function __construct(TrackingChain $poTrackingChain)
     {
+        $this->tracking = $poTrackingChain;
     } // __constructeur
 
     /**
@@ -29,14 +40,14 @@ class Twitter
      * @param \Web\WebBundle\Entity\Recommendation $poRecommendation
      * @return string
      */
-    public function generateUrl($poOffer, $poRecommendation)
+    public function generateClickTagUrl($poOffer, $poRecommendation)
     {
         // ---- Url de tracking ----
-        $liRecommendationId = $poRecommendation->getId();
-        $lsLink = "http://rubizz.anis.natexo.com/app_dev.php/track/click/{$liRecommendationId}";
+        $loTracking = $this->tracking->getModel($poRecommendation->getOffer()->getPlatform());
+        $lsLink = $loTracking->getClickTagUrl($poRecommendation);
         $lsTitle = $poOffer->getTitle();
-        $lsUrl   = "https://twitter.com/intent/tweet?url={$lsLink}&text={$lsTitle}"; // &via=rubizz_FR
+        $lsUrl = "https://twitter.com/intent/tweet?url={$lsLink}&text={$lsTitle}"; // &via=rubizz_FR
                 
         return $lsUrl;
-    } // generateUrl
+    } // generateClickTagUrl
  }

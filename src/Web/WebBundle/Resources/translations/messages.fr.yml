@@ -361,3 +361,5 @@ web.web.contact.add.step:                     Etape %step%
 web.web.contact.add.step1.text:               "Je m'inscris et<br>j'ajoute mes contacts"
 web.web.contact.add.step2.text:               Je recommande des<br>offres à mes amis
 web.web.contact.add.step3.text:               "Je gagnes de l'argent !"
+# ---- Email ----
+admin.rubizz.email.recommendation.subject: %prenom% vous recommande un bon plan
