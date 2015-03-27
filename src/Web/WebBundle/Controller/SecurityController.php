@@ -2,6 +2,7 @@
 namespace Web\WebBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\SecurityContext;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -35,7 +36,7 @@ class SecurityController extends Controller
         $loSession = $poRequest->getSession();
         $lbRegistered = $loSession->get('hasRegistered');
         if (!empty($lbRegistered)) {
-            return $this->redirect($this->generateUrl('WebWebBundle_offerIndex'));
+            return $this->redirect($this->generateUrl('WebWebBundle_contactAdd'));
         }
 
         // ==== Initialisation ====
@@ -48,10 +49,17 @@ class SecurityController extends Controller
                 try {
                     $loUserLogger = $this->container->get('web.web.model.user.user_logger');
                     $loUserLogger->logUser($loUser);
+
+                    if ($loUser->getNbContacts() == 0) {
+                        $lsUrl = $this->generateUrl('WebWebBundle_contactAdd', array(), true);
+                    } else {
+                        $lsUrl = $this->generateUrl('WebWebBundle_offerIndex', array(), true);
+                    }
+                    return new Response(json_encode(array('status' => 'OK', 'url' => $lsUrl)));
                 } catch(\Exception $e) {
-                    return new Response($e->getMessage());
+                    return new Response(json_encode(array('status' => 'KO', 'error' => $e->getMessage())));
                 }
-                return new Response('OK');
+                return new Response(json_encode(array('status' => 'KO')));
             }
         }
 
@@ -79,11 +87,12 @@ class SecurityController extends Controller
             if ($loForm->isValid()) {
                 try {
                     $loUserLogger = $this->container->get('web.web.model.user.user_logger');
-                    $loUserLogger->registerUser($loUser);
+                    $loUserLogger->registerUser($loUser, true);
+                    $lsUrl = $this->generateUrl('WebWebBundle_contactAdd', array(), true);
+                    return new Response(json_encode(array('status' => 'OK', 'url' => $lsUrl)));
                 } catch(\Exception $e) {
-                    return new Response($e->getMessage());
+                    return new Response(json_encode(array('status' => 'KO', 'error' => $e->getMessage())));
                 }
-                return new Response('OK');
             }
         }
 

@@ -98,8 +98,9 @@ class UserLogger
      * Log l'utilisateur
      *
      * @param User $poUser Utilisateur
+     * @param bool $pbRegistration
      */
-    public function setUserInSession(User $poUser)
+    public function setUserInSession(User $poUser, $pbRegistration = false)
     {
         $loToken = new UsernamePasswordToken(
             $poUser,
@@ -109,7 +110,10 @@ class UserLogger
         );
         $loSession = $this->request->getSession();
         $loSession->set('_security_secured_users_area', serialize($loToken));
-        $loSession->set('hasRegistered', true);
+        if ($pbRegistration) {
+            $loSession->set('hasRegistered', true);
+        }
+
 
         // ==== Enregistrement de la date de login ====
         $poUser->setDateLogin(new \DateTime());

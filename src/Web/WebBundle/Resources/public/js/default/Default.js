@@ -136,15 +136,20 @@ Default.prototype = {
             contentType: false,
             processData: false,
             success: function(psReturn) {
-                if ('OK' == psReturn) {
-                    $("#div_RBZ_loginPopup").remove();
-                    $("#div_RBZ_loginShadow").hide();
-                    if (psUrl != undefined) {
-                        window.location = psUrl;
+                var laJson = $.parseJSON(psReturn);
+                if ('OK' == laJson.status) {
+                    //$("#div_RBZ_loginPopup").remove();
+                    //$("#div_RBZ_loginShadow").hide();
+                    if (laJson.url != undefined) {
+                        window.location = laJson.url;
+                    } else {
+                        if (psUrl != undefined) {
+                            window.location = psUrl;
+                        }
                     }
                 } else {
                     $("#div_RBZ_error").text('');
-                    $("#div_RBZ_error").append(psReturn);
+                    $("#div_RBZ_error").append(laJson.error);
                 }
             }
 
@@ -189,15 +194,20 @@ Default.prototype = {
             contentType: false,
             processData: false,
             success: function(psReturn) {
-                if ('OK' == psReturn) {
-                    $("#div_RBZ_registerPopup").remove();
-                    $("#div_RBZ_registerShadow").hide();
-                    if (psUrl != undefined) {
-                        window.location = psUrl;
+                var laJson = $.parseJSON(psReturn);
+                if ('OK' == laJson.status) {
+                    //$("#div_RBZ_loginPopup").remove();
+                    //$("#div_RBZ_loginShadow").hide();
+                    if (laJson.url != undefined) {
+                        window.location = laJson.url;
+                    } else {
+                        if (psUrl != undefined) {
+                            window.location = psUrl;
+                        }
                     }
                 } else {
                     $("#div_RBZ_error").text('');
-                    $("#div_RBZ_error").append(psReturn);
+                    $("#div_RBZ_error").append(laJson.error);
                 }
             }
         });

@@ -187,16 +187,20 @@ services:
     # ---- Récuperation liste de contact Outlook/hotmail ----
     web.web.model.contact.outlook:
         class: Web\WebBundle\Model\Contact\Outlook
-        arguments: ["@request_stack", "@router", "@doctrine.orm.entity_manager", "@natexo_tool.filter.decrypt"]
+        arguments: ["@request_stack", "@router", "@doctrine.orm.entity_manager", "@natexo_tool.filter.decrypt", "@web.web.model.contact.counter"]
     web.web.model.contact.yahoo:
         class: Web\WebBundle\Model\Contact\YahooModel
-        arguments: ["@request_stack", "@router", "@natexo_tool.filter.decrypt", "@doctrine.orm.entity_manager"]
+        arguments: ["@request_stack", "@router", "@natexo_tool.filter.decrypt", "@doctrine.orm.entity_manager", "@web.web.model.contact.counter"]
     web.web.model.contact.gmail:
         class: Web\WebBundle\Model\Contact\Gmail
-        arguments: ["@request_stack", "@router", "@doctrine.orm.entity_manager", "@natexo_tool.filter.decrypt"]
+        arguments: ["@request_stack", "@router", "@doctrine.orm.entity_manager", "@natexo_tool.filter.decrypt", "@web.web.model.contact.counter"]
     # ---- Model d'ajout de contact ----
     web.web.model.contact.email:
         class: Web\WebBundle\Model\Contact\Email
+        arguments: ["@doctrine.orm.entity_manager", "@web.web.model.contact.counter"]
+    # ---- Model de comptage des contacts ----
+    web.web.model.contact.counter:
+        class: Web\WebBundle\Model\Contact\Counter
         arguments: ["@doctrine.orm.entity_manager"]
 
     # ==== RESPONSE ====

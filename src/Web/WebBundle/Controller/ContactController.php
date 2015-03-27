@@ -4,13 +4,14 @@ namespace Web\WebBundle\Controller;
 
 use Natexo\AdminBundle\Model\Paginator;
 use Natexo\ToolBundle\Model\Filter\ApiEncryptFilter;
-use Proxies\__CG__\Web\WebBundle\Entity\Contact;
+use Web\WebBundle\Entity\Contact;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
+use Web\WebBundle\Model\Contact\Counter;
 use Web\WebBundle\Model\Contact\Gmail;
 use Web\WebBundle\Model\Contact\Outlook;
 use Web\WebBundle\Model\Contact\YahooModel;
@@ -71,7 +72,6 @@ class ContactController extends Controller
     {
         $loUser = $this->getUser();
         $lbRegistration = ($loUser->getNbContacts() == 0) ? true : false;
-        $loSession = $poRequest->getSession();
 
         $loGmailHelper = $this->get('web.web.model.contact.gmail');
         $loOutlookHelper = $this->get('web.web.model.contact.outlook');

@@ -7,6 +7,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Natexo\ToolBundle\Model\Filter\ApiDecryptFilter;
 use Web\WebBundle\Entity\User;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Web\WebBundle\Model\Contact\Counter;
 
 /**
  * Définition d'une classe pour l'import de contact
@@ -33,15 +34,26 @@ abstract class Importer implements \IteratorAggregate
     private $decrypter;
 
     /**
+     * @var Counter
+     */
+    private $counter;
+
+    /**
      * Constructeur
      *
      * @param ObjectManager $poManager
      */
-    public function __construct(ObjectManager $poManager, ApiDecryptFilter $poDecrypter, RequestStack $poStack) {
+    public function __construct(
+        ObjectManager $poManager,
+        ApiDecryptFilter $poDecrypter,
+        RequestStack $poStack,
+        Counter $poCounter
+    ) {
         // ==== Initialisation ====
         $this->manager = $poManager;
         $this->decrypter = $poDecrypter;
         $this->request = $poStack->getCurrentRequest();
+        $this->counter = $poCounter;
     } // __construct
 
     /**
@@ -101,6 +113,9 @@ abstract class Importer implements \IteratorAggregate
                 $laParam['direct_unsubscribe'] = 0;
                 $loStmt->execute($laParam);
             }
+
+            // ==== Mise à jour du nombre de contacts ====
+            $this->counter->update($this->manager->getReference('WebWebBundle:User', $laCookie['userId']));
         }
 
     } // saveContacts

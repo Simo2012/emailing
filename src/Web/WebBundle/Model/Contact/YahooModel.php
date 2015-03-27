@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 use  Web\WebBundle\Model\Contact\Util;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Bundle\FrameworkBundle\Routing\Router;
+use Web\WebBundle\Model\Contact\Counter;
 
 Class YahooModel extends Util
 {
@@ -19,9 +20,10 @@ Class YahooModel extends Util
         RequestStack $poStack,
         Router $poRouter,
         ApiDecryptFilter $poDecrypter,
-        ObjectManager $poManager
+        ObjectManager $poManager,
+        Counter $poCounter
     ) {
-        parent::__construct($poManager, $poDecrypter, $poStack);
+        parent::__construct($poManager, $poDecrypter, $poStack, $poCounter);
         $this->url = $poRouter->generate('OAuthYahoo', array(), true);
         $this->decrypter = $poDecrypter;
         switch ($this->request->getHost()) {
@@ -424,5 +426,3 @@ Class YahooModel extends Util
         return $contacts;
     }
 }
-
-?>

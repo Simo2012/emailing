@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\RequestStack;
 use Web\WebBundle\Model\Contact\Importer;
 use Doctrine\Common\Persistence\ObjectManager;
 use Natexo\ToolBundle\Model\Filter\ApiDecryptFilter;
+use Web\WebBundle\Model\Contact\Counter;
 
 /**
  * Modèle permettant de récupérer la liste des contacts gmail
@@ -33,8 +34,14 @@ class Gmail extends Importer
     /**
      * Constructeur, injection des dépendances
      */
-    public function __construct(RequestStack $poStack, Router $poRouter, ObjectManager $poManager, ApiDecryptFilter $poDecrypter) {
-        parent::__construct($poManager, $poDecrypter, $poStack);
+    public function __construct(
+        RequestStack $poStack,
+        Router $poRouter,
+        ObjectManager $poManager,
+        ApiDecryptFilter $poDecrypter,
+        Counter $poCounter
+    ) {
+        parent::__construct($poManager, $poDecrypter, $poStack, $poCounter);
         $this->clientId = '1063487764464-c3qg16aa50tb0bm1livj7siialgqq26u.apps.googleusercontent.com';
         $this->clientSecret = '10hywwKk5PSDoTF9aa6ODoTp';
         $this->redirectUri = $poRouter->generate('OAuthGoogle', array(), true);

@@ -46,6 +46,7 @@ class ContactRepository extends EntityRepository
     {
         $loQuery = $this->createQueryBuilder('c')
                         ->select(
+                            'count(c.id) as total',
                             'sum(if(c.subscriber = 1 and c.directUnsubscribe = 0, 1, 0)) as subscribed',
                             'sum(if(c.subscriber = 1 and c.directUnsubscribe = 0, 0, 1)) as unsubscribed'
                         )

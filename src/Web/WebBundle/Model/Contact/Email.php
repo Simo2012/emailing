@@ -3,7 +3,6 @@
 namespace Web\WebBundle\Model\Contact;
 
 use Doctrine\Common\Persistence\ObjectManager;
-use Web\WebBundle\Entity\Contact;
 use Web\WebBundle\Entity\User;
 
 /**
@@ -24,14 +23,20 @@ class Email
     private $manager;
 
     /**
+     * @var Counter
+     */
+    private $counter;
+
+    /**
      * Constructor
      *
      * @param ObjectManager $poManager
      */
-    public function __construct(ObjectManager $poManager)
+    public function __construct(ObjectManager $poManager, Counter $poCounter)
     {
         // ==== Initialisation ====
         $this->manager = $poManager;
+        $this->counter = $poCounter;
     } // __construct
 
     /**
@@ -59,5 +64,8 @@ class Email
             $laParam['direct_unsubscribe'] = 0;
             $loStmt->execute($laParam);
         }
+
+        // ==== Mise à jour du nombre de contacts ====
+        $this->counter->update($poUser);
     } // addContactsFromEmails
 }

@@ -6,6 +6,7 @@ use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Bundle\FrameworkBundle\Routing\Router;
 use Doctrine\Common\Persistence\ObjectManager;
 use Natexo\ToolBundle\Model\Filter\ApiDecryptFilter;
+use Web\WebBundle\Model\Contact\Counter;
 
 /**
  * Modèle permettant de récupérer la liste des contacts Outlook / Hotmail
@@ -41,9 +42,14 @@ class Outlook extends Importer
     /**
      * Constructeur, injection des dépendances
      */
-    public function __construct(RequestStack $poStack, Router $poRouter, ObjectManager $poManager, ApiDecryptFilter $poDecrypter)
-    {
-        parent::__construct($poManager, $poDecrypter, $poStack);
+    public function __construct(
+        RequestStack $poStack,
+        Router $poRouter,
+        ObjectManager $poManager,
+        ApiDecryptFilter $poDecrypter,
+        Counter $poCounter
+    ) {
+        parent::__construct($poManager, $poDecrypter, $poStack, $poCounter);
         $this->url = $poRouter->generate('OAuthOutlook', array(), true);
         switch ($this->getRequest()->getHost()) {
             case 'www.rubizz.fr':
