@@ -3,7 +3,7 @@
 {% block CSS %}
     {{ parent() }}
     {% stylesheets
-    '@WebWebBundle/Resources/public/css/default/about.scss'
+    '@WebWebBundle/Resources/public/css/default/legal.scss'
     %}
     <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
     {% endstylesheets %}
@@ -11,7 +11,9 @@
 
 {% block CONTENT %}
     <div id="div_RBZ_content">
-        <h1>{{ "web.web.default.index.footerLegal" | trans }}</h1>
-        {% include '@WebWeb/Default/legalNotices/' ~ app.request.locale ~ '.html.twig' %}
+        <div id="div_RBZ_legal">
+            <h1>{{ "web.web.default.index.footerLegal" | trans }}</h1>
+            {% include '@WebWeb/Default/legalNotices/' ~ app.request.locale ~ '.html.twig' %}
+        </div>
     </div>
 {% endblock %}

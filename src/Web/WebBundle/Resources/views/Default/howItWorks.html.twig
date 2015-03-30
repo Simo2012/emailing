@@ -12,16 +12,19 @@
     <div id="div_RBZ_content">
         {# Slider #}
         <div id="div_RBZ_hiw_slider">
-            <h3>&nbsp;&nbsp;{{ "web.web.default.hiw.slider.title" | trans |upper |raw }}</h3>
+            <h3>{{ "web.web.default.hiw.slider.title" | trans |upper |raw }}</h3>
             <ul>
-                <li id="span_RBZ_hiwSliderTop"><span>&nbsp; &#708;</span></li>
-                <li class="RBZ_hiwMenu" id="li_RBZ_hiwMenuFirst">1<span class="RBZ_hiwCircle"></span></li>
-                <li class="RBZ_hiwMenu">2<span class="RBZ_hiwCircle"></span></li>
-                <li class="RBZ_hiwMenu">3<span class="RBZ_hiwCircle"></span></li>
-                <li class="RBZ_hiwMenu">4<span class="RBZ_hiwCircle"></span></li>
-                <li class="RBZ_hiwMenu">5<span class="RBZ_hiwCircle"></span></li>
-                <li class="RBZ_hiwMenu">6<span class="RBZ_hiwCircle"></span></li>
-                <li id="span_RBZ_hiwSliderDown"><span>&nbsp; &#709;</span></li>
+                <li class="RBZ_hiwMenu" numSlide="1" id="li_RBZ_hiwSlideActive"><span class="RBZ_hiwCircle"></span>{{ "web.web.default.faq.menu.inscription" | trans }}</li>
+                <div class="RBZ_hiwSeparator"></div>
+                <li class="RBZ_hiwMenu RBZ_liActive" numSlide="2"><span class="RBZ_hiwCircle"></span>{{ "web.web.contact.index.mailing_list.title" | trans }}</li>
+                <div class="RBZ_hiwSeparator"></div>
+                <li class="RBZ_hiwMenu" numSlide="3"><span class="RBZ_hiwCircle"></span>{{ "web.web.default.hiw.slider.select" | trans }}</li>
+                <div class="RBZ_hiwSeparator"></div>
+                <li class="RBZ_hiwMenu" numSlide="4"><span class="RBZ_hiwCircle"></span>{{ "web.web.default.hiw.slider.share" | trans }}</li>
+                <div class="RBZ_hiwSeparator"></div>
+                <li class="RBZ_hiwMenu" numSlide="5"><span class="RBZ_hiwCircle"></span>{{ "web.web.default.hiw.slider.earning" | trans }}</li>
+                <div class="RBZ_hiwSeparator"></div>
+                <li class="RBZ_hiwMenu" numSlide="6"><span class="RBZ_hiwCircle"></span>Jackpot</li>
             </ul>
         </div>
 
@@ -58,7 +61,7 @@
                 <p>{{ "web.web.default.hiw.p4.desc" | trans | raw}}</p>
             </div>
             <div id="div_RBZ_hiw_p4_left">
-                <img src="{{ asset('/bundles/webweb/images/default/hiw/p4.png') }}">
+                <img id="img_RBZ_hiw_p4_mobile" src="{{ asset('/bundles/webweb/images/default/hiw/p4.png') }}">
                 <div id="div_RBZ_hiw_p4_leftImg">
                     <img src="{{ asset('/bundles/webweb/images/default/hiw/mobile.gif') }}">
                 </div>

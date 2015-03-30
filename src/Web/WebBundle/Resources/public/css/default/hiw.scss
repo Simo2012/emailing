@@ -12,35 +12,48 @@ body {
 
 // ==== Menu du slider ====
 #div_RBZ_hiw_slider {
-    //display: none;
     color: #fff;
     position: absolute;
-    right:100px;
-    top: 250px;
-    #li_RBZ_hiwMenuFirst{
+    right:50px;
+    top: 300px;
+    #li_RBZ_hiwSlideActive{
         opacity: 1;
-    }
-    li{
-        cursor: pointer;
-        list-style-type: none;
-        font-size: 15px;
-        opacity: 0.4;
-        &:hover {
-            opacity: 1 !important;
+        span{
+            background-color: transparent;
+            border: 1px solid $black;
+            height: 25px;
+            margin-left: -5px;
+            width: 25px;
+            opacity: 0.5;
+            box-shadow: 0 0 10px $black;
         }
-        .RBZ_hiwCircle {
-            margin-top: 10px;
-            margin-left: 10px;
-            display: block;
-            background-color: #fff;
-            width: 15px;
-            height: 15px;
-            border-radius: 15px;
-            display: inline-block;
+    }
+    ul {
+        // ---- supprimer margin du ul par défaut ----
+        padding-left: 0;
+        li{
+            cursor: pointer;
+            list-style-type: none;
+            font-size: 15px;
+            opacity: 0.9;
+            &:hover {
+                opacity: 1 !important;
+            }
+            .RBZ_hiwCircle {
+                margin-top: 10px;
+                margin-right: 20px;
+                display: block;
+                background-color: #fff;
+                width: 16px;
+                height: 16px;
+                border-radius: 15px;
+                display: inline-block;
+            }
         }
     }
     h3 {
         color: #fff;
+        font-size: 18px;
     }
     #span_RBZ_hiwSliderTop {
         font-weight: bold;
@@ -50,6 +63,14 @@ body {
     }
     #span_RBZ_hiwSliderDown {
         @extend #span_RBZ_hiwSliderTop;
+    }
+    .RBZ_hiwSeparator {
+        height: 30px;
+        width: 3px;
+        margin-left: 6px;
+        background-color: $white;
+        margin-bottom: -10px;
+        margin-top: -5px;
     }
 }
 
@@ -213,8 +234,21 @@ body {
 }
 
 
+/* ==== Grand écran ==== */
+@media (max-width: 1360px) {
+    // ==== Slider ====
+    #div_RBZ_hiw_slider {
+        display: none;
+    }
+}
+
+
 /* ==== Grand iPad ==== */
 @media (max-width: 960px) {
+    // ==== Slider ====
+    #div_RBZ_hiw_slider {
+        display: none;
+    }
     // ==== Page 1 ====
     #div_RBZ_hiw_p1 {
         #div_RBZ_hiw_p1_description {
@@ -230,7 +264,8 @@ body {
     // ==== Page 2 ====
     #div_RBZ_hiw_p2{
         #div_RBZ_hiw_p2_right {
-            padding-top:400px;
+            top:400px;
+            left:0;
             h1 {
                 font-size: 30px;
             }

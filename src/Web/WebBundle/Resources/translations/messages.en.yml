@@ -173,7 +173,10 @@ web.web.default.faq.question.inside.26:         Yes. We deposit commissions excl
 web.web.default.faq.question.27:                My bank account information has changed.  How can I enter my new bank account information?
 web.web.default.faq.question.inside.27:         Yes. By accessing your account settings you´ll be able to update your bank account information.  A confirmation email will be sent after successfully updating the information.
 # ============ HIW page ============
-web.web.default.hiw.slider.title:   How <br />does it Work ?
+web.web.default.hiw.slider.title:   How does <br />it Work ?
+web.web.default.hiw.slider.select:  Selection
+web.web.default.hiw.slider.share:   Sharing
+web.web.default.hiw.slider.earning: Earning
 # ---- Inscription page 1----
 web.web.default.hiw.p1.title:       I want to register to the website
 web.web.default.hiw.p1.desc:        Fill in your name, last name and email.  Choose a password and presto, you are registered!.<br />Then you´ll be able to sign in by entering your email and password

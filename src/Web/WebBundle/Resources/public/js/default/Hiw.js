@@ -19,7 +19,8 @@ Hiw.prototype = {
     ready: function()
     {
         $(document).on('click', '.RBZ_hiwMenu', function() {
-            var numberPage = $(this).text();
+            var numberPage = $(this).attr("numSlide");
+            console.log(numberPage);
             Hiw.prototype._manageChangePage($(this), numberPage);
             return false;
         });
@@ -77,8 +78,12 @@ Hiw.prototype = {
         }
         $("#div_RBZ_hiw_p" + piNumberPage).show();
 
+        //---- Supprimer l'effet active ----
+        $(".RBZ_hiwMenu").removeAttr('id', 'li_RBZ_hiwSlideActive');
+        //---- ajouter effet active à l'élément ----
+        $(poElement).attr('id', 'li_RBZ_hiwSlideActive');
         // ==== Réinitialisation effet active ====
-        $('.RBZ_hiwMenu').css('opacity', '0.4');
+        $('.RBZ_hiwMenu').css('opacity', '0.9');
         // ---- Effet active ----
         $(poElement).css('opacity', '1');
         // ==== Réinitialisation attribut active ====

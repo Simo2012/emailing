@@ -6,7 +6,7 @@
 #div_RBZ_faqMenu {
     position: fixed;
     width: 205px;
-    top: 300px;
+    top: 310px;
     ul {
         // ---- supprimer margin du ul par défaut ----
         padding-left: 0;
@@ -30,7 +30,7 @@
     display:inline-block;
     margin-left:230px;
     margin-bottom: 100px;
-    padding-top: 40px;
+    margin-top: 150px;
     max-width: 725px;
     .RBZ_faqQuestion {
         cursor:pointer;

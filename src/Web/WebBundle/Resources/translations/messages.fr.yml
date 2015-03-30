@@ -173,7 +173,10 @@ web.web.default.faq.question.inside.26:         Nous procédons au versement des
 web.web.default.faq.question.27:                Mes coordonnées bancaires ont changé. Comment puis-je transmettre mes nouvelles coordonnées ?
 web.web.default.faq.question.inside.27:         Vous pouvez mettre à jour vos coordonnées bancaires en allant dans votre espace personnel, rubrique Votre RIB et en cliquant sur Modifier. Vous recevez ensuite un email de confirmation.
 # ============ HIW page ============
-web.web.default.hiw.slider.title:   Comment <br />ça marche ?
+web.web.default.hiw.slider.title:   Comment ça <br />marche ?
+web.web.default.hiw.slider.select:  Sélection
+web.web.default.hiw.slider.share:   Partage
+web.web.default.hiw.slider.earning: Gain
 # ---- Inscription page 1----
 web.web.default.hiw.p1.title:   Je m'inscris sur le site
 web.web.default.hiw.p1.desc:    Renseignez vos nom, prénom et email. Choisissez un mot de passe, et hop, vous êtes inscrit(e) !<br /> Vous pourrez par la suite vous connecter à votre compte en indiquant votre email et votre mot de passe.
