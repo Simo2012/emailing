@@ -56,7 +56,11 @@ class TrackController extends Controller
             $loResponse = new Response();
             return $loResponse;
         }
-
+        // ==== Détection d'une mauvaise ip par rapport à l'offre (geoip) ====
+        $lbIsValidCountryByIp = $loTracking->chekCountryByIp($liRecommendationId);
+        if (!$lbIsValidCountryByIp) {
+            return $this->redirect($this->generateUrl('WebWebBundle_defaultLogoutErrorIp'));
+        }
         // ==== Prise en compte du tracking ====
         $loTracking->handleClickTag($lsEmail);
         $loResponse = new RedirectResponse($loTracking->getClickUrl());
@@ -79,6 +83,13 @@ class TrackController extends Controller
             return $loResponse;
         }
         $loTracking = $this->get('web.web.model.tracking.tracking');
+        
+        // ==== Détection d'une mauvaise ip par rapport à l'offre (geoip) ====
+        $lbIsValidCountryByIp = $loTracking->chekCountryOfferByIp($liOfferId);
+        if (!$lbIsValidCountryByIp) {
+            return $this->redirect($this->generateUrl('WebWebBundle_defaultLogoutErrorIp'));
+        }
+        
         if (!$loTracking->readCookies($poRequest)) {
             trigger_error('LeadTag cookies inexistant');
             return $loResponse;
@@ -105,6 +116,13 @@ class TrackController extends Controller
             return $loResponse;
         }
         $loTracking = $this->get('web.web.model.tracking.tracking');
+        
+        // ==== Détection d'une mauvaise ip par rapport à l'offre (geoip) ====
+        $lbIsValidCountryByIp = $loTracking->chekCountryOfferByIp($liOfferId);
+        if (!$lbIsValidCountryByIp) {
+            return $this->redirect($this->generateUrl('WebWebBundle_defaultLogoutErrorIp'));
+        }
+        
         if (!$loTracking->readCookies($poRequest)) {
             trigger_error('LeadTag cookies inexistant');
             return $loResponse;

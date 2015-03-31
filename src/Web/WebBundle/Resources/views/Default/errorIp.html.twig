@@ -1,0 +1,16 @@
+{% extends app.user.id is defined ? "@WebWeb/layoutPage.html.twig" : "@WebWeb/layoutPageOut.html.twig" %}
+{% block CSS %}
+    {{ parent() }}
+    {% stylesheets
+    '@WebWebBundle/Resources/public/css/default/unsubscribe.scss'
+    %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+    {% endstylesheets %}
+{% endblock %}
+{% block CONTENT %}
+    <div id="div_RBZ_content">
+        <div id="div_RBZ_unsubscribe">
+                <div id="div_RBZ_unsubscribeText">{{ 'web.web.default.unsubscribe.text' | trans }}</div>
+        </div>
+    </div>
+{% endblock %}

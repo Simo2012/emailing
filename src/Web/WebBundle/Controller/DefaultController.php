@@ -180,4 +180,14 @@ class DefaultController extends Controller
             'confirm' => $lbIsConfirmed
         );
     } // unsubscribeAction
+    
+    /**
+     * Page Erreur ip (geoIp)
+     *
+     * @Template()
+     */
+    public function errorIpAction()
+    {
+        return array();
+    } // errorIpAction
 }

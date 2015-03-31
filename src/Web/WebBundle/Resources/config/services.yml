@@ -176,6 +176,11 @@ parameters:
             # Id de la recommandation Rubizz chez Rubizz
             sub_id_1:     s1
 
+    # ==== Path de la base de donnée geoip ====
+    web.geoip.path.database: "/etc/geoIp/GeoLite2-Country.mmdb"
+
+    # ==== liste des pays disponible pour les offres ====
+    web.countryOffers: [us, fr]
 
 services:
     # =================== MODEL ===================
@@ -210,7 +215,7 @@ services:
     # ---- Gestion du tracking ----
     web.web.model.tracking.tracking:
         class: Web\WebBundle\Model\Tracking\Tracking
-        arguments: ["@doctrine.orm.entity_manager", "@natexo_tool.filter.encrypt", "@natexo_tool.filter.decrypt"]
+        arguments: ["@doctrine.orm.entity_manager", "@natexo_tool.filter.encrypt", "@natexo_tool.filter.decrypt", "@service_container"]
 
     # ==== CONTACT ====
     # ---- Auto Post sur Facebook ----
@@ -251,6 +256,11 @@ services:
         class: Web\WebBundle\Model\Recommendation\EmailSender
         arguments: ["@doctrine.orm.entity_manager", "@templating", "@mailer", "@translator", "@web.web.model.tracking.tracking_chain", "%web.rubizz.locales%"]
 
+    # ---- Récupération du pays par l'ip (geoip) ----
+    web.web.model.user.detectCountryUser:
+        class: Web\WebBundle\Model\User\DetectCountryUser
+        arguments: ["%kernel.root_dir%", "%web.geoip.path.database%"]
+        
     # =================== TWIG ===================
     # ==== MENU ====
     # ---- Menu en twig ----

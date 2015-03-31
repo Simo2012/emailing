@@ -77,6 +77,10 @@ WebWebBundle_defaultLogoutTerms:
 WebWebBundle_defaultLogoutUnsubscribe:
     path:     /logout/unsubscribe
     defaults: { _controller: "WebWebBundle:Default:unsubscribe" }
+# ---- Page erreur geoip  ----
+WebWebBundle_defaultLogoutErrorIp:
+    path:     /logout/errorIp
+    defaults: { _controller: "WebWebBundle:Default:errorIp" }
 #=====================================
 # User controller : page profile, etc
 #=====================================

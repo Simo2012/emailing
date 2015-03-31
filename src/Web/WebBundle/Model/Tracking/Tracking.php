@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpFoundation\Request;
 use Natexo\ToolBundle\Model\Filter\ApiEncryptFilter;
 use Natexo\ToolBundle\Model\Filter\ApiDecryptFilter;
+use Symfony\Component\DependencyInjection\Container;
 
 /**
  * Gestion des tags de tracking
@@ -51,6 +52,11 @@ class Tracking
      * @var boolean
      */
     private $validOffer;
+    /**
+     * Container Symfony
+     * @var null|\Symfony\Component\DependencyInjection\Container
+     */
+    private $container = null;
 
 
     /**
@@ -59,12 +65,19 @@ class Tracking
      * @param ObjectManager $poManager
      * @param ApiEncryptFilter $poEncrypt
      * @param ApiDecryptFilter $poDecrypt
+     * @param Container $poContainer
      */
-    public function __construct(ObjectManager $poManager, ApiEncryptFilter $poEncrypt, ApiDecryptFilter $poDecrypt)
+    public function __construct(
+            ObjectManager $poManager,
+            ApiEncryptFilter $poEncrypt,
+            ApiDecryptFilter $poDecrypt,
+            Container $poContainer
+        )
     {
-        $this->manager = $poManager;
-        $this->encrypt = $poEncrypt;
-        $this->decrypt = $poDecrypt;
+        $this->manager      = $poManager;
+        $this->encrypt      = $poEncrypt;
+        $this->decrypt      = $poDecrypt;
+        $this->container    = $poContainer;
     } // __construct
 
     /**
@@ -156,6 +169,42 @@ class Tracking
 
         return $loOffer->getUrl();
     } // getClickUrl
+    
+    /**
+     * Permer de verifier que le pays de la recommandation correspond au pays du visiteur
+     * @return boolean ip ok or not
+     */
+    public function chekCountryByIp($piRecommendationId)
+    {
+        // ==== Lecture de la recommendation ====
+        $loRecommendation = $this->manager->getRepository('WebWebBundle:Recommendation')
+                                          ->find($piRecommendationId);
+        $lsOfferCountry = $loRecommendation->getOffer()->getCountry();
+        
+        // ==== Détection d'une mauvaise ip par rapport à l'offre (geoip) ====
+        $loDetectCountryUser = $this->container->get('web.web.model.user.detectCountryUser');
+        return $loDetectCountryUser->getCountryByIp($lsOfferCountry);
+
+    } // chekCountryByIp
+    
+    /**
+     * Permer de verifier que le pays de l'offre correspond au pays du visiteur
+     * @return boolean ip ok or not
+     */
+    public function chekCountryOfferByIp($piOfferId)
+    {
+        // ==== Lecture de la recommendation ====
+        $loOffer = $this->manager->getRepository('WebWebBundle:Offer')
+                                 ->find($piOfferId);
+        if (empty($loOffer)) {
+            return false;
+        }
+        $lsOfferCountry = $loOffer->getCountry();
+        // ==== Détection d'une mauvaise ip par rapport à l'offre (geoip) ====
+        $loDetectCountryUser = $this->container->get('web.web.model.user.detectCountryUser');
+        return $loDetectCountryUser->getCountryByIp($lsOfferCountry);
+
+    } // chekCountryByIp
 
     /**
      * Positionnement des cookies
