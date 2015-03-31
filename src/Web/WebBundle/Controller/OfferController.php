@@ -3,8 +3,10 @@ namespace Web\WebBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Response;
 use Web\WebBundle\Entity\Offer;
 use Web\WebBundle\Form\GraphicStandards;
 
@@ -22,8 +24,6 @@ class OfferController extends Controller
 {
     /**
      * Page d'accueil des offres
-     *
-     * @Template()
      */
     public function indexAction()
     {
@@ -32,6 +32,21 @@ class OfferController extends Controller
         $loManager    = $this->getDoctrine()->getManager();
         $loTranslator = $this->get('translator');
         $lsLocale     = $this->getRequest()->getLocale();
+        $loEncrypter  = $this->get('natexo_tool.filter.encrypt');
+        $loResponse   = new Response();
+
+        // ==== Cookie - Se souvenir de moi ====
+        $lsRememberMe = $this->get('session')->get('remember_me');
+        if (!empty($lsRememberMe)) {
+            $loExpirationDate = new \DateTime('now');
+            $loExpirationDate->add(new \DateInterval('P6M'));
+            $loCookie = new Cookie(
+                'RBZ_remember_me',
+                $loEncrypter->filter(array('user_id' => $lsRememberMe)),
+                $loExpirationDate
+            );
+            $loResponse->headers->setCookie($loCookie);
+        }
         
         // ==== Lecture des 6 dernieres offres ====
         $loOffers = $loManager->getRepository('WebWebBundle:Offer')->getLast(6, $lsLocale);
@@ -60,15 +75,22 @@ class OfferController extends Controller
             array('%number%' => $liUserContactsNumber)
         );
 
-        return array(
-            'earnings'            => $laEarningsByMonth,
-            'availableAmount'     => $liAvailableAmount,
-            'offers'              => $loOffers,
-            'recommendedOffers'   => $laRecommendedOffers,
-            'months'              => $laMonths,
-            'emailConfirmMessage' => $lsEmailConfirmMessage,
-            'from'                => 'index'
+        $loResponse->setContent(
+            $this->render(
+                'WebWebBundle:Offer:index.html.twig',
+                array(
+                    'earnings'            => $laEarningsByMonth,
+                    'availableAmount'     => $liAvailableAmount,
+                    'offers'              => $loOffers,
+                    'recommendedOffers'   => $laRecommendedOffers,
+                    'months'              => $laMonths,
+                    'emailConfirmMessage' => $lsEmailConfirmMessage,
+                    'from'                => 'index'
+                )
+            )
         );
+
+        return $loResponse;
     } // indexAction
 
     /**

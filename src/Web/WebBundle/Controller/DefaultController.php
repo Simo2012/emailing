@@ -25,18 +25,33 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $poRequest)
     {
-        // ==== Déjà loggé ====
+        // ==== Initialisation ====
         $loSession = $poRequest->getSession();
+        $loCookies = $poRequest->cookies;
+        $loDecrypt = $this->get('natexo_tool.filter.decrypt');
+        $loManager = $this->getDoctrine()->getManager();
+
+        // ==== Déjà loggé ====
         $lbRegistered = $loSession->get('hasRegistered');
         if (!empty($lbRegistered)) {
             return $this->redirect($this->generateUrl('WebWebBundle_offerIndex'));
         }
-        //$loDecrypt = $this->get('natexo_tool.filter.decrypt'); // DEBUG
-        //$laDebug = $loDecrypt->filter('!1!ulrNRlS3IceSiT8iHYsvYwBJ3csonBoOgpg,FA7c7PY='); // DEBUG
-        //var_dump($laDebug); // DEBUG
-        //$loEncrypt = $this->get('natexo_tool.filter.encrypt'); // DEBUG
-        //$lsDebug = $loEncrypt->filter(array('bubu')); // DEBUG
-        //echo "DEBUG: {$lsDebug}<br />"; // DEBUG
+        // ==== Se souvenir de moi (auto login) ====
+        if ($loCookies->has('RBZ_remember_me')) {
+            $lsEncryptedCookie = $loCookies->get('RBZ_remember_me');
+            $lsDecryptedCookie = $loDecrypt->filter($lsEncryptedCookie);
+            $liUserId = $lsDecryptedCookie['user_id'];
+            $loUser = $loManager->getRepository('WebWebBundle:User')->find($liUserId);
+            $loUserLogger = $this->container->get('web.web.model.user.user_logger');
+            $loUserLogger->setUserInSession($loUser);
+            // ---- Gestion de la redirection (index/page d'ajout des contacts) ----
+            if ($loUser->getNbContacts() == 0) {
+                $lsUrl = $this->generateUrl('WebWebBundle_contactAdd', array(), true);
+            } else {
+                $lsUrl = $this->generateUrl('WebWebBundle_offerIndex', array(), true);
+            }
+            return $this->redirect($lsUrl);
+        }
 
         return array();
     } // indexAction

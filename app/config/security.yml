@@ -43,6 +43,10 @@ security:
                 path:                WebWebBundle_securityLogout
                 target:              WebWebBundle_defaultIndex
                 invalidate_session:  true
+                delete_cookies:
+                    RBZ_remember_me: { path: null, domain: null }
+                    RBZ_contact: { path: null, domain: null }
+
 
         default:
             anonymous: ~

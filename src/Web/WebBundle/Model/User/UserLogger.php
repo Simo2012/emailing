@@ -98,10 +98,10 @@ class UserLogger
      * Log l'utilisateur
      *
      * @param User $poUser Utilisateur
-     * @param bool $pbRegistration
      */
-    public function setUserInSession(User $poUser, $pbRegistration = false)
+    public function setUserInSession(User $poUser)
     {
+        // ==== Mise en session du token d'accès sécurisé ====
         $loToken = new UsernamePasswordToken(
             $poUser,
             $poUser->getPassword(),
@@ -110,10 +110,6 @@ class UserLogger
         );
         $loSession = $this->request->getSession();
         $loSession->set('_security_secured_users_area', serialize($loToken));
-        if ($pbRegistration) {
-            $loSession->set('hasRegistered', true);
-        }
-
 
         // ==== Enregistrement de la date de login ====
         $poUser->setDateLogin(new \DateTime());
@@ -169,10 +165,12 @@ class UserLogger
             throw new DBALException($this->translator->trans('web.web.security.empty_fields'));
         }
     } // createUser
-    
+
     /**
      * Crypte un password
      *
+     * @param $poUser
+     * @param $psPass
      * @return User
      */
     public function cryptPass($poUser, $psPass)
