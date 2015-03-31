@@ -73,7 +73,6 @@ class ContactController extends Controller
         $loUser         = $this->getUser();
         $lbRegistration = ($loUser->getNbContacts() == 0) ? true : false;
         $loEncrypter    = $this->get('natexo_tool.filter.encrypt');
-        $loResponse     = new Response();
 
         $loGmailHelper = $this->get('web.web.model.contact.gmail');
         $loOutlookHelper = $this->get('web.web.model.contact.outlook');

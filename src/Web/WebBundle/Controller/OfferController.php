@@ -33,20 +33,6 @@ class OfferController extends Controller
         $loTranslator = $this->get('translator');
         $lsLocale     = $this->getRequest()->getLocale();
         $loEncrypter  = $this->get('natexo_tool.filter.encrypt');
-        $loResponse   = new Response();
-
-        // ==== Cookie - Se souvenir de moi ====
-        $lsRememberMe = $this->get('session')->get('remember_me');
-        if (!empty($lsRememberMe)) {
-            $loExpirationDate = new \DateTime('now');
-            $loExpirationDate->add(new \DateInterval('P6M'));
-            $loCookie = new Cookie(
-                'RBZ_remember_me',
-                $loEncrypter->filter(array('user_id' => $lsRememberMe)),
-                $loExpirationDate
-            );
-            $loResponse->headers->setCookie($loCookie);
-        }
         
         // ==== Lecture des 6 dernieres offres ====
         $loOffers = $loManager->getRepository('WebWebBundle:Offer')->getLast(6, $lsLocale);
@@ -75,20 +61,31 @@ class OfferController extends Controller
             array('%number%' => $liUserContactsNumber)
         );
 
-        $loResponse->setContent(
-            $this->render(
-                'WebWebBundle:Offer:index.html.twig',
-                array(
-                    'earnings'            => $laEarningsByMonth,
-                    'availableAmount'     => $liAvailableAmount,
-                    'offers'              => $loOffers,
-                    'recommendedOffers'   => $laRecommendedOffers,
-                    'months'              => $laMonths,
-                    'emailConfirmMessage' => $lsEmailConfirmMessage,
-                    'from'                => 'index'
-                )
+        $loResponse = $this->render(
+            'WebWebBundle:Offer:index.html.twig',
+            array(
+                'earnings'            => $laEarningsByMonth,
+                'availableAmount'     => $liAvailableAmount,
+                'offers'              => $loOffers,
+                'recommendedOffers'   => $laRecommendedOffers,
+                'months'              => $laMonths,
+                'emailConfirmMessage' => $lsEmailConfirmMessage,
+                'from'                => 'index'
             )
         );
+
+        // ==== Cookie - Se souvenir de moi ====
+        $lsRememberMe = $this->get('session')->get('remember_me');
+        if (!empty($lsRememberMe)) {
+            $loExpirationDate = new \DateTime('now');
+            $loExpirationDate->add(new \DateInterval('P6M'));
+            $loCookie = new Cookie(
+                'RBZ_remember_me',
+                $loEncrypter->filter(array('user_id' => $lsRememberMe)),
+                $loExpirationDate
+            );
+            $loResponse->headers->setCookie($loCookie);
+        }
 
         return $loResponse;
     } // indexAction
