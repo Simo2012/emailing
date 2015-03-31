@@ -35,6 +35,18 @@ class LoginType extends AbstractType
             )
         );
         $poBuilder->add('password', 'password', $laParams);
+        $laParams = array(
+            'label'    => 'web.web.security.remember_me',
+            'required' => true,
+            'attr'     => array(
+                'class' => 'RBZ_remember_me'
+            ),
+            'label_attr' => array(
+                'class' => 'RBZ_remember_me'
+            ),
+            'mapped'   => false
+        );
+        $poBuilder->add('remember_me', 'checkbox', $laParams);
     } // buildForm
 
     /**

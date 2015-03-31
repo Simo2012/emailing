@@ -64,14 +64,16 @@ class ContactController extends Controller
         );
     } // indexAction
 
-    /** ajout de contact
-     *
-     * @Template()
+    /**
+     * Ajout de contact
      */
     public function addAction(Request $poRequest)
     {
-        $loUser = $this->getUser();
+        // ==== Initialisation ====
+        $loUser         = $this->getUser();
         $lbRegistration = ($loUser->getNbContacts() == 0) ? true : false;
+        $loEncrypter    = $this->get('natexo_tool.filter.encrypt');
+        $loResponse     = new Response();
 
         $loGmailHelper = $this->get('web.web.model.contact.gmail');
         $loOutlookHelper = $this->get('web.web.model.contact.outlook');
@@ -79,27 +81,42 @@ class ContactController extends Controller
         $retour = $loYahooHelper->get_request_token(false, false, true);
         $response = $retour[3];
         $url = urldecode($response['xoauth_request_auth_url']);
-        $laData = array(
-            'yahoo_request_token' => $response['oauth_token'],
-            'yahoo_request_token_secret' => $response['oauth_token_secret'],
-            'yahoo_oauth_verifier' => $response['oauth_token'],
-            'userId' => $loUser->getId()
-        );
 
-        // ==== on recupère la vue ====
+        // ==== On recupère la vue ====
         $loResponse = $this->render('WebWebBundle:Contact:add.html.twig', array(
             'registration' => $lbRegistration,
             'urlGoogle'     => $loGmailHelper->generateUrl(),
             'urlOutlook'    => $loOutlookHelper->generateUrl(),
             'urlYahoo'      => $url
         ));
-        $loEncrypter = $this->get('natexo_tool.filter.encrypt');
-        // ---- mise en place du cookie ----
 
+        // ==== Cookie - Se souvenir de moi ====
+        $lsRememberMe = $this->get('session')->get('remember_me');
+        if (!empty($lsRememberMe)) {
+            $loExpirationDate = new \DateTime('now');
+            $loExpirationDate->add(new \DateInterval('P6M'));
+            $loCookie = new Cookie(
+                'RBZ_remember_me',
+                $loEncrypter->filter(array('user_id' => $lsRememberMe)),
+                $loExpirationDate
+            );
+            $loResponse->headers->setCookie($loCookie);
+        }
+
+        // ==== Mise en place du cookie contact ====
+        $laData = array(
+            'yahoo_request_token' => $response['oauth_token'],
+            'yahoo_request_token_secret' => $response['oauth_token_secret'],
+            'yahoo_oauth_verifier' => $response['oauth_token'],
+            'userId' => $loUser->getId()
+        );
         $loExpirationDate = new \DateTime();
         $loExpirationDate->add(new \DateInterval('PT1H'));
-        $loCookie = new Cookie('RBZ', $loEncrypter->filter($laData));
+        $loCookie = new Cookie('RBZ_contact', $loEncrypter->filter($laData), $loExpirationDate);
         $loResponse->headers->setCookie($loCookie);
+
+
+
         return $loResponse;
     } // addAction
 

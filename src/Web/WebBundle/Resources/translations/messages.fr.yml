@@ -72,6 +72,7 @@ web.web.security.connect:               Connectez-vous
 web.web.security.pass.placeholder:      Mot de passe
 web.web.security.lastname.placeholder:  Nom
 web.web.security.firstname.placeholder: Prénom
+web.web.security.remember_me:           Se souvenir de moi ?
 
 # ============ DEFAULT PAGE ============
 # ---- Page d'accueil ----

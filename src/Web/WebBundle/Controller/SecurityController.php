@@ -2,6 +2,7 @@
 namespace Web\WebBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\SecurityContext;
@@ -32,13 +33,6 @@ class SecurityController extends Controller
      */
     public function loginAction(Request $poRequest)
     {
-        // ==== Déjà loggé ====
-        $loSession = $poRequest->getSession();
-        $lbRegistered = $loSession->get('hasRegistered');
-        if (!empty($lbRegistered)) {
-            return $this->redirect($this->generateUrl('WebWebBundle_contactAdd'));
-        }
-
         // ==== Initialisation ====
         $loUser = new User();
         $loForm = $this->createForm('WebWebLoginType', $loUser);
@@ -47,10 +41,17 @@ class SecurityController extends Controller
             $loForm->handleRequest($poRequest);
             if ($loForm->isValid()) {
                 try {
+                    // ---- Mise en session de l'utilisateur ----
                     $loUserLogger = $this->container->get('web.web.model.user.user_logger');
-                    $loLoguedUser = $loUserLogger->logUser($loUser);
-
-                    if ($loLoguedUser->getNbContacts() == 0) {
+                    $loLoggedUser = $loUserLogger->logUser($loUser);
+                    // ---- Mise en place d'un cookie "remember me" ----
+                    $laData = $poRequest->get('WebWebLoginType');
+                    if (!empty($laData['remember_me'])) {
+                        $loSession = $poRequest->getSession();
+                        $loSession->set('remember_me', $loLoggedUser->getId());
+                    }
+                    // ---- Gestion de la redirection (index/page d'ajout des contacts) ----
+                    if ($loLoggedUser->getNbContacts() == 0) {
                         $lsUrl = $this->generateUrl('WebWebBundle_contactAdd', array(), true);
                     } else {
                         $lsUrl = $this->generateUrl('WebWebBundle_offerIndex', array(), true);
@@ -59,7 +60,6 @@ class SecurityController extends Controller
                 } catch(\Exception $e) {
                     return new Response(json_encode(array('status' => 'KO', 'error' => $e->getMessage())));
                 }
-                return new Response(json_encode(array('status' => 'KO')));
             }
         }
 
