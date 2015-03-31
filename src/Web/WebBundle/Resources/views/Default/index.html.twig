@@ -26,21 +26,26 @@
         {# ====================== #}
         {# ==== Tête de page ==== #}
         {# ====================== #}
+        <div id="div_RBZ_header">
+            <div id="div_RBZ_banner" class="RBZ_wrapper">
+                <img id="img_RBZ_headerBeta" src="{{ asset("/bundles/webweb/images/default/index/beta.png") }}" alt="" />
+                <div id="div_RBZ_headerMenu">
+                    <span class="RBZ_nowrap">
+                        <a href="{{ url('WebWebBundle_defaultIndex') }}">{{ "web.web.layoutPageOut.home" | trans }}</a> <div class="RBZ_menuVBar"></div>
+                        <a id="a_RBZ_headerHiw" href="{{ url('WebWebBundle_defaultLogoutHowItWorks') }}">{{ "web.web.layoutPageOut.hiw" | trans }}</a> <div class="RBZ_menuVBar"></div>
+                    </span>
+                    <span class="RBZ_nowrap">
+                        <a id="a_RBZ_login" href="#" hrefbis="{{ url("WebWebBundle_securityLogin") }}">{{ "web.web.layoutPageOut.login" | trans }}</a> <div class="RBZ_menuVBar"></div>
+                        <a class="RBZ_register" href="#" hrefbis="{{ url("WebWebBundle_securityRegister") }}">{{ "web.web.layoutPageOut.signup" | trans }}</a>
+                    </span>
+                </div>
+            </div>
+        </div>
         <header id="header_RBZ_default_header" role="banner" class="">
             <div id="div_RBZ_headerInside">
                 <img id="img_RBZ_headerGuy" src="{{ asset("/bundles/webweb/images/default/index/header.png") }}" alt="" />
                 <img id="img_RBZ_headerGuyPad" src="{{ asset("/bundles/webweb/images/default/index/pad/header.png") }}" alt="" />
-                <img id="img_RBZ_headerGuyPhone" src="{{ asset("/bundles/webweb/images/default/index/phone/header.png") }}" alt="" />
-                <img id="img_RBZ_headerBeta" src="{{ asset("/bundles/webweb/images/default/index/beta.png") }}" alt="" />
                 <div id="div_RBZ_headerText">
-                    <div id="div_RBZ_headerLogin">
-                        <a href="{{ url('WebWebBundle_defaultIndex') }}">{{ "rubizzMenu_home" | trans | upper }}</a> &nbsp;&#9474;&nbsp;
-
-                        <a href="{{ url('WebWebBundle_defaultLogoutHowItWorks') }}">{{ "web.web.default.index.footerHow" | trans | upper }}</a> &nbsp;&#9474;&nbsp;
-
-                        <a id="a_RBZ_login" href="#" hrefbis="{{ url("WebWebBundle_securityLogin") }}">{{ "web.web.default.index.headerLogin" | trans }}</a> &nbsp;&#9474;&nbsp;
-                        <a class="RBZ_register" href="#" hrefbis="{{ url("WebWebBundle_securityRegister") }}">{{ "web.web.default.index.headerRegister" | trans }}</a>
-                    </div>
                     <p>{{ "web.web.default.index.headerText" | trans | raw }}</p>
                     <a class="RBZ_register" id="a_RBZ_subscribe" href="#" hrefbis="{{ url("WebWebBundle_securityRegister") }}"><span>{{ "web.web.default.index.headerButton" | trans }} &nbsp;&rsaquo;</span></a>
                 </div>

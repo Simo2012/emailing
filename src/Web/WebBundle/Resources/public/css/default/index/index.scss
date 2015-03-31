@@ -11,22 +11,31 @@
 // ==== Header ====
 body { margin:0; }
 // ==== En tête ====
-
-/*#header_RBZ_header {
+#div_RBZ_header {
+    .RBZ_wrapper {
+        margin: 0 auto;
+        width: 1220px;
+    }
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 150;
     background-color: $red-banner;
+
     span.RBZ_nowrap { display:inline-block; white-space:nowrap; font-weight:normal; }
     #div_RBZ_banner {
-        position:relative; background-image:url(/bundles/webweb/images/global/logo.png);
-        &.RBZ_wrapper { max-width:960px; width:auto; }
+        position:relative; background: url(/bundles/webweb/images/global/logo.png) 0 20px no-repeat;
+        height: 100px;
+        &.RBZ_wrapper { max-width:1220px; width:auto; }
+        #img_RBZ_headerBeta {
+            position: absolute;
+            left: 150px;
+            top: 55px;
+        }
         #div_RBZ_headerMenu {
             position:absolute; top:35px; right:20px; color:#353537;
             a {
-                color:$white; font-size:16px;
-                font-family: "Open Sans",sans-serif;
+                color:white; text-decoration:none; font-family:'Open Sans',sans-serif; font-size:16px; font-weight:600;
                 &:hover { text-decoration:underline; }
             }
             div.RBZ_menuVBar {
@@ -35,29 +44,18 @@ body { margin:0; }
             }
         }
     }
-    #div_RBZ_navWrapperLogOut {
-        background-color: #3f3f3f;
-        box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.36);
-        height: 15px;
-    }
-}*/
+}
 #header_RBZ_default_header {
+    margin-top: 50px;
     height:865px;
     background:white url(/bundles/webweb/images/default/index/header_bg.png) repeat-x left top;
     #div_RBZ_headerInside {
         position:relative; max-width:1220px; height:865px; margin-left:auto; margin-right:auto;
         #img_RBZ_headerGuy { float:left; margin-top:13px; }
-        #img_RBZ_headerGuyPad, #img_RBZ_headerGuyPhone { display:none; }
+        #img_RBZ_headerGuyPad { display:none; }
         #img_RBZ_headerBeta { position:absolute; top:60px; left:165px; }
         #div_RBZ_headerText {
             float:right; position:relative; text-align:center;
-            #div_RBZ_headerLogin {
-                position:absolute; top:45px; right:10px; color:white;
-                a {
-                    color:white; text-decoration:none; font-family:'Open Sans',sans-serif; font-size:16px; font-weight:600;
-                    &:hover { text-decoration:underline; }
-                }
-            }
             p {
                 margin-bottom:20px; margin-top:205px;
                 font-family:'Nunito',sans-serif; font-size:48px; font-weight:bold; color:white; text-align:center; line-height:55px;
@@ -249,6 +247,26 @@ body.RBZ_fr {
 // ==== Responsive : iPhone ====
 // =============================
 @media (max-width: 560px) {
+    // ---- Menu fixe ----
+    #div_RBZ_header {
+        #div_RBZ_banner {
+            background: url(/bundles/webweb/images/default/index/phone/header.png) 0px 20px no-repeat;
+            height: 100px; background-position: center;
+            #img_RBZ_headerBeta {
+                display: none;
+            } 
+            #div_RBZ_headerMenu {
+                position:static; padding-top:70px; text-align:center;
+                a {
+                    font-size:12px; font-weight:600;
+                }
+                div.RBZ_menuVBar {
+                    display:inline-block; width:0px; height:10px; margin:0px 10px;
+                    border-right:1px solid $white; border-left:1px solid $white;
+                }
+            }
+        }
+    }
     // ---- Header ----
     #header_RBZ_default_header {
         height:auto;
@@ -257,19 +275,15 @@ body.RBZ_fr {
             height:auto; text-align:center; padding-top:10px;
             #img_RBZ_headerGuy { display:none; }
             #img_RBZ_headerGuyPad { display:none; }
-            #img_RBZ_headerGuyPhone { display:block; margin-left:auto; margin-right:auto; margin-top:10px; }
+            //#img_RBZ_headerGuyPhone { display:block; margin-left:auto; margin-right:auto; margin-top:50px; }
             #img_RBZ_headerBeta { display:none; }
             #div_RBZ_headerText {
                 float:none; position:relative; top:auto; right:auto;
-                p { font-size:24px; line-height:28px; margin-bottom:0px; margin-top:20px; }
+                p { font-size:24px; line-height:28px; margin-bottom:0px; margin-top:50px; }
                 #a_RBZ_subscribe {
                     width:274px; height:72px; margin-left:0px; margin-top:30px; line-height:55px; font-size:24px;
                     background:url(/bundles/webweb/images/default/index/phone/button.png) no-repeat left top;
                     span { margin-right:0px; }
-                }
-                #div_RBZ_headerLogin {
-                    position:relative; top:auto; right:auto; margin-top:5px;
-                    a { font-size:12px; }
                 }
             }
             #div_RBZ_headerHow {
