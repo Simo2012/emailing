@@ -19,12 +19,13 @@ Global.prototype = {
     ready : function()
     {
         $(document).on('mouseenter', '#ul_RBZ_menuProfile > li', function(event) {
-            $(this).children('ul').toggle();
+            //$(this).children('ul').toggle();
+            $(this).children('ul').slideDown("normal");
             $('#span_RBZ_down').html('&nbsp; &#708;');
             return false;
         });
         $(document).on('mouseleave', '#ul_RBZ_menuProfile > li', function(event) {
-            $(this).children('ul').toggle();
+            $(this).children('ul').slideUp(100);
             $('#span_RBZ_down').html('&nbsp; &#709;');
             return false;
         });
