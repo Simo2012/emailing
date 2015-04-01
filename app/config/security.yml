@@ -22,7 +22,7 @@ security:
 
         # ==== Règle pour les pages publiques ====
         public_area:
-            pattern:  '^(/|(/[a-zA-Z_]{5}/)|(/[a-zA-Z_]{5}/(login|register))|(/[a-zA-Z_]{5}/logout/(contact|hiw|about|faq|legal|terms|unsubscribe)))$'
+            pattern:  '^(/|(/[a-zA-Z_]{5}/)|(/[a-zA-Z_]{5}/(login|register))|(/[a-zA-Z_]{5}/logout/(contact|hiw|about|faq|legal|terms|unsubscribe|errorIp)))$'
             security: false
         tracking_area:
             pattern:  '^/track/(open/\d+|click/\d+|lead|sale).*$'
@@ -52,7 +52,7 @@ security:
             anonymous: ~
 
     access_control:
-        - { path: '^(/|(/[a-zA-Z_]{5}/)|(/[a-zA-Z_]{5}/(login|register))|(/[a-zA-Z_]{5}/logout/(contact|hiw|about|faq|legal|terms|unsubscribe)))$', roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: '^(/|(/[a-zA-Z_]{5}/)|(/[a-zA-Z_]{5}/(login|register))|(/[a-zA-Z_]{5}/logout/(contact|hiw|about|faq|legal|terms|unsubscribe|errorIp)))$', roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: '^/track/(open/\d+|click/\d+|lead|sale).*$', roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: '^/(oauth2callback|authOutlook)/', roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: '^/.*', roles: ROLE_USER }

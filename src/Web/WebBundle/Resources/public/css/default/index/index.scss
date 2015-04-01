@@ -19,7 +19,7 @@ body { margin:0; }
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 150;
+    z-index: 1;
     background-color: $red-banner;
 
     span.RBZ_nowrap { display:inline-block; white-space:nowrap; font-weight:normal; }

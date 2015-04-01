@@ -10,104 +10,102 @@
 
 {% block CONTENT %}
     <div id="div_RBZ_content">
-        {# Slider #}
-        <div id="div_RBZ_hiw_slider">
-            <h3>{{ "web.web.default.hiw.slider.title" | trans |upper |raw }}</h3>
-            <ul>
-                <li class="RBZ_hiwMenu" numSlide="1" id="li_RBZ_hiwSlideActive"><span class="RBZ_hiwCircle"></span>{{ "web.web.default.faq.menu.inscription" | trans }}</li>
-                <div class="RBZ_hiwSeparator"></div>
-                <li class="RBZ_hiwMenu RBZ_liActive" numSlide="2"><span class="RBZ_hiwCircle"></span>{{ "web.web.contact.index.mailing_list.title" | trans }}</li>
-                <div class="RBZ_hiwSeparator"></div>
-                <li class="RBZ_hiwMenu" numSlide="3"><span class="RBZ_hiwCircle"></span>{{ "web.web.default.hiw.slider.select" | trans }}</li>
-                <div class="RBZ_hiwSeparator"></div>
-                <li class="RBZ_hiwMenu" numSlide="4"><span class="RBZ_hiwCircle"></span>{{ "web.web.default.hiw.slider.share" | trans }}</li>
-                <div class="RBZ_hiwSeparator"></div>
-                <li class="RBZ_hiwMenu" numSlide="5"><span class="RBZ_hiwCircle"></span>{{ "web.web.default.hiw.slider.earning" | trans }}</li>
-                <div class="RBZ_hiwSeparator"></div>
-                <li class="RBZ_hiwMenu" numSlide="6"><span class="RBZ_hiwCircle"></span>Jackpot</li>
-            </ul>
-        </div>
-
         {# Page inscription page1 #}
         <div id="div_RBZ_hiw_p1" class="RBZ_hiw_page">
-            <img src="{{ asset('/bundles/webweb/images/default/hiw/p1.gif') }}">
-            <div id="div_RBZ_hiw_p1_description">
-                <h1>{{ "web.web.default.hiw.p1.title" | trans | raw}}</h1>
-                <p>{{ "web.web.default.hiw.p1.desc" | trans | raw}}</p>
+            <div id="div_RBZ_hiw_p1_inside">
+                <div id="div_RBZ_hiw_p1_left">
+                    <img src="{{ asset('/bundles/webweb/images/default/hiw/p1.gif') }}">
+                </div>
+                <div id="div_RBZ_hiw_p1_right">
+                    <h1>{{ "web.web.default.hiw.p1.title" | trans | raw}}</h1>
+                    <p>{{ "web.web.default.hiw.p1.desc" | trans | raw}}</p>
+                </div>
+                <div class="KNS_clear"></div>
             </div>
         </div>
 
         {# Page mailing list page2 #}
         <div id="div_RBZ_hiw_p2" class="RBZ_hiw_page">
-            <div id="div_RBZ_hiw_p2_left">
-                <img src="{{ asset('/bundles/webweb/images/default/hiw/p2.gif') }}">
-            </div>
-            <div id="div_RBZ_hiw_p2_right">
-                <h1>{{ "web.web.default.hiw.p2.title" | trans | raw}}</h1>
-                <p>{{ "web.web.default.hiw.p2.desc" | trans | raw}}</p>
-                <p>{{ "web.web.default.hiw.p2.descNext" | trans | raw}}</p>
+            <div id="div_RBZ_hiw_p2_inside">
+                <div id="div_RBZ_hiw_p2_left">
+                    <h1>{{ "web.web.default.hiw.p2.title" | trans | raw}}</h1>
+                    <p>{{ "web.web.default.hiw.p2.desc" | trans | raw}}</p>
+                    <p>{{ "web.web.default.hiw.p2.descNext" | trans | raw}}</p>
+                </div>
+                <div id="div_RBZ_hiw_p2_right">
+                    <img src="{{ asset('/bundles/webweb/images/default/hiw/p2.gif') }}">
+                </div>
+                <div class="KNS_clear"></div>
             </div>
         </div>
 
         {# Page selection bons plans page3 #}
         <div id="div_RBZ_hiw_p3" class="RBZ_hiw_page">
-            <img src="{{ asset('/bundles/webweb/images/default/hiw/p3_' ~ app.request.locale ~ '.jpg') }}">
+            <div id="div_RBZ_hiw_p3_inside">
+                <img src="{{ asset('/bundles/webweb/images/default/hiw/p3_' ~ app.request.locale ~ '.jpg') }}">
+            </div>
         </div>
 
         {# Page mes bons plans page4 #}
         <div id="div_RBZ_hiw_p4" class="RBZ_hiw_page">
-            <div id="div_RBZ_hiw_p4_description">
-                <h1>{{ "web.web.default.hiw.p4.title" | trans | raw}}</h1>
-                <p>{{ "web.web.default.hiw.p4.desc" | trans | raw}}</p>
-            </div>
-            <div id="div_RBZ_hiw_p4_left">
-                <img id="img_RBZ_hiw_p4_mobile" src="{{ asset('/bundles/webweb/images/default/hiw/p4.png') }}">
-                <div id="div_RBZ_hiw_p4_leftImg">
-                    <img src="{{ asset('/bundles/webweb/images/default/hiw/mobile.gif') }}">
+            <div id="div_RBZ_hiw_p4_inside">
+                <div id="div_RBZ_hiw_p4_description">
+                    <h1>{{ "web.web.default.hiw.p4.title" | trans | raw}}</h1>
+                    <p>{{ "web.web.default.hiw.p4.desc" | trans | raw}}</p>
                 </div>
-            </div>
-            <div id="div_RBZ_hiw_p4_right">
-                <p>{{ "web.web.default.hiw.p4.text1" | trans | raw}}</p>
-                <p>{{ "web.web.default.hiw.p4.text2" | trans | raw}}</p>
-                <p>{{ "web.web.default.hiw.p4.text3" | trans | raw}}</p>
+                <div id="div_RBZ_hiw_p4_left">
+                    <img id="img_RBZ_hiw_p4_mobile" src="{{ asset('/bundles/webweb/images/default/hiw/p4.png') }}">
+                    <div id="div_RBZ_hiw_p4_leftImg">
+                        <img src="{{ asset('/bundles/webweb/images/default/hiw/mobile.gif') }}">
+                    </div>
+                </div>
+                <div id="div_RBZ_hiw_p4_right">
+                    <p>{{ "web.web.default.hiw.p4.text1" | trans | raw}}</p>
+                    <p>{{ "web.web.default.hiw.p4.text2" | trans | raw}}</p>
+                    <p>{{ "web.web.default.hiw.p4.text3" | trans | raw}}</p>
+                </div>
             </div>
         </div>
 
         {# Page je gagne de l'argent page5 #}
         <div id="div_RBZ_hiw_p5" class="RBZ_hiw_page">
-            <div id="div_RBZ_hiw_p5_left">
-                <div class="div_RBZ_hiwP5Block">
-                    <p><img src="{{ asset('/bundles/webweb/images/default/hiw/p5_ico1.png') }}"></p>
-                    <p class="RBZ_hiwP5BlockTitle">{{ "web.web.default.hiw.p5.text1.title" | trans | raw}}</p>
-                    <p>{{ "web.web.default.hiw.p5.text1.text" | trans | raw}}</p>
+            <div id="div_RBZ_hiw_p5_inside">
+                <div id="div_RBZ_hiw_p5_left">
+                    <div class="div_RBZ_hiwP5Block">
+                        <p><img src="{{ asset('/bundles/webweb/images/default/hiw/p5_ico1.png') }}"></p>
+                        <p class="RBZ_hiwP5BlockTitle">{{ "web.web.default.hiw.p5.text1.title" | trans | raw}}</p>
+                        <p>{{ "web.web.default.hiw.p5.text1.text" | trans | raw}}</p>
+                    </div>
+                    <div class="RBZ_hiwP5Block">
+                        <p><img src="{{ asset('/bundles/webweb/images/default/hiw/p5_ico2.png') }}"></p>
+                        <p class="RBZ_hiwP5BlockTitle">{{ "web.web.default.hiw.p5.text2.title" | trans | raw}}</p>
+                        <p>{{ "web.web.default.hiw.p5.text2.text" | trans | raw}}</p>
+                    </div>
                 </div>
-                <div class="RBZ_hiwP5Block">
-                    <p><img src="{{ asset('/bundles/webweb/images/default/hiw/p5_ico2.png') }}"></p>
-                    <p class="RBZ_hiwP5BlockTitle">{{ "web.web.default.hiw.p5.text2.title" | trans | raw}}</p>
-                    <p>{{ "web.web.default.hiw.p5.text2.text" | trans | raw}}</p>
-                </div>
-            </div>
-            <div id="div_RBZ_hiw_p5_right">
-                <div id="div_hiw_diamond">
-                    <img src="{{ asset('/bundles/webweb/images/default/hiw/p5.png') }}">
-                </div>
-                <div class="RBZ_hiwP5Block">
-                    <p><img src="{{ asset('/bundles/webweb/images/default/hiw/p5_ico3.png') }}"></p>
-                    <p class="RBZ_hiwP5BlockTitle">{{ "web.web.default.hiw.p5.text3.title" | trans | raw}}</p>
-                    <p>{{ "web.web.default.hiw.p5.text3.text" | trans | raw}}</p>
+                <div id="div_RBZ_hiw_p5_right">
+                    <div id="div_hiw_diamond">
+                        <img src="{{ asset('/bundles/webweb/images/default/hiw/p5.png') }}">
+                    </div>
+                    <div class="RBZ_hiwP5Block">
+                        <p><img src="{{ asset('/bundles/webweb/images/default/hiw/p5_ico3.png') }}"></p>
+                        <p class="RBZ_hiwP5BlockTitle">{{ "web.web.default.hiw.p5.text3.title" | trans | raw}}</p>
+                        <p>{{ "web.web.default.hiw.p5.text3.text" | trans | raw}}</p>
+                    </div>
+                    <div class="KNS_clear"></div>
+                    <div id="div_RBZ_hiw_p5_description">
+                        <h1>{{ "web.web.default.hiw.p5.title" | trans | raw}}</h1>
+                        <p>{{ "web.web.default.hiw.p5.desc" | trans | raw}}</p>
+                    </div>
                 </div>
                 <div class="KNS_clear"></div>
-                <div id="div_RBZ_hiw_p5_description">
-                    <h1>{{ "web.web.default.hiw.p5.title" | trans | raw}}</h1>
-                    <p>{{ "web.web.default.hiw.p5.desc" | trans | raw}}</p>
-                </div>
             </div>
-            <div class="KNS_clear"></div>
         </div>
 
         {# Page j'encaisse ma cagnotte page6 #}
         <div id="div_RBZ_hiw_p6" class="RBZ_hiw_page">
-            <img src="{{ asset('/bundles/webweb/images/default/hiw/p6_' ~ app.request.locale ~ '.png') }}">
+            <div id="div_RBZ_hiw_p6_inside">
+                <img src="{{ asset('/bundles/webweb/images/default/hiw/p6_' ~ app.request.locale ~ '.png') }}">
+            </div>
         </div>
 
     </div>
