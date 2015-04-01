@@ -200,6 +200,174 @@
     }
 }
 
+@media (min-width: ($tiny-screen + 1)) and (max-width: $small-screen) {
+    #header_RBZ_header {
+        // ==== Bannière noire (menu de navigation) ====
+        #div_RBZ_navWrapper {
+            background-color: $black-nav;
+            height: 40px;
+            @include box-shadow(0 -2px 4px rgba(0, 0, 0, .36));
+            .RBZ_wrapper {
+                width: 100%;
+                // ==== Menu (desktop) ====
+                #div_RBZ_desktop_menu {
+                    display: none;
+                }
+                // ==== Menu (mobile) ====
+                #a_RBZ_linkMenuMobile {
+                    background: sprite($icons, menu);
+                    @include sprite-dimensions($icons, menu);
+                    display: block;
+                    margin: 10px 0 0 10px;
+                    float: left;
+                }
+                #div_RBZ_menuMobile {
+                    position: relative;
+                    width: 100%;
+                    ul {
+                        position: absolute;
+                        top: 40px;
+                        left: 0;
+                        width: 100%;
+                        padding-left: 0px;
+                        z-index: 100;
+                        li {
+                            z-index: 100;
+                            display: block;
+                            line-height: 36px;
+                            background-color: $white;
+                            width: 100%;
+                            padding-left: 40px;
+                            &:hover {
+                                background-color: #EBEBEB;
+                            }
+                            a {
+                                color: $black;
+                            }
+                            // ---- Icones du menu de profil ----
+                            &#li_RBZ_headerIcoProfil {
+                                background: sprite($icons_menu, ico-profil);
+                                background-repeat: no-repeat;
+                                background-color: $white;
+                                background-position: sprite-position($icons_menu, ico-profil, 10, 10);
+                            }
+                            &#li_RBZ_headerIcoRib {
+                                background: sprite($icons_menu, ico-card);
+                                background-repeat: no-repeat;
+                                background-color: $white;
+                                background-position: sprite-position($icons_menu, ico-card, 10, 10);
+                            }
+                            &#li_RBZ_headerIcoPot {
+                                background: sprite($icons_menu, ico-book);
+                                background-repeat: no-repeat;
+                                background-color: $white;
+                                background-position: sprite-position($icons_menu, ico-book, 10, 10);
+                            }
+                            &#li_RBZ_headerIcoCash {
+                                background: sprite($icons_menu, ico-piggy);
+                                background-repeat: no-repeat;
+                                background-color: $white;
+                                background-position: sprite-position($icons_menu, ico-piggy, 10, 10);
+                            }
+                            &#li_RBZ_headerIcoLogout {
+                                background: sprite($icons_menu, ico-logout);
+                                background-repeat: no-repeat;
+                                background-color: $white;
+                                background-position: sprite-position($icons_menu, ico-logout, 10, 10);
+                            }
+                        }
+                    }
+                }
+                #div_RBZ_menuProfile {
+                    float: right;
+                    font-size: 1.2rem;
+                    margin: 0px;
+                    display: block;
+                    height: 40px;
+                    padding-right: 10px;
+                    ul {
+                        font-size: 14px;
+                        line-height: 36px;
+                        padding-left: 0px;
+                        z-index: 100;
+                        & > li {
+                            cursor: pointer;
+                            position: relative;
+                            list-style: none;
+                            .RBZ_icons_profile {
+                                width: 36px;
+                                height: 36px;
+                                display: inline-block;
+                                background: sprite($icons, profile_smartphone);
+                                background-repeat: no-repeat;
+                                background-position: sprite-position($icons, profile_smartphone, 0, 6)
+                            }
+                            #a_RBZ_name {
+                                float: right;
+                                margin: 0px;
+                                color: $white;
+                            }
+                            &:hover {
+                                ul {
+                                    background-color: $white;
+                                    li {
+                                        a {
+                                            color: $black;
+                                        }
+                                    }
+                                }
+                            }
+                            ul {
+                                cursor: default;
+                                position: absolute;
+                                display: none;
+                                top: 40px;
+                                right: -10px;
+                                width: 200px;
+                                li {
+                                    padding-left: 40px;
+                                    display: block;
+                                    // ---- Icones du menu de profil ----
+                                    &#li_RBZ_headerIcoProfil {
+                                        background: sprite($icons_menu, ico-profil);
+                                        background-repeat: no-repeat;
+                                        background-color: $white;
+                                        background-position: sprite-position($icons_menu, ico-profil, 10, 10);
+                                    }
+                                    &#li_RBZ_headerIcoRib {
+                                        background: sprite($icons_menu, ico-card);
+                                        background-repeat: no-repeat;
+                                        background-color: $white;
+                                        background-position: sprite-position($icons_menu, ico-card, 10, 10);
+                                    }
+                                    &#li_RBZ_headerIcoPot {
+                                        background: sprite($icons_menu, ico-book);
+                                        background-repeat: no-repeat;
+                                        background-color: $white;
+                                        background-position: sprite-position($icons_menu, ico-book, 10, 10);
+                                    }
+                                    &#li_RBZ_headerIcoCash {
+                                        background: sprite($icons_menu, ico-piggy);
+                                        background-repeat: no-repeat;
+                                        background-color: $white;
+                                        background-position: sprite-position($icons_menu, ico-piggy, 10, 10);
+                                    }
+                                    &#li_RBZ_headerIcoLogout {
+                                        background: sprite($icons_menu, ico-logout);
+                                        background-repeat: no-repeat;
+                                        background-color: $white;
+                                        background-position: sprite-position($icons_menu, ico-logout, 10, 10);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media (max-width: $tiny-screen) {
     #header_RBZ_header {
         // ==== Bannière rouge ====
@@ -266,8 +434,9 @@
                         left: 0;
                         width: 100%;
                         padding-left: 0px;
+                        z-index: 100;
                         li {
-                            z-index: 10;
+                            z-index: 100;
                             display: block;
                             line-height: 36px;
                             background-color: $white;
@@ -324,6 +493,7 @@
                         font-size: 14px;
                         line-height: 36px;
                         padding-left: 0px;
+                        z-index: 100;
                         & > li {
                             cursor: pointer;
                             position: relative;
