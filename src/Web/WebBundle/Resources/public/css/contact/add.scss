@@ -3,6 +3,62 @@
 @import "../global/_config.scss";
 @import "compass/css3";
 
+// ==== Popup d'accueil lors de la 1ère connexion ====
+#div_RBZ_welcomePopup {
+    position: relative;
+    #div_RBZ_welcomePopupInside {
+        background-color: $white;
+        box-shadow: 0 0 15px gray;
+        left: 190px;
+        position: absolute;
+        top: -140px;
+        max-width: 350px;
+        z-index: 1;
+        #div_RBZ_welcomePopupTitle {
+            font-weight: bold;
+            color: $white;
+            padding: 10px 10px 10px 30px;
+            height: 50px;
+            background-color: #CBCBCB;
+            // ---- Croix de fermeture ----
+            #img_RBZ_welcomePopupClose {
+                cursor: pointer;
+                position: absolute;
+                top: 8px;
+                right: 8px;
+            }
+        }
+        #div_RBZ_welcomePopupText {
+            font-size: 13.5px;
+            padding: 30px;
+            padding-top: 20px;
+            padding-bottom: 10px;
+            background-color: $white;
+            color: #8D8D8D;
+            span {
+                color: $red-banner;
+            }
+        }
+        #div_RBZ_welcomePopupFooter {
+            font-size: 12px;
+            margin-left: 30px;
+            margin-bottom: 20px;
+            margin-top: 5px;
+            background-color: $white;
+            color: #8D8D8D;
+            a {
+                color: $red-banner;
+            }  
+        }
+        // ---- Petite flêche à gauche ----
+        #img_RBZ_welcomePopupArrow {
+            position: absolute;
+            top: 25px;
+            left:-9px;
+        }
+    }
+}
+
 #div_RBZ_contactsWrapper {
   position: relative;
 
@@ -123,3 +179,10 @@
 
 #div_RBZ_commonPopup #div_RBZ_commonPopupContent div.RBZ_confirm_popup_content {width: 700px  !important;}
 
+/* ==== petit iPad ==== */
+@media (max-width: 600px) {
+    // ==== Popup d'accueil lors de la 1ère connexion ====
+    #div_RBZ_welcomePopup {
+        display: none;
+    }
+}

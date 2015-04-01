@@ -92,6 +92,14 @@ Contact.prototype = {
             return false;
         });
     },
+        /* ==== Fermeture de la popup de bienvenue ==== */
+        closePopupWelcome: function () {
+            /* ---- Fermeture de la popup (welcome) ---- */
+            $(document).on('click', '#img_RBZ_welcomePopupClose', function() {
+                $('#div_RBZ_welcomePopupInside').remove();
+                return false;
+            });
+    },
 
     _contactId: 0
 

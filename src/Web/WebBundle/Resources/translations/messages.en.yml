@@ -370,3 +370,6 @@ web.web.contact.add.step2.text:               Recommend offers<br>to your friend
 web.web.contact.add.step3.text:               "Earn money!"
 # ---- Email ----
 admin.rubizz.email.recommendation.subject: A deal recommendation from %firstname%
+# ==== Popup Bienvenue ====
+web.web.contact.add.popupWelcome.title:     WELCOME TO
+web.web.contact.add.popupWelcome.text:      <span>Rubizz</span> enables you to earn money by recommending offers to your friends.<br/><br/>Every time that one of your invited friends becomes a member of a website, makes an online purchase or participates in a sweepstake, you will receive a commission.  The amount of each commission varies with each offer.

@@ -367,3 +367,6 @@ web.web.contact.add.step2.text:               Je recommande des<br>offres à mes
 web.web.contact.add.step3.text:               "Je gagnes de l'argent !"
 # ---- Email ----
 admin.rubizz.email.recommendation.subject: %prenom% vous recommande un bon plan
+# ==== Popup Bienvenue ====
+web.web.contact.add.popupWelcome.title:     BIENVENUE SUR
+web.web.contact.add.popupWelcome.text:      <span>Rubizz</span> vous permet de gagnez de l'argent en envoyant des publicités à vos amis.<br/><br/>A chaque fois que l'un de vos amis, suite à la réception de votre recommandation devient membre d'un site, achète en ligne, ou participe à un jeu, vous êtes crédité d'une commission. Le montant de la commission est différent pour chaque offre.

@@ -159,6 +159,9 @@ class UserLogger
         $poUser->setPassword($lsPassword)
                ->setCountry($lsCountry);
         try {
+            // ---- Mise en session de la 1ere inscription pour la popup de bienvenue ----
+            $loSession = $this->request->getSession();
+            $loSession->set('_is_first_registration', true);        
             $this->manager->persist($poUser);
             $this->manager->flush();
         } catch(\Exception $e) {

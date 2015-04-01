@@ -16,11 +16,15 @@
     <script type="text/javascript" src="{{ asset_url }}"></script>
     <script type="text/javascript">
         goContact.handleProvider();
+        goContact.closePopupWelcome();
     </script>
     {% endjavascripts %}
 {% endblock %}
 
 {% block CONTENT %}
+    {% if app.session.get('_is_first_registration') %}
+        {% include "@WebWeb/Contact/popupWelcome.html.twig" %}
+    {% endif %}
 <div id="div_RBZ_contactsWrapper">
     <section id="section_RBZ_contacts">
         {% if registration == true %}
