@@ -5,11 +5,11 @@
         {% if app.user.id is defined %}
             <div id="div_RBZ_counterMailingList" class="RBZ_icons_mailinglist">
                     <span class="KNS_tiny-hidden">{{ "layout.mailingList" | trans }}</span><br>
-                    <span>{{ app.user.nbContacts | number_format(0, ',', ' ') }}</span>
+                    <span class="RBZ_number">{{ app.user.nbContacts | number_format(0, ',', ' ') }}</span>
             </div>
             <div id="div_RBZ_counterGain" class="RBZ_icons_cagnotte">
                 <span class="KNS_tiny-hidden">{{ "layout.myKitty" | trans }}</span><br>
-                <span>{{ app.user.availableAmount | number_format(2, ',', ' ') }}&euro;</span>
+                <span class="RBZ_number">{{ app.user.availableAmount | number_format(2, ',', ' ') }}&euro;</span>
             </div>
             {% if is_mobile() == false and is_tablet() == false %}
             <div id="div_RBZ_menuProfile">
@@ -26,14 +26,16 @@
     </div>
     <div id="div_RBZ_navWrapper">
         <div class="RBZ_wrapper">
-            {% if is_mobile() == false and is_tablet() == false %}
+            {#{% if is_mobile() == false and is_tablet() == false %}#}
+            <div id="div_RBZ_desktop_menu">
                 {{ menu('rubizzMenu') }}
-            {% else %}
-                <a href="#" id="a_RBZ_linkMenuMobile"></a>
-                <div id="div_RBZ_menuMobile" class="RBZ_hide">
-                    {{ menu('rubizzMenuMobile') }}
-                </div>
-            {% endif %}
+            </div>
+            {#{% else %}#}
+            <a href="#" id="a_RBZ_linkMenuMobile"></a>
+            <div id="div_RBZ_menuMobile" class="RBZ_hide">
+                {{ menu('rubizzMenuMobile') }}
+            </div>
+            {#{% endif %}#}
 
             {% if app.user.id is defined %}
                 {% if is_mobile() %}

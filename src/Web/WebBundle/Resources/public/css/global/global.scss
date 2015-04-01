@@ -6,7 +6,9 @@ $icons-layout: vertical;
 $icons-spacing: 10px;
 @import "global/icons/*.png";
 //@include all-icons-sprites;
+$global: sprite-map("global/*.png", $layout: vertical, $spacing: 20px);
 $icons: sprite-map("global/icons/*.png", $layout: vertical, $spacing: 10px);
+$icons_menu: sprite-map("global/icons_menu/*.png", $layout: vertical, $spacing: 10px);
 
 @import "config";
 
