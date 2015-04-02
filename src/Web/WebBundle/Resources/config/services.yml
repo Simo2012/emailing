@@ -182,6 +182,11 @@ parameters:
     # ==== liste des pays disponible pour les offres ====
     web.countryOffers: [us, fr]
 
+    # ==== Devises utilisées en fonction du pays ====
+    web.rubizz.currency:
+        us: "$"
+        fr: "&euro;"
+
 services:
     # =================== MODEL ===================
     # ==== USER ====
@@ -260,7 +265,7 @@ services:
     web.web.model.user.detectCountryUser:
         class: Web\WebBundle\Model\User\DetectCountryUser
         arguments: ["%kernel.root_dir%", "%web.geoip.path.database%"]
-        
+
     # =================== TWIG ===================
     # ==== MENU ====
     # ---- Menu en twig ----

@@ -2,26 +2,18 @@
 
 {% block CSS %}
     {{ parent() }}
-    {%     stylesheets
-    'https://cdnjs.cloudflare.com/ajax/libs/codemirror/4.12.0/codemirror.min.css'
-    'https://cdnjs.cloudflare.com/ajax/libs/codemirror/4.12.0/theme/3024-night.min.css'
-    %}
-    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/4.12.0/codemirror.min.css" type="text/css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/4.12.0/theme/3024-night.min.css" type="text/css" rel="stylesheet" />
     <style>
         .CodeMirror {
             height: 100px;
         }
     </style>
-    {%     endstylesheets %}
 {% endblock %}
 
 {% block JAVASCRIPT %}
     {{ parent() }}
-    {%     javascripts
-    'https://cdnjs.cloudflare.com/ajax/libs/codemirror/4.12.0/codemirror.js'
-    %}
-    <script type="text/javascript" src="{{ asset_url }}"></script>
-    {%     endjavascripts %}
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/4.12.0/codemirror.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             function addEditor(psSelector, mode) {
