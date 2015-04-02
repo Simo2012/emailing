@@ -2,7 +2,29 @@
 
 @import "../global/_config";
 
-// ==== About  ====
+// ==== Legal  ====
 #div_RBZ_legal {
     margin-top: 160px;
+}
+
+/* ==== Grand iPad ==== */
+@media (max-width: 960px) {
+    // ==== About  ====
+    #div_RBZ_legal {
+        margin: 10px;
+        margin-top: 140px;
+    }
+}
+
+
+/* ==== Petit Smartphone ==== */
+@media (max-width: 380px) {
+    body {
+        // ---- Eliminer taille du wrapper de 960px par défaut----
+        section {
+            &.RBZ_wrapper {
+                width:auto;
+            }  
+        }
+    }
 }

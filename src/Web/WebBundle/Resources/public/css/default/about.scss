@@ -2,8 +2,11 @@
 
 @import "../global/_config";
 
+
+
 // ==== About  ====
 #div_RBZ_about {
+    max-width: 960px;
     margin-top: 160px;
     h1 {
         color: $table_red;
@@ -34,7 +37,6 @@
         #div_RBZ_aboutBottomLeft {
             float: left;
             margin-right: 50px;
-            //padding-top: 70px;
         }
         #div_RBZ_aboutBottomRight {
             float: right;
@@ -44,14 +46,69 @@
 
 /* ==== Grand iPad ==== */
 @media (max-width: 960px) {
-    #div_RBZ_aboutTopRight {
-        display: none;
+    #div_RBZ_about {
+        padding: 10px;
+        p {
+            text-align: justify;
+        }
+        #div_RBZ_aboutTop {
+            // ---- enlever image de droite ----
+            #div_RBZ_aboutTopRight {
+                display: none;
+            }
+        }
+        #div_RBZ_aboutBottom {
+            #div_RBZ_aboutBottomRight {
+                float: left;
+                max-width: 450px;
+            }
+        }
     }
 }
 
 /* ==== Smartphone ==== */
 @media (max-width: 480px) {
-    #div_RBZ_aboutBottomLeft {
-        display: none;
+    // ==== About  ====
+    #div_RBZ_about {
+        max-width: 480px;
+        margin-top: 140px;
+        h1 {
+            font-size: 25px;
+        }
+        h2 {
+            font-size: 2.2rem;
+        }
+        p {
+            max-width: 550px;
+            margin-bottom: 20px;
+        }
+
+        #div_RBZ_aboutBottom {
+            margin-top: 30px;
+            margin-bottom: 50px;
+            // ---- enlever image de gauche ----
+            #div_RBZ_aboutBottomLeft {
+                display: none;
+            }
+            #div_RBZ_aboutBottomRight {
+                float: left;
+            }
+        }
+    }
+}
+
+/* ==== Petit Smartphone ==== */
+@media (max-width: 380px) {
+    body {
+        // ---- Eliminer taille du wrapper de 960px par défaut----
+        section {
+            &.RBZ_wrapper {
+                width:auto;
+            }  
+        }
+    }
+    // ==== About  ====
+    #div_RBZ_about {
+        max-width: 320px;
     }
 }

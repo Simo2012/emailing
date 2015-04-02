@@ -85,8 +85,8 @@
     }
     // ==== FAQ ====
     #div_RBZ_faqRight {
+        padding: 15px;
         margin-left:0px;
-        margin: 20px;
     }
 }
 
@@ -97,5 +97,21 @@
         #div_RBZ_faqRightImg {
             display: none;
         }
+    }
+}
+
+/* ==== Petit Smartphone ==== */
+@media (max-width: 380px) {
+    body {
+        // ---- Eliminer taille du wrapper de 960px par défaut----
+        section {
+            &.RBZ_wrapper {
+                width:auto;
+            }  
+        }
+    }
+    // ==== FAQ Right ====
+    #div_RBZ_faqRight {
+        margin-top: 80px;
     }
 }

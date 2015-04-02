@@ -111,8 +111,12 @@
 
 @media (max-width: 480px) {
     #header_RBZ_header {
+        top: -25px;
         #div_RBZ_banner {
-            height:90px;
+            height:120px;
+            #div_RBZ_headerMenu {
+                padding-top:75px;
+            }
         }
     }
 }
