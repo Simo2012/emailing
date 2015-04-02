@@ -28,7 +28,7 @@
             {% for commission in commissions %}
                 <tr class="RBZ_body">
                     <td class="RBZ_name">{{ commission.recommendation.offer.title }}</td>
-                    <td class="RBZ_amount">{{ commission.AMOUNT }} {{ 'web.web.currency' | trans | raw }}</td>
+                    <td class="RBZ_amount">{{ currency_format(commission.AMOUNT, app.user.country) }}</td>
                     {% set total = total + commission.AMOUNT %}
                 </tr>
             {% endfor %}
@@ -36,7 +36,7 @@
          <tfoot>
             <tr class="RBZ_footer">
                 <td>TOTAL</td>
-                <td class="RBZ_user_pot_soldcredit">{{ total }} {{ 'web.web.currency' | trans | raw }}</td>
+                <td class="RBZ_user_pot_soldcredit">{{ currency_format(total, app.user.country) }}</td>
             </tr>
         </tfoot>
     </table>

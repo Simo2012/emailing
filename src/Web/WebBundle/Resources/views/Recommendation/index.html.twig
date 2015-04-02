@@ -45,9 +45,9 @@
                 <td>{{ recommendation.0.datecreate | localizeddate('short', 'none') }}</td>
                 <td>{{ recommendation.0.offer.title }}</td>
                 <td>{{ recommendation.0.type }}</td>
-                <td>{{ recommendation.commission }}</td>
+                <td>{{ currency_format(recommendation.commission, app.user.country) }}</td>
                 <td>{{ recommendation.volume }}</td>
-                <td class="RBZ_total">{{ recommendation.total }} {{ 'web.web.currency' | trans | raw }}</td>
+                <td class="RBZ_total">{{ currency_format(recommendation.total, app.user.country) }}</td>
             </tr>
         {% endfor %}
     </table>
