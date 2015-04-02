@@ -52,7 +52,6 @@ Global.prototype = {
 
         // ==== Menu de navigation (Tablet/Smartphone) ====
         $(document).on('click', '#a_RBZ_linkMenuMobile', function(event) {
-            //$('#div_RBZ_menuMobile').toggleClass('RBZ_hide');
             if (!$('#div_RBZ_menuMobile').hasClass('RBZ_opened')) {
                 $('#div_RBZ_menuMobile').children('ul').slideDown("normal");
             } else {
