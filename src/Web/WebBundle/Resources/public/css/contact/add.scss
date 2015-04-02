@@ -60,129 +60,159 @@
 }
 
 #div_RBZ_contactsWrapper {
-  position: relative;
+    position: relative;
 
-  #section_RBZ_contacts {
-    width: 760px;
-    display: block;
-    float: left;
-    #div_RBZ_congratulations {
-      margin-bottom: 50px;
-      a {
-        color: $red-banner;
-      }
-    }
-    #h1_RBZ_contacts {
-      margin-top: 0;
-    }
-
-    #a_RBZ_skipStep {
-      font-weight: 600;
-      background-color: #fcfcfc;
-      border: 1px solid rgba(102,102,102,.28);
-      @include border-radius(3px);
-      background-color: rgba(255,255,255,.77);
-      width: 176px;
-      height: 33px;
-      line-height: 33px;
-      display: block;
-      text-align: center;
-    }
-    .RBZ_blockContacts {
-      background-color: #ffffff;
-      border: 1px solid #efefef;
-      padding: 15px;
-      margin-bottom: 15px;
-      height: 65px;
-      span {
+    #section_RBZ_contacts {
+        max-width: 760px;
         display: block;
-        font-weight: bold;
-        font-size: 18px;
-        color: #817b77;
-        line-height: 18px;
-      }
-      p {
-        margin-top: 0px;
-      }
-      a {
-        height: 35px;
-        line-height: 35px;
-        background-color: $red-banner;
-        color: $white;
-        @include border-radius(2px);
-        text-align: center;
-        padding: 0 15px;
-        font-weight: 600;
-        span {
-          font-weight: normal;
-          display: inline-block;
-          color: $white;
-          font-size: 12px;
+        float: left;
+        #div_RBZ_congratulations {
+            margin-bottom: 50px;
+            a {
+                color: $red-banner;
+            }
         }
-      }
-    }
-  }
+        #h1_RBZ_contacts {
+            margin-top: 0;
+        }
 
-  #aside_RBZ_contacts {
-    position: absolute;
-    width: 300px;
-    right: -150px;
-    padding-left: 20px;
-    border-left: 1px solid $border-grey;
-    #div_RBZ_step1 {
-      background: url(/bundles/webweb/images/contact/illu-step1.png) 0 0 no-repeat;
-      width: 300px;
-      height: 200px;
-      padding: 120px 0 0 80px;
+        #a_RBZ_skipStep {
+            font-weight: 600;
+            background-color: #fcfcfc;
+            border: 1px solid rgba(102,102,102,.28);
+            @include border-radius(3px);
+            background-color: rgba(255,255,255,.77);
+            width: 176px;
+            height: 33px;
+            line-height: 33px;
+            display: block;
+            text-align: center;
+        }
+        .RBZ_blockContacts {
+            background-color: #ffffff;
+            border: 1px solid #efefef;
+            padding: 15px;
+            margin-bottom: 15px;
+            height: 65px;
+            span {
+                display: block;
+                font-weight: bold;
+                font-size: 18px;
+                color: #817b77;
+                line-height: 18px;
+            }
+            p {
+                margin-top: 0px;
+            }
+            a {
+                height: 35px;
+                line-height: 35px;
+                background-color: $red-banner;
+                color: $white;
+                @include border-radius(2px);
+                text-align: center;
+                padding: 0 15px;
+                font-weight: 600;
+                span {
+                    font-weight: normal;
+                    display: inline-block;
+                    color: $white;
+                    font-size: 12px;
+                }
+            }
+        }
     }
-    #div_RBZ_step2 {
-      background: url(/bundles/webweb/images/contact/illu-step2.png) 0 0 no-repeat;
-      width: 300px;
-      height: 200px;
-      padding: 120px 0 0 80px;
+
+    #aside_RBZ_contacts {
+        position: absolute;
+        width: 300px;
+        right: -150px;
+        padding-left: 20px;
+        border-left: 1px solid $border-grey;
+        #div_RBZ_step1 {
+            background: url(/bundles/webweb/images/contact/illu-step1.png) 0 0 no-repeat;
+            width: 300px;
+            height: 200px;
+            padding: 120px 0 0 80px;
+        }
+        #div_RBZ_step2 {
+            background: url(/bundles/webweb/images/contact/illu-step2.png) 0 0 no-repeat;
+            width: 300px;
+            height: 200px;
+            padding: 120px 0 0 80px;
+        }
+        #div_RBZ_step3 {
+            background: url(/bundles/webweb/images/contact/illu-step3.png) 0 0 no-repeat;
+            width: 300px;
+            height: 185px;
+            padding: 120px 0 0 80px;
+        }
+        span {
+            font-size: 18px;
+            color: #494745;
+        }
+        p {
+            color: #929292;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 0.25em;
+            line-height: 20px;
+        }
     }
-    #div_RBZ_step3 {
-      background: url(/bundles/webweb/images/contact/illu-step3.png) 0 0 no-repeat;
-      width: 300px;
-      height: 185px;
-      padding: 120px 0 0 80px;
-    }
-    span {
-      font-size: 18px;
-      color: #494745;
-    }
-    p {
-      color: #929292;
-      font-size: 14px;
-      font-weight: 600;
-      margin-top: 0.25em;
-      line-height: 20px;
-    }
-  }
 }
 
 #div_RBZ_commonPopup {
-  width: 700px !important;
-  div.RBZ_confirm_popup_content {
     width: 700px !important;
-    #form_RBZ_addContact {
-      .KNS_row > *, .KNS_col {
-        display: inline-block;
+    div.RBZ_confirm_popup_content {
+        width: 700px !important;
+        #form_RBZ_addContact {
+            .KNS_row > *, .KNS_col {
+                display: inline-block;
 
-      }
+            }
+        }
+        div.RBZ_input {
+            margin-bottom: 10px;
+        }
     }
-    div.RBZ_input {
-      margin-bottom: 10px;
-    }
-  }
 }
 
 #div_RBZ_commonPopup #div_RBZ_commonPopupContent div.RBZ_confirm_popup_content {width: 700px  !important;}
+
+
+
+
+/* ==== Grand iPad ==== */
+@media (max-width: 960px) {
+    #div_RBZ_contactsWrapper {
+        padding: 10px;
+        #aside_RBZ_contacts {
+            display: none;
+        }
+    }
+}
 
 /* ==== petit iPad ==== */
 @media (max-width: 600px) {
     // ==== Popup d'accueil lors de la 1ère connexion ====
     #div_RBZ_welcomePopup {
         display: none;
+    }
+}
+
+/* ==== Smartphone ==== */
+@media (max-width: 480px) {
+    body {
+        // ---- Eliminer taille du wrapper de 960px par défaut----
+        section {
+            &.RBZ_wrapper {
+                width:auto;
+            }  
+        }
+    }
+    #section_RBZ_contacts {
+        #h1_RBZ_contacts {
+            font-size: 18px !important;
+        }
     }
 }
