@@ -61,7 +61,7 @@
                 <td>{{ contact.0.email }}</td>
                 <td>{{ contact.0.lastname }}</td>
                 <td>{{ contact.0.firstname }}</td>
-                <td>{{ contact.commissions | number_format('2', ',', ' ') }} &euro;</td>
+                <td>{{ contact.commissions | number_format('2', ',', ' ') }} {{ 'web.web.currency' | trans | raw }}</td>
                 <td class="RBZ_status {{ status_class }}">
                     <div class="RBZ_pin_container">
                     {% if contact.0.subscriber %}

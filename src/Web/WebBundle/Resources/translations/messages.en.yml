@@ -26,6 +26,7 @@ graphic.standards.form.text2: '<div class="RBZ_input">{{ form_label(form.text2) 
 graphic.standards.form.flip: "{{ form_row(form.flip) }}"
 web.web.form.flip.yes: yes
 web.web.form.flip.no: no
+web.web.currency: "$"
 
 # ==== Layout global ====
 footer.credits:             © <span>Rubizz</span> by Natexo.

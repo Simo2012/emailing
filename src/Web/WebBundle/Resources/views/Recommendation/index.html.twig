@@ -27,7 +27,7 @@
         </tr>
         <tr>
             <td class="RBZ_left RBZ_info">{{ 'web.web.contact.index.recommendation.info' | trans }}</td>
-            
+
         </tr>
     </table>
 
@@ -47,7 +47,7 @@
                 <td>{{ recommendation.0.type }}</td>
                 <td>{{ recommendation.commission }}</td>
                 <td>{{ recommendation.volume }}</td>
-                <td class="RBZ_total">{{ recommendation.total }}&euro;</td>
+                <td class="RBZ_total">{{ recommendation.total }} {{ 'web.web.currency' | trans | raw }}</td>
             </tr>
         {% endfor %}
     </table>

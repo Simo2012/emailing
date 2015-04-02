@@ -67,7 +67,7 @@
 
             <div class="RBZ_offer_border"></div>
         {% if offer.remType in ['CPC', 'CPL', 'CPA'] %}
-            {% set symbol = '€' %}
+            {% set symbol = 'web.web.currency' | trans | raw %}
         {% elseif offer.remType == 'CPA%' %}
             {% set symbol = '%' %}
         {% endif %}

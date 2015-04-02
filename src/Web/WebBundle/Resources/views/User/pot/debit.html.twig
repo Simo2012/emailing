@@ -28,7 +28,7 @@
             {% for paymentrequest in invoiceRequests %}
                 <tr class="RBZ_body">
                     <td class="RBZ_name">{{ 'web.web.user.pot.payment.word1' | trans }} {{paymentrequest.bankName}} {{ 'web.web.user.pot.payment.word2' | trans }} {{paymentrequest.dateCreate | date("d.m.Y") }}</td>
-                    <td class="RBZ_amount"> {{ paymentrequest.amount }}€</td>
+                    <td class="RBZ_amount"> {{ paymentrequest.amount }} {{ 'web.web.currency' | trans | raw }}</td>
                     {% set total = total + paymentrequest.amount %}
                 </tr>
             {% endfor %}
@@ -36,7 +36,7 @@
          <tfoot>
             <tr class="RBZ_footer">
                 <td>TOTAL</td>
-                <td class="RBZ_total">{{ total }} €</td>
+                <td class="RBZ_total">{{ total }} {{ 'web.web.currency' | trans | raw }}</td>
             </tr>
         </tfoot>
     </table>

@@ -26,6 +26,7 @@ graphic.standards.form.text2: '<div class="RBZ_input">{{ form_label(form.text2) 
 graphic.standards.form.flip: "{{ form_row(form.flip) }}"
 web.web.form.flip.yes:  oui
 web.web.form.flip.no: non
+web.web.currency: "&euro;"
 
 # ==== Layout Global ====
 footer.credits:             © <span>Rubizz</span> by Natexo.
@@ -136,7 +137,7 @@ web.web.default.faq.question.inside.7:          Pour ajouter des contacts, allez
 web.web.default.faq.question.8:                 Jusqu’à combien de contacts puis-je ajouter ?
 web.web.default.faq.question.inside.8:          Votre carnet Rubizz est illimité, vous pouvez en ajouter autant que vous le souhaitez. C’est vous qui gérez ensuite la liste des abonnés et ceux qui ne souhaitent plus recevoir de recommandation.
 web.web.default.faq.question.9:                 Peut-on créer des groupes d’amis ?
-web.web.default.faq.question.inside.9:          Nous partons du principe que tous vos amis devraient recevoir vos recommandations. Il serait dommage que vous n’envoyiez pas le même bon plan à Pierre et Paul, alors que tous les deux pourraient finalement être intéressés et vous permettre de percevoir deux commissions au lieu d’une. Nous vous suggérons donc d’envoyer vos recommandations à un maximum de personnes. 
+web.web.default.faq.question.inside.9:          Nous partons du principe que tous vos amis devraient recevoir vos recommandations. Il serait dommage que vous n’envoyiez pas le même bon plan à Pierre et Paul, alors que tous les deux pourraient finalement être intéressés et vous permettre de percevoir deux commissions au lieu d’une. Nous vous suggérons donc d’envoyer vos recommandations à un maximum de personnes.
 web.web.default.faq.question.10:                Que vont recevoir mes contacts si je les ajoute à ma Mailing List?
 web.web.default.faq.question.inside.10:         Tous les contacts que vous ajoutez à votre Mailing List vont recevoir vos recommandations sous forme d’email de votre part. Ces emails contiennent un lien vers l’offre. Ils sont libres de cliquer et de suivre votre recommandation ou non.
 web.web.default.faq.question.11:                Je ne souhaite pas partager les bons plans par mail, mais uniquement sur Facebook et/ou Twitter, est-ce possible ?
@@ -144,13 +145,13 @@ web.web.default.faq.question.inside.11:         Vous pouvez publier nos offres s
 web.web.default.faq.question.12:                Un de mes contacts ne souhaite plus recevoir de bon plan Rubizz de ma part. Peut-il se désabonner de ma Mailing List ?
 web.web.default.faq.question.inside.12:         Si l’un de vos contacts ne souhaite plus recevoir vos recommandations, il peut se désabonner en cliquant sur le lien de désabonnement en bas de l’un des emails reçus de votre part. Vous pouvez aussi le désabonner vous-même en allant dans votre Mailing List. Vous pourrez le ré-abonner ultérieurement s’il le souhaite.
 web.web.default.faq.question.13:                Puis-je sélectionner les personnes à qui je veux envoyer un bon plan ?
-web.web.default.faq.question.inside.13:         "Vous pouvez envoyer vos recommandations à trois cibles différentes :<br />-	par email à votre Mailing List<br />-	à vos contacts Facebook en choisissant la publication sur Facebook<br />-	à vos followers en choisissant la publication sur Twitter"
+web.web.default.faq.question.inside.13:         "Vous pouvez envoyer vos recommandations à trois cibles différentes :<br />-    par email à votre Mailing List<br />-    à vos contacts Facebook en choisissant la publication sur Facebook<br />-    à vos followers en choisissant la publication sur Twitter"
 web.web.default.faq.question.14:                Où puis-je voir le résultat de mes recommandations ?
 web.web.default.faq.question.inside.14:         Vous pouvez visualiser vos commissions jour après jour en vous rendant dans la rubrique Vos recommandations. Pour chacune des offres, vous pouvez consulter le nombre de personnes qui ont suivi votre recommandation et le montant des commissions correspondant.
 web.web.default.faq.question.15:                Pour percevoir ma commission, mes contacts doivent-ils obligatoirement cliquer sur le lien que je leur ai envoyé ?
 web.web.default.faq.question.inside.15:         En cliquant sur le lien que vous leur avez envoyé, nous avons la preuve technique que votre contact a accédé au site partenaire par votre intermédiaire. Nous pouvons donc vous attribuer la commission. S’il accède au site partenaire sans cliquer sur ce lien, nous ne pourrons pas vous attribuer de commission.
 web.web.default.faq.question.16:                Un des mes contacts a participé à un bon plan, mais je ne vois aucune commission. Comment est-ce possible ?
-web.web.default.faq.question.inside.16:         "Il y a deux raisons possibles à ce que la commission ne vous ait pas été attribuée :<br /> -	soit votre contact a profité du bon plan mais sans cliquer sur le lien reçu de votre part (il aura peut-être saisi directement l’url dans son navigateur)<br /> -	soit votre contact a profité du bon plan en cliquant sur le lien qu’un autre membre Rubizz lui a envoyé. Il n‘est en effet pas exclu que des membres aient des contacts en commun."
+web.web.default.faq.question.inside.16:         "Il y a deux raisons possibles à ce que la commission ne vous ait pas été attribuée :<br /> -    soit votre contact a profité du bon plan mais sans cliquer sur le lien reçu de votre part (il aura peut-être saisi directement l’url dans son navigateur)<br /> -    soit votre contact a profité du bon plan en cliquant sur le lien qu’un autre membre Rubizz lui a envoyé. Il n‘est en effet pas exclu que des membres aient des contacts en commun."
 web.web.default.faq.question.17:                Que se passe-t-il si un de mes contacts reçoit le même bon plan de la part d’un autre membre du site ?
 web.web.default.faq.question.inside.17:         Si l’un de vos contacts reçoit deux fois le même bon plan de la part de deux personnes différentes, c’est l’expéditeur du lien sur lequel il aura cliqué en premier qui touchera la commission. L’autre membre ne recevra pas de commission.
 web.web.default.faq.question.18:                Que se passe-t-il si un de mes contacts utilise deux fois un bon plan ? Est-ce que je perçois plusieurs fois la commission ?
@@ -366,7 +367,8 @@ web.web.contact.add.step1.text:               "Je m'inscris et<br>j'ajoute mes c
 web.web.contact.add.step2.text:               Je recommande des<br>offres à mes amis
 web.web.contact.add.step3.text:               "Je gagnes de l'argent !"
 # ---- Email ----
-admin.rubizz.email.recommendation.subject: %prenom% vous recommande un bon plan
+admin.rubizz.email.recommendation.subject: "%prenom% vous recommande un bon plan"
+
 # ==== Popup Bienvenue ====
 web.web.contact.add.popupWelcome.title:     BIENVENUE SUR
 web.web.contact.add.popupWelcome.text:      <span>Rubizz</span> vous permet de gagnez de l'argent en envoyant des publicités à vos amis.<br/><br/>A chaque fois que l'un de vos amis, suite à la réception de votre recommandation devient membre d'un site, achète en ligne, ou participe à un jeu, vous êtes crédité d'une commission. Le montant de la commission est différent pour chaque offre.
