@@ -6,8 +6,10 @@
 body {
     background-color: #ADE1EC;
     // ---- Eliminer taille du wrapper de 960px par défaut----
-    .RBZ_wrapper {
-        width:auto;
+    section {
+        &.RBZ_wrapper {
+            width:auto;
+        }  
     }
 }
 
