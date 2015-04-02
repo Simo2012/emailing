@@ -2,7 +2,10 @@
 
 @import "../global/_config";
 
+// ==== Page Détail ====
 #div_RBZ_userDetails {
+    padding: 10px;
+    max-width: 960px;
     #div_RBZ_userDetailsInfo {
         float:left;
         width:455px;
@@ -40,3 +43,38 @@
 
 // ==== Messages d'erreurs ====
 p.RBZ_error, p.RBZ_ok { color:#F04F61; font-style:italic; }
+
+
+/* ==== Grand iPad ==== */
+@media (max-width: 960px) {
+    
+    // ==== Page Détail ====
+    #div_RBZ_userDetails {
+        max-width: 960px;
+    }
+}
+
+
+/* ==== Smartphone ==== */
+@media (max-width: 500px) {
+    // ==== Page Détail ====
+    #div_RBZ_userDetails {
+        max-width: 480px;
+    }
+}
+
+/* ==== Petit Smartphone ==== */
+@media (max-width: 380px) {
+    body {
+        // ---- Eliminer taille du wrapper de 960px par défaut----
+        section {
+            &.RBZ_wrapper {
+                width:auto;
+            }  
+        }
+    }
+    // ==== Page Détail ====
+    #div_RBZ_userDetails {
+        max-width: 320px;
+    }
+}
