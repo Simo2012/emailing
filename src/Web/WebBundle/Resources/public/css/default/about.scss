@@ -2,6 +2,8 @@
 
 @import "../global/_config";
 
+
+
 // ==== About  ====
 #div_RBZ_about {
     max-width: 960px;
@@ -96,7 +98,15 @@
 }
 
 /* ==== Petit Smartphone ==== */
-@media (max-width: 330px) {
+@media (max-width: 380px) {
+    body {
+        // ---- Eliminer taille du wrapper de 960px par défaut----
+        section {
+            &.RBZ_wrapper {
+                width:auto;
+            }  
+        }
+    }
     // ==== About  ====
     #div_RBZ_about {
         max-width: 320px;
