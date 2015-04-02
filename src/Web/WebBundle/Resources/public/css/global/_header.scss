@@ -27,13 +27,13 @@
             background-repeat: no-repeat;
         }
         // ==== Menu de profil ====
-        #div_RBZ_menuProfile {
+        #div_RBZ_desktop_profile_menu {
             float: right;
             font-size: 1.2rem;
             margin: 30px 25px 0 0;
             display: block;
             min-width: 200px;
-            #ul_RBZ_menuProfile {
+            #ul_RBZ_desktop_profile_menu {
                 font-size: 14px;
                 line-height: 37px;
                 list-style: none;
@@ -41,7 +41,7 @@
                 &:hover {
                     background-color: $white;
                     & > li {
-                        #a_RBZ_name {
+                        .RBZ_name {
                             color: $black;
                         }
                     }
@@ -58,7 +58,7 @@
                         margin-left: 5px;
                         margin-top: 5px;
                     }
-                    #a_RBZ_name {
+                    .RBZ_name {
                         float: right;
                         margin-right: 10px;
                         margin-top: 10px;
@@ -196,12 +196,27 @@
             #a_RBZ_linkMenuMobile {
                 display: none;
             }
+            // ==== Menu de profil (mobile) ====
+            #div_RBZ_mobile_profile_menu {
+                display: none;
+            }
         }
     }
 }
 
+
+// ====================
+// ====   Tablet   ====
+// ====================
 @media (min-width: ($tiny-screen + 1)) and (max-width: $small-screen) {
     #header_RBZ_header {
+        // ==== Bannière rouge ====
+        #div_RBZ_banner {
+            // ==== Menu de profil (desktop) ====
+            #div_RBZ_desktop_profile_menu {
+                display: none;
+            }
+        }
         // ==== Bannière noire (menu de navigation) ====
         #div_RBZ_navWrapper {
             background-color: $black-nav;
@@ -225,6 +240,7 @@
                     position: relative;
                     width: 100%;
                     ul {
+                        display: none;
                         position: absolute;
                         top: 40px;
                         left: 0;
@@ -278,7 +294,8 @@
                         }
                     }
                 }
-                #div_RBZ_menuProfile {
+                // ==== Menu de profil (mobile) ====
+                #div_RBZ_mobile_profile_menu {
                     float: right;
                     font-size: 1.2rem;
                     margin: 0px;
@@ -302,7 +319,7 @@
                                 background-repeat: no-repeat;
                                 background-position: sprite-position($icons, profile_smartphone, 0, 6)
                             }
-                            #a_RBZ_name {
+                            .RBZ_name {
                                 float: right;
                                 margin: 0px;
                                 color: $white;
@@ -368,8 +385,18 @@
     }
 }
 
+// ====================
+// ==== Smartphone ====
+// ====================
 @media (max-width: $tiny-screen) {
     #header_RBZ_header {
+        // ==== Bannière rouge ====
+        #div_RBZ_banner {
+            // ==== Menu de profil (desktop) ====
+            #div_RBZ_desktop_profile_menu {
+                display: none;
+            }
+        }
         // ==== Bannière rouge ====
         #div_RBZ_banner {
             height: 55px;
@@ -429,6 +456,7 @@
                     position: relative;
                     width: 100%;
                     ul {
+                        display: none;
                         position: absolute;
                         top: 40px;
                         left: 0;
@@ -482,7 +510,8 @@
                         }
                     }
                 }
-                #div_RBZ_menuProfile {
+                // ==== Menu de profil (mobile) ====
+                #div_RBZ_mobile_profile_menu {
                     float: right;
                     font-size: 1.2rem;
                     margin: 0px;
@@ -506,7 +535,7 @@
                                 background-repeat: no-repeat;
                                 background-position: sprite-position($icons, profile_smartphone, 0, 6)
                             }
-                            #a_RBZ_name {
+                            .RBZ_name {
                                 float: right;
                                 margin: 0px;
                                 color: $white;

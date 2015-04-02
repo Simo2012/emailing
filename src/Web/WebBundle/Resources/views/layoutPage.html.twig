@@ -11,45 +11,41 @@
                 <span class="KNS_tiny-hidden">{{ "layout.myKitty" | trans }}</span><br>
                 <span class="RBZ_number">{{ app.user.availableAmount | number_format(2, ',', ' ') }}&euro;</span>
             </div>
-            {% if is_mobile() == false and is_tablet() == false %}
-            <div id="div_RBZ_menuProfile">
-                <ul id="ul_RBZ_menuProfile">
+
+            <div id="div_RBZ_desktop_profile_menu">
+                <ul id="ul_RBZ_desktop_profile_menu">
                     <li>
-                        <span class="RBZ_icons_profile"></span> <a id="a_RBZ_name">{{ app.user.firstname | capitalize }} {{ app.user.lastname | capitalize }} <span id="span_RBZ_down">&nbsp; &#709;</span></a>
+                        <span class="RBZ_icons_profile"></span> <a class="RBZ_name">{{ app.user.firstname | capitalize }} {{ app.user.lastname | capitalize }} <span class="RBZ_down">&nbsp; &#709;</span></a>
                         <div class="KNS_clear"></div>
                         {{ menu('rubizzProfile') }}
                     </li>
                 </ul>
             </div>
-            {% endif %}
         {% endif %}
     </div>
     <div id="div_RBZ_navWrapper">
         <div class="RBZ_wrapper">
-            {#{% if is_mobile() == false and is_tablet() == false %}#}
+
             <div id="div_RBZ_desktop_menu">
                 {{ menu('rubizzMenu') }}
             </div>
-            {#{% else %}#}
+
             <a href="#" id="a_RBZ_linkMenuMobile"></a>
-            <div id="div_RBZ_menuMobile" class="RBZ_hide">
+            <div id="div_RBZ_menuMobile">
                 {{ menu('rubizzMenuMobile') }}
             </div>
-            {#{% endif %}#}
 
             {% if app.user.id is defined %}
-                {% if is_mobile() %}
-                <div id="div_RBZ_menuProfile">
-                    <ul id="ul_RBZ_menuProfile">
+                <div id="div_RBZ_mobile_profile_menu">
+                    <ul id="ul_RBZ_mobile_profile_menu">
                         <li>
-                            <span class="RBZ_icons_profile"></span> <a id="a_RBZ_name">{{ app.user.firstname | capitalize }} {{ app.user.lastname | capitalize }} <span id="span_RBZ_down">&nbsp; &#709;</span></a>
+                            <span class="RBZ_icons_profile"></span> <a class="RBZ_name">{{ app.user.firstname | capitalize }} {{ app.user.lastname | capitalize }} <span class="RBZ_down">&nbsp; &#709;</span></a>
                             <div class="KNS_clear"></div>
                             {{ menu('rubizzProfile') }}
                         </li>
                         
                     </ul>
                 </div>
-                {% endif %}
             {% endif %}
         </div>
     </div>
