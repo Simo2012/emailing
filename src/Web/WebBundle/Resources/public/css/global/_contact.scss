@@ -50,8 +50,8 @@
             div.RBZ_input {
                 margin-bottom: 10px;
                 textarea {
-                   height:200px;
-                   width:100%;
+                    height:200px;
+                    width:100%;
                 }
             }
             input.RBZ_redButton {
@@ -82,6 +82,16 @@
                     text-decoration: underline;
                 }
             }
+        }
+    }
+}
+
+// ==== Petit smartphone ====
+@media (max-width: 480px) {
+    #div_RBZ_contactPopup {
+        #div_RBZ_content {
+            width: 290px;
+            margin-left: 6px;
         }
     }
 }
