@@ -13,87 +13,154 @@ body {
     }
 }
 
-// ==== Div englobante ====
-#div_RBZ_content {
-    margin-top: 200px;
-    // ==== Page 1 ====
-    #div_RBZ_hiw_p1 {
-        background-color: #ADE1EC;
-        #div_RBZ_hiw_p1_inside {
-            max-width:960px;
-            margin-left:auto;
-            margin-right:auto;
-            #div_RBZ_hiw_p1_left {
-                float: left;
-                width: 62%;
-            }
-            #div_RBZ_hiw_p1_right {
-                float: right;
+// ==== Page 1 ====
+#div_RBZ_hiw_p1 {
+    padding-bottom: 70px;
+    padding-top: 180px;
+    background-color: #ADE1EC;
+    #div_RBZ_hiw_p1_inside {
+        max-width:960px;
+        margin-left:auto;
+        margin-right:auto;
+        #div_RBZ_hiw_p1_left {
+            float: left;
+            width: 62%;
+        }
+        #div_RBZ_hiw_p1_right {
+            float: right;
+            color: $white;
+            max-width:350px;
+            h1 {
                 color: $white;
-                max-width:350px;
-                h1 {
-                    color: $white;
-                    font-size: 40px;
-                    margin-bottom: 20px;
-                }
-                p {
-                    font-size: 18px;
-                }
+                font-size: 40px;
+                margin-bottom: 20px;
+            }
+            p {
+                font-size: 18px;
             }
         }
-        padding-bottom: 70px;
     }
+}
 
 
-    // ==== Page 2 ====
-    #div_RBZ_hiw_p2{
-        background-color: #F1F1F1;
-        #div_RBZ_hiw_p2_inside {
-            margin: auto;
-            max-width: 960px;
-            #div_RBZ_hiw_p2_left {
-                padding-top: 160px;
-                float: left;
-                max-width: 380px;
+// ==== Page 2 ====
+#div_RBZ_hiw_p2{
+    background-color: #F1F1F1;
+    #div_RBZ_hiw_p2_inside {
+        margin: auto;
+        max-width: 960px;
+        #div_RBZ_hiw_p2_left {
+            padding-top: 160px;
+            float: left;
+            max-width: 380px;
+            color: #A3A3A3;
+            h1 {
+                color: #484745;
+                font-size: 40px;
+                margin-bottom: 20px;
+            }
+            p {
+                text-align: justify;
+                font-size: 17px;
+                margin-bottom: 30px;
+            }
+        }
+        #div_RBZ_hiw_p2_right{
+            float: right;
+            padding-top: 70px;
+            width: 60%;
+        }
+    }
+}
+// ==== Page 3 ====
+#div_RBZ_hiw_p3{
+    background-color: #ADE1EC;
+    #div_RBZ_hiw_p3_inside {
+        padding-top: 150px;
+        margin: auto;
+        max-width: 960px;
+        padding-bottom: 150px;
+    }
+}
+
+// ==== Page 4 ====
+#div_RBZ_hiw_p4{
+    padding-top: 55px;
+    background-color: #F1F1F1;
+    #div_RBZ_hiw_p4_inside {
+        position: relative;
+        margin: auto;
+        max-width: 960px;
+        #div_RBZ_hiw_p4_description {
+            text-align:center;
+            margin: 30px auto 60px;
+            h1 {
+                color: #484745;
+                font-size: 40px;
+                margin-bottom: 20px;
+            }
+            p {
+                font-size: 17px;
                 color: #A3A3A3;
-                h1 {
-                    color: #484745;
-                    font-size: 40px;
-                    margin-bottom: 20px;
-                }
-                p {
-                    text-align: justify;
-                    font-size: 17px;
-                    margin-bottom: 30px;
-                }
-            }
-            #div_RBZ_hiw_p2_right{
-                float: right;
-                padding-top: 70px;
-                width: 60%;
             }
         }
-    }
-    // ==== Page 3 ====
-    #div_RBZ_hiw_p3{
-        background-color: #ADE1EC;
-        #div_RBZ_hiw_p3_inside {
-            padding-top: 150px;
-            margin: auto;
-            max-width: 960px;
-            padding-bottom: 150px;
-        }
-    }
-
-    // ==== Page 4 ====
-    #div_RBZ_hiw_p4{
-        padding-top: 55px;
-        background-color: #F1F1F1;
-        #div_RBZ_hiw_p4_inside {
+        #div_RBZ_hiw_p4_left{
             position: relative;
-            margin: auto;
-            max-width: 960px;
-            #div_RBZ_hiw_p4_description {
+            margin-right: 20px;
+            #div_RBZ_hiw_p4_leftImg {
+                position: absolute;
+                top: 60px;
+                left: 20px;
+            }
+        }
+        /* ---- texte sur la droite ----*/
+        #div_RBZ_hiw_p4_right {
+            position: absolute;
+            top:270px;
+            max-width: 500px;
+            left: 400px;
+            color: #A3A3A3;
+            p {
+                padding:15px;
+                text-align: justify;
+                font-size: 17px;
+                margin-bottom: 30px;
+                &:hover{
+                    background-color: $white;
+                    span{
+                        color : $red-banner
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ==== Page 5 ====
+#div_RBZ_hiw_p5{
+    padding-top: 80px;
+    padding-bottom: 50px;
+    background-color: $white;
+    // ---- Ecrasement css knacss----
+    p{
+        line-height: 2;
+    }
+    color: #A3A3A3;
+    #div_RBZ_hiw_p5_inside {
+        margin: auto;
+        max-width: 960px;
+        #div_RBZ_hiw_p5_left{
+            max-width:240px;
+            margin-right: 20px;
+            float: left;
+        }
+        #div_RBZ_hiw_p5_right {
+            position: relative;
+            float: right;
+            color: #A3A3A3;
+            #div_RBZ_hiw_p5_description {
+                position:absolute;
+                bottom: -20px;
                 text-align:center;
                 margin: 30px auto 60px;
                 h1 {
@@ -103,106 +170,36 @@ body {
                 }
                 p {
                     font-size: 17px;
-                    color: #A3A3A3;
                 }
             }
-            #div_RBZ_hiw_p4_left{
-                position: relative;
-                margin-right: 20px;
-                #div_RBZ_hiw_p4_leftImg {
-                    position: absolute;
-                    top: 60px;
-                    left: 20px;
-                }
+            #div_hiw_diamond {
+                float:left;
             }
-            /* ---- texte sur la droite ----*/
-            #div_RBZ_hiw_p4_right {
-                position: absolute;
-                top:270px;
-                max-width: 500px;
-                left: 400px;
-                color: #A3A3A3;
-                p {
-                    padding:15px;
-                    text-align: justify;
-                    font-size: 17px;
-                    margin-bottom: 30px;
-                    &:hover{
-                        background-color: $white;
-                        span{
-                            color : $red-banner
-                        }
-                    }
-                }
+            .RBZ_hiwP5Block{
+                margin-top: 100px;
+                float:right;
+                margin-left: -100px;
             }
+        }
+        .RBZ_hiwP5Block {
+            text-align: justify;
+            max-width: 240px;
+            margin-bottom: 30px;
+        }
+        .RBZ_hiwP5BlockTitle {
+            color: #35B3C1 !important;
+            font-size: 19px !important; 
         }
     }
+}
 
-    // ==== Page 5 ====
-    #div_RBZ_hiw_p5{
-        padding-top: 80px;
-        padding-bottom: 50px;
-        background-color: $white;
-        // ---- Ecrasement css knacss----
-        p{
-            line-height: 2;
-        }
-        color: #A3A3A3;
-        #div_RBZ_hiw_p5_inside {
-            margin: auto;
-            max-width: 960px;
-            #div_RBZ_hiw_p5_left{
-                max-width:240px;
-                margin-right: 20px;
-                float: left;
-            }
-            #div_RBZ_hiw_p5_right {
-                position: relative;
-                float: right;
-                color: #A3A3A3;
-                #div_RBZ_hiw_p5_description {
-                    position:absolute;
-                    bottom: -20px;
-                    text-align:center;
-                    margin: 30px auto 60px;
-                    h1 {
-                        color: #484745;
-                        font-size: 40px;
-                        margin-bottom: 20px;
-                    }
-                    p {
-                        font-size: 17px;
-                    }
-                }
-                #div_hiw_diamond {
-                    float:left;
-                }
-                .RBZ_hiwP5Block{
-                    margin-top: 100px;
-                    float:right;
-                    margin-left: -100px;
-                }
-            }
-            .RBZ_hiwP5Block {
-                text-align: justify;
-                max-width: 240px;
-                margin-bottom: 30px;
-            }
-            .RBZ_hiwP5BlockTitle {
-                color: #35B3C1 !important;
-                font-size: 19px !important; 
-            }
-        }
-    }
-
-    // ==== Page 6 ====
-    #div_RBZ_hiw_p6{
-        padding-top: 80px;
-        background-color: #ADE1EC;
-        #div_RBZ_hiw_p6_inside {
-            margin: auto;
-            max-width: 960px;
-        }
+// ==== Page 6 ====
+#div_RBZ_hiw_p6{
+    padding-top: 80px;
+    background-color: #ADE1EC;
+    #div_RBZ_hiw_p6_inside {
+        margin: auto;
+        max-width: 960px;
     }
 }
 
