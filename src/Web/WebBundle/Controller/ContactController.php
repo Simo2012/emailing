@@ -77,16 +77,20 @@ class ContactController extends Controller
         $loGmailHelper = $this->get('web.web.model.contact.gmail');
         $loOutlookHelper = $this->get('web.web.model.contact.outlook');
         $loYahooHelper = $this->get('web.web.model.contact.yahoo');
-        $retour = $loYahooHelper->get_request_token(false, false, true);
-        $response = $retour[3];
-        $url = urldecode($response['xoauth_request_auth_url']);
+        $laRetour = $loYahooHelper->get_request_token(false, false, true);
+        if (empty($laRetour)) {
+            $laResponse = array('xoauth_request_auth_url' => '', 'oauth_token' => '', 'oauth_token_secret' => '');
+        } else {
+            $laResponse = $laRetour[3];
+        }
+        $lsUrl = urldecode($laResponse['xoauth_request_auth_url']);
 
         // ==== On recupère la vue ====
         $loResponse = $this->render('WebWebBundle:Contact:add.html.twig', array(
             'registration' => $lbRegistration,
             'urlGoogle'     => $loGmailHelper->generateUrl(),
             'urlOutlook'    => $loOutlookHelper->generateUrl(),
-            'urlYahoo'      => $url
+            'urlYahoo'      => $lsUrl
         ));
 
         // ==== Cookie - Se souvenir de moi ====
@@ -104,17 +108,15 @@ class ContactController extends Controller
 
         // ==== Mise en place du cookie contact ====
         $laData = array(
-            'yahoo_request_token' => $response['oauth_token'],
-            'yahoo_request_token_secret' => $response['oauth_token_secret'],
-            'yahoo_oauth_verifier' => $response['oauth_token'],
+            'yahoo_request_token' => $laResponse['oauth_token'],
+            'yahoo_request_token_secret' => $laResponse['oauth_token_secret'],
+            'yahoo_oauth_verifier' => $laResponse['oauth_token'],
             'userId' => $loUser->getId()
         );
         $loExpirationDate = new \DateTime();
         $loExpirationDate->add(new \DateInterval('PT1H'));
         $loCookie = new Cookie('RBZ_contact', $loEncrypter->filter($laData), $loExpirationDate);
         $loResponse->headers->setCookie($loCookie);
-
-
 
         return $loResponse;
     } // addAction
@@ -176,7 +178,7 @@ class ContactController extends Controller
             'form' => $loForm->createView()
         );
     } // addPopupAction
-    
+
     /**
      * Abonne un contact
      *

@@ -26,6 +26,7 @@ graphic.standards.form.text2: '<div class="RBZ_input">{{ form_label(form.text2) 
 graphic.standards.form.flip: "{{ form_row(form.flip) }}"
 web.web.form.flip.yes: yes
 web.web.form.flip.no: no
+web.web.currency: "$"
 
 # ==== Layout global ====
 footer.credits:             © <span>Rubizz</span> by Natexo.
@@ -135,18 +136,18 @@ web.web.default.faq.question.7:                 How do I add and remove contacts
 web.web.default.faq.question.inside.7:          To add contacts go to the Mailing List sections and click on Add Contacts. You may add them manually one by one or import them directly from your mailbox.To remove contacts, click on the blue dot on the right corner of the website.  After this your contact will not receive any more recommendations from you.  You can always re-subscribe someone by clicking on the red dot of the contact and select "Re-subscribe"
 web.web.default.faq.question.8:                 How many contacts can I add?
 web.web.default.faq.question.inside.8:          There is no limit to the amount of contact you can add.
-web.web.default.faq.question.9:                 Can you create group of friends?        
+web.web.default.faq.question.9:                 Can you create group of friends?
 web.web.default.faq.question.inside.9:          We assume that all your imported contacts should receive your recommendations. If a friend is interested in a deal but you don´t send it to him/her, then you would be missing out on that commission.  It is suggested that you send your recommendations to as much people as you can.
 web.web.default.faq.question.10:                What will my contacts receive if I add them to my Mailing List?
-web.web.default.faq.question.inside.10:         All contacts you add to your Mailing List will receive deals shared by you. Once they receive the recommendation, they have the choice to interact with it or not. 
+web.web.default.faq.question.inside.10:         All contacts you add to your Mailing List will receive deals shared by you. Once they receive the recommendation, they have the choice to interact with it or not.
 web.web.default.faq.question.11:                If I don´t want to share deals by email, is it possible to share only on Facebook and/or Twitter?
 web.web.default.faq.question.inside.11:         Yes, you may share your offers using only Facebook and/or Twitter.
 web.web.default.faq.question.12:                One of my contacts no longer wishes to receive Rubizz deals from me.  Can I unsubscribe him/her from my mailing list?
 web.web.default.faq.question.inside.12:         If one of your contacts no longer wishes to receive your recommendations, they can easily unsubscribe by clicking  ¨Unsuscribe¨ in any email sent by you.  You also have the option of unsubscribing them yourself by accessing your Mailing List on your Rubizz account.
 web.web.default.faq.question.13:                Can I choose the people I want to share deals with?
-web.web.default.faq.question.inside.13:         Yes, you can choose and share deals with your mailing list, Facebook friends or Twitter followers. 
+web.web.default.faq.question.inside.13:         Yes, you can choose and share deals with your mailing list, Facebook friends or Twitter followers.
 web.web.default.faq.question.14:                Can I see the results of my recommendations?
-web.web.default.faq.question.inside.14:         Yes.  By accessing your dashboard you may see all your daily commissions and the number of people that have interacted with each deal you´ve shared. 
+web.web.default.faq.question.inside.14:         Yes.  By accessing your dashboard you may see all your daily commissions and the number of people that have interacted with each deal you´ve shared.
 web.web.default.faq.question.15:                Do my contacts need to click on the link I sent them in order to collect my commission?
 web.web.default.faq.question.inside.15:         Yes.  In order to receive a commission, your contact has to access the deal using the unique link you´ve shared via Email, Facebook or Twitter.
 web.web.default.faq.question.16:                One of my contacts has participated in one of my deals but I see no commission.  How is this possible?
@@ -267,7 +268,7 @@ web.web.user.bic.titre1:   My bank id
 web.web.user.bic.titre2:   To receive your payments, you must enter your bank details
 # ==== Encaisser ma cagnotte ====
 web.web.user.cashIn.cash.title: Redeem my Piggy Bank
-web.web.user.cashIn.cash.firstSection: "A payment request requires a Piggy Bank balance of at least 50€.  Once you have completed your request, the transaction will be completed in approximately  10 days."
+web.web.user.cashIn.cash.firstSection: "A payment request requires a Piggy Bank balance of at least $50.  Once you have completed your request, the transaction will be completed in approximately  10 days."
 web.web.user.cashIn.cash.SecondSection: "<strong>IMPORTANT </strong>: You have not entered your bank account information in the <a href='%rib%'>YOUR RIB</a> section. Payment request cannot be completed without completing this information. Click <a href='%ici%'>here</a> to enter your bank account information."
 web.web.user.cashIn.cash.info: Received Payment
 web.web.user.cashIn.history.title: History of your payment requests
@@ -288,7 +289,7 @@ web.web.user.pot.operation_name: TRASACTION
 web.web.user.pot.debit: DEBIT
 web.web.user.pot.credit: CREDIT
 web.web.user.pot.solde: BALANCE
-web.web.user.pot.info: "This section shows all your Piggy Bank transactions: Made recommendations, completed payments…Click on the operation detail to view your commission for each recommendation. As long as you have a minimum of 50&euro;, you may at any moment redeem the balance shown in the &laquo;Redeem my piggy bank&raquo; section."
+web.web.user.pot.info: "This section shows all your Piggy Bank transactions: Made recommendations, completed payments…Click on the operation detail to view your commission for each recommendation. As long as you have a minimum of $50, you may at any moment redeem the balance shown in the &laquo;Redeem my piggy bank&raquo; section."
 web.web.user.pot.recommandation_name: RECOMMANDATION NAME
 web.web.user.pot.recommandation.amount: amount
 web.web.user.pot.payment: PAYMENT
