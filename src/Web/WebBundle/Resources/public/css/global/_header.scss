@@ -196,6 +196,9 @@
             #a_RBZ_linkMenuMobile {
                 display: none;
             }
+            #div_RBZ_menuMobile {
+                display: none;
+            }
             // ==== Menu de profil (mobile) ====
             #div_RBZ_mobile_profile_menu {
                 display: none;
@@ -239,6 +242,7 @@
                 #div_RBZ_menuMobile {
                     position: relative;
                     width: 100%;
+                    display: block;
                     ul {
                         display: none;
                         position: absolute;
@@ -455,6 +459,7 @@
                 #div_RBZ_menuMobile {
                     position: relative;
                     width: 100%;
+                    display: block;
                     ul {
                         display: none;
                         position: absolute;
