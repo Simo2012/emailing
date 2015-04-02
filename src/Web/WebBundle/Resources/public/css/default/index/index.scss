@@ -275,7 +275,6 @@ body.RBZ_fr {
             height:auto; text-align:center; padding-top:10px;
             #img_RBZ_headerGuy { display:none; }
             #img_RBZ_headerGuyPad { display:none; }
-            //#img_RBZ_headerGuyPhone { display:block; margin-left:auto; margin-right:auto; margin-top:50px; }
             #img_RBZ_headerBeta { display:none; }
             #div_RBZ_headerText {
                 float:none; position:relative; top: 50px; right:auto;
@@ -319,6 +318,19 @@ body.RBZ_fr {
             #p_RBZ_rights {
                 text-align:center; margin-left:0px;
                 #br_RBZ_footer { display:block; }
+            }
+        }
+    }
+}
+
+// ==== Petit smartphone ====
+@media (max-width: 480px) {
+    #div_RBZ_header {
+        top: -25px;
+        #div_RBZ_banner {
+            height:120px;
+            #div_RBZ_headerMenu {
+                padding-top:75px;
             }
         }
     }
