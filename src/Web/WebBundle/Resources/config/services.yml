@@ -184,8 +184,8 @@ parameters:
 
     # ==== Devises utilisées en fonction du pays ====
     web.rubizz.currency:
-        us: "$"
-        fr: "&euro;"
+        us: { symbol: "$", position: "before", decimal: ".", thousand: ",", space: false }
+        fr: { symbol: "&euro;", position: "after", decimal: ",", thousand: " ", space: true }
 
 services:
     # =================== MODEL ===================
@@ -266,17 +266,20 @@ services:
         class: Web\WebBundle\Model\User\DetectCountryUser
         arguments: ["%kernel.root_dir%", "%web.geoip.path.database%"]
 
-    # =================== TWIG ===================
-    # ==== MENU ====
+    # ==== TWIG ====
     # ---- Menu en twig ----
     web.web.twig.extension.menu_extension:
         class: Web\WebBundle\Twig\Extension\MenuExtension
         tags:
             - { name: twig.extension }
         arguments: ["@twig.loader", "@translator", "@security.context", "%kernel.environment%", "@router", "%menus%"]
+    # ---- Affichage des montants en devise ----
+    web.web.twig.extension.currency:
+        class: Web\WebBundle\Twig\Extension\CurrencyExtension
+        tags: [{ name: twig.extension }]
+        arguments: ["%web.rubizz.currency%"]
 
-    # =================== EVENT LISTENER ===================
-    # ==== MENU ====
+    # ==== EVENT LISTENER ====
     # ---- Menu listener ----
     web.web.event_listener.controller_listener:
         class: Web\WebBundle\EventListener\ControllerListener
@@ -285,8 +288,7 @@ services:
         arguments: ["@web.web.twig.extension.menu_extension"]
 
 
-    # =================== FORM ====================
-    # ==== Éléments de formulaire ====
+    # ==== FORM ====
     # ---- Flip ----
     flip:
        class: Web\WebBundle\Form\Type\FlipType
