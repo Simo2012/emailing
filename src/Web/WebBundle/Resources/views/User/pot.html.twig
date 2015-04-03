@@ -37,7 +37,7 @@
         </tr>
         {% for movement in movements %}
             <tr>
-                <td>{{ movement.dateMovement | date("d.m.Y") }}</td>
+                <td>{{ movement.dateMovement | localizeddate('short', 'none') }}</td>
 
                 {% if movement.movementType == 'payment' %}
                     <td>{{ 'web.web.user.pot.movement.payment' | trans }}</td>

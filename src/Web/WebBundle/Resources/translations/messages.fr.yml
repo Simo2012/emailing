@@ -301,7 +301,7 @@ web.web.user.details.email:                      EMAIL
 #===== POT =========
 web.web.user.pot.title: Détail de ma cagnotte
 web.web.user.pot.date: DATE
-web.web.user.pot.operation_name: OPERATION
+web.web.user.pot.operation_name: OPÉRATION
 web.web.user.pot.debit: DEBIT
 web.web.user.pot.credit: CREDIT
 web.web.user.pot.solde: SOLDE
@@ -312,8 +312,8 @@ web.web.user.pot.amount: MONTANT
 web.web.user.pot.credit.title: Récapitulatif des mouvements par recommandation
 web.web.user.pot.debit.title: Récapitulatif des paiments effectués
 web.web.user.pot.mounth: MOIS
-web.web.user.pot.movement.payment: Paiements reçus
-web.web.user.pot.movement.commission: Commissions perçues
+web.web.user.pot.movement.payment: Paiements
+web.web.user.pot.movement.commission: Commissions
 web.web.user.pot.payment.word1: Paiement sur le compte
 web.web.user.pot.payment.word2: du
 web.web.user.pot.movement.popup.title: Détail des mouvements

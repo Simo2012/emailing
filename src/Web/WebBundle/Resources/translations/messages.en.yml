@@ -286,7 +286,7 @@ web.web.user.cashIn.history.title:      Historique de vos demandes de paiements
 #===== POT =========
 web.web.user.pot.title: Detail of my piggy bank
 web.web.user.pot.date: DATE
-web.web.user.pot.operation_name: TRASACTION
+web.web.user.pot.operation_name: TRANSACTION
 web.web.user.pot.debit: DEBIT
 web.web.user.pot.credit: CREDIT
 web.web.user.pot.solde: BALANCE
@@ -294,12 +294,12 @@ web.web.user.pot.info: "This section shows all your Piggy Bank transactions: Mad
 web.web.user.pot.recommandation_name: RECOMMANDATION NAME
 web.web.user.pot.recommandation.amount: amount
 web.web.user.pot.payment: PAYMENT
-web.web.user.pot.payment.amount: AMOUNT
+web.web.user.pot.amount: AMOUNT
 web.web.user.pot.credit.title: Transaction Summary per Recommendation
 web.web.user.pot.debit.title: Transaction Details
 web.web.user.pot.mounth: MONTH
-web.web.user.pot.movement.payment: Received Payment
-web.web.user.pot.movement.commission: Received Commission
+web.web.user.pot.movement.payment: Payment
+web.web.user.pot.movement.commission: Commission
 web.web.user.pot.payment.word1: Payment to the
 web.web.user.pot.payment.word2: account made on
 web.web.user.pot.movement.popup.title: Detail of movements
