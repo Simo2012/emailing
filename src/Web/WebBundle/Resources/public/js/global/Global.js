@@ -18,6 +18,13 @@ Global.prototype = {
      */
     ready : function()
     {
+        // ==== Détection de Safari ====
+        var lsUa = navigator.userAgent;
+        if ((lsUa.indexOf('Safari') != -1) && (lsUa.indexOf('Chrome') == -1) && (lsUa.indexOf('iPhone') == -1)
+             && (lsUa.indexOf('iPad') == -1)) {
+            Global.prototype.isSafari = true;
+        }
+
         // ==== Menu de profil ====
         // ---- Desktop ----
         $(document).on('mouseenter', '#ul_RBZ_desktop_profile_menu > li', function(event) {
@@ -68,6 +75,7 @@ Global.prototype = {
             return false;
         });
     }, // ready
+    isSafari: false,
 
     /**
      * Token de fin
