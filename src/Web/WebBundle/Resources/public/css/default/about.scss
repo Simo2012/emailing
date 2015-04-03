@@ -8,6 +8,7 @@
 #div_RBZ_about {
     max-width: 960px;
     margin-top: 160px;
+    &.RBZ_logged { margin-top:0px; }
     h1 {
         color: $table_red;
         font-size: 35px;
@@ -104,7 +105,7 @@
         section {
             &.RBZ_wrapper {
                 width:auto;
-            }  
+            }
         }
     }
     // ==== About  ====

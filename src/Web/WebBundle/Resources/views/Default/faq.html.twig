@@ -10,7 +10,7 @@
 
 {% block JAVASCRIPT %}
     {{ parent() }}
-    {% javascripts '@WebWebBundle/Resources/public/js/default/Faq.js'                   
+    {% javascripts '@WebWebBundle/Resources/public/js/default/Faq.js'
     %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
@@ -29,7 +29,7 @@
                 </ul>
             </div>
             {# Block de droite FAQ #}
-            <div id="div_RBZ_faqRight">
+            <div id="div_RBZ_faqRight" class="{{ app.user.id is defined ? "RBZ_logged" : "" }}">
                 <div id="div_RBZ_faqRightImg">
                     <img src="{{ asset('/bundles/webweb/images/default/faq/faq.png') }}">
                 </div>
