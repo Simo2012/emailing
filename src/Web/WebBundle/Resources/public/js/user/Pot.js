@@ -19,12 +19,18 @@ Pot.prototype = {
     ready: function ()
     {
         $(".RBZ_user_pot_debit").click(function () {
-            goPopup.ajaxPopup($(this).attr('hrefbis'));
+            var url = $(this).attr('hrefbis');
+            var windowWidth = $(window).width();
+            url = url + '?width=' + windowWidth;
+            goPopup.ajaxPopup(url);
 
             return false;
         });
         $(".RBZ_user_pot_credit").click(function () {
-            goPopup.ajaxPopup($(this).attr('hrefbis'));
+            var url = $(this).attr('hrefbis');
+            var windowWidth = $(window).width();
+            url = url + '?width=' + windowWidth;
+            goPopup.ajaxPopup(url);
 
             return false;
         });

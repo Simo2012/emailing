@@ -47,34 +47,15 @@
         color: $table_red;
     }
 }
-.RBZ_user_pot_c_header{
+.RBZ_user_pot_header{
     display: block;
-    width: 450px;
-    padding-bottom: 60px;
+    width: 100%;
     .RBZ_user_pot_cd_header_title{
-        float: left;
-        margin-left: 60px;
+        width: 100%;
+        margin: auto;
     }
-    .RBZ_user_pot_cd_header_mounth{
-        float: left;
-        margin-left: 60px;
-        color:#BEBEC5 ;
-        font: 15px fantasy;
-    }
-}
-.RBZ_user_pot_d_header{
-    display: block;
-    width: 400px;
-    padding-bottom: 60px;
-    .RBZ_user_pot_cd_header_title{
-        float: left;
-        margin-left: 60px;
-    }
-    .RBZ_user_pot_cd_header_mounth{
-        float: left;
-        margin-left: 60px;
-        color:#BEBEC5 ;
-        font: 15px fantasy;
+    h3 {
+        margin-top: 20px;
     }
 }
 
@@ -82,8 +63,9 @@
 
 // ==== Version responsive ====
 @media (max-width: 768px) {
-    #table_RBZ_mailing_list {
-        display:table; table-layout:auto;
+    #table_RBZ_mailing_list, #table_RBZ_pagination, #table_RBZ_pot_movements {
+        display:table;
+        table-layout:auto;
         tr {
             th {
                 white-space: nowrap;
@@ -111,26 +93,30 @@
     }
 }
 @media (max-width: 480px) {
-    #table_RBZ_pot {
-        display:table; table-layout:auto;
-        tr {
-            th {
-                white-space: nowrap;
-                display: table-cell !important;
-                padding: 0.3em 0.8em;
-                &.RBZ_reduce {
-                    display: none !important;
+    #table_RBZ_pot, #table_RBZ_pagination, #table_RBZ_pot_movements {
+        display:table;
+        table-layout:auto;
+        thead, tbody, tfoot {
+            display: table-header-group !important;
+            tr {
+                th {
+                    white-space: nowrap;
+                    display: table-cell !important;
+                    padding: 0.3em 0.8em;
+                    &.RBZ_reduce {
+                        display: none !important;
+                    }
+                    span.RBZ_reduce {
+                        display: none;
+                    }
                 }
-                span.RBZ_reduce {
-                    display: none;
-                }
-            }
-            td {
-                display: table-cell !important;
-                word-wrap: normal;
-                padding: 0.3em 0.8em;
-                &.RBZ_reduce {
-                    display: none !important;
+                td {
+                    display: table-cell !important;
+                    word-wrap: normal;
+                    padding: 0.3em 0.8em;
+                    &.RBZ_reduce {
+                        display: none !important;
+                    }
                 }
             }
         }

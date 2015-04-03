@@ -125,6 +125,13 @@ class UserController extends Controller
      */
     public function potAction(Request $poRequest)
     {
+        // ==== Initialisation ====
+        $liWidth = 880;
+        $liWindowWidth = $poRequest->get('width');
+        if ($liWidth > $liWindowWidth && !empty($liWindowWidth)) {
+            $liWidth = $liWindowWidth;
+        }
+
         // ==== Lecture des données ====
         $loDate = $poRequest->get('piDate');
         $piTypeMouvement = $poRequest->get('piType');
@@ -140,14 +147,17 @@ class UserController extends Controller
         $loPaginator->setUrl($this->generateUrl('WebWebBundle_userPot'));
         if ($piTypeMouvement == 'credit') {
             $commissions = $loManager->getRepository('WebWebBundle:Commission')->getUserCommissions($loUser,$loDate);
-            return $this->render('WebWebBundle:user:pot/credit.html.twig',array('commissions' => $commissions));
+            return $this->render('WebWebBundle:user:pot/credit.html.twig',array('commissions' => $commissions, 'width' => $liWidth));
         } elseif ($piTypeMouvement == 'debit') {
             $loPaymentRequest = $loManager->getRepository('WebWebBundle:PaymentRequest')->getAllByUser($loUser,$loDate);
-            return $this->render('WebWebBundle:user:pot/debit.html.twig',array('invoiceRequests' => $loPaymentRequest));
+            return $this->render(
+                'WebWebBundle:user:pot/debit.html.twig',
+                array('invoiceRequests' => $loPaymentRequest, 'width' => $liWidth)
+            );
         }
         // ==== recuperation des paiements ====
         return array(
-            'movements' => $loPaginator
+            'movements' => $loPaginator,
         );
     }// potAction
 

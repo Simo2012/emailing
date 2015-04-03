@@ -1,6 +1,6 @@
 {% extends "@WebWeb/layoutPopup.html.twig" %}
 
-{% block STYLE %}width:880px;height:600px;{% endblock %}
+{% block STYLE %}width:{{ width }}px;height:600px;{% endblock %}
 {% block TITLE %}
     {{ 'web.web.user.pot.movement.popup.title' | trans }}
 {% endblock %}
@@ -11,7 +11,7 @@
     {% endstylesheets %}
 {% endblock %}
 {% block CONTENT %}
-    <div class="RBZ_user_pot_d_header">
+    <div class="RBZ_user_pot_header">
         <div class="RBZ_user_pot_cd_header_title">
             <h3>{{ 'web.web.user.pot.debit.title' | trans }}</h3>
         </div>
