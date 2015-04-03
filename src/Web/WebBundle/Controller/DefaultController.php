@@ -96,7 +96,9 @@ class DefaultController extends Controller
         // ==== Initialisation ====
         $loForm = $this->createForm('WebWebContactType');
         $loTranslator = $this->get('translator');
-
+        // ---- Permet d'envoyer l'email à contact@rubizz.fr ou contact@rubizz.us ----
+        $lsLocaleFull = $this->getRequest()->getLocale();
+        $lsLocale = strtolower(substr($lsLocaleFull, -2, 2));
         if ($poRequest->isMethod('POST')) {
             $loForm->handleRequest($poRequest);
             $laData = $loForm->getData();
@@ -118,7 +120,7 @@ class DefaultController extends Controller
                     $loEmail = \Swift_Message::newInstance()
                             ->setSubject("Nouveau message reçu depuis le formulaire de contact Rubizz")
                             ->setFrom(array('admin@natexo.com' => 'Natexo admin'))
-                            ->setTo("scicluna@natexo.com")
+                            ->setTo("contact@rubizz.{$lsLocale}")
                             ->setBody($lsHtml, 'text/html');
                     $this->container->get('mailer')->send($loEmail);
                 } catch (\Exception $lsError) {
