@@ -25,7 +25,7 @@
         {%endif%}
         <div id="div_RBZ_CashThirdSection">
             <div>{{ "web.web.offer.index.donut.piggyBank" | trans }}</div>
-            <div class="RBZ_piggyBank">{{ user.availableAmount }} {{ 'web.web.currency' | trans | raw }}</div>
+            <div class="RBZ_piggyBank">{{ currency_format(user.availableAmount, user.country) }}</div>
             <div class="RBZ_piggyBankText">
                 <a class="RBZ_redButton" href="{{ url("WebWebBundle_userCashInRequest") }}">{{ "web.web.user.cashIn.cash.info" | trans | upper }} &rsaquo; </a>
             </div>
@@ -49,7 +49,7 @@
                         {% for invoiceRequest  in invoiceRequests %}
                             <td>{{ invoiceRequest.dateCreate | date("d.m.Y") }}</td>
                             <td>{{ 'web.web.user.cashIn.tabHistory.desc.transaction' | trans }} {{invoiceRequest.bankName}}</td>
-                            <td>{{ invoiceRequest.amount }} {{ 'web.web.currency' | trans | raw }}</td>
+                            <td>{{ currency_format(invoiceRequest.amount, app.user.country) }}</td>
                             <td class="{{ (invoiceRequest.status == 'confirmed') ? 'RBZ_blue' : 'RBZ_red' }}">{{ invoiceRequest.status }} </td>
                         </tr>
                     {% endfor %}

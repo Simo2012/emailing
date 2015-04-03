@@ -66,13 +66,14 @@
             </p>
 
             <div class="RBZ_offer_border"></div>
-        {% if offer.remType in ['CPC', 'CPL', 'CPA'] %}
-            {% set symbol = 'web.web.currency' | trans | raw %}
-        {% elseif offer.remType == 'CPA%' %}
-            {% set symbol = '%' %}
-        {% endif %}
             <div class="RBZ_offer_remuneration">
-                <span class="RBZ_offer_remuneration_amount">{{ offer.remMember | number_format(2, ',', ' ') }}&nbsp;{{ symbol }}</span>
+                <span class="RBZ_offer_remuneration_amount">
+        {% if offer.remType in ['CPC', 'CPL', 'CPA'] %}
+                {{ currency_format(offer.remMember, offer.country) }}
+        {% elseif offer.remType == 'CPA%' %}
+                {{ percent_format(offer.remMember, offer.country) }}
+        {% endif %}
+                </span>
                 <span class="RBZ_offer_remuneration_description">{{ ('web.web.offer.macro.recommendation_description_' ~ offer.remType) | trans }}</span>
             </div>
 

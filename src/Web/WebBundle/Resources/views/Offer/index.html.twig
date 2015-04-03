@@ -40,7 +40,7 @@
                 <canvas id="canavs_RBZ_donut"/></canvas>
                 <div id="div_RBZ_donutDetail">
                     <div>{{ "web.web.offer.index.donut.piggyBank" | trans }}</div>
-                    <div class="RBZ_piggyBank"> {{ app.user.availableAmount | number_format(2, ',', ' ') }}<sup>{{ 'web.web.currency' | trans | raw }}</sup></div>
+                    <div class="RBZ_piggyBank"> {{ currency_format(app.user.availableAmount, app.user.country, 'sup') }}</div>
                     <div id="div_RBZ_separator"></div>
                     <div class="RBZ_piggyBankText"><a href="{{ url("WebWebBundle_userCashIn") }}">{{ "web.web.offer.index.donut.piggyBankTouch" | trans }}</a></div>
                     <a id="a_RBZ_donutDetail" href="{{ url("WebWebBundle_userPot") }}">{{ "web.web.offer.index.donut.detail" | trans }}</a>

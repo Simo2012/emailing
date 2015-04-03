@@ -9,7 +9,7 @@
             </div>
             <div id="div_RBZ_counterGain" class="RBZ_icons_cagnotte">
                 <span class="KNS_tiny-hidden">{{ "layout.myKitty" | trans }}</span><br>
-                <span class="RBZ_number">{{ app.user.availableAmount | number_format(2, ',', ' ') }} {{ 'web.web.currency' | trans | raw }}</span>
+                <span class="RBZ_number">{{ currency_format(app.user.availableAmount, app.user.country) }}</span>
             </div>
 
             <div id="div_RBZ_desktop_profile_menu">
