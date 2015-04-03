@@ -101,17 +101,20 @@ class UserController extends Controller
         $loManager = $this->getDoctrine()->getManager();
         $loUser = $this->getUser();
         $loForm = $this->createForm('WebWebUserBicType', $loUser);
-
+        $lbSuccess = false;
+        
         // ==== Traitement de la saisie ====
         $loRequest = $this->getRequest();
         if ($loRequest->isMethod('POST')) {
             $loForm->bind($loRequest);
             $loUser->setDateUpdate(new \DateTime('now'));
             $loManager->flush();
+            $lbSuccess = true;
         }
         return array(
             'form'   => $loForm->createView(),
-            'UserId' => $loUser->getId()
+            'UserId' => $loUser->getId(),
+            'success' => $lbSuccess
         );
     }// ribAction
 

@@ -18,4 +18,9 @@
     height:25px;
     margin:25px auto 40px auto;
 }
-#section_RBZ_main { padding:0px 10px; }
+#section_RBZ_main {
+    padding:0px 10px;
+    // ==== Messages ok ====
+    p.RBZ_ok { color:#F04F61; font-style:italic; }
+}
+

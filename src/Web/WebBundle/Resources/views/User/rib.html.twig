@@ -16,22 +16,22 @@
 {% endblock %}
 {% block CONTENT %}
     <form action="{{ url('WebWebBundle_userRib') }}" method="post" {{ form_enctype(form) }} autocomplete="off">
-{%     if error is defined %}
-    <p class="RBZ_error">{{ error }}</p>
-{%     endif %}
-    <h1>{{ 'web.web.user.bic.titre1' | trans }}</h1>
-    <h3>{{ 'web.web.user.bic.titre2' | trans }}</h3>
+        {% if success == true %}
+            <p class="RBZ_ok">{{ 'web.web.form.ok' | trans }}</p>
+        {% endif %}
+        <h1>{{ 'web.web.user.bic.titre1' | trans }}</h1>
+        <h3>{{ 'web.web.user.bic.titre2' | trans }}</h3>
 
-    <div id="div_RBZ_userBic">
-        {{ form_widget(form.bic) }}
-    </div>
+        <div id="div_RBZ_userBic">
+            {{ form_widget(form.bic) }}
+        </div>
 
-    <div id="div_RBZ_userBorder"></div>
+        <div id="div_RBZ_userBorder"></div>
 
-    <div id="div_RBZ_userFooter">
-        <input type="submit" value="{{ 'web.web.user.details.submit' | trans }} &nbsp; &rsaquo;" class="RBZ_redButton"/>
-    </div>
+        <div id="div_RBZ_userFooter">
+            <input type="submit" value="{{ 'web.web.user.details.submit' | trans }} &nbsp; &rsaquo;" class="RBZ_redButton"/>
+        </div>
 
-    {{ form_rest(form) }}
+        {{ form_rest(form) }}
     </form>
 {% endblock %}
