@@ -51,8 +51,8 @@ web.web.popup.confirmation.confirm_button: CONFIRM
 # ==== Login/Inscription ====
 web.web.security.login.baseline:        WELCOME BACK TO RUBIZZ
 web.web.security.register.baseline:     DISCOVER RUBIZZ FOR FREE
-web.web.security.firstname:             Your name
-web.web.security.lastname:              Your last name
+web.web.security.firstname:             Your firstname
+web.web.security.lastname:              Your lastname
 web.web.security.email:                 Your email
 web.web.security.password:              Your password
 web.web.security.empty_fields:          You must fill all fields.
