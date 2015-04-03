@@ -11,7 +11,7 @@
 {% block CONTENT %}
     <div id="div_RBZ_content">
         {# Page inscription page1 #}
-        <div id="div_RBZ_hiw_p1" class="RBZ_hiw_page">
+        <div id="div_RBZ_hiw_p1" class="RBZ_hiw_page {{ app.user.id is defined ? "RBZ_logged" : "" }}">
             <div id="div_RBZ_hiw_p1_inside">
                 <div id="div_RBZ_hiw_p1_left">
                     <img src="{{ asset('/bundles/webweb/images/default/hiw/p1.gif') }}">

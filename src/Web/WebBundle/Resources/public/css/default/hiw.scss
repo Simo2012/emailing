@@ -18,6 +18,7 @@ body {
     padding-bottom: 70px;
     padding-top: 180px;
     background-color: #ADE1EC;
+    &.RBZ_logged { padding-top: 0px; }
     #div_RBZ_hiw_p1_inside {
         max-width:960px;
         margin-left:auto;
@@ -40,6 +41,7 @@ body {
             }
         }
     }
+    
 }
 
 
