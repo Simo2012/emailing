@@ -71,6 +71,18 @@ div#div_RBZ_userMenu {
 }
 
 //==== smartphone petit ====
+@media (max-width: 430px) {
+    div#div_RBZ_userMenu {
+        padding-top:0px;
+        div.RBZ_wrapper { width:auto; padding-bottom:5px; text-align:center; }
+        ul li { margin-left:5px; border:1px solid #F1F1F1; border-radius:10px; }
+        ul li.active {
+            box-shadow:none;
+            &:after { display:none; }
+            &:before { display:none; }
+        }
+    }
+}
 @media (max-width: 350px) {
   div#div_RBZ_userMenu ul li {
     font-size: 8.2px;
