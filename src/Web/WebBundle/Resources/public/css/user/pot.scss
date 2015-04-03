@@ -18,20 +18,18 @@
 }
 /* ---- Tableau de listing ---- */
 #table_RBZ_pot {
-
     .RBZ_user_pot_soldcredit {
         color: $table_blue;
-
     }
     .RBZ_user_pot_solddebit {
         color: $table_red;
-
     }
     .RBZ_user_pot_credit, .RBZ_user_pot_debit{
         text-decoration:underline;
     }
 
 }
+
 #table_RBZ_potDC
 {
     margin-left: 90px;
@@ -44,13 +42,10 @@
     }
     .RBZ_user_pot_soldcredit {
         color: $table_blue;
-
     }
     .RBZ_user_pot_solddebit {
         color: $table_red;
-
     }
-
 }
 .RBZ_user_pot_c_header{
     display: block;
@@ -66,9 +61,7 @@
         color:#BEBEC5 ;
         font: 15px fantasy;
     }
-
 }
-
 .RBZ_user_pot_d_header{
     display: block;
     width: 400px;
@@ -83,6 +76,72 @@
         color:#BEBEC5 ;
         font: 15px fantasy;
     }
-
 }
+
 #section_RBZ_main { padding:0px 10px; }
+
+// ==== Version responsive ====
+@media (max-width: 768px) {
+    #table_RBZ_mailing_list {
+        display:table; table-layout:auto;
+        tr {
+            th {
+                white-space: nowrap;
+                display: table-cell;
+                padding: 0.3em 0.8em;
+                &.RBZ_reduce {
+                    display: none;
+                }
+                span.RBZ_reduce {
+                    display: none;
+                }
+            }
+            td {
+                display: table-cell;
+                word-wrap: normal;
+                padding: 0.3em 0.8em;
+                &.RBZ_reduce {
+                    display: none;
+                }
+            }
+        }
+    }
+    table.RBZ_table td {
+        line-height: normal;
+    }
+}
+@media (max-width: 480px) {
+    #table_RBZ_pot {
+        display:table; table-layout:auto;
+        tr {
+            th {
+                white-space: nowrap;
+                display: table-cell !important;
+                padding: 0.3em 0.8em;
+                &.RBZ_reduce {
+                    display: none !important;
+                }
+                span.RBZ_reduce {
+                    display: none;
+                }
+            }
+            td {
+                display: table-cell !important;
+                word-wrap: normal;
+                padding: 0.3em 0.8em;
+                &.RBZ_reduce {
+                    display: none !important;
+                }
+            }
+        }
+    }
+    table.RBZ_table {
+        th {
+            font-size: 10px;
+        }
+        td {
+            line-height: normal;
+            font-size: 10px;
+        }
+    }
+}
