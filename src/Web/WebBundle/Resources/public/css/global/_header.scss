@@ -7,8 +7,15 @@
     background-color: $red-banner;
     // ==== Bannière rouge ====
     #div_RBZ_banner {
+        position: relative;
         height: 100px;
         background: url(/bundles/webweb/images/global/logo.png) 0 20px no-repeat;
+        // ==== Image beta ====
+        #img_RBZ_headerBeta {
+            position: absolute;
+            left: 150px;
+            top: 55px;
+        }
         // ==== Icônes ====
         .RBZ_icons_profile {
             background: sprite($icons, profile);
@@ -400,6 +407,10 @@
             #div_RBZ_desktop_profile_menu {
                 display: none;
             }
+            // ==== Image beta ====
+            #img_RBZ_headerBeta {
+                display: none;
+            }  
         }
         // ==== Bannière rouge ====
         #div_RBZ_banner {
