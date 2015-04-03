@@ -101,6 +101,10 @@ WebWebBundle_userPot:
 WebWebBundle_userCashIn:
     path:     /user/cash-in
     defaults: { _controller: "WebWebBundle:User:cashIn" }
+# ---- Page de demande encaissement cagnotte ----
+WebWebBundle_userCashInRequest:
+    path:     /user/cash-in-request
+    defaults: { _controller: "WebWebBundle:User:cashInRequest" }
 
 #====================================
 # Offer controller : page offer, etc
