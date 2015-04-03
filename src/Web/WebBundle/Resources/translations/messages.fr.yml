@@ -351,7 +351,8 @@ web.web.contact.index.recommendation.volume:      VOLUME
 web.web.contact.index.recommendation.total:       TOTAL
 # ==== Add ====
 web.web.contact.add.congratulation:           Félicitations %firstname% !
-web.web.contact.add.congratulation.text:      "Vous êtes désormais inscrit à Rubizz. Une fois votre liste de contacts importée, vous pourrez commencer à gagner de l'argent en sélectionnant les offres à envoyer à votre réseau d'amis.<br><a href=\"%url%\">En savoir + sur le fonctionnement de Rubizz</a>"
+web.web.contact.add.congratulation.first:     "Vous êtes désormais inscrit à Rubizz. Une fois votre liste de contacts importée, vous pourrez commencer à gagner de l'argent en sélectionnant les offres à envoyer à votre réseau d'amis.<br><a href=\"%url%\">En savoir + sur le fonctionnement de Rubizz</a>"
+web.web.contact.add.congratulation.text:      "Nous sommes ravis de vous revoir! Une fois votre liste de contacts importée, vous pourrez commencer à gagner de l'argent en sélectionnant les offres à envoyer à votre réseau d'amis.<br><a href=\"%url%\">En savoir + sur le fonctionnement de Rubizz</a>"
 web.web.contact.add.addContacts:              Ajouter vos contacts
 web.web.contact.add.skipStep:                 IGNORER CETTE ÉTAPE
 web.web.contact.add.provider.email:           Email

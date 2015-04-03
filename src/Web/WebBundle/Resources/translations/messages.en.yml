@@ -354,7 +354,8 @@ web.web.contact.index.recommendation.volume:      VOLUME
 web.web.contact.index.recommendation.total:       TOTAL
 # ==== Add ====
 web.web.contact.add.congratulation:           Congratulations  %firstname%!
-web.web.contact.add.congratulation.text:      "You are now subscribed to Rubizz.  Once you import your contact list you´ll be able to start earning money by selecting offers you´ll send to your network of friends"
+web.web.contact.add.congratulation.first:     "You are now subscribed to Rubizz.  Once you import your contact list you´ll be able to start earning money by selecting offers you´ll send to your network of friends"
+web.web.contact.add.congratulation.text:      "Welcome back to Rubizz! Once you import your contact list you´ll be able to start earning money by selecting offers you´ll send to your network of friends"
 web.web.contact.add.addContacts:              Add contacts
 web.web.contact.add.skipStep:                 IGNORE THIS STEP
 web.web.contact.add.provider.email:           Email

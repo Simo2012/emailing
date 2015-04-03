@@ -25,66 +25,70 @@
     {% if app.session.get('_is_first_registration') %}
         {% include "@WebWeb/Contact/popupWelcome.html.twig" %}
     {% endif %}
-<div id="div_RBZ_contactsWrapper">
-    <section id="section_RBZ_contacts">
+    <div id="div_RBZ_contactsWrapper">
+        <section id="section_RBZ_contacts">
+
+            <div id="div_RBZ_congratulations">
+
+                <h1>{{ "web.web.contact.add.congratulation" | trans({'%firstname%': app.user.firstname | capitalize}) }}</h1>
+                {# Changement de texte si c'est le premier login (après la premiere inscription) #}
+                {% if app.session.get('_is_first_registration') %}  
+                    <p>{{ "web.web.contact.add.congratulation.first" | trans({'%url%': url('WebWebBundle_defaultHowItWorks')}) | raw }}</p>
+                {% else %}
+                    <p>{{ "web.web.contact.add.congratulation.text" | trans({'%url%': url('WebWebBundle_defaultHowItWorks')}) | raw }}</p>
+                {% endif %}
+            </div>
+
+            <div>
+                {% if app.session.get('_is_first_registration') %}
+                    <a id="a_RBZ_skipStep" class="KNS_right" href="{{ url('WebWebBundle_offerIndex') }}">{{ "web.web.contact.add.skipStep" | trans }}</a>     
+                {% endif %}
+                <h1 id="h1_RBZ_contacts">{{ "web.web.contact.add.addContacts" | trans }}</h1>
+            </div>
+
+
+            <div class="RBZ_blockContacts">
+                <a id="a_RBZ_importEmail" class="KNS_right" href="#" hrefbis="{{ url('WebWebBundle_contactAddPopup') }}">{{ "web.web.contact.add.add" | trans | raw }}</a>
+                <span>{{ "web.web.contact.add.provider.email" | trans}}</span>
+                <p>{{ "web.web.contact.add.addManually" | trans }}</p>
+            </div>
+            <div class="RBZ_blockContacts">
+                <a id="a_RBZ_importGmail" class="KNS_right" href="#" hrefbis="{{ urlGoogle }}">{{ "web.web.contact.add.add" | trans | raw }}</a>
+                <span>{{ "web.web.contact.add.provider.gmail" | trans}}</span>
+                <p>{{ "web.web.contact.add.addContact" | trans({'%provider%': 'Gmail'}) }}</p>
+            </div>
+            <div class="RBZ_blockContacts">
+                <a id="a_RBZ_importOutlook" class="KNS_right" href="#" hrefbis="{{ urlOutlook }}">{{ "web.web.contact.add.add" | trans | raw }}</a>
+                <span>{{ "web.web.contact.add.provider.outlook" | trans}}</span>
+                <p>{{ "web.web.contact.add.addContact" | trans({'%provider%': 'Outlook'}) }}</p>
+            </div>
+            <div class="RBZ_blockContacts">
+                <a id="a_RBZ_importYahoo" class="KNS_right" href="#" hrefbis="{{ urlYahoo }}">{{ "web.web.contact.add.add" | trans | raw }}</a>
+                <span>{{ "web.web.contact.add.provider.yahoo" | trans}}</span>
+                <p>{{ "web.web.contact.add.addContact" | trans({'%provider%': 'Yahoo'}) }}</p>
+            </div>
+
+            <p class="KNS_mbm">{{ "web.web.contact.add.agreement" | trans}}</p>
+
+        </section>{# End #section_RBZ_contacts #}
         {% if registration == true %}
-        <div id="div_RBZ_congratulations">
-            <h1>{{ "web.web.contact.add.congratulation" | trans({'%firstname%': app.user.firstname | capitalize}) }}</h1>
-
-            <p>{{ "web.web.contact.add.congratulation.text" | trans({'%url%': url('WebWebBundle_defaultHowItWorks')}) | raw }}</p>
-        </div>
+            <aside id="aside_RBZ_contacts" class="KNS_clear">
+                <div id="div_RBZ_step1" class="step">
+                    <span>{{ 'web.web.contact.add.step' | trans({'%step%': 1}) }}</span>
+                    <p>{{ 'web.web.contact.add.step1.text' | trans | raw }}</p>
+                </div>
+                <div id="div_RBZ_step2" class="step">
+                    <span>{{ 'web.web.contact.add.step' | trans({'%step%': 2}) }}</span>
+                    <p>{{ 'web.web.contact.add.step2.text' | trans | raw }}</p>
+                </div>
+                <div id="div_RBZ_step3" class="step">
+                    <span>{{ 'web.web.contact.add.step' | trans({'%step%': 3}) }}</span>
+                    <p>{{ 'web.web.contact.add.step3.text' | trans | raw }}</p>
+                </div>
+                <div class="KNS_clear"></div>
+            </aside>{# End #aside_RBZ_contacts #}
         {% endif %}
-
-        <div>
-            {% if registration == true %}
-            <a id="a_RBZ_skipStep" class="KNS_right" href="{{ url('WebWebBundle_offerIndex') }}">{{ "web.web.contact.add.skipStep" | trans }}</a>
-            {% endif %}
-            <h1 id="h1_RBZ_contacts">{{ "web.web.contact.add.addContacts" | trans }}</h1>
-        </div>
-
-
-        <div class="RBZ_blockContacts">
-            <a id="a_RBZ_importEmail" class="KNS_right" href="#" hrefbis="{{ url('WebWebBundle_contactAddPopup') }}">{{ "web.web.contact.add.add" | trans | raw }}</a>
-            <span>{{ "web.web.contact.add.provider.email" | trans}}</span>
-            <p>{{ "web.web.contact.add.addManually" | trans }}</p>
-        </div>
-        <div class="RBZ_blockContacts">
-            <a id="a_RBZ_importGmail" class="KNS_right" href="#" hrefbis="{{ urlGoogle }}">{{ "web.web.contact.add.add" | trans | raw }}</a>
-            <span>{{ "web.web.contact.add.provider.gmail" | trans}}</span>
-            <p>{{ "web.web.contact.add.addContact" | trans({'%provider%': 'Gmail'}) }}</p>
-        </div>
-        <div class="RBZ_blockContacts">
-            <a id="a_RBZ_importOutlook" class="KNS_right" href="#" hrefbis="{{ urlOutlook }}">{{ "web.web.contact.add.add" | trans | raw }}</a>
-            <span>{{ "web.web.contact.add.provider.outlook" | trans}}</span>
-            <p>{{ "web.web.contact.add.addContact" | trans({'%provider%': 'Outlook'}) }}</p>
-        </div>
-        <div class="RBZ_blockContacts">
-            <a id="a_RBZ_importYahoo" class="KNS_right" href="#" hrefbis="{{ urlYahoo }}">{{ "web.web.contact.add.add" | trans | raw }}</a>
-            <span>{{ "web.web.contact.add.provider.yahoo" | trans}}</span>
-            <p>{{ "web.web.contact.add.addContact" | trans({'%provider%': 'Yahoo'}) }}</p>
-        </div>
-
-        <p class="KNS_mbm">{{ "web.web.contact.add.agreement" | trans}}</p>
-
-    </section>{# End #section_RBZ_contacts #}
-    {% if registration == true %}
-    <aside id="aside_RBZ_contacts" class="KNS_clear">
-        <div id="div_RBZ_step1" class="step">
-            <span>{{ 'web.web.contact.add.step' | trans({'%step%': 1}) }}</span>
-            <p>{{ 'web.web.contact.add.step1.text' | trans | raw }}</p>
-        </div>
-        <div id="div_RBZ_step2" class="step">
-            <span>{{ 'web.web.contact.add.step' | trans({'%step%': 2}) }}</span>
-            <p>{{ 'web.web.contact.add.step2.text' | trans | raw }}</p>
-        </div>
-        <div id="div_RBZ_step3" class="step">
-            <span>{{ 'web.web.contact.add.step' | trans({'%step%': 3}) }}</span>
-            <p>{{ 'web.web.contact.add.step3.text' | trans | raw }}</p>
-        </div>
         <div class="KNS_clear"></div>
-    </aside>{# End #aside_RBZ_contacts #}
-    {% endif %}
+    </div>
     <div class="KNS_clear"></div>
-</div>
-<div class="KNS_clear"></div>
 {% endblock %}
