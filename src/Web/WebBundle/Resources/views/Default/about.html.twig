@@ -12,7 +12,7 @@
 {% block CONTENT %}
     <div id="div_RBZ_content">
         {# Block about #}
-        <div id="div_RBZ_about">
+        <div id="div_RBZ_about" class="{{ app.user.id is defined ? "RBZ_logged" : "" }}">
             <div id="div_RBZ_aboutTop">
                 <div id="div_RBZ_aboutTopLeft">
                     <h1>{{ "web.web.default.about.title" | trans | raw}}</h1>

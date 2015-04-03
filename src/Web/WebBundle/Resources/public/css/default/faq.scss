@@ -15,7 +15,7 @@
             border-top : 1px solid $gray;
             padding: 8px;
             padding-left: 15px;
-            //---- menu inscription activé par défaut ----// 
+            //---- menu inscription activé par défaut ----//
             &:first-child{
                 border-left: 3px solid #f04f61;
             }
@@ -31,6 +31,7 @@
     margin-left:230px;
     margin-bottom: 100px;
     margin-top: 150px;
+    &.RBZ_logged { margin-top:0px; }
     max-width: 725px;
     .RBZ_faqQuestion {
         cursor:pointer;
@@ -107,7 +108,7 @@
         section {
             &.RBZ_wrapper {
                 width:auto;
-            }  
+            }
         }
     }
     // ==== FAQ Right ====

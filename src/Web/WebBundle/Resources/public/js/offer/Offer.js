@@ -19,6 +19,12 @@ Offer.prototype = {
      */
     ready : function()
     {
+        // ==== Initialisation du max-height de la macro ====
+        Offer.prototype._manageOfferMaxHeight();
+
+        // ==== Gestion du redimensionnement de fenêtre (et de la macro) ====
+        Offer.prototype._manageResizeEvent();
+
         // ==== Gestion de l'affichage de la description ====
         Offer.prototype._manageDescriptionDisplaying();
 
@@ -36,38 +42,113 @@ Offer.prototype = {
     }, // ready
 
     /**
+     * Règle la hauteur maximum du conteneur
+     * principal de la macro des offres
+     */
+    _manageOfferMaxHeight: function()
+    {
+        $('.RBZ_offer_content').each(function () {
+            $(this).css('max-height', $(this).height());
+        });
+    }, // _manageOfferMaxHeight
+
+    /**
+     * Détecte les début et fin de redimensionnement de la fenêtre
+     * afin de redimensionner la macro des offres en conséquence
+     * @returns {boolean}
+     */
+    _manageResizeEvent: function()
+    {
+        // ==== Initialisation ====
+        var t, l = (new Date()).getTime(), resizing = false;
+
+        // ==== Détection et déclenchement de trigger sur les début et fin de redimensionnement ====
+        $(window).resize(function(){
+            var now = (new Date()).getTime();
+            if(now - l > 400 && !resizing ){
+                $(this).trigger('resizeStart');
+                l = now;
+            }
+            clearTimeout(t);
+            t = setTimeout(function(){
+                if (resizing) {
+                    $(window).trigger('resizeEnd');
+                }
+            }, 300);
+        });
+
+        // ==== Bind des évènement triggés et traitement ====
+        $(window).bind('resizeStart', function(){
+            resizing = true;
+            $('.RBZ_offer_content').each(function () {
+                $(this).css('max-height', 'none');
+            });
+        });
+
+        $(window).bind('resizeEnd', function(){
+            resizing = false;
+            $('.RBZ_offer_content').each(function () {
+                $(this).css('max-height', $(this).height());
+            });
+        });
+
+        return resizing;
+    }, // _manageResizeEvent
+
+    /**
      * Gère l'affichage de la description d'une offre
      * @private
      */
     _manageDescriptionDisplaying: function()
     {
-
-        $(document).on('mouseenter', '.RBZ_offer_img.RBZ_expandable_body', function(event) {
-            // ---- Initialisation ----
-            var image = $(this);
-            var body = image.parent().find('div.RBZ_offer_body');
-            var content = image.parent(); // .RBZ_offer_content
-            var description = content.find('p.RBZ_offer_description');
-            // ---- Affichage de la description ----
-            if (!body.hasClass('RBZ_expanded')) {
-                body.toggleClass('RBZ_expanded');
-                description.toggleClass('RBZ_hide');
-                body.animate({height: '260px', top: '70px'}, 500, 'easeOutCirc');
-            }
-        });
-        $(document).on('mouseleave', '.RBZ_offer_content', function(event) {
-            // ---- Initialisation ----
-            var image = $(this);
-            var body = image.parent().find('div.RBZ_offer_body');
-            var content = image.parent(); // .RBZ_offer_content
-            var description = content.find('p.RBZ_offer_description');
-            // ---- Affichage de la description ----
-            if (body.hasClass('RBZ_expanded')) {
-                description.toggleClass('RBZ_hide');
-                body.toggleClass('RBZ_expanded');
-                body.animate({height: '115px', top: '215px'}, 500, 'easeOutCirc');
-            }
-        });
+        if ($(window).width() > 960) { // Desktop
+            // ==== Gestion de l'ouverture ====
+            $(document).on('mouseenter', '.RBZ_offer_img.RBZ_expandable_body', function(event) {
+                // ---- Initialisation ----
+                var image = $(this);
+                var body = image.parent().find('div.RBZ_offer_body');
+                var content = image.parent(); // .RBZ_offer_content
+                var description = content.find('p.RBZ_offer_description');
+                // ---- Affichage de la description ----
+                if (!body.hasClass('RBZ_expanded')) {
+                    description.toggleClass('RBZ_hide');
+                    body.toggleClass('RBZ_expanded');
+                    body.animate({position: 'absolute', height: content.height() - (image.height() / 3), top: -(image.height() * 2 / 3)}, 500, 'easeOutCirc');
+                }
+            });
+            // ==== Gestion de la fermeture ====
+            $(document).on('mouseleave', '.RBZ_offer_content', function(event) {
+                // ---- Initialisation ----
+                var content = $(this); // .RBZ_offer_content
+                var image = content.find('img.RBZ_offer_img');
+                var body = content.find('div.RBZ_offer_body');
+                var description = content.find('p.RBZ_offer_description');
+                // ---- Affichage de la description ----
+                if (body.hasClass('RBZ_expanded')) {
+                    description.toggleClass('RBZ_hide');
+                    body.toggleClass('RBZ_expanded');
+                    body.animate({position: 'relative', height: '115px', top: 0}, 500, 'easeOutCirc');
+                }
+            });
+        } else { // Mobile
+            $(document).on('click', '.RBZ_offer_img.RBZ_expandable_body', function(event) {
+                // ---- Initialisation ----
+                var image = $(this);
+                var body = image.parent().find('div.RBZ_offer_body');
+                var content = image.parent(); // .RBZ_offer_content
+                var description = content.find('p.RBZ_offer_description');
+                // ---- Affichage de la description ----
+                if (!body.hasClass('RBZ_expanded')) {
+                    description.toggleClass('RBZ_hide');
+                    body.toggleClass('RBZ_expanded');
+                    body.animate({position: 'absolute', height: content.height() - (image.height() / 3), top: -(image.height() * 2 / 3)}, 500, 'easeOutCirc');
+                } else {
+                    description.toggleClass('RBZ_hide');
+                    body.toggleClass('RBZ_expanded');
+                    body.animate({position: 'relative', height: '115px', top: 0}, 500, 'easeOutCirc');
+                }
+            });
+        }
     }, // _manageDescriptionDisplaying
 
     /**
@@ -76,30 +157,43 @@ Offer.prototype = {
      */
     _manageRecommendationMenuButton: function()
     {
-        // ---- Survol du bouton ----
-        $(document).on('mouseenter', 'a.RBZ_actions', function(event) {
-            var button = $(this).parent();
-            var buttonLink = $(this);
-            var buttonArrow = button.find('div.RBZ_arrow');
-            if (!button.hasClass('RBZ_expanded')) {
+        if ($(window).width() > 960) { // Desktop
+            // ---- Survol du bouton ----
+            $(document).on('mouseenter', 'a.RBZ_actions', function (event) {
+                var button = $(this).parent();
+                var buttonLink = $(this);
+                var buttonArrow = button.find('div.RBZ_arrow');
+                if (!button.hasClass('RBZ_expanded')) {
+                    button.toggleClass('RBZ_expanded');
+                    buttonLink.siblings('a').toggleClass('RBZ_hide');
+                    buttonArrow.toggleClass('RBZ_open');
+                }
+                return false;
+            });
+            // ---- Arrêt du survol du bouton ----
+            $(document).on('mouseleave', 'div.RBZ_offer_input', function (event) {
+                var button = $(this);
+                var buttonLink = $(this).find('a.RBZ_actions');
+                var buttonArrow = button.find('div.RBZ_arrow');
+                if (button.hasClass('RBZ_expanded')) {
+                    button.toggleClass('RBZ_expanded');
+                    buttonLink.siblings('a').toggleClass('RBZ_hide');
+                    buttonArrow.toggleClass('RBZ_open');
+                }
+                return false;
+            });
+        } else { // mobile
+            $(document).on('click', 'a.RBZ_actions', function (event) {
+                var button = $(this).parent();
+                var buttonLink = $(this);
+                var buttonArrow = button.find('div.RBZ_arrow');
                 button.toggleClass('RBZ_expanded');
                 buttonLink.siblings('a').toggleClass('RBZ_hide');
                 buttonArrow.toggleClass('RBZ_open');
-            }
-            return false;
-        });
-        // ---- Arrêt du survol du bouton ----
-        $(document).on('mouseleave', 'div.RBZ_offer_input', function(event) {
-            var button = $(this);
-            var buttonLink = $(this).find('a.RBZ_actions');
-            var buttonArrow = button.find('div.RBZ_arrow');
-            if (button.hasClass('RBZ_expanded')) {
-                button.toggleClass('RBZ_expanded');
-                buttonLink.siblings('a').toggleClass('RBZ_hide');
-                buttonArrow.toggleClass('RBZ_open');
-            }
-            return false;
-        });
+
+                return false;
+            });
+        }
     }, // _manageRecommandationMenuButton
 
     /**

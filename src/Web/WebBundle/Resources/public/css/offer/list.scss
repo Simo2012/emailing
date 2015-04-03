@@ -54,3 +54,28 @@
         }
     }
 }
+
+/* ==== Mobile ==== */
+@media (max-width: $wrapper-screen) {
+    // ==== Inclusion de la macro des offres (tag) ====
+    .RBZ_offers {
+        .RBZ_grid {
+            width: 100%;
+            display: inline-block;
+            overflow: hidden;
+            text-align: center;
+            &.RBZ_left {
+                .RBZ_grid_item {
+                    padding-right: 0px;
+                    margin-bottom: 25px;
+                }
+            }
+            &.RBZ_right {
+                .RBZ_grid_item {
+                    padding-left: 0px;
+                    margin-bottom: 25px;
+                }
+            }
+        }
+    }
+}
