@@ -3,19 +3,14 @@
 @import "../global/_config.scss";
 
 /* ---- Structure tableau de la zone titres/formulaire ---- */
+#section_RBZ_main { padding:0px 10px; }
 #table_RBZ_title {
     td {
         &.RBZ_centered {
-            vertical-align: middle;
-            font: 600 18px 'Open Sans';
-            color: #bcbab8;
+            vertical-align:middle; font:600 18px 'Open Sans';  color:#bcbab8;
             span {
-                &.RBZ_active_contacts {
-                    color: #4e4842;
-                }
-                &.RBZ_inactive_contacts {
-                    color: #85827f;
-                }
+                &.RBZ_active_contacts { color:#4e4842; }
+                &.RBZ_inactive_contacts { color:#85827f; }
             }
         }
     }
@@ -32,55 +27,57 @@
             }
         }
         td {
-            &.RBZ_status {
-                div.RBZ_pin_container {
-                    position: relative;
+            div.RBZ_phone { display:none; }
+            div.RBZ_blue { color:$table_blue; font-weight:bold; }
+            div.RBZ_red { color:$table_red; font-weight:bold; }
+            &.RBZ_right { text-align:center; }
+            div.RBZ_pin_container {
+                position: relative;
+                width: 100%;
+                height: 50px;
+                div.RBZ_pin {
+                    cursor: pointer;
+                    width: 20px;
+                    height: 20px;
+                    display: block;
+                    position: absolute;
+                    right: -22px;
+                    top: 15px;
+                    border: 4px solid #F1F1F1;
+                    border-radius: 20px;
+                    &.RBZ_blue {
+                        background-color: $table_blue;
+                    }
+                    &.RBZ_red {
+                        background-color: $table_red;
+                    }
+                }
+            }
+            div.RBZ_pin_menu {
+                display: none;
+                position: absolute;
+                background-color: white;
+                box-shadow: 0px 0px 10px 0px #808080;
+                border-radius: 2px;
+                width: 150px;
+                right: -90px;
+                bottom: 40px;
+                ul {
+                    list-style: none;
+                    padding: 0;
                     width: 100%;
-                    height: 50px;
-                    div.RBZ_pin {
-                        cursor: pointer;
-                        width: 20px;
-                        height: 20px;
-                        display: block;
-                        position: absolute;
-                        right: -22px;
-                        top: 15px;
-                        border: 4px solid #F1F1F1;
-                        border-radius: 20px;
+                    li {
+                        padding: 10px;
+                        color: white;
                         &.RBZ_blue {
                             background-color: $table_blue;
                         }
                         &.RBZ_red {
                             background-color: $table_red;
                         }
-                    }
-                    div.RBZ_pin_menu {
-                        display: none;
-                        position: absolute;
-                        background-color: white;
-                        box-shadow: 0px 0px 10px 0px #808080;
-                        border-radius: 2px;
-                        width: 150px;
-                        right: -90px;
-                        bottom: 40px;
-                        ul {
-                            list-style: none;
-                            padding: 0;
-                            width: 100%;
-                            li {
-                                padding: 10px;
-                                color: white;
-                                &.RBZ_blue {
-                                    background-color: $table_blue;
-                                }
-                                &.RBZ_red {
-                                    background-color: $table_red;
-                                }
-                                a {
-                                    text-decoration: none;
-                                    color: inherit;
-                                }
-                            }
+                        a {
+                            text-decoration: none;
+                            color: inherit;
                         }
                     }
                 }
@@ -88,3 +85,52 @@
         }
     }
 }
+
+// ==== Version responsive ====
+@media (max-width: 768px) {
+    #table_RBZ_mailing_list {
+        display:table; table-layout:auto;
+        tr {
+            th {
+                white-space:nowrap; display:table-cell; padding:0.3em 0.8em;
+                &.RBZ_reduce { display:none; }
+                span.RBZ_reduce { display:none; }
+            }
+            td {
+                display:table-cell; word-wrap:normal; padding:0.3em 0.8em;
+                &.RBZ_reduce { display:none; }
+            }
+        }
+    }
+    table.RBZ_table td { line-height:normal; }
+}
+@media (max-width: 480px) {
+    #table_RBZ_mailing_list {
+        display:table; table-layout:auto;
+        tr {
+            th {
+                white-space:nowrap; display:table-cell !important; padding:0.3em 0.8em;
+                &.RBZ_reduce, &.RBZ_reduce2 { display:none !important; }
+                span.RBZ_reduce { display:none; }
+            }
+            td {
+                display:table-cell !important; word-wrap:normal; padding:0.3em 0.8em;
+                &.RBZ_reduce, &.RBZ_reduce2 { display:none !important; }
+                div.RBZ_phone { display:block; }
+                div.RBZ_pin_container { height:auto; }
+                div.RBZ_pin_menu {
+                    bottom:-5px; right:-85px; width:100px;
+                    ul li {
+                        padding:5px;
+                        a { font-size:12px; }
+                    }
+                }
+            }
+        }
+    }
+    table.RBZ_table {
+        th { font-size:10px; }
+        td { line-height:normal; font-size:12px; }
+    }
+}
+

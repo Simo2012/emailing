@@ -18,7 +18,7 @@ Contact.prototype = {
      */
     ready: function () {
         /* ==== Gestion du menu "pin" ==== */
-        $(document).on('click', 'div[id^=div_RBZ_pin_]', function() {
+        $(document).on('click', 'div[id^=div_RBZ_pin_], span[id^=span_RBZ_pin_]', function() {
             var arraySelector = $(this).attr('id').split('_');
             var id = arraySelector[arraySelector.length - 1];
             /* ---- Fermeture du menu actuellement ouvert si différent de celui du "pin" cliqué ---- */
@@ -37,6 +37,27 @@ Contact.prototype = {
             } else {
                 $("#div_RBZ_menu_" + id).addClass('RBZ_displayed');
                 $("#div_RBZ_menu_" + id).show();
+            }
+        });
+        $(document).on('click', 'div[id^=div_RBZ_pin2_]', function() {
+            var arraySelector = $(this).attr('id').split('_');
+            var id = arraySelector[arraySelector.length - 1];
+            /* ---- Fermeture du menu actuellement ouvert si différent de celui du "pin" cliqué ---- */
+            $("div[id^=div_RBZ_menu2_]").each(function() {
+                if ($(this).attr('id') != "div_RBZ_menu2_" + id) {
+                    if ($(this).hasClass('RBZ_displayed')) {
+                        $(this).removeClass('RBZ_displayed');
+                        $(this).hide();
+                    }
+                }
+            });
+            /* ---- Ouverture et fermeture du menu correspondant au "pin" cliqué ---- */
+            if ($("#div_RBZ_menu2_" + id).hasClass('RBZ_displayed')) {
+                $("#div_RBZ_menu2_" + id).removeClass('RBZ_displayed');
+                $("#div_RBZ_menu2_" + id).hide();
+            } else {
+                $("#div_RBZ_menu2_" + id).addClass('RBZ_displayed');
+                $("#div_RBZ_menu2_" + id).show();
             }
         });
     }, // ready

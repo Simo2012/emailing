@@ -330,7 +330,7 @@ web.web.contact.index.mailing_list.subscription:      INSCRIPTION
 web.web.contact.index.mailing_list.email:             EMAIL
 web.web.contact.index.mailing_list.lastname:          NOM
 web.web.contact.index.mailing_list.firstname:         PRÉNOM
-web.web.contact.index.mailing_list.commissions:       COMMISSIONS APPORTÉES
+web.web.contact.index.mailing_list.commissions:       COMMISSIONS
 web.web.contact.index.mailing_list.status:            STATUT
 web.web.contact.index.mailing_list.subscribed:        Abonné
 web.web.contact.index.mailing_list.unsubscribed:      Désabonné
