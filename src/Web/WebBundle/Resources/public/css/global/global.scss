@@ -31,6 +31,12 @@ body {
     min-height: 400px;
 }
 
+@media (max-width: $wrapper-screen) {
+    .RBZ_wrapper {
+        width: 100%;
+    }
+}
+
 @import "titles";
 a {
     text-decoration: none;

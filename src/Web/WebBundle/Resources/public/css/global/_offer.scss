@@ -3,231 +3,103 @@
 #section_RBZ_home_main {
     background: $light-grey;
 }
-.RBZ_offer_content {
-    display: inline-block;
-    width: 470px;
-    height: 330px;
-    position: relative;
-    .RBZ_offer_img {
-        width: 470px;
-        height: 215px;
-    }
-
-    .RBZ_offer_body {
-        width: 470px;
-        height: 115px;
-        background: $white;
-        position: absolute;
-        border-top: 1px solid $border-grey;
-        .RBZ_offer_brand_name {
-            color: #817c77;
-            font: bold 14px 'Open Sans';
-            margin: 10px 10px 0 15px;
-        }
-        .RBZ_offer_title {
-            color: #817c77;
-            font: normal 14px 'Open Sans';
-            margin: 0 10px 0 15px;
-        }
-        .RBZ_offer_description {
-            color: #817c77;
-            font: normal 12px 'Open Sans';
-            margin: 15px 10px 0px 15px;
-            max-width: 445px;
-            max-height: 135px;
-            overflow: hidden;
-            a.RBZ_offer_link {
-                margin-top: 10px;
-                display: inline-block;
-                color: inherit;
-                font-size: 14px;
-                text-decoration: underline;
-            }
-        }
-
-        .RBZ_offer_border {
-            border-top: 3px solid $border-grey;
-            width: 40px;
-            position: absolute;
-            bottom: 40px;
-            margin-left: 15px;
-        }
-        .RBZ_offer_remuneration {
-            position: absolute;
-            bottom: 10px;
-            margin-left: 15px;
-            min-width: 240px;
-            .RBZ_offer_remuneration_amount {
-                color: #f04f61;
-                font: bold 20px 'Open Sans';
-            }
-            .RBZ_offer_remuneration_description {
-                color: #676059;
-                font: italic 10px 'Open Sans';
-                margin-left: 4px;
-            }
-        }
-        .RBZ_recommended, .RBZ_stopped {
-            color: $border-grey;
-            font: bold 13px/28px 'Open Sans';
-            text-decoration: none;
-            text-align: center;
-            position: absolute;
-            bottom: 10px;
-            right: 15px;
-        }
-        .RBZ_offer_input {
-            display:block;
-            width: 150px;
-            height: 30px;
-            border: 1px solid $border-grey;
-            border-bottom: none;
-            border-radius:2px;
-            position: absolute;
-            bottom: 10px;
-            right: 15px;
-            cursor:pointer;
-            color: $white;
-            font: bold 14px 'Open Sans';
-            text-align: center;
-            &.RBZ_expanded {
-                height: auto;
-                a.RBZ_actions {
-                    margin-bottom: -1px;
-                }
-            }
-            a {
-                &.RBZ_offer_link {
-                    width: 100%;
-                    height: 30px;
-                    background-color: $white;
-                    border-radius: 2px;
-                    cursor: pointer;
-                    color: #cbcbcb;
-                    font: bold 11px/28px 'Open Sans';
-                    text-decoration: none;
-                    text-align: center;
-                    display: block;
-                    &:hover {
-                        background-color: #cbcbcb;
-                        cursor: pointer;
-                        color: $white;
-                    }
-                }
-                &.RBZ_actions {
-                    display: block;
-                    width: 100%;
-                    height: 30px;
-                    background-color: $red-banner;
-                    border-radius: 2px;
-                    cursor: pointer;
-                    color: $white;
-                    font: bold 13px/28px 'Open Sans';
-                    text-decoration: none;
-                    text-align: center;
-                    padding-right: 20px;
-                }
-                &.RBZ_hide {
-                    display: none;
-                }
-            }
-            div.RBZ_arrow {
-                width: 8px;
-                height: 8px;
-                position: absolute;
-                right: 10px;
-                bottom: 10px;
-                background: transparent url('/bundles/webweb/images/global/button_arrow.png') no-repeat scroll left center;
-                &.RBZ_open {
-                    background-position: right;
-                }
-            }
-        }
-    }
-
-}
-/* ==== Smartphone ==== */
-@media (max-width: 480px) {
+#section_RBZ_main {
     .RBZ_offer_content {
-        width: 288px;
-        height: 278px;
-        margin: 0px auto;
+        display: inline-block;
+        width: auto;
+        height: auto;
+        max-width: 470px;
+        max-height: 330px;
         position: relative;
-        &.RBZ_expanded .RBZ_offer_body {
-            height: 210px;
-            position: absolute;
-            top: 70px;
-
-        }
+        overflow: hidden;
+        text-align: left;
         .RBZ_offer_img {
-            width: 288px;
-            height: 133px;
+            max-width: 470px;
+            max-height: 215px;
         }
-
         .RBZ_offer_body {
-            width: 288px;
-            height: 145px;
+            width: auto;
+            max-width: 470px;
+            min-height: 115px;
             background: $white;
+            //        position: absolute;
             position: relative;
             border-top: 1px solid $border-grey;
             .RBZ_offer_brand_name {
                 color: #817c77;
-                font: bold 16px 'Open Sans';
-                left: 20px;
-                margin: 0 10px 0 10px;
+                font: bold 14px 'Open Sans';
+                margin: 10px 10px 0 15px;
             }
             .RBZ_offer_title {
                 color: #817c77;
+                font: normal 14px 'Open Sans';
+                margin: 0 10px 0 15px;
+            }
+            .RBZ_offer_description {
+                color: #817c77;
                 font: normal 12px 'Open Sans';
-                margin: 0 10px 0 10px;
-                .RBZ_offer_description {
-                    color: #817c77;
-                    font: normal 10px 'Open Sans';
-                    margin: 0 10px 0 10px;
+                margin: 15px 10px 0px 15px;
+                max-width: 445px;
+                max-height: 135px;
+                overflow: hidden;
+                a.RBZ_offer_link {
+                    margin-top: 10px;
+                    display: inline-block;
+                    color: inherit;
+                    font-size: 14px;
+                    text-decoration: underline;
                 }
             }
-
             .RBZ_offer_border {
                 border-top: 3px solid $border-grey;
-                margin-top: 30px;
-                margin-left: 15px;
-                width: 45px;
+                width: 40px;
                 position: absolute;
-                bottom: 89px;
+                bottom: 40px;
+                margin-left: 15px;
             }
             .RBZ_offer_remuneration {
-                position: relative;
-                margin-top: -15px;
-                color: #f04f61;
-                font: bold 20px 'Open Sans';
-                margin-left: 10px;
                 position: absolute;
-                bottom: 65px;
+                bottom: 10px;
+                margin-left: 15px;
+                min-width: 240px;
+                .RBZ_offer_remuneration_amount {
+                    color: #f04f61;
+                    font: bold 20px 'Open Sans';
+                }
+                .RBZ_offer_remuneration_description {
+                    color: #676059;
+                    font: italic 10px 'Open Sans';
+                    margin-left: 4px;
+                }
             }
-            .RBZ_offer_remuneration_description {
-                float: bottom;
-                color: #676059;
-                font: italic 10px 'Open Sans';
-                margin: 20px 20px 20px 20px;
-                position: absolute;
-                bottom: 65px;
-                left: 60px;
-            }
-            .RBZ_offer_input{
-                width: 150px;
-                height: 32px;
-                border-radius:2px;
-                display:block;
-                cursor:pointer;
-                color:#ffffff;
-                font: bold 13px 'Open Sans';
+            .RBZ_recommended, .RBZ_stopped {
+                color: $border-grey;
+                font: bold 13px/28px 'Open Sans';
+                text-decoration: none;
                 text-align: center;
                 position: absolute;
-                right:  72px;
-                bottom: 15px;
+                bottom: 10px;
+                right: 15px;
+            }
+            .RBZ_offer_input {
+                display: block;
+                width: 150px;
+                height: 30px;
                 border: 1px solid $border-grey;
+                border-bottom: none;
+                border-radius: 2px;
+                position: absolute;
+                bottom: 10px;
+                right: 15px;
+                cursor: pointer;
+                color: $white;
+                font: bold 14px 'Open Sans';
+                text-align: center;
                 &.RBZ_expanded {
-                    height: 120px;
+                    height: auto;
+                    a.RBZ_actions {
+                        margin-bottom: -1px;
+                    }
                 }
                 a {
                     &.RBZ_offer_link {
@@ -237,7 +109,7 @@
                         border-radius: 2px;
                         cursor: pointer;
                         color: #cbcbcb;
-                        font: bold 11px 'Open Sans';
+                        font: bold 11px/28px 'Open Sans';
                         text-decoration: none;
                         text-align: center;
                         display: block;
@@ -248,24 +120,117 @@
                         }
                     }
                     &.RBZ_actions {
+                        display: block;
                         width: 100%;
                         height: 30px;
                         background-color: $red-banner;
                         border-radius: 2px;
                         cursor: pointer;
-                        color: #ffffff;
-                        font: bold 13px 'Open Sans';
+                        color: $white;
+                        font: bold 13px/28px 'Open Sans';
                         text-decoration: none;
                         text-align: center;
-                        display: block;
+                        padding-right: 20px;
                     }
                     &.RBZ_hide {
                         display: none;
                     }
                 }
+                div.RBZ_arrow {
+                    width: 8px;
+                    height: 8px;
+                    position: absolute;
+                    right: 10px;
+                    bottom: 10px;
+                    background: transparent url('/bundles/webweb/images/global/button_arrow.png') no-repeat scroll left center;
+                    &.RBZ_open {
+                        background-position: right;
+                    }
+                }
             }
         }
-
     }
+}
+/* ==== Smartphone ==== */
+@media (max-width: $tiny-screen) {
+    #section_RBZ_main {
+        width: 100%;
+        .RBZ_offer_content {
+            .RBZ_offer_img {
+                width: 100%;
+                height: auto;
+            }
+            .RBZ_offer_body {
+                width: 100%;
+                min-height: 115px;
+                .RBZ_offer_brand_name {
+                    font: bold 12px 'Open Sans';
+                }
+                .RBZ_offer_title {
+                    font: normal 12px 'Open Sans';
+                }
+                .RBZ_offer_description {
+                    font: normal 10px 'Open Sans';
+                    max-width: 445px;
+                    max-height: 135px;
+                    a.RBZ_offer_link {
+                        font-size: 12px;
+                    }
+                }
+                .RBZ_offer_border {
+                    width: 40px;
+                    bottom: 40px;
+                }
+                .RBZ_offer_remuneration {
+                    bottom: 10px;
+                    min-width: 240px;
+                    .RBZ_offer_remuneration_amount {
+                        font: bold 18px 'Open Sans';
+                    }
+                    .RBZ_offer_remuneration_description {
+                        font: italic 8px 'Open Sans';
+                    }
+                }
+                .RBZ_recommended, .RBZ_stopped {
+                    font: bold 11px/26px 'Open Sans';
+                }
+                .RBZ_offer_input {
+                    width: 120px;
+                    height: 26px;
+                    font: bold 12px/26px 'Open Sans';
 
+                    &.RBZ_expanded {
+                        height: auto;
+                        a.RBZ_actions {
+                            margin-bottom: -1px;
+                        }
+                    }
+
+                    a {
+                        &.RBZ_offer_link {
+                            width: 100%;
+                            height: 26px;
+                            font: bold 9px/26px 'Open Sans';
+                        }
+                        &.RBZ_actions {
+                            width: 100%;
+                            height: 26px;
+                            font: bold 12px/25px 'Open Sans';
+                        }
+                    }
+                    div.RBZ_arrow {
+                        width: 8px;
+                        height: 8px;
+                        position: absolute;
+                        right: 8px;
+                        bottom: 8px;
+                        background: transparent url('/bundles/webweb/images/global/button_arrow.png') no-repeat scroll left center;
+                        &.RBZ_open {
+                            background-position: right;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
