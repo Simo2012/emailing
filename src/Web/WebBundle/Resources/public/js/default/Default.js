@@ -49,6 +49,7 @@ Default.prototype = {
         $(document).on("click", "#a_RBZ_login", function() {
             var lsUrl = $(this).attr('hrefbis');
             Default.prototype.ajaxPopupLogin(lsUrl);
+            scroll(0, 0);
             return false;
         });
     }, // _manageLoginPopupOpening

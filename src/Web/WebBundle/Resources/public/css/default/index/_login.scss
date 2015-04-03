@@ -30,12 +30,12 @@
             h3.RBZ_linesSided {
                 &.RBZ_fr_FR {
                     span::before, span::after {
-                        width: 56px;
+                        width: 36px;
                     }
                 }
                 &.RBZ_en_US {
                     span::before, span::after {
-                        width: 48px;
+                        width: 28px;
                     }
                 }
             }
@@ -128,7 +128,7 @@
                 }
                 &.RBZ_en_US {
                     span::before, span::after {
-                        width: 44px;
+                        width: 24px;
                     }
                 }
             }
@@ -207,11 +207,24 @@
 @media (max-width: 480px) {
     /* ==== Popup de login ==== */
     #div_RBZ_loginPopup {
-        top: 120px;
+        top: 40px;
+        margin-left: 6px;
+        #div_RBZ_content {
+            width: 290px;
+        }
     }
     /* ==== Popup de register ==== */
     #div_RBZ_registerPopup {
         top: 40px;
+        margin-left: 6px;
+        #div_RBZ_content {
+            width: 290px;
+            &.RBZ_fr_FR {
+                /* ---- Positionnement par rapport au texte sous la popup
+                 qui dépasse à gauche et à droite en français ----*/
+                left: 0px;
+            }
+        }
     }
 }
 
@@ -222,7 +235,7 @@
     #div_RBZ_loginPopup {
         top: 30px;
         #div_RBZ_content {
-            width: 320px;
+            width: 290px;
         }
     }
     /* ==== Popup de register ==== */
@@ -230,7 +243,7 @@
         padding-left: 0px;
         top: 0px;
         #div_RBZ_content {
-            width: 320px;
+            width: 290px;
             &.RBZ_fr_FR {
                 /* ---- Positionnement par rapport au texte sous la popup
                  qui dépasse à gauche et à droite en français ----*/
