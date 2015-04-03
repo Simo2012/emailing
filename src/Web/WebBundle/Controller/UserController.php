@@ -10,6 +10,8 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Web\WebBundle\Form\User\UserDetailsType;
 use Symfony\Component\Translation\Translator;
 use Natexo\AdminBundle\Model\Paginator;
+use \Web\WebBundle\Entity\PaymentRequest;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Contrôleur user : pages relatives à l'utilisateur
@@ -166,5 +168,46 @@ class UserController extends Controller
             'user' => $loUser,
             'invoiceRequests' => $loPaymentRequest
         );
-    }
+    } // cashInAction
+    
+    /**
+     * Demande d'encaissement de la cagnotte
+     *
+     */
+    public function cashInRequestAction()
+    {
+        $loManager = $this->getDoctrine()->getManager();
+        // ==== recuperation du user en session ====
+        $loUserSession = $this->getUser();
+        $loUser = $loManager->getRepository('WebWebBundle:User')->find($loUserSession->getId());
+        // ==== Le montant doit être de minimun de 50€/$ ====
+        $liAmount = $loUser->getAvailableAmount();
+
+        // ==== Données bancaires décryptées ====
+        $laBankDetails = null;
+        if ($loUser->getBic() != null) {
+            $loBicDecrypt = $this->get('natexo_tool.filter.decrypt');
+            $laBankDetails = $loBicDecrypt->filter($loUser->getBic());
+        }
+
+        // ==== Création du PaymentRequest ====
+        if ($liAmount >= 50 && $laBankDetails != null) {
+            try {
+                $loPaymentRequest = new PaymentRequest();
+                $loPaymentRequest->setDateCreate(new \DateTime());
+                $loPaymentRequest->setDateUpdate(new \DateTime());
+                $loPaymentRequest->setAmount($liAmount);
+                $loPaymentRequest->setBankName($laBankDetails['bankName']);
+                $loPaymentRequest->setUser($loUser);
+                $loPaymentRequest->setStatus("waiting");
+                $loUser->setAvailableAmount(0);
+                $loManager->persist($loPaymentRequest);
+                $loManager->persist($loUser);
+                $loManager->flush();
+            } catch (\Exception $e) {
+                trigger_error('Error insert new PaymentRequest (cashInRequestAction) : ' . $e);
+            }
+        }
+        return $this->redirect($this->generateUrl('WebWebBundle_userCashIn'));
+    } // cashInRequestAction
 }
