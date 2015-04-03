@@ -273,6 +273,7 @@ web.web.user.cashIn.cash.SecondSection: "<strong>IMPORTANT </strong>: You have n
 web.web.user.cashIn.cash.info: Received Payment
 web.web.user.cashIn.history.title: History of your payment requests
 web.web.user.cashIn.tabHistory.desc.transaction: Request for payment on the account
+web.web.user.cashIn.cash.requestPayment: Do you confirm the payment request ?
 # ==== Tableau ====
 web.web.user.cashIn.tabHistory.date:    DATE
 web.web.user.cashIn.tabHistory.desc:    DESCRIPTION

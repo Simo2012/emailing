@@ -166,8 +166,7 @@ Offer.prototype = {
         // ==== Gestion des recommandations Email ====
         var controllerUrl = '';
         $(document).on('click', 'a.RBZ_email', function() {
-            controllerUrl = $(this).attr('href');
-            console.log(controllerUrl);
+            controllerUrl = $(this).attr('hrefbis');
             goPopup.confirm(Offer.prototype._emailConfirmMessage, function() { window.location = controllerUrl; })
             return false;
         });

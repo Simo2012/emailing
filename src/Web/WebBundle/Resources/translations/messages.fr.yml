@@ -273,6 +273,7 @@ web.web.user.cashIn.cash.SecondSection: "<strong>IMPORTANT </strong>: Vous n'ave
 web.web.user.cashIn.cash.info: Demander le paiement
 web.web.user.cashIn.history.title: Historique de vos demandes de paiements
 web.web.user.cashIn.tabHistory.desc.transaction: Demande de paiement sur le compte
+web.web.user.cashIn.cash.requestPayment: Confirmez-vous la demande de paiement ?
 # ==== Tableau ====
 web.web.user.cashIn.tabHistory.date:    DATE
 web.web.user.cashIn.tabHistory.desc:    DESCRIPTION

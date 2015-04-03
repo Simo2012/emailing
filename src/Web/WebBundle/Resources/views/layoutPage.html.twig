@@ -2,6 +2,7 @@
 
 {% block HEADER %}
     <div id="div_RBZ_banner" class="RBZ_wrapper">
+        <img id="img_RBZ_headerBeta" src="{{ asset("/bundles/webweb/images/default/index/beta.png") }}" alt="" />
         {% if app.user.id is defined %}
             <div id="div_RBZ_counterMailingList" class="RBZ_icons_mailinglist">
                     <span class="KNS_tiny-hidden">{{ "layout.mailingList" | trans }}</span><br>

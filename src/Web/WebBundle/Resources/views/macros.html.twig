@@ -81,7 +81,7 @@
             {% if not recommended or (recommended and ((offer.publishing | length) - (type | length)) > 0) %}
                 <div class="RBZ_offer_input">
                 {% if 'email' in offer.publishing and 'email' not in type %}
-                    <a href="{{ url('WebWebBundle_recommendationRecommendByEmail', {'piOfferId': offer.id, 'psFrom': from }) }}" class="RBZ_offer_link RBZ_email RBZ_hide">{{ 'web.web.offer.macro.mailing' | trans }}</a>
+                    <a hrefbis="{{ url('WebWebBundle_recommendationRecommendByEmail', {'piOfferId': offer.id, 'psFrom': from }) }}" class="RBZ_offer_link RBZ_email RBZ_hide">{{ 'web.web.offer.macro.mailing' | trans }}</a>
                 {% endif %}
                 {% if 'facebook' in offer.publishing and 'facebook' not in type %}
                     <a href="{{ url("WebWebBundle_recommendByFacebook", {'piOfferId': offer.id }) }}" class="RBZ_offer_link RBZ_facebook RBZ_hide">{{ 'web.web.offer.macro.facebook_publishing' | trans }}</a>
