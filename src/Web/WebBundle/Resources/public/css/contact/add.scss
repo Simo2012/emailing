@@ -12,8 +12,8 @@
         left: 190px;
         position: absolute;
         top: -140px;
-        max-width: 350px;
-        z-index: 1;
+        max-width: 380px;
+        z-index: 1010;
         #div_RBZ_welcomePopupTitle {
             font-weight: bold;
             color: $white;
@@ -26,6 +26,13 @@
                 position: absolute;
                 top: 8px;
                 right: 8px;
+            }
+            & > div {
+                display: inline-block;
+                overflow: hidden;
+                width: 100px;
+                text-overflow: ellipsis;
+                height: 16px;
             }
         }
         #div_RBZ_welcomePopupText {

@@ -3,7 +3,7 @@
     <div id="div_RBZ_welcomePopupInside">
         <img id="img_RBZ_welcomePopupArrow" src="{{ asset('/bundles/webweb/images/global/icons/arrowLeft.png') }}">
         <div id="div_RBZ_welcomePopupTitle">
-            {{ app.user.firstname | upper }}, {{ 'web.web.contact.add.popupWelcome.title' | trans }} &nbsp;
+            <div>{{ app.user.firstname | upper }}</div> , {{ 'web.web.contact.add.popupWelcome.title' | trans }} &nbsp;
             <img src="{{ asset('/bundles/webweb/images/global/whiteLogo.png') }}">
             <img id="img_RBZ_welcomePopupClose" src="{{ asset('/bundles/webweb/images/global/icons/exit.jpg') }}">
         </div>
