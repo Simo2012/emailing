@@ -12,10 +12,6 @@
 body { margin:0; }
 // ==== En tête ====
 #div_RBZ_header {
-    .RBZ_wrapper {
-        margin: 0 auto;
-        width: 1220px;
-    }
     position: fixed;
     top: 0;
     width: 100%;
@@ -26,7 +22,7 @@ body { margin:0; }
     #div_RBZ_banner {
         position:relative; background: url(/bundles/webweb/images/global/logo.png) 0 20px no-repeat;
         height: 100px;
-        &.RBZ_wrapper { max-width:1220px; width:auto; }
+        &.RBZ_wrapper { margin:0 auto; max-width:960px; width:auto; }
         #img_RBZ_headerBeta {
             position: absolute;
             left: 150px;
@@ -254,9 +250,9 @@ body.RBZ_fr {
             height: 100px; background-position: center;
             #img_RBZ_headerBeta {
                 display: none;
-            } 
+            }
             #div_RBZ_headerMenu {
-                position:static; padding-top:70px; text-align:center;
+                position:static; padding-top:80px; text-align:center;
                 a {
                     font-size:12px; font-weight:600;
                 }
@@ -330,7 +326,7 @@ body.RBZ_fr {
         #div_RBZ_banner {
             height:120px;
             #div_RBZ_headerMenu {
-                padding-top:75px;
+                padding-top:80px;
             }
         }
     }
