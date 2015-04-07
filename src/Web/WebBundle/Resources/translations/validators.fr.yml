@@ -1,3 +1,2 @@
 rubizz.web.web.security.invalid_email:   Email incorrect
-rubizz.web.web.security.email.notblank:  Vous devez renseigner le champ email
-rubizz.web.web.security.pwd.notblank:    Vous devez renseigner le champ password
+rubizz.web.web.security.pwd.notblank:    vous devez renseigner tous les champs

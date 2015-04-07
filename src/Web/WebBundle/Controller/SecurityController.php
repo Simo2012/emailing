@@ -81,7 +81,6 @@ class SecurityController extends Controller
         // ==== Initialisation ====
         $loUser = new User();
         $loForm = $this->createForm('WebWebRegisterType', $loUser);
-
         if ($poRequest->isMethod('POST')) {
             $loForm->handleRequest($poRequest);
             if ($loForm->isValid()) {
@@ -94,7 +93,8 @@ class SecurityController extends Controller
                     return new Response(json_encode(array('status' => 'KO', 'error' => $e->getMessage())));
                 }
             } else {
-               return new Response(json_encode(array('status' => 'KO', 'error' => $loForm->getErrors(true, false))));
+               $laErrors = (string) $loForm->getErrors(true);
+               return new Response(json_encode(array('status' => 'KO', 'error' => $laErrors)));
             }
         }
 
