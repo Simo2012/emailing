@@ -212,6 +212,8 @@ web.web.default.about.p4:           Business offers a business environment in a 
 web.web.default.about.subTitle3:    Improve its strategy
 web.web.default.about.p5:           With Rubizz you have total freedom on how to handle your list.  You may select the type of deals you want to send your contacts.
 web.web.default.about.p6:           Rubizz leaves total freedom to its members on how they manage their business.
+# ============ Erreur Ip page ============
+web.web.default.errorIp.text:       Your IP address is not allowed for this offer.
 
 # ============ OFFER PAGE ============
 # ==== Offer Page (index) ====

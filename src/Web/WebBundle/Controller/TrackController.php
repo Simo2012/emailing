@@ -58,8 +58,9 @@ class TrackController extends Controller
         }
         // ==== Détection d'une mauvaise ip par rapport à l'offre (geoip) ====
         $lbIsValidCountryByIp = $loTracking->chekCountryByIp($liRecommendationId);
+        // ---- Probléme sur la locale, on force en_US----
         if (!$lbIsValidCountryByIp) {
-            return $this->redirect($this->generateUrl('WebWebBundle_defaultLogoutErrorIp'));
+            return $this->redirect($this->generateUrl('WebWebBundle_defaultLogoutErrorIp', array('_locale' => 'en_US')));
         }
         // ==== Prise en compte du tracking ====
         $loTracking->handleClickTag($lsEmail);

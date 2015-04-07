@@ -16,7 +16,6 @@ use GeoIp2\Database\Reader;
  */
 class DetectCountryUser
 {
-    
     /**
      * Path du dir courant
      * @var rootDir
@@ -53,13 +52,12 @@ class DetectCountryUser
         // ==== recuperation du path de la base données geoip ====
         $lsFilename = dirname($this->rootDir) . $this->pathDatabase;
 
-        // ---- appel a geoip pour recuperer le code pays ----
-        // ---- pas de service, obliger de faire un new ----
-        
+        // ---- Appel a geoip pour recuperer le code pays ----
         $lsIpUser = $_SERVER['REMOTE_ADDR'];
         // ---- Test sur l'ip natexo FR ----
-        if($lsIpUser != '62.23.113.242'){
+        if ($lsIpUser != '62.23.113.242' && $lsIpUser != '192.168.43.23') {
             try {
+            // ---- Pas de service, obliger de faire un new ----
             $loReader = new Reader($lsFilename);
             $loCountryByIp = $loReader->country($lsIpUser);
 
@@ -72,6 +70,7 @@ class DetectCountryUser
                 return $this->checkCountry($psCountryOffer, $lsCountryCode);
             }
         }
+        return true;
     } // getCountryByIp
     
     /**

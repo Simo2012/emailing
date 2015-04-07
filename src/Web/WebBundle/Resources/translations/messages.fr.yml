@@ -212,6 +212,8 @@ web.web.default.about.p4:           Rubizz propose un environnement Business dan
 web.web.default.about.subTitle3:    Améliorer sa stratégie.
 web.web.default.about.p5:           Rubizz rémunère selon les performances de chaque membre. Il ne s’agit pas de partager toutes les offres présentes sur le site, mais plutôt de jouer la stratégie en sélectionnant celles qui semblent pertinentes par rapport aux centres d’intérêt de ses contacts.
 web.web.default.about.p6:           Rubizz laisse une liberté totale à ses membres quant à leur façon de gérer leur business. Ils créent leur réseau en fonction de leurs affinités, sélectionnent les bons plans qu’ils souhaitent partager, décident des supports de diffusion des offres (diffusion par email ou publication sur les réseaux sociaux), adaptent leur liste de contacts, et gèrent le montant de leur cagnotte.
+# ============ Erreur Ip page ============
+web.web.default.errorIp.text:       Votre adresse ip n'est pas autorisé pour cette offre.
 
 # ============ OFFER PAGE ============
 # ==== Offer Page (index) ====
