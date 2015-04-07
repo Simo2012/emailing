@@ -1,11 +1,7 @@
 Web\WebBundle\Entity\User:
     properties:
         email:
-            - Email: { message: "rubizz.web.web.security.invalid_email" }
-            - NotBlank: { message: "rubizz.web.web.security.email.notblank" }
-
+            - Email: { groups: [register], message: "rubizz.web.web.security.invalid_email" }
+            - NotBlank: { groups: [register], message: "rubizz.web.web.security.email.notblank" }
         password:
-            - Length:
-                max: 12
-                maxMessage: "web.web.security.password_too_long"
-            - NotBlank: { message: "rubizz.web.web.security.pwd.notblank" }
+            - NotBlank: { groups: [register], message: "rubizz.web.web.security.pwd.notblank" }

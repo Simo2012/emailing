@@ -93,6 +93,8 @@ class SecurityController extends Controller
                 } catch(\Exception $e) {
                     return new Response(json_encode(array('status' => 'KO', 'error' => $e->getMessage())));
                 }
+            } else {
+               return new Response(json_encode(array('status' => 'KO', 'error' => $loForm->getErrors(true, false))));
             }
         }
 
