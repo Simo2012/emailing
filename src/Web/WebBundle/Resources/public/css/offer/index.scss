@@ -36,8 +36,6 @@
     }
 }
 
-#a_RBZ_donutDetail { color:#BFBFBF; }
-
 #div_RBZ_donutDetail {
     font-size: 14px;
     display: inline-block;
@@ -60,7 +58,12 @@
         font: normal 12px 'Open Sans';
         margin-top: 6px;
         margin-bottom: 8px;
-        a { color : #f04f61; font-weight:bold; }
+        a {
+            color : #f04f61; font-weight:bold; 
+            &:hover {
+                font-size: 12.5px;
+            }
+        }
     }
     #div_RBZ_separator {
         width: 180px;
@@ -68,6 +71,12 @@
         height:0px;
         border-top:1px solid #D1D1D1;
         border-bottom:1px solid white;
+    }
+    #a_RBZ_donutDetail {
+        color:#BFBFBF; 
+        &:hover {
+            font-size: 14.5px;
+        }
     }
 }
 
