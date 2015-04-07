@@ -19,26 +19,28 @@ Offer.prototype = {
      */
     ready : function()
     {
-        // ==== Initialisation du max-height de la macro ====
-        Offer.prototype._manageOfferMaxHeight();
+        setTimeout(function() {
+            // ==== Initialisation du max-height de la macro ====
+            Offer.prototype._manageOfferMaxHeight();
 
-        // ==== Gestion du redimensionnement de fenêtre (et de la macro) ====
-        Offer.prototype._manageResizeEvent();
+            // ==== Gestion du redimensionnement de fenêtre (et de la macro) ====
+            Offer.prototype._manageResizeEvent();
 
-        // ==== Gestion de l'affichage de la description ====
-        Offer.prototype._manageDescriptionDisplaying();
+            // ==== Gestion de l'affichage de la description ====
+            Offer.prototype._manageDescriptionDisplaying();
 
-        // ==== Gestion de l'affichage de menu du bouton de recommandation ====
-        Offer.prototype._manageRecommendationMenuButton();
+            // ==== Gestion de l'affichage de menu du bouton de recommandation ====
+            Offer.prototype._manageRecommendationMenuButton();
 
-        // ==== Gestion des recommandations Twitter ====
-        Offer.prototype._manageTwitterButton();
+            // ==== Gestion des recommandations Twitter ====
+            Offer.prototype._manageTwitterButton();
 
-        // ==== Gestion des recommandations Facebook ====
-        Offer.prototype._manageFacebookButton();
+            // ==== Gestion des recommandations Facebook ====
+            Offer.prototype._manageFacebookButton();
 
-        // ==== Gestion des recommandations Email ====
-        Offer.prototype._manageEmailButton();
+            // ==== Gestion des recommandations Email ====
+            Offer.prototype._manageEmailButton();
+        }, 200);
     }, // ready
 
     /**
@@ -49,6 +51,29 @@ Offer.prototype = {
     {
         $('.RBZ_offer_content').each(function () {
             $(this).css('max-height', $(this).height());
+            // Si on est sur Safari "desktop", on change les règles css de positionnement
+            // du body de façon à le positionner en absolute. Cela a pour but d'empêcher
+            // tout bug relatif à l'animation du body. Mais de fait, les offres ne sont plus
+            // responsive en cas de modification de la taille de la fenêtre du navigateur.
+            if (goGlobal.isSafari) {
+                var content = $(this);
+                var image = content.find('img.RBZ_offer_img');
+                var body = content.find('div.RBZ_offer_body');
+                var bodyHeight = 0;
+                image = image[0];
+                body = body[0];
+                bodyHeight = body.height > 115 ? body.height : 115;
+                // ---- Content ----
+                content.css('height', image.height + bodyHeight);
+                content.css('max-height', image.height + bodyHeight);
+                // ---- Body ----
+                body = $(body);
+                body.css('height', bodyHeight);
+                body.css('width', image.width);
+                body.css('position', 'absolute');
+                body.css('top', image.height);
+
+            }
         });
     }, // _manageOfferMaxHeight
 
@@ -87,9 +112,10 @@ Offer.prototype = {
 
         $(window).bind('resizeEnd', function(){
             resizing = false;
-            $('.RBZ_offer_content').each(function () {
-                $(this).css('max-height', $(this).height());
-            });
+            //$('.RBZ_offer_content').each(function () {
+            //    $(this).css('max-height', $(this).height());
+            //});
+            Offer.prototype._manageOfferMaxHeight();
         });
 
         return resizing;
@@ -113,7 +139,18 @@ Offer.prototype = {
                 if (!body.hasClass('RBZ_expanded')) {
                     description.toggleClass('RBZ_hide');
                     body.toggleClass('RBZ_expanded');
-                    body.animate({position: 'absolute', height: content.height() - (image.height() / 3), top: -(image.height() * 2 / 3)}, 500, 'easeOutCirc');
+                    if (goGlobal.isSafari) { // Safari "desktop"
+                        body.animate({
+                            height: content.height() - (image.height() / 3),
+                            top: (image.height() / 3)
+                        }, 500, 'easeOutCirc');
+                    } else { // Tous navigateurs
+                        body.animate({
+                            position: 'absolute',
+                            height: content.height() - (image.height() / 3),
+                            top: -(image.height() * 2 / 3)
+                        }, 500, 'easeOutCirc');
+                    }
                 }
             });
             // ==== Gestion de la fermeture ====
@@ -127,7 +164,12 @@ Offer.prototype = {
                 if (body.hasClass('RBZ_expanded')) {
                     description.toggleClass('RBZ_hide');
                     body.toggleClass('RBZ_expanded');
-                    body.animate({position: 'relative', height: '115px', top: 0}, 500, 'easeOutCirc');
+                    if (goGlobal.isSafari) { // Safari "desktop"
+                        image = image[0];
+                        body.animate({height: '115px', top: image.height}, 500, 'easeOutCirc');
+                    } else { // Tous navigateurs
+                        body.animate({position: 'relative', height: '115px', top: 0}, 500, 'easeOutCirc');
+                    }
                 }
             });
         } else { // Mobile

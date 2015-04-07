@@ -75,6 +75,10 @@ Global.prototype = {
             return false;
         });
     }, // ready
+
+    /**
+     * Test du navigateur Safari d'Apple
+     */
     isSafari: false,
 
     /**
