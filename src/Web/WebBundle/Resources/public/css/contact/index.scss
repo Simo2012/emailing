@@ -35,6 +35,7 @@
                 position: relative;
                 width: 100%;
                 height: 50px;
+                line-height: 50px;
                 div.RBZ_pin {
                     cursor: pointer;
                     width: 20px;
@@ -117,7 +118,7 @@
                 display:table-cell !important; word-wrap:normal; padding:0.3em 0.8em;
                 &.RBZ_reduce, &.RBZ_reduce2 { display:none !important; }
                 div.RBZ_phone { display:block; }
-                div.RBZ_pin_container { height:auto; }
+                div.RBZ_pin_container { height:25px; line-height: 25px;}
                 div.RBZ_pin_menu {
                     bottom:-5px; right:-85px; width:100px;
                     ul li {

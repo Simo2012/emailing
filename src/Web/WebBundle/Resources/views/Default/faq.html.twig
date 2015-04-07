@@ -17,26 +17,28 @@
 {% endblock %}
 
 {% block CONTENT %}
+    {# Permet de savoir si la personne est loguée #}
+    {% set isLogged = app.user.id is defined ? true : false %}
     <div id="div_RBZ_content">
             {# Block de gauche menu #}
             <div id="div_RBZ_faqMenu">
                 <ul>
-                    <li><a href="#block1">{{ "web.web.default.faq.menu.inscription" | trans }}</a></li>
-                    <li><a href="#block7">{{ "web.web.default.faq.menu.contacts" | trans }}</a></li>
-                    <li><a href="#block14">{{ "web.web.contact.index.recommendation.title" | trans }}</a></li>
-                    <li><a href="#block20">{{ "layout.myKitty" | trans }}</a></li>
-                    <li><a href="#block25">{{ "web.web.default.faq.menu.account" | trans }}</a></li>
+                    <li><a href="{{ isLogged ? "#div_RBZ_inscription" : "#" }}">{{ "web.web.default.faq.menu.inscription" | trans }}</a></li>
+                    <li><a href="{{ isLogged ? "#div_RBZ_contact" : "#block5" }}">{{ "web.web.default.faq.menu.contacts" | trans }}</a></li>
+                    <li><a href="{{ isLogged ? "#div_RBZ_recommendation" : "#block12" }}">{{ "web.web.contact.index.recommendation.title" | trans }}</a></li>
+                    <li><a href="{{ isLogged ? "#div_RBZ_piggyBank" : "#block18" }}">{{ "layout.myKitty" | trans }}</a></li>
+                    <li><a href="{{ "#div_RBZ_account" }}">{{ "web.web.default.faq.menu.account" | trans }}</a></li>
                 </ul>
             </div>
             {# Block de droite FAQ #}
-            <div id="div_RBZ_faqRight" class="{{ app.user.id is defined ? "RBZ_logged" : "" }}">
+            <div id="div_RBZ_faqRight" class="{{ isLogged ? "RBZ_logged" : "" }}">
                 <div id="div_RBZ_faqRightImg">
                     <img src="{{ asset('/bundles/webweb/images/default/faq/faq.png') }}">
                 </div>
                 <h1>{{ "rubizzMenu_faq" | trans }} Rubizz</h1>
 
                 {# Rubrique inscription #}
-                <div class="RBZ_faqPicture">
+                <div class="RBZ_faqPicture" id="div_RBZ_inscription">
                     <img src="{{ asset('/bundles/webweb/images/default/faq/guy.png') }}"> <span>{{ ("web.web.default.faq.menu.inscription") | trans }}</span>
                 </div>
                 {% for number in 1..6 %}
@@ -48,8 +50,7 @@
                     </div>
                 {% endfor %}
                 {# Rubrique mes contacts #}
-                {# Rubrique inscription #}
-                <div class="RBZ_faqPicture">
+                <div class="RBZ_faqPicture" id="div_RBZ_contact">
                     <img src="{{ asset('/bundles/webweb/images/default/faq/girl.png') }}"> <span>{{ ("web.web.default.faq.menu.contacts") | trans }}</span>
                 </div>
                 {% for number in 7..12 %}
@@ -61,8 +62,7 @@
                     </div>
                 {% endfor %}
                 {# Rubrique mes recommandations #}
-                {# Rubrique inscription #}
-                <div class="RBZ_faqPicture">
+                <div class="RBZ_faqPicture" id="div_RBZ_recommendation">
                     <img src="{{ asset('/bundles/webweb/images/default/faq/girl2.png') }}"> <span>{{ ("rubizzMenu_recommendations") | trans }}</span>
                 </div>
                 {% for number in 13..18 %}
@@ -74,8 +74,7 @@
                     </div>
                 {% endfor %}
                 {# Rubrique ma cagnotte #}
-                {# Rubrique inscription #}
-                <div class="RBZ_faqPicture">
+                <div class="RBZ_faqPicture" id="div_RBZ_piggyBank">
                     <img src="{{ asset('/bundles/webweb/images/default/faq/guy.png') }}"> <span>{{ ("web.web.offer.index.donut.piggyBank") | trans }}</span>
                 </div>
                 {% for number in 19..24 %}
@@ -88,8 +87,7 @@
                 {% endfor %}
 
                 {# Rubrique mon compte #}
-                {# Rubrique inscription #}
-                <div class="RBZ_faqPicture">
+                <div class="RBZ_faqPicture" id="div_RBZ_account">
                     <img src="{{ asset('/bundles/webweb/images/default/faq/girl2.png') }}"> <span>{{ ("web.web.default.faq.menu.account") | trans }}</span>
                 </div>
                 {% for number in 25..27 %}
