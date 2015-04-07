@@ -116,6 +116,7 @@ class OfferController extends Controller
         $loUser    = $this->getUser();
         $loManager = $this->getDoctrine()->getManager();
         $lsLocale  = $this->getRequest()->getLocale();
+        $loTranslator = $this->get('translator');
 
         // ==== récupération du filtre catégorie si demandé ====
         $lsCategory = $poRequest->query->get('category');
@@ -127,12 +128,17 @@ class OfferController extends Controller
         // ==== Lecture des recommandations de l'utilisateur ====
         $laRecommendedOffers = $loManager->getRepository('WebWebBundle:Offer')
                                          ->getRecommendedIdsByUser($loUser);
-
+        $liUserContactsNumber = $loManager->getRepository('WebWebBundle:Contact')->getActiveNumberByUser($loUser);
+        $lsEmailConfirmMessage = $loTranslator->trans(
+            'web.web.offer.macro.email_confirm_message',
+            array('%number%' => $liUserContactsNumber)
+        );
         return array(
             'categories'        => $this->container->getParameter('web.offer_category'),
             'offers'            => $loOffers,
             'recommendedOffers' => $laRecommendedOffers,
             'categoryActive'    => $lsCategory,
+            'emailConfirmMessage' => $lsEmailConfirmMessage,
             'from'              => 'list'
         );
     }// indexAction

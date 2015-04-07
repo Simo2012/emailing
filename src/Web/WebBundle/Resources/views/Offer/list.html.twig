@@ -16,6 +16,11 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script type="text/javascript" src="{{ asset_url }}"></script>
     {%     endjavascripts %}
+    <script>
+        $(function() {
+            goOffer.setEmailConfirmMessage('{{ emailConfirmMessage | raw }}');
+        });
+    </script>
 {% endblock %}
 
 {% block CONTENT %}
