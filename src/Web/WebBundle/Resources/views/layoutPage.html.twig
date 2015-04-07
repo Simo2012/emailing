@@ -4,14 +4,18 @@
     <div id="div_RBZ_banner" class="RBZ_wrapper">
         <img id="img_RBZ_headerBeta" src="{{ asset("/bundles/webweb/images/default/index/beta.png") }}" alt="" />
         {% if app.user.id is defined %}
-            <div id="div_RBZ_counterMailingList" class="RBZ_icons_mailinglist">
-                    <span class="KNS_tiny-hidden">{{ "layout.mailingList" | trans }}</span><br>
-                    <span class="RBZ_number">{{ app.user.nbContacts | number_format(0, ',', ' ') }}</span>
-            </div>
-            <div id="div_RBZ_counterGain" class="RBZ_icons_cagnotte">
-                <span class="KNS_tiny-hidden">{{ "layout.myKitty" | trans }}</span><br>
-                <span class="RBZ_number">{{ currency_format(app.user.availableAmount, app.user.country) }}</span>
-            </div>
+            <a href="{{ url("WebWebBundle_contactIndex") }}">
+                <div id="div_RBZ_counterMailingList" class="RBZ_icons_mailinglist">
+                        <span class="KNS_tiny-hidden">{{ "layout.mailingList" | trans }}</span><br>
+                        <span class="RBZ_number">{{ app.user.nbContacts | number_format(0, ',', ' ') }}</span>
+                </div>
+            </a>
+            <a href="{{ url("WebWebBundle_userPot") }}">
+                <div id="div_RBZ_counterGain" class="RBZ_icons_cagnotte">
+                    <span class="KNS_tiny-hidden">{{ "layout.myKitty" | trans }}</span><br>
+                    <span class="RBZ_number">{{ currency_format(app.user.availableAmount, app.user.country) }}</span>
+                </div>
+            </a>
 
             <div id="div_RBZ_desktop_profile_menu">
                 <ul id="ul_RBZ_desktop_profile_menu">
