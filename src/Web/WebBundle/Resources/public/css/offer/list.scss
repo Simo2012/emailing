@@ -25,7 +25,7 @@
                 color : $sub-menu;
             }
             &.active a, a:hover {
-                font-weight: 600;
+                color: $red-banner;
             }
         }
     }
