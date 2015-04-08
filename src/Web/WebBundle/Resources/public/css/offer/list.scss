@@ -79,3 +79,28 @@
         }
     }
 }
+
+/* ==== Smartphone ==== */
+@media (max-width: 480px) {
+    /* ==== Popup confirmation ==== */
+    #div_RBZ_commonPopup {
+        width: 290px;
+        position: fixed;
+        top: 50px;
+        #div_RBZ_commonPopupContent {
+            div.RBZ_confirm_popup_content {
+                line-height: 40px;
+            }
+        }
+        #a_RBZ_commonPopupClose {
+            width: 28px;
+            height: 26px;
+            background: url(/bundles/webweb/images/global/icons/close_smartphone.png) no-repeat left top;
+        }
+        #div_RBZ_commonPopupContent {
+            div.RBZ_confirm_popup_content {
+                width: 290px;
+            }
+        }
+    }
+}

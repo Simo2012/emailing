@@ -41,3 +41,25 @@
     margin-bottom: 50px;
 }
 #section_RBZ_main { padding:0px 10px; }
+
+
+/* ==== Smartphone Responsive ==== */
+@media (max-width: 480px) {
+    /* ==== Popup commune ==== */
+    #div_RBZ_commonPopup {
+        width: 290px;
+        position: absolute;
+        top: 200px;
+        #a_RBZ_commonPopupClose {
+            width: 28px;
+            height: 26px;
+            background: url(/bundles/webweb/images/global/icons/close_smartphone.png) no-repeat left top;
+        }
+        #div_RBZ_commonPopupContent {
+            div.RBZ_confirm_popup_content {
+                width: 290px;
+            }
+        }
+    }
+}
+
